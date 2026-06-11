@@ -30,7 +30,7 @@ export const content = {
         murekkepLink: "DAHA FAZLA →",
       },
       bioKicker: "YAZAR",
-      bioText: "Berkay Doğan, İstanbul'da yaşayan şair ve yazardır. Mürekkep ve Köz (2025) ve Tasfiye (2026) kitaplarının yazarıdır.",
+      bioText: "Berkay Doğan, İstanbul'da yaşayan şair ve yazardır. Onun için yazmak bir tercih değil, bir zorunluluktur: yazmak, varoluşun en sessiz itirafıdır.",
       bioLink: "BİYOGRAFİ →",
     },
     tasfiye: {
@@ -84,8 +84,9 @@ export const content = {
       title: "BERKAY\nDOĞAN",
       aboutKicker: "HAKKINDA",
       bio: [
-        "Berkay Doğan, İstanbul'da yaşayan Türk şair ve yazardır. Şiirleri Valsanat Dergisi'nde yayımlanmış; okur platformlarında yüksek puanlar almıştır.",
-        "İlk şiir kitabı Mürekkep ve Köz: Bir Şairin Hesabı Aralık 2025'te İskenderiye Yayınları'ndan çıktı. İkinci kitabı Tasfiye, bir deneme kitabı olarak Aralık 2026'da yayımlanacak.",
+        "Berkay Doğan, İstanbul'da yaşayan şair ve yazardır. Onun için yazmak bir tercih değil, bir zorunluluktur: Yazmak, varoluşun en sessiz itirafıdır. Yazmadığı her gün, kendine ihanet ettiği bir gündür.",
+        "Yazıya 2017'de, on yedi yaşında başladı. O yaş, çoğu için masumiyetin sürdüğü bir eşikti; onun içinse toplumun gerçek yüzünü görmeye başladığı an oldu. O günden bu yana onu besleyen şey, edebiyatın kendisinden çok hayatın kendisidir: bir çift göz, delik deşik mimari bir yapı, eskiden geçtiği sokakları değişmiş bir adam olarak yeniden geçmek.",
+        "İlk kitabı Mürekkep ve Köz: Bir Şairin Hesabı (2025) boğucu bir yalnızlığın, ulusal kaosun ve varoluşsal krizin içinden sökülerek yazıldı. İkinci kitabı Tasfiye ise mevcut düzene bir eleştiri, kaybettiğimiz felsefi dozun yeniden hayata çağrılmasıdır. İkisi arasında, şiirden denemeye uzanan bir hesaplaşma vardır.",
       ],
       worksKicker: "ESERLER",
       works: [
@@ -133,7 +134,7 @@ export const content = {
         murekkepLink: "MORE →",
       },
       bioKicker: "AUTHOR",
-      bioText: "Berkay Doğan is a poet and writer based in Istanbul. He is the author of Ink and Ember (2025) and Tasfiye (2026).",
+      bioText: "Berkay Doğan is a poet and writer based in Istanbul. For him, writing is not a choice but a necessity: to write is the quietest confession of existence.",
       bioLink: "BIOGRAPHY →",
     },
     tasfiye: {
@@ -187,8 +188,9 @@ export const content = {
       title: "BERKAY\nDOĞAN",
       aboutKicker: "ABOUT",
       bio: [
-        "Berkay Doğan is a Turkish poet and writer based in Istanbul. His poems have been published in Valsanat Magazine and have received high ratings on reader platforms.",
-        "His first poetry collection, Ink and Ember: A Poet's Reckoning, was published by İskenderiye Publishing in December 2025. His second book, Tasfiye, will be published as an essay collection in December 2026.",
+        "Berkay Doğan is a poet and writer based in Istanbul. For him, writing is not a choice but a necessity: to write is the quietest confession of existence. Every day he does not write is a day he betrays himself.",
+        "He began writing in 2017, at the age of seventeen. For most, that age is a threshold where innocence lingers; for him, it was the moment he began to see the true face of society. Since then, what feeds him is not literature so much as life itself: a pair of eyes, a structure of riddled architecture, walking once-familiar streets again as a changed man.",
+        "His first book, Ink and Ember: A Poet's Reckoning (2025), was torn out from within a suffocating solitude, national chaos, and existential crisis. His second book, Tasfiye, is a critique of the prevailing order, a summoning back of the philosophical measure we have lost. Between the two lies a reckoning that runs from poetry to the essay.",
       ],
       worksKicker: "WORKS",
       works: [
