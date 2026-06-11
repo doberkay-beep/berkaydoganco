@@ -73,15 +73,16 @@ export function HomeContent({ lang }: { lang: Lang }) {
         </div>
       </section>
 
-      {/* MANIFESTO */}
-      <section className="manifesto-grid" style={{ padding: "8rem 4rem", borderTop: "1px solid var(--border)", display: "grid", gridTemplateColumns: "1fr 2fr", gap: "4rem", alignItems: "start" }}>
-        <div className="manifesto-label">
-          <p style={{ fontFamily: "var(--font-mono)", fontSize: "0.6rem", letterSpacing: "0.25em", color: "var(--text-dim)", writingMode: "vertical-rl", textOrientation: "mixed", transform: "rotate(180deg)" }}>{t.manifestoKicker}</p>
+      {/* MANIFESTO - foto arka planlı */}
+      <section style={{ position: "relative", borderTop: "1px solid var(--border)", overflow: "hidden", padding: "10rem 4rem", display: "flex", justifyContent: "center" }}>
+        <img src="/images/siir-zemin.jpg" alt="" style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover", filter: "grayscale(100%) contrast(1.1) brightness(0.3)", zIndex: 0 }} />
+        <div style={{ position: "absolute", inset: 0, background: "linear-gradient(135deg, rgba(0,0,0,0.8), rgba(0,0,0,0.55))", zIndex: 1 }} />
+        <div className="manifesto-inner" style={{ position: "relative", zIndex: 2, maxWidth: "780px", textAlign: "center" }}>
+          <p style={{ fontFamily: "var(--font-mono)", fontSize: "0.6rem", letterSpacing: "0.3em", color: "rgba(255,255,255,0.6)", marginBottom: "2.5rem" }}>{t.manifestoKicker}</p>
+          <blockquote style={{ fontFamily: "var(--font-mono)", fontSize: "clamp(1.3rem, 3.5vw, 2.2rem)", lineHeight: 1.6, color: "#fff", fontStyle: "italic", marginBottom: "2.5rem", textShadow: "0 2px 30px rgba(0,0,0,0.6)" }}>{t.manifestoQuote}</blockquote>
+          <p style={{ fontFamily: "var(--font-mono)", fontSize: "0.6rem", letterSpacing: "0.25em", color: "rgba(255,255,255,0.6)" }}>{t.manifestoAuthor}</p>
         </div>
-        <div>
-          <blockquote style={{ fontFamily: "var(--font-mono)", fontSize: "clamp(1.1rem, 2.5vw, 1.6rem)", lineHeight: 1.7, color: "var(--text-soft)", fontStyle: "italic", borderLeft: "1px solid var(--border-bright)", paddingLeft: "2rem", marginBottom: "2rem" }}>{t.manifestoQuote}</blockquote>
-          <p style={{ fontFamily: "var(--font-mono)", fontSize: "0.6rem", letterSpacing: "0.2em", color: "var(--text-dim)" }}>{t.manifestoAuthor}</p>
-        </div>
+        <style>{`@media (max-width: 768px) { section { padding: 6rem 1.5rem !important; } }`}</style>
       </section>
 
       {/* KİTAPLAR */}
