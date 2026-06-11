@@ -80,6 +80,31 @@ export default function Tasfiye() {
         ))}
       </section>
 
+      {/* NOİR GÖRSEL GRID */}
+      <section className="noir-grid" style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", borderBottom: "1px solid #1a1a1a" }}>
+        {[
+          { src: "/images/bogaz-kopru.jpg", alt: "Boğaz" },
+          { src: "/images/galata-sokak.jpg", alt: "Galata" },
+          { src: "/images/gece-sehir.jpg", alt: "Gece şehri" },
+        ].map((img, i) => (
+          <div key={i} style={{ position: "relative", aspectRatio: "1 / 1", overflow: "hidden", borderRight: i < 2 ? "1px solid #1a1a1a" : "none" }}>
+            <img
+              src={img.src}
+              alt={img.alt}
+              style={{ width: "100%", height: "100%", objectFit: "cover", filter: "grayscale(100%) contrast(1.2) brightness(0.7)", transition: "filter 0.4s, transform 0.4s" }}
+              className="noir-img"
+            />
+          </div>
+        ))}
+        <style>{`
+          .noir-img:hover { filter: grayscale(100%) contrast(1.25) brightness(0.95) !important; transform: scale(1.03); }
+          @media (max-width: 768px) {
+            .noir-grid { grid-template-columns: 1fr !important; }
+            .noir-grid > div { border-right: none !important; border-bottom: 1px solid #1a1a1a; aspect-ratio: 16/10 !important; }
+          }
+        `}</style>
+      </section>
+
       {/* CTA */}
       <section className="tasfiye-cta" style={{ padding: "6rem 4rem", display: "flex", justifyContent: "space-between", alignItems: "center", gap: "2rem", flexWrap: "wrap" }}>
         <div>
