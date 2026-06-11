@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { content, type Lang } from "@/lib/content";
+import { Reveal, CountUp, Parallax } from "./Motion";
 
 export function TasfiyeContent({ lang }: { lang: Lang }) {
   const t = content[lang].tasfiye;
@@ -26,22 +27,24 @@ export function TasfiyeContent({ lang }: { lang: Lang }) {
 
       {/* ÜST FOTO BANNER + TASFİYE başlık */}
       <section style={{ position: "relative", height: "62vh", minHeight: "440px", overflow: "hidden", display: "flex", alignItems: "center", justifyContent: "center", borderBottom: "1px solid var(--border)" }}>
-        <img src="/images/bogaz-kopru.jpg" alt="" style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover", objectPosition: "center 40%", filter: "grayscale(100%) contrast(1.2) brightness(0.4)", zIndex: 0 }} />
+        <Parallax src="/images/bogaz-kopru.jpg" filter="grayscale(100%) contrast(1.2) brightness(0.4)" strength={0.12} style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover", objectPosition: "center 40%", zIndex: 0 }} />
         <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to bottom, rgba(0,0,0,0.6), rgba(0,0,0,0.4) 50%, rgba(0,0,0,0.85))", zIndex: 1 }} />
-        <div style={{ position: "relative", zIndex: 2, textAlign: "center", padding: "0 1.5rem" }}>
+        <Reveal style={{ position: "relative", zIndex: 2, textAlign: "center", padding: "0 1.5rem" }}>
           <p style={{ fontFamily: "var(--font-mono)", fontSize: "0.6rem", letterSpacing: "0.3em", color: "rgba(255,255,255,0.7)", marginBottom: "1.5rem" }}>{t.kicker}</p>
           <h1 className="banner-title" style={{ fontFamily: "var(--font-grotesk)", fontSize: "clamp(4rem, 14vw, 11rem)", fontWeight: 700, lineHeight: 0.9, letterSpacing: "-0.02em", color: "#fff", textShadow: "0 4px 40px rgba(0,0,0,0.5)" }}>TASFİYE</h1>
           <p style={{ fontFamily: "var(--font-mono)", fontSize: "0.85rem", lineHeight: 1.7, color: "rgba(255,255,255,0.85)", maxWidth: "520px", margin: "1.8rem auto 0" }}>{t.heroDesc}</p>
-        </div>
+        </Reveal>
       </section>
 
       {/* META */}
       <section className="tasfiye-meta" style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", borderBottom: "1px solid var(--border)" }}>
         {t.meta.map((item, i) => (
-          <div key={i} style={{ padding: "2rem", borderRight: i < 3 ? "1px solid var(--border)" : "none" }}>
+          <Reveal key={i} delay={i * 0.08} style={{ padding: "2rem", borderRight: i < 3 ? "1px solid var(--border)" : "none" }}>
             <p style={{ fontFamily: "var(--font-mono)", fontSize: "0.5rem", letterSpacing: "0.25em", color: "var(--text-dim)", marginBottom: "0.75rem" }}>{item.label}</p>
-            <p style={{ fontFamily: "var(--font-grotesk)", fontSize: "1.1rem", fontWeight: 700, letterSpacing: "0.05em", color: "var(--text)" }}>{item.value}</p>
-          </div>
+            <p style={{ fontFamily: "var(--font-grotesk)", fontSize: "1.1rem", fontWeight: 700, letterSpacing: "0.05em", color: "var(--text)" }}>
+              {item.value === "161" ? <CountUp end={161} /> : item.value}
+            </p>
+          </Reveal>
         ))}
       </section>
 
@@ -57,7 +60,7 @@ export function TasfiyeContent({ lang }: { lang: Lang }) {
           <p style={{ fontFamily: "var(--font-mono)", fontSize: "0.55rem", letterSpacing: "0.25em", color: "var(--text-dim)" }}>{t.contentsKicker}</p>
         </div>
         {t.bolumler.map((b, i) => (
-          <div key={i} className="tasfiye-bolum" style={{ padding: "2.5rem 4rem", borderBottom: i < t.bolumler.length - 1 ? "1px solid var(--border)" : "none", display: "flex", justifyContent: "space-between", alignItems: "center", gap: "2rem" }}>
+          <Reveal key={i} delay={i * 0.1} className="tasfiye-bolum" style={{ padding: "2.5rem 4rem", borderBottom: i < t.bolumler.length - 1 ? "1px solid var(--border)" : "none", display: "flex", justifyContent: "space-between", alignItems: "center", gap: "2rem" }}>
             <div style={{ display: "flex", alignItems: "baseline", gap: "2rem" }}>
               <span style={{ fontFamily: "var(--font-grotesk)", fontSize: "0.7rem", fontWeight: 700, color: "var(--text-dim)", letterSpacing: "0.15em" }}>{b.no}</span>
               <div>
@@ -66,7 +69,7 @@ export function TasfiyeContent({ lang }: { lang: Lang }) {
               </div>
             </div>
             <p style={{ fontFamily: "var(--font-mono)", fontSize: "0.6rem", letterSpacing: "0.15em", color: "var(--text-dim)", whiteSpace: "nowrap" }}>{b.count}</p>
-          </div>
+          </Reveal>
         ))}
       </section>
 

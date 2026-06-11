@@ -3,6 +3,7 @@
 import { useEffect, useRef } from "react";
 import Link from "next/link";
 import { content, type Lang } from "@/lib/content";
+import { Reveal, Parallax } from "./Motion";
 
 export function HomeContent({ lang }: { lang: Lang }) {
   const t = content[lang].home;
@@ -63,7 +64,7 @@ export function HomeContent({ lang }: { lang: Lang }) {
         </div>
 
         <div className="hero-right" style={{ position: "relative", overflow: "hidden", background: "var(--bg-panel)", display: "flex", alignItems: "flex-end", justifyContent: "flex-start", padding: "3rem" }}>
-          <img src="/images/metro-tunel.jpg" alt="Metro" style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover", filter: "grayscale(100%) contrast(1.15) brightness(0.55)", zIndex: 0 }} />
+          <Parallax src="/images/metro-tunel.jpg" filter="grayscale(100%) contrast(1.15) brightness(0.55)" strength={0.1} style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover", zIndex: 0 }} />
           <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.35) 50%, rgba(0,0,0,0.55) 100%)", zIndex: 1 }} />
           <span style={{ position: "absolute", top: "50%", left: "50%", transform: "translate(-50%, -50%)", fontFamily: "var(--font-grotesk)", fontSize: "clamp(8rem, 20vw, 18rem)", fontWeight: 700, color: "rgba(255,255,255,0.12)", lineHeight: 1, userSelect: "none", whiteSpace: "nowrap", zIndex: 2, mixBlendMode: "overlay" }}>161</span>
           <div style={{ position: "relative", zIndex: 3 }}>
@@ -75,13 +76,13 @@ export function HomeContent({ lang }: { lang: Lang }) {
 
       {/* MANIFESTO - foto arka planlı */}
       <section style={{ position: "relative", borderTop: "1px solid var(--border)", overflow: "hidden", padding: "10rem 4rem", display: "flex", justifyContent: "center" }}>
-        <img src="/images/siir-zemin.jpg" alt="" style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover", filter: "grayscale(100%) contrast(1.1) brightness(0.3)", zIndex: 0 }} />
+        <Parallax src="/images/siir-zemin.jpg" filter="grayscale(100%) contrast(1.1) brightness(0.3)" strength={0.1} style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover", zIndex: 0 }} />
         <div style={{ position: "absolute", inset: 0, background: "linear-gradient(135deg, rgba(0,0,0,0.8), rgba(0,0,0,0.55))", zIndex: 1 }} />
-        <div className="manifesto-inner" style={{ position: "relative", zIndex: 2, maxWidth: "780px", textAlign: "center" }}>
+        <Reveal className="manifesto-inner" style={{ position: "relative", zIndex: 2, maxWidth: "780px", textAlign: "center" }}>
           <p style={{ fontFamily: "var(--font-mono)", fontSize: "0.6rem", letterSpacing: "0.3em", color: "rgba(255,255,255,0.6)", marginBottom: "2.5rem" }}>{t.manifestoKicker}</p>
           <blockquote style={{ fontFamily: "var(--font-mono)", fontSize: "clamp(1.3rem, 3.5vw, 2.2rem)", lineHeight: 1.6, color: "#fff", fontStyle: "italic", marginBottom: "2.5rem", textShadow: "0 2px 30px rgba(0,0,0,0.6)" }}>{t.manifestoQuote}</blockquote>
           <p style={{ fontFamily: "var(--font-mono)", fontSize: "0.6rem", letterSpacing: "0.25em", color: "rgba(255,255,255,0.6)" }}>{t.manifestoAuthor}</p>
-        </div>
+        </Reveal>
         <style>{`@media (max-width: 768px) { section { padding: 6rem 1.5rem !important; } }`}</style>
       </section>
 

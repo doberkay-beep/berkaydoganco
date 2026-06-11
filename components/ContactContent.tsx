@@ -1,6 +1,7 @@
 "use client";
 
 import { content, type Lang } from "@/lib/content";
+import { Reveal } from "./Motion";
 
 export function ContactContent({ lang }: { lang: Lang }) {
   const t = content[lang].contact;

@@ -1,6 +1,7 @@
 "use client";
 
 import { content, type Lang } from "@/lib/content";
+import { Reveal } from "./Motion";
 
 export function AuthorContent({ lang }: { lang: Lang }) {
   const t = content[lang].author;
@@ -23,7 +24,7 @@ export function AuthorContent({ lang }: { lang: Lang }) {
           <h1 style={{ fontFamily: "var(--font-grotesk)", fontSize: "clamp(3rem, 8vw, 6rem)", fontWeight: 700, lineHeight: 0.9, letterSpacing: "-0.02em", color: "var(--text)", marginBottom: "2.5rem", whiteSpace: "pre-line" }}>{t.title}</h1>
           <div style={{ display: "flex", flexDirection: "column", gap: "1.5rem", maxWidth: "480px" }}>
             {t.bio.map((p, i) => (
-              <p key={i} style={{ fontFamily: "var(--font-mono)", fontSize: "0.9rem", lineHeight: 1.9, color: "var(--text-muted)" }}>{p}</p>
+              <Reveal key={i} delay={i * 0.12} as="p" style={{ fontFamily: "var(--font-mono)", fontSize: "0.9rem", lineHeight: 1.9, color: "var(--text-muted)" }}>{p}</Reveal>
             ))}
           </div>
         </div>

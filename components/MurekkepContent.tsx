@@ -1,6 +1,7 @@
 "use client";
 
 import { content, type Lang } from "@/lib/content";
+import { Reveal } from "./Motion";
 
 export function MurekkepContent({ lang }: { lang: Lang }) {
   const t = content[lang].murekkep;
@@ -69,10 +70,10 @@ export function MurekkepContent({ lang }: { lang: Lang }) {
         </div>
         <div className="review-grid" style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "1.5rem", maxWidth: "1100px", margin: "0 auto" }}>
           {t.reviews.map((r, i) => (
-            <div key={i} className="glass review-card" style={{ padding: "2rem", display: "flex", flexDirection: "column", justifyContent: "space-between", gap: "1.5rem", borderRadius: "2px" }}>
+            <Reveal key={i} delay={(i % 3) * 0.1} className="glass review-card" style={{ padding: "2rem", display: "flex", flexDirection: "column", justifyContent: "space-between", gap: "1.5rem", borderRadius: "2px" }}>
               <blockquote style={{ fontFamily: "var(--font-mono)", fontSize: "0.85rem", fontStyle: "italic", lineHeight: 1.7, color: "var(--text-soft)" }}>&ldquo;{r.text}&rdquo;</blockquote>
               <p style={{ fontFamily: "var(--font-mono)", fontSize: "0.5rem", letterSpacing: "0.2em", color: "var(--text-dim)" }}>{r.source}</p>
-            </div>
+            </Reveal>
           ))}
         </div>
         <style>{`
