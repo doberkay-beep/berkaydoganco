@@ -79,8 +79,14 @@ export const content = {
         { name: "Maltepe Kitabevi", url: "https://www.maltepekitabevi.com/murekkep-ve-koz" },
       ],
       reviewKicker: "OKURLARDAN",
-      review: "\"Harika bir kitap, şimdiye kadar okuduğum şiir kitaplarından çok farklı, okumak isteyenlere tavsiye ederim.\"",
-      reviewSource: "TRENDYOL",
+      reviews: [
+        { text: "Harika bir kitap, şimdiye kadar okuduğum şiir kitaplarından çok farklı. Okumak isteyenlere tavsiye ederim.", source: "TRENDYOL" },
+        { text: "Bir genç şairden beklenmedik keskinlikte ve şaşırtıcı derecede güzel. Genç bir ruhun ülkemizde nasıl ruh halleri zincirinden geçtiğinin kanıtı.", source: "TRENDYOL" },
+        { text: "Kelimelerin köz gibi yavaşça içe işlediği bir şiir yolculuğu. Sade ama güçlü bir anlatım. Uzun zamandır bu kadar dokunan şiirler okumamıştım.", source: "TRENDYOL" },
+        { text: "Bu kadar genç bir şairden böyle bir performans çok başarılı. Harika dizeler, muhakkak okunmalı.", source: "TRENDYOL" },
+        { text: "İçinden geldiği gibi, genç ve anlatısı kuvvetli bir kitap. Başarılarının devamını diliyorum.", source: "TRENDYOL" },
+        { text: "Muazzam bir kitap. Bu kalemden çıkacak yeni eserleri merakla bekliyorum.", source: "TRENDYOL" },
+      ],
     },
     author: {
       kicker: "YAZAR — BİYOGRAFİ",
@@ -186,8 +192,14 @@ export const content = {
         { name: "Maltepe Kitabevi", url: "https://www.maltepekitabevi.com/murekkep-ve-koz" },
       ],
       reviewKicker: "FROM READERS",
-      review: "\"A wonderful book, very different from any poetry I've read before. I recommend it to anyone who wants to read.\"",
-      reviewSource: "TRENDYOL",
+      reviews: [
+        { text: "A wonderful book, very different from any poetry I've read before. I recommend it to anyone who wants to read.", source: "TRENDYOL" },
+        { text: "Unexpectedly sharp and surprisingly beautiful for a young poet. Proof of how a young soul passes through the chain of moods in our country.", source: "TRENDYOL" },
+        { text: "A poetic journey where words slowly seep inward like embers. Plain yet powerful. I hadn't read poems this moving in a long time.", source: "TRENDYOL" },
+        { text: "Such a performance from a poet this young is remarkable. Wonderful verses, a must-read.", source: "TRENDYOL" },
+        { text: "Heartfelt, young, and strong in its narrative. I wish you continued success.", source: "TRENDYOL" },
+        { text: "A magnificent book. I eagerly await the new works to come from this pen.", source: "TRENDYOL" },
+      ],
     },
     author: {
       kicker: "AUTHOR — BIOGRAPHY",
