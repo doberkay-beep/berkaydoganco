@@ -70,7 +70,7 @@ export function Footer() {
         paddingTop: "1.5rem",
         marginTop: "0.5rem",
       }}>
-        © 2026 Berkay Doğan — Bütün yalanlar düzenin, kelimeler Berkay Doğan'ısın.
+        © 2026 Berkay Doğan — Bütün yalanlar düzenin, kelimeler Berkay Doğan'ındır.
       </p>
     </footer>
   );
