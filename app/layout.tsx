@@ -5,12 +5,25 @@ import { Footer } from "@/components/Footer";
 import { ThemeProvider } from "@/components/ThemeProvider";
 
 export const metadata: Metadata = {
-  title: "Berkay Doğan — Tasfiye",
-  description: "Yıkmak, kurmanın tek yoludur. 161 sayfalık bir varoluş infazına hoş geldiniz.",
+  title: {
+    default: "Berkay Doğan — Tasfiye",
+    template: "%s — Berkay Doğan",
+  },
+  description: "Yıkmak, kurmanın tek yoludur. 161 sayfalık bir varoluş infazına hoş geldiniz. Berkay Doğan'ın resmi sitesi — şair ve yazar.",
+  keywords: ["Berkay Doğan", "Tasfiye", "Mürekkep ve Köz", "Türk şiir", "şair", "yazar", "deneme kitabı", "İskenderiye Yayınları"],
+  authors: [{ name: "Berkay Doğan" }],
+  creator: "Berkay Doğan",
   metadataBase: new URL("https://berkaydogan.co"),
+  alternates: {
+    canonical: "/",
+    languages: {
+      tr: "/",
+      en: "/en",
+    },
+  },
   openGraph: {
     title: "Berkay Doğan — Tasfiye",
-    description: "Yıkmak, kurmanın tek yoludur.",
+    description: "Yıkmak, kurmanın tek yoludur. Şair ve yazar Berkay Doğan'ın resmi sitesi.",
     url: "https://berkaydogan.co",
     siteName: "berkaydogan.co",
     locale: "tr_TR",
@@ -20,6 +33,14 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Berkay Doğan — Tasfiye",
     description: "Yıkmak, kurmanın tek yoludur.",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+    },
   },
 };
 
