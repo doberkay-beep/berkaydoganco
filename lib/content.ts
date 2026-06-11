@@ -86,6 +86,7 @@ export const content = {
         { text: "Bu kadar genç bir şairden böyle bir performans çok başarılı. Harika dizeler, muhakkak okunmalı.", source: "TRENDYOL" },
         { text: "İçinden geldiği gibi, genç ve anlatısı kuvvetli bir kitap. Başarılarının devamını diliyorum.", source: "TRENDYOL" },
         { text: "Muazzam bir kitap. Bu kalemden çıkacak yeni eserleri merakla bekliyorum.", source: "TRENDYOL" },
+        { text: "İlk başta eğreti gibi gelen gizemli şiirlerin arasına serpiştirilmiş, hayrete düşüren güzellikte şiirler. İlerledikçe kilim gibi dokunmuş sayfalar. Filozof olsan yadırgamazdım. Mükemmel.", source: "REDDIT · R/KİTAP" },
       ],
     },
     author: {
@@ -199,6 +200,7 @@ export const content = {
         { text: "Such a performance from a poet this young is remarkable. Wonderful verses, a must-read.", source: "TRENDYOL" },
         { text: "Heartfelt, young, and strong in its narrative. I wish you continued success.", source: "TRENDYOL" },
         { text: "A magnificent book. I eagerly await the new works to come from this pen.", source: "TRENDYOL" },
+        { text: "Poems of astonishing beauty scattered among the mysterious ones that first seemed odd. As you go on, the pages are woven like a kilim. I wouldn't be surprised if you were a philosopher. Magnificent.", source: "REDDIT · R/KİTAP" },
       ],
     },
     author: {
