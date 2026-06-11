@@ -78,10 +78,26 @@ export default function Home() {
         </div>
 
         <div className="hero-right" style={{ position: "relative", overflow: "hidden", background: "var(--grey-dim)", display: "flex", alignItems: "flex-end", justifyContent: "flex-start", padding: "3rem" }}>
-          <span style={{ position: "absolute", top: "50%", left: "50%", transform: "translate(-50%, -50%)", fontFamily: "var(--font-grotesk)", fontSize: "clamp(8rem, 20vw, 18rem)", fontWeight: 700, color: "rgba(255,255,255,0.04)", lineHeight: 1, userSelect: "none", whiteSpace: "nowrap" }}>161</span>
-          <div style={{ position: "relative", zIndex: 2 }}>
-            <p style={{ fontFamily: "var(--font-mono)", fontSize: "0.55rem", letterSpacing: "0.2em", color: "var(--grey-muted)", marginBottom: "0.4rem" }}>DENEME KİTABI</p>
-            <p style={{ fontFamily: "var(--font-mono)", fontSize: "0.55rem", letterSpacing: "0.15em", color: "var(--grey-muted)" }}>ARALIK 2026</p>
+          {/* Noir fotoğraf */}
+          <img
+            src="/images/metro-tunel.jpg"
+            alt="Metro tüneli"
+            style={{
+              position: "absolute",
+              inset: 0,
+              width: "100%",
+              height: "100%",
+              objectFit: "cover",
+              filter: "grayscale(100%) contrast(1.15) brightness(0.55)",
+              zIndex: 0,
+            }}
+          />
+          {/* Karartma katmanı */}
+          <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.35) 50%, rgba(0,0,0,0.55) 100%)", zIndex: 1 }} />
+          <span style={{ position: "absolute", top: "50%", left: "50%", transform: "translate(-50%, -50%)", fontFamily: "var(--font-grotesk)", fontSize: "clamp(8rem, 20vw, 18rem)", fontWeight: 700, color: "rgba(255,255,255,0.12)", lineHeight: 1, userSelect: "none", whiteSpace: "nowrap", zIndex: 2, mixBlendMode: "overlay" }}>161</span>
+          <div style={{ position: "relative", zIndex: 3 }}>
+            <p style={{ fontFamily: "var(--font-mono)", fontSize: "0.55rem", letterSpacing: "0.2em", color: "var(--off-white)", marginBottom: "0.4rem" }}>DENEME KİTABI</p>
+            <p style={{ fontFamily: "var(--font-mono)", fontSize: "0.55rem", letterSpacing: "0.15em", color: "var(--grey-subtle)" }}>ARALIK 2026</p>
           </div>
         </div>
       </section>
