@@ -27,15 +27,14 @@ export function AuthorContent({ lang }: { lang: Lang }) {
             ))}
           </div>
         </div>
-        <div className="author-hero-img" style={{ position: "relative", overflow: "hidden", borderLeft: "1px solid var(--border)", background: "var(--bg-panel)" }}>
-          <img src="/images/portre.jpg" alt="Berkay Doğan" style={{ width: "100%", height: "100%", objectFit: "cover", filter: "var(--photo-filter)" }} />
-          <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to top, rgba(0,0,0,0.35), transparent 40%)", pointerEvents: "none" }} />
+        <div className="author-hero-img" style={{ position: "relative", overflow: "hidden", borderLeft: "1px solid var(--border)", background: "var(--bg-panel)", display: "flex", alignItems: "center", justifyContent: "center" }}>
+          <img src="/images/portre.jpg" alt="Berkay Doğan" style={{ width: "100%", height: "100%", objectFit: "contain", filter: "var(--photo-filter)" }} />
         </div>
       </section>
 
       {/* ARA GÖRSEL */}
       <section style={{ position: "relative", height: "40vh", minHeight: "300px", overflow: "hidden", borderBottom: "1px solid var(--border)" }}>
-        <img src="/images/galata-sokak.jpg" alt="" style={{ width: "100%", height: "100%", objectFit: "cover", filter: "var(--photo-filter)" }} />
+        <img src="/images/havalimani.jpg" alt="" style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "center 50%", filter: "var(--photo-filter)" }} />
         <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(0,0,0,0.5))", pointerEvents: "none" }} />
       </section>
 

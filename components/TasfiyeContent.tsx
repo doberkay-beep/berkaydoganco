@@ -26,7 +26,7 @@ export function TasfiyeContent({ lang }: { lang: Lang }) {
 
       {/* ÜST FOTO BANNER + TASFİYE başlık */}
       <section style={{ position: "relative", height: "62vh", minHeight: "440px", overflow: "hidden", display: "flex", alignItems: "center", justifyContent: "center", borderBottom: "1px solid var(--border)" }}>
-        <img src="/images/gece-sehir.jpg" alt="" style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover", filter: "grayscale(100%) contrast(1.2) brightness(0.4)", zIndex: 0 }} />
+        <img src="/images/bogaz-kopru.jpg" alt="" style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover", objectPosition: "center 40%", filter: "grayscale(100%) contrast(1.2) brightness(0.4)", zIndex: 0 }} />
         <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to bottom, rgba(0,0,0,0.6), rgba(0,0,0,0.4) 50%, rgba(0,0,0,0.85))", zIndex: 1 }} />
         <div style={{ position: "relative", zIndex: 2, textAlign: "center", padding: "0 1.5rem" }}>
           <p style={{ fontFamily: "var(--font-mono)", fontSize: "0.6rem", letterSpacing: "0.3em", color: "rgba(255,255,255,0.7)", marginBottom: "1.5rem" }}>{t.kicker}</p>
