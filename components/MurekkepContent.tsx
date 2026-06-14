@@ -62,7 +62,28 @@ export function MurekkepContent({ lang }: { lang: Lang }) {
         ))}
       </section>
 
-      {/* OKURLARDAN - kart grid */}
+      {/* KİTAPTAN - şiirler */}
+      <section style={{ borderBottom: "1px solid var(--border)" }}>
+        <div style={{ padding: "5rem 4rem 3rem", textAlign: "center" }}>
+          <p style={{ fontFamily: "var(--font-mono)", fontSize: "0.55rem", letterSpacing: "0.25em", color: "var(--text-dim)", marginBottom: "1rem" }}>{t.poemsKicker}</p>
+          <p style={{ fontFamily: "var(--font-mono)", fontSize: "0.85rem", fontStyle: "italic", color: "var(--text-muted)" }}>{t.poemsIntro}</p>
+        </div>
+        {t.poems.map((poem, i) => (
+          <Reveal key={i} as="div" style={{ borderTop: "1px solid var(--border)", padding: "4.5rem 4rem", maxWidth: "780px", margin: "0 auto", width: "100%" }} className="poem-block">
+            <h3 style={{ fontFamily: "var(--font-grotesk)", fontSize: "clamp(1.4rem, 3vw, 2rem)", fontWeight: 700, color: "var(--text)", marginBottom: "2rem", letterSpacing: "-0.01em" }}>{poem.title}</h3>
+            <div style={{ display: "flex", flexDirection: "column", gap: "0.9rem" }}>
+              {poem.lines.map((line, j) => (
+                <p key={j} style={{ fontFamily: "var(--font-mono)", fontSize: "0.92rem", lineHeight: 1.85, color: "var(--text-soft)", fontStyle: "italic" }}>{line}</p>
+              ))}
+            </div>
+          </Reveal>
+        ))}
+        <div style={{ borderTop: "1px solid var(--border)", padding: "2.5rem 4rem", textAlign: "center" }}>
+          <p style={{ fontFamily: "var(--font-mono)", fontSize: "0.7rem", letterSpacing: "0.1em", color: "var(--text-dim)" }}>
+            {lang === "en" ? "— and 200 more poems in the book" : "— ve kitapta 200'den fazla şiir daha"}
+          </p>
+        </div>
+      </section>
       <section className="mk-review" style={{ padding: "6rem 4rem" }}>
         <div style={{ textAlign: "center", marginBottom: "3.5rem" }}>
           <p style={{ fontFamily: "var(--font-mono)", fontSize: "0.55rem", letterSpacing: "0.25em", color: "var(--text-dim)", marginBottom: "1rem" }}>{t.reviewKicker}</p>
@@ -78,7 +99,7 @@ export function MurekkepContent({ lang }: { lang: Lang }) {
         </div>
         <style>{`
           @media (max-width: 900px) { .review-grid { grid-template-columns: repeat(2, 1fr) !important; } }
-          @media (max-width: 600px) { .review-grid { grid-template-columns: 1fr !important; } .mk-review { padding: 4rem 1.5rem !important; } }
+          @media (max-width: 600px) { .review-grid { grid-template-columns: 1fr !important; } .mk-review { padding: 4rem 1.5rem !important; } .poem-block { padding: 3rem 1.5rem !important; } }
         `}</style>
       </section>
     </div>
