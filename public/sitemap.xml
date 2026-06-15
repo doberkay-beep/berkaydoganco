@@ -30,6 +30,12 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://berkaydogan.co/medya</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://berkaydogan.co/medya"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://berkaydogan.co/en/medya"/>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://berkaydogan.co/yazar</loc>
     <xhtml:link rel="alternate" hreflang="tr" href="https://berkaydogan.co/yazar"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://berkaydogan.co/en/yazar"/>
