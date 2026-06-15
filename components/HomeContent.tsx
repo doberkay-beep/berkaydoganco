@@ -4,6 +4,7 @@ import { useEffect, useRef } from "react";
 import Link from "next/link";
 import { content, type Lang } from "@/lib/content";
 import { Reveal, Parallax } from "./Motion";
+import { Newsletter } from "./Newsletter";
 
 export function HomeContent({ lang }: { lang: Lang }) {
   const t = content[lang].home;
@@ -114,6 +115,8 @@ export function HomeContent({ lang }: { lang: Lang }) {
         </div>
         <Link href={`${base}/yazar`} className="btn-secondary" style={{ fontFamily: "var(--font-mono)", fontSize: "0.6rem", letterSpacing: "0.2em", padding: "0.75rem 1.5rem", border: "1px solid var(--border-bright)", color: "var(--text-dim)", flexShrink: 0 }}>{t.bioLink}</Link>
       </section>
+
+      <Newsletter lang={lang} />
     </div>
   );
 }

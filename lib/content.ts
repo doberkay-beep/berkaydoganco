@@ -153,6 +153,15 @@ export const content = {
       emailLabel: "E-POSTA",
       instaLabel: "INSTAGRAM",
     },
+    newsletter: {
+      kicker: "OKUR LİSTESİ",
+      title: "Bir köz de sana düşsün",
+      desc: "Yeni yazılar, kitaplar ve dağınık düşünceler. Ara sıra, gürültüsüz. Posta kutuna düşsün.",
+      placeholder: "e-posta adresin",
+      button: "KATIL",
+      note: "Spam yok. İstediğin an ayrılırsın.",
+      action: "https://doberkay.substack.com/subscribe",
+    },
     footer: {
       sign: "Bütün yalanlar düzenin, kelimeler Berkay Doğan'ındır.",
     },
@@ -308,6 +317,15 @@ export const content = {
       desc: "Not to make small talk, but if you have a wound that truly bleeds, write.",
       emailLabel: "EMAIL",
       instaLabel: "INSTAGRAM",
+    },
+    newsletter: {
+      kicker: "READER LIST",
+      title: "Let an ember reach you too",
+      desc: "New writings, books, and scattered thoughts. Now and then, without noise. Straight to your inbox.",
+      placeholder: "your email address",
+      button: "JOIN",
+      note: "No spam. Leave whenever you like.",
+      action: "https://doberkay.substack.com/subscribe",
     },
     footer: {
       sign: "All lies belong to the order, the words belong to Berkay Doğan.",

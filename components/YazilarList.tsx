@@ -1,6 +1,7 @@
 import Link from "next/link";
 import type { YaziMeta } from "@/lib/yazilar";
 import type { Lang } from "@/lib/content";
+import { Newsletter } from "./Newsletter";
 
 export function YazilarList({ yazilar, lang }: { yazilar: YaziMeta[]; lang: Lang }) {
   const base = lang === "en" ? "/en" : "";
@@ -48,6 +49,8 @@ export function YazilarList({ yazilar, lang }: { yazilar: YaziMeta[]; lang: Lang
           ))
         )}
       </section>
+
+      <Newsletter lang={lang} />
     </div>
   );
 }
