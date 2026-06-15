@@ -25,6 +25,7 @@ export function Nav() {
     { href: `${base}/murekkep-ve-koz`, label: t.murekkep, match: `${base}/murekkep-ve-koz` },
     { href: `${base}/yazilar`, label: t.yazilar, match: `${base}/yazilar` },
     { href: `${base}/medya`, label: t.medya, match: `${base}/medya` },
+    { href: `${base}/basinda`, label: t.basinda, match: `${base}/basinda` },
     { href: `${base}/yazar`, label: t.author, match: `${base}/yazar` },
     { href: `${base}/iletisim`, label: t.contact, match: `${base}/iletisim` },
   ];
@@ -68,7 +69,7 @@ export function Nav() {
         BD
       </Link>
 
-      <div className="desktop-nav" style={{ display: "flex", gap: "1.3rem", alignItems: "center" }}>
+      <div className="desktop-nav" style={{ display: "flex", gap: "1.1rem", alignItems: "center" }}>
         {links.map((link) => (
           <Link
             key={link.href}
@@ -126,7 +127,7 @@ export function Nav() {
       )}
 
       <style>{`
-        @media (max-width: 900px) {
+        @media (max-width: 1100px) {
           .desktop-nav { display: none !important; }
           .mobile-burger { display: block !important; }
         }

@@ -8,6 +8,7 @@ export const content = {
       murekkep: "MÜREKKEP VE KÖZ",
       yazilar: "YAZILAR",
       medya: "MEDYA",
+      basinda: "BASINDA",
       author: "YAZAR",
       contact: "İLETİŞİM",
     },
@@ -154,6 +155,23 @@ export const content = {
       emailLabel: "E-POSTA",
       instaLabel: "INSTAGRAM",
     },
+    basinda: {
+      kicker: "BASINDA",
+      title: "BASINDA",
+      desc: "Yayınlar, yankılar ve kilometre taşları.",
+      pubKicker: "DİJİTAL VE BASILI YAYINLAR",
+      publications: [
+        { outlet: "Valsanat Dergisi", work: "Ruh-u Katliam", detail: "Sayı 51", linkLabel: "Dijital Arşive Git", url: "https://online.fliphtml5.com/jqzww/ezec/#p=1" },
+      ],
+      echoKicker: "TOPLUMSAL YANKILAR",
+      echo: "Sözler hem bir isyanın hem de bir teslimiyetin izlerini taşır. Sahte yaşanmışlıklara veda eden birinin gürültüsüz ama yenilmez sessizliği.",
+      echoSource: "1000Kitap",
+      milestonesKicker: "KİLOMETRE TAŞLARI",
+      milestones: [
+        { value: "#1", label: "Trendyol Şiir Kategorisi", detail: "Mürekkep ve Köz — İskenderiye Kitap", url: "" },
+        { value: "Tescil", label: "Goodreads Küresel Yazar Dizini", detail: "Mürekkep ve Köz", url: "https://www.goodreads.com/book/show/252900764-m-rekkep-ve-k-z" },
+      ],
+    },
     media: {
       kicker: "MEDYA",
       title: "ŞAİRİN\nHESABI",
@@ -191,6 +209,7 @@ export const content = {
       murekkep: "INK AND EMBER",
       yazilar: "WRITINGS",
       medya: "MEDIA",
+      basinda: "PRESS",
       author: "AUTHOR",
       contact: "CONTACT",
     },
@@ -336,6 +355,23 @@ export const content = {
       desc: "Not to make small talk, but if you have a wound that truly bleeds, write.",
       emailLabel: "EMAIL",
       instaLabel: "INSTAGRAM",
+    },
+    basinda: {
+      kicker: "PRESS",
+      title: "PRESS",
+      desc: "Publications, echoes, and milestones.",
+      pubKicker: "DIGITAL AND PRINT PUBLICATIONS",
+      publications: [
+        { outlet: "Valsanat Magazine", work: "Ruh-u Katliam", detail: "Issue 51", linkLabel: "Go to Digital Archive", url: "https://online.fliphtml5.com/jqzww/ezec/#p=1" },
+      ],
+      echoKicker: "PUBLIC ECHOES",
+      echo: "The words carry the traces of both a rebellion and a surrender. The noiseless yet unconquerable silence of one who has bid farewell to false histories.",
+      echoSource: "1000Kitap",
+      milestonesKicker: "MILESTONES",
+      milestones: [
+        { value: "#1", label: "Poetry Category on Trendyol", detail: "Ink and Ember — İskenderiye Kitap", url: "" },
+        { value: "Listed", label: "Goodreads Global Author Index", detail: "Ink and Ember", url: "https://www.goodreads.com/book/show/252900764-m-rekkep-ve-k-z" },
+      ],
     },
     media: {
       kicker: "MEDIA",
