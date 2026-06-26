@@ -21,7 +21,7 @@ export function AuthorContent({ lang }: { lang: Lang }) {
       <section className="author-hero" style={{ display: "grid", gridTemplateColumns: "1.1fr 1fr", minHeight: "calc(100vh - 60px)", borderBottom: "1px solid var(--border)" }}>
         <div className="author-hero-text" style={{ display: "flex", flexDirection: "column", justifyContent: "center", padding: "5rem 4rem" }}>
           <p style={{ fontFamily: "var(--font-mono)", fontSize: "0.6rem", letterSpacing: "0.25em", color: "var(--text-dim)", marginBottom: "2rem" }}>{t.kicker}</p>
-          <h1 style={{ fontFamily: "var(--font-grotesk)", fontSize: "clamp(3rem, 8vw, 6rem)", fontWeight: 700, lineHeight: 0.9, letterSpacing: "-0.02em", color: "var(--text)", marginBottom: "2.5rem", whiteSpace: "pre-line" }}>{t.title}</h1>
+          <h1 style={{ fontFamily: "var(--font-grotesk)", fontSize: "clamp(3rem, 8vw, 6rem)", fontWeight: 700, lineHeight: 0.9, letterSpacing: "-0.035em", color: "var(--text)", marginBottom: "2.5rem", whiteSpace: "pre-line" }}>{t.title}</h1>
           <div style={{ display: "flex", flexDirection: "column", gap: "1.5rem", maxWidth: "480px" }}>
             {t.bio.map((p, i) => (
               <Reveal key={i} delay={i * 0.12} as="p" style={{ fontFamily: "var(--font-mono)", fontSize: "0.9rem", lineHeight: 1.9, color: "var(--text-muted)" }}>{p}</Reveal>

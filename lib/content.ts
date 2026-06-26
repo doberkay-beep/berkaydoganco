@@ -4,6 +4,7 @@ export const content = {
   tr: {
     nav: {
       home: "ANASAYFA",
+      kitaplar: "KİTAPLAR",
       tasfiye: "TASFİYE",
       murekkep: "MÜREKKEP VE KÖZ",
       yazilar: "YAZILAR",
@@ -42,6 +43,13 @@ export const content = {
       badge: "YAKINDA — AĞUSTOS 2026",
       notifyBtn: "ÇIKINCA HABER VER →",
       notifyUrl: "https://doberkay.substack.com/subscribe",
+      launchKicker: "LANSMANA KALAN",
+      countdownLabels: ["GÜN", "SAAT", "DK", "SN"],
+      launchNote: "Çıktığı an haberin olsun — gürültüsüz, tek bir e-posta.",
+      excerptKicker: "KİTAPTAN BİR KESİT",
+      excerptText: "Her nefes alışımızda içimize çektiğimiz şeyin salt azot, oksijen ve temiz bir yaşam vaadi olduğunu düşünmek, çağımızın en trajik ve en masum yanılgısıdır.",
+      excerptLinkLabel: "Tam kesiti oku →",
+      excerptSlug: "karanlik-oksijen",
       title: "TASFİYE",
       heroDesc: "Tasfiye, görmezden gelmeyi seçtiğimiz her şeye verilmiş bir isimdir.",
       meta: [
@@ -226,6 +234,7 @@ export const content = {
   en: {
     nav: {
       home: "HOME",
+      kitaplar: "BOOKS",
       tasfiye: "TASFİYE",
       murekkep: "INK AND EMBER",
       yazilar: "WRITINGS",
@@ -264,6 +273,13 @@ export const content = {
       badge: "COMING SOON — AUGUST 2026",
       notifyBtn: "NOTIFY ME WHEN IT'S OUT →",
       notifyUrl: "https://doberkay.substack.com/subscribe",
+      launchKicker: "COUNTDOWN TO LAUNCH",
+      countdownLabels: ["DAYS", "HRS", "MIN", "SEC"],
+      launchNote: "Be the first to know when it's out — one quiet email, nothing else.",
+      excerptKicker: "AN EXCERPT FROM THE BOOK",
+      excerptText: "To think that what we draw into ourselves with every breath is merely nitrogen, oxygen, and the promise of a clean life is the most tragic and most innocent delusion of our age.",
+      excerptLinkLabel: "Read the full excerpt →",
+      excerptSlug: "dark-oxygen",
       title: "TASFİYE",
       heroDesc: "Tasfiye is a name given to everything we choose not to see.",
       meta: [

@@ -48,7 +48,7 @@ export function HomeContent({ lang }: { lang: Lang }) {
       <section className="hero-grid" style={{ minHeight: "100vh", display: "grid", gridTemplateColumns: "1fr 1fr", position: "relative", overflow: "hidden" }}>
         <div className="hero-left" style={{ display: "flex", flexDirection: "column", justifyContent: "center", padding: "6rem 3rem 6rem 4rem", borderRight: "1px solid var(--border)", position: "relative", zIndex: 2 }}>
           <p style={{ fontFamily: "var(--font-mono)", fontSize: "0.6rem", letterSpacing: "0.25em", color: "var(--text-dim)", marginBottom: "2rem" }}>{t.kicker}</p>
-          <h1 ref={titleRef} style={{ fontFamily: "var(--font-grotesk)", fontSize: "clamp(3.5rem, 9vw, 8rem)", fontWeight: 700, lineHeight: 0.9, letterSpacing: "-0.02em", color: "var(--text)", marginBottom: "3rem" }}>
+          <h1 ref={titleRef} style={{ fontFamily: "var(--font-grotesk)", fontSize: "clamp(3.5rem, 9vw, 8rem)", fontWeight: 700, lineHeight: 0.9, letterSpacing: "-0.035em", color: "var(--text)", marginBottom: "3rem" }}>
             TAS<br />FİYE<span style={{ color: "var(--border-bright)" }}>.</span>
           </h1>
           <p style={{ fontFamily: "var(--font-mono)", fontSize: "0.85rem", lineHeight: 1.8, color: "var(--text-muted)", maxWidth: "420px", marginBottom: "3rem" }}>

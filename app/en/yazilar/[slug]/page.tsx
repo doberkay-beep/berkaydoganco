@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { getAllYaziSlugs, getYazi } from "@/lib/yazilar";
+import { getAllYaziSlugs, getYazi, getAdjacentYazilar } from "@/lib/yazilar";
 import { YaziDetay } from "@/components/YaziDetay";
 
 export function generateStaticParams() {
@@ -18,5 +18,6 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
   const { slug } = await params;
   const yazi = await getYazi(slug);
   if (!yazi) notFound();
-  return <YaziDetay yazi={yazi} lang="en" />;
+  const { prev, next } = getAdjacentYazilar(slug, yazi.lang);
+  return <YaziDetay yazi={yazi} lang="en" prev={prev} next={next} />;
 }

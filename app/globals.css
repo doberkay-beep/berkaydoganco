@@ -8,8 +8,8 @@
   --bg-elevated: #141414;
   --text: #ffffff;
   --text-soft: #f0ece4;
-  --text-muted: #999999;
-  --text-dim: #666666;
+  --text-muted: #aaaaaa;
+  --text-dim: #6f6f6f;
   --border: #1a1a1a;
   --border-bright: #333333;
   --accent: #e0e0e0;
@@ -48,6 +48,35 @@
 }
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
+
+/* ============ TİPOGRAFİ KATMANLARI (kicker / başlık / gövde) ============ */
+/* Üç net katman: bileşenler benimsedikçe inline stil tekrarını da azaltır */
+.t-kicker {
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+}
+.t-display {
+  font-family: var(--font-grotesk);
+  font-weight: 700;
+  letter-spacing: -0.035em;
+  line-height: 0.92;
+  color: var(--text);
+}
+.t-heading {
+  font-family: var(--font-grotesk);
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  line-height: 1.05;
+  color: var(--text);
+}
+.t-body {
+  font-family: var(--font-mono);
+  line-height: 1.85;
+  color: var(--text-muted);
+}
 
 html {
   background: var(--bg);
