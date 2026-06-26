@@ -31,6 +31,7 @@ export function TasfiyeContent({ lang }: { lang: Lang }) {
         <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to bottom, rgba(0,0,0,0.6), rgba(0,0,0,0.4) 50%, rgba(0,0,0,0.85))", zIndex: 1 }} />
         <Reveal style={{ position: "relative", zIndex: 2, textAlign: "center", padding: "0 1.5rem" }}>
           <p style={{ fontFamily: "var(--font-mono)", fontSize: "0.6rem", letterSpacing: "0.3em", color: "rgba(255,255,255,0.7)", marginBottom: "1.5rem" }}>{t.kicker}</p>
+          <span style={{ display: "inline-block", fontFamily: "var(--font-mono)", fontSize: "0.55rem", letterSpacing: "0.25em", color: "#fff", padding: "0.45rem 1rem", border: "1px solid rgba(255,255,255,0.5)", borderRadius: "999px", marginBottom: "1.5rem", background: "rgba(255,255,255,0.06)", backdropFilter: "blur(4px)" }}>{t.badge}</span>
           <h1 className="banner-title" style={{ fontFamily: "var(--font-grotesk)", fontSize: "clamp(4rem, 14vw, 11rem)", fontWeight: 700, lineHeight: 0.9, letterSpacing: "-0.02em", color: "#fff", textShadow: "0 4px 40px rgba(0,0,0,0.5)" }}>TASFİYE</h1>
           <p style={{ fontFamily: "var(--font-mono)", fontSize: "0.85rem", lineHeight: 1.7, color: "rgba(255,255,255,0.85)", maxWidth: "520px", margin: "1.8rem auto 0" }}>{t.heroDesc}</p>
         </Reveal>
@@ -79,9 +80,14 @@ export function TasfiyeContent({ lang }: { lang: Lang }) {
           <p style={{ fontFamily: "var(--font-mono)", fontSize: "0.55rem", letterSpacing: "0.25em", color: "var(--text-dim)", marginBottom: "1rem" }}>{t.ctaKicker}</p>
           <p style={{ fontFamily: "var(--font-grotesk)", fontSize: "clamp(1.2rem, 3vw, 2rem)", fontWeight: 700, color: "var(--text)" }}>{t.ctaTitle}</p>
         </div>
-        <Link href={`${base}/iletisim`} className="btn-primary" style={{ fontFamily: "var(--font-mono)", fontSize: "0.65rem", letterSpacing: "0.2em", padding: "0.75rem 1.5rem", border: "1px solid var(--text)", color: "var(--text)", display: "inline-block" }}>
-          {lang === "en" ? "GET IN TOUCH →" : "İLETİŞİME GEÇ →"}
-        </Link>
+        <div style={{ display: "flex", gap: "1rem", flexWrap: "wrap" }}>
+          <a href={t.notifyUrl} target="_blank" rel="noopener noreferrer" className="btn-primary" style={{ fontFamily: "var(--font-mono)", fontSize: "0.65rem", letterSpacing: "0.2em", padding: "0.75rem 1.5rem", border: "1px solid var(--text)", color: "var(--bg)", background: "var(--text)", display: "inline-block" }}>
+            {t.notifyBtn}
+          </a>
+          <Link href={`${base}/iletisim`} className="btn-primary" style={{ fontFamily: "var(--font-mono)", fontSize: "0.65rem", letterSpacing: "0.2em", padding: "0.75rem 1.5rem", border: "1px solid var(--text)", color: "var(--text)", display: "inline-block" }}>
+            {lang === "en" ? "GET IN TOUCH →" : "İLETİŞİME GEÇ →"}
+          </Link>
+        </div>
       </section>
     </div>
   );

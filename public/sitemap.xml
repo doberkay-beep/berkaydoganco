@@ -30,6 +30,30 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://berkaydogan.co/yazilar/bir-yazarin-hesabi</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://berkaydogan.co/yazilar/karanlik-oksijen</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://berkaydogan.co/yazilar/bir-tanri-degilim</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://berkaydogan.co/en/yazilar/a-writers-reckoning</loc>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://berkaydogan.co/en/yazilar/dark-oxygen</loc>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://berkaydogan.co/en/yazilar/i-am-not-a-god</loc>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://berkaydogan.co/medya</loc>
     <xhtml:link rel="alternate" hreflang="tr" href="https://berkaydogan.co/medya"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://berkaydogan.co/en/medya"/>
