@@ -1,41 +1,43 @@
-@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;700&family=Courier+Prime:ital,wght@0,400;0,700;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 @import "tailwindcss";
 
-/* ============ KARANLIK TEMA (varsayılan) ============ */
+/* ============ KARANLIK TEMA (varsayılan) — BRÜTALİST ============ */
 :root, [data-theme="dark"] {
-  --bg: #000000;
-  --bg-panel: #0d0d0d;
-  --bg-elevated: #141414;
-  --text: #ffffff;
-  --text-soft: #f0ece4;
-  --text-muted: #aaaaaa;
-  --text-dim: #6f6f6f;
-  --border: #1a1a1a;
-  --border-bright: #333333;
-  --accent: #e0e0e0;
+  --bg: #0a0a0a;
+  --bg-panel: #141414;
+  --bg-elevated: #1a1a1a;
+  --text: #f0ece4;
+  --text-soft: #d8d2c6;
+  --text-muted: #999999;
+  --text-dim: #6a6a6a;
+  --border: #2a2a2a;
+  --border-bright: #444444;
+  --accent: #c23a3a;
+  --accent-ink: #f0ece4;
   /* Liquid glass */
-  --glass-bg: rgba(20, 20, 20, 0.55);
-  --glass-border: rgba(255, 255, 255, 0.08);
-  --glass-highlight: rgba(255, 255, 255, 0.04);
+  --glass-bg: rgba(14, 14, 14, 0.72);
+  --glass-border: rgba(240, 236, 228, 0.08);
+  --glass-highlight: rgba(240, 236, 228, 0.04);
   --photo-filter: grayscale(100%) contrast(1.15) brightness(0.7);
   --photo-filter-hover: grayscale(100%) contrast(1.2) brightness(0.95);
   --noise-opacity: 0.4;
 }
 
-/* ============ AYDINLIK TEMA ============ */
+/* ============ AYDINLIK TEMA — BRÜTALİST KAĞIT ============ */
 [data-theme="light"] {
   --bg: #f0ece4;
-  --bg-panel: #e6e1d6;
-  --bg-elevated: #ffffff;
+  --bg-panel: #e4ddcd;
+  --bg-elevated: #faf7ef;
   --text: #0a0a0a;
   --text-soft: #1a1a1a;
-  --text-muted: #555555;
-  --text-dim: #888888;
-  --border: #d4cfc2;
-  --border-bright: #b8b2a3;
-  --accent: #2a2a2a;
-  --glass-bg: rgba(255, 255, 255, 0.55);
-  --glass-border: rgba(0, 0, 0, 0.08);
+  --text-muted: #5a544a;
+  --text-dim: #8a8276;
+  --border: #cdc5b3;
+  --border-bright: #a89f8c;
+  --accent: #c23a3a;
+  --accent-ink: #f0ece4;
+  --glass-bg: rgba(240, 236, 228, 0.72);
+  --glass-border: rgba(10, 10, 10, 0.1);
   --glass-highlight: rgba(255, 255, 255, 0.5);
   --photo-filter: grayscale(100%) contrast(1.05) brightness(0.95);
   --photo-filter-hover: grayscale(100%) contrast(1.1) brightness(1.05);
@@ -43,39 +45,53 @@
 }
 
 :root {
-  --font-grotesk: 'Space Grotesk', system-ui, sans-serif;
-  --font-mono: 'Courier Prime', 'Courier New', monospace;
+  --font-grotesk: 'Anton', 'Arial Narrow', system-ui, sans-serif;
+  --font-mono: 'Space Mono', 'Courier New', monospace;
 }
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
 
-/* ============ TİPOGRAFİ KATMANLARI (kicker / başlık / gövde) ============ */
-/* Üç net katman: bileşenler benimsedikçe inline stil tekrarını da azaltır */
+/* ============ TİPOGRAFİ KATMANLARI (kicker / başlık / gövde) — BRÜTALİST ============ */
 .t-kicker {
   font-family: var(--font-mono);
   font-size: 0.6rem;
   letter-spacing: 0.28em;
   text-transform: uppercase;
-  color: var(--text-dim);
+  color: var(--accent);
 }
 .t-display {
   font-family: var(--font-grotesk);
-  font-weight: 700;
-  letter-spacing: -0.035em;
-  line-height: 0.92;
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  line-height: 0.85;
+  text-transform: uppercase;
   color: var(--text);
 }
 .t-heading {
   font-family: var(--font-grotesk);
-  font-weight: 700;
-  letter-spacing: -0.025em;
-  line-height: 1.05;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+  line-height: 0.95;
+  text-transform: uppercase;
   color: var(--text);
 }
 .t-body {
   font-family: var(--font-mono);
-  line-height: 1.85;
+  line-height: 1.7;
   color: var(--text-muted);
+}
+
+/* Hero başlığında kırmızı "strike" çizgisi (brütalist taslak) */
+.brut-strike { position: relative; display: inline-block; }
+.brut-strike::after {
+  content: "";
+  position: absolute;
+  left: -2%;
+  right: -2%;
+  top: 48%;
+  height: 0.09em;
+  background: var(--accent);
+  pointer-events: none;
 }
 
 html {
@@ -84,6 +100,8 @@ html {
   font-family: var(--font-mono);
   scroll-behavior: smooth;
   -webkit-font-smoothing: antialiased;
+  /* Anton tek ağırlıklı; sahte bold/italik render'ı kapat */
+  font-synthesis: none;
   transition: background 0.4s ease, color 0.4s ease;
 }
 

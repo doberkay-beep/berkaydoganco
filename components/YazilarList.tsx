@@ -40,8 +40,8 @@ export function YazilarList({ yazilar, lang }: { yazilar: YaziMeta[]; lang: Lang
       `}</style>
 
       <section className="yazilar-hero" style={{ minHeight: "45vh", display: "flex", flexDirection: "column", justifyContent: "flex-end", padding: "4rem", borderBottom: "1px solid var(--border)" }}>
-        <p style={{ fontFamily: "var(--font-mono)", fontSize: "0.6rem", letterSpacing: "0.25em", color: "var(--text-dim)", marginBottom: "2rem" }}>{kicker}</p>
-        <h1 style={{ fontFamily: "var(--font-grotesk)", fontSize: "clamp(3rem, 9vw, 7rem)", fontWeight: 700, lineHeight: 0.9, letterSpacing: "-0.035em", color: "var(--text)", marginBottom: "1.5rem" }}>{kicker}</h1>
+        <p style={{ fontFamily: "var(--font-mono)", fontSize: "0.6rem", letterSpacing: "0.25em", color: "var(--accent)", marginBottom: "2rem" }}>{kicker}</p>
+        <h1 style={{ fontFamily: "var(--font-grotesk)", fontSize: "clamp(3rem, 9vw, 7rem)", fontWeight: 700, lineHeight: 0.86, letterSpacing: "-0.01em", textTransform: "uppercase", color: "var(--text)", marginBottom: "1.5rem" }}>{kicker}</h1>
         <p style={{ fontFamily: "var(--font-mono)", fontSize: "0.85rem", color: "var(--text-muted)", maxWidth: "440px", lineHeight: 1.8 }}>{intro}</p>
       </section>
 

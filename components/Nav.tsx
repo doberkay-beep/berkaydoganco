@@ -200,6 +200,10 @@ export function Nav() {
       )}
 
       <style>{`
+        .desktop-nav a:hover { color: var(--accent) !important; }
+        .nav-dropdown:hover .nav-dropdown-trigger,
+        .nav-dropdown:focus-within .nav-dropdown-trigger { color: var(--accent) !important; }
+        .nav-dropdown-menu a:hover { color: var(--accent) !important; }
         .nav-dropdown { outline: none; }
         .nav-dropdown-menu {
           opacity: 0;
@@ -218,9 +222,6 @@ export function Nav() {
           visibility: visible;
           transform: translateY(0);
         }
-        .nav-dropdown:hover .nav-dropdown-trigger,
-        .nav-dropdown:focus-within .nav-dropdown-trigger { color: var(--text); }
-        .nav-dropdown-menu a:hover { color: var(--text) !important; }
         @media (max-width: 1100px) {
           .desktop-nav { display: none !important; }
           .mobile-burger { display: block !important; }

@@ -50,6 +50,8 @@ export function TasfiyeContent({ lang }: { lang: Lang }) {
       <style>{`
         .btn-primary { transition: all 0.2s; }
         .btn-primary:hover { background: var(--text) !important; color: var(--bg) !important; }
+        .btn-accent { transition: all 0.2s; }
+        .btn-accent:hover { background: transparent !important; color: var(--accent) !important; }
         .noir-img { transition: filter 0.4s, transform 0.4s; }
         .noir-img:hover { filter: grayscale(100%) contrast(1.25) brightness(0.95) !important; transform: scale(1.03); }
         .excerpt-link { transition: color 0.2s, border-color 0.2s; }
@@ -73,7 +75,7 @@ export function TasfiyeContent({ lang }: { lang: Lang }) {
         <Reveal style={{ position: "relative", zIndex: 2, textAlign: "center", padding: "0 1.5rem" }}>
           <p style={{ fontFamily: "var(--font-mono)", fontSize: "0.6rem", letterSpacing: "0.3em", color: "rgba(255,255,255,0.7)", marginBottom: "1.5rem" }}>{t.kicker}</p>
           <span style={{ display: "inline-block", fontFamily: "var(--font-mono)", fontSize: "0.55rem", letterSpacing: "0.25em", color: "#fff", padding: "0.45rem 1rem", border: "1px solid rgba(255,255,255,0.5)", borderRadius: "999px", marginBottom: "1.5rem", background: "rgba(255,255,255,0.06)", backdropFilter: "blur(4px)" }}>{t.badge}</span>
-          <h1 className="banner-title" style={{ fontFamily: "var(--font-grotesk)", fontSize: "clamp(4rem, 14vw, 11rem)", fontWeight: 700, lineHeight: 0.9, letterSpacing: "-0.035em", color: "#fff", textShadow: "0 4px 40px rgba(0,0,0,0.5)" }}>TASFİYE</h1>
+          <h1 className="banner-title" style={{ fontFamily: "var(--font-grotesk)", fontSize: "clamp(4rem, 14vw, 11rem)", fontWeight: 700, lineHeight: 0.86, letterSpacing: "-0.01em", textTransform: "uppercase", color: "#fff", textShadow: "0 4px 40px rgba(0,0,0,0.5)" }}>TASFİYE</h1>
           <p style={{ fontFamily: "var(--font-mono)", fontSize: "0.85rem", lineHeight: 1.7, color: "rgba(255,255,255,0.85)", maxWidth: "520px", margin: "1.8rem auto 0" }}>{t.heroDesc}</p>
         </Reveal>
       </section>
@@ -98,7 +100,7 @@ export function TasfiyeContent({ lang }: { lang: Lang }) {
             <Countdown labels={t.countdownLabels} />
             <div style={{ maxWidth: "340px" }}>
               <p style={{ fontFamily: "var(--font-mono)", fontSize: "0.8rem", lineHeight: 1.8, color: "var(--text-muted)", marginBottom: "1.5rem" }}>{t.launchNote}</p>
-              <a href={t.notifyUrl} target="_blank" rel="noopener noreferrer" className="btn-primary" style={{ fontFamily: "var(--font-mono)", fontSize: "0.65rem", letterSpacing: "0.2em", padding: "0.85rem 1.6rem", border: "1px solid var(--text)", color: "var(--bg)", background: "var(--text)", display: "inline-block" }}>
+              <a href={t.notifyUrl} target="_blank" rel="noopener noreferrer" className="btn-accent" style={{ fontFamily: "var(--font-mono)", fontSize: "0.65rem", letterSpacing: "0.2em", padding: "0.85rem 1.6rem", border: "1px solid var(--accent)", color: "var(--accent-ink)", background: "var(--accent)", display: "inline-block" }}>
                 {t.notifyBtn}
               </a>
             </div>
@@ -151,7 +153,7 @@ export function TasfiyeContent({ lang }: { lang: Lang }) {
           <p style={{ fontFamily: "var(--font-grotesk)", fontSize: "clamp(1.2rem, 3vw, 2rem)", fontWeight: 700, color: "var(--text)" }}>{t.ctaTitle}</p>
         </div>
         <div style={{ display: "flex", gap: "1rem", flexWrap: "wrap" }}>
-          <a href={t.notifyUrl} target="_blank" rel="noopener noreferrer" className="btn-primary" style={{ fontFamily: "var(--font-mono)", fontSize: "0.65rem", letterSpacing: "0.2em", padding: "0.75rem 1.5rem", border: "1px solid var(--text)", color: "var(--bg)", background: "var(--text)", display: "inline-block" }}>
+          <a href={t.notifyUrl} target="_blank" rel="noopener noreferrer" className="btn-accent" style={{ fontFamily: "var(--font-mono)", fontSize: "0.65rem", letterSpacing: "0.2em", padding: "0.75rem 1.5rem", border: "1px solid var(--accent)", color: "var(--accent-ink)", background: "var(--accent)", display: "inline-block" }}>
             {t.notifyBtn}
           </a>
           <Link href={`${base}/iletisim`} className="btn-primary" style={{ fontFamily: "var(--font-mono)", fontSize: "0.65rem", letterSpacing: "0.2em", padding: "0.75rem 1.5rem", border: "1px solid var(--text)", color: "var(--text)", display: "inline-block" }}>

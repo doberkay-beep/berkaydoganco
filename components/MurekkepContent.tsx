@@ -27,7 +27,7 @@ export function MurekkepContent({ lang }: { lang: Lang }) {
         <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to bottom, rgba(0,0,0,0.55), rgba(0,0,0,0.4) 50%, rgba(0,0,0,0.85))", zIndex: 1 }} />
         <div style={{ position: "relative", zIndex: 2, textAlign: "center", padding: "0 1.5rem" }}>
           <p style={{ fontFamily: "var(--font-mono)", fontSize: "0.6rem", letterSpacing: "0.3em", color: "rgba(255,255,255,0.7)", marginBottom: "1.5rem" }}>{t.kicker}</p>
-          <h1 className="banner-title-mk" style={{ fontFamily: "var(--font-grotesk)", fontSize: "clamp(2.5rem, 9vw, 7rem)", fontWeight: 700, lineHeight: 0.95, letterSpacing: "-0.035em", color: "#fff", textShadow: "0 4px 40px rgba(0,0,0,0.5)" }}>{t.title}</h1>
+          <h1 className="banner-title-mk" style={{ fontFamily: "var(--font-grotesk)", fontSize: "clamp(2.5rem, 9vw, 7rem)", fontWeight: 700, lineHeight: 0.9, letterSpacing: "-0.01em", textTransform: "uppercase", color: "#fff", textShadow: "0 4px 40px rgba(0,0,0,0.5)" }}>{t.title}</h1>
           <p style={{ fontFamily: "var(--font-mono)", fontSize: "0.9rem", fontStyle: "italic", color: "rgba(255,255,255,0.8)", marginTop: "1rem" }}>{t.subtitle}</p>
           <p style={{ fontFamily: "var(--font-mono)", fontSize: "0.82rem", lineHeight: 1.7, color: "rgba(255,255,255,0.8)", maxWidth: "560px", margin: "1.5rem auto 0" }}>{t.heroDesc}</p>
         </div>

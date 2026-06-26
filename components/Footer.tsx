@@ -9,7 +9,7 @@ export function Footer() {
   const t = content[lang].footer;
 
   return (
-    <footer style={{ borderTop: "1px solid var(--border)", padding: "3rem 2rem", display: "flex", justifyContent: "space-between", alignItems: "flex-end", flexWrap: "wrap", gap: "1.5rem" }}>
+    <footer style={{ borderTop: "1px solid var(--border)", padding: "2.5rem 4rem", display: "flex", justifyContent: "space-between", alignItems: "flex-end", flexWrap: "wrap", gap: "1.5rem" }}>
       <div>
         <p style={{ fontFamily: "var(--font-grotesk)", fontSize: "1.2rem", fontWeight: 700, letterSpacing: "0.08em", color: "var(--text)", marginBottom: "0.5rem" }}>
           BERKAY DOĞAN
@@ -34,7 +34,10 @@ export function Footer() {
         © 2026 Berkay Doğan — {t.sign}
       </p>
 
-      <style>{`.link-muted:hover { color: var(--text) !important; }`}</style>
+      <style>{`
+        .link-muted:hover { color: var(--accent) !important; }
+        @media (max-width: 768px) { footer { padding: 2.5rem 1.5rem !important; } }
+      `}</style>
     </footer>
   );
 }
