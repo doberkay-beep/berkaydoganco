@@ -25,6 +25,7 @@ export function Nav() {
     { href: `${base}/murekkep-ve-koz`, label: t.murekkep, match: `${base}/murekkep-ve-koz` },
     { href: `${base}/yazilar`, label: t.yazilar, match: `${base}/yazilar` },
     { href: `${base}/medya`, label: t.medya, match: `${base}/medya` },
+    { href: `${base}/anlar`, label: t.anlar, match: `${base}/anlar` },
     { href: `${base}/basinda`, label: t.basinda, match: `${base}/basinda` },
     { href: `${base}/yazar`, label: t.author, match: `${base}/yazar` },
     { href: `${base}/iletisim`, label: t.contact, match: `${base}/iletisim` },
