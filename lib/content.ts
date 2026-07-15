@@ -1,5 +1,9 @@
 export type Lang = "tr" | "en";
 
+// Mürekkep ve Köz — Trendyol satın alma sayfası (satışta olan kitap)
+export const TRENDYOL_URL =
+  "https://www.trendyol.com/iskenderiye-kitap/murekkep-ve-koz-berkay-dogan-p-1072536167";
+
 export const content = {
   tr: {
     nav: {

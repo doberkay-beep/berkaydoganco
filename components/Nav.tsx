@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import { useState } from "react";
-import { content, type Lang } from "@/lib/content";
+import { content, TRENDYOL_URL, type Lang } from "@/lib/content";
 
 export function Nav() {
   const pathname = usePathname();
@@ -157,9 +157,9 @@ export function Nav() {
         <button onClick={switchLang} style={{ background: "none", border: "none", cursor: "pointer", fontFamily: "var(--font-mono)", fontSize: "0.62rem", letterSpacing: "0.15em", color: "var(--text-muted)", transition: "color 0.2s" }}>
           {isEn ? "TR" : "EN"}
         </button>
-        <Link href={`${base}/murekkep-ve-koz`} className="btn btn-fill" style={{ padding: "0.6rem 1.35rem", fontSize: "0.6rem" }}>
+        <a href={TRENDYOL_URL} target="_blank" rel="noopener noreferrer" className="btn btn-fill" style={{ padding: "0.6rem 1.35rem", fontSize: "0.6rem" }}>
           {t.buy}
-        </Link>
+        </a>
       </div>
 
       {/* Mobil */}
@@ -189,44 +189,15 @@ export function Nav() {
             );
           })}
           <div style={{ display: "flex", flexDirection: "column", gap: "1.5rem", alignItems: "center", marginTop: "1rem" }}>
-            <Link href={`${base}/murekkep-ve-koz`} onClick={() => setOpen(false)} className="btn btn-fill">
+            <a href={TRENDYOL_URL} target="_blank" rel="noopener noreferrer" onClick={() => setOpen(false)} className="btn btn-fill">
               {t.buy}
-            </Link>
+            </a>
             <button onClick={() => { switchLang(); setOpen(false); }} style={{ background: "none", border: "1px solid var(--border-bright)", padding: "0.5rem 1rem", cursor: "pointer", fontFamily: "var(--font-mono)", fontSize: "0.7rem", letterSpacing: "0.15em", color: "var(--text-muted)" }}>
               {isEn ? "TÜRKÇE" : "ENGLISH"}
             </button>
           </div>
         </div>
       )}
-
-      <style>{`
-        .desktop-nav a:hover { color: var(--accent) !important; }
-        .nav-dropdown:hover .nav-dropdown-trigger,
-        .nav-dropdown:focus-within .nav-dropdown-trigger { color: var(--accent) !important; }
-        .nav-dropdown-menu a:hover { color: var(--accent) !important; }
-        .nav-dropdown { outline: none; }
-        .nav-dropdown-menu {
-          opacity: 0;
-          visibility: hidden;
-          transform: translateY(-6px);
-          transition: opacity 0.18s ease, transform 0.18s ease, visibility 0.18s;
-        }
-        .nav-dropdown-menu::before {
-          content: "";
-          position: absolute;
-          top: -16px; left: 0; right: 0; height: 16px;
-        }
-        .nav-dropdown:hover .nav-dropdown-menu,
-        .nav-dropdown:focus-within .nav-dropdown-menu {
-          opacity: 1;
-          visibility: visible;
-          transform: translateY(0);
-        }
-        @media (max-width: 1100px) {
-          .desktop-nav, .desktop-actions { display: none !important; }
-          .mobile-burger { display: block !important; }
-        }
-      `}</style>
     </nav>
   );
 }

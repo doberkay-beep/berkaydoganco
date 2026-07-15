@@ -33,11 +33,6 @@ export function Footer() {
       <p style={{ fontFamily: "var(--font-mono)", fontSize: "0.6rem", color: "var(--text-dim)", letterSpacing: "0.08em", width: "100%", borderTop: "1px solid var(--border)", paddingTop: "1.5rem", marginTop: "0.5rem" }}>
         © 2026 Berkay Doğan — {t.sign}
       </p>
-
-      <style>{`
-        .link-muted:hover { color: var(--accent) !important; }
-        @media (max-width: 768px) { footer { padding: 2.5rem 1.5rem !important; } }
-      `}</style>
     </footer>
   );
 }
