@@ -3,13 +3,11 @@
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import { useState } from "react";
-import { useTheme } from "./ThemeProvider";
 import { content, type Lang } from "@/lib/content";
 
 export function Nav() {
   const pathname = usePathname();
   const router = useRouter();
-  const { theme, toggle } = useTheme();
   const [open, setOpen] = useState(false);
 
   // Dil tespiti: /en ile başlıyorsa EN
@@ -147,17 +145,10 @@ export function Nav() {
           );
         })}
 
-        {/* Dil + Tema kontrolleri */}
+        {/* Dil kontrolü */}
         <div style={{ display: "flex", alignItems: "center", gap: "1rem", marginLeft: "0.5rem", paddingLeft: "1.5rem", borderLeft: "1px solid var(--border-bright)" }}>
           <button onClick={switchLang} style={{ background: "none", border: "none", cursor: "pointer", fontFamily: "var(--font-mono)", fontSize: "0.62rem", letterSpacing: "0.15em", color: "var(--text-muted)", transition: "color 0.2s" }}>
             {isEn ? "TR" : "EN"}
-          </button>
-          <button onClick={toggle} aria-label="Tema" style={{ background: "none", border: "none", cursor: "pointer", color: "var(--text-muted)", display: "flex", alignItems: "center", transition: "color 0.2s" }}>
-            {theme === "dark" ? (
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.2" y1="4.2" x2="5.6" y2="5.6"/><line x1="18.4" y1="18.4" x2="19.8" y2="19.8"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.2" y1="19.8" x2="5.6" y2="18.4"/><line x1="18.4" y1="5.6" x2="19.8" y2="4.2"/></svg>
-            ) : (
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
-            )}
           </button>
         </div>
       </div>
@@ -191,9 +182,6 @@ export function Nav() {
           <div style={{ display: "flex", gap: "2rem", marginTop: "1rem" }}>
             <button onClick={() => { switchLang(); setOpen(false); }} style={{ background: "none", border: "1px solid var(--border-bright)", padding: "0.5rem 1rem", cursor: "pointer", fontFamily: "var(--font-mono)", fontSize: "0.7rem", letterSpacing: "0.15em", color: "var(--text-muted)" }}>
               {isEn ? "TÜRKÇE" : "ENGLISH"}
-            </button>
-            <button onClick={toggle} style={{ background: "none", border: "1px solid var(--border-bright)", padding: "0.5rem 1rem", cursor: "pointer", fontFamily: "var(--font-mono)", fontSize: "0.7rem", letterSpacing: "0.15em", color: "var(--text-muted)" }}>
-              {theme === "dark" ? "AYDINLIK" : "KARANLIK"}
             </button>
           </div>
         </div>

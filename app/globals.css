@@ -1,8 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Anton&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
-@import "tailwindcss";
 
-/* ============ KARANLIK TEMA (varsayılan) — BRÜTALİST ============ */
-:root, [data-theme="dark"] {
+/* ============ KARANLIK TEMA (tek tema) — BRÜTALİST ============ */
+:root {
   --bg: #0a0a0a;
   --bg-panel: #141414;
   --bg-elevated: #1a1a1a;
@@ -21,30 +20,6 @@
   --photo-filter: grayscale(100%) contrast(1.15) brightness(0.7);
   --photo-filter-hover: grayscale(100%) contrast(1.2) brightness(0.95);
   --noise-opacity: 0.4;
-}
-
-/* ============ AYDINLIK TEMA — BRÜTALİST KAĞIT ============ */
-[data-theme="light"] {
-  --bg: #f0ece4;
-  --bg-panel: #e4ddcd;
-  --bg-elevated: #faf7ef;
-  --text: #0a0a0a;
-  --text-soft: #1a1a1a;
-  --text-muted: #5a544a;
-  --text-dim: #8a8276;
-  --border: #cdc5b3;
-  --border-bright: #a89f8c;
-  --accent: #c23a3a;
-  --accent-ink: #f0ece4;
-  --glass-bg: rgba(240, 236, 228, 0.72);
-  --glass-border: rgba(10, 10, 10, 0.1);
-  --glass-highlight: rgba(255, 255, 255, 0.5);
-  --photo-filter: grayscale(100%) contrast(1.05) brightness(0.95);
-  --photo-filter-hover: grayscale(100%) contrast(1.1) brightness(1.05);
-  --noise-opacity: 0.15;
-}
-
-:root {
   --font-grotesk: 'Anton', 'Arial Narrow', system-ui, sans-serif;
   --font-mono: 'Space Mono', 'Courier New', monospace;
 }

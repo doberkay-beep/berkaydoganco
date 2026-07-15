@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { Nav } from "@/components/Nav";
 import { Footer } from "@/components/Footer";
-import { ThemeProvider } from "@/components/ThemeProvider";
 import { PageTransition } from "@/components/PageTransition";
 import { Analytics } from "@vercel/analytics/next";
 
@@ -48,13 +47,11 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="tr" suppressHydrationWarning>
-      <body suppressHydrationWarning>
-        <ThemeProvider>
-          <Nav />
-          <main><PageTransition>{children}</PageTransition></main>
-          <Footer />
-        </ThemeProvider>
+    <html lang="tr">
+      <body>
+        <Nav />
+        <main><PageTransition>{children}</PageTransition></main>
+        <Footer />
         <Analytics />
       </body>
     </html>
