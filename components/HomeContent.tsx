@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { content, type Lang } from "@/lib/content";
 import { Reveal } from "./Motion";
+import { Countdown } from "./Countdown";
 import { Newsletter } from "./Newsletter";
 
 export function HomeContent({ lang }: { lang: Lang }) {
@@ -24,9 +25,61 @@ export function HomeContent({ lang }: { lang: Lang }) {
         .yb-d { font-family: var(--font-mono); font-size: 0.6rem; letter-spacing: 0.12em; color: var(--text-dim); white-space: nowrap; }
         .link-subtle { transition: color 0.2s, border-color 0.2s; }
         .link-subtle:hover { color: var(--accent) !important; border-color: var(--accent) !important; }
+
+        /* HERO — bordo ambient ışık, 9s nefes */
+        .hero-ambient {
+          position: absolute; top: 42%; left: 32%;
+          width: 60vw; height: 60vw; max-width: 900px; max-height: 900px;
+          transform: translate(-50%, -50%);
+          background: radial-gradient(circle, rgba(139,26,26,0.22), transparent 62%);
+          pointer-events: none; z-index: 0;
+          animation: heroBreathe 9s ease-in-out infinite;
+        }
+        @keyframes heroBreathe {
+          0%, 100% { opacity: 0.5; transform: translate(-50%, -50%) scale(1); }
+          50% { opacity: 0.9; transform: translate(-50%, -50%) scale(1.12); }
+        }
+
+        /* HERO — gizem kutusu */
+        .hero-mystery {
+          position: relative; width: 270px; height: 420px;
+          border: 1px solid var(--bordo); border-radius: 2px;
+          background:
+            repeating-linear-gradient(45deg, rgba(139,26,26,0.10) 0, rgba(139,26,26,0.10) 1px, transparent 1px, transparent 11px),
+            var(--bg2);
+          display: flex; flex-direction: column; align-items: center; justify-content: center;
+          overflow: hidden;
+          animation: heroFloat 7s ease-in-out infinite;
+        }
+        .hero-mystery::after {
+          content: ""; position: absolute; top: 0; left: -60%;
+          width: 45%; height: 100%;
+          background: linear-gradient(105deg, transparent, rgba(240,236,228,0.10), transparent);
+          transform: skewX(-18deg);
+          animation: heroShine 4.5s ease-in-out infinite;
+        }
+        @keyframes heroFloat { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-14px); } }
+        @keyframes heroShine { 0% { left: -60%; } 60%, 100% { left: 135%; } }
+        .hero-mystery-q {
+          font-family: var(--font-grotesk); font-weight: 300;
+          font-size: 9rem; line-height: 1; color: var(--bordo);
+          animation: heroPulse 3s ease-in-out infinite;
+        }
+        @keyframes heroPulse { 0%, 100% { opacity: 0.5; transform: scale(1); } 50% { opacity: 1; transform: scale(1.08); } }
+        .hero-mystery-badge {
+          position: absolute; top: 0.9rem; right: 0.9rem;
+          font-family: var(--font-mono); font-size: 0.42rem; letter-spacing: 0.22em;
+          text-transform: uppercase; color: var(--gray);
+          border: 1px solid var(--dim); border-radius: 2px; padding: 0.3rem 0.5rem;
+        }
+        .hero-mystery-meta {
+          position: absolute; bottom: 1.7rem;
+          display: flex; flex-direction: column; align-items: center; text-align: center;
+        }
+
         @media (max-width: 768px) {
-          .home-hero { padding: 4rem 1.5rem 3.5rem !important; }
-          .home-hero h1 { font-size: clamp(4rem, 26vw, 9rem) !important; }
+          .tasfiye-hero-grid { grid-template-columns: 1fr !important; padding: 4rem 1.5rem 3.5rem !important; gap: 2.5rem !important; }
+          .hero-mystery { width: 240px; height: 380px; }
           .home-grid { grid-template-columns: 1fr !important; }
           .home-grid > div { border-right: none !important; }
           .home-grid > div:first-child { border-bottom: 1px solid var(--border); }
@@ -38,22 +91,35 @@ export function HomeContent({ lang }: { lang: Lang }) {
         }
       `}</style>
 
-      {/* HERO — dev tipografi + kırmızı strike */}
-      <section className="home-hero" style={{ padding: "5rem 4rem 4rem", borderBottom: "1px solid var(--border)" }}>
-        <Reveal>
-          <p style={{ fontFamily: "var(--font-mono)", fontSize: "0.7rem", letterSpacing: "0.3em", color: "var(--accent)", marginBottom: "2rem" }}>{t.heroKickerBrut}</p>
-          <h1 style={{ fontFamily: "var(--font-grotesk)", fontSize: "clamp(5rem, 18vw, 19rem)", fontWeight: 700, lineHeight: 0.82, letterSpacing: "-0.03em", textTransform: "uppercase", marginBottom: "2.5rem" }}>
-            <span className="brut-strike">TASFİYE</span>
-          </h1>
-          <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-end", flexWrap: "wrap", gap: "1.5rem", marginBottom: "2.5rem" }}>
-            <p style={{ fontFamily: "var(--font-mono)", fontSize: "1rem", lineHeight: 1.6, color: "var(--text-soft)", maxWidth: "400px" }}>{t.heroQuoteBrut}</p>
-            <span style={{ fontFamily: "var(--font-grotesk)", fontSize: "clamp(1.8rem, 4.5vw, 3rem)", letterSpacing: "-0.02em", color: "var(--accent)", textTransform: "uppercase" }}>{t.heroPanelBottom}</span>
+      {/* HERO — TASFİYE: sol metin + geri sayım / sağ gizem kutusu */}
+      <section className="tasfiye-hero" style={{ position: "relative", overflow: "hidden", borderBottom: "1px solid var(--border)" }}>
+        {/* Bordo radial ambient ışık — 9s nefes alır */}
+        <div className="hero-ambient" aria-hidden="true" />
+
+        <div className="tasfiye-hero-grid" style={{ position: "relative", zIndex: 1, display: "grid", gridTemplateColumns: "1.35fr 1fr", gap: "3rem", alignItems: "center", padding: "5.5rem 2.75rem 5rem" }}>
+          {/* SOL — metin + geri sayım */}
+          <Reveal>
+            <p style={{ fontFamily: "var(--font-mono)", fontSize: "0.62rem", letterSpacing: "0.5em", textTransform: "uppercase", color: "var(--bordo)", marginBottom: "1.75rem" }}>{t.heroKickerBrut}</p>
+            <h1 style={{ fontFamily: "var(--font-grotesk)", fontWeight: 300, fontSize: "clamp(70px, 10vw, 150px)", lineHeight: 0.9, letterSpacing: "-0.035em", color: "var(--cream)", marginBottom: "1.5rem" }}>TASFİYE</h1>
+            <p style={{ fontFamily: "var(--font-grotesk)", fontStyle: "italic", fontWeight: 400, fontSize: "clamp(1.2rem, 2.4vw, 1.7rem)", lineHeight: 1.4, color: "var(--gray)", maxWidth: "460px", marginBottom: "2.75rem" }}>{t.heroQuoteBrut}</p>
+
+            <Countdown labels={t.heroCountdownLabels} />
+
+            <p style={{ fontFamily: "var(--font-mono)", fontSize: "0.7rem", letterSpacing: "0.3em", textTransform: "uppercase", color: "var(--accent)", marginTop: "2rem" }}>{t.heroDate}</p>
+          </Reveal>
+
+          {/* SAĞ — gizem kutusu (kapak yakında) */}
+          <div className="hero-mystery-wrap" style={{ display: "flex", justifyContent: "center" }}>
+            <div className="hero-mystery">
+              <span className="hero-mystery-badge">{t.heroBoxLabel}</span>
+              <span className="hero-mystery-q" aria-hidden="true">?</span>
+              <div className="hero-mystery-meta">
+                <span style={{ fontFamily: "var(--font-grotesk)", fontWeight: 400, fontSize: "1.6rem", letterSpacing: "0.14em", color: "var(--cream)" }}>TASFİYE</span>
+                <span style={{ fontFamily: "var(--font-mono)", fontSize: "0.5rem", letterSpacing: "0.2em", textTransform: "uppercase", color: "var(--gray)", marginTop: "0.75rem", lineHeight: 1.9, maxWidth: "180px" }}>{t.heroBoxMeta}</span>
+              </div>
+            </div>
           </div>
-          <div style={{ display: "flex", gap: "0.9rem", flexWrap: "wrap" }}>
-            <Link href={`${base}/tasfiye`} className="home-cta btn-fill">{t.ctaBook}</Link>
-            <Link href={`${base}/yazar`} className="home-cta btn-line">{t.ctaAuthor}</Link>
-          </div>
-        </Reveal>
+        </div>
       </section>
 
       {/* ASİMETRİK GRID — Mürekkep + İSTATİSTİK */}
