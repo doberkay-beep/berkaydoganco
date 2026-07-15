@@ -1,9 +1,28 @@
 import type { Metadata } from "next";
+import { Cormorant_Garamond, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import { Nav } from "@/components/Nav";
 import { Footer } from "@/components/Footer";
 import { PageTransition } from "@/components/PageTransition";
 import { Analytics } from "@vercel/analytics/next";
+
+// Başlıklar: Cormorant Garamond (300/400 + italik) — CSS'te var(--font-grotesk)
+const cormorant = Cormorant_Garamond({
+  subsets: ["latin", "latin-ext"],
+  weight: ["300", "400"],
+  style: ["normal", "italic"],
+  variable: "--font-cormorant",
+  display: "swap",
+});
+
+// Metin/etiket: JetBrains Mono (300/400) — CSS'te var(--font-mono)
+const jetbrains = JetBrains_Mono({
+  subsets: ["latin", "latin-ext"],
+  weight: ["300", "400"],
+  style: ["normal", "italic"],
+  variable: "--font-jetbrains",
+  display: "swap",
+});
 
 export const metadata: Metadata = {
   title: {
@@ -47,7 +66,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="tr">
+    <html lang="tr" className={`${cormorant.variable} ${jetbrains.variable}`}>
       <body>
         <Nav />
         <main><PageTransition>{children}</PageTransition></main>
