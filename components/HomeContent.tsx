@@ -1,13 +1,15 @@
 "use client";
 
 import Link from "next/link";
-import { content, type Lang } from "@/lib/content";
+import { content, TRENDYOL_URL, type Lang } from "@/lib/content";
 import { Reveal } from "./Motion";
 import { Countdown } from "./Countdown";
+import { BookCover3D } from "./BookCover3D";
 import { Newsletter } from "./Newsletter";
 
 export function HomeContent({ lang }: { lang: Lang }) {
   const t = content[lang].home;
+  const b = t.book;
   const base = lang === "en" ? "/en" : "";
 
   return (
@@ -80,6 +82,7 @@ export function HomeContent({ lang }: { lang: Lang }) {
         @media (max-width: 768px) {
           .tasfiye-hero-grid { grid-template-columns: 1fr !important; padding: 4rem 1.5rem 3.5rem !important; gap: 2.5rem !important; }
           .hero-mystery { width: 240px; height: 380px; }
+          .home-book { grid-template-columns: 1fr !important; padding: 4rem 1.5rem !important; gap: 3.5rem !important; }
           .home-grid { grid-template-columns: 1fr !important; }
           .home-grid > div { border-right: none !important; }
           .home-grid > div:first-child { border-bottom: 1px solid var(--border); }
@@ -122,20 +125,29 @@ export function HomeContent({ lang }: { lang: Lang }) {
         </div>
       </section>
 
-      {/* ASİMETRİK GRID — Mürekkep + İSTATİSTİK */}
-      <section className="home-grid" style={{ display: "grid", gridTemplateColumns: "2fr 1fr", borderBottom: "1px solid var(--border)" }}>
-        <div className="block" style={{ padding: "3.5rem 4rem", borderRight: "1px solid var(--border)", display: "flex", flexDirection: "column", justifyContent: "space-between", minHeight: "380px", gap: "1.5rem" }}>
-          <div>
-            <p style={{ fontFamily: "var(--font-mono)", fontSize: "0.65rem", letterSpacing: "0.18em", color: "var(--text-dim)", marginBottom: "1.5rem" }}>{t.ilkKitap}</p>
-            <h2 style={{ fontFamily: "var(--font-grotesk)", fontSize: "clamp(2.4rem, 5vw, 4rem)", fontWeight: 700, lineHeight: 0.9, letterSpacing: "-0.02em", textTransform: "uppercase", color: "var(--text)", marginBottom: "1.25rem", whiteSpace: "pre-line" }}>{t.books.murekkepTitle}</h2>
-            <p style={{ fontFamily: "var(--font-mono)", fontSize: "0.85rem", lineHeight: 1.7, color: "var(--text-muted)", maxWidth: "440px" }}>{t.books.murekkepDesc}</p>
+      {/* MÜREKKEP VE KÖZ — 3D kapak + satış bloğu */}
+      <section className="home-book" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", alignItems: "center", gap: "4rem", padding: "6rem 2.75rem", borderBottom: "1px solid var(--border)" }}>
+        <div style={{ display: "flex", justifyContent: "center" }}>
+          <BookCover3D badge={b.badge} hintDefault={b.hint} hintFlipped={b.hintFlipped} />
+        </div>
+        <Reveal>
+          <p className="eyebrow" style={{ marginBottom: "1.75rem" }}>{b.eyebrow}</p>
+          <h2 style={{ fontFamily: "var(--font-grotesk)", fontWeight: 300, fontSize: "clamp(2.6rem, 5vw, 4rem)", lineHeight: 1, letterSpacing: "-0.02em", color: "var(--cream)", marginBottom: "0.5rem" }}>{b.title}</h2>
+          <p style={{ fontFamily: "var(--font-grotesk)", fontStyle: "italic", fontWeight: 400, fontSize: "1.5rem", color: "var(--gray)", marginBottom: "1.75rem" }}>{b.subtitle}</p>
+          <p style={{ fontFamily: "var(--font-mono)", fontSize: "0.82rem", lineHeight: 1.8, color: "var(--text-muted)", maxWidth: "440px", marginBottom: "1.75rem" }}>{b.desc}</p>
+          <div style={{ display: "flex", alignItems: "center", gap: "0.85rem", marginBottom: "2rem" }}>
+            <span aria-hidden="true" style={{ color: "var(--accent)", fontSize: "0.9rem", letterSpacing: "0.15em" }}>★★★★★</span>
+            <span style={{ fontFamily: "var(--font-mono)", fontSize: "0.58rem", letterSpacing: "0.14em", textTransform: "uppercase", color: "var(--text-dim)" }}>{b.rating}</span>
           </div>
-          <Link href={`${base}/murekkep-ve-koz`} className="home-cta btn-fill" style={{ alignSelf: "flex-start" }}>{t.buyLabel}</Link>
-        </div>
-        <div className="block" style={{ padding: "3.5rem 4rem", background: "var(--bg-panel)", display: "flex", flexDirection: "column", justifyContent: "center" }}>
-          <span style={{ fontFamily: "var(--font-grotesk)", fontSize: "clamp(5rem, 11vw, 8rem)", fontWeight: 700, lineHeight: 0.85, letterSpacing: "-0.03em", color: "var(--text)" }}>{t.statValue}</span>
-          <span style={{ fontFamily: "var(--font-mono)", fontSize: "0.65rem", letterSpacing: "0.15em", color: "var(--text-dim)", marginTop: "1rem", whiteSpace: "pre-line", lineHeight: 1.6 }}>{t.statLabel}</span>
-        </div>
+          <div style={{ display: "flex", alignItems: "baseline", gap: "1rem", marginBottom: "2rem" }}>
+            <span style={{ fontFamily: "var(--font-grotesk)", fontWeight: 400, fontSize: "2.6rem", letterSpacing: "-0.01em", color: "var(--cream)" }}>{b.price}</span>
+            <span style={{ fontFamily: "var(--font-mono)", fontSize: "0.52rem", letterSpacing: "0.2em", textTransform: "uppercase", color: "var(--bordo)", border: "1px solid var(--bordo)", borderRadius: "2px", padding: "0.35rem 0.55rem" }}>{b.priceTag}</span>
+          </div>
+          <div style={{ display: "flex", gap: "0.85rem", flexWrap: "wrap" }}>
+            <a href={TRENDYOL_URL} target="_blank" rel="noopener noreferrer" className="btn btn-fill">{b.buyBtn}</a>
+            <Link href={`${base}/murekkep-ve-koz`} className="btn btn-ghost">{b.readBtn}</Link>
+          </div>
+        </Reveal>
       </section>
 
       {/* MANİFESTO — tam genişlik, kırmızı vurgu */}
