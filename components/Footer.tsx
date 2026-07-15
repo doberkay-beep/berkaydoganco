@@ -9,9 +9,9 @@ export function Footer() {
   const t = content[lang].footer;
 
   return (
-    <footer style={{ borderTop: "1px solid var(--border)", padding: "2.5rem 4rem", display: "flex", justifyContent: "space-between", alignItems: "flex-end", flexWrap: "wrap", gap: "1.5rem" }}>
+    <footer style={{ borderTop: "1px solid var(--border)", padding: "3rem 2.75rem", display: "flex", justifyContent: "space-between", alignItems: "flex-end", flexWrap: "wrap", gap: "1.5rem" }}>
       <div>
-        <p style={{ fontFamily: "var(--font-grotesk)", fontSize: "1.2rem", fontWeight: 700, letterSpacing: "0.08em", color: "var(--text)", marginBottom: "0.5rem" }}>
+        <p style={{ fontFamily: "var(--font-grotesk)", fontSize: "1.5rem", fontWeight: 400, letterSpacing: "0.14em", color: "var(--cream)", marginBottom: "0.5rem" }}>
           BERKAY DOĞAN
         </p>
         <p style={{ fontFamily: "var(--font-mono)", fontSize: "0.65rem", color: "var(--text-dim)", letterSpacing: "0.1em" }}>

@@ -13,6 +13,7 @@ export const content = {
       basinda: "BASINDA",
       author: "YAZAR",
       contact: "İLETİŞİM",
+      buy: "SATIN AL",
     },
     home: {
       kicker: "BERKAYDOGAN.CO — 2026",
@@ -258,6 +259,7 @@ export const content = {
       basinda: "PRESS",
       author: "AUTHOR",
       contact: "CONTACT",
+      buy: "BUY",
     },
     home: {
       kicker: "BERKAYDOGAN.CO — 2026",

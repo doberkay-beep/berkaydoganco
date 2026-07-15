@@ -64,21 +64,27 @@ export function Nav() {
         position: "fixed",
         top: 0, left: 0, right: 0,
         zIndex: 100,
-        padding: "0 2rem",
+        padding: "0 2.75rem",
         height: "60px",
         display: "flex",
         alignItems: "center",
         justifyContent: "space-between",
+        background: "rgba(11, 5, 6, 0.78)",
+        backdropFilter: "blur(18px) saturate(140%)",
+        WebkitBackdropFilter: "blur(18px) saturate(140%)",
         borderLeft: "none",
         borderRight: "none",
         borderTop: "none",
+        borderBottom: "1px solid var(--dim)",
       }}
     >
-      <Link href={isEn ? "/en" : "/"} style={{ fontFamily: "var(--font-grotesk)", fontWeight: 700, fontSize: "0.9rem", letterSpacing: "0.15em", color: "var(--text)" }}>
+      {/* Sol — logo */}
+      <Link href={isEn ? "/en" : "/"} style={{ fontFamily: "var(--font-grotesk)", fontWeight: 400, fontSize: "1.05rem", letterSpacing: "0.18em", color: "var(--cream)" }}>
         BD
       </Link>
 
-      <div className="desktop-nav" style={{ display: "flex", gap: "1.1rem", alignItems: "center" }}>
+      {/* Orta — menü */}
+      <div className="desktop-nav" style={{ flex: 1, display: "flex", gap: "1.1rem", alignItems: "center", justifyContent: "center" }}>
         {links.map((link) => {
           if (link.type === "group") {
             const groupActive = link.children.some((c) => isActive(c.match));
@@ -144,13 +150,16 @@ export function Nav() {
             </Link>
           );
         })}
+      </div>
 
-        {/* Dil kontrolü */}
-        <div style={{ display: "flex", alignItems: "center", gap: "1rem", marginLeft: "0.5rem", paddingLeft: "1.5rem", borderLeft: "1px solid var(--border-bright)" }}>
-          <button onClick={switchLang} style={{ background: "none", border: "none", cursor: "pointer", fontFamily: "var(--font-mono)", fontSize: "0.62rem", letterSpacing: "0.15em", color: "var(--text-muted)", transition: "color 0.2s" }}>
-            {isEn ? "TR" : "EN"}
-          </button>
-        </div>
+      {/* Sağ — dil + Satın Al */}
+      <div className="desktop-actions" style={{ display: "flex", alignItems: "center", gap: "1.35rem" }}>
+        <button onClick={switchLang} style={{ background: "none", border: "none", cursor: "pointer", fontFamily: "var(--font-mono)", fontSize: "0.62rem", letterSpacing: "0.15em", color: "var(--text-muted)", transition: "color 0.2s" }}>
+          {isEn ? "TR" : "EN"}
+        </button>
+        <Link href={`${base}/murekkep-ve-koz`} className="btn btn-fill" style={{ padding: "0.6rem 1.35rem", fontSize: "0.6rem" }}>
+          {t.buy}
+        </Link>
       </div>
 
       {/* Mobil */}
@@ -179,7 +188,10 @@ export function Nav() {
               </Link>
             );
           })}
-          <div style={{ display: "flex", gap: "2rem", marginTop: "1rem" }}>
+          <div style={{ display: "flex", flexDirection: "column", gap: "1.5rem", alignItems: "center", marginTop: "1rem" }}>
+            <Link href={`${base}/murekkep-ve-koz`} onClick={() => setOpen(false)} className="btn btn-fill">
+              {t.buy}
+            </Link>
             <button onClick={() => { switchLang(); setOpen(false); }} style={{ background: "none", border: "1px solid var(--border-bright)", padding: "0.5rem 1rem", cursor: "pointer", fontFamily: "var(--font-mono)", fontSize: "0.7rem", letterSpacing: "0.15em", color: "var(--text-muted)" }}>
               {isEn ? "TÜRKÇE" : "ENGLISH"}
             </button>
@@ -211,7 +223,7 @@ export function Nav() {
           transform: translateY(0);
         }
         @media (max-width: 1100px) {
-          .desktop-nav { display: none !important; }
+          .desktop-nav, .desktop-actions { display: none !important; }
           .mobile-burger { display: block !important; }
         }
       `}</style>
