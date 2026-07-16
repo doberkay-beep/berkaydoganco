@@ -4,6 +4,7 @@ import "./globals.css";
 import { Nav } from "@/components/Nav";
 import { Footer } from "@/components/Footer";
 import { PageTransition } from "@/components/PageTransition";
+import { HtmlLang } from "@/components/HtmlLang";
 import { Analytics } from "@vercel/analytics/next";
 
 // Başlıklar: Cormorant Garamond (300/400 + italik) — CSS'te var(--font-grotesk)
@@ -24,9 +25,16 @@ const jetbrains = JetBrains_Mono({
   display: "swap",
 });
 
+const OG_IMAGE = {
+  url: "/og-image.png",
+  width: 1200,
+  height: 630,
+  alt: "Berkay Doğan — Tasfiye",
+};
+
 export const metadata: Metadata = {
   title: {
-    default: "Berkay Doğan — Tasfiye",
+    default: "Berkay Doğan | Şair & Yazar — Tasfiye, Mürekkep ve Köz",
     template: "%s — Berkay Doğan",
   },
   description: "Yıkmak, kurmanın tek yoludur. 161 sayfalık bir varoluş infazına hoş geldiniz. Berkay Doğan'ın resmi sitesi — şair ve yazar.",
@@ -48,11 +56,13 @@ export const metadata: Metadata = {
     siteName: "berkaydogan.co",
     locale: "tr_TR",
     type: "website",
+    images: [OG_IMAGE],
   },
   twitter: {
     card: "summary_large_image",
     title: "Berkay Doğan — Tasfiye",
     description: "Yıkmak, kurmanın tek yoludur.",
+    images: [OG_IMAGE.url],
   },
   robots: {
     index: true,
@@ -68,6 +78,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
   return (
     <html lang="tr" className={`${cormorant.variable} ${jetbrains.variable}`}>
       <body>
+        <HtmlLang />
         <Nav />
         <main><PageTransition>{children}</PageTransition></main>
         <Footer />

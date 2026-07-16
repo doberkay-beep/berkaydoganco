@@ -1,2 +1,11 @@
 import { HomeContent } from "@/components/HomeContent";
-export default function Page() { return <HomeContent lang="tr" />; }
+import { PersonSchema } from "@/components/Schema";
+
+export default function Page() {
+  return (
+    <>
+      <PersonSchema />
+      <HomeContent lang="tr" />
+    </>
+  );
+}
