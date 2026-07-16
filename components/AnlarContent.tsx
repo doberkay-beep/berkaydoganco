@@ -12,7 +12,7 @@ export function AnlarContent({ lang }: { lang: Lang }) {
         .anlar-grid {
           column-count: 3;
           column-gap: 1.25rem;
-          padding: 4rem;
+          padding: 4rem 2.75rem;
         }
         .anlar-item {
           break-inside: avoid;
@@ -35,11 +35,12 @@ export function AnlarContent({ lang }: { lang: Lang }) {
           position: absolute;
           left: 0; right: 0; bottom: 0;
           padding: 1.25rem 1rem 0.9rem;
-          background: linear-gradient(to top, rgba(0,0,0,0.7), rgba(0,0,0,0));
+          background: linear-gradient(to top, rgba(11,5,6,0.85), rgba(11,5,6,0));
           font-family: var(--font-mono);
           font-size: 0.6rem;
           letter-spacing: 0.18em;
-          color: rgba(255,255,255,0.92);
+          text-transform: uppercase;
+          color: var(--cream);
           opacity: 0;
           transform: translateY(8px);
           transition: opacity 0.4s, transform 0.4s;
@@ -54,10 +55,10 @@ export function AnlarContent({ lang }: { lang: Lang }) {
       `}</style>
 
       {/* HERO */}
-      <section className="anlar-hero" style={{ minHeight: "38vh", display: "flex", flexDirection: "column", justifyContent: "flex-end", padding: "4rem", borderBottom: "1px solid var(--border)" }}>
-        <p style={{ fontFamily: "var(--font-mono)", fontSize: "0.6rem", letterSpacing: "0.25em", color: "var(--accent)", marginBottom: "2rem" }}>{t.kicker}</p>
-        <h1 style={{ fontFamily: "var(--font-grotesk)", fontSize: "clamp(3rem, 10vw, 8rem)", fontWeight: 700, lineHeight: 0.86, letterSpacing: "-0.01em", textTransform: "uppercase", color: "var(--text)", marginBottom: "1.5rem" }}>{t.title}</h1>
-        <p style={{ fontFamily: "var(--font-mono)", fontSize: "0.85rem", color: "var(--text-muted)", maxWidth: "440px", lineHeight: 1.8 }}>{t.desc}</p>
+      <section className="anlar-hero" style={{ minHeight: "38vh", display: "flex", flexDirection: "column", justifyContent: "flex-end", padding: "4rem 2.75rem", borderBottom: "1px solid var(--border)" }}>
+        <p className="eyebrow" style={{ marginBottom: "2rem" }}>{t.kicker}</p>
+        <h1 style={{ fontFamily: "var(--font-grotesk)", fontWeight: 300, fontSize: "clamp(3rem, 10vw, 8rem)", lineHeight: 0.95, letterSpacing: "-0.035em", color: "var(--cream)", marginBottom: "1.25rem" }}>{t.title}</h1>
+        <p style={{ fontFamily: "var(--font-grotesk)", fontStyle: "italic", fontWeight: 300, fontSize: "1.25rem", color: "var(--gray)", maxWidth: "440px", lineHeight: 1.6 }}>{t.desc}</p>
       </section>
 
       {/* GALERİ */}
@@ -71,9 +72,9 @@ export function AnlarContent({ lang }: { lang: Lang }) {
       </section>
 
       {/* YAKINDA */}
-      <section className="anlar-soon" style={{ padding: "5rem 4rem", borderTop: "1px solid var(--border)", textAlign: "center" }}>
-        <p style={{ fontFamily: "var(--font-mono)", fontSize: "0.55rem", letterSpacing: "0.3em", color: "var(--accent)", marginBottom: "1.25rem" }}>{t.soonKicker}</p>
-        <p style={{ fontFamily: "var(--font-grotesk)", fontSize: "clamp(1.1rem, 3vw, 1.8rem)", fontWeight: 700, color: "var(--text)", letterSpacing: "-0.01em" }}>{t.soonText}</p>
+      <section className="anlar-soon" style={{ padding: "5rem 2.75rem", borderTop: "1px solid var(--border)", textAlign: "center" }}>
+        <p style={{ fontFamily: "var(--font-mono)", fontSize: "0.6rem", letterSpacing: "0.4em", textTransform: "uppercase", color: "var(--bordo)", marginBottom: "1.25rem" }}>{t.soonKicker}</p>
+        <p style={{ fontFamily: "var(--font-grotesk)", fontWeight: 300, fontSize: "clamp(1.4rem, 3vw, 2.2rem)", letterSpacing: "-0.02em", color: "var(--cream)" }}>{t.soonText}</p>
       </section>
     </div>
   );
