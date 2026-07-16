@@ -142,6 +142,19 @@ img { display: block; max-width: 100%; }
   background: var(--dim);   /* gap'lerden --dim sızar → kenarlıksız izlenim */
 }
 
+/* Satın alma hücresi — hover: bordo kenarlık + kalkış (ana sayfa + kitap sayfası) */
+.buy-cell {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid transparent;
+  transition: border-color 0.28s ease, transform 0.28s ease, background 0.28s ease;
+}
+.buy-cell:hover {
+  border-color: var(--bordo);
+  transform: translateY(-3px);
+  background: var(--bg2);
+}
+
 /* İstatistik bloğu — sayı (Cormorant) + etiket (mono) */
 .stat {
   display: flex;

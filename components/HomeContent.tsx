@@ -34,13 +34,6 @@ export function HomeContent({ lang }: { lang: Lang }) {
         .press-card { transition: background 0.28s ease; }
         .press-card:hover a .press-outlet { color: var(--accent); }
 
-        /* SATIN AL hücreleri — hover: bordo kenarlık + kalkış */
-        .buy-cell {
-          display: flex; flex-direction: column;
-          border: 1px solid transparent;
-          transition: border-color 0.28s ease, transform 0.28s ease, background 0.28s ease;
-        }
-        .buy-cell:hover { border-color: var(--bordo); transform: translateY(-3px); background: var(--bg2); }
 
         /* HERO — bordo ambient ışık, 9s nefes */
         .hero-ambient {
