@@ -61,6 +61,8 @@ export const content = {
         badge: "#1 TRENDYOL ŞİİR",
         hint: "Kapağa tıkla — arkasını çevir",
         hintFlipped: "Ön kapağa dön",
+        altFront: "Mürekkep ve Köz — ön kapak",
+        altBack: "Mürekkep ve Köz — arka kapak",
       },
       backCover: {
         kicker: "ARKA KAPAK",
@@ -382,6 +384,8 @@ export const content = {
         badge: "#1 POETRY ON TRENDYOL",
         hint: "Click the cover — flip it over",
         hintFlipped: "Back to the front",
+        altFront: "Ink and Ember — front cover",
+        altBack: "Ink and Ember — back cover",
       },
       backCover: {
         kicker: "BACK COVER",
@@ -619,7 +623,7 @@ export const content = {
     },
     media: {
       kicker: "MEDIA",
-      title: "ŞAİRİN\nHESABI",
+      title: "THE POET'S\nRECKONING",
       desc: "Conversations on poetry, literature, and ideas. Podcast and video.",
       podcastKicker: "LISTEN — PODCAST",
       podcastDesc: "Şairin Hesabı, on every platform. Listen directly on Spotify.",

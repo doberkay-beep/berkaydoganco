@@ -133,7 +133,7 @@ export function HomeContent({ lang }: { lang: Lang }) {
       {/* MÜREKKEP VE KÖZ — 3D kapak + satış bloğu */}
       <section className="home-book" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", alignItems: "center", gap: "4rem", padding: "6rem 2.75rem", borderBottom: "1px solid var(--border)" }}>
         <div style={{ display: "flex", justifyContent: "center" }}>
-          <BookCover3D badge={b.badge} hintDefault={b.hint} hintFlipped={b.hintFlipped} />
+          <BookCover3D badge={b.badge} hintDefault={b.hint} hintFlipped={b.hintFlipped} frontAlt={b.altFront} backAlt={b.altBack} />
         </div>
         <Reveal>
           <p className="eyebrow" style={{ marginBottom: "1.75rem" }}>{b.eyebrow}</p>
