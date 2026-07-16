@@ -10,83 +10,84 @@ export function BasindaContent({ lang }: { lang: Lang }) {
     <div style={{ paddingTop: "60px" }}>
       <style>{`
         .pub-link {
-          font-family: var(--font-grotesk);
-          font-weight: 700;
-          color: var(--text);
-          text-decoration: underline;
-          text-decoration-thickness: 2px;
-          text-underline-offset: 6px;
-          text-decoration-color: var(--accent);
-          transition: text-decoration-color 0.25s, color 0.25s;
+          font-family: var(--font-mono);
+          font-size: 0.68rem;
+          letter-spacing: 0.2em;
+          text-transform: uppercase;
+          color: var(--accent);
+          border-bottom: 1px solid var(--dim);
+          padding-bottom: 0.4rem;
+          transition: color 0.25s ease, border-color 0.25s ease;
         }
-        .pub-link:hover { text-decoration-color: var(--text); }
-        .milestone-row { transition: padding-left 0.3s, background 0.3s; }
-        .milestone-row:hover { padding-left: 4.75rem !important; background: var(--bg-panel); }
+        .pub-link:hover { color: var(--cream); border-color: var(--cream); }
+        .milestone-row { transition: padding-left 0.3s ease, background 0.3s ease; }
+        .milestone-row:hover { padding-left: 3.5rem !important; background: var(--bg2); }
         @media (max-width: 768px) {
           .basinda-hero { padding: 4rem 1.5rem !important; }
           .basinda-sec { padding: 3.5rem 1.5rem !important; }
-          .pub-grid { grid-template-columns: 1fr !important; }
+          .pub-grid { grid-template-columns: 1fr !important; gap: 1.5rem !important; }
           .echo-quote { font-size: clamp(1.6rem, 7vw, 2.2rem) !important; }
           .milestone-row { padding: 2rem 1.5rem !important; }
           .milestone-row:hover { padding-left: 1.5rem !important; }
           .milestone-value { font-size: 3rem !important; min-width: auto !important; }
+          .milestone-inner { gap: 1.5rem !important; }
         }
       `}</style>
 
       {/* HERO */}
-      <section className="basinda-hero" style={{ minHeight: "42vh", display: "flex", flexDirection: "column", justifyContent: "flex-end", padding: "4rem", borderBottom: "1px solid var(--border)" }}>
-        <p style={{ fontFamily: "var(--font-mono)", fontSize: "0.6rem", letterSpacing: "0.25em", color: "var(--accent)", marginBottom: "2rem" }}>{t.kicker}</p>
-        <h1 style={{ fontFamily: "var(--font-grotesk)", fontSize: "clamp(3rem, 10vw, 8rem)", fontWeight: 700, lineHeight: 0.86, letterSpacing: "-0.01em", textTransform: "uppercase", color: "var(--text)", marginBottom: "1.5rem" }}>{t.title}</h1>
-        <p style={{ fontFamily: "var(--font-mono)", fontSize: "0.85rem", color: "var(--text-muted)", maxWidth: "440px", lineHeight: 1.8 }}>{t.desc}</p>
+      <section className="basinda-hero" style={{ minHeight: "42vh", display: "flex", flexDirection: "column", justifyContent: "flex-end", padding: "4rem 2.75rem", borderBottom: "1px solid var(--border)" }}>
+        <p className="eyebrow" style={{ marginBottom: "2rem" }}>{t.kicker}</p>
+        <h1 style={{ fontFamily: "var(--font-grotesk)", fontWeight: 300, fontSize: "clamp(3rem, 10vw, 8rem)", lineHeight: 0.95, letterSpacing: "-0.035em", color: "var(--cream)", marginBottom: "1.25rem" }}>{t.title}</h1>
+        <p style={{ fontFamily: "var(--font-grotesk)", fontStyle: "italic", fontWeight: 300, fontSize: "1.25rem", color: "var(--gray)", maxWidth: "440px", lineHeight: 1.6 }}>{t.desc}</p>
       </section>
 
-      {/* BLOK 1: YAYINLAR — asimetrik grid */}
-      <section className="basinda-sec" style={{ padding: "5rem 4rem", borderBottom: "1px solid var(--border)" }}>
-        <p style={{ fontFamily: "var(--font-mono)", fontSize: "0.55rem", letterSpacing: "0.25em", color: "var(--text-dim)", marginBottom: "3rem" }}>{t.pubKicker}</p>
+      {/* BLOK 1: YAYINLAR */}
+      <section className="basinda-sec" style={{ padding: "5rem 2.75rem", borderBottom: "1px solid var(--border)" }}>
+        <p className="eyebrow" style={{ marginBottom: "3rem" }}>{t.pubKicker}</p>
         {t.publications.map((p, i) => (
           <Reveal key={i} className="pub-grid" style={{ display: "grid", gridTemplateColumns: "1.4fr 0.6fr 1fr", gap: "2rem", alignItems: "end", paddingBottom: "2.5rem", marginBottom: "2.5rem", borderBottom: i < t.publications.length - 1 ? "1px solid var(--border)" : "none" }}>
             <div>
-              <p style={{ fontFamily: "var(--font-mono)", fontSize: "0.55rem", letterSpacing: "0.2em", color: "var(--text-dim)", marginBottom: "1rem" }}>{p.outlet} — {p.detail}</p>
-              <h2 style={{ fontFamily: "var(--font-grotesk)", fontSize: "clamp(2rem, 5vw, 3.5rem)", fontWeight: 700, color: "var(--text)", letterSpacing: "-0.02em", lineHeight: 1 }}>{p.work}</h2>
+              <p className="sec-meta" style={{ marginBottom: "1rem" }}>{p.outlet} — {p.detail}</p>
+              <h2 style={{ fontFamily: "var(--font-grotesk)", fontWeight: 300, fontSize: "clamp(2rem, 5vw, 3.5rem)", letterSpacing: "-0.03em", lineHeight: 1.05, color: "var(--cream)" }}>{p.work}</h2>
             </div>
             <div />
-            <a href={p.url} target="_blank" rel="noopener noreferrer" className="pub-link" style={{ fontSize: "1rem", letterSpacing: "0.02em", paddingBottom: "0.5rem" }}>
+            <a href={p.url} target="_blank" rel="noopener noreferrer" className="pub-link">
               {p.linkLabel} ↗
             </a>
           </Reveal>
         ))}
       </section>
 
-      {/* BLOK 2: YANKILAR — duvara kazınmış devasa alıntı */}
-      <section className="basinda-sec" style={{ padding: "7rem 4rem", borderBottom: "1px solid var(--border)", background: "var(--bg-panel)" }}>
-        <p style={{ fontFamily: "var(--font-mono)", fontSize: "0.55rem", letterSpacing: "0.25em", color: "var(--text-dim)", marginBottom: "3rem" }}>{t.echoKicker}</p>
+      {/* BLOK 2: YANKILAR — devasa alıntı */}
+      <section className="basinda-sec" style={{ padding: "7rem 2.75rem", borderBottom: "1px solid var(--border)", background: "var(--bg2)" }}>
+        <p className="eyebrow" style={{ marginBottom: "3rem" }}>{t.echoKicker}</p>
         <Reveal>
-          <blockquote className="echo-quote" style={{ fontFamily: "var(--font-grotesk)", fontSize: "clamp(2rem, 5.5vw, 4.2rem)", fontWeight: 700, lineHeight: 1.15, letterSpacing: "-0.02em", color: "var(--text)", maxWidth: "1100px", marginBottom: "2.5rem" }}>
+          <blockquote className="echo-quote" style={{ fontFamily: "var(--font-grotesk)", fontStyle: "italic", fontWeight: 300, fontSize: "clamp(2rem, 5.5vw, 4.2rem)", lineHeight: 1.3, letterSpacing: "-0.025em", color: "var(--cream)", maxWidth: "1100px", marginBottom: "2.5rem" }}>
             &ldquo;{t.echo}&rdquo;
           </blockquote>
-          <p style={{ fontFamily: "var(--font-mono)", fontSize: "0.7rem", letterSpacing: "0.2em", color: "var(--accent)" }}>— {t.echoSource}</p>
+          <p style={{ fontFamily: "var(--font-mono)", fontSize: "0.68rem", letterSpacing: "0.2em", textTransform: "uppercase", color: "var(--accent)" }}>— {t.echoSource}</p>
         </Reveal>
       </section>
 
-      {/* BLOK 3: KİLOMETRE TAŞLARI — soğuk liste */}
+      {/* BLOK 3: KİLOMETRE TAŞLARI */}
       <section style={{ borderBottom: "1px solid var(--border)" }}>
-        <div className="basinda-sec" style={{ padding: "5rem 4rem 2rem" }}>
-          <p style={{ fontFamily: "var(--font-mono)", fontSize: "0.55rem", letterSpacing: "0.25em", color: "var(--text-dim)" }}>{t.milestonesKicker}</p>
+        <div className="basinda-sec" style={{ padding: "5rem 2.75rem 2rem" }}>
+          <p className="eyebrow">{t.milestonesKicker}</p>
         </div>
         {t.milestones.map((m, i) => {
           const inner = (
-            <div style={{ display: "flex", alignItems: "center", gap: "3rem" }}>
-              <span className="milestone-value" style={{ fontFamily: "var(--font-grotesk)", fontSize: "clamp(3rem, 7vw, 5.5rem)", fontWeight: 700, color: "var(--accent)", letterSpacing: "-0.03em", lineHeight: 1, minWidth: "200px" }}>{m.value}</span>
+            <div className="milestone-inner" style={{ display: "flex", alignItems: "center", gap: "3rem" }}>
+              <span className="milestone-value" style={{ fontFamily: "var(--font-grotesk)", fontWeight: 300, fontSize: "clamp(3rem, 7vw, 5.5rem)", letterSpacing: "-0.04em", lineHeight: 1, color: "var(--bordo)", minWidth: "200px" }}>{m.value}</span>
               <div>
-                <p style={{ fontFamily: "var(--font-grotesk)", fontSize: "clamp(1rem, 2.5vw, 1.5rem)", fontWeight: 700, color: "var(--text)", marginBottom: "0.5rem" }}>{m.label}</p>
-                <p style={{ fontFamily: "var(--font-mono)", fontSize: "0.6rem", letterSpacing: "0.15em", color: "var(--text-dim)" }}>{m.detail}{m.url ? "  ↗" : ""}</p>
+                <p style={{ fontFamily: "var(--font-grotesk)", fontWeight: 400, fontSize: "clamp(1.1rem, 2.5vw, 1.6rem)", color: "var(--cream)", marginBottom: "0.5rem" }}>{m.label}</p>
+                <p className="sec-meta">{m.detail}{m.url ? "  ↗" : ""}</p>
               </div>
             </div>
           );
           return m.url ? (
-            <a key={i} href={m.url} target="_blank" rel="noopener noreferrer" className="milestone-row basinda-sec" style={{ display: "block", padding: "3rem 4rem", borderTop: "1px solid var(--border)" }}>{inner}</a>
+            <a key={i} href={m.url} target="_blank" rel="noopener noreferrer" className="milestone-row basinda-sec" style={{ display: "block", padding: "3rem 2.75rem", borderTop: "1px solid var(--border)" }}>{inner}</a>
           ) : (
-            <div key={i} className="milestone-row basinda-sec" style={{ padding: "3rem 4rem", borderTop: "1px solid var(--border)" }}>{inner}</div>
+            <div key={i} className="milestone-row basinda-sec" style={{ padding: "3rem 2.75rem", borderTop: "1px solid var(--border)" }}>{inner}</div>
           );
         })}
       </section>
