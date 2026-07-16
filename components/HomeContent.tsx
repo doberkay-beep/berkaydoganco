@@ -10,23 +10,37 @@ import { Newsletter } from "./Newsletter";
 export function HomeContent({ lang }: { lang: Lang }) {
   const t = content[lang].home;
   const b = t.book;
+  const bc = t.backCover;
+  const buyLinks = content[lang].murekkep.buyLinks;
   const base = lang === "en" ? "/en" : "";
 
   return (
     <div style={{ paddingTop: "60px" }}>
       <style>{`
-        .btn-fill { background: var(--accent); border: 1px solid var(--accent); color: var(--accent-ink); transition: background 0.2s, color 0.2s; }
-        .btn-fill:hover { background: transparent; color: var(--accent); }
-        .btn-line { border: 1px solid var(--border-bright); color: var(--text-dim); transition: color 0.2s, border-color 0.2s; }
-        .btn-line:hover { border-color: var(--accent) !important; color: var(--accent) !important; }
-        .home-cta { display: inline-block; font-family: var(--font-mono); font-size: 0.65rem; letter-spacing: 0.2em; padding: 0.9rem 1.7rem; text-transform: uppercase; }
-        .yazi-brut { display: flex; justify-content: space-between; align-items: center; gap: 2rem; padding: 1.9rem 4rem; border-bottom: 1px solid var(--border); transition: background 0.15s, padding-left 0.2s; }
-        .yazi-brut:hover { background: var(--bg-panel); padding-left: 4.75rem; }
-        .yazi-brut:hover .yb-t { color: var(--accent); }
-        .yb-t { font-family: var(--font-grotesk); font-size: clamp(1.3rem, 3vw, 1.9rem); font-weight: 700; text-transform: uppercase; letter-spacing: -0.01em; color: var(--text); transition: color 0.15s; }
-        .yb-d { font-family: var(--font-mono); font-size: 0.6rem; letter-spacing: 0.12em; color: var(--text-dim); white-space: nowrap; }
-        .link-subtle { transition: color 0.2s, border-color 0.2s; }
-        .link-subtle:hover { color: var(--accent) !important; border-color: var(--accent) !important; }
+        /* OKUR SAYACI — nabız atan bordo nokta */
+        .counter-dot {
+          width: 7px; height: 7px; border-radius: 50%;
+          background: var(--bordo); flex-shrink: 0;
+          animation: counterPulse 2.4s ease-in-out infinite;
+        }
+        @keyframes counterPulse {
+          0%, 100% { opacity: 0.45; box-shadow: 0 0 0 0 rgba(139,26,26,0.5); }
+          50% { opacity: 1; box-shadow: 0 0 0 5px rgba(139,26,26,0); }
+        }
+
+        /* BASINDA kartları */
+        .press-outlet { font-family: var(--font-grotesk); font-weight: 400; font-size: 1.5rem; line-height: 1.2; color: var(--cream); margin-bottom: 0.5rem; }
+        .press-text { font-family: var(--font-mono); font-size: 0.75rem; line-height: 1.85; color: var(--text-muted); }
+        .press-card { transition: background 0.28s ease; }
+        .press-card:hover a .press-outlet { color: var(--accent); }
+
+        /* SATIN AL hücreleri — hover: bordo kenarlık + kalkış */
+        .buy-cell {
+          display: flex; flex-direction: column;
+          border: 1px solid transparent;
+          transition: border-color 0.28s ease, transform 0.28s ease, background 0.28s ease;
+        }
+        .buy-cell:hover { border-color: var(--bordo); transform: translateY(-3px); background: var(--bg2); }
 
         /* HERO — bordo ambient ışık, 9s nefes */
         .hero-ambient {
@@ -83,14 +97,12 @@ export function HomeContent({ lang }: { lang: Lang }) {
           .tasfiye-hero-grid { grid-template-columns: 1fr !important; padding: 4rem 1.5rem 3.5rem !important; gap: 2.5rem !important; }
           .hero-mystery { width: 240px; height: 380px; }
           .home-book { grid-template-columns: 1fr !important; padding: 4rem 1.5rem !important; gap: 3.5rem !important; }
-          .home-grid { grid-template-columns: 1fr !important; }
-          .home-grid > div { border-right: none !important; }
-          .home-grid > div:first-child { border-bottom: 1px solid var(--border); }
-          .home-grid .block { padding: 3rem 1.5rem !important; }
-          .home-manifesto { padding: 4.5rem 1.5rem !important; }
-          .yazi-brut { padding: 1.5rem 1.5rem !important; }
-          .yazi-brut:hover { padding-left: 1.5rem !important; }
-          .home-bio { padding: 4rem 1.5rem !important; }
+          .home-backcover { padding: 4.5rem 1.5rem !important; }
+          .home-counter { gap: 1.25rem !important; padding: 1.25rem 1.5rem !important; }
+          .home-4grid { grid-template-columns: repeat(2, 1fr) !important; }
+          .home-3grid { grid-template-columns: 1fr !important; }
+          .home-4grid > *, .home-3grid > * { padding: 2rem 1.5rem !important; }
+          .home-3grid a { padding: 2rem 1.5rem !important; }
         }
       `}</style>
 
@@ -150,38 +162,103 @@ export function HomeContent({ lang }: { lang: Lang }) {
         </Reveal>
       </section>
 
-      {/* MANİFESTO — tam genişlik, kırmızı vurgu */}
-      <section className="home-manifesto" style={{ padding: "6.5rem 4rem", borderBottom: "1px solid var(--border)" }}>
-        <Reveal>
-          <p style={{ fontFamily: "var(--font-grotesk)", fontSize: "clamp(1.9rem, 4.2vw, 3.6rem)", fontWeight: 700, lineHeight: 1.12, letterSpacing: "-0.02em", color: "var(--text)", maxWidth: "900px" }}>
-            {t.manifestoLead} <span style={{ color: "var(--accent)" }}>{t.manifestoHl}</span>
-          </p>
-          <p style={{ fontFamily: "var(--font-mono)", fontSize: "0.65rem", letterSpacing: "0.18em", color: "var(--text-dim)", marginTop: "2rem" }}>{t.manifestoSig}</p>
+      {/* ARKA KAPAK METNİ — ortalanmış, geniş satır aralığı */}
+      <section className="home-backcover" style={{ padding: "7rem 2.75rem", borderBottom: "1px solid var(--border)", background: "var(--bg2)" }}>
+        <Reveal style={{ maxWidth: "760px", margin: "0 auto", textAlign: "center" }}>
+          <p className="sec-meta" style={{ marginBottom: "3rem" }}>{bc.kicker}</p>
+          <p style={{ fontFamily: "var(--font-grotesk)", fontStyle: "italic", fontWeight: 300, fontSize: "1.5625rem", lineHeight: 1.6, color: "var(--cream)", marginBottom: "2.5rem" }}>{bc.lead}</p>
+          {bc.paragraphs.map((p, i) => (
+            <p key={i} style={{ fontFamily: "var(--font-grotesk)", fontWeight: 300, fontSize: "1.15rem", lineHeight: 1.95, color: "var(--gray)", marginBottom: "1.75rem" }}>{p}</p>
+          ))}
+          <p style={{ fontFamily: "var(--font-grotesk)", fontStyle: "italic", fontWeight: 300, fontSize: "1.25rem", lineHeight: 1.7, color: "var(--gray)", marginTop: "3rem" }}>{bc.finalA}</p>
+          <p style={{ fontFamily: "var(--font-grotesk)", fontStyle: "italic", fontWeight: 300, fontSize: "1.875rem", lineHeight: 1.5, color: "var(--cream)", marginTop: "0.5rem" }}>{bc.finalB}</p>
         </Reveal>
       </section>
 
-      {/* SON YAZILAR — brütal liste */}
-      <section style={{ borderBottom: "1px solid var(--border)" }}>
-        <div style={{ padding: "2.5rem 4rem 1.5rem" }}>
-          <p style={{ fontFamily: "var(--font-mono)", fontSize: "0.6rem", letterSpacing: "0.25em", color: "var(--accent)" }}>{t.recentKicker}</p>
-        </div>
-        {t.recent.map((y) => (
-          <Link key={y.slug} href={`${base}/yazilar/${y.slug}`} className="yazi-brut">
-            <span className="yb-t">{y.title}</span>
-            <span className="yb-d">{y.meta}</span>
-          </Link>
+      {/* OKUR SAYACI — ince bant */}
+      <section className="home-counter" style={{ display: "flex", justifyContent: "center", alignItems: "center", gap: "2.75rem", flexWrap: "wrap", padding: "1.4rem 2.75rem", borderBottom: "1px solid var(--border)" }}>
+        {t.counter.map((c, i) => (
+          <span key={i} style={{ display: "inline-flex", alignItems: "center", gap: "0.6rem", fontFamily: "var(--font-mono)", fontSize: "0.62rem", letterSpacing: "0.14em", color: "var(--text-dim)" }}>
+            {i === 0 && <span className="counter-dot" aria-hidden="true" />}
+            {c.pre && `${c.pre} `}
+            <b style={{ color: "var(--cream)", fontWeight: 400 }}>{c.num}</b>
+            {c.post}
+          </span>
         ))}
       </section>
 
-      {/* BIO */}
-      <section className="home-bio" style={{ padding: "5.5rem 4rem", borderBottom: "1px solid var(--border)", display: "flex", justifyContent: "space-between", alignItems: "center", gap: "4rem", flexWrap: "wrap" }}>
-        <div style={{ maxWidth: "560px" }}>
-          <p style={{ fontFamily: "var(--font-mono)", fontSize: "0.6rem", letterSpacing: "0.25em", color: "var(--accent)", marginBottom: "1.5rem" }}>{t.bioKicker}</p>
-          <p style={{ fontFamily: "var(--font-mono)", fontSize: "0.9rem", lineHeight: 1.85, color: "var(--text-muted)" }}>{t.bioText}</p>
+      {/* SAYILAR — 4'lü grid */}
+      <section style={{ borderBottom: "1px solid var(--border)" }}>
+        <div style={{ padding: "2.5rem 2.75rem 1.75rem" }}>
+          <p className="eyebrow">{t.statsKicker}</p>
         </div>
-        <Link href={`${base}/yazar`} className="home-cta btn-line" style={{ flexShrink: 0 }}>{t.bioLink}</Link>
+        <div className="card-grid home-4grid" style={{ gridTemplateColumns: "repeat(4, 1fr)" }}>
+          {t.stats.map((s, i) => (
+            <Reveal key={i} delay={i * 0.08} className="stat" style={{ background: "var(--bg)", padding: "3rem 2.75rem" }}>
+              <span className="stat-num">{s.num}</span>
+              <span className="stat-label">{s.label}</span>
+            </Reveal>
+          ))}
+        </div>
       </section>
 
+      {/* BASINDA — 3'lü kart */}
+      <section style={{ borderBottom: "1px solid var(--border)" }}>
+        <div style={{ padding: "2.5rem 2.75rem 1.75rem" }}>
+          <p className="eyebrow">{t.pressKicker}</p>
+        </div>
+        <div className="card-grid home-3grid" style={{ gridTemplateColumns: "repeat(3, 1fr)" }}>
+          {t.press.map((p, i) => (
+            <Reveal key={i} delay={i * 0.08} className="press-card" style={{ background: "var(--bg)" }}>
+              {p.url ? (
+                <a href={p.url} target="_blank" rel="noopener noreferrer" style={{ display: "block", padding: "3rem 2.75rem" }}>
+                  <p className="press-outlet">{p.outlet}</p>
+                  <p className="sec-meta" style={{ marginBottom: "1.5rem" }}>{p.detail}</p>
+                  <p className="press-text">{p.text}</p>
+                </a>
+              ) : (
+                <div style={{ padding: "3rem 2.75rem" }}>
+                  <p className="press-outlet">{p.outlet}</p>
+                  <p className="sec-meta" style={{ marginBottom: "1.5rem" }}>{p.detail}</p>
+                  <p className="press-text">{p.text}</p>
+                </div>
+              )}
+            </Reveal>
+          ))}
+        </div>
+      </section>
+
+      {/* KÜNYE — 8'li grid */}
+      <section style={{ borderBottom: "1px solid var(--border)" }}>
+        <div style={{ padding: "2.5rem 2.75rem 1.75rem" }}>
+          <p className="eyebrow">{t.colophonKicker}</p>
+        </div>
+        <div className="card-grid home-4grid" style={{ gridTemplateColumns: "repeat(4, 1fr)" }}>
+          {t.colophon.map((c) => (
+            <div key={c.label} style={{ background: "var(--bg)", padding: "2rem 2.75rem" }}>
+              <p className="sec-meta" style={{ marginBottom: "0.7rem" }}>{c.label}</p>
+              <p style={{ fontFamily: "var(--font-grotesk)", fontWeight: 400, fontSize: "1.1rem", color: "var(--cream)" }}>{c.value}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* SATIN AL — 8'li grid (kanallar murekkep içeriğinden) */}
+      <section style={{ borderBottom: "1px solid var(--border)" }}>
+        <div style={{ padding: "2.5rem 2.75rem 1.75rem" }}>
+          <p className="eyebrow">{t.buyGridKicker}</p>
+        </div>
+        <div className="card-grid home-4grid" style={{ gridTemplateColumns: "repeat(4, 1fr)" }}>
+          {buyLinks.map((l, i) => (
+            <a key={l.name} href={l.url} target="_blank" rel="noopener noreferrer" className="buy-cell" style={{ background: "var(--bg)", padding: "2.25rem 2.75rem" }}>
+              <span style={{ fontFamily: "var(--font-grotesk)", fontWeight: 400, fontSize: "1.2rem", color: "var(--cream)" }}>{l.name}</span>
+              {i === 0 && <span className="sec-meta" style={{ color: "var(--bordo)", marginTop: "0.5rem" }}>{t.buyGridNote}</span>}
+            </a>
+          ))}
+        </div>
+      </section>
+
+      {/* TAKİP / SUBSTACK */}
       <Newsletter lang={lang} />
     </div>
   );
