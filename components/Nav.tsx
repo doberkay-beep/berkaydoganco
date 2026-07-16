@@ -110,7 +110,7 @@ export function Nav() {
                   {link.label}
                   <span style={{ fontSize: "0.5rem" }} aria-hidden="true">▾</span>
                 </span>
-                <div className="nav-dropdown-menu glass" style={{ position: "absolute", top: "calc(100% + 14px)", left: 0, minWidth: "190px", padding: "0.4rem", borderRadius: "4px", border: "1px solid var(--border-bright)" }}>
+                <div className="nav-dropdown-menu glass" style={{ position: "absolute", top: "calc(100% + 14px)", left: 0, minWidth: "190px", padding: "0.4rem", borderRadius: "2px", border: "1px solid var(--dim)" }}>
                   {link.children.map((c) => (
                     <Link
                       key={c.href}
@@ -175,7 +175,7 @@ export function Nav() {
                 <div key={link.label} style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: "1rem" }}>
                   <span style={{ fontFamily: "var(--font-mono)", fontSize: "0.7rem", fontWeight: 400, letterSpacing: "0.25em", color: "var(--text-dim)" }}>{link.label}</span>
                   {link.children.map((c) => (
-                    <Link key={c.href} href={c.href} onClick={() => setOpen(false)} style={{ fontFamily: "var(--font-grotesk)", fontSize: "1.4rem", fontWeight: 700, letterSpacing: "0.08em", color: isActive(c.match) ? "var(--text)" : "var(--text-dim)" }}>
+                    <Link key={c.href} href={c.href} onClick={() => setOpen(false)} style={{ fontFamily: "var(--font-grotesk)", fontSize: "1.6rem", fontWeight: 400, letterSpacing: "0.06em", color: isActive(c.match) ? "var(--cream)" : "var(--gray)" }}>
                       {c.label}
                     </Link>
                   ))}
@@ -183,7 +183,7 @@ export function Nav() {
               );
             }
             return (
-              <Link key={link.href} href={link.href} onClick={() => setOpen(false)} style={{ fontFamily: "var(--font-grotesk)", fontSize: "1.4rem", fontWeight: 700, letterSpacing: "0.08em", color: isActive(link.match) ? "var(--text)" : "var(--text-dim)" }}>
+              <Link key={link.href} href={link.href} onClick={() => setOpen(false)} style={{ fontFamily: "var(--font-grotesk)", fontSize: "1.6rem", fontWeight: 400, letterSpacing: "0.06em", color: isActive(link.match) ? "var(--cream)" : "var(--gray)" }}>
                 {link.label}
               </Link>
             );
