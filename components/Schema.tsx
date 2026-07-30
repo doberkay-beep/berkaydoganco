@@ -81,32 +81,3 @@ export function TasfiyeBookSchema() {
   );
 }
 
-/** Yazı detayı — CreativeWork */
-export function YaziSchema({
-  title,
-  description,
-  datePublished,
-  slug,
-  lang,
-}: {
-  title: string;
-  description: string;
-  datePublished: string;
-  slug: string;
-  lang: string;
-}) {
-  return (
-    <JsonLd
-      data={{
-        "@context": "https://schema.org",
-        "@type": "CreativeWork",
-        headline: title,
-        description,
-        datePublished,
-        inLanguage: lang,
-        author: { "@type": "Person", name: "Berkay Doğan", url: SITE },
-        url: `${SITE}${lang === "en" ? "/en" : ""}/yazilar/${slug}/`,
-      }}
-    />
-  );
-}

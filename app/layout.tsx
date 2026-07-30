@@ -40,14 +40,10 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://berkaydogan.co"),
   alternates: {
     canonical: "/",
-    languages: {
-      tr: "/",
-      en: "/en",
-    },
   },
   openGraph: {
-    title: "Berkay Doğan — Tasfiye",
-    description: "Yıkmak, kurmanın tek yoludur. Şair ve yazar Berkay Doğan'ın resmi sitesi.",
+    title: "Berkay Doğan — Şair, Yazar",
+    description: "Trajedilere elveda deyip, dinginliğin zuhur etmesi. Şair ve yazar Berkay Doğan'ın resmi sitesi.",
     url: "https://berkaydogan.co",
     siteName: "berkaydogan.co",
     locale: "tr_TR",
