@@ -1,11 +1,11 @@
-import { HomeContent } from "@/components/HomeContent";
+import { SafKaranlik } from "@/components/SafKaranlik";
 import { PersonSchema } from "@/components/Schema";
 
 export default function Page() {
   return (
     <>
       <PersonSchema />
-      <HomeContent lang="tr" />
+      <SafKaranlik />
     </>
   );
 }

@@ -1,10 +1,6 @@
 import type { Metadata } from "next";
 import { Cormorant_Garamond, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
-import { Nav } from "@/components/Nav";
-import { Footer } from "@/components/Footer";
-import { PageTransition } from "@/components/PageTransition";
-import { HtmlLang } from "@/components/HtmlLang";
 import { Analytics } from "@vercel/analytics/next";
 
 // Başlıklar: Cormorant Garamond (300/400 + italik) — CSS'te var(--font-grotesk)
@@ -78,10 +74,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
   return (
     <html lang="tr" className={`${cormorant.variable} ${jetbrains.variable}`}>
       <body>
-        <HtmlLang />
-        <Nav />
-        <main><PageTransition>{children}</PageTransition></main>
-        <Footer />
+        {children}
         <Analytics />
       </body>
     </html>
