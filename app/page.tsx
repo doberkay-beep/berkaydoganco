@@ -1,4 +1,4 @@
-import { SafKaranlik } from "@/components/SafKaranlik";
+import { Cagdas } from "@/components/Cagdas";
 import { PersonSchema, MurekkepBookSchema, TasfiyeBookSchema } from "@/components/Schema";
 
 export default function Page() {
@@ -7,7 +7,7 @@ export default function Page() {
       <PersonSchema />
       <MurekkepBookSchema />
       <TasfiyeBookSchema />
-      <SafKaranlik />
+      <Cagdas />
     </>
   );
 }

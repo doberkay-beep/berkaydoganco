@@ -1,0 +1,251 @@
+"use client";
+
+import { useEffect, useRef, useState } from "react";
+import {
+  site, LANGS, type Lang,
+  TRENDYOL_URL, SUBSTACK_URL, YOUTUBE_URL, INSTAGRAM_URL, EMAIL,
+} from "@/lib/site";
+
+/* ---------- Scroll ile beliren sarmalayıcı (akışkan) ---------- */
+function Reveal({ children, as: Tag = "div", delay = 0, className, style }: {
+  children: React.ReactNode; as?: React.ElementType; delay?: number; className?: string; style?: React.CSSProperties;
+}) {
+  const ref = useRef<HTMLElement | null>(null);
+  const [shown, setShown] = useState(false);
+  useEffect(() => {
+    const el = ref.current; if (!el) return;
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      const t = window.setTimeout(() => setShown(true), 0); return () => window.clearTimeout(t);
+    }
+    const io = new IntersectionObserver((es) => es.forEach((e) => { if (e.isIntersecting) { setShown(true); io.disconnect(); } }), { threshold: 0.12 });
+    io.observe(el); return () => io.disconnect();
+  }, []);
+  return (
+    <Tag ref={ref} className={className} style={{
+      opacity: shown ? 1 : 0, transform: shown ? "translateY(0)" : "translateY(24px)",
+      transition: `opacity 0.9s cubic-bezier(0.22,1,0.36,1) ${delay}s, transform 0.9s cubic-bezier(0.22,1,0.36,1) ${delay}s`, ...style,
+    }}>{children}</Tag>
+  );
+}
+
+/* ---------- Geri sayım (25 Ağustos 2026) ---------- */
+function Countdown({ labels }: { labels: string[] }) {
+  const [v, setV] = useState<number[] | null>(null);
+  useEffect(() => {
+    const tick = () => {
+      const d = Math.max(0, new Date("2026-08-25T00:00:00").getTime() - Date.now());
+      setV([Math.floor(d / 86400000), Math.floor((d % 86400000) / 3600000), Math.floor((d % 3600000) / 60000)]);
+    };
+    tick(); const id = setInterval(tick, 30000); return () => clearInterval(id);
+  }, []);
+  const d = v ?? [0, 0, 0];
+  return (
+    <div style={{ display: "flex", gap: "1.5rem" }}>
+      {d.map((n, i) => (
+        <div key={i} style={{ display: "flex", flexDirection: "column", gap: "0.3rem" }}>
+          <span suppressHydrationWarning style={{ fontFamily: "var(--font-grotesk)", fontWeight: 700, fontSize: "clamp(1.8rem, 4vw, 2.6rem)", lineHeight: 1, color: "var(--accent)", fontVariantNumeric: "tabular-nums" }}>{String(n).padStart(2, "0")}</span>
+          <span style={{ fontSize: "0.6rem", letterSpacing: "0.2em", color: "var(--muted)" }}>{labels[i]}</span>
+        </div>
+      ))}
+    </div>
+  );
+}
+
+function Eyebrow({ children }: { children: React.ReactNode }) {
+  return (
+    <span style={{ display: "inline-flex", alignItems: "center", gap: "0.6rem", fontFamily: "var(--font-grotesk)", fontSize: "0.7rem", fontWeight: 500, letterSpacing: "0.26em", textTransform: "uppercase", color: "var(--ink)" }}>
+      <span style={{ width: "7px", height: "7px", borderRadius: "50%", background: "var(--accent)" }} />{children}
+    </span>
+  );
+}
+
+export function Cagdas() {
+  const [lang, setLang] = useState<Lang>("en");
+  const navRef = useRef<HTMLElement | null>(null);
+  const t = site[lang];
+
+  useEffect(() => { document.documentElement.lang = lang; }, [lang]);
+
+  /* Menü scroll'da katılaşır */
+  useEffect(() => {
+    const onScroll = () => { if (navRef.current) navRef.current.dataset.solid = window.scrollY > 40 ? "1" : "0"; };
+    onScroll(); window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  const b = t.books;
+
+  return (
+    <div>
+      <style>{`
+        .cg a { color: inherit; }
+        .cg-link { position: relative; transition: color 0.3s ease; }
+        .cg-link::after { content: ""; position: absolute; left: 0; right: 0; bottom: -3px; height: 1px; background: var(--accent); transform: scaleX(0); transform-origin: left; transition: transform 0.35s cubic-bezier(0.22,1,0.36,1); }
+        .cg-link:hover { color: var(--accent); }
+        .cg-link:hover::after { transform: scaleX(1); }
+
+        .cg-btn { display: inline-flex; align-items: center; gap: 0.5rem; font-family: var(--font-grotesk); font-size: 0.78rem; font-weight: 500; letter-spacing: 0.08em; padding: 0.95rem 1.6rem; border-radius: 100px; border: 1px solid transparent; cursor: pointer; transition: transform 0.3s ease, background 0.3s ease, color 0.3s ease, border-color 0.3s ease; }
+        .cg-btn-fill { background: var(--accent); color: var(--accent-ink); }
+        .cg-btn-fill:hover { transform: translateY(-2px); }
+        .cg-btn-ghost { border-color: var(--line); color: var(--ink); }
+        .cg-btn-ghost:hover { border-color: var(--ink); transform: translateY(-2px); }
+
+        .cg-nav { position: fixed; top: 0; left: 0; right: 0; z-index: 50; display: flex; align-items: center; justify-content: space-between; padding: 1.1rem clamp(1.25rem, 4vw, 3.25rem); transition: background 0.4s ease, box-shadow 0.4s ease, backdrop-filter 0.4s ease; }
+        .cg-nav[data-solid="1"] { background: rgba(250,249,246,0.82); backdrop-filter: blur(14px); box-shadow: 0 1px 0 var(--line); }
+        .cg-nav-links { display: flex; gap: clamp(1.1rem, 2vw, 2.2rem); font-size: 0.76rem; letter-spacing: 0.04em; }
+        .cg-lang { display: flex; gap: 0.5rem; font-size: 0.68rem; letter-spacing: 0.1em; text-transform: uppercase; }
+        .cg-lang button { background: none; border: none; cursor: pointer; color: var(--muted); padding: 0.2rem; transition: color 0.25s ease; }
+        .cg-lang button[data-on="1"] { color: var(--accent); font-weight: 700; }
+        .cg-lang button:hover { color: var(--ink); }
+        @media (max-width: 800px) { .cg-nav-links { display: none; } }
+
+        .cg-hero { display: grid; grid-template-columns: 1.05fr 0.95fr; gap: clamp(2rem, 5vw, 5rem); align-items: center; min-height: 100svh; padding: 7rem clamp(1.25rem, 4vw, 3.25rem) 4rem; }
+        .cg-portrait-wrap { position: relative; }
+        .cg-portrait-wrap::before { content: ""; position: absolute; inset: auto -14px -14px auto; width: 62%; height: 78%; background: var(--accent); border-radius: 4px; z-index: 0; }
+        .cg-portrait { position: relative; z-index: 1; width: 100%; aspect-ratio: 4 / 5; object-fit: cover; object-position: 62% 40%; border-radius: 4px; filter: grayscale(100%) contrast(1.05); }
+        @media (max-width: 860px) {
+          .cg-hero { grid-template-columns: 1fr; min-height: auto; padding-top: 6rem; gap: 2.5rem; }
+          .cg-portrait-wrap { order: -1; max-width: 420px; }
+        }
+
+        .cg-section { padding: clamp(5rem, 12vh, 9rem) clamp(1.25rem, 4vw, 3.25rem); border-top: 1px solid var(--line); }
+        .cg-about-grid { display: grid; grid-template-columns: 0.8fr 1.2fr; gap: clamp(2rem, 6vw, 6rem); max-width: 1200px; margin: 0 auto; }
+        @media (max-width: 860px) { .cg-about-grid { grid-template-columns: 1fr; gap: 2.5rem; } }
+        .cg-book { display: grid; grid-template-columns: 1fr 1.15fr; gap: clamp(2rem, 5vw, 4.5rem); align-items: center; max-width: 1100px; margin: 0 auto; }
+        .cg-book + .cg-book { margin-top: clamp(4rem, 9vh, 7rem); }
+        @media (max-width: 780px) { .cg-book { grid-template-columns: 1fr; gap: 2.25rem; text-align: left; } .cg-book.rev .cg-book-media { order: -1; } }
+
+        .cg-huge { font-family: var(--font-grotesk); font-weight: 700; letter-spacing: -0.04em; line-height: 0.92; }
+        .cg-serif { font-family: var(--font-serif); font-weight: 300; font-style: italic; }
+      `}</style>
+
+      {/* MENÜ */}
+      <nav ref={navRef as React.RefObject<HTMLElement>} className="cg-nav cg" data-solid="0">
+        <a href="#top" style={{ fontFamily: "var(--font-grotesk)", fontWeight: 700, fontSize: "0.95rem", letterSpacing: "0.02em" }}>Berkay Doğan</a>
+        <div className="cg-nav-links">
+          <a href="#books" className="cg-link">{t.nav.books}</a>
+          <a href="#about" className="cg-link">{t.nav.about}</a>
+          <a href="#writing" className="cg-link">{t.nav.writing}</a>
+          <a href="#contact" className="cg-link">{t.nav.contact}</a>
+        </div>
+        <div className="cg-lang">
+          {LANGS.map((l) => (
+            <button key={l} data-on={l === lang ? "1" : "0"} onClick={() => setLang(l)} aria-label={l.toUpperCase()}>{l.toUpperCase()}</button>
+          ))}
+        </div>
+      </nav>
+
+      <main className="cg" id="top">
+        {/* HERO */}
+        <section className="cg-hero">
+          <div>
+            <Reveal><Eyebrow>{t.hero.role}</Eyebrow></Reveal>
+            <Reveal delay={0.08} as="h1" className="cg-huge" style={{ fontSize: "clamp(3.2rem, 9vw, 8rem)", margin: "1.5rem 0 1.75rem" }}>
+              Berkay<br />Doğan
+            </Reveal>
+            <Reveal delay={0.16} as="p" className="cg-serif" style={{ fontSize: "clamp(1.4rem, 3vw, 2.1rem)", lineHeight: 1.35, maxWidth: "20ch", color: "var(--ink)" }}>
+              {t.hero.line}
+            </Reveal>
+            <Reveal delay={0.24} as="p" style={{ marginTop: "1.5rem", fontSize: "1rem", lineHeight: 1.7, color: "var(--muted)", maxWidth: "42ch" }}>
+              {t.hero.sub}
+            </Reveal>
+            <Reveal delay={0.32} style={{ marginTop: "2.25rem", display: "flex", gap: "0.75rem", flexWrap: "wrap" }}>
+              <a href="#books" className="cg-btn cg-btn-fill">{t.hero.ctaBooks} →</a>
+              <a href="#about" className="cg-btn cg-btn-ghost">{t.hero.ctaAbout}</a>
+            </Reveal>
+          </div>
+          <Reveal delay={0.2} className="cg-portrait-wrap">
+            <img src="/images/portre.jpg" alt="Berkay Doğan" className="cg-portrait" />
+          </Reveal>
+        </section>
+
+        {/* HAKKIMDA */}
+        <section id="about" className="cg-section">
+          <div className="cg-about-grid">
+            <div>
+              <Reveal><Eyebrow>{t.about.label}</Eyebrow></Reveal>
+              <Reveal delay={0.06} as="h2" className="cg-huge" style={{ fontSize: "clamp(2.4rem, 5vw, 4rem)", marginTop: "1.25rem" }}>{t.about.heading}</Reveal>
+              <Reveal delay={0.12} style={{ marginTop: "2.5rem" }}>
+                <p style={{ fontSize: "0.7rem", letterSpacing: "0.22em", textTransform: "uppercase", color: "var(--muted)", marginBottom: "1.25rem" }}>{t.about.worksLabel}</p>
+                {t.about.works.map((w, i) => (
+                  <div key={i} style={{ display: "flex", gap: "1.25rem", alignItems: "baseline", padding: "0.9rem 0", borderTop: "1px solid var(--line)" }}>
+                    <span style={{ fontFamily: "var(--font-grotesk)", fontWeight: 700, color: "var(--accent)", fontSize: "0.9rem", minWidth: "3ch" }}>{w.year}</span>
+                    <span style={{ flex: 1 }}>
+                      <span style={{ display: "block", fontFamily: "var(--font-serif)", fontSize: "1.15rem", lineHeight: 1.25 }}>{w.title}</span>
+                      <span style={{ fontSize: "0.68rem", letterSpacing: "0.14em", textTransform: "uppercase", color: "var(--muted)" }}>{w.kind}</span>
+                    </span>
+                  </div>
+                ))}
+              </Reveal>
+            </div>
+            <div style={{ display: "flex", flexDirection: "column", gap: "1.5rem" }}>
+              {t.about.paras.map((p, i) => (
+                <Reveal key={i} as="p" delay={i * 0.07} style={{ fontSize: i === 0 ? "clamp(1.15rem, 2vw, 1.5rem)" : "1.02rem", fontFamily: i === 0 ? "var(--font-serif)" : "var(--font-grotesk)", fontWeight: i === 0 ? 400 : 400, lineHeight: i === 0 ? 1.5 : 1.75, color: i === 0 ? "var(--ink)" : "var(--muted)" }}>{p}</Reveal>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* KİTAPLAR */}
+        <section id="books" className="cg-section">
+          <Reveal style={{ maxWidth: "1100px", margin: "0 auto clamp(3.5rem, 8vh, 6rem)" }}><Eyebrow>{b.label}</Eyebrow></Reveal>
+
+          {/* Mürekkep ve Köz */}
+          <Reveal className="cg-book">
+            <div className="cg-book-media" style={{ display: "flex", justifyContent: "center" }}>
+              <img src="/murekkep-ve-koz-on-kapak.jpg" alt={b.murekkep.title} loading="lazy" style={{ width: "clamp(180px, 24vw, 260px)", borderRadius: "3px", boxShadow: "0 24px 55px rgba(20,18,15,0.22)" }} />
+            </div>
+            <div style={{ display: "flex", flexDirection: "column", alignItems: "flex-start", gap: "1.1rem" }}>
+              <span style={{ fontSize: "0.6rem", letterSpacing: "0.18em", textTransform: "uppercase", color: "var(--accent-ink)", background: "var(--accent)", padding: "0.4rem 0.65rem", borderRadius: "100px" }}>{b.murekkep.badge}</span>
+              <h3 className="cg-huge" style={{ fontSize: "clamp(2.2rem, 4.5vw, 3.4rem)" }}>{b.murekkep.title}</h3>
+              <p style={{ fontSize: "0.72rem", letterSpacing: "0.14em", textTransform: "uppercase", color: "var(--muted)" }}>{b.murekkep.meta}</p>
+              <p className="cg-serif" style={{ fontStyle: "italic", fontSize: "clamp(1.05rem, 1.8vw, 1.3rem)", lineHeight: 1.55, color: "var(--ink)", maxWidth: "36ch" }}>{b.murekkep.desc}</p>
+              <a href={TRENDYOL_URL} target="_blank" rel="noopener noreferrer" className="cg-btn cg-btn-fill" style={{ marginTop: "0.5rem" }}>{b.murekkep.cta} →</a>
+            </div>
+          </Reveal>
+
+          {/* Tasfiye */}
+          <Reveal className="cg-book rev">
+            <div style={{ display: "flex", flexDirection: "column", alignItems: "flex-start", gap: "1.1rem" }}>
+              <span style={{ fontSize: "0.6rem", letterSpacing: "0.18em", textTransform: "uppercase", color: "var(--accent)", border: "1px solid var(--accent)", padding: "0.4rem 0.65rem", borderRadius: "100px" }}>{b.tasfiye.badge}</span>
+              <h3 className="cg-huge" style={{ fontSize: "clamp(2.2rem, 4.5vw, 3.4rem)" }}>{b.tasfiye.title}</h3>
+              <p style={{ fontSize: "0.72rem", letterSpacing: "0.14em", textTransform: "uppercase", color: "var(--muted)" }}>{b.tasfiye.meta}</p>
+              <p className="cg-serif" style={{ fontStyle: "italic", fontSize: "clamp(1.05rem, 1.8vw, 1.3rem)", lineHeight: 1.55, color: "var(--ink)", maxWidth: "32ch" }}>{b.epigraph}</p>
+              <div style={{ marginTop: "0.75rem" }}><Countdown labels={b.countdown} /></div>
+            </div>
+            <div className="cg-book-media" style={{ display: "flex", justifyContent: "center" }}>
+              <div style={{ width: "clamp(180px, 24vw, 260px)", aspectRatio: "150 / 233", border: "1px solid var(--line)", borderRadius: "3px", background: "var(--bg-2)", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", gap: "1.25rem", boxShadow: "0 24px 55px rgba(20,18,15,0.10)" }}>
+                <span style={{ fontFamily: "var(--font-grotesk)", fontWeight: 700, fontSize: "clamp(3rem, 6vw, 4.5rem)", lineHeight: 1, color: "var(--accent)" }}>?</span>
+                <span style={{ fontSize: "0.5rem", letterSpacing: "0.24em", textTransform: "uppercase", color: "var(--muted)" }}>{b.coverSoon}</span>
+              </div>
+            </div>
+          </Reveal>
+        </section>
+
+        {/* YAZILAR */}
+        <section id="writing" className="cg-section" style={{ textAlign: "center" }}>
+          <Reveal style={{ display: "inline-flex" }}><Eyebrow>{t.writing.label}</Eyebrow></Reveal>
+          <Reveal delay={0.06} as="p" className="cg-serif" style={{ margin: "2rem auto 2.25rem", fontStyle: "italic", fontSize: "clamp(1.6rem, 4vw, 2.8rem)", lineHeight: 1.35, maxWidth: "22ch", color: "var(--ink)" }}>{t.writing.line}</Reveal>
+          <Reveal delay={0.1}><a href={SUBSTACK_URL} target="_blank" rel="noopener noreferrer" className="cg-btn cg-btn-fill">{t.writing.cta} →</a></Reveal>
+        </section>
+
+        {/* İLETİŞİM */}
+        <section id="contact" className="cg-section" style={{ background: "var(--ink)", color: "var(--bg)", borderTop: "none" }}>
+          <div style={{ maxWidth: "1100px", margin: "0 auto" }}>
+            <Reveal><span style={{ display: "inline-flex", alignItems: "center", gap: "0.6rem", fontSize: "0.7rem", fontWeight: 500, letterSpacing: "0.26em", textTransform: "uppercase" }}><span style={{ width: "7px", height: "7px", borderRadius: "50%", background: "var(--accent)" }} />{t.contact.label}</span></Reveal>
+            <Reveal delay={0.06} as="p" className="cg-serif" style={{ margin: "1.75rem 0 2.5rem", fontStyle: "italic", fontSize: "clamp(1.7rem, 4.5vw, 3.4rem)", lineHeight: 1.3, maxWidth: "20ch" }}>{t.contact.line}</Reveal>
+            <Reveal delay={0.12}>
+              <a href={`mailto:${EMAIL}`} className="cg-huge" style={{ display: "inline-block", fontSize: "clamp(1.4rem, 3.5vw, 2.6rem)", color: "var(--bg)", letterSpacing: "-0.02em" }}>{EMAIL}</a>
+            </Reveal>
+            <Reveal delay={0.18} style={{ marginTop: "3rem", display: "flex", gap: "2rem", flexWrap: "wrap", fontSize: "0.76rem", letterSpacing: "0.16em", textTransform: "uppercase" }}>
+              <a href={YOUTUBE_URL} target="_blank" rel="noopener noreferrer" className="cg-link">YouTube</a>
+              <a href={INSTAGRAM_URL} target="_blank" rel="noopener noreferrer" className="cg-link">Instagram</a>
+              <a href={SUBSTACK_URL} target="_blank" rel="noopener noreferrer" className="cg-link">Substack</a>
+            </Reveal>
+            <p style={{ marginTop: "4rem", fontSize: "0.66rem", letterSpacing: "0.14em", textTransform: "uppercase", opacity: 0.5 }}>© 2026 Berkay Doğan</p>
+          </div>
+        </section>
+      </main>
+    </div>
+  );
+}
