@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import {
   site, LANGS, type Lang,
   TRENDYOL_URL, SUBSTACK_URL, YOUTUBE_URL, INSTAGRAM_URL, EMAIL,
+  RETAILERS, REVIEWS, MEDIA,
 } from "@/lib/site";
 
 /* ---------- Scroll ile beliren sarmalayıcı (akışkan) ---------- */
@@ -117,6 +118,21 @@ export function Cagdas() {
 
         .cg-huge { font-family: var(--font-grotesk); font-weight: 700; letter-spacing: -0.04em; line-height: 0.92; }
         .cg-serif { font-family: var(--font-serif); font-weight: 300; font-style: italic; }
+
+        /* Tanınırlık tile'ları */
+        .cg-tiles { display: grid; grid-template-columns: repeat(3, 1fr); gap: clamp(1.5rem, 4vw, 3rem); margin-top: clamp(2.5rem, 6vh, 4rem); }
+        @media (max-width: 720px) { .cg-tiles { grid-template-columns: 1fr; gap: 2rem; } }
+        .cg-press-row { transition: color 0.3s ease; }
+        .cg-press-row:hover { color: var(--accent); }
+
+        /* Okur yorumları */
+        .cg-reviews { columns: 3; column-gap: 1.5rem; }
+        .cg-review-card { break-inside: avoid; margin-bottom: 1.5rem; display: flex; flex-direction: column; padding: 1.75rem; background: var(--bg); border: 1px solid var(--line); border-radius: 4px; }
+        @media (max-width: 900px) { .cg-reviews { columns: 2; } }
+        @media (max-width: 600px) { .cg-reviews { columns: 1; } }
+
+        /* Medya gömü çerçevesi */
+        .cg-embed { border: 1px solid var(--line); border-radius: 8px; overflow: hidden; background: var(--bg-2); }
       `}</style>
 
       {/* MENÜ */}
@@ -201,6 +217,14 @@ export function Cagdas() {
               <p style={{ fontSize: "0.72rem", letterSpacing: "0.14em", textTransform: "uppercase", color: "var(--muted)" }}>{b.murekkep.meta}</p>
               <p className="cg-serif" style={{ fontStyle: "italic", fontSize: "clamp(1.05rem, 1.8vw, 1.3rem)", lineHeight: 1.55, color: "var(--ink)", maxWidth: "36ch" }}>{b.murekkep.desc}</p>
               <a href={TRENDYOL_URL} target="_blank" rel="noopener noreferrer" className="cg-btn cg-btn-fill" style={{ marginTop: "0.5rem" }}>{b.murekkep.cta} →</a>
+              <div style={{ marginTop: "0.5rem" }}>
+                <span style={{ display: "block", fontSize: "0.62rem", letterSpacing: "0.16em", textTransform: "uppercase", color: "var(--muted)", marginBottom: "0.6rem" }}>{b.buyMore}</span>
+                <div style={{ display: "flex", flexWrap: "wrap", gap: "0.4rem 1.1rem" }}>
+                  {RETAILERS.slice(1).map((r) => (
+                    <a key={r.name} href={r.url} target="_blank" rel="noopener noreferrer" className="cg-link" style={{ fontSize: "0.78rem", color: "var(--muted)" }}>{r.name}</a>
+                  ))}
+                </div>
+              </div>
             </div>
           </Reveal>
 
@@ -220,6 +244,79 @@ export function Cagdas() {
               </div>
             </div>
           </Reveal>
+        </section>
+
+        {/* TANINIRLIK / BASINDA */}
+        <section id="recognition" className="cg-section">
+          <div style={{ maxWidth: "1100px", margin: "0 auto" }}>
+            <Reveal><Eyebrow>{t.recognition.label}</Eyebrow></Reveal>
+            <Reveal delay={0.05} as="h2" className="cg-huge" style={{ fontSize: "clamp(2rem, 4.5vw, 3.4rem)", marginTop: "1.25rem", maxWidth: "16ch" }}>{t.recognition.heading}</Reveal>
+            <div className="cg-tiles">
+              {t.recognition.tiles.map((tile, i) => (
+                <Reveal key={i} delay={i * 0.07} style={{ borderTop: "2px solid var(--accent)", paddingTop: "1.25rem" }}>
+                  <span style={{ display: "block", fontFamily: "var(--font-grotesk)", fontWeight: 700, fontSize: "clamp(2.6rem, 6vw, 4.2rem)", lineHeight: 1, color: "var(--accent)", letterSpacing: "-0.03em" }}>{tile.value}</span>
+                  <span style={{ display: "block", marginTop: "0.85rem", fontSize: "0.82rem", lineHeight: 1.5, color: "var(--muted)" }}>{tile.label}</span>
+                </Reveal>
+              ))}
+            </div>
+            <Reveal delay={0.1} style={{ marginTop: "clamp(3rem, 6vh, 4.5rem)", borderTop: "1px solid var(--line)", paddingTop: "2rem" }}>
+              <span style={{ display: "block", fontSize: "0.68rem", letterSpacing: "0.22em", textTransform: "uppercase", color: "var(--muted)", marginBottom: "1.25rem" }}>{t.recognition.pressLabel}</span>
+              <div style={{ display: "flex", flexDirection: "column", gap: "0.9rem" }}>
+                {t.recognition.press.map((p) => (
+                  <a key={p.name} href={p.url} target="_blank" rel="noopener noreferrer" className="cg-press-row" style={{ display: "flex", gap: "1rem", alignItems: "baseline", flexWrap: "wrap" }}>
+                    <span style={{ fontFamily: "var(--font-grotesk)", fontWeight: 500, fontSize: "1.05rem", minWidth: "9ch" }}>{p.name}</span>
+                    <span style={{ color: "var(--muted)", fontSize: "0.92rem" }}>{p.detail} <span style={{ color: "var(--accent)" }}>↗</span></span>
+                  </a>
+                ))}
+              </div>
+            </Reveal>
+          </div>
+        </section>
+
+        {/* OKUR YORUMLARI */}
+        <section id="reviews" className="cg-section" style={{ background: "var(--bg-2)" }}>
+          <div style={{ maxWidth: "1150px", margin: "0 auto" }}>
+            <Reveal><Eyebrow>{t.reviews.label}</Eyebrow></Reveal>
+            <Reveal delay={0.05} as="h2" className="cg-huge" style={{ fontSize: "clamp(2rem, 4.5vw, 3.4rem)", marginTop: "1.25rem", marginBottom: "clamp(2.5rem, 6vh, 4rem)" }}>{t.reviews.heading}</Reveal>
+            <div className="cg-reviews">
+              {REVIEWS.map((r, i) => (
+                <Reveal key={i} delay={(i % 3) * 0.06} className="cg-review-card">
+                  <blockquote style={{ fontFamily: "var(--font-serif)", fontStyle: "italic", fontWeight: 400, fontSize: "1.1rem", lineHeight: 1.55, color: "var(--ink)" }}>&ldquo;{r.text}&rdquo;</blockquote>
+                  <span style={{ marginTop: "1.25rem", fontSize: "0.66rem", letterSpacing: "0.18em", textTransform: "uppercase", color: "var(--accent)" }}>{r.source}</span>
+                </Reveal>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* MEDYA — Podcast + YouTube */}
+        <section id="media" className="cg-section">
+          <div style={{ maxWidth: "860px", margin: "0 auto" }}>
+            <Reveal><Eyebrow>{t.media.label}</Eyebrow></Reveal>
+            <Reveal delay={0.05} as="h2" className="cg-huge" style={{ fontSize: "clamp(2rem, 4.5vw, 3.4rem)", marginTop: "1.25rem" }}>{t.media.heading}</Reveal>
+            <Reveal delay={0.1} as="p" style={{ marginTop: "1.25rem", fontSize: "1rem", lineHeight: 1.7, color: "var(--muted)", maxWidth: "48ch" }}>{t.media.podcastDesc}</Reveal>
+
+            <Reveal delay={0.12} style={{ marginTop: "2.5rem" }}>
+              <span style={{ display: "block", fontSize: "0.68rem", letterSpacing: "0.22em", textTransform: "uppercase", color: "var(--muted)", marginBottom: "1rem" }}>{t.media.podcast}</span>
+              <div className="cg-embed">
+                <iframe title="Şairin Hesabı — Spotify" src={`https://open.spotify.com/embed/show/${MEDIA.spotifyShow}?utm_source=generator`} width="100%" height="232" frameBorder="0" allow="clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy" style={{ display: "block" }} />
+              </div>
+              <div style={{ display: "grid", gap: "1rem", marginTop: "1rem" }}>
+                {MEDIA.episodes.map((ep, i) => (
+                  <div key={i} className="cg-embed">
+                    <iframe title={`Bölüm ${i + 1}`} src={`https://open.spotify.com/embed/episode/${ep}?utm_source=generator`} width="100%" height="152" frameBorder="0" allow="clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy" style={{ display: "block" }} />
+                  </div>
+                ))}
+              </div>
+            </Reveal>
+
+            <Reveal delay={0.14} style={{ marginTop: "2.75rem" }}>
+              <span style={{ display: "block", fontSize: "0.68rem", letterSpacing: "0.22em", textTransform: "uppercase", color: "var(--muted)", marginBottom: "1rem" }}>{t.media.video}</span>
+              <div className="cg-embed" style={{ aspectRatio: "16 / 9" }}>
+                <iframe title="YouTube — Berkay Doğan" src={`https://www.youtube.com/embed/${MEDIA.youtube}`} width="100%" height="100%" frameBorder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen loading="lazy" style={{ display: "block" }} />
+              </div>
+            </Reveal>
+          </div>
         </section>
 
         {/* YAZILAR */}
