@@ -4,8 +4,9 @@ import { useEffect, useRef, useState } from "react";
 import {
   site, LANGS, type Lang,
   TRENDYOL_URL, SUBSTACK_URL, YOUTUBE_URL, INSTAGRAM_URL, EMAIL,
-  RETAILERS, REVIEWS, MEDIA,
+  RETAILERS, REVIEWS, MEDIA, EMBER_FRAGMENTS,
 } from "@/lib/site";
+import { TasfiyeDuvari } from "./TasfiyeDuvari";
 
 /* ---------- Scroll ile beliren sarmalayıcı (akışkan) ---------- */
 function Reveal({ children, as: Tag = "div", delay = 0, className, style }: {
@@ -245,6 +246,9 @@ export function Cagdas() {
             </div>
           </Reveal>
         </section>
+
+        {/* TASFİYE DUVARI — arınma ritüeli (koyu bölüm) */}
+        <TasfiyeDuvari t={t.duvari} fragments={EMBER_FRAGMENTS} />
 
         {/* TANINIRLIK / BASINDA */}
         <section id="recognition" className="cg-section">

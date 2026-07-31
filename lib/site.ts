@@ -37,6 +37,20 @@ export const MEDIA = {
   youtube: "SV7C6fD8gh8",
 };
 
+// Tasfiye Duvarı'nda arka planda süzülen köz parçaları — hepsi Berkay'ın kendi dizelerinden
+export const EMBER_FRAGMENTS: string[] = [
+  "Yıkılamadım, yıktım.",
+  "geleceğime âşığım",
+  "gri hayatlar",
+  "yalan yaşanmışlıklara veda ettim",
+  "yeniden kendi içime dönüyorum",
+  "Ben artık sadece kendimim.",
+  "renginizi kaçırmayın",
+  "bir köz",
+  "Ben bir Tanrı değilim.",
+  "ve ben yeniden doğdum",
+];
+
 type Book = { title: string; meta: string; badge: string; desc: string; cta: string };
 
 type Copy = {
@@ -46,6 +60,7 @@ type Copy = {
   books: { label: string; murekkep: Book; tasfiye: Book; countdown: string[]; epigraph: string; coverSoon: string; buyMore: string };
   recognition: { label: string; heading: string; tiles: { value: string; label: string }[]; pressLabel: string; press: { name: string; detail: string; url: string }[] };
   reviews: { label: string; heading: string };
+  duvari: { label: string; heading: string; sub: string; placeholder: string; button: string; result: string; again: string };
   media: { label: string; heading: string; podcast: string; podcastDesc: string; video: string };
   writing: { label: string; line: string; cta: string };
   contact: { label: string; line: string };
@@ -95,6 +110,12 @@ export const site: Record<Lang, Copy> = {
       ],
     },
     reviews: { label: "Readers", heading: "What readers say" },
+    duvari: {
+      label: "The ritual", heading: "What will you purge?",
+      sub: "Write a burden. Watch it turn to ember. What you leave here becomes ash — nameless, weightless.",
+      placeholder: "A fear, a lie, a name…", button: "Purge",
+      result: "You let it go. Lighter now.", again: "Purge another",
+    },
     media: { label: "Media", heading: "The Poet's Reckoning", podcast: "Listen — Podcast", podcastDesc: "Conversations on poetry, literature and ideas. On Spotify and every platform.", video: "Watch — YouTube" },
     writing: { label: "Writing", line: "Thoughts, quietly — one email away.", cta: "Read on Substack" },
     contact: { label: "Contact", line: "Not for small talk — write if something in you is truly bleeding." },
@@ -142,6 +163,12 @@ export const site: Record<Lang, Copy> = {
       ],
     },
     reviews: { label: "Okurlardan", heading: "Okurlar ne diyor" },
+    duvari: {
+      label: "Ritüel", heading: "Neyi tasfiye etmek istersin?",
+      sub: "Bir yük yaz. Köze dönüşsün. Burada bıraktığın kül olur — isimsiz, ağırlıksız.",
+      placeholder: "Bir korku, bir yalan, bir isim…", button: "Tasfiye et",
+      result: "Bıraktın. Şimdi biraz daha hafifsin.", again: "Bir tane daha",
+    },
     media: { label: "Medya", heading: "Şairin Hesabı", podcast: "Dinle — Podcast", podcastDesc: "Şiir, edebiyat ve düşünceler üzerine konuşmalar. Spotify'da ve tüm platformlarda.", video: "İzle — YouTube" },
     writing: { label: "Yazılar", line: "Aklımdan geçenler, gürültüsüz — bir e-posta uzaklıkta.", cta: "Substack'te oku" },
     contact: { label: "İletişim", line: "Havadan sudan konuşmak için değil — gerçekten kanayan bir yaran varsa yaz." },
@@ -189,6 +216,12 @@ export const site: Record<Lang, Copy> = {
       ],
     },
     reviews: { label: "Lecteurs", heading: "Ce que disent les lecteurs" },
+    duvari: {
+      label: "Le rituel", heading: "Que veux-tu purger ?",
+      sub: "Écris un fardeau. Regarde-le devenir braise. Ce que tu laisses ici devient cendre — sans nom, sans poids.",
+      placeholder: "Une peur, un mensonge, un nom…", button: "Purger",
+      result: "Tu l'as laissé. Plus léger, à présent.", again: "En purger un autre",
+    },
     media: { label: "Médias", heading: "Les comptes du poète", podcast: "Écouter — Podcast", podcastDesc: "Conversations sur la poésie, la littérature et les idées. Sur Spotify et toutes les plateformes.", video: "Regarder — YouTube" },
     writing: { label: "Écrits", line: "Mes pensées, sans bruit — à un e-mail près.", cta: "Lire sur Substack" },
     contact: { label: "Contact", line: "Pas pour bavarder — écris si quelque chose en toi saigne vraiment." },
