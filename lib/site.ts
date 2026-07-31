@@ -37,6 +37,26 @@ export const MEDIA = {
   youtube: "SV7C6fD8gh8",
 };
 
+// Kâhin ve Günün Közü için dize korpusu — hepsi Berkay'ın kendi eserlerinden (kısa, güçlü)
+export const VERSES: string[] = [
+  "Yıkılamadım, yıktım.",
+  "Geri dönmüyorum, geleceğime âşığım.",
+  "Yalan yaşanmışlıklarıma veda ettim.",
+  "Hiçbir iyi hatıranın beni bulmadığı yerdeyim.",
+  "Kalbim bir gıdım bile kırılmadan devam etti.",
+  "Nedensiz olmadım böyle.",
+  "Ben de severdim eskiden.",
+  "Ben Tanrı değilim; herkesi sevemem.",
+  "Keşke gri hayatlarınızda boğulsanız da rengimizi kaçırmasanız.",
+  "Yeniden kendi içime dönüyorum.",
+  "Ben artık sadece kendimim.",
+  "Ve ben yeniden doğdum; şimdi sıra sende.",
+  "Gerçek, yağlarından arındığında ortaya çıkan kemiktir.",
+  "Görmezden gelmeyi seçtiğimiz her şeye verilmiş bir isim.",
+  "Umutsuzluk çukurunda zehirli bir kalbi tercih edersin.",
+  "Değişimin kaos getireceğine inananlardan tiksiniyorum.",
+];
+
 // Tasfiye Duvarı'nda arka planda süzülen köz parçaları — hepsi Berkay'ın kendi dizelerinden
 export const EMBER_FRAGMENTS: string[] = [
   "Yıkılamadım, yıktım.",
@@ -61,6 +81,8 @@ type Copy = {
   recognition: { label: string; heading: string; tiles: { value: string; label: string }[]; pressLabel: string; press: { name: string; detail: string; url: string }[] };
   reviews: { label: string; heading: string };
   duvari: { label: string; heading: string; sub: string; placeholder: string; button: string; result: string; again: string };
+  kozu: { label: string; share: string; copied: string };
+  kahin: { label: string; heading: string; placeholder: string; button: string; again: string; share: string; copied: string; note: string };
   media: { label: string; heading: string; podcast: string; podcastDesc: string; video: string };
   writing: { label: string; line: string; cta: string };
   contact: { label: string; line: string };
@@ -116,6 +138,12 @@ export const site: Record<Lang, Copy> = {
       placeholder: "A fear, a lie, a name…", button: "Purge",
       result: "You let it go. Lighter now.", again: "Purge another",
     },
+    kozu: { label: "Ember of the day", share: "Share", copied: "Copied" },
+    kahin: {
+      label: "The oracle", heading: "Say a word. Let a verse fall to you.",
+      placeholder: "a word, a feeling…", button: "Summon", again: "Another",
+      share: "Share", copied: "Copied", note: "A verse by Berkay Doğan",
+    },
     media: { label: "Media", heading: "The Poet's Reckoning", podcast: "Listen — Podcast", podcastDesc: "Conversations on poetry, literature and ideas. On Spotify and every platform.", video: "Watch — YouTube" },
     writing: { label: "Writing", line: "Thoughts, quietly — one email away.", cta: "Read on Substack" },
     contact: { label: "Contact", line: "Not for small talk — write if something in you is truly bleeding." },
@@ -169,6 +197,12 @@ export const site: Record<Lang, Copy> = {
       placeholder: "Bir korku, bir yalan, bir isim…", button: "Tasfiye et",
       result: "Bıraktın. Şimdi biraz daha hafifsin.", again: "Bir tane daha",
     },
+    kozu: { label: "Günün közü", share: "Paylaş", copied: "Kopyalandı" },
+    kahin: {
+      label: "Kâhin", heading: "Bir kelime söyle. Sana bir dize düşsün.",
+      placeholder: "bir kelime, bir his…", button: "Çağır", again: "Bir daha",
+      share: "Paylaş", copied: "Kopyalandı", note: "Berkay Doğan'dan bir dize",
+    },
     media: { label: "Medya", heading: "Şairin Hesabı", podcast: "Dinle — Podcast", podcastDesc: "Şiir, edebiyat ve düşünceler üzerine konuşmalar. Spotify'da ve tüm platformlarda.", video: "İzle — YouTube" },
     writing: { label: "Yazılar", line: "Aklımdan geçenler, gürültüsüz — bir e-posta uzaklıkta.", cta: "Substack'te oku" },
     contact: { label: "İletişim", line: "Havadan sudan konuşmak için değil — gerçekten kanayan bir yaran varsa yaz." },
@@ -221,6 +255,12 @@ export const site: Record<Lang, Copy> = {
       sub: "Écris un fardeau. Regarde-le devenir braise. Ce que tu laisses ici devient cendre — sans nom, sans poids.",
       placeholder: "Une peur, un mensonge, un nom…", button: "Purger",
       result: "Tu l'as laissé. Plus léger, à présent.", again: "En purger un autre",
+    },
+    kozu: { label: "La braise du jour", share: "Partager", copied: "Copié" },
+    kahin: {
+      label: "L'oracle", heading: "Dis un mot. Qu'un vers te tombe dessus.",
+      placeholder: "un mot, un sentiment…", button: "Invoquer", again: "Encore",
+      share: "Partager", copied: "Copié", note: "Un vers de Berkay Doğan",
     },
     media: { label: "Médias", heading: "Les comptes du poète", podcast: "Écouter — Podcast", podcastDesc: "Conversations sur la poésie, la littérature et les idées. Sur Spotify et toutes les plateformes.", video: "Regarder — YouTube" },
     writing: { label: "Écrits", line: "Mes pensées, sans bruit — à un e-mail près.", cta: "Lire sur Substack" },

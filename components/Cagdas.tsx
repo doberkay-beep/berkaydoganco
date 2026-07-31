@@ -4,9 +4,11 @@ import { useEffect, useRef, useState } from "react";
 import {
   site, LANGS, type Lang,
   TRENDYOL_URL, SUBSTACK_URL, YOUTUBE_URL, INSTAGRAM_URL, EMAIL,
-  RETAILERS, REVIEWS, MEDIA, EMBER_FRAGMENTS,
+  RETAILERS, REVIEWS, MEDIA, EMBER_FRAGMENTS, VERSES,
 } from "@/lib/site";
 import { TasfiyeDuvari } from "./TasfiyeDuvari";
+import { GununKozu } from "./GununKozu";
+import { Kahin } from "./Kahin";
 
 /* ---------- Scroll ile beliren sarmalayıcı (akışkan) ---------- */
 function Reveal({ children, as: Tag = "div", delay = 0, className, style }: {
@@ -176,6 +178,9 @@ export function Cagdas() {
           </Reveal>
         </section>
 
+        {/* GÜNÜN KÖZÜ — her gün senin bir dizen */}
+        <GununKozu t={t.kozu} verses={VERSES} />
+
         {/* HAKKIMDA */}
         <section id="about" className="cg-section">
           <div className="cg-about-grid">
@@ -322,6 +327,9 @@ export function Cagdas() {
             </Reveal>
           </div>
         </section>
+
+        {/* KÂHİN — bir kelime söyle, sana bir dize düşsün */}
+        <Kahin t={t.kahin} verses={VERSES} />
 
         {/* YAZILAR */}
         <section id="writing" className="cg-section" style={{ textAlign: "center" }}>
