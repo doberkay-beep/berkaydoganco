@@ -136,6 +136,14 @@ export function Cagdas() {
 
         /* Medya gömü çerçevesi */
         .cg-embed { border: 1px solid var(--line); border-radius: 8px; overflow: hidden; background: var(--bg-2); }
+
+        /* Playlist link-kartları */
+        .cg-playlist { display: flex; flex-direction: column; gap: 0.5rem; padding: 1.5rem 1.6rem; border: 1px solid var(--line); border-radius: 10px; background: var(--bg); transition: border-color 0.28s ease, transform 0.28s ease, background 0.28s ease; }
+        .cg-playlist:hover { border-color: var(--accent); transform: translateY(-3px); background: var(--bg-2); }
+        .cg-playlist-icon { font-size: 1.1rem; color: var(--accent); line-height: 1; }
+        .cg-playlist-name { font-family: var(--font-grotesk); font-weight: 500; font-size: 1.15rem; letter-spacing: -0.01em; color: var(--ink); }
+        .cg-playlist-meta { font-family: var(--font-grotesk); font-size: 0.68rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); transition: color 0.28s ease; }
+        .cg-playlist:hover .cg-playlist-meta { color: var(--accent); }
       `}</style>
 
       {/* MENÜ */}
@@ -328,14 +336,16 @@ export function Cagdas() {
 
             {PLAYLISTS.length > 0 && (
               <Reveal delay={0.16} style={{ marginTop: "2.75rem" }}>
-                <span style={{ display: "block", fontSize: "0.68rem", letterSpacing: "0.22em", textTransform: "uppercase", color: "var(--muted)", marginBottom: "1rem" }}>
-                  {lang === "tr" ? "Kulağımda" : lang === "fr" ? "Dans mes oreilles" : "In my ears"}
+                <span style={{ display: "block", fontSize: "0.68rem", letterSpacing: "0.22em", textTransform: "uppercase", color: "var(--muted)", marginBottom: "1.25rem" }}>
+                  {lang === "tr" ? "Şu sıralar dinlediklerim" : lang === "fr" ? "Ce que j'écoute en ce moment" : "What I'm listening to"}
                 </span>
-                <div style={{ display: "grid", gap: "1rem" }}>
+                <div style={{ display: "grid", gap: "1rem", gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))" }}>
                   {PLAYLISTS.map((pl) => (
-                    <div key={pl} className="cg-embed">
-                      <iframe title="Spotify — playlist" src={`https://open.spotify.com/embed/playlist/${pl}?utm_source=generator`} width="100%" height="352" frameBorder="0" allow="clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy" style={{ display: "block" }} />
-                    </div>
+                    <a key={pl.path} href={`https://music.apple.com${pl.path}`} target="_blank" rel="noopener noreferrer" className="cg-playlist">
+                      <span className="cg-playlist-icon" aria-hidden="true">♪</span>
+                      <span className="cg-playlist-name">{pl.name}</span>
+                      <span className="cg-playlist-meta">Apple Music →</span>
+                    </a>
                   ))}
                 </div>
               </Reveal>

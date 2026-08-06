@@ -37,10 +37,13 @@ export const MEDIA = {
   youtube: "SV7C6fD8gh8",
 };
 
-// "Yazarın çaldıkları" — Berkay'ın Spotify çalma listesi ID'leri.
-// Boşken bölüm görünmez; ID eklenince otomatik belirir.
-// Örn. https://open.spotify.com/playlist/XXXX  ->  buraya "XXXX"
-export const PLAYLISTS: string[] = [];
+// "Yazarın dinledikleri" — Berkay'ın Apple Music çalma listeleri.
+// music.apple.com'daki yolun tamamı; embed = https://embed.music.apple.com + yol.
+export const PLAYLISTS: { name: string; path: string }[] = [
+  { name: "Art of Rock", path: "/tr/playlist/art-of-rock/pl.u-leylNkAiM5Wqjba" },
+  { name: "B Feels Energic", path: "/tr/playlist/b-feels-energic/pl.u-LdbqB2js29NJx87" },
+  { name: "Timeless Nostalgia", path: "/tr/playlist/timeless-nostalgia/pl.u-BNA6yaRteGA41Lk" },
+];
 
 // Kâhin ve Günün Közü için dize korpusu — hepsi Berkay'ın kendi eserlerinden (kısa, güçlü)
 export const VERSES: string[] = [
