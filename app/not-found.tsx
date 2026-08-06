@@ -13,7 +13,7 @@ export default function NotFound() {
         <span style={{ width: "7px", height: "7px", borderRadius: "50%", background: "var(--accent)" }} />404 — Lost
       </p>
       <p style={{ fontFamily: "var(--font-serif)", fontStyle: "italic", fontWeight: 300, fontSize: "clamp(1.7rem, 5vw, 3.2rem)", lineHeight: 1.4, maxWidth: "22ch" }}>
-        This page was cleared away too. Some emptiness is not meant to be filled.
+        This page wandered off somewhere. Everything worth finding is still back home.
       </p>
       <Link href="/" style={{ marginTop: "2.75rem", fontFamily: "var(--font-grotesk)", fontSize: "0.78rem", fontWeight: 500, letterSpacing: "0.1em", padding: "0.9rem 1.6rem", borderRadius: "100px", background: "var(--accent)", color: "var(--accent-ink)" }}>
         ← Back home

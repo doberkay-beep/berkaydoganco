@@ -37,24 +37,24 @@ export const MEDIA = {
   youtube: "SV7C6fD8gh8",
 };
 
+// "Yazarın çaldıkları" — Berkay'ın Spotify çalma listesi ID'leri.
+// Boşken bölüm görünmez; ID eklenince otomatik belirir.
+// Örn. https://open.spotify.com/playlist/XXXX  ->  buraya "XXXX"
+export const PLAYLISTS: string[] = [];
+
 // Kâhin ve Günün Közü için dize korpusu — hepsi Berkay'ın kendi eserlerinden (kısa, güçlü)
 export const VERSES: string[] = [
   "Yıkılamadım, yıktım.",
   "Geri dönmüyorum, geleceğime âşığım.",
   "Yalan yaşanmışlıklarıma veda ettim.",
-  "Hiçbir iyi hatıranın beni bulmadığı yerdeyim.",
   "Kalbim bir gıdım bile kırılmadan devam etti.",
-  "Nedensiz olmadım böyle.",
-  "Ben de severdim eskiden.",
-  "Ben Tanrı değilim; herkesi sevemem.",
-  "Keşke gri hayatlarınızda boğulsanız da rengimizi kaçırmasanız.",
   "Yeniden kendi içime dönüyorum.",
   "Ben artık sadece kendimim.",
   "Ve ben yeniden doğdum; şimdi sıra sende.",
+  "Acı bir yük değil; gerçeğe açılan bir kapı vardır.",
+  "Küllerinden yeniden doğmayı seçmiş bir ruhun sesidir.",
   "Gerçek, yağlarından arındığında ortaya çıkan kemiktir.",
   "Görmezden gelmeyi seçtiğimiz her şeye verilmiş bir isim.",
-  "Umutsuzluk çukurunda zehirli bir kalbi tercih edersin.",
-  "Değişimin kaos getireceğine inananlardan tiksiniyorum.",
 ];
 
 // Tasfiye Duvarı'nda arka planda süzülen köz parçaları — hepsi Berkay'ın kendi dizelerinden
@@ -94,7 +94,7 @@ export const site: Record<Lang, Copy> = {
     hero: {
       role: "Poet & Writer — Istanbul",
       line: "Writing is the quietest confession of existence.",
-      sub: "Berkay Doğan writes in the space between contradictions — darkness and oxygen, ruin and the will to rebuild.",
+      sub: "Berkay Doğan writes in the space between contradictions — darkness and oxygen, what breaks and what is built again.",
       ctaBooks: "The books", ctaAbout: "About", scroll: "Scroll",
     },
     about: {
@@ -133,10 +133,10 @@ export const site: Record<Lang, Copy> = {
     },
     reviews: { label: "Readers", heading: "What readers say" },
     duvari: {
-      label: "The ritual", heading: "What will you purge?",
-      sub: "Write a burden. Watch it turn to ember. What you leave here becomes ash — nameless, weightless.",
-      placeholder: "A fear, a lie, a name…", button: "Purge",
-      result: "You let it go. Lighter now.", again: "Purge another",
+      label: "A small ritual", heading: "What would you set down?",
+      sub: "Write one thing you'd rather not carry. Watch it lift and drift away. What stays with you is the lightness.",
+      placeholder: "a worry, a weight, a wish…", button: "Let it go",
+      result: "It drifted off. You're a little lighter now.", again: "Again",
     },
     kozu: { label: "Ember of the day", share: "Share", copied: "Copied" },
     kahin: {
@@ -146,14 +146,14 @@ export const site: Record<Lang, Copy> = {
     },
     media: { label: "Media", heading: "The Poet's Reckoning", podcast: "Listen — Podcast", podcastDesc: "Conversations on poetry, literature and ideas. On Spotify and every platform.", video: "Watch — YouTube" },
     writing: { label: "Writing", line: "Thoughts, quietly — one email away.", cta: "Read on Substack" },
-    contact: { label: "Contact", line: "Not for small talk — write if something in you is truly bleeding." },
+    contact: { label: "Contact", line: "Write — about the work, a collaboration, or whatever's on your mind. The door is open." },
   },
   tr: {
     nav: { books: "Kitaplar", about: "Hakkımda", writing: "Yazılar", contact: "İletişim" },
     hero: {
       role: "Şair & Yazar — İstanbul",
       line: "Yazmak, varoluşun en sessiz itirafıdır.",
-      sub: "Berkay Doğan çelişkilerin arasındaki boşlukta yazar — karanlık ile oksijen, enkaz ile yeniden kurma iradesi arasında.",
+      sub: "Berkay Doğan çelişkilerin arasındaki boşlukta yazar — karanlık ile oksijen, kırılan ile yeniden kurulan arasında.",
       ctaBooks: "Kitaplar", ctaAbout: "Hakkımda", scroll: "Kaydır",
     },
     about: {
@@ -192,10 +192,10 @@ export const site: Record<Lang, Copy> = {
     },
     reviews: { label: "Okurlardan", heading: "Okurlar ne diyor" },
     duvari: {
-      label: "Ritüel", heading: "Neyi tasfiye etmek istersin?",
-      sub: "Bir yük yaz. Köze dönüşsün. Burada bıraktığın kül olur — isimsiz, ağırlıksız.",
-      placeholder: "Bir korku, bir yalan, bir isim…", button: "Tasfiye et",
-      result: "Bıraktın. Şimdi biraz daha hafifsin.", again: "Bir tane daha",
+      label: "Küçük bir ritüel", heading: "Neyi elinden bırakırdın?",
+      sub: "Taşımak istemediğin bir şey yaz. Yüksel ve savrulup gitsin. Sende kalan tek şey hafiflik olsun.",
+      placeholder: "bir tasa, bir ağırlık, bir dilek…", button: "Bırak gitsin",
+      result: "Savrulup gitti. Şimdi biraz daha hafifsin.", again: "Bir daha",
     },
     kozu: { label: "Günün közü", share: "Paylaş", copied: "Kopyalandı" },
     kahin: {
@@ -205,14 +205,14 @@ export const site: Record<Lang, Copy> = {
     },
     media: { label: "Medya", heading: "Şairin Hesabı", podcast: "Dinle — Podcast", podcastDesc: "Şiir, edebiyat ve düşünceler üzerine konuşmalar. Spotify'da ve tüm platformlarda.", video: "İzle — YouTube" },
     writing: { label: "Yazılar", line: "Aklımdan geçenler, gürültüsüz — bir e-posta uzaklıkta.", cta: "Substack'te oku" },
-    contact: { label: "İletişim", line: "Havadan sudan konuşmak için değil — gerçekten kanayan bir yaran varsa yaz." },
+    contact: { label: "İletişim", line: "Yaz — iş için, bir iş birliği için ya da sadece aklındakiler için. Kapı açık." },
   },
   fr: {
     nav: { books: "Livres", about: "À propos", writing: "Écrits", contact: "Contact" },
     hero: {
       role: "Poète & Écrivain — Istanbul",
       line: "Écrire est l'aveu le plus silencieux de l'existence.",
-      sub: "Berkay Doğan écrit dans l'espace entre les contradictions — l'obscurité et l'oxygène, la ruine et la volonté de reconstruire.",
+      sub: "Berkay Doğan écrit dans l'espace entre les contradictions — l'obscurité et l'oxygène, ce qui se brise et ce qui se rebâtit.",
       ctaBooks: "Les livres", ctaAbout: "À propos", scroll: "Défiler",
     },
     about: {
@@ -251,10 +251,10 @@ export const site: Record<Lang, Copy> = {
     },
     reviews: { label: "Lecteurs", heading: "Ce que disent les lecteurs" },
     duvari: {
-      label: "Le rituel", heading: "Que veux-tu purger ?",
-      sub: "Écris un fardeau. Regarde-le devenir braise. Ce que tu laisses ici devient cendre — sans nom, sans poids.",
-      placeholder: "Une peur, un mensonge, un nom…", button: "Purger",
-      result: "Tu l'as laissé. Plus léger, à présent.", again: "En purger un autre",
+      label: "Un petit rituel", heading: "Que déposerais-tu ?",
+      sub: "Écris une chose que tu préférerais ne pas porter. Regarde-la s'élever et s'envoler. Ce qui te reste, c'est la légèreté.",
+      placeholder: "un souci, un poids, un souhait…", button: "Laisse aller",
+      result: "Envolé. Un peu plus léger, à présent.", again: "Encore",
     },
     kozu: { label: "La braise du jour", share: "Partager", copied: "Copié" },
     kahin: {
@@ -264,6 +264,6 @@ export const site: Record<Lang, Copy> = {
     },
     media: { label: "Médias", heading: "Les comptes du poète", podcast: "Écouter — Podcast", podcastDesc: "Conversations sur la poésie, la littérature et les idées. Sur Spotify et toutes les plateformes.", video: "Regarder — YouTube" },
     writing: { label: "Écrits", line: "Mes pensées, sans bruit — à un e-mail près.", cta: "Lire sur Substack" },
-    contact: { label: "Contact", line: "Pas pour bavarder — écris si quelque chose en toi saigne vraiment." },
+    contact: { label: "Contact", line: "Écris — pour le travail, une collaboration, ou ce qui te passe par la tête. La porte est ouverte." },
   },
 };

@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import {
   site, LANGS, type Lang,
   TRENDYOL_URL, SUBSTACK_URL, YOUTUBE_URL, INSTAGRAM_URL, EMAIL,
-  RETAILERS, REVIEWS, MEDIA, EMBER_FRAGMENTS, VERSES,
+  RETAILERS, REVIEWS, MEDIA, EMBER_FRAGMENTS, VERSES, PLAYLISTS,
 } from "@/lib/site";
 import { TasfiyeDuvari } from "./TasfiyeDuvari";
 import { GununKozu } from "./GununKozu";
@@ -325,6 +325,21 @@ export function Cagdas() {
                 <iframe title="YouTube — Berkay Doğan" src={`https://www.youtube.com/embed/${MEDIA.youtube}`} width="100%" height="100%" frameBorder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen loading="lazy" style={{ display: "block" }} />
               </div>
             </Reveal>
+
+            {PLAYLISTS.length > 0 && (
+              <Reveal delay={0.16} style={{ marginTop: "2.75rem" }}>
+                <span style={{ display: "block", fontSize: "0.68rem", letterSpacing: "0.22em", textTransform: "uppercase", color: "var(--muted)", marginBottom: "1rem" }}>
+                  {lang === "tr" ? "Kulağımda" : lang === "fr" ? "Dans mes oreilles" : "In my ears"}
+                </span>
+                <div style={{ display: "grid", gap: "1rem" }}>
+                  {PLAYLISTS.map((pl) => (
+                    <div key={pl} className="cg-embed">
+                      <iframe title="Spotify — playlist" src={`https://open.spotify.com/embed/playlist/${pl}?utm_source=generator`} width="100%" height="352" frameBorder="0" allow="clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy" style={{ display: "block" }} />
+                    </div>
+                  ))}
+                </div>
+              </Reveal>
+            )}
           </div>
         </section>
 
