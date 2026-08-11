@@ -87,9 +87,14 @@ type Copy = {
   kozu: { label: string; share: string; copied: string };
   kahin: { label: string; heading: string; placeholder: string; button: string; again: string; share: string; copied: string; note: string };
   media: { label: string; heading: string; podcast: string; podcastDesc: string; video: string };
+  notify: { title: string; placeholder: string; button: string; note: string };
+  teaser: { label: string; cta: string };
   writing: { label: string; line: string; cta: string };
   contact: { label: string; line: string };
 };
+
+// Kitaptan kısa teaser — Berkay'ın gerçek dizeleri
+export const TEASER_LINES = ["Yıkılamadım, yıktım.", "Yalan yaşanmışlıklarıma veda ettim."];
 
 export const site: Record<Lang, Copy> = {
   en: {
@@ -148,6 +153,8 @@ export const site: Record<Lang, Copy> = {
       share: "Share", copied: "Copied", note: "A verse by Berkay Doğan",
     },
     media: { label: "Media", heading: "The Poet's Reckoning", podcast: "Listen — Podcast", podcastDesc: "Conversations on poetry, literature and ideas. On Spotify and every platform.", video: "Watch — YouTube" },
+    notify: { title: "Don't miss the launch", placeholder: "your email", button: "Notify me", note: "One quiet email when Tasfiye is out. Nothing else." },
+    teaser: { label: "From the book", cta: "Continue in the book" },
     writing: { label: "Writing", line: "Thoughts, quietly — one email away.", cta: "Read on Substack" },
     contact: { label: "Contact", line: "Write — about the work, a collaboration, or whatever's on your mind. The door is open." },
   },
@@ -207,6 +214,8 @@ export const site: Record<Lang, Copy> = {
       share: "Paylaş", copied: "Kopyalandı", note: "Berkay Doğan'dan bir dize",
     },
     media: { label: "Medya", heading: "Şairin Hesabı", podcast: "Dinle — Podcast", podcastDesc: "Şiir, edebiyat ve düşünceler üzerine konuşmalar. Spotify'da ve tüm platformlarda.", video: "İzle — YouTube" },
+    notify: { title: "Lansmanı kaçırma", placeholder: "e-posta adresin", button: "Haber ver", note: "Tasfiye çıkınca tek bir e-posta. Başka hiçbir şey." },
+    teaser: { label: "Kitaptan", cta: "Devamı kitapta" },
     writing: { label: "Yazılar", line: "Aklımdan geçenler, gürültüsüz — bir e-posta uzaklıkta.", cta: "Substack'te oku" },
     contact: { label: "İletişim", line: "Yaz — iş için, bir iş birliği için ya da sadece aklındakiler için. Kapı açık." },
   },
@@ -266,6 +275,8 @@ export const site: Record<Lang, Copy> = {
       share: "Partager", copied: "Copié", note: "Un vers de Berkay Doğan",
     },
     media: { label: "Médias", heading: "Les comptes du poète", podcast: "Écouter — Podcast", podcastDesc: "Conversations sur la poésie, la littérature et les idées. Sur Spotify et toutes les plateformes.", video: "Regarder — YouTube" },
+    notify: { title: "Ne rate pas la sortie", placeholder: "ton e-mail", button: "Préviens-moi", note: "Un seul e-mail à la sortie de Tasfiye. Rien d'autre." },
+    teaser: { label: "Extrait", cta: "La suite dans le livre" },
     writing: { label: "Écrits", line: "Mes pensées, sans bruit — à un e-mail près.", cta: "Lire sur Substack" },
     contact: { label: "Contact", line: "Écris — pour le travail, une collaboration, ou ce qui te passe par la tête. La porte est ouverte." },
   },

@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import {
   site, LANGS, type Lang,
   TRENDYOL_URL, SUBSTACK_URL, YOUTUBE_URL, INSTAGRAM_URL, EMAIL,
-  RETAILERS, REVIEWS, MEDIA, EMBER_FRAGMENTS, VERSES, PLAYLISTS,
+  RETAILERS, REVIEWS, MEDIA, EMBER_FRAGMENTS, VERSES, PLAYLISTS, TEASER_LINES,
 } from "@/lib/site";
 import { TasfiyeDuvari } from "./TasfiyeDuvari";
 import { GununKozu } from "./GununKozu";
@@ -63,8 +63,36 @@ function Eyebrow({ children }: { children: React.ReactNode }) {
   );
 }
 
+function NotifyForm({ t }: { t: { title: string; placeholder: string; button: string; note: string } }) {
+  const [email, setEmail] = useState("");
+  const submit = () => {
+    const e = email.trim();
+    const url = e ? `${SUBSTACK_URL}/subscribe?email=${encodeURIComponent(e)}` : `${SUBSTACK_URL}/subscribe`;
+    window.open(url, "_blank", "noopener,noreferrer");
+  };
+  return (
+    <div style={{ marginTop: "1.75rem", width: "100%", maxWidth: "380px" }}>
+      <p style={{ fontFamily: "var(--font-grotesk)", fontWeight: 500, fontSize: "0.95rem", marginBottom: "0.75rem" }}>{t.title}</p>
+      <div style={{ display: "flex", gap: "0.5rem" }}>
+        <input
+          type="email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          onKeyDown={(e) => { if (e.key === "Enter") submit(); }}
+          placeholder={t.placeholder}
+          aria-label={t.title}
+          style={{ flex: 1, background: "transparent", border: "1px solid var(--line)", borderRadius: "100px", color: "var(--ink)", fontFamily: "var(--font-grotesk)", fontSize: "0.85rem", padding: "0.7rem 1.1rem", outline: "none" }}
+        />
+        <button className="cg-btn cg-btn-fill" onClick={submit} style={{ padding: "0.7rem 1.3rem", whiteSpace: "nowrap" }}>{t.button}</button>
+      </div>
+      <p style={{ marginTop: "0.7rem", fontSize: "0.68rem", color: "var(--muted)" }}>{t.note}</p>
+    </div>
+  );
+}
+
 export function Cagdas() {
   const [lang, setLang] = useState<Lang>("en");
+  const [menuOpen, setMenuOpen] = useState(false);
   const navRef = useRef<HTMLElement | null>(null);
   const t = site[lang];
 
@@ -166,6 +194,19 @@ export function Cagdas() {
         .cg-playlist-name { font-family: var(--font-grotesk); font-weight: 500; font-size: 1.15rem; letter-spacing: -0.01em; color: var(--ink); }
         .cg-playlist-meta { font-family: var(--font-grotesk); font-size: 0.68rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); transition: color 0.28s ease; }
         .cg-playlist:hover .cg-playlist-meta { color: var(--accent); }
+
+        /* Sağ aksiyon grubu + mobil menü */
+        .cg-actions { display: flex; align-items: center; gap: 1.25rem; }
+        .cg-burger { display: none; background: none; border: none; cursor: pointer; font-family: var(--font-grotesk); font-size: 0.72rem; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink); }
+        @media (max-width: 800px) { .cg-burger { display: inline-block; } }
+        .cg-menu { position: fixed; inset: 0; z-index: 60; background: var(--bg); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2.25rem; animation: cgMenuIn 0.3s ease both; }
+        @keyframes cgMenuIn { from { opacity: 0; } to { opacity: 1; } }
+        .cg-menu a { font-family: var(--font-grotesk); font-weight: 500; font-size: clamp(1.7rem, 7vw, 2.4rem); letter-spacing: -0.01em; color: var(--ink); }
+        .cg-menu a:hover { color: var(--accent); }
+        .cg-menu-close { position: absolute; top: 1.4rem; right: clamp(1.25rem, 4vw, 3.25rem); background: none; border: none; cursor: pointer; font-size: 1.4rem; color: var(--ink); line-height: 1; }
+
+        /* Erişilebilirlik — görünür odak halkası */
+        a:focus-visible, button:focus-visible, input:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 4px; }
       `}</style>
 
       {/* MENÜ */}
@@ -177,12 +218,24 @@ export function Cagdas() {
           <a href="#writing" className="cg-link">{t.nav.writing}</a>
           <a href="#contact" className="cg-link">{t.nav.contact}</a>
         </div>
-        <div className="cg-lang">
-          {LANGS.map((l) => (
-            <button key={l} data-on={l === lang ? "1" : "0"} onClick={() => changeLang(l)} aria-label={l.toUpperCase()}>{l.toUpperCase()}</button>
-          ))}
+        <div className="cg-actions">
+          <div className="cg-lang">
+            {LANGS.map((l) => (
+              <button key={l} data-on={l === lang ? "1" : "0"} onClick={() => changeLang(l)} aria-label={l.toUpperCase()}>{l.toUpperCase()}</button>
+            ))}
+          </div>
+          <button className="cg-burger" onClick={() => setMenuOpen(true)} aria-label="Menu" aria-expanded={menuOpen}>Menu</button>
         </div>
       </nav>
+
+      {menuOpen && (
+        <div className="cg-menu" role="dialog" aria-modal="true">
+          <button className="cg-menu-close" onClick={() => setMenuOpen(false)} aria-label="Close">✕</button>
+          {[["#books", t.nav.books], ["#about", t.nav.about], ["#writing", t.nav.writing], ["#contact", t.nav.contact]].map(([href, label]) => (
+            <a key={href} href={href} onClick={() => setMenuOpen(false)}>{label}</a>
+          ))}
+        </div>
+      )}
 
       <main className="cg" id="top">
         {/* HERO */}
@@ -272,6 +325,7 @@ export function Cagdas() {
               <p style={{ fontSize: "0.72rem", letterSpacing: "0.14em", textTransform: "uppercase", color: "var(--muted)" }}>{b.tasfiye.meta}</p>
               <p className="cg-serif" style={{ fontStyle: "italic", fontSize: "clamp(1.05rem, 1.8vw, 1.3rem)", lineHeight: 1.55, color: "var(--ink)", maxWidth: "32ch" }}>{b.epigraph}</p>
               <div style={{ marginTop: "0.75rem" }}><Countdown labels={b.countdown} /></div>
+              <NotifyForm t={t.notify} />
             </div>
             <div className="cg-book-media" style={{ display: "flex", justifyContent: "center" }}>
               <div style={{ width: "clamp(180px, 24vw, 260px)", aspectRatio: "150 / 233", border: "1px solid var(--line)", borderRadius: "3px", background: "var(--bg-2)", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", gap: "1.25rem", boxShadow: "0 24px 55px rgba(20,18,15,0.10)" }}>
@@ -279,6 +333,19 @@ export function Cagdas() {
                 <span style={{ fontSize: "0.5rem", letterSpacing: "0.24em", textTransform: "uppercase", color: "var(--muted)" }}>{b.coverSoon}</span>
               </div>
             </div>
+          </Reveal>
+        </section>
+
+        {/* KİTAPTAN TEASER — Berkay'ın dizeleri, satın almaya çeker */}
+        <section className="cg-section" style={{ textAlign: "center" }}>
+          <Reveal style={{ display: "inline-flex" }}><Eyebrow>{t.teaser.label}</Eyebrow></Reveal>
+          <div style={{ margin: "2rem auto 2.25rem", display: "flex", flexDirection: "column", gap: "0.75rem", maxWidth: "22ch" }}>
+            {TEASER_LINES.map((l, i) => (
+              <Reveal key={i} as="p" delay={i * 0.07} className="cg-serif" style={{ fontStyle: "italic", fontSize: "clamp(1.5rem, 4vw, 2.8rem)", lineHeight: 1.35, color: "var(--ink)" }}>{l}</Reveal>
+            ))}
+          </div>
+          <Reveal delay={0.14}>
+            <a href={TRENDYOL_URL} target="_blank" rel="noopener noreferrer" className="cg-btn cg-btn-ghost">{t.teaser.cta} →</a>
           </Reveal>
         </section>
 
