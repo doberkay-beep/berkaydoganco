@@ -20,12 +20,7 @@ const fraunces = Fraunces({
   display: "swap",
 });
 
-const OG_IMAGE = {
-  url: "/og-image.png",
-  width: 1200,
-  height: 630,
-  alt: "Berkay Doğan — Poet & Writer",
-};
+// OG/twitter görselleri app/opengraph-image.tsx + app/twitter-image.tsx tarafından üretilir.
 
 export const metadata: Metadata = {
   title: {
@@ -47,13 +42,11 @@ export const metadata: Metadata = {
     siteName: "berkaydogan.co",
     locale: "en_US",
     type: "website",
-    images: [OG_IMAGE],
   },
   twitter: {
     card: "summary_large_image",
     title: "Berkay Doğan — Poet & Writer",
     description: "Writing is the quietest confession of existence.",
-    images: [OG_IMAGE.url],
   },
   robots: {
     index: true,
