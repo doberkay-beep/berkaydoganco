@@ -464,6 +464,7 @@ export function Cagdas() {
               <a href={YOUTUBE_URL} target="_blank" rel="noopener noreferrer" className="cg-link">YouTube</a>
               <a href={INSTAGRAM_URL} target="_blank" rel="noopener noreferrer" className="cg-link">Instagram</a>
               <a href={SUBSTACK_URL} target="_blank" rel="noopener noreferrer" className="cg-link">Substack</a>
+              <a href="/press" className="cg-link">{lang === "tr" ? "Basın kiti" : lang === "fr" ? "Presse" : "Press kit"}</a>
             </Reveal>
             <p style={{ marginTop: "4rem", fontSize: "0.66rem", letterSpacing: "0.14em", textTransform: "uppercase", opacity: 0.5 }}>© 2026 Berkay Doğan</p>
           </div>
