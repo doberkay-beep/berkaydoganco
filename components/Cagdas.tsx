@@ -68,6 +68,28 @@ export function Cagdas() {
   const navRef = useRef<HTMLElement | null>(null);
   const t = site[lang];
 
+  const changeLang = (l: Lang) => {
+    setLang(l);
+    try { localStorage.setItem("bd-lang", l); } catch { /* yoksay */ }
+  };
+
+  /* Açılışta: kayıtlı seçim > tarayıcı dili > EN */
+  useEffect(() => {
+    const t = window.setTimeout(() => {
+      let next: Lang | null = null;
+      try {
+        const saved = localStorage.getItem("bd-lang");
+        if (saved === "tr" || saved === "en" || saved === "fr") next = saved;
+      } catch { /* yoksay */ }
+      if (!next) {
+        const nav = (navigator.language || "").toLowerCase();
+        next = nav.startsWith("tr") ? "tr" : nav.startsWith("fr") ? "fr" : "en";
+      }
+      setLang(next);
+    }, 0);
+    return () => window.clearTimeout(t);
+  }, []);
+
   useEffect(() => { document.documentElement.lang = lang; }, [lang]);
 
   /* Menü scroll'da katılaşır */
@@ -157,7 +179,7 @@ export function Cagdas() {
         </div>
         <div className="cg-lang">
           {LANGS.map((l) => (
-            <button key={l} data-on={l === lang ? "1" : "0"} onClick={() => setLang(l)} aria-label={l.toUpperCase()}>{l.toUpperCase()}</button>
+            <button key={l} data-on={l === lang ? "1" : "0"} onClick={() => changeLang(l)} aria-label={l.toUpperCase()}>{l.toUpperCase()}</button>
           ))}
         </div>
       </nav>
