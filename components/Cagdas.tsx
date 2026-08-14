@@ -9,6 +9,7 @@ import {
 import { TasfiyeDuvari } from "./TasfiyeDuvari";
 import { GununKozu } from "./GununKozu";
 import { Kahin } from "./Kahin";
+import { TasfiyeReveal } from "./TasfiyeReveal";
 
 /* ---------- Scroll ile beliren sarmalayıcı (akışkan) ---------- */
 function Reveal({ children, as: Tag = "div", delay = 0, className, style }: {
@@ -148,6 +149,7 @@ export function Cagdas() {
 
   return (
     <div>
+      <TasfiyeReveal lang={lang} />
       <style>{`
         .cg a { color: inherit; }
         .cg-link { position: relative; transition: color 0.3s ease; }
@@ -348,9 +350,9 @@ export function Cagdas() {
               <NotifyForm t={t.notify} />
             </div>
             <div className="cg-book-media" style={{ display: "flex", justifyContent: "center" }}>
-              <div style={{ width: "clamp(180px, 24vw, 260px)", aspectRatio: "150 / 233", border: "1px solid var(--line)", borderRadius: "3px", background: "var(--bg-2)", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", gap: "1.25rem", boxShadow: "0 24px 55px rgba(20,18,15,0.10)" }}>
-                <span style={{ fontFamily: "var(--font-grotesk)", fontWeight: 700, fontSize: "clamp(3rem, 6vw, 4.5rem)", lineHeight: 1, color: "var(--accent)" }}>?</span>
-                <span style={{ fontSize: "0.5rem", letterSpacing: "0.24em", textTransform: "uppercase", color: "var(--muted)" }}>{b.coverSoon}</span>
+              <div style={{ position: "relative" }}>
+                <img src="/tasfiye-on-kapak.jpg" alt={b.tasfiye.title} loading="lazy" style={{ width: "clamp(180px, 24vw, 260px)", borderRadius: "3px", boxShadow: "0 24px 55px rgba(0,0,0,0.4)" }} />
+                <span style={{ position: "absolute", top: "0.7rem", left: "0.7rem", fontSize: "0.55rem", letterSpacing: "0.2em", textTransform: "uppercase", color: "#F1EDE4", background: "rgba(229,64,42,0.9)", padding: "0.35rem 0.6rem", borderRadius: "100px" }}>{b.tasfiye.badge}</span>
               </div>
             </div>
           </Reveal>

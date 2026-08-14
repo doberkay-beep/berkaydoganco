@@ -13,7 +13,7 @@ const FACTS: { k: string; v: string }[] = [
   { k: "Based in", v: "Istanbul, Türkiye" },
   { k: "Publisher", v: "İskenderiye Yayınları" },
   { k: "Book I — Poetry", v: "Mürekkep ve Köz (2025) · ISBN 978-625-9620-32-9" },
-  { k: "Book II — Essay", v: "Tasfiye (25 August 2026)" },
+  { k: "Book II — Essay", v: "Tasfiye (25 August 2026) · ISBN 978-625-92142-2-1 · Yayın No. 223" },
   { k: "Recognition", v: "#1 Poetry on Trendyol · 10/10 on 1000Kitap · Valsanat No. 51" },
   { k: "Contact", v: EMAIL },
 ];
@@ -22,6 +22,8 @@ const ASSETS: { label: string; href: string; note: string }[] = [
   { label: "Author portrait", href: "/images/portre.jpg", note: "B&W · JPG" },
   { label: "Mürekkep ve Köz — front cover", href: "/murekkep-ve-koz-on-kapak.jpg", note: "800×1244 · JPG" },
   { label: "Mürekkep ve Köz — back cover", href: "/murekkep-ve-koz-arka-kapak.jpg", note: "800×1244 · JPG" },
+  { label: "Tasfiye — front cover", href: "/tasfiye-on-kapak.jpg", note: "745×1201 · JPG" },
+  { label: "Tasfiye — back cover", href: "/tasfiye-arka-kapak.jpg", note: "745×1201 · JPG" },
 ];
 
 function Label({ children }: { children: React.ReactNode }) {

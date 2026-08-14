@@ -60,12 +60,12 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" data-theme="dark" className={`${grotesk.variable} ${fraunces.variable}`}>
+    <html lang="en" data-theme="dark" suppressHydrationWarning className={`${grotesk.variable} ${fraunces.variable}`}>
       <body>
         <script
           dangerouslySetInnerHTML={{
             __html:
-              "(function(){try{var t=localStorage.getItem('bd-theme');if(t==='light'||t==='dark')document.documentElement.setAttribute('data-theme',t);}catch(e){}})();",
+              "(function(){try{var t=localStorage.getItem('bd-theme');if(t==='light'||t==='dark')document.documentElement.setAttribute('data-theme',t);var s=sessionStorage.getItem('bd-perde-seen');if(!s)document.documentElement.setAttribute('data-perde','1');}catch(e){}})();",
           }}
         />
         {children}
