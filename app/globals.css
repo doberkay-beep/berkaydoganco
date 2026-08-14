@@ -1,15 +1,54 @@
-/* ============ ÇAĞDAŞ BEYAZ TEMA — kontrastlı, tek vurgu ============ */
-:root {
-  --bg:      #FAF9F6;   /* neredeyse beyaz, hafif sıcak */
-  --bg-2:    #FFFFFF;   /* saf beyaz panel */
-  --ink:     #14120F;   /* neredeyse siyah metin */
-  --muted:   #6B675F;   /* ikincil metin */
-  --line:    rgba(20, 18, 15, 0.12);   /* ince çizgi */
-  --accent:  #E5402A;   /* tek canlı vurgu — köz/ateş */
-  --accent-ink: #FAF9F6;
-  /* --font-grotesk (Space Grotesk) ve --font-serif (Fraunces) next/font tarafından
-     :root'a tanımlanır (app/layout.tsx). Burada yeniden tanımlama — çakışma yapar. */
+/* ============ TEMA — karanlık varsayılan + açık geçiş + liquid glass ============ */
+/* KARANLIK (varsayılan) — Tasfiye/Mürekkep kapaklarının sinematik ruhu */
+:root, [data-theme="dark"] {
+  --bg:      #0b0a09;   /* sıcak, neredeyse siyah */
+  --bg-2:    #16130f;   /* yükseltilmiş panel */
+  --ink:     #F1EDE4;   /* krem metin */
+  --muted:   #9a948a;   /* ikincil metin */
+  --line:    rgba(241, 237, 228, 0.13);
+  --accent:  #E5402A;   /* köz/ateş vurgusu */
+  --accent-ink: #0b0a09;
+  /* Liquid glass */
+  --glass-bg:     rgba(30, 26, 22, 0.5);
+  --glass-border: rgba(241, 237, 228, 0.14);
+  --glass-hi:     rgba(241, 237, 228, 0.06);
+  --nav-bg:       rgba(11, 10, 9, 0.62);
+  --photo-filter: grayscale(100%) contrast(1.05) brightness(0.92);
+  color-scheme: dark;
 }
+
+/* AÇIK (geçiş) */
+[data-theme="light"] {
+  --bg:      #FAF9F6;
+  --bg-2:    #FFFFFF;
+  --ink:     #14120F;
+  --muted:   #6B675F;
+  --line:    rgba(20, 18, 15, 0.12);
+  --accent:  #E5402A;
+  --accent-ink: #FAF9F6;
+  --glass-bg:     rgba(255, 255, 255, 0.55);
+  --glass-border: rgba(20, 18, 15, 0.10);
+  --glass-hi:     rgba(255, 255, 255, 0.6);
+  --nav-bg:       rgba(250, 249, 246, 0.7);
+  --photo-filter: grayscale(100%) contrast(1.02) brightness(1);
+  color-scheme: light;
+}
+/* Not: --font-grotesk / --font-serif next/font tarafından :root'a tanımlanır. */
+
+/* Liquid glass yardımcı sınıfı */
+.glass {
+  background: var(--glass-bg);
+  -webkit-backdrop-filter: blur(18px) saturate(150%);
+  backdrop-filter: blur(18px) saturate(150%);
+  border: 1px solid var(--glass-border);
+  position: relative;
+}
+.glass::before {
+  content: ""; position: absolute; inset: 0; border-radius: inherit; padding: 1px;
+  background: linear-gradient(140deg, var(--glass-hi), transparent 45%);
+  pointer-events: none;
+}
+html { transition: background 0.5s ease, color 0.5s ease; }
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
 

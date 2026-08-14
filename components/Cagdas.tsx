@@ -93,8 +93,25 @@ function NotifyForm({ t }: { t: { title: string; placeholder: string; button: st
 export function Cagdas() {
   const [lang, setLang] = useState<Lang>("en");
   const [menuOpen, setMenuOpen] = useState(false);
+  const [theme, setTheme] = useState<"dark" | "light">("dark");
   const navRef = useRef<HTMLElement | null>(null);
   const t = site[lang];
+
+  useEffect(() => {
+    const id = window.setTimeout(() => {
+      const cur = document.documentElement.getAttribute("data-theme");
+      if (cur === "light" || cur === "dark") setTheme(cur);
+    }, 0);
+    return () => window.clearTimeout(id);
+  }, []);
+  const toggleTheme = () => {
+    setTheme((prev) => {
+      const next = prev === "dark" ? "light" : "dark";
+      document.documentElement.setAttribute("data-theme", next);
+      try { localStorage.setItem("bd-theme", next); } catch { /* yoksay */ }
+      return next;
+    });
+  };
 
   const changeLang = (l: Lang) => {
     setLang(l);
@@ -145,7 +162,9 @@ export function Cagdas() {
         .cg-btn-ghost:hover { border-color: var(--ink); transform: translateY(-2px); }
 
         .cg-nav { position: fixed; top: 0; left: 0; right: 0; z-index: 50; display: flex; align-items: center; justify-content: space-between; padding: 1.1rem clamp(1.25rem, 4vw, 3.25rem); transition: background 0.4s ease, box-shadow 0.4s ease, backdrop-filter 0.4s ease; }
-        .cg-nav[data-solid="1"] { background: rgba(250,249,246,0.82); backdrop-filter: blur(14px); box-shadow: 0 1px 0 var(--line); }
+        .cg-nav[data-solid="1"] { background: var(--nav-bg); backdrop-filter: blur(16px) saturate(150%); -webkit-backdrop-filter: blur(16px) saturate(150%); box-shadow: 0 1px 0 var(--line); }
+        .cg-theme { background: none; border: none; cursor: pointer; color: var(--ink); font-size: 1rem; line-height: 1; padding: 0.2rem; transition: color 0.25s ease, transform 0.4s ease; }
+        .cg-theme:hover { color: var(--accent); transform: rotate(20deg); }
         .cg-nav-links { display: flex; gap: clamp(1.1rem, 2vw, 2.2rem); font-size: 0.76rem; letter-spacing: 0.04em; }
         .cg-lang { display: flex; gap: 0.5rem; font-size: 0.68rem; letter-spacing: 0.1em; text-transform: uppercase; }
         .cg-lang button { background: none; border: none; cursor: pointer; color: var(--muted); padding: 0.2rem; transition: color 0.25s ease; }
@@ -224,6 +243,7 @@ export function Cagdas() {
               <button key={l} data-on={l === lang ? "1" : "0"} onClick={() => changeLang(l)} aria-label={l.toUpperCase()}>{l.toUpperCase()}</button>
             ))}
           </div>
+          <button className="cg-theme" onClick={toggleTheme} aria-label={theme === "dark" ? "Light theme" : "Dark theme"}>{theme === "dark" ? "☀" : "☾"}</button>
           <button className="cg-burger" onClick={() => setMenuOpen(true)} aria-label="Menu" aria-expanded={menuOpen}>Menu</button>
         </div>
       </nav>
@@ -453,12 +473,12 @@ export function Cagdas() {
         </section>
 
         {/* İLETİŞİM */}
-        <section id="contact" className="cg-section" style={{ background: "var(--ink)", color: "var(--bg)", borderTop: "none" }}>
+        <section id="contact" className="cg-section" style={{ background: "var(--bg-2)" }}>
           <div style={{ maxWidth: "1100px", margin: "0 auto" }}>
             <Reveal><span style={{ display: "inline-flex", alignItems: "center", gap: "0.6rem", fontSize: "0.7rem", fontWeight: 500, letterSpacing: "0.26em", textTransform: "uppercase" }}><span style={{ width: "7px", height: "7px", borderRadius: "50%", background: "var(--accent)" }} />{t.contact.label}</span></Reveal>
             <Reveal delay={0.06} as="p" className="cg-serif" style={{ margin: "1.75rem 0 2.5rem", fontStyle: "italic", fontSize: "clamp(1.7rem, 4.5vw, 3.4rem)", lineHeight: 1.3, maxWidth: "20ch" }}>{t.contact.line}</Reveal>
             <Reveal delay={0.12}>
-              <a href={`mailto:${EMAIL}`} className="cg-huge" style={{ display: "inline-block", fontSize: "clamp(1.4rem, 3.5vw, 2.6rem)", color: "var(--bg)", letterSpacing: "-0.02em" }}>{EMAIL}</a>
+              <a href={`mailto:${EMAIL}`} className="cg-huge" style={{ display: "inline-block", fontSize: "clamp(1.4rem, 3.5vw, 2.6rem)", color: "var(--ink)", letterSpacing: "-0.02em" }}>{EMAIL}</a>
             </Reveal>
             <Reveal delay={0.18} style={{ marginTop: "3rem", display: "flex", gap: "2rem", flexWrap: "wrap", fontSize: "0.76rem", letterSpacing: "0.16em", textTransform: "uppercase" }}>
               <a href={YOUTUBE_URL} target="_blank" rel="noopener noreferrer" className="cg-link">YouTube</a>
