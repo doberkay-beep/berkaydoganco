@@ -10,6 +10,7 @@ import { TasfiyeDuvari } from "./TasfiyeDuvari";
 import { GununKozu } from "./GununKozu";
 import { Kahin } from "./Kahin";
 import { TasfiyeReveal } from "./TasfiyeReveal";
+import { BentoHub } from "./BentoHub";
 
 /* ---------- Scroll ile beliren sarmalayıcı (akışkan) ---------- */
 function Reveal({ children, as: Tag = "div", delay = 0, className, style }: {
@@ -282,6 +283,9 @@ export function Cagdas() {
             <img src="/images/portre.jpg" alt="Berkay Doğan" className="cg-portrait" />
           </Reveal>
         </section>
+
+        {/* BENTO PANO — masaüstü için modüler kontrol paneli */}
+        <BentoHub lang={lang} />
 
         {/* GÜNÜN KÖZÜ — her gün senin bir dizen */}
         <GununKozu t={t.kozu} verses={VERSES} />
