@@ -5,6 +5,13 @@ import { site, EMAIL, INSTAGRAM_URL, YOUTUBE_URL, SUBSTACK_URL } from "@/lib/sit
 export const metadata: Metadata = {
   title: { absolute: "Press Kit — Berkay Doğan" },
   description: "Press kit for Berkay Doğan — poet and writer based in Istanbul. Bio, facts, downloadable photos and book covers.",
+  alternates: { canonical: "/press" },
+  openGraph: {
+    title: "Press Kit — Berkay Doğan",
+    description: "Bio, facts, and downloadable photos and book covers for Berkay Doğan.",
+    url: "https://www.berkaydogan.co/press",
+    type: "profile",
+  },
 };
 
 const FACTS: { k: string; v: string }[] = [

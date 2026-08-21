@@ -31,16 +31,17 @@ export const metadata: Metadata = {
   keywords: ["Berkay Doğan", "poet", "writer", "Istanbul", "Tasfiye", "Ink and Ember", "Mürekkep ve Köz", "Turkish poetry"],
   authors: [{ name: "Berkay Doğan" }],
   creator: "Berkay Doğan",
-  metadataBase: new URL("https://berkaydogan.co"),
+  metadataBase: new URL("https://www.berkaydogan.co"),
   alternates: {
     canonical: "/",
   },
   openGraph: {
     title: "Berkay Doğan — Poet & Writer",
     description: "Poet and writer based in Istanbul. Writing is the quietest confession of existence.",
-    url: "https://berkaydogan.co",
+    url: "https://www.berkaydogan.co",
     siteName: "berkaydogan.co",
     locale: "en_US",
+    alternateLocale: ["tr_TR", "fr_FR"],
     type: "website",
   },
   twitter: {

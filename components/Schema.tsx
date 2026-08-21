@@ -1,6 +1,6 @@
 import { TRENDYOL_URL } from "@/lib/content";
 
-const SITE = "https://berkaydogan.co";
+const SITE = "https://www.berkaydogan.co";
 
 function JsonLd({ data }: { data: object }) {
   return (
@@ -72,9 +72,11 @@ export function TasfiyeBookSchema() {
         name: "Tasfiye",
         author: { "@type": "Person", name: "Berkay Doğan", url: SITE },
         publisher: { "@type": "Organization", name: "İskenderiye Yayınları" },
+        isbn: "978-625-92142-2-1",
         datePublished: "2026-08-25",
         inLanguage: "tr",
         genre: "Deneme",
+        image: `${SITE}/tasfiye-on-kapak.jpg`,
         url: `${SITE}/tasfiye/`,
       }}
     />
