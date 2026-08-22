@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 
-type Copy = { label: string; share: string; copied: string };
+type Copy = { label: string; share: string; copied: string; universe: string };
 
 async function shareVerse(verse: string, done: () => void) {
   const full = `“${verse}”\n— Berkay Doğan · berkaydogan.co`;
@@ -50,6 +50,7 @@ export function GununKozu({ t, verses }: { t: Copy; verses: string[] }) {
           {copied ? t.copied : t.share} ↗
         </button>
       )}
+      <a className="kozu-share" href="/evren" style={{ textDecoration: "none" }}>{t.universe} ✦</a>
     </section>
   );
 }

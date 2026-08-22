@@ -88,7 +88,7 @@ type Copy = {
   recognition: { label: string; heading: string; tiles: { value: string; label: string }[]; pressLabel: string; press: { name: string; detail: string; url: string }[] };
   reviews: { label: string; heading: string };
   duvari: { label: string; heading: string; sub: string; placeholder: string; button: string; result: string; again: string };
-  kozu: { label: string; share: string; copied: string };
+  kozu: { label: string; share: string; copied: string; universe: string };
   kahin: { label: string; heading: string; placeholder: string; button: string; again: string; share: string; copied: string; note: string };
   media: { label: string; heading: string; podcast: string; podcastDesc: string; video: string };
   notify: { title: string; placeholder: string; button: string; note: string };
@@ -171,7 +171,7 @@ export const site: Record<Lang, Copy> = {
       placeholder: "a worry, a weight, a wish…", button: "Let it go",
       result: "It drifted off. You're a little lighter now.", again: "Again",
     },
-    kozu: { label: "Ember of the day", share: "Share", copied: "Copied" },
+    kozu: { label: "Ember of the day", share: "Share", copied: "Copied", universe: "Ember Universe" },
     kahin: {
       label: "The oracle", heading: "Say a word. Let a verse fall to you.",
       placeholder: "a word, a feeling…", button: "Summon", again: "Another",
@@ -253,7 +253,7 @@ export const site: Record<Lang, Copy> = {
       placeholder: "bir tasa, bir ağırlık, bir dilek…", button: "Bırak gitsin",
       result: "Savrulup gitti. Şimdi biraz daha hafifsin.", again: "Bir daha",
     },
-    kozu: { label: "Günün közü", share: "Paylaş", copied: "Kopyalandı" },
+    kozu: { label: "Günün közü", share: "Paylaş", copied: "Kopyalandı", universe: "Köz Evreni" },
     kahin: {
       label: "Kâhin", heading: "Bir kelime söyle. Sana bir dize düşsün.",
       placeholder: "bir kelime, bir his…", button: "Çağır", again: "Bir daha",
@@ -335,7 +335,7 @@ export const site: Record<Lang, Copy> = {
       placeholder: "un souci, un poids, un souhait…", button: "Laisse aller",
       result: "Envolé. Un peu plus léger, à présent.", again: "Encore",
     },
-    kozu: { label: "La braise du jour", share: "Partager", copied: "Copié" },
+    kozu: { label: "La braise du jour", share: "Partager", copied: "Copié", universe: "Univers de Braise" },
     kahin: {
       label: "L'oracle", heading: "Dis un mot. Qu'un vers te tombe dessus.",
       placeholder: "un mot, un sentiment…", button: "Invoquer", again: "Encore",
