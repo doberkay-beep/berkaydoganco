@@ -338,7 +338,10 @@ export function Cagdas() {
                 <span style={{ display: "block", fontSize: "0.58rem", letterSpacing: "0.2em", textTransform: "uppercase", color: "var(--accent)", marginBottom: "0.4rem" }}>{t.taste}</span>
                 <p className="cg-serif" style={{ fontStyle: "italic", fontSize: "1.1rem", lineHeight: 1.5, color: "var(--muted)" }}>{b.murekkep.excerpt}</p>
               </div>
-              <a href={TRENDYOL_URL} target="_blank" rel="noopener noreferrer" className="cg-btn cg-btn-fill" style={{ marginTop: "0.5rem" }}>{b.murekkep.cta} →</a>
+              <div style={{ display: "flex", gap: "0.75rem", flexWrap: "wrap", marginTop: "0.5rem" }}>
+                <a href={TRENDYOL_URL} target="_blank" rel="noopener noreferrer" className="cg-btn cg-btn-fill">{b.murekkep.cta} →</a>
+                <a href="/kitap/murekkep" className="cg-btn cg-btn-ghost">{lang === "tr" ? "Kitabın sayfası" : lang === "fr" ? "Page du livre" : "Book page"}</a>
+              </div>
               <div style={{ marginTop: "0.5rem" }}>
                 <span style={{ display: "block", fontSize: "0.62rem", letterSpacing: "0.16em", textTransform: "uppercase", color: "var(--muted)", marginBottom: "0.6rem" }}>{b.buyMore}</span>
                 <div style={{ display: "flex", flexWrap: "wrap", gap: "0.4rem 1.1rem" }}>
@@ -362,6 +365,7 @@ export function Cagdas() {
                 <p className="cg-serif" style={{ fontStyle: "italic", fontSize: "1.1rem", lineHeight: 1.5, color: "var(--muted)" }}>{b.tasfiye.excerpt}</p>
               </div>
               <div style={{ marginTop: "0.75rem" }}><Countdown labels={b.countdown} /></div>
+              <a href="/kitap/tasfiye" className="cg-btn cg-btn-ghost">{lang === "tr" ? "Kitabın sayfası" : lang === "fr" ? "Page du livre" : "Book page"}</a>
               <NotifyForm t={t.notify} />
             </div>
             <div className="cg-book-media" style={{ display: "flex", justifyContent: "center" }}>
