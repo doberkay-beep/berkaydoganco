@@ -74,10 +74,14 @@ export const EMBER_FRAGMENTS: string[] = [
   "ve ben yeniden doğdum",
 ];
 
-type Book = { title: string; meta: string; badge: string; desc: string; cta: string };
+type Book = { title: string; meta: string; badge: string; desc: string; cta: string; excerpt: string };
 
 type Copy = {
-  nav: { books: string; about: string; writing: string; contact: string };
+  nav: { books: string; about: string; writing: string; contact: string; projects: string };
+  projects: { label: string; heading: string; sub: string; simdiName: string; simdiTag: string; story: string[]; cta: string };
+  card: { label: string; heading: string; sub: string; random: string; download: string; hint: string };
+  yazilar: { title: string; sub: string; all: string; read: string; on: string; empty: string };
+  taste: string;
   hero: { role: string; line: string; sub: string; ctaBooks: string; ctaAbout: string; scroll: string };
   about: { label: string; heading: string; paras: string[]; worksLabel: string; works: { year: string; title: string; kind: string }[] };
   books: { label: string; murekkep: Book; tasfiye: Book; countdown: string[]; epigraph: string; coverSoon: string; buyMore: string };
@@ -98,7 +102,28 @@ export const TEASER_LINES = ["Yıkılamadım, yıktım.", "Yalan yaşanmışlık
 
 export const site: Record<Lang, Copy> = {
   en: {
-    nav: { books: "Books", about: "About", writing: "Writing", contact: "Contact" },
+    nav: { books: "Books", about: "About", writing: "Writing", contact: "Contact", projects: "Projects" },
+    projects: {
+      label: "Projects", heading: "Beyond the words",
+      sub: "Alongside the writing — things other curiosities have built.",
+      simdiName: "ŞİMDİ", simdiTag: "Live radio · necaliyor.co",
+      story: [
+        "Poetry and radio are born in the same place: in listening. ŞİMDİ (“now”) shows what is playing this very moment across Turkey's radio stations — a poet chasing after sound.",
+        "A verse finds you at the right moment; so does the right song. I built ŞİMDİ to catch that “now” — a hundred stations, one screen, a live stream of the present tense.",
+      ],
+      cta: "Open the radio",
+    },
+    card: {
+      label: "Quote card", heading: "Pick a verse, share it",
+      sub: "Choose one of the verses and download it as a card.",
+      random: "Shuffle", download: "Download card", hint: "Saves as PNG",
+    },
+    yazilar: {
+      title: "Writing", sub: "On poetry, literature and ideas — quietly, on Substack.",
+      all: "All posts on Substack", read: "Read", on: "on Substack",
+      empty: "The writing lives on Substack. Follow it there.",
+    },
+    taste: "A taste",
     hero: {
       role: "Poet & Writer — Istanbul",
       line: "Writing is the quietest confession of existence.",
@@ -120,8 +145,8 @@ export const site: Record<Lang, Copy> = {
     },
     books: {
       label: "Books",
-      murekkep: { title: "Ink and Ember", meta: "Poetry · İskenderiye · 2025", badge: "#1 Poetry on Trendyol", desc: "A Poet's Reckoning. More than 200 poems torn from a suffocating solitude, national chaos and existential crisis.", cta: "Get the book" },
-      tasfiye: { title: "Tasfiye", meta: "Essay · İskenderiye · August 2026", badge: "Coming soon", desc: "", cta: "" },
+      murekkep: { title: "Ink and Ember", meta: "Poetry · İskenderiye · 2025", badge: "#1 Poetry on Trendyol", desc: "A Poet's Reckoning. More than 200 poems torn from a suffocating solitude, national chaos and existential crisis.", cta: "Get the book", excerpt: "I could not be brought down — so I brought it down myself." },
+      tasfiye: { title: "Tasfiye", meta: "Essay · İskenderiye · August 2026", badge: "Coming soon", desc: "The curtain rises: on stage, a courtroom; in the dock, the writer himself. Not an accusation — a reckoning. From the wreckage of the modern world, a confrontation reaching toward the human who carries their own guillotine. Tasfiye is not to destroy; it is to cleanse.", cta: "", excerpt: "“a name given to everything we choose not to see.”" },
       countdown: ["DAYS", "HRS", "MIN"], epigraph: "a name given to everything we choose not to see.", coverSoon: "Cover soon",
       buyMore: "Also available at",
     },
@@ -159,7 +184,28 @@ export const site: Record<Lang, Copy> = {
     contact: { label: "Contact", line: "Write — about the work, a collaboration, or whatever's on your mind. The door is open." },
   },
   tr: {
-    nav: { books: "Kitaplar", about: "Hakkımda", writing: "Yazılar", contact: "İletişim" },
+    nav: { books: "Kitaplar", about: "Hakkımda", writing: "Yazılar", contact: "İletişim", projects: "Projeler" },
+    projects: {
+      label: "Projeler", heading: "Kelimelerin dışında",
+      sub: "Yazının yanında — başka merakların ürünleri.",
+      simdiName: "ŞİMDİ", simdiTag: "Canlı radyo · necaliyor.co",
+      story: [
+        "Şiir de radyo da aynı yerden doğar: dinlemekten. ŞİMDİ, Türkiye'nin radyolarında tam da bu an ne çaldığını gösterir — bir şairin sesin peşine düşmesi.",
+        "Bir dize insanı doğru anda nasıl bulursa, doğru şarkı da öyle bulur. ŞİMDİ'yi işte o 'şimdi'yi yakalamak için yaptım: yüz radyo, tek ekran, şimdiki zamanın canlı akışı.",
+      ],
+      cta: "Radyoyu aç",
+    },
+    card: {
+      label: "Alıntı kartı", heading: "Bir dize seç, paylaş",
+      sub: "Dizelerden birini seç, güzel bir kart olarak indir.",
+      random: "Karıştır", download: "Kartı indir", hint: "PNG olarak iner",
+    },
+    yazilar: {
+      title: "Yazılar", sub: "Şiir, edebiyat ve düşünceler üzerine — gürültüsüz, Substack'te.",
+      all: "Tüm yazılar Substack'te", read: "Oku", on: "Substack'te",
+      empty: "Yazılar Substack'te. Oradan takip et.",
+    },
+    taste: "Tadımlık",
     hero: {
       role: "Şair & Yazar — İstanbul",
       line: "Yazmak, varoluşun en sessiz itirafıdır.",
@@ -181,8 +227,8 @@ export const site: Record<Lang, Copy> = {
     },
     books: {
       label: "Kitaplar",
-      murekkep: { title: "Mürekkep ve Köz", meta: "Şiir · İskenderiye · 2025", badge: "#1 Trendyol Şiir", desc: "Bir Şairin Hesabı. Boğucu bir yalnızlığın, ulusal kaosun ve varoluşsal krizin içinden sökülerek yazılan 200'den fazla şiir.", cta: "Kitaba git" },
-      tasfiye: { title: "Tasfiye", meta: "Deneme · İskenderiye · Ağustos 2026", badge: "Yakında", desc: "", cta: "" },
+      murekkep: { title: "Mürekkep ve Köz", meta: "Şiir · İskenderiye · 2025", badge: "#1 Trendyol Şiir", desc: "Bir Şairin Hesabı. Boğucu bir yalnızlığın, ulusal kaosun ve varoluşsal krizin içinden sökülerek yazılan 200'den fazla şiir.", cta: "Kitaba git", excerpt: "Yıkılamadım, yıktım." },
+      tasfiye: { title: "Tasfiye", meta: "Deneme · İskenderiye · Ağustos 2026", badge: "Yakında", desc: "Perde açılıyor: Sahnede bir mahkeme, sanık koltuğunda yazarın kendisi. Bu bir suçlama değil, bir hesap. Modern dünyanın enkazından, giyotinini kendi taşıyan insana uzanan bir yüzleşme. Tasfiye, yıkmak değil; temizlemektir.", cta: "", excerpt: "“görmezden gelmeyi seçtiğimiz her şeye verilmiş bir isim.”" },
       countdown: ["GÜN", "SAAT", "DK"], epigraph: "görmezden gelmeyi seçtiğimiz her şeye verilmiş bir isim.", coverSoon: "Kapak yakında",
       buyMore: "Ayrıca şuralarda",
     },
@@ -220,7 +266,28 @@ export const site: Record<Lang, Copy> = {
     contact: { label: "İletişim", line: "Yaz — iş için, bir iş birliği için ya da sadece aklındakiler için. Kapı açık." },
   },
   fr: {
-    nav: { books: "Livres", about: "À propos", writing: "Écrits", contact: "Contact" },
+    nav: { books: "Livres", about: "À propos", writing: "Écrits", contact: "Contact", projects: "Projets" },
+    projects: {
+      label: "Projets", heading: "Au-delà des mots",
+      sub: "À côté de l'écriture — ce que d'autres curiosités ont bâti.",
+      simdiName: "ŞİMDİ", simdiTag: "Radio en direct · necaliyor.co",
+      story: [
+        "La poésie et la radio naissent au même endroit : dans l'écoute. ŞİMDİ (« maintenant ») montre ce qui passe en cet instant précis sur les radios de Turquie — un poète à la poursuite du son.",
+        "Un vers vous trouve au bon moment ; la bonne chanson aussi. J'ai fait ŞİMDİ pour saisir ce « maintenant » : cent stations, un seul écran, le flux vivant du présent.",
+      ],
+      cta: "Ouvrir la radio",
+    },
+    card: {
+      label: "Carte-citation", heading: "Choisis un vers, partage-le",
+      sub: "Choisis l'un des vers et télécharge-le en carte.",
+      random: "Mélanger", download: "Télécharger la carte", hint: "Enregistré en PNG",
+    },
+    yazilar: {
+      title: "Écrits", sub: "Sur la poésie, la littérature et les idées — sans bruit, sur Substack.",
+      all: "Tous les textes sur Substack", read: "Lire", on: "sur Substack",
+      empty: "Les écrits vivent sur Substack. Suivez-les là-bas.",
+    },
+    taste: "Extrait",
     hero: {
       role: "Poète & Écrivain — Istanbul",
       line: "Écrire est l'aveu le plus silencieux de l'existence.",
@@ -242,8 +309,8 @@ export const site: Record<Lang, Copy> = {
     },
     books: {
       label: "Livres",
-      murekkep: { title: "Encre et Braise", meta: "Poésie · İskenderiye · 2025", badge: "#1 Poésie sur Trendyol", desc: "Les comptes d'un poète. Plus de 200 poèmes arrachés à une solitude étouffante, au chaos national et à une crise existentielle.", cta: "Voir le livre" },
-      tasfiye: { title: "Tasfiye", meta: "Essai · İskenderiye · Août 2026", badge: "Bientôt", desc: "", cta: "" },
+      murekkep: { title: "Encre et Braise", meta: "Poésie · İskenderiye · 2025", badge: "#1 Poésie sur Trendyol", desc: "Les comptes d'un poète. Plus de 200 poèmes arrachés à une solitude étouffante, au chaos national et à une crise existentielle.", cta: "Voir le livre", excerpt: "Je n'ai pas pu être abattu — alors je l'ai abattu moi-même." },
+      tasfiye: { title: "Tasfiye", meta: "Essai · İskenderiye · Août 2026", badge: "Bientôt", desc: "Le rideau se lève : sur scène, un tribunal ; au banc des accusés, l'écrivain lui-même. Non une accusation — un règlement de comptes. Depuis les décombres du monde moderne, une confrontation tendue vers l'humain qui porte sa propre guillotine. Tasfiye n'est pas détruire ; c'est purifier.", cta: "", excerpt: "« un nom donné à tout ce que nous choisissons d'ignorer. »" },
       countdown: ["JOURS", "H", "MIN"], epigraph: "un nom donné à tout ce que nous choisissons d'ignorer.", coverSoon: "Couverture bientôt",
       buyMore: "Également disponible chez",
     },

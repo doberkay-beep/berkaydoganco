@@ -11,6 +11,8 @@ import { GununKozu } from "./GununKozu";
 import { Kahin } from "./Kahin";
 import { TasfiyeReveal } from "./TasfiyeReveal";
 import { BentoHub } from "./BentoHub";
+import { Projeler } from "./Projeler";
+import { AlintiKarti } from "./AlintiKarti";
 
 /* ---------- Scroll ile beliren sarmalayıcı (akışkan) ---------- */
 function Reveal({ children, as: Tag = "div", delay = 0, className, style }: {
@@ -237,6 +239,7 @@ export function Cagdas() {
         <div className="cg-nav-links">
           <a href="#books" className="cg-link">{t.nav.books}</a>
           <a href="#about" className="cg-link">{t.nav.about}</a>
+          <a href="#projects" className="cg-link">{t.nav.projects}</a>
           <a href="#writing" className="cg-link">{t.nav.writing}</a>
           <a href="#contact" className="cg-link">{t.nav.contact}</a>
         </div>
@@ -254,7 +257,7 @@ export function Cagdas() {
       {menuOpen && (
         <div className="cg-menu" role="dialog" aria-modal="true">
           <button className="cg-menu-close" onClick={() => setMenuOpen(false)} aria-label="Close">✕</button>
-          {[["#books", t.nav.books], ["#about", t.nav.about], ["#writing", t.nav.writing], ["#contact", t.nav.contact]].map(([href, label]) => (
+          {[["#books", t.nav.books], ["#about", t.nav.about], ["#projects", t.nav.projects], ["#writing", t.nav.writing], ["#contact", t.nav.contact]].map(([href, label]) => (
             <a key={href} href={href} onClick={() => setMenuOpen(false)}>{label}</a>
           ))}
         </div>
@@ -331,6 +334,10 @@ export function Cagdas() {
               <h3 className="cg-huge" style={{ fontSize: "clamp(2.2rem, 4.5vw, 3.4rem)" }}>{b.murekkep.title}</h3>
               <p style={{ fontSize: "0.72rem", letterSpacing: "0.14em", textTransform: "uppercase", color: "var(--muted)" }}>{b.murekkep.meta}</p>
               <p className="cg-serif" style={{ fontStyle: "italic", fontSize: "clamp(1.05rem, 1.8vw, 1.3rem)", lineHeight: 1.55, color: "var(--ink)", maxWidth: "36ch" }}>{b.murekkep.desc}</p>
+              <div style={{ borderLeft: "2px solid var(--accent)", paddingLeft: "1rem", margin: "0.3rem 0" }}>
+                <span style={{ display: "block", fontSize: "0.58rem", letterSpacing: "0.2em", textTransform: "uppercase", color: "var(--accent)", marginBottom: "0.4rem" }}>{t.taste}</span>
+                <p className="cg-serif" style={{ fontStyle: "italic", fontSize: "1.1rem", lineHeight: 1.5, color: "var(--muted)" }}>{b.murekkep.excerpt}</p>
+              </div>
               <a href={TRENDYOL_URL} target="_blank" rel="noopener noreferrer" className="cg-btn cg-btn-fill" style={{ marginTop: "0.5rem" }}>{b.murekkep.cta} →</a>
               <div style={{ marginTop: "0.5rem" }}>
                 <span style={{ display: "block", fontSize: "0.62rem", letterSpacing: "0.16em", textTransform: "uppercase", color: "var(--muted)", marginBottom: "0.6rem" }}>{b.buyMore}</span>
@@ -349,7 +356,11 @@ export function Cagdas() {
               <span style={{ fontSize: "0.6rem", letterSpacing: "0.18em", textTransform: "uppercase", color: "var(--accent)", border: "1px solid var(--accent)", padding: "0.4rem 0.65rem", borderRadius: "100px" }}>{b.tasfiye.badge}</span>
               <h3 className="cg-huge" style={{ fontSize: "clamp(2.2rem, 4.5vw, 3.4rem)" }}>{b.tasfiye.title}</h3>
               <p style={{ fontSize: "0.72rem", letterSpacing: "0.14em", textTransform: "uppercase", color: "var(--muted)" }}>{b.tasfiye.meta}</p>
-              <p className="cg-serif" style={{ fontStyle: "italic", fontSize: "clamp(1.05rem, 1.8vw, 1.3rem)", lineHeight: 1.55, color: "var(--ink)", maxWidth: "32ch" }}>{b.epigraph}</p>
+              <p className="cg-serif" style={{ fontStyle: "italic", fontSize: "clamp(1rem, 1.7vw, 1.2rem)", lineHeight: 1.6, color: "var(--ink)", maxWidth: "40ch" }}>{b.tasfiye.desc}</p>
+              <div style={{ borderLeft: "2px solid var(--accent)", paddingLeft: "1rem" }}>
+                <span style={{ display: "block", fontSize: "0.58rem", letterSpacing: "0.2em", textTransform: "uppercase", color: "var(--accent)", marginBottom: "0.4rem" }}>{t.taste}</span>
+                <p className="cg-serif" style={{ fontStyle: "italic", fontSize: "1.1rem", lineHeight: 1.5, color: "var(--muted)" }}>{b.tasfiye.excerpt}</p>
+              </div>
               <div style={{ marginTop: "0.75rem" }}><Countdown labels={b.countdown} /></div>
               <NotifyForm t={t.notify} />
             </div>
@@ -468,14 +479,23 @@ export function Cagdas() {
           </div>
         </section>
 
+        {/* PROJELER — kitap dışı işler (ŞİMDİ / necaliyor.co) */}
+        <Projeler lang={lang} />
+
         {/* KÂHİN — bir kelime söyle, sana bir dize düşsün */}
         <Kahin t={t.kahin} verses={VERSES} />
+
+        {/* ALINTI KARTI — dize seç, indir, paylaş */}
+        <AlintiKarti lang={lang} />
 
         {/* YAZILAR */}
         <section id="writing" className="cg-section" style={{ textAlign: "center" }}>
           <Reveal style={{ display: "inline-flex" }}><Eyebrow>{t.writing.label}</Eyebrow></Reveal>
           <Reveal delay={0.06} as="p" className="cg-serif" style={{ margin: "2rem auto 2.25rem", fontStyle: "italic", fontSize: "clamp(1.6rem, 4vw, 2.8rem)", lineHeight: 1.35, maxWidth: "22ch", color: "var(--ink)" }}>{t.writing.line}</Reveal>
-          <Reveal delay={0.1}><a href={SUBSTACK_URL} target="_blank" rel="noopener noreferrer" className="cg-btn cg-btn-fill">{t.writing.cta} →</a></Reveal>
+          <Reveal delay={0.1} style={{ display: "flex", gap: "0.75rem", justifyContent: "center", flexWrap: "wrap" }}>
+            <a href="/yazilar" className="cg-btn cg-btn-fill">{lang === "tr" ? "Tüm yazılar" : lang === "fr" ? "Tous les écrits" : "All writing"} →</a>
+            <a href={SUBSTACK_URL} target="_blank" rel="noopener noreferrer" className="cg-btn cg-btn-ghost">{t.writing.cta} ↗</a>
+          </Reveal>
         </section>
 
         {/* İLETİŞİM */}

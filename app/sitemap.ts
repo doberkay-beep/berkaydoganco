@@ -13,6 +13,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 1,
     },
     {
+      url: `${SITE}/yazilar/`,
+      changeFrequency: "weekly",
+      priority: 0.7,
+    },
+    {
       url: `${SITE}/press/`,
       changeFrequency: "monthly",
       priority: 0.6,
