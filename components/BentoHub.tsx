@@ -119,15 +119,25 @@ export function BentoHub({ lang }: { lang: Lang }) {
         .bento-f { grid-column: span 2; flex-direction: column; justify-content: center; gap: 0.4rem; }
         .bento-f .bento-title { font-size: 1.35rem; }
 
+        /* G — Deneyimler (tam genişlik) */
+        .bento-g { grid-column: span 4; flex-direction: column; gap: 0.9rem; cursor: default; }
+        .bento-g:hover { transform: none; border-color: var(--glass-border); }
+        .bento-g-row { display: flex; gap: 0.6rem; flex-wrap: wrap; }
+        .bento-g-row a { display: inline-flex; align-items: center; gap: 0.5rem; font-family: var(--font-grotesk);
+          font-size: 0.85rem; font-weight: 500; padding: 0.75rem 1.3rem; border-radius: 100px;
+          border: 1px solid var(--line); color: var(--ink); transition: border-color 0.28s ease, transform 0.28s ease, color 0.28s ease; }
+        .bento-g-row a span { color: var(--accent); }
+        .bento-g-row a:hover { border-color: var(--accent); transform: translateY(-2px); color: var(--accent); }
+
         @media (max-width: 900px) {
           .bento-grid { grid-template-columns: repeat(2, 1fr); }
           .bento-a { grid-column: span 2; grid-row: span 1; }
-          .bento-b, .bento-e, .bento-f { grid-column: span 2; }
+          .bento-b, .bento-e, .bento-f, .bento-g { grid-column: span 2; }
           .bento-sm { grid-column: span 1; }
         }
         @media (max-width: 560px) {
           .bento-grid { grid-template-columns: 1fr; }
-          .bento-a, .bento-b, .bento-sm, .bento-e, .bento-f { grid-column: span 1; grid-row: auto; }
+          .bento-a, .bento-b, .bento-sm, .bento-e, .bento-f, .bento-g { grid-column: span 1; grid-row: auto; }
           .bento-a { flex-direction: column; }
           .bento-a img { width: clamp(140px, 40vw, 180px); }
         }
@@ -198,6 +208,16 @@ export function BentoHub({ lang }: { lang: Lang }) {
           <span className="bento-sub">{c.contactSub}</span>
           <span className="arw" aria-hidden="true" style={{ position: "absolute", top: "1.5rem", right: "1.6rem" }}>→</span>
         </a>
+
+        {/* G — Deneyimler (Evren · Şiir · Masa) */}
+        <div className="bento-card bento-g">
+          <span className="bento-kicker">{lang === "tr" ? "Deneyimler" : lang === "fr" ? "Expériences" : "Experiences"}</span>
+          <div className="bento-g-row">
+            <a href="/evren"><span aria-hidden="true">✦</span> {lang === "tr" ? "Köz Evreni" : lang === "fr" ? "Univers de Braise" : "Ember Universe"}</a>
+            <a href="/siir"><span aria-hidden="true">❋</span> {lang === "tr" ? "Canlı Şiir" : lang === "fr" ? "Poème Vivant" : "Living Poem"}</a>
+            <a href="/masa"><span aria-hidden="true">✎</span> {lang === "tr" ? "Şairin Masası" : lang === "fr" ? "Le Bureau" : "The Desk"}</a>
+          </div>
+        </div>
       </div>
     </section>
   );
