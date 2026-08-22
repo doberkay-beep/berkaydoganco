@@ -9,9 +9,9 @@ import { VERSES } from "@/lib/site";
    bitince sahne kararır ve sıradaki dize başlar. Oynat/duraklat + ilerleme. */
 
 const LABELS = {
-  tr: { title: "Canlı Şiir", play: "Başlat", pause: "Duraklat", next: "Sıradaki", back: "← berkaydogan.co", hint: "Ses yok — sadece kelimeler ve zaman" },
-  en: { title: "Living Poem", play: "Play", pause: "Pause", next: "Next", back: "← berkaydogan.co", hint: "No sound — only words and time" },
-  fr: { title: "Poème Vivant", play: "Lancer", pause: "Pause", next: "Suivant", back: "← berkaydogan.co", hint: "Pas de son — seulement les mots et le temps" },
+  tr: { title: "Canlı Şiir", play: "Başlat", pause: "Duraklat", next: "Sıradaki", back: "← berkaydogan.co", hint: "Kelimeler ve zaman — istersen ambiyansı aç", amb: "Ambiyans" },
+  en: { title: "Living Poem", play: "Play", pause: "Pause", next: "Next", back: "← berkaydogan.co", hint: "Words and time — ambience if you wish", amb: "Ambience" },
+  fr: { title: "Poème Vivant", play: "Lancer", pause: "Pause", next: "Suivant", back: "← berkaydogan.co", hint: "Les mots et le temps — l'ambiance si tu veux", amb: "Ambiance" },
 };
 
 const WORD_MS = 620;     // kelimeler arası
@@ -27,6 +27,44 @@ export default function CanliSiir() {
   const [phase, setPhase] = useState<Phase>("typing");
   const [playing, setPlaying] = useState(true);
   const timer = useRef<number>(0);
+  const [amb, setAmb] = useState(false);
+  const ambRef = useRef<{ stop: () => void } | null>(null);
+
+  /* Ambiyans — dosyasız, WebAudio ile üretilen sıcak vinil dokusu:
+     alçak geçirilmiş kahverengi gürültü + rastgele çıtırtılar. */
+  const toggleAmb = () => {
+    if (ambRef.current) { ambRef.current.stop(); ambRef.current = null; setAmb(false); return; }
+    try {
+      const ctx = new AudioContext();
+      const master = ctx.createGain(); master.gain.value = 0.05; master.connect(ctx.destination);
+      // sıcak zemin
+      const len = ctx.sampleRate * 2;
+      const buf = ctx.createBuffer(1, len, ctx.sampleRate);
+      const d = buf.getChannelData(0); let lastS = 0;
+      for (let i = 0; i < len; i++) { const w = Math.random() * 2 - 1; lastS = (lastS + 0.02 * w) / 1.02; d[i] = lastS * 3.2; }
+      const src = ctx.createBufferSource(); src.buffer = buf; src.loop = true;
+      const lp = ctx.createBiquadFilter(); lp.type = "lowpass"; lp.frequency.value = 420;
+      src.connect(lp); lp.connect(master); src.start();
+      // çıtırtı zamanlayıcısı
+      let alive = true;
+      const pop = () => {
+        if (!alive) return;
+        const pb = ctx.createBuffer(1, Math.floor(ctx.sampleRate * 0.02), ctx.sampleRate);
+        const pd = pb.getChannelData(0);
+        for (let i = 0; i < pd.length; i++) pd[i] = (Math.random() * 2 - 1) * Math.exp(-i / (pd.length * 0.22));
+        const ps = ctx.createBufferSource(); ps.buffer = pb;
+        const bp = ctx.createBiquadFilter(); bp.type = "bandpass"; bp.frequency.value = 1600 + Math.random() * 2800;
+        const pg = ctx.createGain(); pg.gain.value = 0.12 + Math.random() * 0.3;
+        ps.connect(bp); bp.connect(pg); pg.connect(master); ps.start();
+        window.setTimeout(pop, 130 + Math.random() * 900);
+      };
+      pop();
+      ambRef.current = { stop: () => { alive = false; try { src.stop(); ctx.close(); } catch { /* yoksay */ } } };
+      setAmb(true);
+    } catch { /* WebAudio yoksa sessiz kal */ }
+  };
+
+  useEffect(() => () => { ambRef.current?.stop(); }, []);
 
   useEffect(() => {
     try {
@@ -129,6 +167,8 @@ export default function CanliSiir() {
           {VERSES.map((_, i) => <span key={i} className="cs-dot" data-on={i === idx ? "1" : "0"} />)}
         </div>
         <button className="cs-btn" onClick={() => { window.clearTimeout(timer.current); advance(); }}>{L.next} →</button>
+        <button className="cs-btn" aria-pressed={amb} onClick={toggleAmb}
+          style={amb ? { borderColor: "#E5402A", color: "#E5402A" } : undefined}>♪ {L.amb}</button>
       </div>
     </div>
   );

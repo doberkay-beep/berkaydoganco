@@ -13,6 +13,7 @@ import { TasfiyeReveal } from "./TasfiyeReveal";
 import { BentoHub } from "./BentoHub";
 import { Projeler } from "./Projeler";
 import { AlintiKarti } from "./AlintiKarti";
+import { Muhur } from "./Muhur";
 
 /* ---------- Scroll ile beliren sarmalayıcı (akışkan) ---------- */
 function Reveal({ children, as: Tag = "div", delay = 0, className, style }: {
@@ -148,6 +149,35 @@ export function Cagdas() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  /* Mikro-etkileşimler: mıknatıs butonlar + kartlarda ışık takibi (yalnız masaüstü) */
+  useEffect(() => {
+    if (!window.matchMedia("(pointer: fine)").matches) return;
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    let magnet: HTMLElement | null = null;
+    const onMove = (e: PointerEvent) => {
+      const t = e.target as HTMLElement | null;
+      // mıknatıs: buton imlece hafifçe eğilir
+      const btn = t?.closest?.(".cg-btn") as HTMLElement | null;
+      if (magnet && magnet !== btn) { magnet.style.translate = ""; magnet = null; }
+      if (btn) {
+        const r = btn.getBoundingClientRect();
+        const dx = ((e.clientX - r.left) / r.width - 0.5) * 6;
+        const dy = ((e.clientY - r.top) / r.height - 0.5) * 5;
+        btn.style.translate = `${dx.toFixed(1)}px ${dy.toFixed(1)}px`;
+        magnet = btn;
+      }
+      // ışık takibi: cam kartlarda parlaklık imleci izler
+      const card = t?.closest?.(".bento-card, .prj-card, .cg-playlist, .cg-review-card") as HTMLElement | null;
+      if (card) {
+        const r = card.getBoundingClientRect();
+        card.style.setProperty("--mx", `${e.clientX - r.left}px`);
+        card.style.setProperty("--my", `${e.clientY - r.top}px`);
+      }
+    };
+    document.addEventListener("pointermove", onMove, { passive: true });
+    return () => { document.removeEventListener("pointermove", onMove); if (magnet) magnet.style.translate = ""; };
+  }, []);
+
   const b = t.books;
 
   return (
@@ -229,13 +259,50 @@ export function Cagdas() {
         .cg-menu a:hover { color: var(--accent); }
         .cg-menu-close { position: absolute; top: 1.4rem; right: clamp(1.25rem, 4vw, 3.25rem); background: none; border: none; cursor: pointer; font-size: 1.4rem; color: var(--ink); line-height: 1; }
 
+        /* Kinetik hero — harfler közden tutuşup mürekkebe döner */
+        .cg-ign { display: inline-block; opacity: 0; transform: translateY(0.35em) scale(0.96); filter: blur(10px);
+          color: var(--accent); animation: cgIgnite 1s cubic-bezier(0.22,1,0.36,1) forwards; }
+        @keyframes cgIgnite {
+          55% { color: var(--accent); }
+          100% { opacity: 1; transform: none; filter: blur(0); color: var(--ink); }
+        }
+        @media (prefers-reduced-motion: reduce) { .cg-ign { animation: none; opacity: 1; transform: none; filter: none; color: var(--ink); } }
+
+        /* Scroll katmanları — kapaklarda parallax (destekleyen tarayıcıda) */
+        @supports (animation-timeline: view()) {
+          .cg-book-media img { animation: cgDrift linear both; animation-timeline: view(); animation-range: entry 0% exit 100%; }
+          @keyframes cgDrift { from { transform: translateY(26px); } to { transform: translateY(-26px); } }
+          .cg-ghost { animation: cgGhostDrift linear both; animation-timeline: view(); }
+          @keyframes cgGhostDrift { from { transform: translate(-50%, calc(-50% + 70px)); } to { transform: translate(-50%, calc(-50% - 70px)); } }
+          @media (prefers-reduced-motion: reduce) { .cg-book-media img, .cg-ghost { animation: none; } }
+        }
+
+        /* Hayalet kelime — teaser arkasında dev kontur */
+        .cg-ghost { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); z-index: 0;
+          font-family: var(--font-grotesk); font-weight: 700; font-size: clamp(9rem, 28vw, 24rem); letter-spacing: -0.05em;
+          color: transparent; -webkit-text-stroke: 1px var(--line); pointer-events: none; user-select: none; white-space: nowrap; }
+
+        /* Işık takibi — cam kartlarda imleci izleyen parlama */
+        @media (pointer: fine) {
+          .cg-playlist, .cg-review-card { position: relative; overflow: hidden; }
+          .bento-card::after, .prj-card::after, .cg-playlist::after, .cg-review-card::after {
+            content: ""; position: absolute; inset: 0; border-radius: inherit; pointer-events: none;
+            background: radial-gradient(240px circle at var(--mx, 50%) var(--my, 50%), var(--glass-hi), transparent 65%);
+            opacity: 0; transition: opacity 0.35s ease;
+          }
+          .bento-card:hover::after, .prj-card:hover::after, .cg-playlist:hover::after, .cg-review-card:hover::after { opacity: 1; }
+        }
+
         /* Erişilebilirlik — görünür odak halkası */
         a:focus-visible, button:focus-visible, input:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 4px; }
       `}</style>
 
       {/* MENÜ */}
       <nav ref={navRef as React.RefObject<HTMLElement>} className="cg-nav cg" data-solid="0">
-        <a href="#top" style={{ fontFamily: "var(--font-grotesk)", fontWeight: 700, fontSize: "0.95rem", letterSpacing: "0.02em" }}>Berkay Doğan</a>
+        <a href="#top" style={{ display: "inline-flex", alignItems: "center", gap: "0.6rem", fontFamily: "var(--font-grotesk)", fontWeight: 700, fontSize: "0.95rem", letterSpacing: "0.02em" }}>
+          <Muhur size={22} />
+          Berkay Doğan
+        </a>
         <div className="cg-nav-links">
           <a href="#books" className="cg-link">{t.nav.books}</a>
           <a href="#about" className="cg-link">{t.nav.about}</a>
@@ -268,9 +335,15 @@ export function Cagdas() {
         <section className="cg-hero">
           <div>
             <Reveal><Eyebrow>{t.hero.role}</Eyebrow></Reveal>
-            <Reveal delay={0.08} as="h1" className="cg-huge" style={{ fontSize: "clamp(3.2rem, 9vw, 8rem)", margin: "1.5rem 0 1.75rem" }}>
-              Berkay<br />Doğan
-            </Reveal>
+            <h1 className="cg-huge" style={{ fontSize: "clamp(3.2rem, 9vw, 8rem)", margin: "1.5rem 0 1.75rem" }} aria-label="Berkay Doğan">
+              {["Berkay", "Doğan"].map((word, wi) => (
+                <span key={word} style={{ display: "block" }} aria-hidden="true">
+                  {[...word].map((ch, i) => (
+                    <span key={i} className="cg-ign" style={{ animationDelay: `${0.15 + (wi * 6 + i) * 0.05}s` }}>{ch}</span>
+                  ))}
+                </span>
+              ))}
+            </h1>
             <Reveal delay={0.16} as="p" className="cg-serif" style={{ fontSize: "clamp(1.4rem, 3vw, 2.1rem)", lineHeight: 1.35, maxWidth: "20ch", color: "var(--ink)" }}>
               {t.hero.line}
             </Reveal>
@@ -378,16 +451,19 @@ export function Cagdas() {
         </section>
 
         {/* KİTAPTAN TEASER — Berkay'ın dizeleri, satın almaya çeker */}
-        <section className="cg-section" style={{ textAlign: "center" }}>
-          <Reveal style={{ display: "inline-flex" }}><Eyebrow>{t.teaser.label}</Eyebrow></Reveal>
-          <div style={{ margin: "2rem auto 2.25rem", display: "flex", flexDirection: "column", gap: "0.75rem", maxWidth: "22ch" }}>
-            {TEASER_LINES.map((l, i) => (
-              <Reveal key={i} as="p" delay={i * 0.07} className="cg-serif" style={{ fontStyle: "italic", fontSize: "clamp(1.5rem, 4vw, 2.8rem)", lineHeight: 1.35, color: "var(--ink)" }}>{l}</Reveal>
-            ))}
+        <section className="cg-section" style={{ textAlign: "center", position: "relative", overflow: "hidden" }}>
+          <span className="cg-ghost" aria-hidden="true">KÖZ</span>
+          <div style={{ position: "relative", zIndex: 1 }}>
+            <Reveal style={{ display: "inline-flex" }}><Eyebrow>{t.teaser.label}</Eyebrow></Reveal>
+            <div style={{ margin: "2rem auto 2.25rem", display: "flex", flexDirection: "column", gap: "0.75rem", maxWidth: "22ch" }}>
+              {TEASER_LINES.map((l, i) => (
+                <Reveal key={i} as="p" delay={i * 0.07} className="cg-serif" style={{ fontStyle: "italic", fontSize: "clamp(1.5rem, 4vw, 2.8rem)", lineHeight: 1.35, color: "var(--ink)" }}>{l}</Reveal>
+              ))}
+            </div>
+            <Reveal delay={0.14}>
+              <a href={TRENDYOL_URL} target="_blank" rel="noopener noreferrer" className="cg-btn cg-btn-ghost">{t.teaser.cta} →</a>
+            </Reveal>
           </div>
-          <Reveal delay={0.14}>
-            <a href={TRENDYOL_URL} target="_blank" rel="noopener noreferrer" className="cg-btn cg-btn-ghost">{t.teaser.cta} →</a>
-          </Reveal>
         </section>
 
         {/* TASFİYE DUVARI — arınma ritüeli (koyu bölüm) */}

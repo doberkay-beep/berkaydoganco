@@ -20,9 +20,16 @@ export default function OG() {
           fontFamily: "sans-serif",
         }}
       >
-        <div style={{ display: "flex", alignItems: "center", gap: 18, color: "#14120F", fontSize: 27, letterSpacing: 7 }}>
-          <div style={{ width: 16, height: 16, borderRadius: 8, background: "#E5402A" }} />
-          POET &amp; WRITER — ISTANBUL
+        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start" }}>
+          <div style={{ display: "flex", alignItems: "center", gap: 18, color: "#14120F", fontSize: 27, letterSpacing: 7 }}>
+            <div style={{ width: 16, height: 16, borderRadius: 8, background: "#E5402A" }} />
+            POET &amp; WRITER — ISTANBUL
+          </div>
+          {/* BD mührü */}
+          <div style={{ display: "flex", alignItems: "center", justifyContent: "center", width: 92, height: 92, borderRadius: 46, border: "4px solid #14120F", position: "relative" }}>
+            <div style={{ fontSize: 38, fontWeight: 800, color: "#14120F", letterSpacing: -2 }}>BD</div>
+            <div style={{ position: "absolute", top: -10, left: 36, width: 16, height: 16, borderRadius: 8, background: "#E5402A" }} />
+          </div>
         </div>
         <div style={{ display: "flex", flexDirection: "column" }}>
           <div style={{ fontSize: 156, fontWeight: 800, color: "#14120F", lineHeight: 1, letterSpacing: -5 }}>Berkay Doğan</div>

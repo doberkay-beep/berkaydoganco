@@ -68,6 +68,17 @@ export function AlintiKarti({ lang }: { lang: Lang }) {
     const startY = H / 2 - ((lines.length - 1) * lh) / 2;
     lines.forEach((ln, i) => ctx.fillText(ln, W / 2, startY + i * lh));
 
+    // Mühür — çember + BD + tepe közü
+    const sx = W / 2, sy = H - 340, sr = 40;
+    ctx.strokeStyle = "rgba(241,237,228,0.75)";
+    ctx.lineWidth = 3;
+    ctx.beginPath(); ctx.arc(sx, sy, sr, 0, Math.PI * 2); ctx.stroke();
+    ctx.fillStyle = "#F1EDE4";
+    ctx.font = `700 34px ${groteskStack}`;
+    ctx.fillText("BD", sx, sy + 2);
+    ctx.fillStyle = "#E5402A";
+    ctx.beginPath(); ctx.arc(sx, sy - sr, 5.5, 0, Math.PI * 2); ctx.fill();
+
     // İmza
     ctx.fillStyle = "#E5402A";
     ctx.font = `500 30px ${groteskStack}`;

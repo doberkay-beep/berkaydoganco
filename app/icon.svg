@@ -1,4 +1,7 @@
 <svg width="64" height="64" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
-  <rect width="64" height="64" rx="15" fill="#E5402A"/>
-  <text x="32" y="45" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="34" font-weight="700" letter-spacing="-1" fill="#FAF9F6" text-anchor="middle">BD</text>
+  <rect width="64" height="64" rx="15" fill="#0b0a09"/>
+  <circle cx="32" cy="33" r="24" stroke="#F1EDE4" stroke-width="2.4" fill="none" opacity="0.92"/>
+  <path d="M23 24.5 V41.5 M23 24.5 H27.5 Q31.4 24.5 31.4 28.7 Q31.4 32.4 27.5 33 H23 M27.5 33 Q32.3 33.5 32.3 37.2 Q32.3 41.5 27.5 41.5 H23" stroke="#F1EDE4" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  <path d="M37.5 24.5 V41.5 M37.5 24.5 H40 Q46 24.5 46 33 Q46 41.5 40 41.5 H37.5" stroke="#F1EDE4" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  <circle cx="32" cy="9" r="3.2" fill="#E5402A"/>
 </svg>

@@ -84,6 +84,13 @@ export default function SairinMasasi() {
         {/* Lamba ışık konisi */}
         <ellipse cx="550" cy="120" rx="480" ry="330" fill="url(#smLampGlow)" />
 
+        {/* Duvarda BD mührü */}
+        <g opacity="0.4">
+          <circle cx="900" cy="140" r="34" stroke="#c9beac" strokeWidth="2.5" fill="none" />
+          <text x="900" y="150" textAnchor="middle" fontFamily="Helvetica Neue, Arial, sans-serif" fontSize="26" fontWeight="700" fill="#c9beac">BD</text>
+          <circle cx="900" cy="106" r="4" fill="#E5402A" />
+        </g>
+
         {/* Masa */}
         <rect x="40" y="430" width="1020" height="34" rx="6" fill="url(#smDesk)" />
         <rect x="80" y="464" width="26" height="150" fill="#1c140d" />
