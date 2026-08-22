@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { site, SUBSTACK_URL } from "@/lib/site";
+import { YAYINDA } from "@/lib/yazilar";
 
 export const dynamic = "force-static";
 
@@ -64,7 +65,9 @@ async function getPosts(): Promise<Post[]> {
 
 export default async function YazilarPage() {
   const t = site.tr.yazilar;
-  const posts = await getPosts();
+  // Sitede tam metni olanlar RSS listesinde tekrarlanmasın
+  const onSite = new Set(YAYINDA.map((y) => y.title.toLocaleLowerCase("tr")));
+  const posts = (await getPosts()).filter((p) => !onSite.has(p.title.toLocaleLowerCase("tr")));
 
   return (
     <main style={{ maxWidth: "820px", margin: "0 auto", padding: "clamp(3rem, 8vh, 6rem) clamp(1.25rem, 5vw, 3.25rem) 6rem" }}>
@@ -79,10 +82,21 @@ export default async function YazilarPage() {
       <h1 style={{ fontFamily: "var(--font-grotesk)", fontWeight: 700, fontSize: "clamp(2.6rem, 7vw, 5rem)", letterSpacing: "-0.04em", lineHeight: 0.95, margin: "1.5rem 0 1rem" }}>{t.title}</h1>
       <p style={{ fontFamily: "var(--font-serif)", fontStyle: "italic", fontWeight: 300, fontSize: "clamp(1.2rem, 2.4vw, 1.7rem)", color: "var(--muted)", maxWidth: "44ch" }}>{t.sub}</p>
 
+      {/* Sitede tam metin */}
       <section style={{ marginTop: "clamp(3rem, 7vh, 5rem)" }}>
+        {YAYINDA.map((y) => (
+          <Link key={y.slug} href={`/yazilar/${y.slug}`} style={{ display: "block", padding: "1.75rem 0", borderTop: "1px solid var(--line)" }}>
+            <span style={{ display: "block", fontFamily: "var(--font-grotesk)", fontSize: "0.68rem", letterSpacing: "0.16em", textTransform: "uppercase", color: "var(--accent)", marginBottom: "0.6rem" }}>{y.dateText}</span>
+            <span style={{ display: "block", fontFamily: "var(--font-serif)", fontSize: "clamp(1.3rem, 3vw, 1.9rem)", lineHeight: 1.2, color: "var(--ink)", marginBottom: "0.6rem" }}>{y.title}</span>
+            <span style={{ display: "block", fontSize: "0.98rem", lineHeight: 1.6, color: "var(--muted)" }}>{y.dek}</span>
+            <span style={{ display: "inline-block", marginTop: "0.9rem", fontFamily: "var(--font-grotesk)", fontSize: "0.72rem", letterSpacing: "0.12em", textTransform: "uppercase", color: "var(--muted)" }}>{t.read} →</span>
+          </Link>
+        ))}
+      </section>
+
+      <section>
         {posts.length === 0 ? (
           <div style={{ borderTop: "1px solid var(--line)", paddingTop: "2.5rem" }}>
-            <p style={{ fontSize: "1.05rem", color: "var(--muted)", marginBottom: "1.5rem" }}>{t.empty}</p>
             <a href={SUBSTACK_URL} target="_blank" rel="noopener noreferrer" className="cg-btn cg-btn-fill" style={{ display: "inline-flex", alignItems: "center", gap: "0.5rem", fontFamily: "var(--font-grotesk)", fontSize: "0.78rem", fontWeight: 500, letterSpacing: "0.08em", padding: "0.95rem 1.6rem", borderRadius: "100px", background: "var(--accent)", color: "var(--accent-ink)" }}>{t.all} →</a>
           </div>
         ) : (

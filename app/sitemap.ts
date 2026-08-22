@@ -1,4 +1,5 @@
 import type { MetadataRoute } from "next";
+import { YAYINDA } from "@/lib/yazilar";
 
 // Statik export için zorunlu
 export const dynamic = "force-static";
@@ -7,6 +8,12 @@ const SITE = "https://www.berkaydogan.co";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   return [
+    ...YAYINDA.map((y) => ({
+      url: `${SITE}/yazilar/${y.slug}/`,
+      lastModified: y.dateISO,
+      changeFrequency: "yearly" as const,
+      priority: 0.7,
+    })),
     {
       url: `${SITE}/`,
       changeFrequency: "weekly",
