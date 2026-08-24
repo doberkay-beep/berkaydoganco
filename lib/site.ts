@@ -10,6 +10,16 @@ export const EMAIL = "do.berkay@icloud.com";
 export const GOODREADS_URL = "https://www.goodreads.com/book/show/252900764-m-rekkep-ve-k-z";
 export const VALSANAT_URL = "https://online.fliphtml5.com/jqzww/ezec/#p=1";
 
+/* Lansman hedefi — tüm geri sayımlar buradan okur.
+   Sayaç sıfırlanınca rakamlar yerine LAUNCH_DONE cümlesi gösterilir
+   (saat iddiası yok; yayının tam saati kayarsa da doğru kalır). */
+export const LAUNCH_ISO = "2026-08-25T00:00:00";
+export const LAUNCH_DONE: Record<Lang, string> = {
+  tr: "Vakit geldi — Tasfiye çıkıyor.",
+  en: "The time has come — Tasfiye is arriving.",
+  fr: "Le moment est venu — Tasfiye arrive.",
+};
+
 /* ---- Dilden bağımsız paylaşılan veri ---- */
 export const RETAILERS: { name: string; url: string }[] = [
   { name: "Trendyol", url: TRENDYOL_URL },

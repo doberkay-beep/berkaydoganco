@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { type Lang, TRENDYOL_URL, SUBSTACK_URL } from "@/lib/site";
+import { type Lang, TRENDYOL_URL, SUBSTACK_URL, LAUNCH_ISO, LAUNCH_DONE } from "@/lib/site";
 
 /* Masaüstü için modüler bento pano — hero'nun hemen altında bir "kontrol paneli":
    Tasfiye (büyük feature) + Mürekkep, Dinle, Oku, Tanınırlık, İletişim.
@@ -49,19 +49,22 @@ const COPY: Record<Lang, C> = {
 
 function useCountdown() {
   const [v, setV] = useState<number[] | null>(null);
+  const [over, setOver] = useState(false);
   useEffect(() => {
     const tick = () => {
-      const d = Math.max(0, new Date("2026-08-25T00:00:00").getTime() - Date.now());
+      const ms = new Date(LAUNCH_ISO).getTime() - Date.now();
+      if (ms <= 0) { setOver(true); setV([0, 0, 0]); return; }
+      const d = ms;
       setV([Math.floor(d / 86400000), Math.floor((d % 86400000) / 3600000), Math.floor((d % 3600000) / 60000)]);
     };
     tick(); const id = setInterval(tick, 30000); return () => clearInterval(id);
   }, []);
-  return v ?? [0, 0, 0];
+  return { d: v ?? [0, 0, 0], over };
 }
 
 export function BentoHub({ lang }: { lang: Lang }) {
   const c = COPY[lang];
-  const d = useCountdown();
+  const { d, over } = useCountdown();
 
   return (
     <section className="bento cg" aria-label={c.heading}>
@@ -155,11 +158,15 @@ export function BentoHub({ lang }: { lang: Lang }) {
           <div className="col">
             <span className="bento-badge">{c.tasfiyeBadge}</span>
             <span className="bento-title">Tasfiye</span>
-            <div className="bento-count">
-              {d.map((n, i) => (
-                <span key={i}><b suppressHydrationWarning>{String(n).padStart(2, "0")}</b>{c.count[i]}</span>
-              ))}
-            </div>
+            {over ? (
+              <p style={{ fontFamily: "var(--font-serif)", fontStyle: "italic", fontWeight: 300, fontSize: "1.05rem", lineHeight: 1.4, color: "var(--accent)", marginTop: "0.2rem" }}>{LAUNCH_DONE[lang]}</p>
+            ) : (
+              <div className="bento-count">
+                {d.map((n, i) => (
+                  <span key={i}><b suppressHydrationWarning>{String(n).padStart(2, "0")}</b>{c.count[i]}</span>
+                ))}
+              </div>
+            )}
             <span className="bento-date">{c.tasfiyeDate}</span>
           </div>
         </a>

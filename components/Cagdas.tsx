@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import {
-  site, LANGS, type Lang,
+  site, LANGS, type Lang, LAUNCH_ISO, LAUNCH_DONE,
   TRENDYOL_URL, SUBSTACK_URL, YOUTUBE_URL, INSTAGRAM_URL, EMAIL,
   RETAILERS, REVIEWS, MEDIA, EMBER_FRAGMENTS, VERSES, PLAYLISTS, TEASER_LINES,
 } from "@/lib/site";
@@ -38,15 +38,23 @@ function Reveal({ children, as: Tag = "div", delay = 0, className, style }: {
 }
 
 /* ---------- Geri sayım (25 Ağustos 2026) ---------- */
-function Countdown({ labels }: { labels: string[] }) {
+function Countdown({ labels, done }: { labels: string[]; done: string }) {
   const [v, setV] = useState<number[] | null>(null);
+  const [over, setOver] = useState(false);
   useEffect(() => {
     const tick = () => {
-      const d = Math.max(0, new Date("2026-08-25T00:00:00").getTime() - Date.now());
+      const ms = new Date(LAUNCH_ISO).getTime() - Date.now();
+      if (ms <= 0) { setOver(true); setV([0, 0, 0]); return; }
+      const d = ms;
       setV([Math.floor(d / 86400000), Math.floor((d % 86400000) / 3600000), Math.floor((d % 3600000) / 60000)]);
     };
     tick(); const id = setInterval(tick, 30000); return () => clearInterval(id);
   }, []);
+  if (over) {
+    return (
+      <p className="cg-serif" style={{ fontStyle: "italic", fontWeight: 300, fontSize: "clamp(1.15rem, 2.2vw, 1.5rem)", color: "var(--accent)" }}>{done}</p>
+    );
+  }
   const d = v ?? [0, 0, 0];
   return (
     <div style={{ display: "flex", gap: "1.5rem" }}>
@@ -437,7 +445,7 @@ export function Cagdas() {
                 <span style={{ display: "block", fontSize: "0.58rem", letterSpacing: "0.2em", textTransform: "uppercase", color: "var(--accent)", marginBottom: "0.4rem" }}>{t.taste}</span>
                 <p className="cg-serif" style={{ fontStyle: "italic", fontSize: "1.1rem", lineHeight: 1.5, color: "var(--muted)" }}>{b.tasfiye.excerpt}</p>
               </div>
-              <div style={{ marginTop: "0.75rem" }}><Countdown labels={b.countdown} /></div>
+              <div style={{ marginTop: "0.75rem" }}><Countdown labels={b.countdown} done={LAUNCH_DONE[lang]} /></div>
               <a href="/kitap/tasfiye" className="cg-btn cg-btn-ghost">{lang === "tr" ? "Kitabın sayfası" : lang === "fr" ? "Page du livre" : "Book page"}</a>
               <NotifyForm t={t.notify} />
             </div>

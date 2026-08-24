@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import type { Lang } from "@/lib/site";
+import { LAUNCH_ISO, LAUNCH_DONE, type Lang } from "@/lib/site";
 
 /* Tam ekran açılış perdesi — Tasfiye reveal.
    Görünürlük CSS ile yönetilir: layout'taki satır-içi script, oturumda
@@ -18,10 +18,13 @@ const COPY: Record<Lang, { eyebrow: string; tag: string; date: string; count: st
 export function TasfiyeReveal({ lang }: { lang: Lang }) {
   const L = COPY[lang];
   const [v, setV] = useState<number[] | null>(null);
+  const [over, setOver] = useState(false);
 
   useEffect(() => {
     const tick = () => {
-      const d = Math.max(0, new Date("2026-08-25T00:00:00").getTime() - Date.now());
+      const ms = new Date(LAUNCH_ISO).getTime() - Date.now();
+      if (ms <= 0) { setOver(true); setV([0, 0, 0]); return; }
+      const d = ms;
       setV([Math.floor(d / 86400000), Math.floor((d % 86400000) / 3600000), Math.floor((d % 3600000) / 60000)]);
     };
     tick(); const id = setInterval(tick, 30000); return () => clearInterval(id);
@@ -76,6 +79,9 @@ export function TasfiyeReveal({ lang }: { lang: Lang }) {
           letter-spacing: -0.04em; line-height: 0.95; }
         .perde-tag { font-family: var(--font-serif); font-style: italic; font-weight: 300;
           font-size: clamp(1.05rem, 2.6vw, 1.5rem); color: #c9c2b6; margin-top: 0.6rem; }
+        .perde-done { font-family: var(--font-serif, Georgia, serif); font-style: italic; font-weight: 300;
+          font-size: clamp(1.2rem, 3vw, 1.7rem); color: #F5EFE6; margin: 1.9rem 0 1rem;
+          text-shadow: 0 0 26px rgba(229,64,42,0.45); animation: perdeRise 1s cubic-bezier(0.22,1,0.36,1) both; }
         .perde-count { display: inline-flex; gap: 1.4rem; margin: 1.9rem 0 1rem; padding: 0.9rem 1.6rem;
           border-radius: 100px; background: rgba(30,26,22,0.5); border: 1px solid rgba(241,237,228,0.14);
           -webkit-backdrop-filter: blur(14px); backdrop-filter: blur(14px); }
@@ -106,14 +112,18 @@ export function TasfiyeReveal({ lang }: { lang: Lang }) {
         <img className="perde-cover" src="/tasfiye-on-kapak.jpg" alt="Tasfiye — kapak" />
         <h2 className="perde-title">Tasfiye</h2>
         <p className="perde-tag">{L.tag}</p>
-        <div className="perde-count">
-          {d.map((n, i) => (
-            <span key={i} className="perde-num">
-              <b suppressHydrationWarning>{String(n).padStart(2, "0")}</b>
-              <span>{L.count[i]}</span>
-            </span>
-          ))}
-        </div>
+        {over ? (
+          <p className="perde-done">{LAUNCH_DONE[lang]}</p>
+        ) : (
+          <div className="perde-count">
+            {d.map((n, i) => (
+              <span key={i} className="perde-num">
+                <b suppressHydrationWarning>{String(n).padStart(2, "0")}</b>
+                <span>{L.count[i]}</span>
+              </span>
+            ))}
+          </div>
+        )}
         <div><span className="perde-date">{L.date}</span></div>
         <button className="perde-enter" onClick={close}>{L.enter} <span className="chev" aria-hidden="true">↓</span></button>
         <span className="perde-hint">{L.hint}</span>
