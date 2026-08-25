@@ -1,7 +1,7 @@
 "use client";
 
-import { useEffect, useState } from "react";
-import { LAUNCH_ISO, LAUNCH_DONE, type Lang } from "@/lib/site";
+import { useEffect } from "react";
+import { TASFIYE_URL, type Lang } from "@/lib/site";
 
 /* Tam ekran açılış perdesi — Tasfiye reveal.
    Görünürlük CSS ile yönetilir: layout'taki satır-içi script, oturumda
@@ -9,26 +9,14 @@ import { LAUNCH_ISO, LAUNCH_DONE, type Lang } from "@/lib/site";
    durur ama yalnız data-perde="1" iken görünür. "Gir" / kaydırma / Esc
    perdeyi kapatır ve oturumda bir daha açılmaz. JS kapalıysa hiç görünmez. */
 
-const COPY: Record<Lang, { eyebrow: string; tag: string; date: string; count: string[]; enter: string; hint: string }> = {
-  tr: { eyebrow: "Perde açılıyor · Yeni kitap", tag: "Yıkmak değil; temizlemek.", date: "25 Ağustos 2026", count: ["Gün", "Saat", "Dk"], enter: "Siteye gir", hint: "Kaydır ya da tıkla" },
-  en: { eyebrow: "The curtain rises · New book", tag: "Not to destroy — to purge.", date: "25 August 2026", count: ["Days", "Hrs", "Min"], enter: "Enter the site", hint: "Scroll or click" },
-  fr: { eyebrow: "Le rideau se lève · Nouveau livre", tag: "Non pour détruire — pour purifier.", date: "25 août 2026", count: ["Jours", "Hres", "Min"], enter: "Entrer", hint: "Faites défiler ou cliquez" },
+const COPY: Record<Lang, { eyebrow: string; tag: string; out: string; buy: string; enter: string; hint: string }> = {
+  tr: { eyebrow: "Perde açıldı · Yeni kitap", tag: "Yıkmak değil; temizlemek.", out: "Çıktı · 25 Ağustos 2026", buy: "Trendyol'da satın al", enter: "Siteye gir", hint: "Kaydır ya da tıkla" },
+  en: { eyebrow: "The curtain is up · New book", tag: "Not to destroy — to purge.", out: "Out now · 25 August 2026", buy: "Buy on Trendyol", enter: "Enter the site", hint: "Scroll or click" },
+  fr: { eyebrow: "Le rideau est levé · Nouveau livre", tag: "Non pour détruire — pour purifier.", out: "Paru · 25 août 2026", buy: "Acheter sur Trendyol", enter: "Entrer", hint: "Faites défiler ou cliquez" },
 };
 
 export function TasfiyeReveal({ lang }: { lang: Lang }) {
   const L = COPY[lang];
-  const [v, setV] = useState<number[] | null>(null);
-  const [over, setOver] = useState(false);
-
-  useEffect(() => {
-    const tick = () => {
-      const ms = new Date(LAUNCH_ISO).getTime() - Date.now();
-      if (ms <= 0) { setOver(true); setV([0, 0, 0]); return; }
-      const d = ms;
-      setV([Math.floor(d / 86400000), Math.floor((d % 86400000) / 3600000), Math.floor((d % 3600000) / 60000)]);
-    };
-    tick(); const id = setInterval(tick, 30000); return () => clearInterval(id);
-  }, []);
 
   useEffect(() => {
     const isOpen = () => document.documentElement.getAttribute("data-perde") === "1";
@@ -55,7 +43,6 @@ export function TasfiyeReveal({ lang }: { lang: Lang }) {
     document.documentElement.setAttribute("data-perde", "0");
   };
 
-  const d = v ?? [0, 0, 0];
 
   return (
     <div className="perde-root" role="dialog" aria-modal="true" aria-label="Tasfiye — 25.08.2026" onClick={close}>
@@ -79,19 +66,16 @@ export function TasfiyeReveal({ lang }: { lang: Lang }) {
           letter-spacing: -0.04em; line-height: 0.95; }
         .perde-tag { font-family: var(--font-serif); font-style: italic; font-weight: 300;
           font-size: clamp(1.05rem, 2.6vw, 1.5rem); color: #c9c2b6; margin-top: 0.6rem; }
-        .perde-done { font-family: var(--font-serif, Georgia, serif); font-style: italic; font-weight: 300;
-          font-size: clamp(1.2rem, 3vw, 1.7rem); color: #F5EFE6; margin: 1.9rem 0 1rem;
-          text-shadow: 0 0 26px rgba(229,64,42,0.45); animation: perdeRise 1s cubic-bezier(0.22,1,0.36,1) both; }
-        .perde-count { display: inline-flex; gap: 1.4rem; margin: 1.9rem 0 1rem; padding: 0.9rem 1.6rem;
-          border-radius: 100px; background: rgba(30,26,22,0.5); border: 1px solid rgba(241,237,228,0.14);
-          -webkit-backdrop-filter: blur(14px); backdrop-filter: blur(14px); }
-        .perde-num { display: flex; flex-direction: column; gap: 0.2rem; }
-        .perde-num b { font-family: var(--font-grotesk); font-weight: 700; font-size: clamp(1.4rem, 4vw, 2rem);
-          line-height: 1; color: #E5402A; font-variant-numeric: tabular-nums; }
-        .perde-num span { font-size: 0.54rem; letter-spacing: 0.2em; text-transform: uppercase; color: #9a948a; }
-        .perde-date { font-family: var(--font-grotesk); font-size: 0.78rem; letter-spacing: 0.28em;
-          text-transform: uppercase; color: #F1EDE4; }
-        .perde-enter { margin-top: 2.1rem; display: inline-flex; align-items: center; gap: 0.6rem; cursor: pointer;
+        .perde-out { font-family: var(--font-grotesk); font-size: 0.78rem; letter-spacing: 0.28em;
+          text-transform: uppercase; color: #E5402A; margin: 1.7rem 0 0.4rem;
+          animation: perdeRise 1s cubic-bezier(0.22,1,0.36,1) both; }
+        .perde-ctas { display: flex; gap: 0.75rem; margin-top: 1.6rem; flex-wrap: wrap; justify-content: center; }
+        .perde-buy { display: inline-flex; align-items: center; gap: 0.6rem; cursor: pointer;
+          font-family: var(--font-grotesk); font-size: 0.8rem; font-weight: 500; letter-spacing: 0.1em;
+          padding: 0.85rem 1.7rem; border-radius: 100px; background: #E5402A; color: #0b0a09;
+          transition: transform 0.3s ease, box-shadow 0.3s ease; }
+        .perde-buy:hover { transform: translateY(-2px); box-shadow: 0 12px 30px rgba(229,64,42,0.35); }
+        .perde-enter { display: inline-flex; align-items: center; gap: 0.6rem; cursor: pointer;
           font-family: var(--font-grotesk); font-size: 0.8rem; font-weight: 500; letter-spacing: 0.1em;
           padding: 0.85rem 1.7rem; border-radius: 100px; border: 1px solid rgba(241,237,228,0.28);
           background: transparent; color: #F1EDE4; transition: border-color 0.3s ease, transform 0.3s ease, background 0.3s ease; }
@@ -112,20 +96,11 @@ export function TasfiyeReveal({ lang }: { lang: Lang }) {
         <img className="perde-cover" src="/tasfiye-on-kapak.jpg" alt="Tasfiye — kapak" />
         <h2 className="perde-title">Tasfiye</h2>
         <p className="perde-tag">{L.tag}</p>
-        {over ? (
-          <p className="perde-done">{LAUNCH_DONE[lang]}</p>
-        ) : (
-          <div className="perde-count">
-            {d.map((n, i) => (
-              <span key={i} className="perde-num">
-                <b suppressHydrationWarning>{String(n).padStart(2, "0")}</b>
-                <span>{L.count[i]}</span>
-              </span>
-            ))}
-          </div>
-        )}
-        <div><span className="perde-date">{L.date}</span></div>
-        <button className="perde-enter" onClick={close}>{L.enter} <span className="chev" aria-hidden="true">↓</span></button>
+        <p className="perde-out">{L.out}</p>
+        <div className="perde-ctas">
+          <a className="perde-buy" href={TASFIYE_URL} target="_blank" rel="noopener noreferrer">{L.buy} ↗</a>
+          <button className="perde-enter" onClick={close}>{L.enter} <span className="chev" aria-hidden="true">↓</span></button>
+        </div>
         <span className="perde-hint">{L.hint}</span>
       </div>
     </div>

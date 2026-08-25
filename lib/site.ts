@@ -10,15 +10,9 @@ export const EMAIL = "do.berkay@icloud.com";
 export const GOODREADS_URL = "https://www.goodreads.com/book/show/252900764-m-rekkep-ve-k-z";
 export const VALSANAT_URL = "https://online.fliphtml5.com/jqzww/ezec/#p=1";
 
-/* Lansman hedefi — tüm geri sayımlar buradan okur.
-   Sayaç sıfırlanınca rakamlar yerine LAUNCH_DONE cümlesi gösterilir
-   (saat iddiası yok; yayının tam saati kayarsa da doğru kalır). */
-export const LAUNCH_ISO = "2026-08-25T00:00:00";
-export const LAUNCH_DONE: Record<Lang, string> = {
-  tr: "Vakit geldi — Tasfiye çıkıyor.",
-  en: "The time has come — Tasfiye is arriving.",
-  fr: "Le moment est venu — Tasfiye arrive.",
-};
+/* Tasfiye çıktı (25 Ağustos 2026) — satın alma bağlantısı */
+export const TASFIYE_URL =
+  "https://www.trendyol.com/pd/iskenderiye-kitap/tasfiye-berkay-dogan-p-1189808209?boutiqueId=61&merchantId=130994";
 
 /* ---- Dilden bağımsız paylaşılan veri ---- */
 export const RETAILERS: { name: string; url: string }[] = [
@@ -156,7 +150,7 @@ export const site: Record<Lang, Copy> = {
     books: {
       label: "Books",
       murekkep: { title: "Ink and Ember", meta: "Poetry · İskenderiye · 2025", badge: "#1 Poetry on Trendyol", desc: "A Poet's Reckoning. More than 200 poems torn from a suffocating solitude, national chaos and existential crisis.", cta: "Get the book", excerpt: "I could not be brought down — so I brought it down myself." },
-      tasfiye: { title: "Tasfiye", meta: "Essay · İskenderiye · August 2026", badge: "Coming soon", desc: "The curtain rises: on stage, a courtroom; in the dock, the writer himself. Not an accusation — a reckoning. From the wreckage of the modern world, a confrontation reaching toward the human who carries their own guillotine. Tasfiye is not to destroy; it is to cleanse.", cta: "", excerpt: "“a name given to everything we choose not to see.”" },
+      tasfiye: { title: "Tasfiye", meta: "Essay · İskenderiye · August 2026", badge: "Out now", desc: "The curtain rises: on stage, a courtroom; in the dock, the writer himself. Not an accusation — a reckoning. From the wreckage of the modern world, a confrontation reaching toward the human who carries their own guillotine. Tasfiye is not to destroy; it is to cleanse.", cta: "Buy on Trendyol", excerpt: "“a name given to everything we choose not to see.”" },
       countdown: ["DAYS", "HRS", "MIN"], epigraph: "a name given to everything we choose not to see.", coverSoon: "Cover soon",
       buyMore: "Also available at",
     },
@@ -238,7 +232,7 @@ export const site: Record<Lang, Copy> = {
     books: {
       label: "Kitaplar",
       murekkep: { title: "Mürekkep ve Köz", meta: "Şiir · İskenderiye · 2025", badge: "#1 Trendyol Şiir", desc: "Bir Şairin Hesabı. Boğucu bir yalnızlığın, ulusal kaosun ve varoluşsal krizin içinden sökülerek yazılan 200'den fazla şiir.", cta: "Kitaba git", excerpt: "Yıkılamadım, yıktım." },
-      tasfiye: { title: "Tasfiye", meta: "Deneme · İskenderiye · Ağustos 2026", badge: "Yakında", desc: "Perde açılıyor: Sahnede bir mahkeme, sanık koltuğunda yazarın kendisi. Bu bir suçlama değil, bir hesap. Modern dünyanın enkazından, giyotinini kendi taşıyan insana uzanan bir yüzleşme. Tasfiye, yıkmak değil; temizlemektir.", cta: "", excerpt: "“görmezden gelmeyi seçtiğimiz her şeye verilmiş bir isim.”" },
+      tasfiye: { title: "Tasfiye", meta: "Deneme · İskenderiye · Ağustos 2026", badge: "Çıktı", desc: "Perde açılıyor: Sahnede bir mahkeme, sanık koltuğunda yazarın kendisi. Bu bir suçlama değil, bir hesap. Modern dünyanın enkazından, giyotinini kendi taşıyan insana uzanan bir yüzleşme. Tasfiye, yıkmak değil; temizlemektir.", cta: "Trendyol'da satın al", excerpt: "“görmezden gelmeyi seçtiğimiz her şeye verilmiş bir isim.”" },
       countdown: ["GÜN", "SAAT", "DK"], epigraph: "görmezden gelmeyi seçtiğimiz her şeye verilmiş bir isim.", coverSoon: "Kapak yakında",
       buyMore: "Ayrıca şuralarda",
     },
@@ -320,7 +314,7 @@ export const site: Record<Lang, Copy> = {
     books: {
       label: "Livres",
       murekkep: { title: "Encre et Braise", meta: "Poésie · İskenderiye · 2025", badge: "#1 Poésie sur Trendyol", desc: "Les comptes d'un poète. Plus de 200 poèmes arrachés à une solitude étouffante, au chaos national et à une crise existentielle.", cta: "Voir le livre", excerpt: "Je n'ai pas pu être abattu — alors je l'ai abattu moi-même." },
-      tasfiye: { title: "Tasfiye", meta: "Essai · İskenderiye · Août 2026", badge: "Bientôt", desc: "Le rideau se lève : sur scène, un tribunal ; au banc des accusés, l'écrivain lui-même. Non une accusation — un règlement de comptes. Depuis les décombres du monde moderne, une confrontation tendue vers l'humain qui porte sa propre guillotine. Tasfiye n'est pas détruire ; c'est purifier.", cta: "", excerpt: "« un nom donné à tout ce que nous choisissons d'ignorer. »" },
+      tasfiye: { title: "Tasfiye", meta: "Essai · İskenderiye · Août 2026", badge: "Paru", desc: "Le rideau se lève : sur scène, un tribunal ; au banc des accusés, l'écrivain lui-même. Non une accusation — un règlement de comptes. Depuis les décombres du monde moderne, une confrontation tendue vers l'humain qui porte sa propre guillotine. Tasfiye n'est pas détruire ; c'est purifier.", cta: "Acheter sur Trendyol", excerpt: "« un nom donné à tout ce que nous choisissons d'ignorer. »" },
       countdown: ["JOURS", "H", "MIN"], epigraph: "un nom donné à tout ce que nous choisissons d'ignorer.", coverSoon: "Couverture bientôt",
       buyMore: "Également disponible chez",
     },

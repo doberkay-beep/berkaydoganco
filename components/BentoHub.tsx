@@ -1,7 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
-import { type Lang, TRENDYOL_URL, SUBSTACK_URL, LAUNCH_ISO, LAUNCH_DONE } from "@/lib/site";
+import { type Lang, TRENDYOL_URL, SUBSTACK_URL, TASFIYE_URL } from "@/lib/site";
 
 /* Masaüstü için modüler bento pano — hero'nun hemen altında bir "kontrol paneli":
    Tasfiye (büyük feature) + Mürekkep, Dinle, Oku, Tanınırlık, İletişim.
@@ -9,7 +8,7 @@ import { type Lang, TRENDYOL_URL, SUBSTACK_URL, LAUNCH_ISO, LAUNCH_DONE } from "
 
 type C = {
   eyebrow: string; heading: string;
-  tasfiyeBadge: string; tasfiyeDate: string; count: string[];
+  tasfiyeBadge: string; tasfiyeDate: string; tasfiyeCta: string;
   murekkepKind: string; murekkepCta: string;
   listenTitle: string; listenSub: string;
   readTitle: string; readSub: string;
@@ -20,51 +19,35 @@ type C = {
 const COPY: Record<Lang, C> = {
   tr: {
     eyebrow: "Pano", heading: "Berkay'ın dünyası — tek bakışta",
-    tasfiyeBadge: "Yakında", tasfiyeDate: "25 Ağustos 2026", count: ["Gün", "Saat", "Dk"],
+    tasfiyeBadge: "Çıktı", tasfiyeDate: "25 Ağustos 2026", tasfiyeCta: "Satın al",
     murekkepKind: "Şiir · 2025", murekkepCta: "Satın al",
     listenTitle: "Dinle", listenSub: "Podcast & çalma listeleri",
     readTitle: "Oku", readSub: "Substack'te yazılar",
     recogSub: "Trendyol'da 1. sıra · 10/10 · Valsanat No. 51",
-    contactTitle: "İletişim", contactSub: "Lansmanı kaçırma & yaz",
+    contactTitle: "İletişim", contactSub: "Kapı açık — yaz",
   },
   en: {
     eyebrow: "At a glance", heading: "Berkay's world — in one view",
-    tasfiyeBadge: "Coming soon", tasfiyeDate: "25 August 2026", count: ["Days", "Hrs", "Min"],
+    tasfiyeBadge: "Out now", tasfiyeDate: "25 August 2026", tasfiyeCta: "Buy",
     murekkepKind: "Poetry · 2025", murekkepCta: "Buy",
     listenTitle: "Listen", listenSub: "Podcast & playlists",
     readTitle: "Read", readSub: "Essays on Substack",
     recogSub: "#1 Poetry on Trendyol · 10/10 · Valsanat No. 51",
-    contactTitle: "Contact", contactSub: "Don't miss the launch",
+    contactTitle: "Contact", contactSub: "The door is open",
   },
   fr: {
     eyebrow: "En un coup d'œil", heading: "L'univers de Berkay — en une vue",
-    tasfiyeBadge: "Bientôt", tasfiyeDate: "25 août 2026", count: ["Jours", "Hres", "Min"],
+    tasfiyeBadge: "Paru", tasfiyeDate: "25 août 2026", tasfiyeCta: "Acheter",
     murekkepKind: "Poésie · 2025", murekkepCta: "Acheter",
     listenTitle: "Écouter", listenSub: "Podcast & playlists",
     readTitle: "Lire", readSub: "Essais sur Substack",
     recogSub: "N°1 Poésie sur Trendyol · 10/10 · Valsanat N°51",
-    contactTitle: "Contact", contactSub: "Ne manquez pas la sortie",
+    contactTitle: "Contact", contactSub: "La porte est ouverte",
   },
 };
 
-function useCountdown() {
-  const [v, setV] = useState<number[] | null>(null);
-  const [over, setOver] = useState(false);
-  useEffect(() => {
-    const tick = () => {
-      const ms = new Date(LAUNCH_ISO).getTime() - Date.now();
-      if (ms <= 0) { setOver(true); setV([0, 0, 0]); return; }
-      const d = ms;
-      setV([Math.floor(d / 86400000), Math.floor((d % 86400000) / 3600000), Math.floor((d % 3600000) / 60000)]);
-    };
-    tick(); const id = setInterval(tick, 30000); return () => clearInterval(id);
-  }, []);
-  return { d: v ?? [0, 0, 0], over };
-}
-
 export function BentoHub({ lang }: { lang: Lang }) {
   const c = COPY[lang];
-  const { d, over } = useCountdown();
 
   return (
     <section className="bento cg" aria-label={c.heading}>
@@ -96,10 +79,7 @@ export function BentoHub({ lang }: { lang: Lang }) {
         .bento-a img { width: clamp(112px, 15vw, 168px); border-radius: 5px; align-self: center; box-shadow: 0 20px 45px rgba(0,0,0,0.4); }
         .bento-a .col { display: flex; flex-direction: column; justify-content: center; gap: 0.7rem; }
         .bento-a .bento-title { font-size: clamp(2rem, 4.5vw, 3rem); }
-        .bento-badge { align-self: flex-start; font-size: 0.56rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--accent); border: 1px solid var(--accent); padding: 0.32rem 0.6rem; border-radius: 100px; }
-        .bento-count { display: inline-flex; gap: 1rem; margin-top: 0.2rem; }
-        .bento-count b { font-family: var(--font-grotesk); font-weight: 700; font-size: 1.35rem; line-height: 1; color: var(--accent); font-variant-numeric: tabular-nums; display: block; }
-        .bento-count span { font-size: 0.5rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--muted); }
+        .bento-badge { align-self: flex-start; font-size: 0.56rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--accent-ink); background: var(--accent); padding: 0.34rem 0.62rem; border-radius: 100px; }
         .bento-date { font-family: var(--font-grotesk); font-size: 0.72rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--ink); }
 
         /* B — Mürekkep (2x1) */
@@ -153,20 +133,13 @@ export function BentoHub({ lang }: { lang: Lang }) {
 
       <div className="bento-grid">
         {/* A — Tasfiye */}
-        <a href="#books" className="bento-card bento-a">
+        <a href={TASFIYE_URL} target="_blank" rel="noopener noreferrer" className="bento-card bento-a">
           <img src="/tasfiye-on-kapak.jpg" alt="Tasfiye" loading="lazy" />
+          <span className="arw" aria-hidden="true" style={{ position: "absolute", top: "1.5rem", right: "1.6rem" }}>↗</span>
           <div className="col">
             <span className="bento-badge">{c.tasfiyeBadge}</span>
             <span className="bento-title">Tasfiye</span>
-            {over ? (
-              <p style={{ fontFamily: "var(--font-serif)", fontStyle: "italic", fontWeight: 300, fontSize: "1.05rem", lineHeight: 1.4, color: "var(--accent)", marginTop: "0.2rem" }}>{LAUNCH_DONE[lang]}</p>
-            ) : (
-              <div className="bento-count">
-                {d.map((n, i) => (
-                  <span key={i}><b suppressHydrationWarning>{String(n).padStart(2, "0")}</b>{c.count[i]}</span>
-                ))}
-              </div>
-            )}
+            <span style={{ fontSize: "0.88rem", color: "var(--accent)", fontFamily: "var(--font-grotesk)", fontWeight: 500 }}>{c.tasfiyeCta} →</span>
             <span className="bento-date">{c.tasfiyeDate}</span>
           </div>
         </a>

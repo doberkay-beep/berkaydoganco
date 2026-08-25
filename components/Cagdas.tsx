@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import {
-  site, LANGS, type Lang, LAUNCH_ISO, LAUNCH_DONE,
+  site, LANGS, type Lang, TASFIYE_URL,
   TRENDYOL_URL, SUBSTACK_URL, YOUTUBE_URL, INSTAGRAM_URL, EMAIL,
   RETAILERS, REVIEWS, MEDIA, EMBER_FRAGMENTS, VERSES, PLAYLISTS, TEASER_LINES,
 } from "@/lib/site";
@@ -37,69 +37,11 @@ function Reveal({ children, as: Tag = "div", delay = 0, className, style }: {
   );
 }
 
-/* ---------- Geri sayım (25 Ağustos 2026) ---------- */
-function Countdown({ labels, done }: { labels: string[]; done: string }) {
-  const [v, setV] = useState<number[] | null>(null);
-  const [over, setOver] = useState(false);
-  useEffect(() => {
-    const tick = () => {
-      const ms = new Date(LAUNCH_ISO).getTime() - Date.now();
-      if (ms <= 0) { setOver(true); setV([0, 0, 0]); return; }
-      const d = ms;
-      setV([Math.floor(d / 86400000), Math.floor((d % 86400000) / 3600000), Math.floor((d % 3600000) / 60000)]);
-    };
-    tick(); const id = setInterval(tick, 30000); return () => clearInterval(id);
-  }, []);
-  if (over) {
-    return (
-      <p className="cg-serif" style={{ fontStyle: "italic", fontWeight: 300, fontSize: "clamp(1.15rem, 2.2vw, 1.5rem)", color: "var(--accent)" }}>{done}</p>
-    );
-  }
-  const d = v ?? [0, 0, 0];
-  return (
-    <div style={{ display: "flex", gap: "1.5rem" }}>
-      {d.map((n, i) => (
-        <div key={i} style={{ display: "flex", flexDirection: "column", gap: "0.3rem" }}>
-          <span suppressHydrationWarning style={{ fontFamily: "var(--font-grotesk)", fontWeight: 700, fontSize: "clamp(1.8rem, 4vw, 2.6rem)", lineHeight: 1, color: "var(--accent)", fontVariantNumeric: "tabular-nums" }}>{String(n).padStart(2, "0")}</span>
-          <span style={{ fontSize: "0.6rem", letterSpacing: "0.2em", color: "var(--muted)" }}>{labels[i]}</span>
-        </div>
-      ))}
-    </div>
-  );
-}
-
 function Eyebrow({ children }: { children: React.ReactNode }) {
   return (
     <span style={{ display: "inline-flex", alignItems: "center", gap: "0.6rem", fontFamily: "var(--font-grotesk)", fontSize: "0.7rem", fontWeight: 500, letterSpacing: "0.26em", textTransform: "uppercase", color: "var(--ink)" }}>
       <span style={{ width: "7px", height: "7px", borderRadius: "50%", background: "var(--accent)" }} />{children}
     </span>
-  );
-}
-
-function NotifyForm({ t }: { t: { title: string; placeholder: string; button: string; note: string } }) {
-  const [email, setEmail] = useState("");
-  const submit = () => {
-    const e = email.trim();
-    const url = e ? `${SUBSTACK_URL}/subscribe?email=${encodeURIComponent(e)}` : `${SUBSTACK_URL}/subscribe`;
-    window.open(url, "_blank", "noopener,noreferrer");
-  };
-  return (
-    <div style={{ marginTop: "1.75rem", width: "100%", maxWidth: "380px" }}>
-      <p style={{ fontFamily: "var(--font-grotesk)", fontWeight: 500, fontSize: "0.95rem", marginBottom: "0.75rem" }}>{t.title}</p>
-      <div style={{ display: "flex", gap: "0.5rem" }}>
-        <input
-          type="email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          onKeyDown={(e) => { if (e.key === "Enter") submit(); }}
-          placeholder={t.placeholder}
-          aria-label={t.title}
-          style={{ flex: 1, background: "transparent", border: "1px solid var(--line)", borderRadius: "100px", color: "var(--ink)", fontFamily: "var(--font-grotesk)", fontSize: "0.85rem", padding: "0.7rem 1.1rem", outline: "none" }}
-        />
-        <button className="cg-btn cg-btn-fill" onClick={submit} style={{ padding: "0.7rem 1.3rem", whiteSpace: "nowrap" }}>{t.button}</button>
-      </div>
-      <p style={{ marginTop: "0.7rem", fontSize: "0.68rem", color: "var(--muted)" }}>{t.note}</p>
-    </div>
   );
 }
 
@@ -437,7 +379,7 @@ export function Cagdas() {
           {/* Tasfiye */}
           <Reveal className="cg-book rev">
             <div style={{ display: "flex", flexDirection: "column", alignItems: "flex-start", gap: "1.1rem" }}>
-              <span style={{ fontSize: "0.6rem", letterSpacing: "0.18em", textTransform: "uppercase", color: "var(--accent)", border: "1px solid var(--accent)", padding: "0.4rem 0.65rem", borderRadius: "100px" }}>{b.tasfiye.badge}</span>
+              <span style={{ fontSize: "0.6rem", letterSpacing: "0.18em", textTransform: "uppercase", color: "var(--accent-ink)", background: "var(--accent)", padding: "0.4rem 0.65rem", borderRadius: "100px" }}>{b.tasfiye.badge}</span>
               <h3 className="cg-huge" style={{ fontSize: "clamp(2.2rem, 4.5vw, 3.4rem)" }}>{b.tasfiye.title}</h3>
               <p style={{ fontSize: "0.72rem", letterSpacing: "0.14em", textTransform: "uppercase", color: "var(--muted)" }}>{b.tasfiye.meta}</p>
               <p className="cg-serif" style={{ fontStyle: "italic", fontSize: "clamp(1rem, 1.7vw, 1.2rem)", lineHeight: 1.6, color: "var(--ink)", maxWidth: "40ch" }}>{b.tasfiye.desc}</p>
@@ -445,9 +387,10 @@ export function Cagdas() {
                 <span style={{ display: "block", fontSize: "0.58rem", letterSpacing: "0.2em", textTransform: "uppercase", color: "var(--accent)", marginBottom: "0.4rem" }}>{t.taste}</span>
                 <p className="cg-serif" style={{ fontStyle: "italic", fontSize: "1.1rem", lineHeight: 1.5, color: "var(--muted)" }}>{b.tasfiye.excerpt}</p>
               </div>
-              <div style={{ marginTop: "0.75rem" }}><Countdown labels={b.countdown} done={LAUNCH_DONE[lang]} /></div>
-              <a href="/kitap/tasfiye" className="cg-btn cg-btn-ghost">{lang === "tr" ? "Kitabın sayfası" : lang === "fr" ? "Page du livre" : "Book page"}</a>
-              <NotifyForm t={t.notify} />
+              <div style={{ marginTop: "0.5rem", display: "flex", gap: "0.75rem", flexWrap: "wrap" }}>
+                <a href={TASFIYE_URL} target="_blank" rel="noopener noreferrer" className="cg-btn cg-btn-fill">{b.tasfiye.cta} →</a>
+                <a href="/kitap/tasfiye" className="cg-btn cg-btn-ghost">{lang === "tr" ? "Kitabın sayfası" : lang === "fr" ? "Page du livre" : "Book page"}</a>
+              </div>
             </div>
             <div className="cg-book-media" style={{ display: "flex", justifyContent: "center" }}>
               <div style={{ position: "relative" }}>

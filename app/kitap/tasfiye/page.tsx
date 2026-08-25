@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { TASFIYE_URL } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: { absolute: "Tasfiye — Berkay Doğan" },
@@ -42,6 +43,12 @@ function schema() {
     genre: "Deneme",
     image: "https://www.berkaydogan.co/tasfiye-on-kapak.jpg",
     url: "https://www.berkaydogan.co/kitap/tasfiye/",
+    offers: {
+      "@type": "Offer",
+      url: TASFIYE_URL,
+      priceCurrency: "TRY",
+      availability: "https://schema.org/InStock",
+    },
   };
 }
 
@@ -73,7 +80,7 @@ export default function TasfiyePage() {
             Perde açılıyor: Sahnede bir mahkeme, sanık koltuğunda yazarın kendisi. Bu bir suçlama değil, bir hesap. Modern dünyanın enkazından, giyotinini kendi taşıyan insana uzanan bir yüzleşme. Tasfiye, yıkmak değil; temizlemektir.
           </p>
           <div style={{ display: "flex", gap: "0.75rem", flexWrap: "wrap", marginTop: "1.75rem" }}>
-            <Link href="/#books" style={{ display: "inline-flex", alignItems: "center", gap: "0.5rem", fontFamily: "var(--font-grotesk)", fontSize: "0.78rem", fontWeight: 500, letterSpacing: "0.08em", padding: "0.95rem 1.6rem", borderRadius: "100px", background: "var(--accent)", color: "var(--accent-ink)" }}>Lansmanı kaçırma →</Link>
+            <a href={TASFIYE_URL} target="_blank" rel="noopener noreferrer" style={{ display: "inline-flex", alignItems: "center", gap: "0.5rem", fontFamily: "var(--font-grotesk)", fontSize: "0.78rem", fontWeight: 500, letterSpacing: "0.08em", padding: "0.95rem 1.6rem", borderRadius: "100px", background: "var(--accent)", color: "var(--accent-ink)" }}>Trendyol&apos;da satın al →</a>
           </div>
         </div>
       </div>

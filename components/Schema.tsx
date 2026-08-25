@@ -1,4 +1,5 @@
 import { TRENDYOL_URL } from "@/lib/content";
+import { TASFIYE_URL } from "@/lib/site";
 
 const SITE = "https://www.berkaydogan.co";
 
@@ -77,7 +78,13 @@ export function TasfiyeBookSchema() {
         inLanguage: "tr",
         genre: "Deneme",
         image: `${SITE}/tasfiye-on-kapak.jpg`,
-        url: `${SITE}/tasfiye/`,
+        url: `${SITE}/kitap/tasfiye/`,
+        offers: {
+          "@type": "Offer",
+          url: TASFIYE_URL,
+          priceCurrency: "TRY",
+          availability: "https://schema.org/InStock",
+        },
       }}
     />
   );
