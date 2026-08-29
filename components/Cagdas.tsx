@@ -363,7 +363,7 @@ export function Cagdas() {
               </div>
               <div style={{ display: "flex", gap: "0.75rem", flexWrap: "wrap", marginTop: "0.5rem" }}>
                 <a href={TRENDYOL_URL} target="_blank" rel="noopener noreferrer" className="cg-btn cg-btn-fill">{b.murekkep.cta} →</a>
-                <a href="/kitap/murekkep" className="cg-btn cg-btn-ghost">{lang === "tr" ? "Kitabın sayfası" : lang === "fr" ? "Page du livre" : "Book page"}</a>
+                <a href="/kitaplar/murekkep-ve-koz" className="cg-btn cg-btn-ghost">{lang === "tr" ? "Kitabın sayfası" : lang === "fr" ? "Page du livre" : "Book page"}</a>
               </div>
               <div style={{ marginTop: "0.5rem" }}>
                 <span style={{ display: "block", fontSize: "0.62rem", letterSpacing: "0.16em", textTransform: "uppercase", color: "var(--muted)", marginBottom: "0.6rem" }}>{b.buyMore}</span>
@@ -389,7 +389,7 @@ export function Cagdas() {
               </div>
               <div style={{ marginTop: "0.5rem", display: "flex", gap: "0.75rem", flexWrap: "wrap" }}>
                 <a href={TASFIYE_URL} target="_blank" rel="noopener noreferrer" className="cg-btn cg-btn-fill">{b.tasfiye.cta} →</a>
-                <a href="/kitap/tasfiye" className="cg-btn cg-btn-ghost">{lang === "tr" ? "Kitabın sayfası" : lang === "fr" ? "Page du livre" : "Book page"}</a>
+                <a href="/kitaplar/tasfiye" className="cg-btn cg-btn-ghost">{lang === "tr" ? "Kitabın sayfası" : lang === "fr" ? "Page du livre" : "Book page"}</a>
               </div>
             </div>
             <div className="cg-book-media" style={{ display: "flex", justifyContent: "center" }}>

@@ -30,12 +30,17 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.7,
     },
     {
-      url: `${SITE}/kitap/murekkep/`,
+      url: `${SITE}/kitaplar/`,
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
+    {
+      url: `${SITE}/kitaplar/murekkep-ve-koz/`,
       changeFrequency: "monthly",
       priority: 0.9,
     },
     {
-      url: `${SITE}/kitap/tasfiye/`,
+      url: `${SITE}/kitaplar/tasfiye/`,
       changeFrequency: "weekly",
       priority: 0.9,
     },

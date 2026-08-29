@@ -1,0 +1,8 @@
+{
+  "redirects": [
+    { "source": "/kitap/tasfiye", "destination": "/kitaplar/tasfiye/", "permanent": true },
+    { "source": "/kitap/tasfiye/", "destination": "/kitaplar/tasfiye/", "permanent": true },
+    { "source": "/kitap/murekkep", "destination": "/kitaplar/murekkep-ve-koz/", "permanent": true },
+    { "source": "/kitap/murekkep/", "destination": "/kitaplar/murekkep-ve-koz/", "permanent": true }
+  ]
+}

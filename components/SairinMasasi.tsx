@@ -106,7 +106,7 @@ export default function SairinMasasi() {
         </g>
 
         {/* KİTAPLAR (kitap sayfaları) */}
-        <Link href="/kitap/murekkep">
+        <Link href="/kitaplar/murekkep-ve-koz">
           <g className="sm-obj" {...H("books")} aria-label={L.books}>
             <rect x="262" y="352" width="120" height="20" rx="3" fill="#5a3327" transform="rotate(-3 322 362)" />
             <rect x="270" y="374" width="118" height="20" rx="3" fill="#7a4433" />

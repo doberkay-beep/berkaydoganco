@@ -50,7 +50,7 @@ export function MurekkepBookSchema() {
         inLanguage: "tr",
         genre: "Şiir",
         image: `${SITE}/murekkep-ve-koz-on-kapak.jpg`,
-        url: `${SITE}/murekkep-ve-koz/`,
+        url: `${SITE}/kitaplar/murekkep-ve-koz/`,
         offers: {
           "@type": "Offer",
           price: "269",
@@ -73,12 +73,12 @@ export function TasfiyeBookSchema() {
         name: "Tasfiye",
         author: { "@type": "Person", name: "Berkay Doğan", url: SITE },
         publisher: { "@type": "Organization", name: "İskenderiye Yayınları" },
-        isbn: "978-625-92142-2-1",
+        numberOfPages: 151,
         datePublished: "2026-08-25",
         inLanguage: "tr",
         genre: "Deneme",
         image: `${SITE}/tasfiye-on-kapak.jpg`,
-        url: `${SITE}/kitap/tasfiye/`,
+        url: `${SITE}/kitaplar/tasfiye/`,
         offers: {
           "@type": "Offer",
           url: TASFIYE_URL,
