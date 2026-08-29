@@ -197,6 +197,7 @@ export function BentoHub({ lang }: { lang: Lang }) {
             <a href="/evren"><span aria-hidden="true">✦</span> {lang === "tr" ? "Köz Evreni" : lang === "fr" ? "Univers de Braise" : "Ember Universe"}</a>
             <a href="/siir"><span aria-hidden="true">❋</span> {lang === "tr" ? "Canlı Şiir" : lang === "fr" ? "Poème Vivant" : "Living Poem"}</a>
             <a href="/masa"><span aria-hidden="true">✎</span> {lang === "tr" ? "Şairin Masası" : lang === "fr" ? "Le Bureau" : "The Desk"}</a>
+            <a href="/leke"><span aria-hidden="true">❖</span> {lang === "tr" ? "Mürekkep Lekesi" : lang === "fr" ? "Tache d'Encre" : "Ink Blot"}</a>
           </div>
         </div>
       </div>
