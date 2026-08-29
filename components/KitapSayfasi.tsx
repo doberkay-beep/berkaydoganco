@@ -89,6 +89,13 @@ export function KitapSayfasi({ kitap, diger }: { kitap: Kitap; diger: Kitap }) {
         </div>
       </section>
 
+      {kitap.slug === "tasfiye" && (
+        <Link href="/mahkeme" style={{ display: "flex", justifyContent: "space-between", alignItems: "center", gap: "1rem", flexWrap: "wrap", marginTop: "clamp(3rem, 8vh, 5rem)", padding: "1.4rem 1.6rem", border: "1px solid var(--line)", borderRadius: "14px", background: "var(--bg-2)" }}>
+          <span style={{ fontFamily: "var(--font-serif)", fontStyle: "italic", fontSize: "clamp(1.05rem, 2.2vw, 1.3rem)", color: "var(--ink)" }}>Sanık koltuğu boş — Tasfiye Mahkemesi&apos;nde hesabını gör.</span>
+          <span style={{ ...mono, fontSize: "0.72rem", color: "var(--accent)" }}>Otur →</span>
+        </Link>
+      )}
+
       {/* d. Satın alma */}
       <section style={{ marginTop: "clamp(3rem, 8vh, 5rem)" }}>
         <p style={{ ...mono, color: "var(--muted)", marginBottom: "0.75rem" }}>Nereden alınır</p>
