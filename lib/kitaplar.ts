@@ -1,9 +1,8 @@
 import { TRENDYOL_URL } from "./site";
 
 /* Kitap sayfaları + /git/[kanal] yönlendirme verisi (tek kaynak).
-   ISBN notu: Tasfiye'nin kapak provası 978-625-92142-2-1 derken KitapStore ve
-   yayınevi kaydı 9786259031248 diyor — yayınevinden teyit gelene dek isbn: null
-   (sayfada satır gizli, schema'ya yazılmıyor). */
+   Tasfiye ISBN'i Berkay teyit etti: 978-625-9031-24-8 (kapak provasındaki
+   92142-2-1 geçersiz). */
 
 export type Kanal = { name: string; git: string };
 export type Alinti = { text: string; sayfa: string };
@@ -26,6 +25,7 @@ export type Kitap = {
   sayfaSayisi: number | null;
   datePublished: string;
   tur: string;
+  fiyat: string | null;  // TRY — schema Offer için
   desc: string;          // meta description — arka kapağın ilk cümlesi
 };
 
@@ -34,6 +34,7 @@ export type Kitap = {
 export const GIT_HEDEFLER: Record<string, string> = {
   // Tasfiye
   "trendyol": "https://ty.gl/0fc28a9d0",
+  "bkmkitap": "https://www.bkmkitap.com/tasfiye-982681",
   "kitapstore": "https://www.kitapstore.com/urun/785011/kitap/iskenderiye-kitap/berkay-dogan/tasfiye/",
   "iskenderiye": "https://www.iskenderiyekitap.com/urun/tasfiye-berkay-dogan-9786259031248",
   // Mürekkep ve Köz
@@ -53,7 +54,8 @@ export const KITAPLAR: Kitap[] = [
     kapak400: "/tasfiye-kapak-400.jpg",
     kapakW: 745,
     tur: "Deneme",
-    isbn: null, // yayınevi teyidi bekleniyor — satır gizli
+    isbn: "978-625-9031-24-8",
+    fiyat: "289",
     sayfaSayisi: 151,
     datePublished: "2026-08-25",
     desc: "Perde açılıyor: Sahnede bir mahkeme, sanık koltuğunda yazarın kendisi.",
@@ -64,6 +66,7 @@ export const KITAPLAR: Kitap[] = [
       { k: "Boyut", v: "13,5 × 21 cm" },
       { k: "Kapak", v: "Karton" },
       { k: "Yayın No", v: "223" },
+      { k: "ISBN", v: "978-625-9031-24-8" },
       { k: "Çıkış", v: "25 Ağustos 2026" },
     ],
     arkaKapak: [
@@ -75,9 +78,9 @@ export const KITAPLAR: Kitap[] = [
       { text: "Yaşamak, biraz da geride posa bırakmaktır.", sayfa: "S. 89" },
       { text: "Biz şehri terk ettiğimizde, anılarımız o şehrin taşlarına, duvarlarına emanet edilir.", sayfa: "S. 100" },
     ],
-    // BKM'de Berkay'ın Tasfiye'si henüz listelenmedi (oradaki "tasfiye" Kertész'in) — çıkınca eklenecek
     kanallar: [
       { name: "Trendyol", git: "trendyol" },
+      { name: "bkmkitap", git: "bkmkitap" },
       { name: "KitapStore", git: "kitapstore" },
       { name: "İskenderiye Yayınları", git: "iskenderiye" },
     ],
@@ -93,13 +96,15 @@ export const KITAPLAR: Kitap[] = [
     kapakW: 800,
     tur: "Şiir",
     isbn: "978-625-9620-32-9", // baskı PDF'inden doğrulanmış
-    sayfaSayisi: null, // Berkay dolduracak
+    fiyat: "269",
+    sayfaSayisi: 183,
     datePublished: "2025-12",
     desc: "Bu kitap, kelimelerin değil; küllerinden yeniden doğmayı seçmiş bir ruhun sesidir.",
     epigraf: "Yazmak, varoluşun en sessiz itirafıdır.",
     kunye: [
       { k: "Tür", v: "Şiir" },
       { k: "Yayınevi", v: "İskenderiye Yayınları" },
+      { k: "Sayfa", v: "183" },
       { k: "Yayın No", v: "212" },
       { k: "ISBN", v: "978-625-9620-32-9" },
       { k: "Çıkış", v: "2025" },

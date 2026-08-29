@@ -73,6 +73,7 @@ export function TasfiyeBookSchema() {
         name: "Tasfiye",
         author: { "@type": "Person", name: "Berkay Doğan", url: SITE },
         publisher: { "@type": "Organization", name: "İskenderiye Yayınları" },
+        isbn: "978-625-9031-24-8",
         numberOfPages: 151,
         datePublished: "2026-08-25",
         inLanguage: "tr",
@@ -82,6 +83,7 @@ export function TasfiyeBookSchema() {
         offers: {
           "@type": "Offer",
           url: TASFIYE_URL,
+          price: "289",
           priceCurrency: "TRY",
           availability: "https://schema.org/InStock",
         },

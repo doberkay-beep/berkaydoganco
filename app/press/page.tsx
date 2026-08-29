@@ -20,7 +20,7 @@ const FACTS: { k: string; v: string }[] = [
   { k: "Based in", v: "Istanbul, Türkiye" },
   { k: "Publisher", v: "İskenderiye Yayınları" },
   { k: "Book I — Poetry", v: "Mürekkep ve Köz (2025) · ISBN 978-625-9620-32-9" },
-  { k: "Book II — Essay", v: "Tasfiye (25 August 2026) · Yayın No. 223" },
+  { k: "Book II — Essay", v: "Tasfiye (25 August 2026) · ISBN 978-625-9031-24-8 · Yayın No. 223" },
   { k: "Recognition", v: "#1 Poetry on Trendyol · 10/10 on 1000Kitap · Valsanat No. 51" },
   { k: "Contact", v: EMAIL },
 ];

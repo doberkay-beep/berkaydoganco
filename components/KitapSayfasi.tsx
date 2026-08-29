@@ -30,6 +30,7 @@ export function KitapSayfasi({ kitap, diger }: { kitap: Kitap; diger: Kitap }) {
     offers: {
       "@type": "Offer",
       url: `${SITE}/git/${kitap.kanallar[0].git}/`,
+      ...(kitap.fiyat ? { price: kitap.fiyat } : {}),
       priceCurrency: "TRY",
       availability: "https://schema.org/InStock",
     },
