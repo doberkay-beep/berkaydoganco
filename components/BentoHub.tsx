@@ -156,7 +156,7 @@ export function BentoHub({ lang }: { lang: Lang }) {
         </a>
 
         {/* C — Dinle */}
-        <a href="#media" className="bento-card bento-sm">
+        <a href="/medya" className="bento-card bento-sm">
           <span className="ic" aria-hidden="true">♪</span>
           <div>
             <span className="bento-title" style={{ display: "block" }}>{c.listenTitle}</span>
@@ -174,7 +174,7 @@ export function BentoHub({ lang }: { lang: Lang }) {
         </a>
 
         {/* E — Tanınırlık */}
-        <a href="#recognition" className="bento-card bento-e">
+        <a href="/hakkimda" className="bento-card bento-e">
           <span className="big">#1</span>
           <div className="col">
             <span className="bento-sub" style={{ color: "var(--ink)" }}>{c.recogSub}</span>
@@ -193,6 +193,7 @@ export function BentoHub({ lang }: { lang: Lang }) {
         <div className="bento-card bento-g">
           <span className="bento-kicker">{lang === "tr" ? "Deneyimler" : lang === "fr" ? "Expériences" : "Experiences"}</span>
           <div className="bento-g-row">
+            <a href="/film"><span aria-hidden="true">▣</span> {lang === "tr" ? "Film" : "Film"}</a>
             <a href="/fragman"><span aria-hidden="true">▸</span> {lang === "tr" ? "Fragman" : lang === "fr" ? "Bande-annonce" : "Trailer"}</a>
             <a href="/mahkeme"><span aria-hidden="true">◈</span> {lang === "tr" ? "Tasfiye Mahkemesi" : lang === "fr" ? "Le Tribunal" : "The Tribunal"}</a>
             <a href="/evren"><span aria-hidden="true">✦</span> {lang === "tr" ? "Köz Evreni" : lang === "fr" ? "Univers de Braise" : "Ember Universe"}</a>
@@ -200,6 +201,7 @@ export function BentoHub({ lang }: { lang: Lang }) {
             <a href="/masa"><span aria-hidden="true">✎</span> {lang === "tr" ? "Şairin Masası" : lang === "fr" ? "Le Bureau" : "The Desk"}</a>
             <a href="/kapak"><span aria-hidden="true">✳</span> {lang === "tr" ? "Yaşayan Kapak" : lang === "fr" ? "Couverture Vivante" : "Living Cover"}</a>
             <a href="/leke"><span aria-hidden="true">❖</span> {lang === "tr" ? "Mürekkep Lekesi" : lang === "fr" ? "Tache d'Encre" : "Ink Blot"}</a>
+            <a href="/deneyimler" style={{ borderColor: "var(--accent)" }}><span aria-hidden="true">→</span> {lang === "tr" ? "Tümü" : lang === "fr" ? "Tout voir" : "See all"}</a>
           </div>
         </div>
       </div>
