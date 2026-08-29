@@ -45,6 +45,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.9,
     },
     {
+      url: `${SITE}/fragman/`,
+      changeFrequency: "monthly",
+      priority: 0.7,
+    },
+    {
       url: `${SITE}/leke/`,
       changeFrequency: "monthly",
       priority: 0.6,

@@ -193,6 +193,7 @@ export function BentoHub({ lang }: { lang: Lang }) {
         <div className="bento-card bento-g">
           <span className="bento-kicker">{lang === "tr" ? "Deneyimler" : lang === "fr" ? "Expériences" : "Experiences"}</span>
           <div className="bento-g-row">
+            <a href="/fragman"><span aria-hidden="true">▸</span> {lang === "tr" ? "Fragman" : lang === "fr" ? "Bande-annonce" : "Trailer"}</a>
             <a href="/mahkeme"><span aria-hidden="true">◈</span> {lang === "tr" ? "Tasfiye Mahkemesi" : lang === "fr" ? "Le Tribunal" : "The Tribunal"}</a>
             <a href="/evren"><span aria-hidden="true">✦</span> {lang === "tr" ? "Köz Evreni" : lang === "fr" ? "Univers de Braise" : "Ember Universe"}</a>
             <a href="/siir"><span aria-hidden="true">❋</span> {lang === "tr" ? "Canlı Şiir" : lang === "fr" ? "Poème Vivant" : "Living Poem"}</a>
