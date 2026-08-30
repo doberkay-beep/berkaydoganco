@@ -14,9 +14,9 @@ export function SozAksiyon({ soz, kaynak }: { soz: string; kaynak: string }) {
     } catch { /* yoksay */ }
   };
 
-  const indir = async () => {
+  const indir = async (H = 1350, ek = "") => {
     try { await (document as Document & { fonts?: { ready: Promise<unknown> } }).fonts?.ready; } catch { /* yoksay */ }
-    const W = 1080, H = 1350;
+    const W = 1080;
     const c = document.createElement("canvas"); c.width = W; c.height = H;
     const ctx = c.getContext("2d"); if (!ctx) return;
     const serif = "Fraunces, Georgia, serif";
@@ -63,7 +63,7 @@ export function SozAksiyon({ soz, kaynak }: { soz: string; kaynak: string }) {
     ctx.fillText("berkaydogan.co", W / 2, H - 130);
 
     const a = document.createElement("a");
-    a.download = "berkay-dogan-soz.png";
+    a.download = `berkay-dogan-soz${ek}.png`;
     a.href = c.toDataURL("image/png");
     a.click();
   };
@@ -76,8 +76,11 @@ export function SozAksiyon({ soz, kaynak }: { soz: string; kaynak: string }) {
 
   return (
     <div style={{ display: "flex", gap: "0.7rem", flexWrap: "wrap" }}>
-      <button onClick={indir} style={{ ...stil, background: "var(--accent)", color: "var(--accent-ink)", border: "1px solid transparent" }}>
+      <button onClick={() => indir()} style={{ ...stil, background: "var(--accent)", color: "var(--accent-ink)", border: "1px solid transparent" }}>
         Kartı indir
+      </button>
+      <button onClick={() => indir(1920, "-story")} style={{ ...stil, background: "transparent", color: "var(--ink)", border: "1px solid var(--line)" }}>
+        Story indir
       </button>
       <button onClick={kopyala} style={{ ...stil, background: "transparent", color: "var(--ink)", border: "1px solid var(--line)" }}>
         {kopyalandi ? "Kopyalandı ✓" : "Kopyala"}

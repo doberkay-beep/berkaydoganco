@@ -207,3 +207,17 @@ button { font-family: inherit; }
 
 /* Erişilebilirlik — görünür odak halkası */
 a:focus-visible, button:focus-visible, input:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 4px; }
+
+/* Nav açılır grubu (Sözler ▾) */
+.cg-drop { position: relative; display: inline-flex; }
+.cg-drop-menu { position: absolute; top: 100%; left: 50%; transform: translateX(-50%);
+  padding-top: 0.9rem; display: none; z-index: 60; }
+.cg-drop:hover .cg-drop-menu, .cg-drop:focus-within .cg-drop-menu { display: block; }
+.cg-drop-menu > a { display: block; white-space: nowrap; padding: 0.65rem 1.2rem;
+  font-size: 0.78rem; color: var(--ink); background: var(--glass-bg);
+  border-left: 1px solid var(--glass-border); border-right: 1px solid var(--glass-border);
+  -webkit-backdrop-filter: blur(18px) saturate(150%); backdrop-filter: blur(18px) saturate(150%);
+  transition: color 0.2s ease, background 0.2s ease; }
+.cg-drop-menu > a:first-child { border-top: 1px solid var(--glass-border); border-radius: 12px 12px 0 0; padding-top: 0.8rem; }
+.cg-drop-menu > a:last-child { border-bottom: 1px solid var(--glass-border); border-radius: 0 0 12px 12px; padding-bottom: 0.8rem; }
+.cg-drop-menu > a:hover { color: var(--accent); background: var(--bg-2); }

@@ -145,9 +145,20 @@ export function Kabuk({ children }: { children: (lang: Lang, t: Copy) => React.R
           Berkay Doğan
         </a>
         <div className="cg-nav-links">
-          {navLinks.map(([href, label]) => (
-            <a key={href} href={href} className="cg-link">{label}</a>
-          ))}
+          {navLinks.map(([href, label]) =>
+            href === "/sozler" ? (
+              <div key={href} className="cg-drop">
+                <a href={href} className="cg-link">{label} ▾</a>
+                <div className="cg-drop-menu">
+                  <a href="/sozler">{lang === "tr" ? "Tüm sözler" : lang === "fr" ? "Tous les vers" : "All verses"}</a>
+                  <a href="/takvim">{lang === "tr" ? "Köz Takvimi" : lang === "fr" ? "Calendrier" : "Calendar"}</a>
+                  <a href="/sozluk">{lang === "tr" ? "Kavramlar Sözlüğü" : lang === "fr" ? "Lexique" : "Lexicon"}</a>
+                </div>
+              </div>
+            ) : (
+              <a key={href} href={href} className="cg-link">{label}</a>
+            )
+          )}
         </div>
         <div className="cg-actions">
           <div className="cg-lang">
