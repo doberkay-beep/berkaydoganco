@@ -49,8 +49,12 @@ export const PLAYLISTS: { name: string; path: string }[] = [
   { name: "Timeless Nostalgia", path: "/tr/playlist/timeless-nostalgia/pl.u-BNA6yaRteGA41Lk" },
 ];
 
-// Kâhin ve Günün Közü için dize korpusu — hepsi Berkay'ın kendi eserlerinden (kısa, güçlü)
+/* Söz korpusu — Kâhin, Günün Közü, Köz Evreni, Canlı Şiir ve Alıntı Kartı
+   buradan beslenir. KURAL: buraya yalnız Berkay'ın YAYIMLANMIŞ satırları girer
+   (kitaplardan, arka kapaklardan, epigraflardan) — üretilmiş/uydurma dize asla.
+   Berkay kitaplardan yeni sözler gönderdikçe listeye eklenir; hedef 100+. */
 export const VERSES: string[] = [
+  // — Mürekkep ve Köz (dizeler + arka kapak)
   "Yıkılamadım, yıktım.",
   "Geri dönmüyorum, geleceğime âşığım.",
   "Yalan yaşanmışlıklarıma veda ettim.",
@@ -60,8 +64,18 @@ export const VERSES: string[] = [
   "Ve ben yeniden doğdum; şimdi sıra sende.",
   "Acı bir yük değil; gerçeğe açılan bir kapı vardır.",
   "Küllerinden yeniden doğmayı seçmiş bir ruhun sesidir.",
+  "Ben bir Tanrı değilim.",
+  "Renginizi kaçırmayın.",
+  "Sözler hem bir isyanın hem de bir teslimiyetin izlerini taşır.",
+  "Yazmak, varoluşun en sessiz itirafıdır.",
+  // — Tasfiye (sayfa alıntıları + arka kapak)
   "Gerçek, yağlarından arındığında ortaya çıkan kemiktir.",
   "Görmezden gelmeyi seçtiğimiz her şeye verilmiş bir isim.",
+  "Bize ezilenlerin değil, ezenlerin tarafına geçme umudu satıldı.",
+  "Kendi karanlığını bilmeyen insan, aydınlık uğruna dünyayı ateşe vermekten çekinmez.",
+  "Yaşamak, biraz da geride posa bırakmaktır.",
+  "Biz şehri terk ettiğimizde, anılarımız o şehrin taşlarına, duvarlarına emanet edilir.",
+  "Tasfiye, yıkmak değil; temizlemektir.",
 ];
 
 // Tasfiye Duvarı'nda arka planda süzülen köz parçaları — hepsi Berkay'ın kendi dizelerinden
