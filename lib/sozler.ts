@@ -231,3 +231,38 @@ export const TUM_SOZLER: string[] = SOZLER.map((x) => x.s);
 export function temadan(tema: string): string[] {
   return SOZLER.filter((x) => x.t.includes(tema)).map((x) => x.s);
 }
+
+/* ---- Söz sayfaları altyapısı ---- */
+const TR_ASCII: Record<string, string> = { "ç": "c", "ğ": "g", "ı": "i", "ö": "o", "ş": "s", "ü": "u", "â": "a", "û": "u", "î": "i" };
+
+export function sozSlug(s: string): string {
+  const kucuk = s.toLocaleLowerCase("tr").replace(/[çğıöşüâûî]/g, (c) => TR_ASCII[c] ?? c);
+  const temiz = kucuk.replace(/[^a-z0-9\s-]/g, "");
+  return temiz.split(/\s+/).filter(Boolean).slice(0, 7).join("-").slice(0, 64).replace(/-+$/, "");
+}
+
+export const KITAP_ADI: Record<"mvk" | "tas", string> = {
+  mvk: "Mürekkep ve Köz",
+  tas: "Tasfiye",
+};
+
+export const TEMA_ADI: Record<string, string> = {
+  yikim: "Yıkım & Yeniden Doğuş",
+  umut: "Umut",
+  yalnizlik: "Yalnızlık",
+  ask: "Aşk",
+  sehir: "Şehir & İstanbul",
+  yuzlesme: "Yüzleşme & Hesap",
+  ozgurluk: "Özgürlük",
+  kimlik: "Kimlik",
+  zaman: "Zaman & Geçmiş",
+  karanlik: "Karanlık & Gölge",
+  hayat: "Hayat",
+  sanat: "Sanat & Yazmak",
+};
+
+export const TEMALAR = Object.keys(TEMA_ADI);
+
+export function sozBul(slug: string): Soz | undefined {
+  return SOZLER.find((x) => sozSlug(x.s) === slug);
+}

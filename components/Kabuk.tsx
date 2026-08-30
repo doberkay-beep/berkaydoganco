@@ -120,6 +120,7 @@ export function Kabuk({ children }: { children: (lang: Lang, t: Copy) => React.R
 
   const navLinks: [string, string][] = [
     ["/kitaplar", t.nav.books],
+    ["/sozler", t.nav.sozler],
     ["/deneyimler", t.nav.experiences],
     ["/film", t.nav.film],
     ["/yazilar", t.nav.writing],
@@ -130,6 +131,8 @@ export function Kabuk({ children }: { children: (lang: Lang, t: Copy) => React.R
     ...navLinks.slice(0, 5),
     ["/medya", t.nav.media],
     ["/projeler", t.nav.projects],
+    ["/takvim", lang === "tr" ? "Köz Takvimi" : lang === "fr" ? "Calendrier" : "Calendar"],
+    ["/sozluk", lang === "tr" ? "Sözlük" : lang === "fr" ? "Lexique" : "Lexicon"],
     ["/#contact", t.nav.contact],
   ];
 

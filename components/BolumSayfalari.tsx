@@ -160,6 +160,7 @@ const DENEYIMLER: { href: string; glyph: string; tr: string; en: string; fr: str
   { href: "/masa", glyph: "✎", tr: "Şairin Masası", en: "The Poet's Desk", fr: "Le Bureau du Poète", trSub: "keşfedilebilir sahne", enSub: "an explorable scene", frSub: "une scène à explorer" },
   { href: "/duvar", glyph: "▤", tr: "Tasfiye Duvarı", en: "The Wall", fr: "Le Mur", trSub: "bir şeyi bırak, hafifle", enSub: "let something go", frSub: "laisse partir quelque chose" },
   { href: "/kahin", glyph: "◉", tr: "Kâhin", en: "The Oracle", fr: "L'Oracle", trSub: "bir kelime söyle, dize düşsün", enSub: "say a word, receive a verse", frSub: "dis un mot, reçois un vers" },
+  { href: "/takvim", glyph: "◷", tr: "Köz Takvimi", en: "Ember Calendar", fr: "Calendrier", trSub: "her güne bir söz", enSub: "a verse for every day", frSub: "un vers pour chaque jour" },
   { href: "/kart", glyph: "▢", tr: "Alıntı Kartı", en: "Quote Card", fr: "Carte de Citation", trSub: "dize seç, indir, paylaş", enSub: "pick, download, share", frSub: "choisis, télécharge, partage" },
 ];
 

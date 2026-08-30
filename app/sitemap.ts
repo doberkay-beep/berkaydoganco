@@ -1,5 +1,6 @@
 import type { MetadataRoute } from "next";
 import { YAYINDA } from "@/lib/yazilar";
+import { SOZLER, sozSlug, TEMALAR } from "@/lib/sozler";
 
 // Statik export için zorunlu
 export const dynamic = "force-static";
@@ -8,6 +9,31 @@ const SITE = "https://www.berkaydogan.co";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   return [
+    {
+      url: `${SITE}/sozler/`,
+      changeFrequency: "weekly" as const,
+      priority: 0.8,
+    },
+    {
+      url: `${SITE}/takvim/`,
+      changeFrequency: "daily" as const,
+      priority: 0.7,
+    },
+    {
+      url: `${SITE}/sozluk/`,
+      changeFrequency: "monthly" as const,
+      priority: 0.7,
+    },
+    ...TEMALAR.map((tema) => ({
+      url: `${SITE}/tema/${tema}/`,
+      changeFrequency: "monthly" as const,
+      priority: 0.6,
+    })),
+    ...SOZLER.map((x) => ({
+      url: `${SITE}/soz/${sozSlug(x.s)}/`,
+      changeFrequency: "yearly" as const,
+      priority: 0.5,
+    })),
     ...YAYINDA.map((y) => ({
       url: `${SITE}/yazilar/${y.slug}/`,
       lastModified: y.dateISO,

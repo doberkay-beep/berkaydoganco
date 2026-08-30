@@ -70,7 +70,7 @@ export const EMBER_FRAGMENTS: string[] = [
 type Book = { title: string; meta: string; badge: string; desc: string; cta: string; excerpt: string };
 
 export type Copy = {
-  nav: { books: string; about: string; writing: string; contact: string; projects: string; experiences: string; film: string; media: string };
+  nav: { books: string; about: string; writing: string; contact: string; projects: string; experiences: string; film: string; media: string; sozler: string };
   banner: { line: string; buy: string; watch: string };
   projects: { label: string; heading: string; sub: string; simdiName: string; simdiTag: string; story: string[]; cta: string };
   card: { label: string; heading: string; sub: string; random: string; download: string; hint: string };
@@ -96,7 +96,7 @@ export const TEASER_LINES = ["Yıkılamadım, yıktım.", "Yalan yaşanmışlık
 
 export const site: Record<Lang, Copy> = {
   en: {
-    nav: { books: "Books", about: "About", writing: "Writing", contact: "Contact", projects: "Projects", experiences: "Experiences", film: "Film", media: "Media" },
+    nav: { books: "Books", about: "About", writing: "Writing", contact: "Contact", projects: "Projects", experiences: "Experiences", film: "Film", media: "Media", sozler: "Verses" },
     banner: { line: "Tasfiye is out — not to destroy; to cleanse.", buy: "Get the book", watch: "Watch the trailer" },
     projects: {
       label: "Projects", heading: "Beyond the words",
@@ -179,7 +179,7 @@ export const site: Record<Lang, Copy> = {
     contact: { label: "Contact", line: "Write — about the work, a collaboration, or whatever's on your mind. The door is open." },
   },
   tr: {
-    nav: { books: "Kitaplar", about: "Hakkımda", writing: "Yazılar", contact: "İletişim", projects: "Projeler", experiences: "Deneyimler", film: "Film", media: "Medya" },
+    nav: { books: "Kitaplar", about: "Hakkımda", writing: "Yazılar", contact: "İletişim", projects: "Projeler", experiences: "Deneyimler", film: "Film", media: "Medya", sozler: "Sözler" },
     banner: { line: "Tasfiye çıktı — yıkmak değil; temizlemek.", buy: "Kitabı al", watch: "Fragmanı izle" },
     projects: {
       label: "Projeler", heading: "Kelimelerin dışında",
@@ -262,7 +262,7 @@ export const site: Record<Lang, Copy> = {
     contact: { label: "İletişim", line: "Yaz — iş için, bir iş birliği için ya da sadece aklındakiler için. Kapı açık." },
   },
   fr: {
-    nav: { books: "Livres", about: "À propos", writing: "Écrits", contact: "Contact", projects: "Projets", experiences: "Expériences", film: "Film", media: "Médias" },
+    nav: { books: "Livres", about: "À propos", writing: "Écrits", contact: "Contact", projects: "Projets", experiences: "Expériences", film: "Film", media: "Médias", sozler: "Vers" },
     banner: { line: "Tasfiye est paru — non pour détruire ; pour purifier.", buy: "Acheter le livre", watch: "Voir la bande-annonce" },
     projects: {
       label: "Projets", heading: "Au-delà des mots",
