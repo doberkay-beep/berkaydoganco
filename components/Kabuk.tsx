@@ -153,6 +153,8 @@ export function Kabuk({ children }: { children: (lang: Lang, t: Copy) => React.R
                   <a href="/sozler">{lang === "tr" ? "Tüm sözler" : lang === "fr" ? "Tous les vers" : "All verses"}</a>
                   <a href="/takvim">{lang === "tr" ? "Köz Takvimi" : lang === "fr" ? "Calendrier" : "Calendar"}</a>
                   <a href="/sozluk">{lang === "tr" ? "Kavramlar Sözlüğü" : lang === "fr" ? "Lexique" : "Lexicon"}</a>
+                  <a href="/posterler">{lang === "tr" ? "Posterler" : lang === "fr" ? "Affiches" : "Posters"}</a>
+                  <a href="/gom">{lang === "tr" ? "Sitene göm" : lang === "fr" ? "Intégrer" : "Embed"}</a>
                 </div>
               </div>
             ) : (
