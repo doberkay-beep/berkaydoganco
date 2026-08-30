@@ -30,6 +30,15 @@
           "value": "image/png"
         }
       ]
+    },
+    {
+      "source": "/soz/(.*)/opengraph-image/",
+      "headers": [
+        {
+          "key": "Content-Type",
+          "value": "image/png"
+        }
+      ]
     }
   ]
 }
