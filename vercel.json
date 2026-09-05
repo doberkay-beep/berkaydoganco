@@ -39,6 +39,24 @@
           "value": "image/png"
         }
       ]
+    },
+    {
+      "source": "/(opengraph-image|twitter-image)",
+      "headers": [
+        {
+          "key": "Content-Type",
+          "value": "image/png"
+        }
+      ]
+    },
+    {
+      "source": "/(opengraph-image|twitter-image)/",
+      "headers": [
+        {
+          "key": "Content-Type",
+          "value": "image/png"
+        }
+      ]
     }
   ]
 }
