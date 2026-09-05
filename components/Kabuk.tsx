@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import Link from "next/link";
 import { site, LANGS, type Lang, type Copy } from "@/lib/site";
 import { Muhur } from "./Muhur";
 
@@ -38,7 +39,7 @@ export function Eyebrow({ children }: { children: React.ReactNode }) {
 }
 
 export function Kabuk({ children }: { children: (lang: Lang, t: Copy) => React.ReactNode }) {
-  const [lang, setLang] = useState<Lang>("en");
+  const [lang, setLang] = useState<Lang>("tr");
   const [menuOpen, setMenuOpen] = useState(false);
   const [theme, setTheme] = useState<"dark" | "light">("dark");
   const navRef = useRef<HTMLElement | null>(null);
@@ -65,7 +66,8 @@ export function Kabuk({ children }: { children: (lang: Lang, t: Copy) => React.R
     try { localStorage.setItem("bd-lang", l); } catch { /* yoksay */ }
   };
 
-  /* Açılışta: kayıtlı seçim > tarayıcı dili > EN */
+  /* Açılışta: kayıtlı seçim > Fransızca tarayıcı dili > TR.
+     Site öncelikle Türkiye'deki okur, basın ve yayınevlerine sesleniyor. */
   useEffect(() => {
     const id = window.setTimeout(() => {
       let next: Lang | null = null;
@@ -75,7 +77,7 @@ export function Kabuk({ children }: { children: (lang: Lang, t: Copy) => React.R
       } catch { /* yoksay */ }
       if (!next) {
         const nav = (navigator.language || "").toLowerCase();
-        next = nav.startsWith("tr") ? "tr" : nav.startsWith("fr") ? "fr" : "en";
+        next = nav.startsWith("fr") ? "fr" : "tr";
       }
       setLang(next);
     }, 0);
@@ -140,10 +142,10 @@ export function Kabuk({ children }: { children: (lang: Lang, t: Copy) => React.R
     <div>
       {/* MENÜ */}
       <nav ref={navRef as React.RefObject<HTMLElement>} className="cg-nav cg" data-solid="0">
-        <a href="/" style={{ display: "inline-flex", alignItems: "center", gap: "0.6rem", fontFamily: "var(--font-grotesk)", fontWeight: 700, fontSize: "0.95rem", letterSpacing: "0.02em" }}>
+        <Link href="/" style={{ display: "inline-flex", alignItems: "center", gap: "0.6rem", fontFamily: "var(--font-grotesk)", fontWeight: 700, fontSize: "0.95rem", letterSpacing: "0.02em" }}>
           <Muhur size={22} />
           Berkay Doğan
-        </a>
+        </Link>
         <div className="cg-nav-links">
           {navLinks.map(([href, label]) =>
             href === "/sozler" ? (

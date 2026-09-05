@@ -25,11 +25,11 @@ const fraunces = Fraunces({
 
 export const metadata: Metadata = {
   title: {
-    default: "Berkay Doğan | Poet & Writer",
+    default: "Berkay Doğan | Şair & Yazar",
     template: "%s — Berkay Doğan",
   },
-  description: "Berkay Doğan — poet and writer based in Istanbul. Writing is the quietest confession of existence. Books: Ink and Ember, Tasfiye.",
-  keywords: ["Berkay Doğan", "poet", "writer", "Istanbul", "Tasfiye", "Ink and Ember", "Mürekkep ve Köz", "Turkish poetry"],
+  description: "Berkay Doğan — İstanbul'da yaşayan şair ve yazar. Kitaplar: Mürekkep ve Köz ile Tasfiye.",
+  keywords: ["Berkay Doğan", "şair", "yazar", "İstanbul", "Tasfiye", "Mürekkep ve Köz", "Türk şiiri", "Türk edebiyatı"],
   authors: [{ name: "Berkay Doğan" }],
   creator: "Berkay Doğan",
   metadataBase: new URL("https://www.berkaydogan.co"),
@@ -37,18 +37,18 @@ export const metadata: Metadata = {
     canonical: "/",
   },
   openGraph: {
-    title: "Berkay Doğan — Poet & Writer",
-    description: "Poet and writer based in Istanbul. Writing is the quietest confession of existence.",
+    title: "Berkay Doğan — Şair & Yazar",
+    description: "İstanbul'da yaşayan şair ve yazar. Kitaplar: Mürekkep ve Köz ile Tasfiye.",
     url: "https://www.berkaydogan.co",
     siteName: "berkaydogan.co",
-    locale: "en_US",
-    alternateLocale: ["tr_TR", "fr_FR"],
+    locale: "tr_TR",
+    alternateLocale: ["en_US", "fr_FR"],
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Berkay Doğan — Poet & Writer",
-    description: "Writing is the quietest confession of existence.",
+    title: "Berkay Doğan — Şair & Yazar",
+    description: "Kitaplar: Mürekkep ve Köz ile Tasfiye.",
   },
   robots: {
     index: true,
@@ -62,7 +62,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" data-theme="dark" suppressHydrationWarning className={`${grotesk.variable} ${fraunces.variable}`}>
+    <html lang="tr" data-theme="dark" suppressHydrationWarning className={`${grotesk.variable} ${fraunces.variable}`}>
       <body>
         <script
           dangerouslySetInnerHTML={{
