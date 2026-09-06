@@ -56,7 +56,7 @@ export function BentoHub({ lang }: { lang: Lang }) {
         .bento-head { display: flex; align-items: baseline; gap: 1rem; flex-wrap: wrap; margin-bottom: 1.5rem; }
         .bento-eyebrow { display: inline-flex; align-items: center; gap: 0.55rem; font-family: var(--font-grotesk); font-size: 0.66rem; font-weight: 500; letter-spacing: 0.28em; text-transform: uppercase; color: var(--ink); }
         .bento-eyebrow i { width: 7px; height: 7px; border-radius: 50%; background: var(--accent); display: inline-block; }
-        .bento-head h2 { font-family: var(--font-serif); font-style: italic; font-weight: 300; font-size: clamp(1.05rem, 2.4vw, 1.5rem); color: var(--muted); }
+        .bento h2 { font-family: var(--font-serif); font-style: italic; font-weight: 300; font-size: clamp(1.05rem, 2.4vw, 1.5rem); color: var(--muted); }
 
         .bento-grid { display: grid; grid-template-columns: repeat(4, 1fr); grid-auto-rows: minmax(132px, auto); gap: 0.9rem; }
         .bento-card { position: relative; display: flex; border-radius: 18px; padding: 1.5rem 1.6rem; overflow: hidden;
@@ -126,9 +126,12 @@ export function BentoHub({ lang }: { lang: Lang }) {
         }
       `}</style>
 
-      <div className="bento-head">
-        <span className="bento-eyebrow"><i />{c.eyebrow}</span>
-        <h2>{c.heading}</h2>
+      <div style={{ marginBottom: "1.75rem" }}>
+        <div className="ed-folio">
+          <span className="ed-folio-no">№ 01</span>
+          <span className="ed-folio-label">{c.eyebrow}</span>
+        </div>
+        <h2 style={{ marginTop: "0.9rem" }}>{c.heading}</h2>
       </div>
 
       <div className="bento-grid">

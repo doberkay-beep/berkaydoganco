@@ -57,11 +57,22 @@ export default async function SozPage({ params }: { params: Promise<{ slug: stri
     url: `${SITE}/soz/${slug}/`,
   };
 
+  const kirintiLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Berkay Doğan", item: `${SITE}/` },
+      { "@type": "ListItem", position: 2, name: "Sözler", item: `${SITE}/sozler/` },
+      { "@type": "ListItem", position: 3, name: soz.s.length > 60 ? `${soz.s.slice(0, 57)}…` : soz.s },
+    ],
+  };
+
   const mono: React.CSSProperties = { fontFamily: "var(--font-grotesk)", fontSize: "0.7rem", fontWeight: 500, letterSpacing: "0.16em", textTransform: "uppercase" };
 
   return (
     <main style={{ maxWidth: "760px", margin: "0 auto", minHeight: "100svh", display: "flex", flexDirection: "column", padding: "clamp(2.5rem, 6vh, 4rem) clamp(1.25rem, 5vw, 2rem) 4rem" }}>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(kirintiLd) }} />
 
       <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: "1rem" }}>
         <Link href="/" style={{ fontFamily: "var(--font-grotesk)", fontWeight: 700, letterSpacing: "0.02em", color: "var(--ink)" }}>Berkay Doğan</Link>

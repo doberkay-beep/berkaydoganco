@@ -36,9 +36,20 @@ export function KitapSayfasi({ kitap, diger }: { kitap: Kitap; diger: Kitap }) {
     },
   };
 
+  const kirintiLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Berkay Doğan", item: `${SITE}/` },
+      { "@type": "ListItem", position: 2, name: "Kitaplar", item: `${SITE}/kitaplar/` },
+      { "@type": "ListItem", position: 3, name: kitap.ad },
+    ],
+  };
+
   return (
     <main style={{ maxWidth: "980px", margin: "0 auto", padding: "clamp(3rem, 8vh, 5.5rem) clamp(1.5rem, 6vw, 6rem) 6rem" }}>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(kirintiLd) }} />
 
       {/* Site içi dönüş */}
       <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "clamp(2.5rem, 6vh, 4rem)", flexWrap: "wrap", gap: "1rem" }}>
@@ -63,7 +74,7 @@ export function KitapSayfasi({ kitap, diger }: { kitap: Kitap; diger: Kitap }) {
           style={{ width: "100%", maxWidth: "420px", border: "1px solid var(--line)", padding: "0", display: "block" }}
         />
         <div>
-          <h1 style={{ fontFamily: "var(--font-grotesk)", fontWeight: 700, fontSize: "clamp(2.6rem, 7vw, 4rem)", letterSpacing: "-0.04em", lineHeight: 0.98, color: "var(--ink)" }}>{kitap.ad}</h1>
+          <h1 style={{ fontFamily: "var(--font-serif)", fontWeight: 500, fontSize: "clamp(2.6rem, 7vw, 4rem)", letterSpacing: "-0.015em", lineHeight: 0.98, color: "var(--ink)" }}>{kitap.ad}</h1>
           <p style={{ fontFamily: "var(--font-serif)", fontStyle: "italic", fontWeight: 300, fontSize: "clamp(1.15rem, 2.4vw, 1.5rem)", color: "var(--muted)", marginTop: "0.6rem" }}>{kitap.altBaslik}</p>
           {kitap.epigraf && (
             <p style={{ fontFamily: "var(--font-serif)", fontStyle: "italic", fontSize: "1.05rem", color: "var(--ink)", marginTop: "1.1rem" }}>&ldquo;{kitap.epigraf}&rdquo;</p>

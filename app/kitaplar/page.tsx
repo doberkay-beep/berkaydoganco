@@ -25,7 +25,7 @@ export default function KitaplarPage() {
       <span style={{ display: "inline-flex", alignItems: "center", gap: "0.6rem", fontFamily: "var(--font-grotesk)", fontSize: "0.7rem", fontWeight: 500, letterSpacing: "0.26em", textTransform: "uppercase", color: "var(--ink)" }}>
         <span style={{ width: "7px", height: "7px", borderRadius: "50%", background: "var(--accent)" }} />Kitaplar
       </span>
-      <h1 style={{ fontFamily: "var(--font-grotesk)", fontWeight: 700, fontSize: "clamp(2.6rem, 7vw, 5rem)", letterSpacing: "-0.04em", lineHeight: 0.95, margin: "1.5rem 0 1rem", color: "var(--ink)" }}>Kitaplar</h1>
+      <h1 style={{ fontFamily: "var(--font-serif)", fontWeight: 500, fontSize: "clamp(2.6rem, 7vw, 5rem)", letterSpacing: "-0.015em", lineHeight: 0.95, margin: "1.5rem 0 1rem", color: "var(--ink)" }}>Kitaplar</h1>
 
       <div className="kl-grid">
         {KITAPLAR.map((k) => (

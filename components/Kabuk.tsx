@@ -185,6 +185,42 @@ export function Kabuk({ children }: { children: (lang: Lang, t: Copy) => React.R
       )}
 
       {children(lang, t)}
+
+      {/* ALTBİLGİ — dergi künyesi + keşfet (site içi bağlantı ağı) */}
+      <footer className="ed-footer cg">
+        <div className="ed-footer-grid">
+          <div>
+            <p className="ed-footer-motto">
+              {lang === "tr" ? "Yazmak, varoluşun en sessiz itirafıdır." : lang === "fr" ? "Écrire est l'aveu le plus silencieux de l'existence." : "Writing is the quietest confession of existence."}
+            </p>
+          </div>
+          <div>
+            <p className="ed-footer-head">{lang === "tr" ? "Oku" : lang === "fr" ? "Lire" : "Read"}</p>
+            <a href="/kitaplar">{t.nav.books}</a>
+            <a href="/sozler">{t.nav.sozler}</a>
+            <a href="/yazilar">{t.nav.writing}</a>
+            <a href="/sozluk">{lang === "tr" ? "Kavramlar Sözlüğü" : lang === "fr" ? "Lexique" : "Lexicon"}</a>
+          </div>
+          <div>
+            <p className="ed-footer-head">{lang === "tr" ? "Deneyimle" : lang === "fr" ? "Vivre" : "Experience"}</p>
+            <a href="/deneyimler">{t.nav.experiences}</a>
+            <a href="/takvim">{lang === "tr" ? "Köz Takvimi" : lang === "fr" ? "Calendrier" : "Calendar"}</a>
+            <a href="/posterler">{lang === "tr" ? "Posterler" : lang === "fr" ? "Affiches" : "Posters"}</a>
+            <a href="/gom">{lang === "tr" ? "Sitene göm" : lang === "fr" ? "Intégrer" : "Embed"}</a>
+          </div>
+          <div>
+            <p className="ed-footer-head">{lang === "tr" ? "Bağlan" : lang === "fr" ? "Contact" : "Connect"}</p>
+            <a href="/hakkimda">{t.nav.about}</a>
+            <a href="/medya">{t.nav.media}</a>
+            <a href="/projeler">{t.nav.projects}</a>
+            <a href="/press">{lang === "tr" ? "Basın Odası" : lang === "fr" ? "Presse" : "Press Room"}</a>
+          </div>
+        </div>
+        <div className="ed-footer-bottom">
+          <span>© 2026 Berkay Doğan</span>
+          <span>İstanbul — {lang === "tr" ? "Şair & Yazar" : lang === "fr" ? "Poète & Écrivain" : "Poet & Writer"}</span>
+        </div>
+      </footer>
     </div>
   );
 }

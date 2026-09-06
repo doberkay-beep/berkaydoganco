@@ -1,7 +1,9 @@
 "use client";
 
 import { REVIEWS, MEDIA, PLAYLISTS, EMBER_FRAGMENTS, VERSES } from "@/lib/site";
-import { Kabuk, Reveal, Eyebrow } from "./Kabuk";
+import { Kabuk, Reveal } from "./Kabuk";
+import { Folio } from "./Dergi";
+import { DENEYIMLER, BOLUMLER, FIHRIST_NO } from "@/lib/deneyimler";
 import { TasfiyeDuvari } from "./TasfiyeDuvari";
 import { Kahin } from "./Kahin";
 import { AlintiKarti } from "./AlintiKarti";
@@ -20,8 +22,8 @@ export function HakkimdaSayfa() {
           <section className="cg-section" style={{ ...ustBosluk, borderTop: "none" }}>
             <div className="cg-about-grid">
               <div>
-                <Reveal><Eyebrow>{t.about.label}</Eyebrow></Reveal>
-                <Reveal delay={0.06} as="h1" className="cg-huge" style={{ fontSize: "clamp(2.4rem, 5vw, 4rem)", marginTop: "1.25rem" }}>{t.about.heading}</Reveal>
+                <Reveal><Folio no="—">{t.about.label}</Folio></Reveal>
+                <Reveal delay={0.06} as="h1" className="ed-display" style={{ fontSize: "clamp(2.6rem, 5.5vw, 4.4rem)", marginTop: "1.5rem" }}>{t.about.heading}</Reveal>
                 <Reveal delay={0.12} style={{ marginTop: "2.5rem" }}>
                   <p style={{ fontSize: "0.7rem", letterSpacing: "0.22em", textTransform: "uppercase", color: "var(--muted)", marginBottom: "1.25rem" }}>{t.about.worksLabel}</p>
                   {t.about.works.map((w, i) => (
@@ -37,7 +39,7 @@ export function HakkimdaSayfa() {
               </div>
               <div style={{ display: "flex", flexDirection: "column", gap: "1.5rem" }}>
                 {t.about.paras.map((p, i) => (
-                  <Reveal key={i} as="p" delay={i * 0.07} style={{ fontSize: i === 0 ? "clamp(1.15rem, 2vw, 1.5rem)" : "1.02rem", fontFamily: i === 0 ? "var(--font-serif)" : "var(--font-grotesk)", lineHeight: i === 0 ? 1.5 : 1.75, color: i === 0 ? "var(--ink)" : "var(--muted)" }}>{p}</Reveal>
+                  <Reveal key={i} as="p" delay={i * 0.07} className={i === 0 ? "ed-dropcap" : undefined} style={{ fontSize: i === 0 ? "clamp(1.15rem, 2vw, 1.5rem)" : "1.02rem", fontFamily: i === 0 ? "var(--font-serif)" : "var(--font-grotesk)", lineHeight: i === 0 ? 1.55 : 1.75, color: i === 0 ? "var(--ink)" : "var(--muted)" }}>{p}</Reveal>
                 ))}
               </div>
             </div>
@@ -46,8 +48,8 @@ export function HakkimdaSayfa() {
           {/* TANINIRLIK / BASINDA */}
           <section id="recognition" className="cg-section">
             <div style={{ maxWidth: "1100px", margin: "0 auto" }}>
-              <Reveal><Eyebrow>{t.recognition.label}</Eyebrow></Reveal>
-              <Reveal delay={0.05} as="h2" className="cg-huge" style={{ fontSize: "clamp(2rem, 4.5vw, 3.4rem)", marginTop: "1.25rem", maxWidth: "16ch" }}>{t.recognition.heading}</Reveal>
+              <Reveal><Folio no="01">{t.recognition.label}</Folio></Reveal>
+              <Reveal delay={0.05} as="h2" className="ed-display" style={{ fontSize: "clamp(2.2rem, 5vw, 3.8rem)", marginTop: "1.5rem", maxWidth: "18ch" }}>{t.recognition.heading}</Reveal>
               <div className="cg-tiles">
                 {t.recognition.tiles.map((tile, i) => (
                   <Reveal key={i} delay={i * 0.07} style={{ borderTop: "2px solid var(--accent)", paddingTop: "1.25rem" }}>
@@ -73,8 +75,8 @@ export function HakkimdaSayfa() {
           {/* OKUR YORUMLARI */}
           <section className="cg-section" style={{ background: "var(--bg-2)" }}>
             <div style={{ maxWidth: "1150px", margin: "0 auto" }}>
-              <Reveal><Eyebrow>{t.reviews.label}</Eyebrow></Reveal>
-              <Reveal delay={0.05} as="h2" className="cg-huge" style={{ fontSize: "clamp(2rem, 4.5vw, 3.4rem)", marginTop: "1.25rem", marginBottom: "clamp(2.5rem, 6vh, 4rem)" }}>{t.reviews.heading}</Reveal>
+              <Reveal><Folio no="02">{t.reviews.label}</Folio></Reveal>
+              <Reveal delay={0.05} as="h2" className="ed-display" style={{ fontSize: "clamp(2.2rem, 5vw, 3.8rem)", marginTop: "1.5rem", marginBottom: "clamp(2.5rem, 6vh, 4rem)" }}>{t.reviews.heading}</Reveal>
               <div className="cg-reviews">
                 {REVIEWS.map((r, i) => (
                   <Reveal key={i} delay={(i % 3) * 0.06} className="cg-review-card">
@@ -99,8 +101,8 @@ export function MedyaSayfa() {
         <main className="cg">
           <section className="cg-section" style={{ ...ustBosluk, borderTop: "none" }}>
             <div style={{ maxWidth: "860px", margin: "0 auto" }}>
-              <Reveal><Eyebrow>{t.media.label}</Eyebrow></Reveal>
-              <Reveal delay={0.05} as="h1" className="cg-huge" style={{ fontSize: "clamp(2rem, 4.5vw, 3.4rem)", marginTop: "1.25rem" }}>{t.media.heading}</Reveal>
+              <Reveal><Folio no="—">{t.media.label}</Folio></Reveal>
+              <Reveal delay={0.05} as="h1" className="ed-display" style={{ fontSize: "clamp(2.2rem, 5vw, 3.8rem)", marginTop: "1.5rem" }}>{t.media.heading}</Reveal>
               <Reveal delay={0.1} as="p" style={{ marginTop: "1.25rem", fontSize: "1rem", lineHeight: 1.7, color: "var(--muted)", maxWidth: "48ch" }}>{t.media.podcastDesc}</Reveal>
 
               <Reveal delay={0.12} style={{ marginTop: "2.5rem" }}>
@@ -148,44 +150,70 @@ export function MedyaSayfa() {
   );
 }
 
-/* ---------- DENEYİMLER: tüm interaktif işlerin dizini ---------- */
-const DENEYIMLER: { href: string; glyph: string; tr: string; en: string; fr: string; trSub: string; enSub: string; frSub: string }[] = [
-  { href: "/mahkeme", glyph: "◈", tr: "Tasfiye Mahkemesi", en: "The Tribunal", fr: "Le Tribunal", trSub: "5 soru, 1 hüküm", enSub: "5 questions, 1 verdict", frSub: "5 questions, 1 verdict" },
-  { href: "/leke", glyph: "❖", tr: "Mürekkep Lekesi", en: "The Ink Blot", fr: "La Tache d'Encre", trSub: "sende kalan dize", enSub: "the verse that stays", frSub: "le vers qui reste" },
-  { href: "/fragman", glyph: "▸", tr: "Fragman", en: "The Trailer", fr: "La Bande-annonce", trSub: "kitabın sinematik yolculuğu", enSub: "the book's cinematic journey", frSub: "le voyage cinématique" },
-  { href: "/kapak", glyph: "✳", tr: "Yaşayan Kapak", en: "The Living Cover", fr: "La Couverture Vivante", trSub: "yaz, buruştur, bırak", enSub: "type, crumple, release", frSub: "écris, froisse, lâche" },
-  { href: "/film", glyph: "▣", tr: "Film", en: "The Film", fr: "Le Film", trSub: "35 saniyelik tanıtım", enSub: "a 35-second film", frSub: "un film de 35 secondes" },
-  { href: "/evren", glyph: "✦", tr: "Köz Evreni", en: "Ember Universe", fr: "Univers de Braise", trSub: "dize takımyıldızları", enSub: "verse constellations", frSub: "constellations de vers" },
-  { href: "/siir", glyph: "❋", tr: "Canlı Şiir", en: "Living Poem", fr: "Poème Vivant", trSub: "kelime kelime akan dizeler", enSub: "verses flowing word by word", frSub: "les vers qui coulent" },
-  { href: "/masa", glyph: "✎", tr: "Şairin Masası", en: "The Poet's Desk", fr: "Le Bureau du Poète", trSub: "keşfedilebilir sahne", enSub: "an explorable scene", frSub: "une scène à explorer" },
-  { href: "/duvar", glyph: "▤", tr: "Tasfiye Duvarı", en: "The Wall", fr: "Le Mur", trSub: "bir şeyi bırak, hafifle", enSub: "let something go", frSub: "laisse partir quelque chose" },
-  { href: "/kahin", glyph: "◉", tr: "Kâhin", en: "The Oracle", fr: "L'Oracle", trSub: "bir kelime söyle, dize düşsün", enSub: "say a word, receive a verse", frSub: "dis un mot, reçois un vers" },
-  { href: "/takvim", glyph: "◷", tr: "Köz Takvimi", en: "Ember Calendar", fr: "Calendrier", trSub: "her güne bir söz", enSub: "a verse for every day", frSub: "un vers pour chaque jour" },
-  { href: "/kart", glyph: "▢", tr: "Alıntı Kartı", en: "Quote Card", fr: "Carte de Citation", trSub: "dize seç, indir, paylaş", enSub: "pick, download, share", frSub: "choisis, télécharge, partage" },
-];
+/* ---------- DENEYİMLER: dergi fihristi — kapak konusu + üç bölüm ---------- */
+
+
+
 
 export function DeneyimlerSayfa() {
+  const kapak = DENEYIMLER[0]; // Tasfiye Mahkemesi — kapak konusu
   return (
     <Kabuk>
       {(lang, t) => (
         <main className="cg">
           <section className="cg-section" style={{ ...ustBosluk, borderTop: "none" }}>
-            <div style={{ maxWidth: "1100px", margin: "0 auto" }}>
-              <Reveal><Eyebrow>{t.nav.experiences}</Eyebrow></Reveal>
-              <Reveal delay={0.05} as="h1" className="cg-huge" style={{ fontSize: "clamp(2.4rem, 5.5vw, 4.2rem)", marginTop: "1.25rem", maxWidth: "18ch" }}>
+            <div style={{ maxWidth: "1050px", margin: "0 auto" }}>
+              <Reveal><Folio no="—">{t.nav.experiences}</Folio></Reveal>
+              <Reveal delay={0.05} as="h1" className="ed-display" style={{ fontSize: "clamp(2.8rem, 7vw, 5.6rem)", marginTop: "1.5rem", maxWidth: "16ch" }}>
                 {lang === "tr" ? "Okumakla kalma; içine gir." : lang === "fr" ? "Ne fais pas que lire ; entre dedans." : "Don't just read; step inside."}
               </Reveal>
-              <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(250px, 1fr))", gap: "1rem", marginTop: "clamp(2.5rem, 6vh, 4rem)" }}>
-                {DENEYIMLER.map((d, i) => (
-                  <Reveal key={d.href} delay={(i % 4) * 0.06}>
-                    <a href={d.href} className="bento-card" style={{ flexDirection: "column", gap: "0.6rem", height: "100%", padding: "1.5rem 1.6rem", borderRadius: "18px" }}>
-                      <span style={{ fontSize: "1.4rem", color: "var(--accent)", lineHeight: 1 }} aria-hidden="true">{d.glyph}</span>
-                      <span style={{ fontFamily: "var(--font-grotesk)", fontWeight: 700, fontSize: "1.2rem", letterSpacing: "-0.02em", color: "var(--ink)" }}>{d[lang]}</span>
-                      <span style={{ fontFamily: "var(--font-serif)", fontStyle: "italic", fontWeight: 300, fontSize: "0.95rem", color: "var(--muted)" }}>{d[(lang + "Sub") as "trSub"]}</span>
-                    </a>
-                  </Reveal>
-                ))}
-              </div>
+              <Reveal delay={0.1} as="p" className="cg-serif" style={{ marginTop: "1.5rem", fontSize: "clamp(1.05rem, 2vw, 1.3rem)", lineHeight: 1.6, color: "var(--muted)", maxWidth: "52ch" }}>
+                {lang === "tr"
+                  ? "Buradaki her şey kitapların içinden doğdu: okurunu sanık koltuğuna oturtan bir mahkeme, ne gördüğünü soran mürekkep lekeleri, dizelerden kurulan bir gökyüzü. Hepsi tarayıcında, hepsi ücretsiz — bir dakikan varsa bir kapı aç."
+                  : lang === "fr"
+                  ? "Tout ici est né des livres : un tribunal qui met le lecteur au banc des accusés, des taches d'encre, un ciel fait de vers. Tout dans ton navigateur, tout gratuit — ouvre une porte."
+                  : "Everything here was born inside the books: a tribunal that puts the reader on trial, ink blots that ask what you see, a sky built from verses. All in your browser, all free — if you have a minute, open a door."}
+              </Reveal>
+
+              {/* KAPAK KONUSU — Tasfiye Mahkemesi */}
+              <Reveal delay={0.14} style={{ marginTop: "clamp(2.5rem, 6vh, 4rem)" }}>
+                <a href={kapak.href} className="ed-cover">
+                  <div style={{ display: "flex", flexDirection: "column", gap: "1rem", alignItems: "flex-start" }}>
+                    <span style={{ fontFamily: "var(--font-grotesk)", fontSize: "0.62rem", fontWeight: 500, letterSpacing: "0.28em", textTransform: "uppercase", color: "var(--accent)" }}>
+                      {lang === "tr" ? "Kapak konusu" : lang === "fr" ? "À la une" : "Cover story"}
+                    </span>
+                    <span className="ed-display" style={{ fontSize: "clamp(2rem, 4.5vw, 3.2rem)", color: "var(--ink)" }}>{kapak[lang]}</span>
+                    <span style={{ fontFamily: "var(--font-grotesk)", fontSize: "0.95rem", lineHeight: 1.65, color: "var(--muted)", maxWidth: "44ch" }}>{kapak[(lang + "Desc") as "trDesc"]}</span>
+                    <span className="cg-btn cg-btn-fill" style={{ marginTop: "0.5rem" }}>
+                      {lang === "tr" ? "Mahkemeye çık" : lang === "fr" ? "Comparais" : "Take the stand"} →
+                    </span>
+                  </div>
+                  <div style={{ display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center", gap: "0.75rem" }} aria-hidden="true">
+                    <span style={{ fontSize: "clamp(4rem, 9vw, 7rem)", lineHeight: 1, color: "var(--accent)", opacity: 0.85 }}>{kapak.glyph}</span>
+                    <span className="cg-serif" style={{ fontStyle: "italic", fontSize: "1.05rem", color: "var(--muted)" }}>{kapak[(lang + "Sub") as "trSub"]}</span>
+                  </div>
+                </a>
+              </Reveal>
+
+              {/* FİHRİST — üç bölüm */}
+              {BOLUMLER.map((bolum, bi) => (
+                <Reveal key={bolum.tr} delay={0.06} style={{ marginTop: "clamp(3rem, 7vh, 4.5rem)" }}>
+                  <Folio no={String(bi + 1).padStart(2, "0")}>{bolum[lang]}</Folio>
+                  <div className="ed-toc" style={{ marginTop: "1.25rem" }}>
+                    {bolum.uyeler.map((href) => {
+                      const d = DENEYIMLER.find((x) => x.href === href)!;
+                      return (
+                        <a key={d.href} href={d.href} className="ed-toc-row">
+                          <span className="ed-toc-no">{FIHRIST_NO[d.href]}</span>
+                          <span className="ed-toc-name"><span className="glyph" aria-hidden="true">{d.glyph}</span>{d[lang]}</span>
+                          <span className="ed-toc-desc">{d[(lang + "Desc") as "trDesc"]}</span>
+                          <span className="ed-toc-arrow" aria-hidden="true">→</span>
+                        </a>
+                      );
+                    })}
+                  </div>
+                </Reveal>
+              ))}
             </div>
           </section>
         </main>

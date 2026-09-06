@@ -119,7 +119,7 @@ export default function PressPage() {
       <span style={{ display: "inline-flex", alignItems: "center", gap: "0.6rem", ...mono, letterSpacing: "0.26em", color: "var(--ink)" }}>
         <span style={{ width: "7px", height: "7px", borderRadius: "50%", background: "var(--accent)" }} />Basın Odası · Press Room
       </span>
-      <h1 style={{ fontFamily: "var(--font-grotesk)", fontWeight: 700, fontSize: "clamp(2.6rem, 7vw, 5rem)", letterSpacing: "-0.04em", lineHeight: 0.95, margin: "1.5rem 0 1rem", color: "var(--ink)" }}>Basın Odası</h1>
+      <h1 style={{ fontFamily: "var(--font-serif)", fontWeight: 500, fontSize: "clamp(2.6rem, 7vw, 5rem)", letterSpacing: "-0.015em", lineHeight: 0.95, margin: "1.5rem 0 1rem", color: "var(--ink)" }}>Basın Odası</h1>
       <p style={{ fontFamily: "var(--font-serif)", fontStyle: "italic", fontWeight: 300, fontSize: "clamp(1.15rem, 2.4vw, 1.6rem)", color: "var(--muted)", maxWidth: "44ch" }}>
         Bir gazetecinin ihtiyaç duyabileceği her şey: künye, biyografiler, görseller, konular. Krediyle kullanım serbesttir.
       </p>

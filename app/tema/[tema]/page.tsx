@@ -45,7 +45,7 @@ export default async function TemaPage({ params }: { params: Promise<{ tema: str
       <span style={{ display: "inline-flex", alignItems: "center", gap: "0.6rem", ...mono, letterSpacing: "0.26em", color: "var(--ink)" }}>
         <span style={{ width: "7px", height: "7px", borderRadius: "50%", background: "var(--accent)" }} />Tema
       </span>
-      <h1 style={{ fontFamily: "var(--font-grotesk)", fontWeight: 700, fontSize: "clamp(2.2rem, 6vw, 4rem)", letterSpacing: "-0.04em", lineHeight: 0.98, margin: "1.5rem 0 1rem", color: "var(--ink)" }}>{ad}</h1>
+      <h1 style={{ fontFamily: "var(--font-serif)", fontWeight: 500, fontSize: "clamp(2.2rem, 6vw, 4rem)", letterSpacing: "-0.015em", lineHeight: 0.98, margin: "1.5rem 0 1rem", color: "var(--ink)" }}>{ad}</h1>
       <p style={{ ...mono, fontSize: "0.68rem", color: "var(--muted)" }}>{liste.length} söz</p>
 
       <div style={{ display: "flex", gap: "0.5rem", flexWrap: "wrap", margin: "1.75rem 0 0" }}>

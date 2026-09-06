@@ -22,7 +22,7 @@ export default function TakvimPage() {
         <Link href="/sozler" style={{ fontFamily: "var(--font-grotesk)", fontSize: "0.72rem", letterSpacing: "0.14em", textTransform: "uppercase", color: "var(--muted)", borderBottom: "1px solid var(--accent)", paddingBottom: "2px" }}>← Tüm sözler</Link>
       </div>
       <div style={{ maxWidth: "980px", margin: "2rem auto 0", padding: "0 clamp(1.25rem, 4vw, 3.25rem)" }}>
-        <h1 style={{ fontFamily: "var(--font-grotesk)", fontWeight: 700, fontSize: "clamp(2.2rem, 6vw, 3.6rem)", letterSpacing: "-0.04em", lineHeight: 0.98, color: "var(--ink)" }}>Köz Takvimi</h1>
+        <h1 style={{ fontFamily: "var(--font-serif)", fontWeight: 500, fontSize: "clamp(2.2rem, 6vw, 3.6rem)", letterSpacing: "-0.015em", lineHeight: 0.98, color: "var(--ink)" }}>Köz Takvimi</h1>
       </div>
       <KozTakvimi />
     </main>

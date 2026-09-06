@@ -6,7 +6,8 @@ import {
 } from "@/lib/site";
 import { GununKozu } from "./GununKozu";
 import { BentoHub } from "./BentoHub";
-import { Kabuk, Reveal, Eyebrow } from "./Kabuk";
+import { Kabuk, Reveal } from "./Kabuk";
+import { Folio, Masthead } from "./Dergi";
 
 /* Ana sayfa — inceltilmiş: Tasfiye banner'ı + hero + bento + günün közü +
    kitaplar + iletişim. Hakkımda/medya/projeler/deneyimler kendi sayfalarında. */
@@ -50,11 +51,15 @@ export function Cagdas() {
             {/* TASFİYE BANNER — kalıcı reklam şeridi */}
             <TasfiyeBanner t={t} />
 
-            {/* HERO */}
-            <section className="cg-hero" style={{ minHeight: "88svh", paddingTop: "3.5rem" }}>
+            {/* KÜNYE SATIRI — dergi manşet başı */}
+            <div style={{ margin: "2.5rem clamp(1.25rem, 4vw, 3.25rem) 0" }}>
+              <Masthead left="berkaydogan.co" center={t.hero.role} right="MMXXVI — İstanbul" />
+            </div>
+
+            {/* HERO — kapak */}
+            <section className="cg-hero" style={{ minHeight: "84svh", paddingTop: "2.5rem" }}>
               <div>
-                <Reveal><Eyebrow>{t.hero.role}</Eyebrow></Reveal>
-                <h1 className="cg-huge" style={{ fontSize: "clamp(3.2rem, 9vw, 8rem)", margin: "1.5rem 0 1.75rem" }} aria-label="Berkay Doğan">
+                <h1 className="ed-display" style={{ fontSize: "clamp(3.4rem, 10vw, 9rem)", margin: "0 0 1.75rem" }} aria-label="Berkay Doğan">
                   {["Berkay", "Doğan"].map((word, wi) => (
                     <span key={word} style={{ display: "block" }} aria-hidden="true">
                       {[...word].map((ch, i) => (
@@ -87,18 +92,18 @@ export function Cagdas() {
 
             {/* KİTAPLAR */}
             <section id="books" className="cg-section">
-              <Reveal style={{ maxWidth: "1100px", margin: "0 auto clamp(3.5rem, 8vh, 6rem)" }}><Eyebrow>{b.label}</Eyebrow></Reveal>
+              <Reveal style={{ maxWidth: "1100px", margin: "0 auto clamp(3.5rem, 8vh, 6rem)" }}><Folio no="03">{b.label}</Folio></Reveal>
 
               {/* Tasfiye — yeni kitap önce */}
               <Reveal className="cg-book rev">
                 <div style={{ display: "flex", flexDirection: "column", alignItems: "flex-start", gap: "1.1rem" }}>
                   <span style={{ fontSize: "0.6rem", letterSpacing: "0.18em", textTransform: "uppercase", color: "var(--accent-ink)", background: "var(--accent)", padding: "0.4rem 0.65rem", borderRadius: "100px" }}>{b.tasfiye.badge}</span>
-                  <h3 className="cg-huge" style={{ fontSize: "clamp(2.2rem, 4.5vw, 3.4rem)" }}>{b.tasfiye.title}</h3>
+                  <h3 className="ed-display" style={{ fontSize: "clamp(2.4rem, 5vw, 3.8rem)" }}>{b.tasfiye.title}</h3>
                   <p style={{ fontSize: "0.72rem", letterSpacing: "0.14em", textTransform: "uppercase", color: "var(--muted)" }}>{b.tasfiye.meta}</p>
                   <p className="cg-serif" style={{ fontStyle: "italic", fontSize: "clamp(1rem, 1.7vw, 1.2rem)", lineHeight: 1.6, color: "var(--ink)", maxWidth: "40ch" }}>{b.tasfiye.desc}</p>
-                  <div style={{ borderLeft: "2px solid var(--accent)", paddingLeft: "1rem" }}>
-                    <span style={{ display: "block", fontSize: "0.58rem", letterSpacing: "0.2em", textTransform: "uppercase", color: "var(--accent)", marginBottom: "0.4rem" }}>{t.taste}</span>
-                    <p className="cg-serif" style={{ fontStyle: "italic", fontSize: "1.1rem", lineHeight: 1.5, color: "var(--muted)" }}>{b.tasfiye.excerpt}</p>
+                  <div className="ed-pull" style={{ fontSize: "clamp(1.15rem, 2.2vw, 1.45rem)", maxWidth: "34ch" }}>
+                    <span style={{ display: "block", fontFamily: "var(--font-grotesk)", fontStyle: "normal", fontSize: "0.58rem", fontWeight: 500, letterSpacing: "0.2em", textTransform: "uppercase", color: "var(--accent)", marginBottom: "0.5rem" }}>{t.taste}</span>
+                    {b.tasfiye.excerpt}
                   </div>
                   <div style={{ marginTop: "0.5rem", display: "flex", gap: "0.75rem", flexWrap: "wrap" }}>
                     <a href={TASFIYE_URL} target="_blank" rel="noopener noreferrer" className="cg-btn cg-btn-fill">{b.tasfiye.cta} →</a>
@@ -128,12 +133,12 @@ export function Cagdas() {
                 </div>
                 <div style={{ display: "flex", flexDirection: "column", alignItems: "flex-start", gap: "1.1rem" }}>
                   <span style={{ fontSize: "0.6rem", letterSpacing: "0.18em", textTransform: "uppercase", color: "var(--accent-ink)", background: "var(--accent)", padding: "0.4rem 0.65rem", borderRadius: "100px" }}>{b.murekkep.badge}</span>
-                  <h3 className="cg-huge" style={{ fontSize: "clamp(2.2rem, 4.5vw, 3.4rem)" }}>{b.murekkep.title}</h3>
+                  <h3 className="ed-display" style={{ fontSize: "clamp(2.4rem, 5vw, 3.8rem)" }}>{b.murekkep.title}</h3>
                   <p style={{ fontSize: "0.72rem", letterSpacing: "0.14em", textTransform: "uppercase", color: "var(--muted)" }}>{b.murekkep.meta}</p>
                   <p className="cg-serif" style={{ fontStyle: "italic", fontSize: "clamp(1.05rem, 1.8vw, 1.3rem)", lineHeight: 1.55, color: "var(--ink)", maxWidth: "36ch" }}>{b.murekkep.desc}</p>
-                  <div style={{ borderLeft: "2px solid var(--accent)", paddingLeft: "1rem", margin: "0.3rem 0" }}>
-                    <span style={{ display: "block", fontSize: "0.58rem", letterSpacing: "0.2em", textTransform: "uppercase", color: "var(--accent)", marginBottom: "0.4rem" }}>{t.taste}</span>
-                    <p className="cg-serif" style={{ fontStyle: "italic", fontSize: "1.1rem", lineHeight: 1.5, color: "var(--muted)" }}>{b.murekkep.excerpt}</p>
+                  <div className="ed-pull" style={{ fontSize: "clamp(1.15rem, 2.2vw, 1.45rem)", maxWidth: "34ch", margin: "0.3rem 0" }}>
+                    <span style={{ display: "block", fontFamily: "var(--font-grotesk)", fontStyle: "normal", fontSize: "0.58rem", fontWeight: 500, letterSpacing: "0.2em", textTransform: "uppercase", color: "var(--accent)", marginBottom: "0.5rem" }}>{t.taste}</span>
+                    {b.murekkep.excerpt}
                   </div>
                   <div style={{ display: "flex", gap: "0.75rem", flexWrap: "wrap", marginTop: "0.5rem" }}>
                     <a href={TRENDYOL_URL} target="_blank" rel="noopener noreferrer" className="cg-btn cg-btn-fill">{b.murekkep.cta} →</a>
@@ -154,8 +159,8 @@ export function Cagdas() {
             {/* İLETİŞİM */}
             <section id="contact" className="cg-section" style={{ background: "var(--bg-2)" }}>
               <div style={{ maxWidth: "1100px", margin: "0 auto" }}>
-                <Reveal><Eyebrow>{t.contact.label}</Eyebrow></Reveal>
-                <Reveal delay={0.06} as="p" className="cg-serif" style={{ margin: "1.75rem 0 2.5rem", fontStyle: "italic", fontSize: "clamp(1.7rem, 4.5vw, 3.4rem)", lineHeight: 1.3, maxWidth: "20ch" }}>{t.contact.line}</Reveal>
+                <Reveal><Folio no="04">{t.contact.label}</Folio></Reveal>
+                <Reveal delay={0.06} as="p" className="ed-display" style={{ margin: "1.75rem 0 2.5rem", fontSize: "clamp(1.9rem, 5vw, 3.8rem)", lineHeight: 1.15, maxWidth: "20ch" }}>{t.contact.line}</Reveal>
                 <Reveal delay={0.12}>
                   <a href={`mailto:${EMAIL}`} className="cg-huge" style={{ display: "inline-block", fontSize: "clamp(1.4rem, 3.5vw, 2.6rem)", color: "var(--ink)", letterSpacing: "-0.02em" }}>{EMAIL}</a>
                 </Reveal>
@@ -165,7 +170,6 @@ export function Cagdas() {
                   <a href={SUBSTACK_URL} target="_blank" rel="noopener noreferrer" className="cg-link">Substack</a>
                   <a href="/press" className="cg-link">{lang === "tr" ? "Basın kiti" : lang === "fr" ? "Presse" : "Press kit"}</a>
                 </Reveal>
-                <p style={{ marginTop: "4rem", fontSize: "0.66rem", letterSpacing: "0.14em", textTransform: "uppercase", opacity: 0.5 }}>© 2026 Berkay Doğan</p>
               </div>
             </section>
           </main>

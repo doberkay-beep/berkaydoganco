@@ -33,7 +33,7 @@ export default function GomAraci() {
       <span style={{ display: "inline-flex", alignItems: "center", gap: "0.6rem", ...mono, letterSpacing: "0.26em", color: "var(--ink)" }}>
         <span style={{ width: "7px", height: "7px", borderRadius: "50%", background: "var(--accent)" }} />Göm
       </span>
-      <h1 style={{ fontFamily: "var(--font-grotesk)", fontWeight: 700, fontSize: "clamp(2.2rem, 6vw, 3.8rem)", letterSpacing: "-0.04em", lineHeight: 0.98, margin: "1.5rem 0 1rem", color: "var(--ink)" }}>Sitene günün közünü göm</h1>
+      <h1 style={{ fontFamily: "var(--font-serif)", fontWeight: 500, fontSize: "clamp(2.2rem, 6vw, 3.8rem)", letterSpacing: "-0.015em", lineHeight: 0.98, margin: "1.5rem 0 1rem", color: "var(--ink)" }}>Sitene günün közünü göm</h1>
       <p style={{ fontFamily: "var(--font-serif)", fontStyle: "italic", fontWeight: 300, fontSize: "clamp(1.1rem, 2.3vw, 1.5rem)", color: "var(--muted)", maxWidth: "44ch", lineHeight: 1.5 }}>
         Blogun ya da siten varsa, aşağıdaki tek parça kodu yapıştır — her gün taze bir söz, kendiliğinden.
       </p>

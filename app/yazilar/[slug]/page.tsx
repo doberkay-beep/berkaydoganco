@@ -67,7 +67,7 @@ export default async function YaziPage({ params }: { params: Promise<{ slug: str
       )}
 
       <p style={{ fontFamily: "var(--font-grotesk)", fontSize: "0.7rem", letterSpacing: "0.2em", textTransform: "uppercase", color: "var(--accent)", marginBottom: "1rem" }}>{y.dateText}</p>
-      <h1 style={{ fontFamily: "var(--font-grotesk)", fontWeight: 700, fontSize: "clamp(2.2rem, 6vw, 3.8rem)", letterSpacing: "-0.03em", lineHeight: 1.02, marginBottom: "1.1rem", textWrap: "balance" }}>{y.title}</h1>
+      <h1 style={{ fontFamily: "var(--font-serif)", fontWeight: 500, fontSize: "clamp(2.2rem, 6vw, 3.8rem)", letterSpacing: "-0.015em", lineHeight: 1.02, marginBottom: "1.1rem", textWrap: "balance" }}>{y.title}</h1>
       <p style={{ fontFamily: "var(--font-serif)", fontStyle: "italic", fontWeight: 300, fontSize: "clamp(1.15rem, 2.2vw, 1.45rem)", color: "var(--muted)", maxWidth: "44ch", lineHeight: 1.5 }}>{y.dek}</p>
 
       <article style={{ marginTop: "clamp(2.5rem, 6vh, 4rem)", borderTop: "1px solid var(--line)", paddingTop: "2.5rem" }}>

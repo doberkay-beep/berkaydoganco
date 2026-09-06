@@ -135,7 +135,7 @@ export const site: Record<Lang, Copy> = {
       worksLabel: "Selected works",
       works: [
         { year: "2025", title: "Ink and Ember: A Poet's Reckoning", kind: "Poetry" },
-        { year: "2026", title: "Tasfiye", kind: "Essay — soon" },
+        { year: "2026", title: "Tasfiye", kind: "Essay" },
       ],
     },
     books: {
@@ -218,7 +218,7 @@ export const site: Record<Lang, Copy> = {
       worksLabel: "Eserler",
       works: [
         { year: "2025", title: "Mürekkep ve Köz: Bir Şairin Hesabı", kind: "Şiir" },
-        { year: "2026", title: "Tasfiye", kind: "Deneme — yakında" },
+        { year: "2026", title: "Tasfiye", kind: "Deneme" },
       ],
     },
     books: {
@@ -301,7 +301,7 @@ export const site: Record<Lang, Copy> = {
       worksLabel: "Œuvres choisies",
       works: [
         { year: "2025", title: "Encre et Braise : les comptes d'un poète", kind: "Poésie" },
-        { year: "2026", title: "Tasfiye", kind: "Essai — bientôt" },
+        { year: "2026", title: "Tasfiye", kind: "Essai" },
       ],
     },
     books: {
