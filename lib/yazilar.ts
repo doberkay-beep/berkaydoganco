@@ -63,9 +63,8 @@ export const YAZILAR: Yazi[] = [
     slug: "siire-nereden-baslamali",
     title: "Şiire nereden başlamalı?",
     dek: "Şiir okumak isteyen ama nereden gireceğini bilemeyenler için dürüst bir yol haritası.",
-    dateISO: "2026-08-22",
-    dateText: "22 Ağustos 2026",
-    taslak: true,
+    dateISO: "2026-09-06",
+    dateText: "6 Eylül 2026",
     paras: [
       "Bana en çok sorulan sorulardan biri bu: \"Şiir okumak istiyorum ama nereden başlayacağımı bilmiyorum.\" Anlıyorum. Şiir, dışarıdan bakınca kapısı kilitli bir ev gibi görünür. İçeride ışık yanar, ses gelir; ama anahtar sende yokmuş gibi hissedersin.",
       "Sana bir sır vereyim: anahtar diye bir şey yok. Kapı zaten açık. Sadece kimse içeri nasıl girileceğini göstermemiş.",
@@ -82,12 +81,11 @@ export const YAZILAR: Yazi[] = [
   {
     slug: "genc-sair-olmak",
     title: "Genç şair olmak: yazmaya başlayanlara on dürüst not",
-    dek: "İlk kitabını 22 yaşında yayımlamış birinden, süslemesiz on not.",
-    dateISO: "2026-08-22",
-    dateText: "22 Ağustos 2026",
-    taslak: true,
+    dek: "İlk kitabını 25 yaşında yayımlamış birinden, süslemesiz on not.",
+    dateISO: "2026-09-06",
+    dateText: "6 Eylül 2026",
     paras: [
-      "İlk kitabım çıktığında 22 yaşındaydım. Bu bir övünme cümlesi değil; bir konum bildirimi. Aşağıdaki notlar, tepeden bakan birinin öğütleri değil — yolun henüz başında olan birinin, kendinden birkaç adım gerideki yolcuya bıraktığı işaretler.",
+      "İlk kitabım çıktığında 25 yaşındaydım. Bu bir övünme cümlesi değil; bir konum bildirimi. Aşağıdaki notlar, tepeden bakan birinin öğütleri değil — yolun henüz başında olan birinin, kendinden birkaç adım gerideki yolcuya bıraktığı işaretler.",
       "Bir: Çok yazacaksın, çoğunu atacaksın. İlk yüz şiirin, yüz birinci şiirin provasıdır. Bunu kayıp sayma; kas böyle çalışır.",
       "İki: Taklitle başlaman normal. Herkes birinin gölgesinde yürüyerek öğrenir. Sorun gölgede yürümek değil, gölgeyi ev sanmak. Sevdiğin şairi içine çek, sonra ondan kurtulmaya çalış — asıl sesin, o boğuşmanın içinden çıkar.",
       "Üç: İlham beklersen az yazarsın. Masa, ilhamdan güçlüdür. Ben yazmak istemediğim günlerde de masaya oturdum; iyi dizelerin çoğu, isteksiz başlayan günlerden çıktı.",
