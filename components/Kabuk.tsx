@@ -1,0 +1,251 @@
+"use client";
+
+import { useEffect, useRef, useState } from "react";
+import Link from "next/link";
+import { site, LANGS, type Lang, type Copy } from "@/lib/site";
+import { Muhur } from "./Muhur";
+
+/* Site kabuğu — nav + mobil menü + dil/tema durumu + mikro-etkileşimler.
+   Tüm bölüm sayfaları bunu sarar; içerik render-prop ile (lang, t) alır.
+   Stiller globals.css'te (cg-*). */
+
+export function Reveal({ children, as: Tag = "div", delay = 0, className, style }: {
+  children: React.ReactNode; as?: React.ElementType; delay?: number; className?: string; style?: React.CSSProperties;
+}) {
+  const ref = useRef<HTMLElement | null>(null);
+  const [shown, setShown] = useState(false);
+  useEffect(() => {
+    const el = ref.current; if (!el) return;
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      const t = window.setTimeout(() => setShown(true), 0); return () => window.clearTimeout(t);
+    }
+    const io = new IntersectionObserver((es) => es.forEach((e) => { if (e.isIntersecting) { setShown(true); io.disconnect(); } }), { threshold: 0.12 });
+    io.observe(el); return () => io.disconnect();
+  }, []);
+  return (
+    <Tag ref={ref} className={className} style={{
+      opacity: shown ? 1 : 0, transform: shown ? "translateY(0)" : "translateY(28px)",
+      filter: shown ? "blur(0)" : "blur(7px)",
+      transition: `opacity 0.95s cubic-bezier(0.22,1,0.36,1) ${delay}s, transform 0.95s cubic-bezier(0.22,1,0.36,1) ${delay}s, filter 0.95s cubic-bezier(0.22,1,0.36,1) ${delay}s`, ...style,
+    }}>{children}</Tag>
+  );
+}
+
+export function Eyebrow({ children }: { children: React.ReactNode }) {
+  return (
+    <span style={{ display: "inline-flex", alignItems: "center", gap: "0.6rem", fontFamily: "var(--font-grotesk)", fontSize: "0.7rem", fontWeight: 500, letterSpacing: "0.26em", textTransform: "uppercase", color: "var(--ink)" }}>
+      <span style={{ width: "7px", height: "7px", borderRadius: "50%", background: "var(--accent)" }} />{children}
+    </span>
+  );
+}
+
+export function Kabuk({ children }: { children: (lang: Lang, t: Copy) => React.ReactNode }) {
+  const [lang, setLang] = useState<Lang>("tr");
+  const [menuOpen, setMenuOpen] = useState(false);
+  const [theme, setTheme] = useState<"dark" | "light">("dark");
+  const navRef = useRef<HTMLElement | null>(null);
+  const t = site[lang];
+
+  useEffect(() => {
+    const id = window.setTimeout(() => {
+      const cur = document.documentElement.getAttribute("data-theme");
+      if (cur === "light" || cur === "dark") setTheme(cur);
+    }, 0);
+    return () => window.clearTimeout(id);
+  }, []);
+  const toggleTheme = () => {
+    setTheme((prev) => {
+      const next = prev === "dark" ? "light" : "dark";
+      document.documentElement.setAttribute("data-theme", next);
+      try { localStorage.setItem("bd-theme", next); } catch { /* yoksay */ }
+      return next;
+    });
+  };
+
+  const changeLang = (l: Lang) => {
+    setLang(l);
+    try { localStorage.setItem("bd-lang", l); } catch { /* yoksay */ }
+  };
+
+  /* Açılışta: kayıtlı seçim > Fransızca tarayıcı dili > TR.
+     Site öncelikle Türkiye'deki okur, basın ve yayınevlerine sesleniyor. */
+  useEffect(() => {
+    const id = window.setTimeout(() => {
+      let next: Lang | null = null;
+      try {
+        const saved = localStorage.getItem("bd-lang");
+        if (saved === "tr" || saved === "en" || saved === "fr") next = saved;
+      } catch { /* yoksay */ }
+      if (!next) {
+        const nav = (navigator.language || "").toLowerCase();
+        next = nav.startsWith("fr") ? "fr" : "tr";
+      }
+      setLang(next);
+    }, 0);
+    return () => window.clearTimeout(id);
+  }, []);
+
+  useEffect(() => { document.documentElement.lang = lang; }, [lang]);
+
+  /* Menü scroll'da katılaşır */
+  useEffect(() => {
+    const onScroll = () => { if (navRef.current) navRef.current.dataset.solid = window.scrollY > 40 ? "1" : "0"; };
+    onScroll(); window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  /* İmleç ışığı — sayfa geneli, gecikmeli takip (yalnız masaüstü) */
+  const glowRef = useRef<HTMLDivElement | null>(null);
+  useEffect(() => {
+    if (!window.matchMedia("(pointer: fine)").matches) return;
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    const el = glowRef.current; if (!el) return;
+    let tx = innerWidth / 2, ty = innerHeight / 2, x = tx, y = ty, raf = 0, seen = false;
+    const tick = () => {
+      x += (tx - x) * 0.09; y += (ty - y) * 0.09;
+      el.style.transform = `translate(${x.toFixed(1)}px, ${y.toFixed(1)}px)`;
+      raf = requestAnimationFrame(tick);
+    };
+    const onMove = (e: PointerEvent) => {
+      tx = e.clientX; ty = e.clientY;
+      if (!seen) { seen = true; el.style.opacity = "1"; }
+    };
+    document.addEventListener("pointermove", onMove, { passive: true });
+    raf = requestAnimationFrame(tick);
+    return () => { document.removeEventListener("pointermove", onMove); cancelAnimationFrame(raf); };
+  }, []);
+
+  /* Mikro-etkileşimler: mıknatıs butonlar + kartlarda ışık takibi (yalnız masaüstü) */
+  useEffect(() => {
+    if (!window.matchMedia("(pointer: fine)").matches) return;
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    let magnet: HTMLElement | null = null;
+    const onMove = (e: PointerEvent) => {
+      const el = e.target as HTMLElement | null;
+      const btn = el?.closest?.(".cg-btn") as HTMLElement | null;
+      if (magnet && magnet !== btn) { magnet.style.translate = ""; magnet = null; }
+      if (btn) {
+        const r = btn.getBoundingClientRect();
+        const dx = ((e.clientX - r.left) / r.width - 0.5) * 6;
+        const dy = ((e.clientY - r.top) / r.height - 0.5) * 5;
+        btn.style.translate = `${dx.toFixed(1)}px ${dy.toFixed(1)}px`;
+        magnet = btn;
+      }
+      const card = el?.closest?.(".bento-card, .prj-card, .cg-playlist, .cg-review-card") as HTMLElement | null;
+      if (card) {
+        const r = card.getBoundingClientRect();
+        card.style.setProperty("--mx", `${e.clientX - r.left}px`);
+        card.style.setProperty("--my", `${e.clientY - r.top}px`);
+      }
+    };
+    document.addEventListener("pointermove", onMove, { passive: true });
+    return () => { document.removeEventListener("pointermove", onMove); if (magnet) magnet.style.translate = ""; };
+  }, []);
+
+  const navLinks: [string, string][] = [
+    ["/kitaplar", t.nav.books],
+    ["/sozler", t.nav.sozler],
+    ["/deneyimler", t.nav.experiences],
+    ["/film", t.nav.film],
+    ["/yazilar", t.nav.writing],
+    ["/hakkimda", t.nav.about],
+    ["/#contact", t.nav.contact],
+  ];
+  const menuLinks: [string, string][] = [
+    ...navLinks.slice(0, 5),
+    ["/medya", t.nav.media],
+    ["/projeler", t.nav.projects],
+    ["/takvim", lang === "tr" ? "Köz Takvimi" : lang === "fr" ? "Calendrier" : "Calendar"],
+    ["/sozluk", lang === "tr" ? "Sözlük" : lang === "fr" ? "Lexique" : "Lexicon"],
+    ["/#contact", t.nav.contact],
+  ];
+
+  return (
+    <div>
+      {/* İMLEÇ IŞIĞI */}
+      <div ref={glowRef} className="cg-cursor-glow" aria-hidden="true" />
+
+      {/* MENÜ */}
+      <nav ref={navRef as React.RefObject<HTMLElement>} className="cg-nav cg" data-solid="0">
+        <Link href="/" style={{ display: "inline-flex", alignItems: "center", gap: "0.6rem", fontFamily: "var(--font-grotesk)", fontWeight: 700, fontSize: "0.95rem", letterSpacing: "0.02em" }}>
+          <Muhur size={22} />
+          Berkay Doğan
+        </Link>
+        <div className="cg-nav-links">
+          {navLinks.map(([href, label]) =>
+            href === "/sozler" ? (
+              <div key={href} className="cg-drop">
+                <a href={href} className="cg-link">{label} ▾</a>
+                <div className="cg-drop-menu">
+                  <a href="/sozler">{lang === "tr" ? "Tüm sözler" : lang === "fr" ? "Tous les vers" : "All verses"}</a>
+                  <a href="/takvim">{lang === "tr" ? "Köz Takvimi" : lang === "fr" ? "Calendrier" : "Calendar"}</a>
+                  <a href="/sozluk">{lang === "tr" ? "Kavramlar Sözlüğü" : lang === "fr" ? "Lexique" : "Lexicon"}</a>
+                  <a href="/posterler">{lang === "tr" ? "Posterler" : lang === "fr" ? "Affiches" : "Posters"}</a>
+                  <a href="/gom">{lang === "tr" ? "Sitene göm" : lang === "fr" ? "Intégrer" : "Embed"}</a>
+                </div>
+              </div>
+            ) : (
+              <a key={href} href={href} className="cg-link">{label}</a>
+            )
+          )}
+        </div>
+        <div className="cg-actions">
+          <div className="cg-lang">
+            {LANGS.map((l) => (
+              <button key={l} data-on={l === lang ? "1" : "0"} onClick={() => changeLang(l)} aria-label={l.toUpperCase()}>{l.toUpperCase()}</button>
+            ))}
+          </div>
+          <button className="cg-theme" onClick={toggleTheme} aria-label={theme === "dark" ? "Light theme" : "Dark theme"}>{theme === "dark" ? "☀" : "☾"}</button>
+          <button className="cg-burger" onClick={() => setMenuOpen(true)} aria-label="Menu" aria-expanded={menuOpen}>Menu</button>
+        </div>
+      </nav>
+
+      {menuOpen && (
+        <div className="cg-menu" role="dialog" aria-modal="true">
+          <button className="cg-menu-close" onClick={() => setMenuOpen(false)} aria-label="Close">✕</button>
+          {menuLinks.map(([href, label]) => (
+            <a key={href + label} href={href} onClick={() => setMenuOpen(false)}>{label}</a>
+          ))}
+        </div>
+      )}
+
+      {children(lang, t)}
+
+      {/* ALTBİLGİ — dergi künyesi + keşfet (site içi bağlantı ağı) */}
+      <footer className="ed-footer cg">
+        <div className="ed-footer-grid">
+          <div>
+            <p className="ed-footer-motto">
+              {lang === "tr" ? "Yazmak, varoluşun en sessiz itirafıdır." : lang === "fr" ? "Écrire est l'aveu le plus silencieux de l'existence." : "Writing is the quietest confession of existence."}
+            </p>
+          </div>
+          <div>
+            <p className="ed-footer-head">{lang === "tr" ? "Oku" : lang === "fr" ? "Lire" : "Read"}</p>
+            <a href="/kitaplar">{t.nav.books}</a>
+            <a href="/sozler">{t.nav.sozler}</a>
+            <a href="/yazilar">{t.nav.writing}</a>
+            <a href="/sozluk">{lang === "tr" ? "Kavramlar Sözlüğü" : lang === "fr" ? "Lexique" : "Lexicon"}</a>
+          </div>
+          <div>
+            <p className="ed-footer-head">{lang === "tr" ? "Deneyimle" : lang === "fr" ? "Vivre" : "Experience"}</p>
+            <a href="/deneyimler">{t.nav.experiences}</a>
+            <a href="/takvim">{lang === "tr" ? "Köz Takvimi" : lang === "fr" ? "Calendrier" : "Calendar"}</a>
+            <a href="/posterler">{lang === "tr" ? "Posterler" : lang === "fr" ? "Affiches" : "Posters"}</a>
+            <a href="/gom">{lang === "tr" ? "Sitene göm" : lang === "fr" ? "Intégrer" : "Embed"}</a>
+          </div>
+          <div>
+            <p className="ed-footer-head">{lang === "tr" ? "Bağlan" : lang === "fr" ? "Contact" : "Connect"}</p>
+            <a href="/hakkimda">{t.nav.about}</a>
+            <a href="/medya">{t.nav.media}</a>
+            <a href="/projeler">{t.nav.projects}</a>
+            <a href="/press">{lang === "tr" ? "Basın Odası" : lang === "fr" ? "Presse" : "Press Room"}</a>
+          </div>
+        </div>
+        <div className="ed-footer-bottom">
+          <span>© 2026 Berkay Doğan</span>
+          <span>İstanbul — {lang === "tr" ? "Şair & Yazar" : lang === "fr" ? "Poète & Écrivain" : "Poet & Writer"}</span>
+        </div>
+      </footer>
+    </div>
+  );
+}

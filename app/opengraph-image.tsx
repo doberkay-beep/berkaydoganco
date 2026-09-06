@@ -1,0 +1,46 @@
+import { ImageResponse } from "next/og";
+
+export const size = { width: 1200, height: 630 };
+export const contentType = "image/png";
+export const alt = "Berkay Doğan — Şair & Yazar";
+export const dynamic = "force-static";
+
+export default function OG() {
+  return new ImageResponse(
+    (
+      <div
+        style={{
+          height: "100%",
+          width: "100%",
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "space-between",
+          background: "#FAF9F6",
+          padding: "72px 84px",
+          fontFamily: "sans-serif",
+        }}
+      >
+        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start" }}>
+          <div style={{ display: "flex", alignItems: "center", gap: 18, color: "#14120F", fontSize: 27, letterSpacing: 7 }}>
+            <div style={{ width: 16, height: 16, borderRadius: 8, background: "#E5402A" }} />
+            ŞAİR &amp; YAZAR — İSTANBUL
+          </div>
+          {/* BD mührü */}
+          <div style={{ display: "flex", alignItems: "center", justifyContent: "center", width: 92, height: 92, borderRadius: 46, border: "4px solid #14120F", position: "relative" }}>
+            <div style={{ fontSize: 38, fontWeight: 800, color: "#14120F", letterSpacing: -2 }}>BD</div>
+            <div style={{ position: "absolute", top: -10, left: 36, width: 16, height: 16, borderRadius: 8, background: "#E5402A" }} />
+          </div>
+        </div>
+        <div style={{ display: "flex", flexDirection: "column" }}>
+          <div style={{ fontSize: 156, fontWeight: 800, color: "#14120F", lineHeight: 1, letterSpacing: -5 }}>Berkay Doğan</div>
+          <div style={{ fontSize: 46, color: "#6B675F", marginTop: 26 }}>Yazmak, varoluşun en sessiz itirafıdır.</div>
+        </div>
+        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", color: "#14120F", fontSize: 27 }}>
+          <div>berkaydogan.co</div>
+          <div style={{ color: "#E5402A", fontWeight: 700 }}>Tasfiye — Ağustos 2026</div>
+        </div>
+      </div>
+    ),
+    size
+  );
+}
