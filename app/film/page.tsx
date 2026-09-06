@@ -1,13 +1,19 @@
 import type { Metadata } from "next";
-import Film from "@/components/Film";
+import FilmFragman from "@/components/FilmFragman";
 
 export const metadata: Metadata = {
   title: { absolute: "Film — Berkay Doğan" },
-  description: "Sitenin 35 saniyelik sinematik tanıtımı: mühür, daktilo, mahkeme, leke, köz — ve Tasfiye.",
+  description: "Tasfiye'nin 50 saniyelik sinematik fragmanı: İstanbul gecesi, daktilo, hüküm ve közler. Gerçek çekim, özgün skor.",
   alternates: { canonical: "/film" },
-  robots: { index: false, follow: true },
+  openGraph: {
+    title: "Tasfiye — Film",
+    description: "50 saniyelik sinematik fragman: İstanbul gecesi, daktilo, hüküm ve közler.",
+    url: "https://www.berkaydogan.co/film",
+    type: "website",
+    images: [{ url: "https://www.berkaydogan.co/film/fragman-poster.jpg" }],
+  },
 };
 
 export default function FilmPage() {
-  return <Film />;
+  return <FilmFragman />;
 }
