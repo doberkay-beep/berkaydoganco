@@ -24,8 +24,9 @@ export function Reveal({ children, as: Tag = "div", delay = 0, className, style 
   }, []);
   return (
     <Tag ref={ref} className={className} style={{
-      opacity: shown ? 1 : 0, transform: shown ? "translateY(0)" : "translateY(24px)",
-      transition: `opacity 0.9s cubic-bezier(0.22,1,0.36,1) ${delay}s, transform 0.9s cubic-bezier(0.22,1,0.36,1) ${delay}s`, ...style,
+      opacity: shown ? 1 : 0, transform: shown ? "translateY(0)" : "translateY(28px)",
+      filter: shown ? "blur(0)" : "blur(7px)",
+      transition: `opacity 0.95s cubic-bezier(0.22,1,0.36,1) ${delay}s, transform 0.95s cubic-bezier(0.22,1,0.36,1) ${delay}s, filter 0.95s cubic-bezier(0.22,1,0.36,1) ${delay}s`, ...style,
     }}>{children}</Tag>
   );
 }
@@ -93,6 +94,27 @@ export function Kabuk({ children }: { children: (lang: Lang, t: Copy) => React.R
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  /* İmleç ışığı — sayfa geneli, gecikmeli takip (yalnız masaüstü) */
+  const glowRef = useRef<HTMLDivElement | null>(null);
+  useEffect(() => {
+    if (!window.matchMedia("(pointer: fine)").matches) return;
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    const el = glowRef.current; if (!el) return;
+    let tx = innerWidth / 2, ty = innerHeight / 2, x = tx, y = ty, raf = 0, seen = false;
+    const tick = () => {
+      x += (tx - x) * 0.09; y += (ty - y) * 0.09;
+      el.style.transform = `translate(${x.toFixed(1)}px, ${y.toFixed(1)}px)`;
+      raf = requestAnimationFrame(tick);
+    };
+    const onMove = (e: PointerEvent) => {
+      tx = e.clientX; ty = e.clientY;
+      if (!seen) { seen = true; el.style.opacity = "1"; }
+    };
+    document.addEventListener("pointermove", onMove, { passive: true });
+    raf = requestAnimationFrame(tick);
+    return () => { document.removeEventListener("pointermove", onMove); cancelAnimationFrame(raf); };
+  }, []);
+
   /* Mikro-etkileşimler: mıknatıs butonlar + kartlarda ışık takibi (yalnız masaüstü) */
   useEffect(() => {
     if (!window.matchMedia("(pointer: fine)").matches) return;
@@ -140,6 +162,9 @@ export function Kabuk({ children }: { children: (lang: Lang, t: Copy) => React.R
 
   return (
     <div>
+      {/* İMLEÇ IŞIĞI */}
+      <div ref={glowRef} className="cg-cursor-glow" aria-hidden="true" />
+
       {/* MENÜ */}
       <nav ref={navRef as React.RefObject<HTMLElement>} className="cg-nav cg" data-solid="0">
         <Link href="/" style={{ display: "inline-flex", alignItems: "center", gap: "0.6rem", fontFamily: "var(--font-grotesk)", fontWeight: 700, fontSize: "0.95rem", letterSpacing: "0.02em" }}>

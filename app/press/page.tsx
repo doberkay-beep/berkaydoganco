@@ -77,8 +77,8 @@ const SSS: { s: string; c: string }[] = [
 ];
 
 const RENKLER: { ad: string; hex: string }[] = [
-  { ad: "Mürekkep (zemin)", hex: "#0b0a09" },
-  { ad: "Krem (metin)", hex: "#F1EDE4" },
+  { ad: "Saf siyah (zemin)", hex: "#050505" },
+  { ad: "Beyaz (metin)", hex: "#FAFAFA" },
   { ad: "Köz (vurgu)", hex: "#E5402A" },
 ];
 
@@ -269,8 +269,8 @@ export default function PressPage() {
         <p style={secBaslik}>Marka · Görsel dil</p>
         <div style={{ display: "flex", gap: "2.5rem", flexWrap: "wrap", alignItems: "flex-start" }}>
           <div style={{ display: "flex", alignItems: "center", gap: "1rem" }}>
-            <span style={{ display: "inline-flex", padding: "0.9rem", background: "#0b0a09", borderRadius: "14px", border: "1px solid var(--line)" }}>
-              <Muhur size={54} style={{ color: "#F1EDE4" }} />
+            <span style={{ display: "inline-flex", padding: "0.9rem", background: "#050505", borderRadius: "14px", border: "1px solid var(--line)" }}>
+              <Muhur size={54} style={{ color: "#FAFAFA" }} />
             </span>
             <div>
               <p style={{ fontFamily: "var(--font-grotesk)", fontWeight: 700, fontSize: "0.95rem", color: "var(--ink)" }}>BD mührü</p>
@@ -287,7 +287,7 @@ export default function PressPage() {
             ))}
           </div>
           <div style={{ fontSize: "0.85rem", color: "var(--muted)", lineHeight: 1.7 }}>
-            <p><strong style={{ color: "var(--ink)" }}>Başlık:</strong> Space Grotesk</p>
+            <p><strong style={{ color: "var(--ink)" }}>Başlık:</strong> Instrument Sans</p>
             <p><strong style={{ color: "var(--ink)" }}>Edebi vurgu:</strong> Fraunces (italik)</p>
           </div>
         </div>

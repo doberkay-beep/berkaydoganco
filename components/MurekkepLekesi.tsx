@@ -205,7 +205,7 @@ export default function MurekkepLekesi() {
     const c = document.createElement("canvas"); c.width = W; c.height = H;
     const ctx = c.getContext("2d"); if (!ctx) return;
     const serif = "Fraunces, Georgia, serif";
-    const grotesk = "'Space Grotesk', 'Helvetica Neue', Arial, sans-serif";
+    const grotesk = "'Instrument Sans', 'Helvetica Neue', Arial, sans-serif";
 
     const bg = ctx.createRadialGradient(W / 2, -100, 80, W / 2, H * 0.5, H);
     bg.addColorStop(0, "#241a13"); bg.addColorStop(0.5, "#0b0a09"); bg.addColorStop(1, "#060504");

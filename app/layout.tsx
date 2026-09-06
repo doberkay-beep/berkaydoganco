@@ -1,13 +1,13 @@
 import type { Metadata } from "next";
-import { Space_Grotesk, Fraunces } from "next/font/google";
+import { Instrument_Sans, Fraunces } from "next/font/google";
 import "./globals.css";
 import { Analytics } from "@vercel/analytics/next";
 import { MurekkepIz } from "@/components/MurekkepIz";
 
-// UI / başlık / etiket — modern grotesk (CSS'te var(--font-grotesk))
-const grotesk = Space_Grotesk({
+// UI / etiket / buton — zarif modern sans (CSS değişkeni tarihsel olarak --font-grotesk)
+const grotesk = Instrument_Sans({
   subsets: ["latin", "latin-ext"],
-  weight: ["400", "500", "700"],
+  weight: ["400", "500", "600", "700"],
   variable: "--font-grotesk",
   display: "swap",
 });
