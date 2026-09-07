@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Instrument_Sans, Fraunces } from "next/font/google";
 import "./globals.css";
 import { Analytics } from "@vercel/analytics/next";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import { MurekkepIz } from "@/components/MurekkepIz";
 
 // UI / etiket / buton — zarif modern sans (CSS değişkeni tarihsel olarak --font-grotesk)
@@ -73,6 +74,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         {children}
         <MurekkepIz />
         <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );
