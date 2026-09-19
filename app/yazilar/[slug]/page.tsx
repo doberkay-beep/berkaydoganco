@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { YAZILAR } from "@/lib/yazilar";
+import { YAZILAR, YAYINDA } from "@/lib/yazilar";
 import { MEDIA, SUBSTACK_URL } from "@/lib/site";
 
 export const dynamic = "force-static";
@@ -36,6 +36,9 @@ export default async function YaziPage({ params }: { params: Promise<{ slug: str
   const { slug } = await params;
   const y = YAZILAR.find((x) => x.slug === slug);
   if (!y) notFound();
+
+  // İlgili/diğer yazılar — iç link ağı (yayında olanlar, kendisi hariç).
+  const digerYazilar = YAYINDA.filter((x) => x.slug !== y.slug).slice(0, 3);
 
   const jsonLd = {
     "@context": "https://schema.org",
@@ -105,6 +108,19 @@ export default async function YaziPage({ params }: { params: Promise<{ slug: str
       </article>
 
       <footer style={{ marginTop: "clamp(2.5rem, 6vh, 4rem)", borderTop: "1px solid var(--line)", paddingTop: "2rem", display: "flex", flexDirection: "column", gap: "1.25rem" }}>
+        {digerYazilar.length > 0 && (
+          <div style={{ display: "flex", flexDirection: "column", gap: "0.9rem", marginBottom: "0.5rem" }}>
+            <h2 style={{ fontFamily: "var(--font-grotesk)", fontSize: "0.66rem", fontWeight: 500, letterSpacing: "0.16em", textTransform: "uppercase", color: "var(--muted)" }}>
+              Diğer yazılar
+            </h2>
+            {digerYazilar.map((o) => (
+              <Link key={o.slug} href={`/yazilar/${o.slug}`} style={{ display: "block", color: "var(--ink)" }}>
+                <span style={{ fontFamily: "var(--font-serif)", fontStyle: "italic", fontSize: "1.1rem" }}>{o.title}</span>
+                <span style={{ display: "block", fontSize: "0.85rem", color: "var(--muted)", marginTop: "0.2rem" }}>{o.dek}</span>
+              </Link>
+            ))}
+          </div>
+        )}
         {y.substackUrl && (
           <p style={{ fontSize: "0.85rem", color: "var(--muted)" }}>
             Bu yazı ilk olarak{" "}

@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { SOZLER, sozSlug, sozBul, KITAP_ADI, TEMA_ADI } from "@/lib/sozler";
+import { SOZLER, sozSlug, sozBul, KITAP_ADI, TEMA_ADI, ilgiliSozler } from "@/lib/sozler";
 import { SozAksiyon } from "@/components/SozAksiyon";
 
 export const dynamic = "force-static";
@@ -38,6 +38,7 @@ export default async function SozPage({ params }: { params: Promise<{ slug: stri
   const idx = SOZLER.indexOf(soz);
   const onceki = SOZLER[(idx - 1 + SOZLER.length) % SOZLER.length];
   const sonraki = SOZLER[(idx + 1) % SOZLER.length];
+  const ilgili = ilgiliSozler(soz, 6);
   const kaynakMetni = `${KITAP_ADI[soz.k]}${soz.p ? `, s. ${soz.p}` : ""}`;
   const kitapSayfa = soz.k === "mvk" ? "/kitaplar/murekkep-ve-koz" : "/kitaplar/tasfiye";
   const gitKanal = soz.k === "mvk" ? "mvk-trendyol" : "trendyol";
@@ -106,6 +107,25 @@ export default async function SozPage({ params }: { params: Promise<{ slug: stri
           <span style={{ color: "var(--accent)" }} aria-hidden="true">→</span>
         </a>
       </article>
+
+      {ilgili.length > 0 && (
+        <section style={{ borderTop: "1px solid var(--line)", paddingTop: "1.75rem", marginBottom: "1.5rem" }} aria-label="İlgili sözler">
+          <h2 style={{ ...mono, fontSize: "0.66rem", color: "var(--muted)", marginBottom: "1rem" }}>İlgili sözler</h2>
+          <ul style={{ listStyle: "none", margin: 0, padding: 0, display: "flex", flexDirection: "column", gap: "0.9rem" }}>
+            {ilgili.map((o) => (
+              <li key={sozSlug(o.s)}>
+                <Link
+                  href={`/soz/${sozSlug(o.s)}`}
+                  style={{ fontFamily: "var(--font-serif)", fontStyle: "italic", fontSize: "1.02rem", lineHeight: 1.5, color: "var(--ink)", borderBottom: "1px solid transparent" }}
+                >
+                  &ldquo;{o.s}&rdquo;
+                </Link>{" "}
+                <span style={{ ...mono, fontSize: "0.58rem", color: "var(--muted)" }}>{KITAP_ADI[o.k]}</span>
+              </li>
+            ))}
+          </ul>
+        </section>
+      )}
 
       <nav style={{ display: "flex", justifyContent: "space-between", gap: "1rem", borderTop: "1px solid var(--line)", paddingTop: "1.5rem" }} aria-label="Sözler arası gezinme">
         <Link href={`/soz/${sozSlug(onceki.s)}`} style={{ ...mono, fontSize: "0.68rem", color: "var(--muted)", maxWidth: "45%" }}>← önceki söz</Link>

@@ -266,3 +266,14 @@ export const TEMALAR = Object.keys(TEMA_ADI);
 export function sozBul(slug: string): Soz | undefined {
   return SOZLER.find((x) => sozSlug(x.s) === slug);
 }
+
+// İlgili sözler — ortak temaya göre (iç link ağı). Kendisi hariç, en çok
+// tema paylaşanlar önce; deterministik (SSR/statik export güvenli).
+export function ilgiliSozler(soz: Soz, n = 6): Soz[] {
+  const puanli = SOZLER.filter((x) => x !== soz)
+    .map((x) => ({ x, ortak: x.t.filter((t) => soz.t.includes(t)).length }))
+    .filter((o) => o.ortak > 0)
+    .sort((a, b) => b.ortak - a.ortak || SOZLER.indexOf(a.x) - SOZLER.indexOf(b.x));
+  return puanli.slice(0, n).map((o) => o.x);
+}
+
