@@ -23,6 +23,9 @@ export function PersonSchema() {
         url: SITE,
         image: `${SITE}/images/portre.jpg`,
         jobTitle: "Şair ve yazar",
+        description:
+          "İstanbul'da yaşayan şair ve yazar. Kitapları: Mürekkep ve Köz (şiir) ve Tasfiye (deneme).",
+        knowsAbout: ["Şiir", "Deneme", "Türk edebiyatı", "Modern Türk şiiri"],
         nationality: "TR",
         homeLocation: { "@type": "Place", name: "İstanbul, Türkiye" },
         sameAs: [
