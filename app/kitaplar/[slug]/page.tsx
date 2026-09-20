@@ -25,7 +25,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
       description: k.desc,
       url: `${SITE}/kitaplar/${k.slug}`,
       type: "book",
-      images: [{ url: `${SITE}${k.kapak}` }],
+      // Görsel: dosya-tabanlı opengraph-image.tsx (1200×630 markalı kart) otomatik kullanılır.
     },
   };
 }

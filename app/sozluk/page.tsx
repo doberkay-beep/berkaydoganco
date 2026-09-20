@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { KAVRAMLAR } from "@/lib/sozluk";
+import { KAVRAMLAR, kavramSlug } from "@/lib/sozluk";
 import { sozSlug, KITAP_ADI } from "@/lib/sozler";
 
 export const metadata: Metadata = {
@@ -50,7 +50,9 @@ export default function SozlukPage() {
       <section style={{ marginTop: "clamp(2.5rem, 6vh, 4rem)" }}>
         {KAVRAMLAR.map((kv) => (
           <article key={kv.ad} style={{ padding: "1.75rem 0", borderTop: "1px solid var(--line)" }}>
-            <h2 style={{ fontFamily: "var(--font-grotesk)", fontWeight: 700, fontSize: "1.35rem", letterSpacing: "-0.02em", color: "var(--accent)" }}>{kv.ad}</h2>
+            <h2 style={{ fontFamily: "var(--font-grotesk)", fontWeight: 700, fontSize: "1.35rem", letterSpacing: "-0.02em" }}>
+              <Link href={`/sozluk/${kavramSlug(kv.ad)}`} style={{ color: "var(--accent)" }}>{kv.ad}</Link>
+            </h2>
             <blockquote style={{ margin: "0.75rem 0 0", fontFamily: "var(--font-serif)", fontStyle: "italic", fontWeight: 300, fontSize: "clamp(1.1rem, 2.3vw, 1.4rem)", lineHeight: 1.55, color: "var(--ink)" }}>
               &ldquo;{kv.tanim}&rdquo;
             </blockquote>

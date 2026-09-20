@@ -12,6 +12,23 @@ function JsonLd({ data }: { data: object }) {
   );
 }
 
+/** Ana sayfa — WebSite (site kimliği + yazar entity'sine bağ) */
+export function WebSiteSchema() {
+  return (
+    <JsonLd
+      data={{
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "@id": `${SITE}/#website`,
+        url: `${SITE}/`,
+        name: "Berkay Doğan",
+        inLanguage: "tr",
+        publisher: { "@id": PERSON_ID },
+      }}
+    />
+  );
+}
+
 /** Ana sayfa — Person */
 export function PersonSchema() {
   return (

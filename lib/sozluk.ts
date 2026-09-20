@@ -32,3 +32,18 @@ export const KAVRAMLAR: Kavram[] = [
   { ad: "Kökler", tanim: "İnsanın kökleri ayaklarında değil, zihnindedir.", k: "tas", p: 103 },
   { ad: "Çaba", tanim: "Çaba, hak edenlere verilen çok nadide bir hobidir.", k: "mvk", p: 154 },
 ];
+
+// Kavram → URL slug (sözlerdeki slug mantığıyla aynı, tutarlı olsun).
+import { sozSlug } from "./sozler";
+export const kavramSlug = (ad: string): string => sozSlug(ad);
+
+export function kavramBul(slug: string): Kavram | undefined {
+  return KAVRAMLAR.find((k) => kavramSlug(k.ad) === slug);
+}
+
+// İlgili kavramlar — önce aynı kitaptan, sonra diğerleri. İç link ağı.
+export function ilgiliKavramlar(k: Kavram, n = 6): Kavram[] {
+  const ayni = KAVRAMLAR.filter((x) => x.ad !== k.ad && x.k === k.k);
+  const diger = KAVRAMLAR.filter((x) => x.ad !== k.ad && x.k !== k.k);
+  return [...ayni, ...diger].slice(0, n);
+}
