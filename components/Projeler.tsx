@@ -59,7 +59,7 @@ export function Projeler({ lang }: { lang: Lang }) {
             {p.story.map((s, i) => (
               <p key={i} className="prj-story">{s}</p>
             ))}
-            <a href={NECALIYOR_URL} target="_blank" rel="noopener noreferrer" className="cg-btn cg-btn-fill" style={{ alignSelf: "flex-start", marginTop: "0.4rem" }}>
+            <a href={NECALIYOR_URL} target="_blank" rel="me noopener noreferrer" className="cg-btn cg-btn-fill" style={{ alignSelf: "flex-start", marginTop: "0.4rem" }}>
               {p.cta} →
             </a>
           </div>

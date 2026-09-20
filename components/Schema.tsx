@@ -32,6 +32,7 @@ export function PersonSchema() {
           "https://instagram.com/berkaydgn__",
           "https://youtube.com/@yazarberkaydogan",
           "https://www.goodreads.com/book/show/252900764-m-rekkep-ve-k-z",
+          "https://necaliyor.co",
         ],
       }}
     />

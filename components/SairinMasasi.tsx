@@ -144,7 +144,7 @@ export default function SairinMasasi() {
         </Link>
 
         {/* RADYO (necaliyor) */}
-        <a href="https://www.necaliyor.co" target="_blank" rel="noopener noreferrer">
+        <a href="https://www.necaliyor.co" target="_blank" rel="me noopener noreferrer">
           <g className="sm-obj" {...H("radio")} aria-label={L.radio}>
             <rect x="856" y="342" width="150" height="90" rx="12" fill="#33261b" />
             <rect x="868" y="356" width="70" height="60" rx="6" fill="#1c140d" />
