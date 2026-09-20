@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { MedyaSayfa } from "@/components/BolumSayfalari";
+import { BreadcrumbSchema } from "@/components/Schema";
 
 export const metadata: Metadata = {
   title: { absolute: "Medya — Berkay Doğan" },
@@ -14,5 +15,10 @@ export const metadata: Metadata = {
 };
 
 export default function Sayfa() {
-  return <MedyaSayfa />;
+  return (
+    <>
+      <BreadcrumbSchema name="Medya" path="/medya/" />
+      <MedyaSayfa />
+    </>
+  );
 }

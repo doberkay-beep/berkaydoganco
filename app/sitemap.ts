@@ -9,7 +9,8 @@ export const dynamic = "force-static";
 const SITE = "https://www.berkaydogan.co";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  return [
+  const lastModified = new Date();
+  const girdiler: MetadataRoute.Sitemap = [
     {
       url: `${SITE}/sozler/`,
       changeFrequency: "weekly" as const,
@@ -157,4 +158,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.6,
     },
   ];
+  // Tazelik sinyali: her girdiye son değişiklik tarihi.
+  return girdiler.map((g) => ({ lastModified, ...g }));
 }

@@ -18,6 +18,18 @@ export default function NotFound() {
       <Link href="/" style={{ marginTop: "2.75rem", fontFamily: "var(--font-grotesk)", fontSize: "0.78rem", fontWeight: 500, letterSpacing: "0.1em", padding: "0.9rem 1.6rem", borderRadius: "100px", background: "var(--accent)", color: "var(--accent-ink)" }}>
         ← Back home
       </Link>
+      <nav style={{ marginTop: "1.75rem", display: "flex", gap: "1.25rem", flexWrap: "wrap", justifyContent: "center" }}>
+        {[
+          { href: "/kitaplar", ad: "Kitaplar" },
+          { href: "/yazilar", ad: "Yazılar" },
+          { href: "/sozler", ad: "Sözler" },
+          { href: "/hakkimda", ad: "Hakkımda" },
+        ].map((l) => (
+          <Link key={l.href} href={l.href} style={{ fontFamily: "var(--font-grotesk)", fontSize: "0.72rem", letterSpacing: "0.1em", textTransform: "uppercase", color: "var(--muted)", borderBottom: "1px solid var(--line)", paddingBottom: "2px" }}>
+            {l.ad}
+          </Link>
+        ))}
+      </nav>
     </div>
   );
 }

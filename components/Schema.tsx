@@ -1,7 +1,23 @@
 import { TRENDYOL_URL } from "@/lib/content";
-import { TASFIYE_URL, PERSON_ID, AUTHOR_REF } from "@/lib/site";
+import { TASFIYE_URL, PERSON_ID, AUTHOR_REF, SUBSTACK_URL, YOUTUBE_URL, INSTAGRAM_URL, GOODREADS_URL } from "@/lib/site";
 
 const SITE = "https://www.berkaydogan.co";
+
+// Yeniden kullanılabilir breadcrumb — bölüm sayfaları için (Ana → Bölüm).
+export function BreadcrumbSchema({ name, path }: { name: string; path: string }) {
+  return (
+    <JsonLd
+      data={{
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          { "@type": "ListItem", position: 1, name: "Berkay Doğan", item: `${SITE}/` },
+          { "@type": "ListItem", position: 2, name, item: `${SITE}${path}` },
+        ],
+      }}
+    />
+  );
+}
 
 function JsonLd({ data }: { data: object }) {
   return (
@@ -29,6 +45,23 @@ export function WebSiteSchema() {
   );
 }
 
+/** /hakkimda — ProfilePage (kişi profili; Knowledge Panel için güçlü sinyal) */
+export function ProfilePageSchema() {
+  return (
+    <JsonLd
+      data={{
+        "@context": "https://schema.org",
+        "@type": "ProfilePage",
+        url: `${SITE}/hakkimda/`,
+        name: "Berkay Doğan — Hakkında",
+        mainEntity: { "@id": PERSON_ID },
+        about: { "@id": PERSON_ID },
+        isPartOf: { "@id": `${SITE}/#website` },
+      }}
+    />
+  );
+}
+
 /** Ana sayfa — Person */
 export function PersonSchema() {
   return (
@@ -38,18 +71,25 @@ export function PersonSchema() {
         "@type": "Person",
         "@id": PERSON_ID,
         name: "Berkay Doğan",
+        alternateName: "Berkay Dogan",
         url: SITE,
         image: `${SITE}/images/portre.jpg`,
         jobTitle: "Şair ve yazar",
+        disambiguatingDescription: "Türk şair ve yazar; Mürekkep ve Köz (şiir) ve Tasfiye (deneme) kitaplarının yazarı.",
         description:
           "İstanbul'da yaşayan şair ve yazar. Kitapları: Mürekkep ve Köz (şiir) ve Tasfiye (deneme).",
+        hasOccupation: [
+          { "@type": "Occupation", name: "Yazar" },
+          { "@type": "Occupation", name: "Şair" },
+        ],
         knowsAbout: ["Şiir", "Deneme", "Türk edebiyatı", "Modern Türk şiiri"],
         nationality: "TR",
         homeLocation: { "@type": "Place", name: "İstanbul, Türkiye" },
         sameAs: [
-          "https://instagram.com/berkaydgn__",
-          "https://youtube.com/@yazarberkaydogan",
-          "https://www.goodreads.com/book/show/252900764-m-rekkep-ve-k-z",
+          INSTAGRAM_URL,
+          YOUTUBE_URL,
+          SUBSTACK_URL,
+          GOODREADS_URL,
           "https://necaliyor.co",
         ],
       }}

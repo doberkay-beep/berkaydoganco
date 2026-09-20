@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { SOZLER, sozSlug, KITAP_ADI, TEMA_ADI, TEMALAR } from "@/lib/sozler";
+import { BreadcrumbSchema } from "@/components/Schema";
 
 export const metadata: Metadata = {
   title: { absolute: "Berkay Doğan Sözleri — 200 Söz" },
@@ -19,6 +20,7 @@ const mono: React.CSSProperties = { fontFamily: "var(--font-grotesk)", fontSize:
 export default function SozlerPage() {
   return (
     <main style={{ maxWidth: "860px", margin: "0 auto", padding: "clamp(3rem, 8vh, 6rem) clamp(1.25rem, 5vw, 3.25rem) 6rem" }}>
+      <BreadcrumbSchema name="Sözler" path="/sozler/" />
       <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "clamp(3rem, 8vh, 5rem)", flexWrap: "wrap", gap: "1rem" }}>
         <Link href="/" style={{ fontFamily: "var(--font-grotesk)", fontWeight: 700, letterSpacing: "0.02em", color: "var(--ink)" }}>Berkay Doğan</Link>
         <Link href="/" style={{ ...mono, fontSize: "0.72rem", letterSpacing: "0.14em", color: "var(--muted)", borderBottom: "1px solid var(--accent)", paddingBottom: "2px" }}>← berkaydogan.co</Link>

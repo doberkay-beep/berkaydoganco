@@ -5,6 +5,7 @@ import { KITAPLAR } from "@/lib/kitaplar";
 import { KITAP_ADI } from "@/lib/sozler";
 import { KopyalaMetin } from "@/components/KopyalaMetin";
 import { Muhur } from "@/components/Muhur";
+import { BreadcrumbSchema } from "@/components/Schema";
 
 export const metadata: Metadata = {
   title: { absolute: "Basın Odası — Berkay Doğan" },
@@ -109,6 +110,7 @@ function Bio({ baslik, metin }: { baslik: string; metin: string }) {
 export default function PressPage() {
   return (
     <main lang="tr" style={{ maxWidth: "980px", margin: "0 auto", padding: "clamp(3rem, 8vh, 6rem) clamp(1.25rem, 5vw, 3.25rem) 6rem" }}>
+      <BreadcrumbSchema name="Basın" path="/press/" />
       <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "clamp(3rem, 8vh, 5rem)", flexWrap: "wrap", gap: "1rem" }}>
         <Link href="/" style={{ display: "inline-flex", alignItems: "center", gap: "0.6rem", fontFamily: "var(--font-grotesk)", fontWeight: 700, letterSpacing: "0.02em", color: "var(--ink)" }}>
           <Muhur size={22} /> Berkay Doğan

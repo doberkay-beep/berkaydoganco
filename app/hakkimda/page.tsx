@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { HakkimdaSayfa } from "@/components/BolumSayfalari";
+import { PersonSchema, ProfilePageSchema } from "@/components/Schema";
 
 export const metadata: Metadata = {
   title: { absolute: "Hakkımda — Berkay Doğan" },
@@ -14,5 +15,11 @@ export const metadata: Metadata = {
 };
 
 export default function Sayfa() {
-  return <HakkimdaSayfa />;
+  return (
+    <>
+      <PersonSchema />
+      <ProfilePageSchema />
+      <HakkimdaSayfa />
+    </>
+  );
 }
