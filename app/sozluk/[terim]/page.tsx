@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import { KAVRAMLAR, kavramSlug, kavramBul, ilgiliKavramlar } from "@/lib/sozluk";
 import { sozSlug, KITAP_ADI } from "@/lib/sozler";
 import { AUTHOR_REF } from "@/lib/site";
+import { Paylas } from "@/components/Paylas";
 
 export const dynamic = "force-static";
 
@@ -102,6 +103,10 @@ export default async function KavramPage({ params }: { params: Promise<{ terim: 
           bu cümlenin sayfası →
         </Link>
       </p>
+
+      <div style={{ marginTop: "1.8rem" }}>
+        <Paylas url={`/sozluk/${terim}`} title={`${k.ad} nedir? — Berkay Doğan`} />
+      </div>
 
       <section style={{ marginTop: "clamp(2.75rem, 7vh, 4.5rem)", borderTop: "1px solid var(--line)", paddingTop: "2rem" }}>
         <h2 style={{ ...mono, fontSize: "0.66rem", color: "var(--muted)", marginBottom: "1.2rem" }}>Diğer kavramlar</h2>

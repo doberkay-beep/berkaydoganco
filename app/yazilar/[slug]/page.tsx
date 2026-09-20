@@ -3,6 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { YAZILAR, YAYINDA } from "@/lib/yazilar";
 import { MEDIA, SUBSTACK_URL, AUTHOR_REF } from "@/lib/site";
+import { Paylas } from "@/components/Paylas";
 
 export const dynamic = "force-static";
 
@@ -150,6 +151,7 @@ export default async function YaziPage({ params }: { params: Promise<{ slug: str
             style={{ display: "inline-flex", alignItems: "center", gap: "0.5rem", fontFamily: "var(--font-grotesk)", fontSize: "0.78rem", fontWeight: 500, letterSpacing: "0.08em", padding: "0.9rem 1.5rem", borderRadius: "100px", border: "1px solid var(--line)", color: "var(--ink)" }}>
             Tüm yazılar
           </Link>
+          <Paylas url={`/yazilar/${y.slug}`} title={`${y.title} — Berkay Doğan`} />
         </div>
       </footer>
     </main>

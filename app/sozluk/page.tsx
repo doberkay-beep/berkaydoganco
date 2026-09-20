@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { KAVRAMLAR, kavramSlug } from "@/lib/sozluk";
 import { sozSlug, KITAP_ADI } from "@/lib/sozler";
+import { RastgeleKavram } from "@/components/RastgeleKavram";
 
 export const metadata: Metadata = {
   title: { absolute: "Kavramlar Sözlüğü — Berkay Doğan" },
@@ -46,6 +47,9 @@ export default function SozlukPage() {
       <p style={{ fontFamily: "var(--font-serif)", fontStyle: "italic", fontWeight: 300, fontSize: "clamp(1.15rem, 2.4vw, 1.6rem)", color: "var(--muted)", maxWidth: "44ch" }}>
         Kitaplardaki anahtar kavramlar — sözlük tanımıyla değil, yazarın kendi cümlesiyle.
       </p>
+      <div style={{ marginTop: "1.5rem" }}>
+        <RastgeleKavram slugs={KAVRAMLAR.map((k) => kavramSlug(k.ad))} />
+      </div>
 
       <section style={{ marginTop: "clamp(2.5rem, 6vh, 4rem)" }}>
         {KAVRAMLAR.map((kv) => (
