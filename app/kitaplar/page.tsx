@@ -30,7 +30,7 @@ export default function KitaplarPage() {
       <div className="kl-grid">
         {KITAPLAR.map((k) => (
           <Link key={k.slug} href={`/kitaplar/${k.slug}`} className="kl-card">
-            <img src={k.kapak400} alt={`${k.ad} — kapak`} style={{ width: "100%", border: "1px solid var(--line)", display: "block" }} />
+            <img src={k.kapak400} alt={`${k.ad} — kapak`} loading="lazy" decoding="async" style={{ width: "100%", border: "1px solid var(--line)", display: "block" }} />
             <span style={{ display: "block", fontFamily: "var(--font-serif)", fontSize: "clamp(1.3rem, 3vw, 1.7rem)", color: "var(--ink)", marginTop: "1.1rem" }}>{k.ad}</span>
             <span style={{ display: "block", fontFamily: "var(--font-grotesk)", fontSize: "0.68rem", fontWeight: 500, letterSpacing: "0.16em", textTransform: "uppercase", color: "var(--muted)", marginTop: "0.4rem" }}>{k.tur} · {k.cikis}</span>
           </Link>

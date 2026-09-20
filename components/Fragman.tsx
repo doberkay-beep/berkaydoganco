@@ -239,7 +239,7 @@ export default function Fragman() {
 
       {/* Final */}
       <footer className="fr-final">
-        <img src="/tasfiye-on-kapak.jpg" alt="Tasfiye — kapak" />
+        <img src="/tasfiye-on-kapak.jpg" alt="Tasfiye — kapak" loading="lazy" decoding="async" />
         <span className="fr-out">{L.out}</span>
         <div className="fr-ctas">
           <a href="/git/trendyol/" rel="noopener" className="fr-btn fr-fill">{L.buy} →</a>

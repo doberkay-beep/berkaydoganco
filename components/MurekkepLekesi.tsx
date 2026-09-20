@@ -343,7 +343,7 @@ export default function MurekkepLekesi() {
             <blockquote className="lk-dize">&ldquo;{r.dize}&rdquo;</blockquote>
             <p style={{ fontFamily: "var(--font-grotesk)", fontSize: "0.7rem", letterSpacing: "0.2em", textTransform: "uppercase", color: "#E5402A" }}>{r.kaynak}</p>
             <div className="lk-book">
-              <img src={kitap.kapak} alt={kitap.ad} />
+              <img src={kitap.kapak} alt={kitap.ad} loading="lazy" decoding="async" />
               <span style={{ textAlign: "left" }}>
                 <span style={{ display: "block", fontFamily: "var(--font-grotesk)", fontSize: "0.64rem", letterSpacing: "0.2em", textTransform: "uppercase", color: "#9a948a" }}>{L.bookLabel}</span>
                 <span style={{ display: "block", fontFamily: "var(--font-grotesk)", fontWeight: 700, fontSize: "1.15rem", marginTop: "0.25rem" }}>{kitap.ad}</span>

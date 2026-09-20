@@ -167,7 +167,7 @@ export default function PressPage() {
           {KITAPLAR.map((kitap) => (
             <article key={kitap.slug} style={{ border: "1px solid var(--line)", borderRadius: "14px", padding: "1.5rem 1.6rem", background: "var(--bg-2)" }}>
               <div style={{ display: "flex", gap: "1.1rem", alignItems: "flex-start" }}>
-                <img src={kitap.kapak400} alt={`${kitap.ad} — kapak`} style={{ width: "76px", borderRadius: "3px", boxShadow: "0 12px 26px rgba(0,0,0,0.35)" }} />
+                <img src={kitap.kapak400} alt={`${kitap.ad} — kapak`} loading="lazy" decoding="async" style={{ width: "76px", borderRadius: "3px", boxShadow: "0 12px 26px rgba(0,0,0,0.35)" }} />
                 <div>
                   <h3 style={{ fontFamily: "var(--font-grotesk)", fontWeight: 700, fontSize: "1.25rem", letterSpacing: "-0.02em", color: "var(--ink)" }}>{kitap.ad}</h3>
                   <p style={{ fontFamily: "var(--font-serif)", fontStyle: "italic", fontSize: "0.92rem", color: "var(--muted)", marginTop: "0.2rem" }}>{kitap.altBaslik}</p>

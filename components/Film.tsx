@@ -505,7 +505,7 @@ export default function Film() {
         {/* 7 — kapak spotla karanlıktan doğar */}
         {sahne === 7 && (
           <div className="fl-sahne">
-            <img className="fl-kapak" src="/tasfiye-on-kapak.jpg" alt="Tasfiye — kapak" />
+            <img className="fl-kapak" src="/tasfiye-on-kapak.jpg" alt="Tasfiye — kapak" loading="lazy" decoding="async" />
             <span className="fl-cikti">Çıktı · Tasfiye</span>
           </div>
         )}
