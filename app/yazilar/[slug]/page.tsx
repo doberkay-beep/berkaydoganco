@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { YAZILAR, YAYINDA } from "@/lib/yazilar";
-import { MEDIA, SUBSTACK_URL } from "@/lib/site";
+import { MEDIA, SUBSTACK_URL, AUTHOR_REF } from "@/lib/site";
 
 export const dynamic = "force-static";
 
@@ -42,15 +42,28 @@ export default async function YaziPage({ params }: { params: Promise<{ slug: str
 
   const jsonLd = {
     "@context": "https://schema.org",
-    "@type": "Article",
-    headline: y.title,
-    description: y.dek,
-    datePublished: y.dateISO,
-    inLanguage: "tr",
-    author: { "@type": "Person", name: "Berkay Doğan", url: SITE },
-    publisher: { "@type": "Person", name: "Berkay Doğan", url: SITE },
-    mainEntityOfPage: `${SITE}/yazilar/${y.slug}/`,
-    image: `${SITE}/opengraph-image`,
+    "@graph": [
+      {
+        "@type": "BlogPosting",
+        headline: y.title,
+        description: y.dek,
+        datePublished: y.dateISO,
+        dateModified: y.dateISO,
+        inLanguage: "tr",
+        author: AUTHOR_REF,
+        publisher: AUTHOR_REF,
+        mainEntityOfPage: `${SITE}/yazilar/${y.slug}/`,
+        image: `${SITE}/opengraph-image`,
+      },
+      {
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          { "@type": "ListItem", position: 1, name: "Berkay Doğan", item: `${SITE}/` },
+          { "@type": "ListItem", position: 2, name: "Yazılar", item: `${SITE}/yazilar/` },
+          { "@type": "ListItem", position: 3, name: y.title, item: `${SITE}/yazilar/${y.slug}/` },
+        ],
+      },
+    ],
   };
 
   return (

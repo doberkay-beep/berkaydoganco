@@ -1,6 +1,19 @@
 export type Lang = "en" | "tr" | "fr";
 export const LANGS: Lang[] = ["en", "tr", "fr"];
 
+// Kanonik site + yazar entity kimliği. Tüm sayfalar aynı Person @id'sine
+// referans versin ki Google "Berkay Doğan" varlığını tek entity olarak
+// birleştirsin (Knowledge Graph / yazar tanınırlığı).
+export const SITE_URL = "https://www.berkaydogan.co";
+export const PERSON_ID = `${SITE_URL}/#person`;
+// Sayfalarda yazar referansı — kendi başına anlamlı + @id ile konsolide.
+export const AUTHOR_REF = {
+  "@type": "Person",
+  "@id": PERSON_ID,
+  name: "Berkay Doğan",
+  url: SITE_URL,
+} as const;
+
 export const TRENDYOL_URL =
   "https://www.trendyol.com/iskenderiye-kitap/murekkep-ve-koz-berkay-dogan-p-1072536167";
 export const SUBSTACK_URL = "https://doberkay.substack.com";

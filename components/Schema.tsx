@@ -1,5 +1,5 @@
 import { TRENDYOL_URL } from "@/lib/content";
-import { TASFIYE_URL } from "@/lib/site";
+import { TASFIYE_URL, PERSON_ID, AUTHOR_REF } from "@/lib/site";
 
 const SITE = "https://www.berkaydogan.co";
 
@@ -19,6 +19,7 @@ export function PersonSchema() {
       data={{
         "@context": "https://schema.org",
         "@type": "Person",
+        "@id": PERSON_ID,
         name: "Berkay Doğan",
         url: SITE,
         image: `${SITE}/images/portre.jpg`,
@@ -47,7 +48,7 @@ export function MurekkepBookSchema() {
         "@context": "https://schema.org",
         "@type": "Book",
         name: "Mürekkep ve Köz: Bir Şairin Hesabı",
-        author: { "@type": "Person", name: "Berkay Doğan", url: SITE },
+        author: AUTHOR_REF,
         publisher: { "@type": "Organization", name: "İskenderiye Yayınları" },
         isbn: "978-625-9620-32-9",
         datePublished: "2025-12",
@@ -75,7 +76,7 @@ export function TasfiyeBookSchema() {
         "@context": "https://schema.org",
         "@type": "Book",
         name: "Tasfiye",
-        author: { "@type": "Person", name: "Berkay Doğan", url: SITE },
+        author: AUTHOR_REF,
         publisher: { "@type": "Organization", name: "İskenderiye Yayınları" },
         isbn: "978-625-9031-24-8",
         numberOfPages: 151,

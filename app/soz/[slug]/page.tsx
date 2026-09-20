@@ -3,6 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { SOZLER, sozSlug, sozBul, KITAP_ADI, TEMA_ADI, ilgiliSozler } from "@/lib/sozler";
 import { SozAksiyon } from "@/components/SozAksiyon";
+import { AUTHOR_REF } from "@/lib/site";
 
 export const dynamic = "force-static";
 
@@ -47,11 +48,11 @@ export default async function SozPage({ params }: { params: Promise<{ slug: stri
     "@context": "https://schema.org",
     "@type": "Quotation",
     text: soz.s,
-    creator: { "@type": "Person", name: "Berkay Doğan", url: SITE },
+    creator: AUTHOR_REF,
     isPartOf: {
       "@type": "Book",
       name: KITAP_ADI[soz.k],
-      author: { "@type": "Person", name: "Berkay Doğan" },
+      author: AUTHOR_REF,
       url: `${SITE}${kitapSayfa}/`,
     },
     inLanguage: "tr",
