@@ -118,17 +118,17 @@ export default function CanliSiir() {
           padding: 1.2rem clamp(1.25rem, 4vw, 3rem); }
         .cs-title { font-family: var(--font-grotesk, sans-serif); font-weight: 700; letter-spacing: -0.02em; font-size: 1rem; color: #F1EDE4; }
         .cs-back { font-family: var(--font-grotesk, sans-serif); font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase; color: #9a948a;
-          border-bottom: 1px solid #E5402A; padding-bottom: 2px; }
+          border-bottom: 1px solid #3A5BD9; padding-bottom: 2px; }
         .cs-stage { position: relative; z-index: 2; max-width: 900px; padding: 2rem; text-align: center;
           transition: opacity ${FADE_MS}ms ease; }
         .cs-stage[data-fade="1"] { opacity: 0; }
         .cs-verse { font-family: var(--font-serif, Georgia, serif); font-style: italic; font-weight: 300;
           font-size: clamp(2rem, 7vw, 4.6rem); line-height: 1.35; color: #F5EFE6; }
         .cs-word { display: inline-block; margin-right: 0.32em; opacity: 0; transform: translateY(14px);
-          filter: blur(6px); animation: csWord 0.9s cubic-bezier(0.22,1,0.36,1) forwards; text-shadow: 0 0 34px rgba(229,64,42,0.3); }
+          filter: blur(6px); animation: csWord 0.9s cubic-bezier(0.22,1,0.36,1) forwards; text-shadow: 0 0 34px rgba(58,91,217,0.3); }
         @keyframes csWord { to { opacity: 1; transform: none; filter: blur(0); } }
         .cs-sign { display: block; margin-top: 2.2rem; font-family: var(--font-grotesk, sans-serif); font-size: 0.7rem;
-          letter-spacing: 0.24em; text-transform: uppercase; color: #E5402A; opacity: 0; animation: csSign 1s ease 0.4s forwards; }
+          letter-spacing: 0.24em; text-transform: uppercase; color: #3A5BD9; opacity: 0; animation: csSign 1s ease 0.4s forwards; }
         @keyframes csSign { to { opacity: 1; } }
         .cs-bar { position: absolute; left: 0; right: 0; bottom: 0; z-index: 3; display: flex; align-items: center; justify-content: center;
           gap: 1.25rem; padding: 1.4rem clamp(1.25rem, 4vw, 3rem) calc(1.4rem + env(safe-area-inset-bottom, 0px)); }
@@ -139,7 +139,7 @@ export default function CanliSiir() {
         .cs-btn:hover { border-color: #F1EDE4; transform: translateY(-2px); }
         .cs-dots { display: flex; gap: 0.45rem; }
         .cs-dot { width: 6px; height: 6px; border-radius: 50%; background: rgba(241,237,228,0.22); transition: background 0.3s ease, transform 0.3s ease; }
-        .cs-dot[data-on="1"] { background: #E5402A; transform: scale(1.35); }
+        .cs-dot[data-on="1"] { background: #3A5BD9; transform: scale(1.35); }
         .cs-hint { position: absolute; left: 0; right: 0; bottom: calc(4.6rem + env(safe-area-inset-bottom, 0px)); text-align: center;
           font-family: var(--font-grotesk, sans-serif); font-size: 0.6rem; letter-spacing: 0.22em; text-transform: uppercase; color: #57534b; pointer-events: none; }
         @media (prefers-reduced-motion: reduce) { .cs-word { animation-duration: 0.01ms; } .cs-sign { animation-duration: 0.01ms; } }
@@ -168,7 +168,7 @@ export default function CanliSiir() {
         </div>
         <button className="cs-btn" onClick={() => { window.clearTimeout(timer.current); advance(); }}>{L.next} →</button>
         <button className="cs-btn" aria-pressed={amb} onClick={toggleAmb}
-          style={amb ? { borderColor: "#E5402A", color: "#E5402A" } : undefined}>♪ {L.amb}</button>
+          style={amb ? { borderColor: "#3A5BD9", color: "#3A5BD9" } : undefined}>♪ {L.amb}</button>
       </div>
     </div>
   );

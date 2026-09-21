@@ -39,11 +39,11 @@ export default function PosterlerPage() {
             style={{ display: "flex", flexDirection: "column", border: "1px solid var(--line)", borderRadius: "10px", overflow: "hidden", background: "var(--bg-2)", transition: "transform 0.3s ease, border-color 0.3s ease" }}>
             {/* Mini önizleme — posterin canlı CSS kopyası */}
             <span aria-hidden="true" style={{ display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "space-between", aspectRatio: "210 / 297", background: "#0b0a09", padding: "1.4rem 1rem", textAlign: "center" }}>
-              <span style={{ width: "34px", height: "2px", background: "#E5402A" }} />
+              <span style={{ width: "34px", height: "2px", background: "#3A5BD9" }} />
               <span style={{ fontFamily: "var(--font-serif)", fontStyle: "italic", fontWeight: 300, fontSize: p.s.length > 40 ? "0.82rem" : "1.02rem", lineHeight: 1.4, color: "#F1EDE4", maxWidth: "20ch" }}>&ldquo;{p.s}&rdquo;</span>
               <span style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: "0.35rem" }}>
                 <Muhur size={20} style={{ color: "#F1EDE4" }} />
-                <span style={{ fontFamily: "var(--font-grotesk)", fontWeight: 700, fontSize: "0.5rem", letterSpacing: "0.24em", color: "#E5402A" }}>BERKAY DOĞAN</span>
+                <span style={{ fontFamily: "var(--font-grotesk)", fontWeight: 700, fontSize: "0.5rem", letterSpacing: "0.24em", color: "#3A5BD9" }}>BERKAY DOĞAN</span>
               </span>
             </span>
             <span style={{ display: "flex", justifyContent: "space-between", alignItems: "center", padding: "0.8rem 1rem" }}>

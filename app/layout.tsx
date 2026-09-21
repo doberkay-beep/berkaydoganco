@@ -1,21 +1,21 @@
 import type { Metadata } from "next";
-import { Instrument_Sans, Fraunces } from "next/font/google";
+import { Inter, Playfair_Display } from "next/font/google";
 import "./globals.css";
 import { Analytics } from "@vercel/analytics/next";
 import { MurekkepIz } from "@/components/MurekkepIz";
 
-// UI / etiket / buton — zarif modern sans (CSS değişkeni tarihsel olarak --font-grotesk)
-const grotesk = Instrument_Sans({
+// UI / etiket / buton — çağdaş nötr sans (CSS değişkeni tarihsel olarak --font-grotesk)
+const grotesk = Inter({
   subsets: ["latin", "latin-ext"],
   weight: ["400", "500", "600", "700"],
   variable: "--font-grotesk",
   display: "swap",
 });
 
-// Edebi vurgu — yumuşak yüksek kontrastlı serif (CSS'te var(--font-serif))
-const fraunces = Fraunces({
+// Edebi vurgu — yüksek kontrastlı display serif (CSS'te var(--font-serif))
+const fraunces = Playfair_Display({
   subsets: ["latin", "latin-ext"],
-  weight: ["300", "400", "500"],
+  weight: ["400", "500", "600", "700", "800", "900"],
   style: ["normal", "italic"],
   variable: "--font-serif",
   display: "swap",

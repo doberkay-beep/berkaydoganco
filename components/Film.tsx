@@ -247,7 +247,7 @@ export default function Film() {
 
         /* kızıl flaş (damga) + kor kenarlar (buruşma) */
         .fl-flash { position: absolute; inset: 0; z-index: 5; pointer-events: none; opacity: 0;
-          background: radial-gradient(70% 60% at 50% 50%, rgba(229,64,42,0.5), rgba(229,64,42,0.12) 55%, transparent 75%);
+          background: radial-gradient(70% 60% at 50% 50%, rgba(58,91,217,0.5), rgba(58,91,217,0.12) 55%, transparent 75%);
           animation: flFlash 0.7s ease-out 1.22s; }
         @keyframes flFlash { 0%{opacity:0} 12%{opacity:1} 100%{opacity:0} }
         .fl-isi { position: absolute; inset: 0; z-index: 5; pointer-events: none; opacity: 0;
@@ -274,7 +274,7 @@ export default function Film() {
         .fl-top[data-gizli="1"] { opacity: 0; pointer-events: none; }
         .fl-title { font-family: var(--font-grotesk); font-weight: 700; letter-spacing: -0.02em; font-size: 1rem; }
         .fl-back { font-family: var(--font-grotesk); font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase;
-          color: #9a948a; border-bottom: 1px solid #E5402A; padding-bottom: 2px; }
+          color: #9a948a; border-bottom: 1px solid #3A5BD9; padding-bottom: 2px; }
 
         .fl-sahne { position: absolute; inset: 0; display: flex; flex-direction: column;
           align-items: center; justify-content: center; text-align: center; padding: 2rem clamp(1.25rem, 6vw, 3rem); }
@@ -285,13 +285,13 @@ export default function Film() {
         .fl-son-git { animation: flGit 0.7s ease both; animation-delay: var(--gec, 2s); }
         @keyframes flGit { to { opacity: 0; filter: blur(8px); } }
         /* kelime kelime közden tutuşma */
-        .fl-tutus { display: inline-block; opacity: 0; transform: translateY(0.3em); filter: blur(8px); color: #E5402A;
+        .fl-tutus { display: inline-block; opacity: 0; transform: translateY(0.3em); filter: blur(8px); color: #3A5BD9;
           animation: flTutus 0.9s cubic-bezier(0.22,1,0.36,1) forwards; }
-        @keyframes flTutus { 55% { color: #E5402A; } 100% { opacity: 1; transform: none; filter: blur(0); color: #F1EDE4; } }
+        @keyframes flTutus { 55% { color: #3A5BD9; } 100% { opacity: 1; transform: none; filter: blur(0); color: #F1EDE4; } }
 
         /* açılışta yanan tek köz */
-        .fl-tekkoz { width: 10px; height: 10px; border-radius: 50%; background: #E5402A; margin-top: 2.2rem;
-          box-shadow: 0 0 18px 4px rgba(229,64,42,0.65), 0 0 60px 16px rgba(229,64,42,0.25);
+        .fl-tekkoz { width: 10px; height: 10px; border-radius: 50%; background: #3A5BD9; margin-top: 2.2rem;
+          box-shadow: 0 0 18px 4px rgba(58,91,217,0.65), 0 0 60px 16px rgba(58,91,217,0.25);
           animation: flKor 1.8s ease-in-out infinite; }
         @keyframes flKor { 0%,100% { transform: scale(1); opacity: 0.95; } 50% { transform: scale(1.35); opacity: 0.7; } }
 
@@ -321,15 +321,15 @@ export default function Film() {
         /* uçuşan dizeler — v2: daha büyük, közlü gölge */
         .fl-ucus { position: absolute; font-family: var(--font-serif); font-style: italic; font-weight: 300;
           color: rgba(241,237,228,0.92); white-space: nowrap; animation: flUc 4.6s ease-in-out both;
-          text-shadow: 0 0 30px rgba(229,64,42,0.45), 0 0 8px rgba(229,64,42,0.25); }
+          text-shadow: 0 0 30px rgba(58,91,217,0.45), 0 0 8px rgba(58,91,217,0.25); }
         @keyframes flUc { 0% { opacity: 0; transform: translateY(38px) scale(0.94); } 20% { opacity: 1; transform: none; }
           78% { opacity: 1; } 100% { opacity: 0; transform: translateY(-44px); } }
 
         /* damga */
         .fl-damga { font-family: var(--font-grotesk); font-weight: 700; font-size: clamp(2.6rem, 9vw, 4.6rem);
-          letter-spacing: 0.3em; text-transform: uppercase; color: #E5402A; border: 6px solid #E5402A; border-radius: 14px;
+          letter-spacing: 0.3em; text-transform: uppercase; color: #3A5BD9; border: 6px solid #3A5BD9; border-radius: 14px;
           padding: 0.5em 0.8em 0.5em 1.05em; transform: rotate(-8deg);
-          box-shadow: 0 0 40px rgba(229,64,42,0.35), inset 0 0 26px rgba(229,64,42,0.18);
+          box-shadow: 0 0 40px rgba(58,91,217,0.35), inset 0 0 26px rgba(58,91,217,0.18);
           animation: flDamga 0.42s cubic-bezier(0.34, 1.2, 0.64, 1) both 1.2s; opacity: 0; }
         @keyframes flDamga { 0% { opacity: 0; transform: rotate(-8deg) scale(3); filter: blur(6px); } 100% { opacity: 0.96; transform: rotate(-8deg) scale(1); filter: blur(0); } }
 
@@ -352,11 +352,11 @@ export default function Film() {
 
         /* kapak — spot altında */
         .fl-kapak { width: clamp(230px, 52vmin, 360px); border-radius: 4px;
-          box-shadow: 0 60px 130px rgba(0,0,0,0.85), 0 0 90px rgba(229,64,42,0.14), 0 0 0 1px rgba(241,237,228,0.07);
+          box-shadow: 0 60px 130px rgba(0,0,0,0.85), 0 0 90px rgba(58,91,217,0.14), 0 0 0 1px rgba(241,237,228,0.07);
           animation: flKapak 1.8s cubic-bezier(0.22,1,0.36,1) both; }
         @keyframes flKapak { from { opacity: 0; transform: translateY(52px) scale(0.92); filter: brightness(0.3); } to { opacity: 1; transform: none; filter: brightness(1); } }
         .fl-cikti { font-family: var(--font-grotesk); font-size: 0.86rem; letter-spacing: 0.32em; text-transform: uppercase;
-          color: #E5402A; margin-top: 1.7rem; animation: flBelir 0.8s ease both 1s; }
+          color: #3A5BD9; margin-top: 1.7rem; animation: flBelir 0.8s ease both 1s; }
 
         /* final */
         .fl-url { font-family: var(--font-grotesk); font-weight: 700; font-size: clamp(1.6rem, 5.8vw, 3rem);
@@ -366,9 +366,9 @@ export default function Film() {
 
         .fl-btn { display: inline-flex; align-items: center; gap: 0.6rem; cursor: pointer;
           font-family: var(--font-grotesk); font-size: 0.82rem; font-weight: 500; letter-spacing: 0.1em;
-          padding: 1rem 2rem; border-radius: 100px; border: 1px solid transparent; background: #E5402A; color: #0b0a09;
+          padding: 1rem 2rem; border-radius: 100px; border: 1px solid transparent; background: #3A5BD9; color: #0b0a09;
           transition: transform 0.3s ease, box-shadow 0.3s ease; }
-        .fl-btn:hover { transform: translateY(-2px); box-shadow: 0 12px 30px rgba(229,64,42,0.35); }
+        .fl-btn:hover { transform: translateY(-2px); box-shadow: 0 12px 30px rgba(58,91,217,0.35); }
         .fl-hint { font-family: var(--font-grotesk); font-size: 0.64rem; letter-spacing: 0.22em; text-transform: uppercase; color: #6f6a61; }
         @media (prefers-reduced-motion: reduce) { .fl-root * { animation-duration: 0.01ms !important; } }
       `}</style>
@@ -434,7 +434,7 @@ export default function Film() {
               <circle className="cember" cx="32" cy="32" r="28" stroke="#F1EDE4" strokeWidth="2.5" opacity="0.9" />
               <path d="M21 22 V42 M21 22 H26.5 Q31 22 31 27 Q31 31.4 26.5 32 H21 M26.5 32 Q32 32.6 32 37 Q32 42 26.5 42 H21" stroke="#F1EDE4" strokeWidth="2.6" strokeLinecap="round" strokeLinejoin="round" />
               <path d="M38 22 V42 M38 22 H41 Q48 22 48 32 Q48 42 41 42 H38" stroke="#F1EDE4" strokeWidth="2.6" strokeLinecap="round" strokeLinejoin="round" />
-              <circle className="koz" cx="32" cy="4" r="3.4" fill="#E5402A" />
+              <circle className="koz" cx="32" cy="4" r="3.4" fill="#3A5BD9" />
             </svg>
           </div>
         )}

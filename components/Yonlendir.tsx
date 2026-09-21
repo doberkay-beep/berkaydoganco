@@ -16,11 +16,11 @@ export function Yonlendir({ hedef, kanal }: { hedef: string; kanal: string }) {
       justifyContent: "center", gap: "1.1rem", background: "#050505", color: "#FAFAFA",
       padding: "2rem", textAlign: "center",
     }}>
-      <span style={{ width: "8px", height: "8px", borderRadius: "50%", background: "#E5402A" }} aria-hidden="true" />
+      <span style={{ width: "8px", height: "8px", borderRadius: "50%", background: "#3A5BD9" }} aria-hidden="true" />
       <p style={{ fontFamily: "var(--font-grotesk)", fontSize: "0.72rem", letterSpacing: "0.24em", textTransform: "uppercase", color: "#8f8f8f" }}>
         Yönlendiriliyorsunuz — {kanal}
       </p>
-      <a href={hedef} rel="noopener" style={{ fontFamily: "var(--font-grotesk)", fontSize: "0.8rem", color: "#FAFAFA", borderBottom: "1px solid #E5402A", paddingBottom: "2px" }}>
+      <a href={hedef} rel="noopener" style={{ fontFamily: "var(--font-grotesk)", fontSize: "0.8rem", color: "#FAFAFA", borderBottom: "1px solid #3A5BD9", paddingBottom: "2px" }}>
         Devam etmek için tıklayın
       </a>
     </main>

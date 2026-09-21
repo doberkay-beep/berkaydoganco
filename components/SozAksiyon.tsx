@@ -27,7 +27,7 @@ export function SozAksiyon({ soz, kaynak }: { soz: string; kaynak: string }) {
     ctx.fillStyle = bg; ctx.fillRect(0, 0, W, H);
 
     ctx.textAlign = "center";
-    ctx.fillStyle = "#E5402A"; ctx.fillRect(W / 2 - 42, 170, 84, 3);
+    ctx.fillStyle = "#3A5BD9"; ctx.fillRect(W / 2 - 42, 170, 84, 3);
 
     ctx.fillStyle = "#F1EDE4";
     let boy = 56;
@@ -48,7 +48,7 @@ export function SozAksiyon({ soz, kaynak }: { soz: string; kaynak: string }) {
       ctx.fillText(txt, W / 2, y); y += lh;
     });
 
-    ctx.fillStyle = "#E5402A"; ctx.font = `500 26px ${grotesk}`;
+    ctx.fillStyle = "#3A5BD9"; ctx.font = `500 26px ${grotesk}`;
     ctx.fillText("— BERKAY DOĞAN", W / 2, y + 40);
     ctx.fillStyle = "#9a948a"; ctx.font = `500 22px ${grotesk}`;
     ctx.fillText(kaynak, W / 2, y + 84);
@@ -58,7 +58,7 @@ export function SozAksiyon({ soz, kaynak }: { soz: string; kaynak: string }) {
     ctx.beginPath(); ctx.arc(W / 2, sy, 38, 0, Math.PI * 2); ctx.stroke();
     ctx.fillStyle = "#F1EDE4"; ctx.font = `700 32px ${grotesk}`;
     ctx.textBaseline = "middle"; ctx.fillText("BD", W / 2, sy + 2); ctx.textBaseline = "alphabetic";
-    ctx.fillStyle = "#E5402A"; ctx.beginPath(); ctx.arc(W / 2, sy - 38, 5, 0, Math.PI * 2); ctx.fill();
+    ctx.fillStyle = "#3A5BD9"; ctx.beginPath(); ctx.arc(W / 2, sy - 38, 5, 0, Math.PI * 2); ctx.fill();
     ctx.fillStyle = "#9a948a"; ctx.font = `500 22px ${grotesk}`;
     ctx.fillText("berkaydogan.co", W / 2, H - 130);
 

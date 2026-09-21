@@ -57,7 +57,7 @@ export function MurekkepIz() {
         p.x += p.vx; p.y += p.vy; p.vx *= 0.985; p.vy *= 0.985;
         const k = 1 - p.life / p.max;
         ctx.beginPath();
-        ctx.fillStyle = `rgba(229, 64, 42, ${(0.38 * k).toFixed(3)})`;
+        ctx.fillStyle = `rgba(58, 91, 217, ${(0.38 * k).toFixed(3)})`;
         ctx.arc(p.x, p.y, p.r * (0.6 + 0.4 * k), 0, Math.PI * 2);
         ctx.fill();
       }

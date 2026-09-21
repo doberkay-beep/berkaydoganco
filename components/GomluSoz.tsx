@@ -23,7 +23,7 @@ export default function GomluSoz() {
       background: "radial-gradient(130% 110% at 50% -20%, #241a13 0%, #0b0a09 60%, #060504 100%)",
       color: "#F1EDE4", padding: "1.4rem 1.5rem", boxSizing: "border-box",
     }}>
-      <span style={{ fontFamily: "var(--font-grotesk)", fontSize: "0.58rem", fontWeight: 500, letterSpacing: "0.28em", textTransform: "uppercase", color: "#E5402A" }}>
+      <span style={{ fontFamily: "var(--font-grotesk)", fontSize: "0.58rem", fontWeight: 500, letterSpacing: "0.28em", textTransform: "uppercase", color: "#3A5BD9" }}>
         Günün Közü
       </span>
       <blockquote style={{
@@ -38,7 +38,7 @@ export default function GomluSoz() {
           — Berkay Doğan · {KITAP_ADI[soz.k]}
         </span>
         <a href="https://www.berkaydogan.co/sozler/" target="_top" rel="noopener"
-          style={{ fontFamily: "var(--font-grotesk)", fontSize: "0.6rem", fontWeight: 500, letterSpacing: "0.14em", textTransform: "uppercase", color: "#E5402A", textDecoration: "none", borderBottom: "1px solid #E5402A", paddingBottom: "1px" }}>
+          style={{ fontFamily: "var(--font-grotesk)", fontSize: "0.6rem", fontWeight: 500, letterSpacing: "0.14em", textTransform: "uppercase", color: "#3A5BD9", textDecoration: "none", borderBottom: "1px solid #3A5BD9", paddingBottom: "1px" }}>
           berkaydogan.co
         </a>
       </div>

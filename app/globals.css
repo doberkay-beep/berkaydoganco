@@ -1,13 +1,13 @@
 /* ============ TEMA — karanlık varsayılan + açık geçiş + liquid glass ============ */
 /* KARANLIK (varsayılan) — Saf Karanlık: gerçek siyah, hafif parlak yüzey, beyaz metin */
 :root, [data-theme="dark"] {
-  --bg:      #050505;   /* saf siyah */
-  --bg-2:    #0d0d0e;   /* yükseltilmiş panel — soğuk, camsı */
-  --ink:     #FAFAFA;   /* beyaz metin */
-  --muted:   #8f8f8f;   /* ikincil metin */
-  --line:    rgba(250, 250, 250, 0.11);
-  --accent:  #E5402A;   /* köz/ateş vurgusu */
-  --accent-ink: #050505;
+  --bg:      #050609;   /* neredeyse siyah — serin */
+  --bg-2:    #0c0e14;   /* yükseltilmiş panel — soğuk, camsı */
+  --ink:     #F5F7FB;   /* beyaz metin */
+  --muted:   #8b90a2;   /* ikincil metin — serin gri */
+  --line:    rgba(232, 236, 250, 0.11);
+  --accent:  #3A5BD9;   /* gece mavisi / kobalt vurgu */
+  --accent-ink: #F5F7FF;
   /* Liquid glass */
   --glass-bg:     rgba(18, 18, 20, 0.55);
   --glass-border: rgba(250, 250, 250, 0.13);
@@ -20,13 +20,13 @@
 
 /* AÇIK (geçiş) */
 [data-theme="light"] {
-  --bg:      #FAF9F6;
+  --bg:      #F6F8FC;
   --bg-2:    #FFFFFF;
-  --ink:     #14120F;
-  --muted:   #6B675F;
-  --line:    rgba(20, 18, 15, 0.12);
-  --accent:  #E5402A;
-  --accent-ink: #FAF9F6;
+  --ink:     #12141C;
+  --muted:   #5E6470;
+  --line:    rgba(18, 22, 40, 0.12);
+  --accent:  #3A5BD9;
+  --accent-ink: #F6F8FC;
   --glass-bg:     rgba(255, 255, 255, 0.55);
   --glass-border: rgba(20, 18, 15, 0.10);
   --glass-hi:     rgba(255, 255, 255, 0.6);
@@ -78,7 +78,7 @@ body {
   content: ""; position: fixed; inset: 0; z-index: 2147483646; pointer-events: none;
   background:
     radial-gradient(120% 60% at 50% -18%, rgba(255, 255, 255, 0.05), transparent 60%),
-    linear-gradient(118deg, rgba(255, 255, 255, 0.02) 0%, transparent 34%, transparent 72%, rgba(229, 64, 42, 0.025) 100%);
+    linear-gradient(118deg, rgba(255, 255, 255, 0.02) 0%, transparent 34%, transparent 72%, rgba(58, 91, 217, 0.025) 100%);
 }
 [data-theme="light"] body::before { content: none; }
 
@@ -125,9 +125,9 @@ button { font-family: inherit; }
 .cg-btn:hover::before { transform: translateX(120%); }
 .cg-btn:active { transform: scale(0.965); }
 .cg-btn-fill { background: var(--accent); color: var(--accent-ink);
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.25), 0 0 0 rgba(229, 64, 42, 0); }
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.25), 0 0 0 rgba(58, 91, 217, 0); }
 .cg-btn-fill:hover { transform: translateY(-2px);
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.25), 0 6px 26px rgba(229, 64, 42, 0.38); }
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.25), 0 6px 26px rgba(58, 91, 217, 0.38); }
 .cg-btn-ghost { border-color: var(--line); color: var(--ink);
   box-shadow: inset 0 1px 0 var(--glass-hi); }
 .cg-btn-ghost:hover { border-color: var(--ink); transform: translateY(-2px); }
@@ -257,7 +257,7 @@ a:focus-visible, button:focus-visible, input:focus-visible { outline: 2px solid 
 /* İmleç ışığı — sayfa geneli köz parıltısı (Kabuk konumlandırır) */
 .cg-cursor-glow { position: fixed; left: 0; top: 0; width: 520px; height: 520px; margin: -260px 0 0 -260px;
   border-radius: 50%; pointer-events: none; z-index: 1;
-  background: radial-gradient(circle, rgba(229, 64, 42, 0.07), rgba(255, 255, 255, 0.015) 42%, transparent 68%);
+  background: radial-gradient(circle, rgba(58, 91, 217, 0.07), rgba(255, 255, 255, 0.015) 42%, transparent 68%);
   opacity: 0; transition: opacity 0.6s ease; will-change: transform; }
 [data-theme="light"] .cg-cursor-glow { display: none; }
 
@@ -300,7 +300,7 @@ a:focus-visible, button:focus-visible, input:focus-visible { outline: 2px solid 
 /* Kapak hikâyesi — öne çıkan deneyim */
 .ed-cover { display: grid; grid-template-columns: 1.15fr 0.85fr; gap: clamp(1.5rem, 4vw, 3.5rem);
   border: 1px solid var(--line); border-top: 2px solid var(--ink); padding: clamp(1.5rem, 4vw, 3rem);
-  background: radial-gradient(120% 150% at 90% -10%, rgba(229,64,42,0.1), transparent 55%), var(--bg-2);
+  background: radial-gradient(120% 150% at 90% -10%, rgba(58,91,217,0.1), transparent 55%), var(--bg-2);
   transition: border-color 0.3s ease; }
 .ed-cover:hover { border-color: var(--accent); }
 @media (max-width: 780px) { .ed-cover { grid-template-columns: 1fr; } }

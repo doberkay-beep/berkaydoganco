@@ -65,10 +65,10 @@ export default function OkumaOdasi({ sozler }: { sozler: OdaSoz[] }) {
   return (
     <div style={{ position: "fixed", inset: 0, zIndex: 60, background: "var(--bg)", overflow: "hidden", display: "flex", flexDirection: "column" }}>
       {/* Ambiyans — nefes alan köz parıltısı */}
-      <div aria-hidden style={{ position: "absolute", inset: 0, pointerEvents: "none", background: "radial-gradient(60% 50% at 50% 42%, rgba(229,64,42,0.16), rgba(229,64,42,0.04) 45%, transparent 70%)", animation: "odaNefes 9s ease-in-out infinite" }} />
+      <div aria-hidden style={{ position: "absolute", inset: 0, pointerEvents: "none", background: "radial-gradient(60% 50% at 50% 42%, rgba(58,91,217,0.16), rgba(58,91,217,0.04) 45%, transparent 70%)", animation: "odaNefes 9s ease-in-out infinite" }} />
       <div aria-hidden style={{ position: "absolute", inset: 0, pointerEvents: "none", opacity: 0.5 }}>
         {[["12%", "24%", "0s"], ["82%", "30%", "2.4s"], ["68%", "70%", "1.2s"], ["22%", "76%", "3.1s"], ["48%", "18%", "1.8s"]].map(([l, t, d], k) => (
-          <span key={k} style={{ position: "absolute", left: l, top: t, width: 5, height: 5, borderRadius: "50%", background: "var(--accent)", filter: "blur(0.5px)", boxShadow: "0 0 12px 2px rgba(229,64,42,0.6)", animation: `odaSuzul 7s ease-in-out ${d} infinite` }} />
+          <span key={k} style={{ position: "absolute", left: l, top: t, width: 5, height: 5, borderRadius: "50%", background: "var(--accent)", filter: "blur(0.5px)", boxShadow: "0 0 12px 2px rgba(58,91,217,0.6)", animation: `odaSuzul 7s ease-in-out ${d} infinite` }} />
         ))}
       </div>
 

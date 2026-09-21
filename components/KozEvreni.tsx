@@ -128,7 +128,7 @@ export default function KozEvreni() {
         const maxD = 320;
         if (d < maxD) {
           const o = (1 - d / maxD) * 0.22 * (1 + 0.5 * (pa.glow + pb.glow));
-          ctx.strokeStyle = `rgba(229,64,42,${Math.min(0.5, o)})`;
+          ctx.strokeStyle = `rgba(58,91,217,${Math.min(0.5, o)})`;
           ctx.beginPath(); ctx.moveTo(pa.x, pa.y); ctx.lineTo(pb.x, pb.y); ctx.stroke();
         }
       }
@@ -171,8 +171,8 @@ export default function KozEvreni() {
         const R = p.r * (1 + p.glow * 1.4);
         const g = ctx.createRadialGradient(p.x, p.y, 0, p.x, p.y, R * 6);
         g.addColorStop(0, `rgba(255,${170 - p.glow * 40},${120 - p.glow * 60},${0.9 * pulse})`);
-        g.addColorStop(0.35, `rgba(229,64,42,${0.5 * pulse * (0.6 + p.glow)})`);
-        g.addColorStop(1, "rgba(229,64,42,0)");
+        g.addColorStop(0.35, `rgba(58,91,217,${0.5 * pulse * (0.6 + p.glow)})`);
+        g.addColorStop(1, "rgba(58,91,217,0)");
         ctx.fillStyle = g;
         ctx.beginPath(); ctx.arc(p.x, p.y, R * 6, 0, Math.PI * 2); ctx.fill();
         // çekirdek
@@ -242,20 +242,20 @@ export default function KozEvreni() {
           padding: 1.2rem clamp(1.25rem, 4vw, 3rem); pointer-events: none; }
         .koz-top a, .koz-top span { pointer-events: auto; }
         .koz-title { font-family: var(--font-grotesk, sans-serif); font-weight: 700; letter-spacing: -0.02em; font-size: 1rem; color: #F1EDE4; }
-        .koz-back { font-family: var(--font-grotesk, sans-serif); font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase; color: #9a948a; border-bottom: 1px solid #E5402A; padding-bottom: 2px; }
+        .koz-back { font-family: var(--font-grotesk, sans-serif); font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase; color: #9a948a; border-bottom: 1px solid #3A5BD9; padding-bottom: 2px; }
         .koz-hint { position: absolute; left: 0; right: 0; bottom: clamp(1.5rem, 5vh, 3rem); z-index: 3; text-align: center;
           font-family: var(--font-grotesk, sans-serif); font-size: 0.7rem; letter-spacing: 0.24em; text-transform: uppercase; color: #6f6a61; pointer-events: none;
           animation: kozHint 3.5s ease-in-out infinite; }
         @keyframes kozHint { 0%,100% { opacity: 0.4; } 50% { opacity: 0.9; } }
         .koz-bloom { position: absolute; inset: 0; z-index: 4; display: flex; align-items: center; justify-content: center; padding: 2rem;
-          background: radial-gradient(120% 90% at 50% 45%, rgba(229,64,42,0.10), rgba(6,5,4,0.78) 60%); cursor: pointer;
+          background: radial-gradient(120% 90% at 50% 45%, rgba(58,91,217,0.10), rgba(6,5,4,0.78) 60%); cursor: pointer;
           animation: kozFade 0.6s ease both; }
         @keyframes kozFade { from { opacity: 0; } to { opacity: 1; } }
         .koz-verse { font-family: var(--font-serif, Georgia, serif); font-style: italic; font-weight: 300; color: #F5EFE6;
           font-size: clamp(1.8rem, 6vw, 4rem); line-height: 1.3; text-align: center; max-width: 20ch;
-          text-shadow: 0 0 40px rgba(229,64,42,0.35); animation: kozRise 0.8s cubic-bezier(0.22,1,0.36,1) both; }
+          text-shadow: 0 0 40px rgba(58,91,217,0.35); animation: kozRise 0.8s cubic-bezier(0.22,1,0.36,1) both; }
         @keyframes kozRise { from { opacity: 0; transform: translateY(22px) scale(0.97); } to { opacity: 1; transform: none; } }
-        .koz-sign { display: block; margin-top: 1.6rem; font-family: var(--font-grotesk, sans-serif); font-style: normal; font-size: 0.7rem; letter-spacing: 0.22em; text-transform: uppercase; color: #E5402A; }
+        .koz-sign { display: block; margin-top: 1.6rem; font-family: var(--font-grotesk, sans-serif); font-style: normal; font-size: 0.7rem; letter-spacing: 0.22em; text-transform: uppercase; color: #3A5BD9; }
         @media (prefers-reduced-motion: reduce) { .koz-hint { animation: none; } }
       `}</style>
 

@@ -57,7 +57,7 @@ export default function FilmFragman() {
           display: flex; flex-direction: column; align-items: center; justify-content: center;
           gap: 22px; padding: 24px; font-family: var(--font-grotesk), sans-serif; }
         .flm-cerceve { position: relative; width: min(100%, 1060px); border-radius: 14px; overflow: hidden;
-          background: #000; box-shadow: 0 30px 90px rgba(0,0,0,.7), 0 0 70px rgba(229,64,42,.07); }
+          background: #000; box-shadow: 0 30px 90px rgba(0,0,0,.7), 0 0 70px rgba(58,91,217,.07); }
         .flm-cerceve.dikey { width: min(100%, 420px); }
         .flm-cerceve video { display: block; width: 100%; height: auto; }
         .flm-ortu { position: absolute; inset: 0; display: flex; flex-direction: column;
@@ -66,7 +66,7 @@ export default function FilmFragman() {
         .flm-oynat { width: 84px; height: 84px; border-radius: 50%; border: 1px solid rgba(250,250,250,.35);
           background: rgba(5,5,5,.55); backdrop-filter: blur(6px); display: grid; place-items: center;
           transition: transform .25s ease, border-color .25s ease, box-shadow .25s ease; }
-        .flm-ortu:hover .flm-oynat { transform: scale(1.06); border-color: #E5402A; box-shadow: 0 0 34px rgba(229,64,42,.35); }
+        .flm-ortu:hover .flm-oynat { transform: scale(1.06); border-color: #3A5BD9; box-shadow: 0 0 34px rgba(58,91,217,.35); }
         .flm-oynat svg { margin-left: 5px; }
         .flm-ortu span { font-size: 14px; letter-spacing: .18em; text-transform: uppercase; color: #FAFAFA; }
         .flm-ust { text-align: center; }
@@ -75,7 +75,7 @@ export default function FilmFragman() {
         .flm-alt { display: flex; align-items: center; gap: 18px; flex-wrap: wrap; justify-content: center; }
         .flm-alt a { color: #8a8a8a; font-size: 13px; letter-spacing: .08em; text-decoration: none; transition: color .2s ease; }
         .flm-alt a:hover { color: #FAFAFA; }
-        .flm-alt a.koz { color: #E5402A; }
+        .flm-alt a.koz { color: #3A5BD9; }
         .flm-ipucu { font-size: 12px; letter-spacing: .12em; color: #6a6a6a; }
       `}</style>
 

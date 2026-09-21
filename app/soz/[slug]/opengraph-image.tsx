@@ -24,17 +24,17 @@ export default async function Image({ params }: { params: Promise<{ slug: string
         background: "linear-gradient(160deg, #241a13 0%, #0b0a09 55%, #060504 100%)",
         padding: "70px 90px",
       }}>
-        <div style={{ display: "flex", width: 84, height: 4, background: "#E5402A", marginBottom: 42 }} />
+        <div style={{ display: "flex", width: 84, height: 4, background: "#3A5BD9", marginBottom: 42 }} />
         <div style={{ display: "flex", fontSize: boy, fontStyle: "italic", color: "#F1EDE4", lineHeight: 1.4, maxWidth: 1000 }}>
           {`“${soz.s}”`}
         </div>
         <div style={{ display: "flex", alignItems: "center", gap: 16, marginTop: 46 }}>
           <div style={{ display: "flex", alignItems: "center", justifyContent: "center", width: 58, height: 58, borderRadius: 29, border: "3px solid rgba(241,237,228,0.8)", position: "relative" }}>
             <div style={{ display: "flex", fontSize: 24, fontWeight: 700, color: "#F1EDE4" }}>BD</div>
-            <div style={{ display: "flex", position: "absolute", top: -8, left: 21, width: 12, height: 12, borderRadius: 6, background: "#E5402A" }} />
+            <div style={{ display: "flex", position: "absolute", top: -8, left: 21, width: 12, height: 12, borderRadius: 6, background: "#3A5BD9" }} />
           </div>
           <div style={{ display: "flex", flexDirection: "column", alignItems: "flex-start" }}>
-            <div style={{ display: "flex", fontSize: 24, fontWeight: 700, color: "#E5402A", letterSpacing: 2 }}>BERKAY DOĞAN</div>
+            <div style={{ display: "flex", fontSize: 24, fontWeight: 700, color: "#3A5BD9", letterSpacing: 2 }}>BERKAY DOĞAN</div>
             <div style={{ display: "flex", fontSize: 19, color: "#9a948a" }}>{`${KITAP_ADI[soz.k]}${soz.p ? ` · s. ${soz.p}` : ""} — berkaydogan.co`}</div>
           </div>
         </div>

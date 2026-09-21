@@ -29,8 +29,8 @@ export function AlintiKarti({ lang }: { lang: Lang }) {
     ctx.fillStyle = "#0b0a09";
     ctx.fillRect(0, 0, W, H);
     const glow = ctx.createRadialGradient(W * 0.5, H * 0.05, 40, W * 0.5, H * 0.05, W * 0.9);
-    glow.addColorStop(0, "rgba(229,64,42,0.16)");
-    glow.addColorStop(1, "rgba(229,64,42,0)");
+    glow.addColorStop(0, "rgba(58,91,217,0.16)");
+    glow.addColorStop(1, "rgba(58,91,217,0)");
     ctx.fillStyle = glow;
     ctx.fillRect(0, 0, W, H);
 
@@ -40,7 +40,7 @@ export function AlintiKarti({ lang }: { lang: Lang }) {
     ctx.strokeRect(48, 48, W - 96, H - 96);
 
     // Üstte köz noktası
-    ctx.fillStyle = "#E5402A";
+    ctx.fillStyle = "#3A5BD9";
     ctx.beginPath();
     ctx.arc(W / 2, 168, 9, 0, Math.PI * 2);
     ctx.fill();
@@ -76,11 +76,11 @@ export function AlintiKarti({ lang }: { lang: Lang }) {
     ctx.fillStyle = "#F1EDE4";
     ctx.font = `700 34px ${groteskStack}`;
     ctx.fillText("BD", sx, sy + 2);
-    ctx.fillStyle = "#E5402A";
+    ctx.fillStyle = "#3A5BD9";
     ctx.beginPath(); ctx.arc(sx, sy - sr, 5.5, 0, Math.PI * 2); ctx.fill();
 
     // İmza
-    ctx.fillStyle = "#E5402A";
+    ctx.fillStyle = "#3A5BD9";
     ctx.font = `500 30px ${groteskStack}`;
     ctx.fillText("— BERKAY DOĞAN", W / 2, H - 250);
 

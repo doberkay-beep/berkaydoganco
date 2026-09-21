@@ -165,13 +165,13 @@ export default function Fragman() {
     <div className="fr-root">
       <style>{`
         .fr-root { background: radial-gradient(120% 60% at 50% 0%, #1d1510 0%, #0b0a09 45%, #060504 100%); color: #F1EDE4; min-height: 100svh; }
-        .fr-prog { position: fixed; top: 0; left: 0; height: 3px; background: #E5402A; z-index: 10; transition: width 0.1s linear; }
+        .fr-prog { position: fixed; top: 0; left: 0; height: 3px; background: #3A5BD9; z-index: 10; transition: width 0.1s linear; }
         .fr-dust { position: fixed; inset: 0; pointer-events: none; z-index: 1; }
         .fr-top { position: fixed; top: 0; left: 0; right: 0; z-index: 9; display: flex; align-items: center; justify-content: space-between;
           padding: 1.2rem clamp(1.25rem, 4vw, 3rem); }
         .fr-title { font-family: var(--font-grotesk); font-weight: 700; letter-spacing: -0.02em; font-size: 1rem; }
         .fr-back { font-family: var(--font-grotesk); font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase;
-          color: #9a948a; border-bottom: 1px solid #E5402A; padding-bottom: 2px; }
+          color: #9a948a; border-bottom: 1px solid #3A5BD9; padding-bottom: 2px; }
 
         .fr-giris { min-height: 100svh; display: flex; flex-direction: column; align-items: center; justify-content: center;
           gap: 1.6rem; text-align: center; position: relative; z-index: 2; padding: 2rem 1.25rem; }
@@ -190,26 +190,26 @@ export default function Fragman() {
           filter: blur(8px); transition: opacity 1s cubic-bezier(0.22,1,0.36,1), transform 1s cubic-bezier(0.22,1,0.36,1), filter 1s ease; }
         .fr-sahne[data-on="1"] .fr-icerik { opacity: 1; transform: none; filter: blur(0); }
         .fr-kicker { display: block; font-family: var(--font-grotesk); font-size: 0.68rem; font-weight: 500;
-          letter-spacing: 0.32em; text-transform: uppercase; color: #E5402A; margin-bottom: 1.2rem; }
+          letter-spacing: 0.32em; text-transform: uppercase; color: #3A5BD9; margin-bottom: 1.2rem; }
         .fr-text { font-family: var(--font-serif); font-style: italic; font-weight: 300;
           font-size: clamp(1.6rem, 4.6vw, 2.8rem); line-height: 1.4; }
         .fr-quote { font-family: var(--font-serif); font-style: italic; font-weight: 300;
           font-size: clamp(1.5rem, 4.2vw, 2.5rem); line-height: 1.45; margin: 0; }
         .fr-kaynak { display: block; margin-top: 1.3rem; font-family: var(--font-grotesk); font-size: 0.68rem;
-          letter-spacing: 0.24em; text-transform: uppercase; color: #E5402A; }
+          letter-spacing: 0.24em; text-transform: uppercase; color: #3A5BD9; }
 
         .fr-final { min-height: 100svh; display: flex; flex-direction: column; align-items: center; justify-content: center;
           gap: 1.4rem; text-align: center; position: relative; z-index: 2; padding: 4rem 1.25rem; }
         .fr-final img { width: clamp(200px, 42vmin, 320px); border-radius: 4px;
           box-shadow: 0 44px 100px rgba(0,0,0,0.75), 0 0 0 1px rgba(241,237,228,0.07); }
-        .fr-out { font-family: var(--font-grotesk); font-size: 0.78rem; letter-spacing: 0.28em; text-transform: uppercase; color: #E5402A; }
+        .fr-out { font-family: var(--font-grotesk); font-size: 0.78rem; letter-spacing: 0.28em; text-transform: uppercase; color: #3A5BD9; }
         .fr-ctas { display: flex; gap: 0.75rem; flex-wrap: wrap; justify-content: center; margin-top: 0.6rem; }
         .fr-btn { display: inline-flex; align-items: center; gap: 0.6rem; cursor: pointer; text-decoration: none;
           font-family: var(--font-grotesk); font-size: 0.8rem; font-weight: 500; letter-spacing: 0.1em;
           padding: 0.95rem 1.8rem; border-radius: 100px; border: 1px solid transparent;
           transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease; }
-        .fr-fill { background: #E5402A; color: #0b0a09; }
-        .fr-fill:hover { transform: translateY(-2px); box-shadow: 0 12px 30px rgba(229,64,42,0.35); }
+        .fr-fill { background: #3A5BD9; color: #0b0a09; }
+        .fr-fill:hover { transform: translateY(-2px); box-shadow: 0 12px 30px rgba(58,91,217,0.35); }
         .fr-ghost { border-color: rgba(241,237,228,0.28); color: #F1EDE4; background: transparent; }
         .fr-ghost:hover { border-color: #F1EDE4; transform: translateY(-2px); }
         @media (prefers-reduced-motion: reduce) {

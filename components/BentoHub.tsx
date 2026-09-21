@@ -75,7 +75,7 @@ export function BentoHub({ lang }: { lang: Lang }) {
 
         /* A — Tasfiye feature (2x2) */
         .bento-a { grid-column: span 2; grid-row: span 2; align-items: stretch; gap: 1.4rem;
-          background: radial-gradient(120% 90% at 85% 0%, rgba(229,64,42,0.14), transparent 55%), var(--glass-bg); }
+          background: radial-gradient(120% 90% at 85% 0%, rgba(58,91,217,0.14), transparent 55%), var(--glass-bg); }
         .bento-a img { width: clamp(112px, 15vw, 168px); border-radius: 5px; align-self: center; box-shadow: 0 20px 45px rgba(0,0,0,0.4); }
         .bento-a .col { display: flex; flex-direction: column; justify-content: center; gap: 0.7rem; }
         .bento-a .bento-title { font-size: clamp(2rem, 4.5vw, 3rem); }

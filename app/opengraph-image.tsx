@@ -22,13 +22,13 @@ export default function OG() {
       >
         <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start" }}>
           <div style={{ display: "flex", alignItems: "center", gap: 18, color: "#14120F", fontSize: 27, letterSpacing: 7 }}>
-            <div style={{ width: 16, height: 16, borderRadius: 8, background: "#E5402A" }} />
+            <div style={{ width: 16, height: 16, borderRadius: 8, background: "#3A5BD9" }} />
             ŞAİR &amp; YAZAR — İSTANBUL
           </div>
           {/* BD mührü */}
           <div style={{ display: "flex", alignItems: "center", justifyContent: "center", width: 92, height: 92, borderRadius: 46, border: "4px solid #14120F", position: "relative" }}>
             <div style={{ fontSize: 38, fontWeight: 800, color: "#14120F", letterSpacing: -2 }}>BD</div>
-            <div style={{ position: "absolute", top: -10, left: 36, width: 16, height: 16, borderRadius: 8, background: "#E5402A" }} />
+            <div style={{ position: "absolute", top: -10, left: 36, width: 16, height: 16, borderRadius: 8, background: "#3A5BD9" }} />
           </div>
         </div>
         <div style={{ display: "flex", flexDirection: "column" }}>
@@ -37,7 +37,7 @@ export default function OG() {
         </div>
         <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", color: "#14120F", fontSize: 27 }}>
           <div>berkaydogan.co</div>
-          <div style={{ color: "#E5402A", fontWeight: 700 }}>Tasfiye — Ağustos 2026</div>
+          <div style={{ color: "#3A5BD9", fontWeight: 700 }}>Tasfiye — Ağustos 2026</div>
         </div>
       </div>
     ),

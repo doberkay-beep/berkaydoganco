@@ -43,7 +43,7 @@ export function TasfiyeDuvari({ t, fragments }: { t: Copy; fragments: string[] }
           padding: clamp(6rem, 16vh, 11rem) clamp(1.25rem, 4vw, 3.25rem); text-align: center; }
         .td-glow { position: absolute; left: 50%; top: 52%; width: 70vw; max-width: 760px; aspect-ratio: 1;
           transform: translate(-50%, -50%); pointer-events: none; z-index: 0;
-          background: radial-gradient(circle, rgba(229,64,42,0.16), transparent 62%); animation: tdGlow 8s ease-in-out infinite; }
+          background: radial-gradient(circle, rgba(58,91,217,0.16), transparent 62%); animation: tdGlow 8s ease-in-out infinite; }
         @keyframes tdGlow { 0%,100% { opacity: 0.6; } 50% { opacity: 1; } }
 
         /* Arka planda süzülen köz parçaları (Berkay'ın dizeleri) */
@@ -55,8 +55,8 @@ export function TasfiyeDuvari({ t, fragments }: { t: Copy; fragments: string[] }
         .td-inner { position: relative; z-index: 1; max-width: 640px; margin: 0 auto; }
         .td-eyebrow { display: inline-flex; align-items: center; gap: 0.6rem; font-family: var(--font-grotesk);
           font-size: 0.7rem; font-weight: 500; letter-spacing: 0.3em; text-transform: uppercase; color: #F0ECE4; }
-        .td-eyebrow::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: #E5402A;
-          box-shadow: 0 0 12px 2px rgba(229,64,42,0.7); }
+        .td-eyebrow::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: #3A5BD9;
+          box-shadow: 0 0 12px 2px rgba(58,91,217,0.7); }
         .td-heading { font-family: var(--font-grotesk); font-weight: 700; letter-spacing: -0.03em; line-height: 1;
           font-size: clamp(2rem, 5vw, 3.6rem); margin: 1.5rem 0 1.25rem; }
         .td-sub { font-family: var(--font-serif); font-style: italic; font-weight: 300; font-size: clamp(1.05rem, 2vw, 1.35rem);
@@ -68,7 +68,7 @@ export function TasfiyeDuvari({ t, fragments }: { t: Copy; fragments: string[] }
           color: #F0ECE4; font-family: var(--font-serif); font-style: italic; font-size: clamp(1.3rem, 3.5vw, 2.2rem);
           text-align: center; padding: 0.75rem 0.5rem 1rem; outline: none; transition: border-color 0.3s ease; }
         .td-input::placeholder { color: rgba(240,236,228,0.28); }
-        .td-input:focus { border-color: #E5402A; }
+        .td-input:focus { border-color: #3A5BD9; }
         .td-field.burning { animation: tdBurn 1.5s cubic-bezier(0.4,0,0.6,1) forwards; }
         @keyframes tdBurn { 0% { opacity: 1; filter: blur(0); transform: translateY(0); }
           35% { color: #FF7A3D; text-shadow: 0 0 18px rgba(255,122,61,0.9); }
@@ -82,7 +82,7 @@ export function TasfiyeDuvari({ t, fragments }: { t: Copy; fragments: string[] }
 
         .td-btn { margin-top: 2.25rem; display: inline-flex; align-items: center; gap: 0.5rem; cursor: pointer;
           font-family: var(--font-grotesk); font-size: 0.8rem; font-weight: 500; letter-spacing: 0.08em;
-          padding: 0.95rem 2rem; border-radius: 100px; border: 1px solid transparent; background: #E5402A; color: #F7F1EA;
+          padding: 0.95rem 2rem; border-radius: 100px; border: 1px solid transparent; background: #3A5BD9; color: #F7F1EA;
           transition: transform 0.3s ease, background 0.3s ease; }
         .td-btn:hover { transform: translateY(-2px); background: #FF5a3d; }
         .td-btn:disabled { opacity: 0.4; cursor: default; transform: none; }

@@ -177,19 +177,19 @@ export default function YasayanKapak() {
         .yk-root::after { content: ""; position: absolute; inset: 0; pointer-events: none;
           background: radial-gradient(120% 95% at 50% 40%, transparent 52%, rgba(0,0,0,0.7) 100%); }
         .yk-spot { position: absolute; top: -16%; left: 50%; width: 84vmin; height: 84vmin; transform: translateX(-50%);
-          background: radial-gradient(closest-side, rgba(241,230,210,0.10), rgba(229,64,42,0.06) 50%, transparent 72%);
+          background: radial-gradient(closest-side, rgba(241,230,210,0.10), rgba(58,91,217,0.06) 50%, transparent 72%);
           filter: blur(6px); pointer-events: none; }
         .yk-burst { position: absolute; inset: 0; pointer-events: none; z-index: 6; }
         .yk-top { position: absolute; top: 0; left: 0; right: 0; z-index: 7; display: flex; align-items: center; justify-content: space-between;
           padding: 1.2rem clamp(1.25rem, 4vw, 3rem); }
         .yk-title { font-family: var(--font-grotesk); font-weight: 700; letter-spacing: -0.02em; font-size: 1rem; }
         .yk-back { font-family: var(--font-grotesk); font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase;
-          color: #9a948a; border-bottom: 1px solid #E5402A; padding-bottom: 2px; }
+          color: #9a948a; border-bottom: 1px solid #3A5BD9; padding-bottom: 2px; }
 
         .yk-stage { position: relative; z-index: 2; height: 100%; display: flex; flex-direction: column;
           align-items: center; justify-content: center; gap: 0; padding: 4.5rem 1rem 2rem; }
         .yk-marka { font-family: var(--font-grotesk); font-weight: 700; font-size: clamp(1.6rem, 5vw, 2.6rem);
-          letter-spacing: 0.42em; text-transform: uppercase; color: #F1EDE4; text-shadow: 0 0 34px rgba(229,64,42,0.25);
+          letter-spacing: 0.42em; text-transform: uppercase; color: #F1EDE4; text-shadow: 0 0 34px rgba(58,91,217,0.25);
           margin-bottom: clamp(0.5rem, 2vh, 1.4rem); }
 
         .yk-paper-wrap { position: relative; z-index: 3; }
@@ -222,12 +222,12 @@ export default function YasayanKapak() {
           font-family: var(--font-grotesk); font-size: 0.78rem; font-weight: 500; letter-spacing: 0.1em;
           padding: 0.85rem 1.6rem; border-radius: 100px; border: 1px solid transparent;
           transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease, opacity 0.3s ease; }
-        .yk-fill { background: #E5402A; color: #0b0a09; }
-        .yk-fill:hover { transform: translateY(-2px); box-shadow: 0 12px 30px rgba(229,64,42,0.35); }
+        .yk-fill { background: #3A5BD9; color: #0b0a09; }
+        .yk-fill:hover { transform: translateY(-2px); box-shadow: 0 12px 30px rgba(58,91,217,0.35); }
         .yk-fill[data-off="1"] { opacity: 0.35; pointer-events: none; }
         .yk-ghost { border-color: rgba(241,237,228,0.28); color: #F1EDE4; background: transparent; }
         .yk-ghost:hover { border-color: #F1EDE4; transform: translateY(-2px); }
-        .yk-sayac { font-family: var(--font-grotesk); font-size: 0.64rem; letter-spacing: 0.22em; text-transform: uppercase; color: #E5402A; }
+        .yk-sayac { font-family: var(--font-grotesk); font-size: 0.64rem; letter-spacing: 0.22em; text-transform: uppercase; color: #3A5BD9; }
         .yk-motto { font-family: var(--font-serif); font-style: italic; font-weight: 300; font-size: clamp(0.95rem, 2.2vw, 1.15rem); color: #c9c2b6; }
 
         .yk-pile { position: absolute; bottom: 3vh; left: 4vw; display: flex; gap: 6px; align-items: flex-end; z-index: 2; }

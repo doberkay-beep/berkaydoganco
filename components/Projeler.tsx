@@ -16,7 +16,7 @@ export function Projeler({ lang }: { lang: Lang }) {
         .prj-card { position: relative; overflow: hidden; margin-top: clamp(2.5rem, 6vh, 4rem);
           display: grid; grid-template-columns: 1fr 1.2fr; gap: clamp(1.5rem, 4vw, 3.5rem);
           padding: clamp(1.75rem, 4vw, 3rem); border-radius: 20px;
-          background: radial-gradient(120% 100% at 100% 0%, rgba(229,64,42,0.12), transparent 55%), var(--glass-bg);
+          background: radial-gradient(120% 100% at 100% 0%, rgba(58,91,217,0.12), transparent 55%), var(--glass-bg);
           border: 1px solid var(--glass-border);
           -webkit-backdrop-filter: blur(18px) saturate(150%); backdrop-filter: blur(18px) saturate(150%); }
         @media (max-width: 760px) { .prj-card { grid-template-columns: 1fr; } }

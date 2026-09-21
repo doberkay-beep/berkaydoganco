@@ -80,7 +80,7 @@ const SSS: { s: string; c: string }[] = [
 const RENKLER: { ad: string; hex: string }[] = [
   { ad: "Saf siyah (zemin)", hex: "#050505" },
   { ad: "Beyaz (metin)", hex: "#FAFAFA" },
-  { ad: "Köz (vurgu)", hex: "#E5402A" },
+  { ad: "Gece mavisi (vurgu)", hex: "#3A5BD9" },
 ];
 
 const ICINDEKILER: [string, string][] = [

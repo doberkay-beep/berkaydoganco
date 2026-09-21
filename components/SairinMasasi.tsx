@@ -48,10 +48,10 @@ export default function SairinMasasi() {
           padding: 1.2rem clamp(1.25rem, 4vw, 3rem); }
         .sm-title { font-family: var(--font-grotesk, sans-serif); font-weight: 700; letter-spacing: -0.02em; font-size: 1rem; color: #F1EDE4; }
         .sm-back { font-family: var(--font-grotesk, sans-serif); font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase; color: #9a948a;
-          border-bottom: 1px solid #E5402A; padding-bottom: 2px; }
+          border-bottom: 1px solid #3A5BD9; padding-bottom: 2px; }
         .sm-svg { width: min(1100px, 96vw); height: auto; display: block; }
         .sm-obj { cursor: pointer; transition: filter 0.3s ease; }
-        .sm-obj:hover { filter: brightness(1.35) drop-shadow(0 0 18px rgba(229,64,42,0.35)); }
+        .sm-obj:hover { filter: brightness(1.35) drop-shadow(0 0 18px rgba(58,91,217,0.35)); }
         .sm-label { position: absolute; left: 50%; transform: translateX(-50%); bottom: clamp(1.6rem, 6vh, 3.5rem); z-index: 3;
           font-family: var(--font-grotesk, sans-serif); font-size: 0.78rem; letter-spacing: 0.2em; text-transform: uppercase;
           color: #F1EDE4; background: rgba(15,12,10,0.72); border: 1px solid rgba(241,237,228,0.16); border-radius: 100px;
@@ -71,9 +71,9 @@ export default function SairinMasasi() {
         {/* Duvar dokusu + lamba ışığı */}
         <defs>
           <radialGradient id="smLampGlow" cx="50%" cy="0%" r="80%">
-            <stop offset="0%" stopColor="#E5402A" stopOpacity="0.34" />
-            <stop offset="45%" stopColor="#E5402A" stopOpacity="0.10" />
-            <stop offset="100%" stopColor="#E5402A" stopOpacity="0" />
+            <stop offset="0%" stopColor="#3A5BD9" stopOpacity="0.34" />
+            <stop offset="45%" stopColor="#3A5BD9" stopOpacity="0.10" />
+            <stop offset="100%" stopColor="#3A5BD9" stopOpacity="0" />
           </radialGradient>
           <linearGradient id="smDesk" x1="0" y1="0" x2="0" y2="1">
             <stop offset="0%" stopColor="#3a2b1e" />
@@ -88,7 +88,7 @@ export default function SairinMasasi() {
         <g opacity="0.4">
           <circle cx="900" cy="140" r="34" stroke="#c9beac" strokeWidth="2.5" fill="none" />
           <text x="900" y="150" textAnchor="middle" fontFamily="Helvetica Neue, Arial, sans-serif" fontSize="26" fontWeight="700" fill="#c9beac">BD</text>
-          <circle cx="900" cy="106" r="4" fill="#E5402A" />
+          <circle cx="900" cy="106" r="4" fill="#3A5BD9" />
         </g>
 
         {/* Masa */}
@@ -99,10 +99,10 @@ export default function SairinMasasi() {
         {/* LAMBA (tema) */}
         <g className="sm-obj" {...H("lamp")} onClick={toggleTheme} role="button" aria-label={L.lamp}>
           <rect x="152" y="270" width="10" height="160" rx="4" fill="#4a3a2a" />
-          <path d="M108 276 L206 276 L184 218 L130 218 Z" fill={lit("lamp") ? "#E5402A" : "#8a4432"} />
+          <path d="M108 276 L206 276 L184 218 L130 218 Z" fill={lit("lamp") ? "#3A5BD9" : "#8a4432"} />
           <ellipse cx="157" cy="284" rx="52" ry="9" fill="#2a1e14" />
           <ellipse cx="157" cy="435" rx="42" ry="9" fill="#1c140d" />
-          <ellipse cx="157" cy="330" rx="60" ry="42" fill="#E5402A" opacity={lit("lamp") ? 0.22 : 0.1} />
+          <ellipse cx="157" cy="330" rx="60" ry="42" fill="#3A5BD9" opacity={lit("lamp") ? 0.22 : 0.1} />
         </g>
 
         {/* KİTAPLAR (kitap sayfaları) */}
@@ -137,7 +137,7 @@ export default function SairinMasasi() {
           <g className="sm-obj" {...H("papers")} aria-label={L.papers}>
             <rect x="712" y="380" width="86" height="52" rx="3" fill="#EFE7D6" transform="rotate(7 755 406)" />
             <rect x="700" y="392" width="86" height="46" rx="3" fill="#E4DAC6" transform="rotate(-6 743 415)" />
-            <circle cx="758" cy="404" r="4" fill="#E5402A" opacity={0.5 + 0.5 * lit("papers")} />
+            <circle cx="758" cy="404" r="4" fill="#3A5BD9" opacity={0.5 + 0.5 * lit("papers")} />
             <line x1="716" y1="398" x2="778" y2="404" stroke="#a89a82" strokeWidth="2" />
             <line x1="714" y1="410" x2="770" y2="415" stroke="#a89a82" strokeWidth="2" />
           </g>
@@ -150,12 +150,12 @@ export default function SairinMasasi() {
             <rect x="868" y="356" width="70" height="60" rx="6" fill="#1c140d" />
             {Array.from({ length: 5 }).map((_, i) => (
               <rect key={i} x={876 + i * 12} y={382 - (lit("radio") ? [8, 16, 24, 14, 6][i] : [4, 9, 14, 8, 3][i])} width="6" rx="2"
-                height={lit("radio") ? [16, 28, 40, 24, 12][i] : [8, 16, 24, 14, 6][i]} fill="#E5402A" />
+                height={lit("radio") ? [16, 28, 40, 24, 12][i] : [8, 16, 24, 14, 6][i]} fill="#3A5BD9" />
             ))}
             <circle cx="962" cy="370" r="11" fill="#4a3a2a" />
             <circle cx="962" cy="402" r="11" fill="#4a3a2a" />
             <line x1="990" y1="342" x2="1014" y2="292" stroke="#4a3a2a" strokeWidth="4" strokeLinecap="round" />
-            <circle cx="1014" cy="290" r="4" fill={lit("radio") ? "#E5402A" : "#4a3a2a"} />
+            <circle cx="1014" cy="290" r="4" fill={lit("radio") ? "#3A5BD9" : "#4a3a2a"} />
           </g>
         </a>
 

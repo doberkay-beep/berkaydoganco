@@ -244,7 +244,7 @@ export default function Mahkeme() {
     ctx.font = `500 26px ${grotesk}`;
     ctx.fillText("T A S F İ Y E   M A H K E M E S İ", W / 2, 120);
 
-    ctx.fillStyle = "#E5402A";
+    ctx.fillStyle = "#3A5BD9";
     ctx.font = `500 24px ${grotesk}`;
     ctx.fillText(L.verdictLabel.toLocaleUpperCase(lang === "tr" ? "tr" : "en"), W / 2, 250);
     ctx.fillStyle = "#F1EDE4";
@@ -260,7 +260,7 @@ export default function Mahkeme() {
     for (const tl of tlines) { ctx.fillText(tl, W / 2, ty); ty += 76; }
 
     // aksan çizgisi
-    ctx.fillStyle = "#E5402A"; ctx.fillRect(W / 2 - 42, ty + 10, 84, 3);
+    ctx.fillStyle = "#3A5BD9"; ctx.fillRect(W / 2 - 42, ty + 10, 84, 3);
 
     // alıntı
     ctx.fillStyle = "#F1EDE4";
@@ -286,7 +286,7 @@ export default function Mahkeme() {
     ctx.beginPath(); ctx.arc(W / 2, sy, 40, 0, Math.PI * 2); ctx.stroke();
     ctx.fillStyle = "#F1EDE4"; ctx.font = `700 34px ${grotesk}`;
     ctx.textBaseline = "middle"; ctx.fillText("BD", W / 2, sy + 2); ctx.textBaseline = "alphabetic";
-    ctx.fillStyle = "#E5402A"; ctx.beginPath(); ctx.arc(W / 2, sy - 40, 5.5, 0, Math.PI * 2); ctx.fill();
+    ctx.fillStyle = "#3A5BD9"; ctx.beginPath(); ctx.arc(W / 2, sy - 40, 5.5, 0, Math.PI * 2); ctx.fill();
 
     ctx.fillStyle = "#9a948a"; ctx.font = `500 24px ${grotesk}`;
     ctx.fillText("berkaydogan.co/mahkeme", W / 2, H - 150);
@@ -305,19 +305,19 @@ export default function Mahkeme() {
         .mh-root { position: fixed; inset: 0; overflow-y: auto; color: #F1EDE4;
           background: radial-gradient(120% 80% at 50% -10%, #241a13 0%, #0b0a09 50%, #060504 100%); }
         .mh-spot { position: fixed; top: -20%; left: 50%; width: 90vmin; height: 90vmin; transform: translateX(-50%);
-          background: radial-gradient(closest-side, rgba(229,64,42,0.14), rgba(229,64,42,0.04) 55%, transparent 72%);
+          background: radial-gradient(closest-side, rgba(58,91,217,0.14), rgba(58,91,217,0.04) 55%, transparent 72%);
           filter: blur(8px); pointer-events: none; }
         .mh-top { position: sticky; top: 0; z-index: 3; display: flex; align-items: center; justify-content: space-between;
           padding: 1.2rem clamp(1.25rem, 4vw, 3rem); }
         .mh-title { font-family: var(--font-grotesk); font-weight: 700; letter-spacing: -0.02em; font-size: 1rem; }
         .mh-back { font-family: var(--font-grotesk); font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase;
-          color: #9a948a; border-bottom: 1px solid #E5402A; padding-bottom: 2px; }
+          color: #9a948a; border-bottom: 1px solid #3A5BD9; padding-bottom: 2px; }
         .mh-stage { position: relative; z-index: 2; max-width: 720px; margin: 0 auto;
           padding: clamp(2rem, 8vh, 6rem) clamp(1.25rem, 5vw, 2rem) 5rem; text-align: center;
           transition: opacity 0.26s ease, transform 0.26s ease; }
         .mh-stage[data-out="1"] { opacity: 0; transform: translateY(10px); }
         .mh-eyebrow { font-family: var(--font-grotesk); font-size: 0.68rem; font-weight: 500; letter-spacing: 0.3em;
-          text-transform: uppercase; color: #E5402A; }
+          text-transform: uppercase; color: #3A5BD9; }
         .mh-h { font-family: var(--font-grotesk); font-weight: 700; font-size: clamp(2rem, 7vw, 3.6rem);
           letter-spacing: -0.04em; line-height: 1.02; margin: 1.2rem 0; }
         .mh-sub { font-family: var(--font-serif); font-style: italic; font-weight: 300;
@@ -330,16 +330,16 @@ export default function Mahkeme() {
           background: rgba(30,26,22,0.5); border: 1px solid rgba(241,237,228,0.14);
           -webkit-backdrop-filter: blur(12px); backdrop-filter: blur(12px);
           transition: border-color 0.25s ease, transform 0.25s ease, background 0.25s ease; }
-        .mh-opt:hover { border-color: #E5402A; transform: translateY(-2px); background: rgba(40,32,26,0.6); }
+        .mh-opt:hover { border-color: #3A5BD9; transform: translateY(-2px); background: rgba(40,32,26,0.6); }
         .mh-btn { display: inline-flex; align-items: center; gap: 0.6rem; cursor: pointer;
           font-family: var(--font-grotesk); font-size: 0.8rem; font-weight: 500; letter-spacing: 0.1em;
           padding: 0.95rem 1.8rem; border-radius: 100px; border: 1px solid transparent;
           transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease; }
-        .mh-fill { background: #E5402A; color: #0b0a09; }
-        .mh-fill:hover { transform: translateY(-2px); box-shadow: 0 12px 30px rgba(229,64,42,0.35); }
+        .mh-fill { background: #3A5BD9; color: #0b0a09; }
+        .mh-fill:hover { transform: translateY(-2px); box-shadow: 0 12px 30px rgba(58,91,217,0.35); }
         .mh-ghost { border-color: rgba(241,237,228,0.28); color: #F1EDE4; background: transparent; }
         .mh-ghost:hover { border-color: #F1EDE4; transform: translateY(-2px); }
-        .mh-verdict-line { width: 84px; height: 3px; background: #E5402A; margin: 1.6rem auto; }
+        .mh-verdict-line { width: 84px; height: 3px; background: #3A5BD9; margin: 1.6rem auto; }
         .mh-quote { font-family: var(--font-serif); font-style: italic; font-weight: 300;
           font-size: clamp(1.3rem, 3.6vw, 1.9rem); line-height: 1.5; max-width: 30ch; margin: 0 auto; }
         .mh-ctas { display: flex; gap: 0.75rem; justify-content: center; flex-wrap: wrap; margin-top: 2.2rem; }
@@ -385,7 +385,7 @@ export default function Mahkeme() {
             <p className="mh-sub">{L.verdicts[k].prose}</p>
             <div className="mh-verdict-line" aria-hidden="true" />
             <blockquote className="mh-quote">&ldquo;{QUOTES[k].text}&rdquo;</blockquote>
-            <p style={{ marginTop: "0.9rem", fontFamily: "var(--font-grotesk)", fontSize: "0.7rem", letterSpacing: "0.2em", textTransform: "uppercase", color: "#E5402A" }}>
+            <p style={{ marginTop: "0.9rem", fontFamily: "var(--font-grotesk)", fontSize: "0.7rem", letterSpacing: "0.2em", textTransform: "uppercase", color: "#3A5BD9" }}>
               Tasfiye — {QUOTES[k].sayfa}
             </p>
             <p className="mh-sub" style={{ marginTop: "1.4rem", fontSize: "1rem" }}>{L.closing}</p>

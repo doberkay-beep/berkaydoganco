@@ -215,7 +215,7 @@ export default function MurekkepLekesi() {
     ctx.fillStyle = "#9a948a"; ctx.font = `500 26px ${grotesk}`;
     ctx.fillText("M Ü R E K K E P   L E K E S İ", W / 2, 120);
 
-    ctx.fillStyle = "#E5402A"; ctx.font = `500 24px ${grotesk}`;
+    ctx.fillStyle = "#3A5BD9"; ctx.font = `500 24px ${grotesk}`;
     ctx.fillText(L.resultLabel.toLocaleUpperCase(lang === "tr" ? "tr" : "en"), W / 2, 320);
 
     ctx.fillStyle = "#F1EDE4"; ctx.font = `italic 300 52px ${serif}`;
@@ -235,14 +235,14 @@ export default function MurekkepLekesi() {
     ctx.fillStyle = "#9a948a"; ctx.font = `500 22px ${grotesk}`;
     ctx.fillText(r.kaynak, W / 2, y + 24);
 
-    ctx.fillStyle = "#E5402A"; ctx.fillRect(W / 2 - 42, y + 70, 84, 3);
+    ctx.fillStyle = "#3A5BD9"; ctx.fillRect(W / 2 - 42, y + 70, 84, 3);
 
     const sy = H - 260;
     ctx.strokeStyle = "rgba(241,237,228,0.8)"; ctx.lineWidth = 3;
     ctx.beginPath(); ctx.arc(W / 2, sy, 40, 0, Math.PI * 2); ctx.stroke();
     ctx.fillStyle = "#F1EDE4"; ctx.font = `700 34px ${grotesk}`;
     ctx.textBaseline = "middle"; ctx.fillText("BD", W / 2, sy + 2); ctx.textBaseline = "alphabetic";
-    ctx.fillStyle = "#E5402A"; ctx.beginPath(); ctx.arc(W / 2, sy - 40, 5.5, 0, Math.PI * 2); ctx.fill();
+    ctx.fillStyle = "#3A5BD9"; ctx.beginPath(); ctx.arc(W / 2, sy - 40, 5.5, 0, Math.PI * 2); ctx.fill();
 
     ctx.fillStyle = "#9a948a"; ctx.font = `500 24px ${grotesk}`;
     ctx.fillText("berkaydogan.co/leke", W / 2, H - 150);
@@ -265,13 +265,13 @@ export default function MurekkepLekesi() {
           padding: 1.2rem clamp(1.25rem, 4vw, 3rem); }
         .lk-title { font-family: var(--font-grotesk); font-weight: 700; letter-spacing: -0.02em; font-size: 1rem; }
         .lk-back { font-family: var(--font-grotesk); font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase;
-          color: #9a948a; border-bottom: 1px solid #E5402A; padding-bottom: 2px; }
+          color: #9a948a; border-bottom: 1px solid #3A5BD9; padding-bottom: 2px; }
         .lk-stage { position: relative; z-index: 2; max-width: 760px; margin: 0 auto; text-align: center;
           padding: clamp(1.5rem, 5vh, 4rem) clamp(1.25rem, 5vw, 2rem) 5rem;
           transition: opacity 0.24s ease, transform 0.24s ease; }
         .lk-stage[data-out="1"] { opacity: 0; transform: translateY(10px); }
         .lk-eyebrow { font-family: var(--font-grotesk); font-size: 0.68rem; font-weight: 500; letter-spacing: 0.3em;
-          text-transform: uppercase; color: #E5402A; }
+          text-transform: uppercase; color: #3A5BD9; }
         .lk-h { font-family: var(--font-grotesk); font-weight: 700; font-size: clamp(2rem, 7vw, 3.6rem);
           letter-spacing: -0.04em; line-height: 1.02; margin: 1.2rem 0; }
         .lk-sub { font-family: var(--font-serif); font-style: italic; font-weight: 300;
@@ -289,13 +289,13 @@ export default function MurekkepLekesi() {
           background: rgba(30,26,22,0.5); border: 1px solid rgba(241,237,228,0.14);
           -webkit-backdrop-filter: blur(12px); backdrop-filter: blur(12px);
           transition: border-color 0.25s ease, transform 0.25s ease, background 0.25s ease; }
-        .lk-opt:hover { border-color: #E5402A; transform: translateY(-2px); background: rgba(40,32,26,0.6); }
+        .lk-opt:hover { border-color: #3A5BD9; transform: translateY(-2px); background: rgba(40,32,26,0.6); }
         .lk-btn { display: inline-flex; align-items: center; gap: 0.6rem; cursor: pointer;
           font-family: var(--font-grotesk); font-size: 0.8rem; font-weight: 500; letter-spacing: 0.1em;
           padding: 0.95rem 1.8rem; border-radius: 100px; border: 1px solid transparent; text-decoration: none;
           transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease; }
-        .lk-fill { background: #E5402A; color: #0b0a09; }
-        .lk-fill:hover { transform: translateY(-2px); box-shadow: 0 12px 30px rgba(229,64,42,0.35); }
+        .lk-fill { background: #3A5BD9; color: #0b0a09; }
+        .lk-fill:hover { transform: translateY(-2px); box-shadow: 0 12px 30px rgba(58,91,217,0.35); }
         .lk-ghost { border-color: rgba(241,237,228,0.28); color: #F1EDE4; background: transparent; }
         .lk-ghost:hover { border-color: #F1EDE4; transform: translateY(-2px); }
         .lk-dize { font-family: var(--font-serif); font-style: italic; font-weight: 300;
@@ -341,7 +341,7 @@ export default function MurekkepLekesi() {
           <>
             <span className="lk-eyebrow">{L.resultLabel}</span>
             <blockquote className="lk-dize">&ldquo;{r.dize}&rdquo;</blockquote>
-            <p style={{ fontFamily: "var(--font-grotesk)", fontSize: "0.7rem", letterSpacing: "0.2em", textTransform: "uppercase", color: "#E5402A" }}>{r.kaynak}</p>
+            <p style={{ fontFamily: "var(--font-grotesk)", fontSize: "0.7rem", letterSpacing: "0.2em", textTransform: "uppercase", color: "#3A5BD9" }}>{r.kaynak}</p>
             <div className="lk-book">
               <img src={kitap.kapak} alt={kitap.ad} loading="lazy" decoding="async" />
               <span style={{ textAlign: "left" }}>

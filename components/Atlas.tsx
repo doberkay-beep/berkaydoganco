@@ -34,9 +34,9 @@ export default function Atlas({ data }: { data: AtlasData }) {
       <svg viewBox="0 0 1000 920" style={{ width: "100%", height: "auto", display: "block", touchAction: "manipulation" }} role="group" aria-label="Zihin Atlası — tema haritası">
         <defs>
           <radialGradient id="koz" cx="50%" cy="42%" r="60%">
-            <stop offset="0%" stopColor="#ff7a52" />
-            <stop offset="55%" stopColor="#E5402A" />
-            <stop offset="100%" stopColor="#7d1e12" />
+            <stop offset="0%" stopColor="#6E8BFF" />
+            <stop offset="55%" stopColor="#3A5BD9" />
+            <stop offset="100%" stopColor="#1E2F7D" />
           </radialGradient>
         </defs>
 
@@ -47,7 +47,7 @@ export default function Atlas({ data }: { data: AtlasData }) {
           const op = aktifIdx >= 0 ? (iliskili ? 0.55 : 0.05) : Math.min(0.28, 0.06 + e.w * 0.05);
           return (
             <line key={i} x1={A.x} y1={A.y} x2={B.x} y2={B.y}
-              stroke={iliskili ? "#E5402A" : "#FAFAFA"} strokeOpacity={op}
+              stroke={iliskili ? "#3A5BD9" : "#FAFAFA"} strokeOpacity={op}
               strokeWidth={iliskili ? 1.6 : Math.min(2.4, 0.5 + e.w * 0.35)} />
           );
         })}
@@ -64,8 +64,8 @@ export default function Atlas({ data }: { data: AtlasData }) {
               onMouseEnter={() => setHover(n.slug)} onMouseLeave={() => setHover(null)}
               onClick={() => setSecili(secim ? null : n.slug)}
               onKeyDown={(ev) => { if (ev.key === "Enter" || ev.key === " ") { ev.preventDefault(); setSecili(secim ? null : n.slug); } }}>
-              {secim && <circle r={n.r + 10} fill="none" stroke="#E5402A" strokeWidth={1.4} strokeOpacity={0.7} />}
-              <circle r={n.r} fill="url(#koz)" stroke="#ff7a52" strokeOpacity={secim ? 0.9 : 0.35} strokeWidth={1} />
+              {secim && <circle r={n.r + 10} fill="none" stroke="#3A5BD9" strokeWidth={1.4} strokeOpacity={0.7} />}
+              <circle r={n.r} fill="url(#koz)" stroke="#6E8BFF" strokeOpacity={secim ? 0.9 : 0.35} strokeWidth={1} />
               <text y={n.r + 22} textAnchor="middle" fill="#FAFAFA" fontSize={17}
                 style={{ fontFamily: "var(--font-grotesk)", fontWeight: 600, letterSpacing: "0.01em" }}>{n.ad}</text>
               <text y={5} textAnchor="middle" fill="#050505" fontSize={Math.max(13, n.r * 0.6)}

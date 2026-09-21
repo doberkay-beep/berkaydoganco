@@ -23,7 +23,7 @@ export function Muhur({ size = 24, className, style }: { size?: number; classNam
         stroke="currentColor" strokeWidth="2.6" strokeLinecap="round" strokeLinejoin="round"
       />
       {/* köz — mührün tepesinde, çemberin üzerinde */}
-      <circle cx="32" cy="4" r="3.4" fill="#E5402A" />
+      <circle cx="32" cy="4" r="3.4" fill="#3A5BD9" />
     </svg>
   );
 }

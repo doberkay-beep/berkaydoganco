@@ -25,7 +25,7 @@ function TasfiyeBanner({ t }: { t: Copy }) {
       margin: "4.6rem clamp(1.25rem, 4vw, 3.25rem) 0",
       display: "flex", alignItems: "center", justifyContent: "space-between", gap: "1.25rem", flexWrap: "wrap",
       padding: "1rem 1.4rem", borderRadius: "16px",
-      background: "radial-gradient(120% 160% at 85% 0%, rgba(229,64,42,0.16), transparent 55%), var(--glass-bg)",
+      background: "radial-gradient(120% 160% at 85% 0%, rgba(58,91,217,0.16), transparent 55%), var(--glass-bg)",
       border: "1px solid var(--glass-border)",
       backdropFilter: "blur(18px) saturate(150%)", WebkitBackdropFilter: "blur(18px) saturate(150%)",
     }}>
@@ -121,7 +121,7 @@ export function Cagdas() {
                 <div className="cg-book-media" style={{ display: "flex", justifyContent: "center" }}>
                   <div style={{ position: "relative" }}>
                     <img src="/tasfiye-on-kapak.jpg" alt={b.tasfiye.title} loading="lazy" style={{ width: "clamp(180px, 24vw, 260px)", borderRadius: "3px", boxShadow: "0 24px 55px rgba(0,0,0,0.4)" }} />
-                    <span style={{ position: "absolute", top: "0.7rem", left: "0.7rem", fontSize: "0.55rem", letterSpacing: "0.2em", textTransform: "uppercase", color: "#F1EDE4", background: "rgba(229,64,42,0.9)", padding: "0.35rem 0.6rem", borderRadius: "100px" }}>{b.tasfiye.badge}</span>
+                    <span style={{ position: "absolute", top: "0.7rem", left: "0.7rem", fontSize: "0.55rem", letterSpacing: "0.2em", textTransform: "uppercase", color: "#F1EDE4", background: "rgba(58,91,217,0.9)", padding: "0.35rem 0.6rem", borderRadius: "100px" }}>{b.tasfiye.badge}</span>
                   </div>
                 </div>
               </Reveal>

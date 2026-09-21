@@ -24,7 +24,7 @@ export default async function Image({ params }: { params: Promise<{ slug: string
         background: "linear-gradient(160deg, #241a13 0%, #0b0a09 55%, #060504 100%)",
         padding: "80px 90px",
       }}>
-        <div style={{ display: "flex", fontSize: 22, fontWeight: 700, color: "#E5402A", letterSpacing: 3, marginBottom: 26 }}>
+        <div style={{ display: "flex", fontSize: 22, fontWeight: 700, color: "#3A5BD9", letterSpacing: 3, marginBottom: 26 }}>
           {`KİTAP · ${k.tur.toLocaleUpperCase("tr")}`}
         </div>
         <div style={{ display: "flex", fontSize: boy, fontWeight: 500, color: "#F1EDE4", lineHeight: 1.05, maxWidth: 1020 }}>
@@ -34,8 +34,8 @@ export default async function Image({ params }: { params: Promise<{ slug: string
           {k.desc.length > 130 ? `${k.desc.slice(0, 127)}…` : k.desc}
         </div>
         <div style={{ display: "flex", alignItems: "center", gap: 14, marginTop: 44 }}>
-          <div style={{ display: "flex", width: 40, height: 4, background: "#E5402A" }} />
-          <div style={{ display: "flex", fontSize: 22, fontWeight: 700, color: "#E5402A", letterSpacing: 2 }}>BERKAY DOĞAN</div>
+          <div style={{ display: "flex", width: 40, height: 4, background: "#3A5BD9" }} />
+          <div style={{ display: "flex", fontSize: 22, fontWeight: 700, color: "#3A5BD9", letterSpacing: 2 }}>BERKAY DOĞAN</div>
           <div style={{ display: "flex", fontSize: 20, color: "#9a948a" }}>· berkaydogan.co</div>
         </div>
       </div>
