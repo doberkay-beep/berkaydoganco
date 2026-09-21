@@ -37,6 +37,7 @@ export default function SozlerPage() {
       {/* Tema çipleri */}
       <div style={{ display: "flex", gap: "0.5rem", flexWrap: "wrap", margin: "2.25rem 0 0" }}>
         <Link href="/atlas" style={{ ...mono, fontSize: "0.66rem", color: "var(--accent-ink)", background: "var(--accent)", borderRadius: "100px", padding: "0.5rem 0.95rem" }}>Zihin Atlası →</Link>
+        <Link href="/oda" style={{ ...mono, fontSize: "0.66rem", color: "var(--muted)", border: "1px solid var(--line)", borderRadius: "100px", padding: "0.5rem 0.95rem" }}>Okuma Odası →</Link>
         <Link href="/takvim" style={{ ...mono, fontSize: "0.66rem", color: "var(--muted)", border: "1px solid var(--line)", borderRadius: "100px", padding: "0.5rem 0.95rem" }}>Bugünün sözü →</Link>
         <Link href="/posterler" style={{ ...mono, fontSize: "0.66rem", color: "var(--muted)", border: "1px solid var(--line)", borderRadius: "100px", padding: "0.5rem 0.95rem" }}>Posterler</Link>
         <Link href="/gom" style={{ ...mono, fontSize: "0.66rem", color: "var(--muted)", border: "1px solid var(--line)", borderRadius: "100px", padding: "0.5rem 0.95rem" }}>Sitene göm</Link>
