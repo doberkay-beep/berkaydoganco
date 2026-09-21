@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { SOZLER, sozSlug, KITAP_ADI, TEMA_ADI, TEMALAR } from "@/lib/sozler";
 import { BreadcrumbSchema } from "@/components/Schema";
+import { Reveal } from "@/components/Kabuk";
 
 export const metadata: Metadata = {
   title: { absolute: "Berkay Doğan Sözleri — 200 Söz" },
@@ -48,14 +49,14 @@ export default function SozlerPage() {
         ))}
       </div>
 
-      <section style={{ marginTop: "clamp(2.5rem, 6vh, 4rem)" }}>
+      <Reveal as="section" style={{ marginTop: "clamp(2.5rem, 6vh, 4rem)" }}>
         {SOZLER.map((soz, i) => (
           <Link key={i} href={`/soz/${sozSlug(soz.s)}`} style={{ display: "block", padding: "1.15rem 0", borderTop: "1px solid var(--line)" }}>
             <span style={{ display: "block", fontFamily: "var(--font-serif)", fontStyle: "italic", fontWeight: 300, fontSize: "clamp(1.02rem, 2.2vw, 1.25rem)", lineHeight: 1.5, color: "var(--ink)" }}>&ldquo;{soz.s}&rdquo;</span>
             <span style={{ display: "block", marginTop: "0.4rem", ...mono, fontSize: "0.6rem", color: "var(--muted)" }}>{KITAP_ADI[soz.k]}{soz.p ? ` · s. ${soz.p}` : ""}</span>
           </Link>
         ))}
-      </section>
+      </Reveal>
     </main>
   );
 }

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { KITAPLAR } from "@/lib/kitaplar";
 import { BreadcrumbSchema } from "@/components/Schema";
+import { Reveal } from "@/components/Kabuk";
 
 export const metadata: Metadata = {
   title: { absolute: "Kitaplar — Berkay Doğan" },
@@ -29,7 +30,7 @@ export default function KitaplarPage() {
       </span>
       <h1 style={{ fontFamily: "var(--font-serif)", fontWeight: 500, fontSize: "clamp(2.6rem, 7vw, 5rem)", letterSpacing: "-0.015em", lineHeight: 0.95, margin: "1.5rem 0 1rem", color: "var(--ink)" }}>Kitaplar</h1>
 
-      <div className="kl-grid">
+      <Reveal className="kl-grid">
         {KITAPLAR.map((k) => (
           <div key={k.slug} className="kl-card">
             <Link href={`/kitaplar/${k.slug}`} style={{ textDecoration: "none", display: "block" }}>
@@ -40,7 +41,7 @@ export default function KitaplarPage() {
             <Link href={`/kitaplar/${k.slug}/dunya`} style={{ display: "inline-block", marginTop: "0.7rem", fontFamily: "var(--font-grotesk)", fontSize: "0.66rem", fontWeight: 500, letterSpacing: "0.14em", textTransform: "uppercase", color: "var(--muted)", borderBottom: "1px solid var(--accent)", paddingBottom: "2px" }}>İç dünyaya gir →</Link>
           </div>
         ))}
-      </div>
+      </Reveal>
 
       <style>{`
         .kl-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 380px)); gap: clamp(1.5rem, 5vw, 4rem); margin-top: clamp(2.5rem, 6vh, 4rem); }

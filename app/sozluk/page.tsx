@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { KAVRAMLAR, kavramSlug } from "@/lib/sozluk";
-import { sozSlug, KITAP_ADI } from "@/lib/sozler";
+import { KITAP_ADI } from "@/lib/sozler";
 import { RastgeleKavram } from "@/components/RastgeleKavram";
+import { Reveal } from "@/components/Kabuk";
 
 export const metadata: Metadata = {
   title: { absolute: "Kavramlar Sözlüğü — Berkay Doğan" },
@@ -51,21 +52,21 @@ export default function SozlukPage() {
         <RastgeleKavram slugs={KAVRAMLAR.map((k) => kavramSlug(k.ad))} />
       </div>
 
-      <section style={{ marginTop: "clamp(2.5rem, 6vh, 4rem)" }}>
-        {KAVRAMLAR.map((kv) => (
-          <article key={kv.ad} style={{ padding: "1.75rem 0", borderTop: "1px solid var(--line)" }}>
-            <h2 style={{ fontFamily: "var(--font-grotesk)", fontWeight: 700, fontSize: "1.35rem", letterSpacing: "-0.02em" }}>
-              <Link href={`/sozluk/${kavramSlug(kv.ad)}`} style={{ color: "var(--accent-2)" }}>{kv.ad}</Link>
-            </h2>
-            <blockquote style={{ margin: "0.75rem 0 0", fontFamily: "var(--font-serif)", fontStyle: "italic", fontWeight: 300, fontSize: "clamp(1.1rem, 2.3vw, 1.4rem)", lineHeight: 1.55, color: "var(--ink)" }}>
-              &ldquo;{kv.tanim}&rdquo;
-            </blockquote>
-            <Link href={`/soz/${sozSlug(kv.tanim)}`} style={{ display: "inline-block", marginTop: "0.7rem", ...mono, fontSize: "0.6rem", color: "var(--muted)" }}>
-              {KITAP_ADI[kv.k]}{kv.p ? ` · s. ${kv.p}` : ""} → sözün sayfası
+      <Reveal as="section" style={{ marginTop: "clamp(2.5rem, 6vh, 4rem)" }}>
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(280px, 1fr))", gap: "1rem" }}>
+          {KAVRAMLAR.map((kv) => (
+            <Link key={kv.ad} href={`/sozluk/${kavramSlug(kv.ad)}`} className="glass-card" style={{ display: "block", padding: "1.4rem 1.5rem", color: "var(--ink)" }}>
+              <span style={{ fontFamily: "var(--font-grotesk)", fontWeight: 700, fontSize: "1.2rem", letterSpacing: "-0.02em", color: "var(--accent-2)" }}>{kv.ad}</span>
+              <span style={{ display: "block", margin: "0.7rem 0 0", fontFamily: "var(--font-serif)", fontStyle: "italic", fontWeight: 300, fontSize: "1.05rem", lineHeight: 1.5, color: "var(--ink)" }}>
+                &ldquo;{kv.tanim}&rdquo;
+              </span>
+              <span style={{ display: "block", marginTop: "0.85rem", ...mono, fontSize: "0.58rem", color: "var(--muted)" }}>
+                {KITAP_ADI[kv.k]}{kv.p ? ` · s. ${kv.p}` : ""}
+              </span>
             </Link>
-          </article>
-        ))}
-      </section>
+          ))}
+        </div>
+      </Reveal>
     </main>
   );
 }

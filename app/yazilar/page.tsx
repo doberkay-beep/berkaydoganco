@@ -3,6 +3,7 @@ import Link from "next/link";
 import { site, SUBSTACK_URL } from "@/lib/site";
 import { YAYINDA } from "@/lib/yazilar";
 import { BreadcrumbSchema } from "@/components/Schema";
+import { Reveal } from "@/components/Kabuk";
 
 export const dynamic = "force-static";
 
@@ -85,7 +86,7 @@ export default async function YazilarPage() {
       <p style={{ fontFamily: "var(--font-serif)", fontStyle: "italic", fontWeight: 300, fontSize: "clamp(1.2rem, 2.4vw, 1.7rem)", color: "var(--muted)", maxWidth: "44ch" }}>{t.sub}</p>
 
       {/* Sitede tam metin */}
-      <section style={{ marginTop: "clamp(3rem, 7vh, 5rem)" }}>
+      <Reveal as="section" style={{ marginTop: "clamp(3rem, 7vh, 5rem)" }}>
         {YAYINDA.map((y) => (
           <Link key={y.slug} href={`/yazilar/${y.slug}`} style={{ display: "block", padding: "1.75rem 0", borderTop: "1px solid var(--line)" }}>
             <span style={{ display: "block", fontFamily: "var(--font-grotesk)", fontSize: "0.68rem", letterSpacing: "0.16em", textTransform: "uppercase", color: "var(--accent-2)", marginBottom: "0.6rem" }}>{y.dateText}</span>
@@ -94,7 +95,7 @@ export default async function YazilarPage() {
             <span style={{ display: "inline-block", marginTop: "0.9rem", fontFamily: "var(--font-grotesk)", fontSize: "0.72rem", letterSpacing: "0.12em", textTransform: "uppercase", color: "var(--muted)" }}>{t.read} →</span>
           </Link>
         ))}
-      </section>
+      </Reveal>
 
       <section>
         {posts.length === 0 ? (
