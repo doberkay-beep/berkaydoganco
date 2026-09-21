@@ -3,6 +3,7 @@ import { Inter, Playfair_Display } from "next/font/google";
 import "./globals.css";
 import { Analytics } from "@vercel/analytics/next";
 import { MurekkepIz } from "@/components/MurekkepIz";
+import GlassHover from "@/components/GlassHover";
 
 // UI / etiket / buton — çağdaş nötr sans (CSS değişkeni tarihsel olarak --font-grotesk)
 const grotesk = Inter({
@@ -74,6 +75,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         <div className="aurora" aria-hidden="true" />
         <div id="main">{children}</div>
         <MurekkepIz />
+        <GlassHover />
         <Analytics />
       </body>
     </html>

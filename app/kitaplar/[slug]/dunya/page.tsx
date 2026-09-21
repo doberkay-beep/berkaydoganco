@@ -5,6 +5,7 @@ import { KITAPLAR } from "@/lib/kitaplar";
 import { SOZLER, sozSlug, TEMA_ADI } from "@/lib/sozler";
 import { KAVRAMLAR, kavramSlug } from "@/lib/sozluk";
 import { AUTHOR_REF } from "@/lib/site";
+import { Reveal } from "@/components/Kabuk";
 
 export const dynamic = "force-static";
 
@@ -98,7 +99,7 @@ export default async function DunyaPage({ params }: { params: Promise<{ slug: st
 
       {/* Temalar */}
       {temalar.length > 0 && (
-        <section style={{ marginTop: "clamp(2.5rem, 6vh, 4rem)", borderTop: "1px solid var(--line)", paddingTop: "2rem" }}>
+        <Reveal as="section" style={{ marginTop: "clamp(2.5rem, 6vh, 4rem)", borderTop: "1px solid var(--line)", paddingTop: "2rem" }}>
           <h2 style={{ ...mono, fontSize: "0.66rem", color: "var(--muted)", marginBottom: "1.2rem" }}>Duygu haritası</h2>
           <div style={{ display: "flex", flexWrap: "wrap", gap: "0.6rem" }}>
             {temalar.map(([t, n]) => (
@@ -108,16 +109,16 @@ export default async function DunyaPage({ params }: { params: Promise<{ slug: st
             ))}
           </div>
           <Link href="/atlas" style={{ display: "inline-block", marginTop: "1rem", ...mono, fontSize: "0.66rem", color: "var(--muted)", borderBottom: "1px solid var(--accent)", paddingBottom: "2px" }}>Zihin Atlası'nda gör →</Link>
-        </section>
+        </Reveal>
       )}
 
       {/* Kavramlar */}
       {kavramlar.length > 0 && (
-        <section style={{ marginTop: "clamp(2.5rem, 6vh, 4rem)", borderTop: "1px solid var(--line)", paddingTop: "2rem" }}>
+        <Reveal as="section" style={{ marginTop: "clamp(2.5rem, 6vh, 4rem)", borderTop: "1px solid var(--line)", paddingTop: "2rem" }}>
           <h2 style={{ ...mono, fontSize: "0.66rem", color: "var(--muted)", marginBottom: "1.2rem" }}>Kavramlar</h2>
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(220px, 1fr))", gap: "1rem" }}>
             {kavramlar.map((kv) => (
-              <Link key={kv.ad} href={`/sozluk/${kavramSlug(kv.ad)}`} style={{ display: "block", padding: "1rem 1.1rem", border: "1px solid var(--line)", borderRadius: "12px", color: "var(--ink)" }}>
+              <Link key={kv.ad} href={`/sozluk/${kavramSlug(kv.ad)}`} className="glass-card" style={{ display: "block", padding: "1.1rem 1.2rem", color: "var(--ink)" }}>
                 <span style={{ fontFamily: "var(--font-grotesk)", fontWeight: 700, fontSize: "1rem", color: "var(--accent-2)" }}>{kv.ad}</span>
                 <span style={{ display: "block", marginTop: "0.4rem", fontFamily: "var(--font-serif)", fontStyle: "italic", fontSize: "0.92rem", lineHeight: 1.45, color: "var(--muted)" }}>
                   {kv.tanim.length > 90 ? `${kv.tanim.slice(0, 87)}…` : kv.tanim}
@@ -125,11 +126,11 @@ export default async function DunyaPage({ params }: { params: Promise<{ slug: st
               </Link>
             ))}
           </div>
-        </section>
+        </Reveal>
       )}
 
       {/* Sözler */}
-      <section style={{ marginTop: "clamp(2.5rem, 6vh, 4rem)", borderTop: "1px solid var(--line)", paddingTop: "2rem" }}>
+      <Reveal as="section" style={{ marginTop: "clamp(2.5rem, 6vh, 4rem)", borderTop: "1px solid var(--line)", paddingTop: "2rem" }}>
         <h2 style={{ ...mono, fontSize: "0.66rem", color: "var(--muted)", marginBottom: "1.2rem" }}>Bütün sözler ({sozler.length})</h2>
         <div style={{ display: "flex", flexDirection: "column" }}>
           {sozler.map((s) => (
@@ -138,7 +139,7 @@ export default async function DunyaPage({ params }: { params: Promise<{ slug: st
             </Link>
           ))}
         </div>
-      </section>
+      </Reveal>
     </main>
   );
 }

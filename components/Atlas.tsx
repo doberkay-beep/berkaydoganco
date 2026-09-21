@@ -77,10 +77,9 @@ export default function Atlas({ data }: { data: AtlasData }) {
 
       {/* Seçili tema paneli */}
       {seciliNode && (
-        <div style={{
+        <div className="glass-card" style={{
           position: "sticky", bottom: 0, marginTop: "1rem",
-          background: "var(--bg-2)", border: "1px solid var(--line)", borderRadius: "16px",
-          padding: "1.5rem", maxHeight: "50vh", overflowY: "auto", boxShadow: "0 -10px 40px rgba(0,0,0,0.4)",
+          padding: "1.5rem", maxHeight: "50vh", overflowY: "auto",
         }}>
           <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline", gap: "1rem", flexWrap: "wrap" }}>
             <h2 style={{ fontFamily: "var(--font-serif)", fontWeight: 500, fontSize: "clamp(1.6rem, 4vw, 2.4rem)", color: "var(--ink)", margin: 0 }}>
