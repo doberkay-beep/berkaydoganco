@@ -41,13 +41,13 @@ export function Kahin({ t, verses }: { t: Copy; verses: string[] }) {
           color: var(--ink); font-family: var(--font-serif); font-style: italic; font-size: 1.25rem;
           text-align: center; padding: 0.6rem 0.4rem; outline: none; transition: border-color 0.3s ease; }
         .kahin-input::placeholder { color: var(--muted); opacity: 0.6; }
-        .kahin-input:focus { border-color: var(--accent); }
+        .kahin-input:focus { border-color: var(--accent-2); }
         .kahin-card { animation: kahinIn 0.9s cubic-bezier(0.22,1,0.36,1) both; }
         @keyframes kahinIn { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: translateY(0); } }
         .kahin-verse { font-family: var(--font-serif); font-style: italic; font-weight: 300;
           font-size: clamp(1.8rem, 5vw, 3.4rem); line-height: 1.3; color: var(--ink); max-width: 18ch; margin: 2.75rem auto 1.5rem; }
         .kahin-note { font-family: var(--font-grotesk); font-size: 0.66rem; letter-spacing: 0.2em;
-          text-transform: uppercase; color: var(--accent); }
+          text-transform: uppercase; color: var(--accent-2); }
         .kahin-actions { display: flex; gap: 0.75rem; justify-content: center; margin-top: 2.5rem; flex-wrap: wrap; }
       `}</style>
       <div className="kahin-inner">

@@ -103,7 +103,7 @@ export default async function DunyaPage({ params }: { params: Promise<{ slug: st
           <div style={{ display: "flex", flexWrap: "wrap", gap: "0.6rem" }}>
             {temalar.map(([t, n]) => (
               <Link key={t} href={`/tema/${t}`} style={{ display: "inline-flex", alignItems: "center", gap: "0.5rem", fontFamily: "var(--font-grotesk)", fontSize: "0.9rem", color: "var(--ink)", border: "1px solid var(--line)", borderRadius: "100px", padding: "0.5rem 1rem" }}>
-                {TEMA_ADI[t] ?? t}<span style={{ color: "var(--accent)", fontWeight: 700 }}>{n}</span>
+                {TEMA_ADI[t] ?? t}<span style={{ color: "var(--accent-2)", fontWeight: 700 }}>{n}</span>
               </Link>
             ))}
           </div>
@@ -118,7 +118,7 @@ export default async function DunyaPage({ params }: { params: Promise<{ slug: st
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(220px, 1fr))", gap: "1rem" }}>
             {kavramlar.map((kv) => (
               <Link key={kv.ad} href={`/sozluk/${kavramSlug(kv.ad)}`} style={{ display: "block", padding: "1rem 1.1rem", border: "1px solid var(--line)", borderRadius: "12px", color: "var(--ink)" }}>
-                <span style={{ fontFamily: "var(--font-grotesk)", fontWeight: 700, fontSize: "1rem", color: "var(--accent)" }}>{kv.ad}</span>
+                <span style={{ fontFamily: "var(--font-grotesk)", fontWeight: 700, fontSize: "1rem", color: "var(--accent-2)" }}>{kv.ad}</span>
                 <span style={{ display: "block", marginTop: "0.4rem", fontFamily: "var(--font-serif)", fontStyle: "italic", fontSize: "0.92rem", lineHeight: 1.45, color: "var(--muted)" }}>
                   {kv.tanim.length > 90 ? `${kv.tanim.slice(0, 87)}…` : kv.tanim}
                 </span>

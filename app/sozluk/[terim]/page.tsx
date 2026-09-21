@@ -96,7 +96,7 @@ export default async function KavramPage({ params }: { params: Promise<{ terim: 
       </blockquote>
 
       <p style={{ marginTop: "1.6rem" }}>
-        <Link href={kitapYol} style={{ ...mono, fontSize: "0.66rem", color: "var(--accent)", borderBottom: "1px solid var(--accent)", paddingBottom: "2px" }}>
+        <Link href={kitapYol} style={{ ...mono, fontSize: "0.66rem", color: "var(--accent-2)", borderBottom: "1px solid var(--accent)", paddingBottom: "2px" }}>
           {KITAP_ADI[k.k]}{k.p ? ` · s. ${k.p}` : ""}
         </Link>
         <Link href={`/soz/${sozSlug(k.tanim)}`} style={{ marginLeft: "1.2rem", ...mono, fontSize: "0.66rem", color: "var(--muted)" }}>

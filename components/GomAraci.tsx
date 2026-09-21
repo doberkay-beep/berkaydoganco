@@ -55,7 +55,7 @@ export default function GomAraci() {
       </section>
 
       <p style={{ marginTop: "2.5rem", fontSize: "0.85rem", color: "var(--muted)", maxWidth: "58ch", lineHeight: 1.7 }}>
-        Kart karanlık temalıdır ve her ziyaretçiye o günün sözünü gösterir. Boyutu <code style={{ color: "var(--accent)" }}>max-width</code> ve <code style={{ color: "var(--accent)" }}>height</code> ile ayarlayabilirsin.
+        Kart karanlık temalıdır ve her ziyaretçiye o günün sözünü gösterir. Boyutu <code style={{ color: "var(--accent-2)" }}>max-width</code> ve <code style={{ color: "var(--accent-2)" }}>height</code> ile ayarlayabilirsin.
       </p>
     </main>
   );

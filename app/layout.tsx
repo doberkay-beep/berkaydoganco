@@ -70,7 +70,9 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
               "(function(){try{var t=localStorage.getItem('bd-theme');if(t==='light'||t==='dark')document.documentElement.setAttribute('data-theme',t);}catch(e){}})();",
           }}
         />
-        {children}
+        <a href="#main" className="skip-link">İçeriğe geç</a>
+        <div className="aurora" aria-hidden="true" />
+        <div id="main">{children}</div>
         <MurekkepIz />
         <Analytics />
       </body>

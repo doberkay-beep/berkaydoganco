@@ -86,7 +86,7 @@ export default async function SozPage({ params }: { params: Promise<{ slug: stri
         <blockquote style={{ margin: 0, fontFamily: "var(--font-serif)", fontStyle: "italic", fontWeight: 300, fontSize: soz.s.length > 100 ? "clamp(1.5rem, 4vw, 2.3rem)" : "clamp(1.9rem, 5.5vw, 3.2rem)", lineHeight: 1.4, color: "var(--ink)", textWrap: "balance" as never }}>
           &ldquo;{soz.s}&rdquo;
         </blockquote>
-        <p style={{ ...mono, color: "var(--accent)", marginTop: "1.75rem" }}>— Berkay Doğan</p>
+        <p style={{ ...mono, color: "var(--accent-2)", marginTop: "1.75rem" }}>— Berkay Doğan</p>
         <p style={{ marginTop: "0.5rem", fontSize: "0.9rem", color: "var(--muted)" }}>
           <Link href={kitapSayfa} style={{ color: "var(--muted)", borderBottom: "1px solid var(--line)" }}>{kaynakMetni}</Link>
         </p>
@@ -105,7 +105,7 @@ export default async function SozPage({ params }: { params: Promise<{ slug: stri
 
         <a href={`/git/${gitKanal}/`} rel="noopener" style={{ display: "inline-flex", alignSelf: "flex-start", alignItems: "center", gap: "0.6rem", marginTop: "2rem", padding: "1rem 1.3rem", border: "1px solid var(--line)", borderRadius: "12px", background: "var(--bg-2)" }}>
           <span style={{ fontFamily: "var(--font-serif)", fontStyle: "italic", fontSize: "0.98rem", color: "var(--ink)" }}>Bu söz {KITAP_ADI[soz.k]}&apos;den — kitabı al</span>
-          <span style={{ color: "var(--accent)" }} aria-hidden="true">→</span>
+          <span style={{ color: "var(--accent-2)" }} aria-hidden="true">→</span>
         </a>
       </article>
 

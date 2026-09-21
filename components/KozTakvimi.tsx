@@ -50,13 +50,13 @@ export default function KozTakvimi() {
         .tk-cal-bas { display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.9rem; }
         .tk-cal-bas button { background: none; border: 1px solid var(--line); border-radius: 8px; color: var(--ink);
           cursor: pointer; padding: 0.3rem 0.6rem; font-size: 0.9rem; }
-        .tk-cal-bas button:hover { border-color: var(--accent); color: var(--accent); }
+        .tk-cal-bas button:hover { border-color: var(--accent-2); color: var(--accent-2); }
         .tk-gunler { display: grid; grid-template-columns: repeat(7, 1fr); gap: 4px; }
         .tk-gunler .bas { font-family: var(--font-grotesk); font-size: 0.56rem; letter-spacing: 0.1em;
           text-transform: uppercase; color: var(--muted); text-align: center; padding: 0.3rem 0; }
         .tk-gun { aspect-ratio: 1; border: none; border-radius: 8px; background: transparent; color: var(--ink);
           font-family: var(--font-grotesk); font-size: 0.78rem; cursor: pointer; transition: background 0.2s ease, color 0.2s ease; }
-        .tk-gun:hover { background: var(--bg-2); color: var(--accent); }
+        .tk-gun:hover { background: var(--bg-2); color: var(--accent-2); }
         .tk-gun[data-secili="1"] { background: var(--accent); color: var(--accent-ink); font-weight: 700; }
         .tk-gun[data-bugun="1"]:not([data-secili="1"]) { box-shadow: inset 0 0 0 1px var(--accent); }
         .tk-yukleniyor { min-height: 40vh; }
@@ -64,7 +64,7 @@ export default function KozTakvimi() {
 
       <div className="tk-grid">
         <div>
-          <span style={{ fontFamily: "var(--font-grotesk)", fontSize: "0.7rem", fontWeight: 500, letterSpacing: "0.26em", textTransform: "uppercase", color: "var(--accent)" }}>
+          <span style={{ fontFamily: "var(--font-grotesk)", fontSize: "0.7rem", fontWeight: 500, letterSpacing: "0.26em", textTransform: "uppercase", color: "var(--accent-2)" }}>
             {buGunMu ? "Bugünün sözü" : `${secili.getDate()} ${AYLAR[ay]} sözü`}
           </span>
           <blockquote className="tk-soz" style={{ margin: "1.5rem 0 0" }}>&ldquo;{soz.s}&rdquo;</blockquote>

@@ -79,11 +79,11 @@ export default async function YaziPage({ params }: { params: Promise<{ slug: str
       </div>
 
       {y.taslak && (
-        <p style={{ display: "inline-block", fontFamily: "var(--font-grotesk)", fontSize: "0.66rem", letterSpacing: "0.2em", textTransform: "uppercase", color: "var(--accent)", border: "1px solid var(--accent)", borderRadius: "100px", padding: "0.4rem 0.8rem", marginBottom: "1.5rem" }}>
+        <p style={{ display: "inline-block", fontFamily: "var(--font-grotesk)", fontSize: "0.66rem", letterSpacing: "0.2em", textTransform: "uppercase", color: "var(--accent-2)", border: "1px solid var(--accent)", borderRadius: "100px", padding: "0.4rem 0.8rem", marginBottom: "1.5rem" }}>
         Taslak — yayın öncesi önizleme</p>
       )}
 
-      <p style={{ fontFamily: "var(--font-grotesk)", fontSize: "0.7rem", letterSpacing: "0.2em", textTransform: "uppercase", color: "var(--accent)", marginBottom: "1rem" }}>{y.dateText}</p>
+      <p style={{ fontFamily: "var(--font-grotesk)", fontSize: "0.7rem", letterSpacing: "0.2em", textTransform: "uppercase", color: "var(--accent-2)", marginBottom: "1rem" }}>{y.dateText}</p>
       <h1 style={{ fontFamily: "var(--font-serif)", fontWeight: 500, fontSize: "clamp(2.2rem, 6vw, 3.8rem)", letterSpacing: "-0.015em", lineHeight: 1.02, marginBottom: "1.1rem", textWrap: "balance" }}>{y.title}</h1>
       <p style={{ fontFamily: "var(--font-serif)", fontStyle: "italic", fontWeight: 300, fontSize: "clamp(1.15rem, 2.2vw, 1.45rem)", color: "var(--muted)", maxWidth: "44ch", lineHeight: 1.5 }}>{y.dek}</p>
 
@@ -93,7 +93,7 @@ export default async function YaziPage({ params }: { params: Promise<{ slug: str
             return (
               <a key={i} href={`https://www.youtube.com/watch?v=${MEDIA.youtube}`} target="_blank" rel="noopener noreferrer"
                 style={{ display: "flex", alignItems: "center", gap: "0.9rem", margin: "0.5rem 0 1.6rem", padding: "1.1rem 1.3rem", border: "1px solid var(--line)", borderRadius: "12px", background: "var(--bg-2)" }}>
-                <span style={{ color: "var(--accent)", fontSize: "1.2rem" }} aria-hidden="true">▶</span>
+                <span style={{ color: "var(--accent-2)", fontSize: "1.2rem" }} aria-hidden="true">▶</span>
                 <span style={{ fontFamily: "var(--font-grotesk)", fontWeight: 500, fontSize: "0.95rem", color: "var(--ink)" }}>Bahsettiğim video — YouTube'da izle ↗</span>
               </a>
             );
@@ -112,7 +112,7 @@ export default async function YaziPage({ params }: { params: Promise<{ slug: str
             }}>
               {isFirst ? (
                 <>
-                  <span style={{ float: "left", fontFamily: "var(--font-serif)", fontWeight: 400, fontSize: "3.6em", lineHeight: 0.82, paddingRight: "0.12em", color: "var(--accent)" }}>{p.charAt(0)}</span>
+                  <span style={{ float: "left", fontFamily: "var(--font-serif)", fontWeight: 400, fontSize: "3.6em", lineHeight: 0.82, paddingRight: "0.12em", color: "var(--accent-2)" }}>{p.charAt(0)}</span>
                   {p.slice(1)}
                 </>
               ) : p}
@@ -138,7 +138,7 @@ export default async function YaziPage({ params }: { params: Promise<{ slug: str
         {y.substackUrl && (
           <p style={{ fontSize: "0.85rem", color: "var(--muted)" }}>
             Bu yazı ilk olarak{" "}
-            <a href={y.substackUrl} target="_blank" rel="noopener noreferrer" style={{ color: "var(--accent)" }}>Substack&apos;te</a>{" "}
+            <a href={y.substackUrl} target="_blank" rel="noopener noreferrer" style={{ color: "var(--accent-2)" }}>Substack&apos;te</a>{" "}
             yayımlandı.
           </p>
         )}

@@ -6,7 +6,8 @@
   --ink:     #F5F7FB;   /* beyaz metin */
   --muted:   #8b90a2;   /* ikincil metin — serin gri */
   --line:    rgba(232, 236, 250, 0.11);
-  --accent:  #3A5BD9;   /* gece mavisi / kobalt vurgu */
+  --accent:  #3A5BD9;   /* gece mavisi / kobalt vurgu (dolgu, büyük başlık) */
+  --accent-2: #8AA0FF;  /* açık kobalt — küçük metin/link (karanlıkta AA kontrast) */
   --accent-ink: #F5F7FF;
   /* Liquid glass */
   --glass-bg:     rgba(18, 18, 20, 0.55);
@@ -26,6 +27,7 @@
   --muted:   #5E6470;
   --line:    rgba(18, 22, 40, 0.12);
   --accent:  #3A5BD9;
+  --accent-2: #2E49B0;  /* açık temada koyu kobalt — küçük metin/link kontrastı */
   --accent-ink: #F6F8FC;
   --glass-bg:     rgba(255, 255, 255, 0.55);
   --glass-border: rgba(20, 18, 15, 0.10);
@@ -109,7 +111,7 @@ button { font-family: inherit; }
 .cg a { color: inherit; }
 .cg-link { position: relative; transition: color 0.3s ease; }
 .cg-link::after { content: ""; position: absolute; left: 0; right: 0; bottom: -3px; height: 1px; background: var(--accent); transform: scaleX(0); transform-origin: left; transition: transform 0.35s cubic-bezier(0.22,1,0.36,1); }
-.cg-link:hover { color: var(--accent); }
+.cg-link:hover { color: var(--accent-2); }
 .cg-link:hover::after { transform: scaleX(1); }
 
 /* Butonlar — cilalı, ışıltılı, yaylı */
@@ -135,11 +137,11 @@ button { font-family: inherit; }
 .cg-nav { position: fixed; top: 0; left: 0; right: 0; z-index: 50; display: flex; align-items: center; justify-content: space-between; padding: 1.1rem clamp(1.25rem, 4vw, 3.25rem); transition: background 0.4s ease, box-shadow 0.4s ease, backdrop-filter 0.4s ease; }
 .cg-nav[data-solid="1"] { background: var(--nav-bg); backdrop-filter: blur(16px) saturate(150%); -webkit-backdrop-filter: blur(16px) saturate(150%); box-shadow: 0 1px 0 var(--line); }
 .cg-theme { background: none; border: none; cursor: pointer; color: var(--ink); font-size: 1rem; line-height: 1; padding: 0.2rem; transition: color 0.25s ease, transform 0.4s ease; }
-.cg-theme:hover { color: var(--accent); transform: rotate(20deg); }
+.cg-theme:hover { color: var(--accent-2); transform: rotate(20deg); }
 .cg-nav-links { display: flex; gap: clamp(1.1rem, 2vw, 2.2rem); font-size: 0.76rem; letter-spacing: 0.04em; }
 .cg-lang { display: flex; gap: 0.5rem; font-size: 0.68rem; letter-spacing: 0.1em; text-transform: uppercase; }
 .cg-lang button { background: none; border: none; cursor: pointer; color: var(--muted); padding: 0.2rem; transition: color 0.25s ease; }
-.cg-lang button[data-on="1"] { color: var(--accent); font-weight: 700; }
+.cg-lang button[data-on="1"] { color: var(--accent-2); font-weight: 700; }
 .cg-lang button:hover { color: var(--ink); }
 @media (max-width: 800px) { .cg-nav-links { display: none; } }
 
@@ -166,7 +168,7 @@ button { font-family: inherit; }
 .cg-tiles { display: grid; grid-template-columns: repeat(3, 1fr); gap: clamp(1.5rem, 4vw, 3rem); margin-top: clamp(2.5rem, 6vh, 4rem); }
 @media (max-width: 720px) { .cg-tiles { grid-template-columns: 1fr; gap: 2rem; } }
 .cg-press-row { transition: color 0.3s ease; }
-.cg-press-row:hover { color: var(--accent); }
+.cg-press-row:hover { color: var(--accent-2); }
 
 /* Okur yorumları */
 .cg-reviews { columns: 3; column-gap: 1.5rem; }
@@ -179,11 +181,11 @@ button { font-family: inherit; }
 
 /* Playlist link-kartları */
 .cg-playlist { display: flex; flex-direction: column; gap: 0.5rem; padding: 1.5rem 1.6rem; border: 1px solid var(--line); border-radius: 10px; background: var(--bg); transition: border-color 0.28s ease, transform 0.28s ease, background 0.28s ease; }
-.cg-playlist:hover { border-color: var(--accent); transform: translateY(-3px); background: var(--bg-2); }
-.cg-playlist-icon { font-size: 1.1rem; color: var(--accent); line-height: 1; }
+.cg-playlist:hover { border-color: var(--accent-2); transform: translateY(-3px); background: var(--bg-2); }
+.cg-playlist-icon { font-size: 1.1rem; color: var(--accent-2); line-height: 1; }
 .cg-playlist-name { font-family: var(--font-grotesk); font-weight: 500; font-size: 1.15rem; letter-spacing: -0.01em; color: var(--ink); }
 .cg-playlist-meta { font-family: var(--font-grotesk); font-size: 0.68rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); transition: color 0.28s ease; }
-.cg-playlist:hover .cg-playlist-meta { color: var(--accent); }
+.cg-playlist:hover .cg-playlist-meta { color: var(--accent-2); }
 
 /* Sağ aksiyon grubu + mobil menü */
 .cg-actions { display: flex; align-items: center; gap: 1.25rem; }
@@ -192,14 +194,14 @@ button { font-family: inherit; }
 .cg-menu { position: fixed; inset: 0; z-index: 60; background: var(--bg); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2.25rem; animation: cgMenuIn 0.3s ease both; }
 @keyframes cgMenuIn { from { opacity: 0; } to { opacity: 1; } }
 .cg-menu a { font-family: var(--font-grotesk); font-weight: 500; font-size: clamp(1.7rem, 7vw, 2.4rem); letter-spacing: -0.01em; color: var(--ink); }
-.cg-menu a:hover { color: var(--accent); }
+.cg-menu a:hover { color: var(--accent-2); }
 .cg-menu-close { position: absolute; top: 1.4rem; right: clamp(1.25rem, 4vw, 3.25rem); background: none; border: none; cursor: pointer; font-size: 1.4rem; color: var(--ink); line-height: 1; }
 
 /* Kinetik hero — harfler közden tutuşup mürekkebe döner */
 .cg-ign { display: inline-block; opacity: 0; transform: translateY(0.35em) scale(0.96); filter: blur(10px);
-  color: var(--accent); animation: cgIgnite 1s cubic-bezier(0.22,1,0.36,1) forwards; }
+  color: var(--accent-2); animation: cgIgnite 1s cubic-bezier(0.22,1,0.36,1) forwards; }
 @keyframes cgIgnite {
-  55% { color: var(--accent); }
+  55% { color: var(--accent-2); }
   100% { opacity: 1; transform: none; filter: blur(0); color: var(--ink); }
 }
 @media (prefers-reduced-motion: reduce) { .cg-ign { animation: none; opacity: 1; transform: none; filter: none; color: var(--ink); } }
@@ -229,8 +231,48 @@ button { font-family: inherit; }
   .bento-card:hover::after, .prj-card:hover::after, .cg-playlist:hover::after, .cg-review-card:hover::after { opacity: 1; }
 }
 
-/* Erişilebilirlik — görünür odak halkası */
-a:focus-visible, button:focus-visible, input:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 4px; }
+/* Erişilebilirlik — görünür odak halkası (özel/rol tabanlı öğeleri de kapsar) */
+a:focus-visible, button:focus-visible, input:focus-visible,
+[tabindex]:focus-visible, [role="button"]:focus-visible, summary:focus-visible {
+  outline: 3px solid var(--accent-2); outline-offset: 3px; border-radius: 4px;
+}
+/* SVG grubu odakları (Atlas düğümleri) — outline görünür olsun */
+g[tabindex]:focus-visible { outline: 3px solid var(--accent-2); outline-offset: 2px; }
+
+/* İçeriğe geç — klavye kullanıcıları için ilk sekme */
+.skip-link {
+  position: fixed; top: 0; left: 0; z-index: 2147483647; transform: translateY(-120%);
+  background: var(--accent); color: var(--accent-ink); padding: 0.7rem 1.2rem; border-radius: 0 0 10px 0;
+  font-family: var(--font-grotesk); font-size: 0.8rem; font-weight: 600; letter-spacing: 0.02em;
+  transition: transform 0.2s ease;
+}
+.skip-link:focus-visible { transform: translateY(0); outline: none; }
+
+/* Anchor hedeflerinin üstünde nefes payı (odaklanınca gizlenmesin) */
+:where(h1, h2, h3, [id]) { scroll-margin-top: 2rem; }
+
+/* ============ Aurora — süzülen kobalt ışık katmanı (içeriğin ardında) ============ */
+.aurora {
+  position: fixed; inset: -25%; z-index: 0; pointer-events: none; will-change: transform;
+  background:
+    radial-gradient(38% 38% at 22% 28%, rgba(58, 91, 217, 0.16), transparent 70%),
+    radial-gradient(34% 34% at 82% 18%, rgba(120, 96, 230, 0.12), transparent 70%),
+    radial-gradient(42% 42% at 64% 82%, rgba(40, 120, 220, 0.12), transparent 70%);
+  filter: blur(36px); animation: auroraDrift 26s ease-in-out infinite alternate;
+}
+[data-theme="light"] .aurora {
+  background:
+    radial-gradient(38% 38% at 22% 28%, rgba(58, 91, 217, 0.10), transparent 70%),
+    radial-gradient(34% 34% at 82% 18%, rgba(120, 96, 230, 0.08), transparent 70%),
+    radial-gradient(42% 42% at 64% 82%, rgba(40, 120, 220, 0.08), transparent 70%);
+}
+@keyframes auroraDrift {
+  from { transform: translate3d(-2.5%, -1.5%, 0) rotate(0deg) scale(1.05); }
+  to   { transform: translate3d(2.5%, 1.5%, 0) rotate(7deg) scale(1.16); }
+}
+@media (prefers-reduced-motion: reduce) { .aurora { animation: none; } }
+/* İçerik aurorayı örtsün (metin aurora üstünde) */
+#main { position: relative; z-index: 1; }
 
 /* ============ EDEBİ DERGİ katmanı — Fraunces öncülüğünde dergi mizanpajı ============ */
 /* Manşet: serif display. Grotesk artık etiket/naviasyon dili; başlıklar Fraunces'ın. */
@@ -239,7 +281,7 @@ a:focus-visible, button:focus-visible, input:focus-visible { outline: 2px solid 
 
 /* Folyo — dergi bölüm başı: № + etiket + saç çizgisi (kaydırınca çizilir) */
 .ed-folio { display: flex; align-items: baseline; gap: 1rem; }
-.ed-folio-no { font-family: var(--font-serif); font-style: italic; font-weight: 400; font-size: 0.95rem; color: var(--accent); flex-shrink: 0; }
+.ed-folio-no { font-family: var(--font-serif); font-style: italic; font-weight: 400; font-size: 0.95rem; color: var(--accent-2); flex-shrink: 0; }
 .ed-folio-label { font-family: var(--font-grotesk); font-size: 0.68rem; font-weight: 500; letter-spacing: 0.3em; text-transform: uppercase; color: var(--ink); flex-shrink: 0; }
 .ed-folio::after { content: ""; flex: 1; height: 1px; background: var(--line); transform: translateY(-0.2em); transform-origin: left center; }
 @supports (animation-timeline: view()) {
@@ -273,11 +315,11 @@ a:focus-visible, button:focus-visible, input:focus-visible { outline: 2px solid 
 .ed-pull { position: relative; font-family: var(--font-serif); font-style: italic; font-weight: 300;
   line-height: 1.4; color: var(--ink); padding-left: 1.1rem; border-left: 2px solid var(--accent); }
 .ed-pull::before { content: "“"; position: absolute; left: -0.18em; top: -0.52em;
-  font-size: 3.2em; line-height: 1; color: var(--accent); opacity: 0.28; pointer-events: none; font-style: normal; }
+  font-size: 3.2em; line-height: 1; color: var(--accent-2); opacity: 0.28; pointer-events: none; font-style: normal; }
 
 /* Baş harf — giriş paragrafına gömme initial */
 .ed-dropcap::first-letter { font-family: var(--font-serif); font-weight: 500; font-style: normal;
-  float: left; font-size: 3.4em; line-height: 0.82; padding: 0.06em 0.12em 0 0; color: var(--accent); }
+  float: left; font-size: 3.4em; line-height: 0.82; padding: 0.06em 0.12em 0 0; color: var(--accent-2); }
 
 /* İçindekiler satırı — dergi fihristi: numara · ad ······ açıklama → */
 .ed-toc { border-top: 1px solid var(--line); }
@@ -285,13 +327,13 @@ a:focus-visible, button:focus-visible, input:focus-visible { outline: 2px solid 
   gap: 1.25rem; align-items: baseline; padding: 1.15rem 0.4rem; border-bottom: 1px solid var(--line);
   transition: background 0.25s ease, padding-left 0.25s ease; }
 .ed-toc-row:hover { background: var(--bg-2); padding-left: 0.9rem; }
-.ed-toc-no { font-family: var(--font-serif); font-style: italic; font-size: 0.9rem; color: var(--accent); }
+.ed-toc-no { font-family: var(--font-serif); font-style: italic; font-size: 0.9rem; color: var(--accent-2); }
 .ed-toc-name { font-family: var(--font-serif); font-weight: 500; font-size: clamp(1.2rem, 2.4vw, 1.55rem); letter-spacing: -0.01em; line-height: 1.15; color: var(--ink); }
-.ed-toc-name .glyph { color: var(--accent); font-size: 0.8em; margin-right: 0.45rem; }
+.ed-toc-name .glyph { color: var(--accent-2); font-size: 0.8em; margin-right: 0.45rem; }
 .ed-toc-desc { font-family: var(--font-grotesk); font-size: 0.85rem; line-height: 1.55; color: var(--muted); }
 .ed-toc-arrow { font-family: var(--font-grotesk); color: var(--muted); transition: color 0.25s ease, transform 0.25s ease; }
-.ed-toc-row:hover .ed-toc-arrow { color: var(--accent); transform: translateX(4px); }
-.ed-toc-row:hover .ed-toc-name { color: var(--accent); }
+.ed-toc-row:hover .ed-toc-arrow { color: var(--accent-2); transform: translateX(4px); }
+.ed-toc-row:hover .ed-toc-name { color: var(--accent-2); }
 @media (max-width: 720px) {
   .ed-toc-row { grid-template-columns: 3ch 1fr auto; }
   .ed-toc-desc { grid-column: 2 / 3; grid-row: 2; }
@@ -302,7 +344,7 @@ a:focus-visible, button:focus-visible, input:focus-visible { outline: 2px solid 
   border: 1px solid var(--line); border-top: 2px solid var(--ink); padding: clamp(1.5rem, 4vw, 3rem);
   background: radial-gradient(120% 150% at 90% -10%, rgba(58,91,217,0.1), transparent 55%), var(--bg-2);
   transition: border-color 0.3s ease; }
-.ed-cover:hover { border-color: var(--accent); }
+.ed-cover:hover { border-color: var(--accent-2); }
 @media (max-width: 780px) { .ed-cover { grid-template-columns: 1fr; } }
 
 /* Site altbilgisi — künye + keşfet */
@@ -313,7 +355,7 @@ a:focus-visible, button:focus-visible, input:focus-visible { outline: 2px solid 
 @media (max-width: 520px) { .ed-footer-grid { grid-template-columns: 1fr; } }
 .ed-footer-head { font-family: var(--font-grotesk); font-size: 0.62rem; font-weight: 500; letter-spacing: 0.26em; text-transform: uppercase; color: var(--muted); margin-bottom: 1rem; }
 .ed-footer a { display: block; font-family: var(--font-grotesk); font-size: 0.88rem; color: var(--ink); padding: 0.28rem 0; transition: color 0.25s ease; }
-.ed-footer a:hover { color: var(--accent); }
+.ed-footer a:hover { color: var(--accent-2); }
 .ed-footer-motto { font-family: var(--font-serif); font-style: italic; font-weight: 300; font-size: 1.15rem; line-height: 1.5; color: var(--ink); max-width: 24ch; }
 .ed-footer-bottom { max-width: 1200px; margin: 2.5rem auto 0; padding-top: 1.25rem; border-top: 1px solid var(--line);
   display: flex; justify-content: space-between; gap: 1rem; flex-wrap: wrap;
@@ -331,4 +373,4 @@ a:focus-visible, button:focus-visible, input:focus-visible { outline: 2px solid 
   transition: color 0.2s ease, background 0.2s ease; }
 .cg-drop-menu > a:first-child { border-top: 1px solid var(--glass-border); border-radius: 12px 12px 0 0; padding-top: 0.8rem; }
 .cg-drop-menu > a:last-child { border-bottom: 1px solid var(--glass-border); border-radius: 0 0 12px 12px; padding-bottom: 0.8rem; }
-.cg-drop-menu > a:hover { color: var(--accent); background: var(--bg-2); }
+.cg-drop-menu > a:hover { color: var(--accent-2); background: var(--bg-2); }

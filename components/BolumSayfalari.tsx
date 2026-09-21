@@ -28,7 +28,7 @@ export function HakkimdaSayfa() {
                   <p style={{ fontSize: "0.7rem", letterSpacing: "0.22em", textTransform: "uppercase", color: "var(--muted)", marginBottom: "1.25rem" }}>{t.about.worksLabel}</p>
                   {t.about.works.map((w, i) => (
                     <div key={i} style={{ display: "flex", gap: "1.25rem", alignItems: "baseline", padding: "0.9rem 0", borderTop: "1px solid var(--line)" }}>
-                      <span style={{ fontFamily: "var(--font-grotesk)", fontWeight: 700, color: "var(--accent)", fontSize: "0.9rem", minWidth: "3ch" }}>{w.year}</span>
+                      <span style={{ fontFamily: "var(--font-grotesk)", fontWeight: 700, color: "var(--accent-2)", fontSize: "0.9rem", minWidth: "3ch" }}>{w.year}</span>
                       <span style={{ flex: 1 }}>
                         <span style={{ display: "block", fontFamily: "var(--font-serif)", fontSize: "1.15rem", lineHeight: 1.25 }}>{w.title}</span>
                         <span style={{ fontSize: "0.68rem", letterSpacing: "0.14em", textTransform: "uppercase", color: "var(--muted)" }}>{w.kind}</span>
@@ -53,7 +53,7 @@ export function HakkimdaSayfa() {
               <div className="cg-tiles">
                 {t.recognition.tiles.map((tile, i) => (
                   <Reveal key={i} delay={i * 0.07} style={{ borderTop: "2px solid var(--accent)", paddingTop: "1.25rem" }}>
-                    <span style={{ display: "block", fontFamily: "var(--font-grotesk)", fontWeight: 700, fontSize: "clamp(2.6rem, 6vw, 4.2rem)", lineHeight: 1, color: "var(--accent)", letterSpacing: "-0.03em" }}>{tile.value}</span>
+                    <span style={{ display: "block", fontFamily: "var(--font-grotesk)", fontWeight: 700, fontSize: "clamp(2.6rem, 6vw, 4.2rem)", lineHeight: 1, color: "var(--accent-2)", letterSpacing: "-0.03em" }}>{tile.value}</span>
                     <span style={{ display: "block", marginTop: "0.85rem", fontSize: "0.82rem", lineHeight: 1.5, color: "var(--muted)" }}>{tile.label}</span>
                   </Reveal>
                 ))}
@@ -64,7 +64,7 @@ export function HakkimdaSayfa() {
                   {t.recognition.press.map((p) => (
                     <a key={p.name} href={p.url} target="_blank" rel="noopener noreferrer" className="cg-press-row" style={{ display: "flex", gap: "1rem", alignItems: "baseline", flexWrap: "wrap" }}>
                       <span style={{ fontFamily: "var(--font-grotesk)", fontWeight: 500, fontSize: "1.05rem", minWidth: "9ch" }}>{p.name}</span>
-                      <span style={{ color: "var(--muted)", fontSize: "0.92rem" }}>{p.detail} <span style={{ color: "var(--accent)" }}>↗</span></span>
+                      <span style={{ color: "var(--muted)", fontSize: "0.92rem" }}>{p.detail} <span style={{ color: "var(--accent-2)" }}>↗</span></span>
                     </a>
                   ))}
                 </div>
@@ -81,7 +81,7 @@ export function HakkimdaSayfa() {
                 {REVIEWS.map((r, i) => (
                   <Reveal key={i} delay={(i % 3) * 0.06} className="cg-review-card">
                     <blockquote style={{ fontFamily: "var(--font-serif)", fontStyle: "italic", fontWeight: 400, fontSize: "1.1rem", lineHeight: 1.55, color: "var(--ink)" }}>&ldquo;{r.text}&rdquo;</blockquote>
-                    <span style={{ marginTop: "1.25rem", fontSize: "0.66rem", letterSpacing: "0.18em", textTransform: "uppercase", color: "var(--accent)" }}>{r.source}</span>
+                    <span style={{ marginTop: "1.25rem", fontSize: "0.66rem", letterSpacing: "0.18em", textTransform: "uppercase", color: "var(--accent-2)" }}>{r.source}</span>
                   </Reveal>
                 ))}
               </div>
@@ -179,7 +179,7 @@ export function DeneyimlerSayfa() {
               <Reveal delay={0.14} style={{ marginTop: "clamp(2.5rem, 6vh, 4rem)" }}>
                 <a href={kapak.href} className="ed-cover">
                   <div style={{ display: "flex", flexDirection: "column", gap: "1rem", alignItems: "flex-start" }}>
-                    <span style={{ fontFamily: "var(--font-grotesk)", fontSize: "0.62rem", fontWeight: 500, letterSpacing: "0.28em", textTransform: "uppercase", color: "var(--accent)" }}>
+                    <span style={{ fontFamily: "var(--font-grotesk)", fontSize: "0.62rem", fontWeight: 500, letterSpacing: "0.28em", textTransform: "uppercase", color: "var(--accent-2)" }}>
                       {lang === "tr" ? "Kapak konusu" : lang === "fr" ? "À la une" : "Cover story"}
                     </span>
                     <span className="ed-display" style={{ fontSize: "clamp(2rem, 4.5vw, 3.2rem)", color: "var(--ink)" }}>{kapak[lang]}</span>
@@ -189,7 +189,7 @@ export function DeneyimlerSayfa() {
                     </span>
                   </div>
                   <div style={{ display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center", gap: "0.75rem" }} aria-hidden="true">
-                    <span style={{ fontSize: "clamp(4rem, 9vw, 7rem)", lineHeight: 1, color: "var(--accent)", opacity: 0.85 }}>{kapak.glyph}</span>
+                    <span style={{ fontSize: "clamp(4rem, 9vw, 7rem)", lineHeight: 1, color: "var(--accent-2)", opacity: 0.85 }}>{kapak.glyph}</span>
                     <span className="cg-serif" style={{ fontStyle: "italic", fontSize: "1.05rem", color: "var(--muted)" }}>{kapak[(lang + "Sub") as "trSub"]}</span>
                   </div>
                 </a>

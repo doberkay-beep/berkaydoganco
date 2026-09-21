@@ -40,7 +40,7 @@ export function GununKozu({ t, verses }: { t: Copy; verses: string[] }) {
         .kozu-share { flex-shrink: 0; background: none; border: none; cursor: pointer; font-family: var(--font-grotesk);
           font-size: 0.68rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted);
           border-bottom: 1px solid var(--accent); padding-bottom: 2px; transition: color 0.25s ease; }
-        .kozu-share:hover { color: var(--accent); }
+        .kozu-share:hover { color: var(--accent-2); }
         @media (max-width: 640px) { .kozu-band { justify-content: flex-start; } }
       `}</style>
       <span className="kozu-label"><span className="ed-folio-no" style={{ marginRight: "0.35rem" }}>№ 02</span>{t.label}</span>

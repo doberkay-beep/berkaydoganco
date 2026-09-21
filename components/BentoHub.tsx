@@ -66,8 +66,8 @@ export function BentoHub({ lang }: { lang: Lang }) {
           transition: transform 0.35s cubic-bezier(0.22,1,0.36,1), border-color 0.35s ease, background 0.35s ease; }
         .bento-card::before { content: ""; position: absolute; inset: 0; border-radius: inherit; padding: 1px; pointer-events: none;
           background: linear-gradient(140deg, var(--glass-hi), transparent 45%); }
-        .bento-card:hover { transform: translateY(-4px); border-color: var(--accent); }
-        .bento-card .arw { margin-left: auto; color: var(--accent); transition: transform 0.35s ease; }
+        .bento-card:hover { transform: translateY(-4px); border-color: var(--accent-2); }
+        .bento-card .arw { margin-left: auto; color: var(--accent-2); transition: transform 0.35s ease; }
         .bento-card:hover .arw { transform: translate(3px,-3px); }
         .bento-kicker { font-family: var(--font-grotesk); font-size: 0.6rem; font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase; color: var(--muted); }
         .bento-title { font-family: var(--font-grotesk); font-weight: 700; letter-spacing: -0.02em; line-height: 1.05; }
@@ -90,12 +90,12 @@ export function BentoHub({ lang }: { lang: Lang }) {
 
         /* C, D — küçük (1x1) */
         .bento-sm { grid-column: span 1; flex-direction: column; justify-content: space-between; gap: 0.6rem; }
-        .bento-sm .ic { font-size: 1.3rem; color: var(--accent); line-height: 1; }
+        .bento-sm .ic { font-size: 1.3rem; color: var(--accent-2); line-height: 1; }
         .bento-sm .bento-title { font-size: 1.15rem; }
 
         /* E — Tanınırlık (2x1) */
         .bento-e { grid-column: span 2; align-items: center; gap: 1.1rem; }
-        .bento-e .big { font-family: var(--font-grotesk); font-weight: 700; font-size: clamp(2.6rem, 5vw, 3.6rem); line-height: 0.9; color: var(--accent); letter-spacing: -0.03em; }
+        .bento-e .big { font-family: var(--font-grotesk); font-weight: 700; font-size: clamp(2.6rem, 5vw, 3.6rem); line-height: 0.9; color: var(--accent-2); letter-spacing: -0.03em; }
         .bento-e .col { display: flex; flex-direction: column; gap: 0.3rem; }
 
         /* F — İletişim (2x1) */
@@ -109,8 +109,8 @@ export function BentoHub({ lang }: { lang: Lang }) {
         .bento-g-row a { display: inline-flex; align-items: center; gap: 0.5rem; font-family: var(--font-grotesk);
           font-size: 0.85rem; font-weight: 500; padding: 0.75rem 1.3rem; border-radius: 100px;
           border: 1px solid var(--line); color: var(--ink); transition: border-color 0.28s ease, transform 0.28s ease, color 0.28s ease; }
-        .bento-g-row a span { color: var(--accent); }
-        .bento-g-row a:hover { border-color: var(--accent); transform: translateY(-2px); color: var(--accent); }
+        .bento-g-row a span { color: var(--accent-2); }
+        .bento-g-row a:hover { border-color: var(--accent-2); transform: translateY(-2px); color: var(--accent-2); }
 
         @media (max-width: 900px) {
           .bento-grid { grid-template-columns: repeat(2, 1fr); }
@@ -142,7 +142,7 @@ export function BentoHub({ lang }: { lang: Lang }) {
           <div className="col">
             <span className="bento-badge">{c.tasfiyeBadge}</span>
             <span className="bento-title">Tasfiye</span>
-            <span style={{ fontSize: "0.88rem", color: "var(--accent)", fontFamily: "var(--font-grotesk)", fontWeight: 500 }}>{c.tasfiyeCta} →</span>
+            <span style={{ fontSize: "0.88rem", color: "var(--accent-2)", fontFamily: "var(--font-grotesk)", fontWeight: 500 }}>{c.tasfiyeCta} →</span>
             <span className="bento-date">{c.tasfiyeDate}</span>
           </div>
         </a>
@@ -153,7 +153,7 @@ export function BentoHub({ lang }: { lang: Lang }) {
           <div className="col">
             <span className="bento-kicker">{c.murekkepKind}</span>
             <span className="bento-title">Mürekkep ve Köz</span>
-            <span style={{ fontSize: "0.82rem", color: "var(--accent)", fontFamily: "var(--font-grotesk)", fontWeight: 500 }}>{c.murekkepCta} →</span>
+            <span style={{ fontSize: "0.82rem", color: "var(--accent-2)", fontFamily: "var(--font-grotesk)", fontWeight: 500 }}>{c.murekkepCta} →</span>
           </div>
           <span className="arw" aria-hidden="true">↗</span>
         </a>

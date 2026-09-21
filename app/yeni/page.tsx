@@ -127,7 +127,7 @@ export default function YeniPage() {
         .mg-kick { display:inline-block; margin-top:1.4rem; font-family: var(--font-grotesk); font-size:0.72rem; letter-spacing:0.14em; text-transform:uppercase; color: var(--muted); border-bottom:1px solid var(--accent); padding-bottom:2px; }
         .mg-grid { display:grid; grid-template-columns: 1.2fr 1.2fr 0.9fr; gap: clamp(1.5rem, 4vw, 3rem); border-top:1px solid var(--line); padding-top: clamp(2rem,5vh,3.5rem); }
         @media (max-width: 900px){ .mg-grid { grid-template-columns:1fr; } }
-        .mg-label { display:inline-block; font-family: var(--font-grotesk); font-size:0.64rem; font-weight:600; letter-spacing:0.2em; text-transform:uppercase; color: var(--accent); margin-bottom:1rem; }
+        .mg-label { display:inline-block; font-family: var(--font-grotesk); font-size:0.64rem; font-weight:600; letter-spacing:0.2em; text-transform:uppercase; color: var(--accent-2); margin-bottom:1rem; }
         .mg-story-in { display:flex; gap:1.2rem; }
         .mg-cover-img img { width:120px; border:1px solid var(--line); display:block; box-shadow:0 16px 34px rgba(0,0,0,0.4); }
         .mg-title { font-family: var(--font-serif); font-weight:500; font-size: clamp(1.6rem,3.5vw,2.4rem); margin:0 0 0.6rem; letter-spacing:-0.015em; }
@@ -151,7 +151,7 @@ export default function YeniPage() {
         .mg-email { display:inline-block; margin-top:1.6rem; font-family: var(--font-serif); font-size: clamp(1.3rem,3.5vw,2.4rem); letter-spacing:-0.02em; color: var(--ink); text-decoration:none; }
         .mg-social { display:flex; justify-content:center; gap:1.4rem; flex-wrap:wrap; margin-top:1.2rem; font-family: var(--font-grotesk); font-size:0.78rem; }
         .mg-social a { color: var(--muted); text-decoration:none; }
-        .mg-social a:hover { color: var(--accent); }
+        .mg-social a:hover { color: var(--accent-2); }
       `}</style>
     </main>
   );

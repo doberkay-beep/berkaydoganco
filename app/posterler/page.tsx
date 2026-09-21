@@ -48,14 +48,14 @@ export default function PosterlerPage() {
             </span>
             <span style={{ display: "flex", justifyContent: "space-between", alignItems: "center", padding: "0.8rem 1rem" }}>
               <span style={{ ...mono, fontSize: "0.58rem", color: "var(--muted)" }}>{p.kaynak}</span>
-              <span style={{ ...mono, fontSize: "0.62rem", color: "var(--accent)" }}>PDF ↓</span>
+              <span style={{ ...mono, fontSize: "0.62rem", color: "var(--accent-2)" }}>PDF ↓</span>
             </span>
           </a>
         ))}
       </div>
 
       <p style={{ marginTop: "2.5rem", fontSize: "0.85rem", color: "var(--muted)", maxWidth: "60ch", lineHeight: 1.7 }}>
-        Kişisel kullanım için serbesttir — yazdır, as, hediye et. Paylaşırken <Link href="/" style={{ color: "var(--accent)" }}>berkaydogan.co</Link>&apos;yu anman yeter.
+        Kişisel kullanım için serbesttir — yazdır, as, hediye et. Paylaşırken <Link href="/" style={{ color: "var(--accent-2)" }}>berkaydogan.co</Link>&apos;yu anman yeter.
       </p>
     </main>
   );

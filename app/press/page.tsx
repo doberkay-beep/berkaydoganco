@@ -93,7 +93,7 @@ const ICINDEKILER: [string, string][] = [
 /* ---- Stil kısayolları ---- */
 const mono: React.CSSProperties = { fontFamily: "var(--font-grotesk)", fontSize: "0.7rem", fontWeight: 500, letterSpacing: "0.16em", textTransform: "uppercase" };
 const secStil: React.CSSProperties = { marginTop: "clamp(3rem, 7vh, 5rem)", borderTop: "1px solid var(--line)", paddingTop: "2.5rem" };
-const secBaslik: React.CSSProperties = { ...mono, letterSpacing: "0.22em", color: "var(--accent)", marginBottom: "1.5rem" };
+const secBaslik: React.CSSProperties = { ...mono, letterSpacing: "0.22em", color: "var(--accent-2)", marginBottom: "1.5rem" };
 
 function Bio({ baslik, metin }: { baslik: string; metin: string }) {
   return (
@@ -188,7 +188,7 @@ export default function PressPage() {
                   &ldquo;{kitap.alintilar[0].text}&rdquo; <span style={{ ...mono, fontSize: "0.56rem" }}>({kitap.alintilar[0].sayfa})</span>
                 </p>
               )}
-              <Link href={`/kitaplar/${kitap.slug}`} style={{ display: "inline-block", marginTop: "1.1rem", ...mono, fontSize: "0.62rem", color: "var(--accent)" }}>Kitabın sayfası →</Link>
+              <Link href={`/kitaplar/${kitap.slug}`} style={{ display: "inline-block", marginTop: "1.1rem", ...mono, fontSize: "0.62rem", color: "var(--accent-2)" }}>Kitabın sayfası →</Link>
             </article>
           ))}
         </div>
@@ -200,7 +200,7 @@ export default function PressPage() {
         <div style={{ display: "grid", gap: "1.25rem", gridTemplateColumns: "repeat(auto-fit, minmax(150px, 1fr))" }}>
           {RAKAMLAR.map((r) => (
             <div key={r.aciklama} style={{ borderTop: "2px solid var(--accent)", paddingTop: "0.9rem" }}>
-              <span style={{ display: "block", fontFamily: "var(--font-grotesk)", fontWeight: 700, fontSize: "clamp(1.8rem, 4vw, 2.6rem)", lineHeight: 1, color: "var(--accent)", letterSpacing: "-0.03em" }}>{r.deger}</span>
+              <span style={{ display: "block", fontFamily: "var(--font-grotesk)", fontWeight: 700, fontSize: "clamp(1.8rem, 4vw, 2.6rem)", lineHeight: 1, color: "var(--accent-2)", letterSpacing: "-0.03em" }}>{r.deger}</span>
               <span style={{ display: "block", marginTop: "0.55rem", fontSize: "0.78rem", lineHeight: 1.45, color: "var(--muted)" }}>{r.aciklama}</span>
             </div>
           ))}
@@ -214,12 +214,12 @@ export default function PressPage() {
           {GORSELLER.map((g) => (
             <a key={g.dosya} href={g.dosya} download style={{ display: "flex", flexDirection: "column", gap: "0.35rem", padding: "1.2rem 1.3rem", border: "1px solid var(--line)", borderRadius: "10px", background: "var(--bg-2)" }}>
               <span style={{ fontFamily: "var(--font-grotesk)", fontWeight: 500, fontSize: "0.95rem", color: "var(--ink)" }}>{g.ad}</span>
-              <span style={{ ...mono, fontSize: "0.6rem", color: "var(--accent)" }}>{g.not} — İndir ↓</span>
+              <span style={{ ...mono, fontSize: "0.6rem", color: "var(--accent-2)" }}>{g.not} — İndir ↓</span>
             </a>
           ))}
           <Link href="/posterler" style={{ display: "flex", flexDirection: "column", gap: "0.35rem", padding: "1.2rem 1.3rem", border: "1px solid var(--line)", borderRadius: "10px", background: "var(--bg-2)" }}>
             <span style={{ fontFamily: "var(--font-grotesk)", fontWeight: 500, fontSize: "0.95rem", color: "var(--ink)" }}>12 söz posteri</span>
-            <span style={{ ...mono, fontSize: "0.6rem", color: "var(--accent)" }}>A4 PDF galerisi →</span>
+            <span style={{ ...mono, fontSize: "0.6rem", color: "var(--accent-2)" }}>A4 PDF galerisi →</span>
           </Link>
         </div>
         <p style={{ marginTop: "1.25rem", fontSize: "0.82rem", color: "var(--muted)" }}>Tüm görseller haber ve tanıtım amaçlı kullanım için serbesttir — kredi: Berkay Doğan / berkaydogan.co</p>
@@ -232,7 +232,7 @@ export default function PressPage() {
           {site.tr.recognition.press.map((p) => (
             <a key={p.name} href={p.url} target="_blank" rel="noopener noreferrer" className="cg-press-row" style={{ display: "flex", gap: "1rem", alignItems: "baseline", flexWrap: "wrap" }}>
               <span style={{ fontFamily: "var(--font-grotesk)", fontWeight: 500, fontSize: "1.02rem", minWidth: "9ch", color: "var(--ink)" }}>{p.name}</span>
-              <span style={{ color: "var(--muted)", fontSize: "0.9rem" }}>{p.detail} <span style={{ color: "var(--accent)" }}>↗</span></span>
+              <span style={{ color: "var(--muted)", fontSize: "0.9rem" }}>{p.detail} <span style={{ color: "var(--accent-2)" }}>↗</span></span>
             </a>
           ))}
         </div>
@@ -244,7 +244,7 @@ export default function PressPage() {
         <ul style={{ listStyle: "none", display: "flex", flexDirection: "column" }}>
           {KONULAR.map((k, i) => (
             <li key={i} style={{ display: "flex", gap: "1rem", padding: "0.9rem 0", borderTop: "1px solid var(--line)", alignItems: "baseline" }}>
-              <span style={{ fontFamily: "var(--font-grotesk)", fontWeight: 700, color: "var(--accent)", fontSize: "0.85rem", minWidth: "2ch" }}>{String(i + 1).padStart(2, "0")}</span>
+              <span style={{ fontFamily: "var(--font-grotesk)", fontWeight: 700, color: "var(--accent-2)", fontSize: "0.85rem", minWidth: "2ch" }}>{String(i + 1).padStart(2, "0")}</span>
               <span style={{ fontSize: "1rem", lineHeight: 1.6, color: "var(--ink)" }}>{k}</span>
             </li>
           ))}
@@ -258,7 +258,7 @@ export default function PressPage() {
           {SSS.map((x) => (
             <details key={x.s} style={{ borderTop: "1px solid var(--line)", padding: "1rem 0" }}>
               <summary style={{ cursor: "pointer", fontFamily: "var(--font-grotesk)", fontWeight: 500, fontSize: "1.02rem", color: "var(--ink)", listStyle: "none" }}>
-                <span style={{ color: "var(--accent)", marginRight: "0.6rem" }}>+</span>{x.s}
+                <span style={{ color: "var(--accent-2)", marginRight: "0.6rem" }}>+</span>{x.s}
               </summary>
               <p style={{ marginTop: "0.7rem", fontSize: "0.95rem", lineHeight: 1.7, color: "var(--muted)", maxWidth: "68ch", paddingLeft: "1.4rem" }}>{x.c}</p>
             </details>

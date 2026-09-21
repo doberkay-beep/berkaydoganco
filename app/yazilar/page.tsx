@@ -88,7 +88,7 @@ export default async function YazilarPage() {
       <section style={{ marginTop: "clamp(3rem, 7vh, 5rem)" }}>
         {YAYINDA.map((y) => (
           <Link key={y.slug} href={`/yazilar/${y.slug}`} style={{ display: "block", padding: "1.75rem 0", borderTop: "1px solid var(--line)" }}>
-            <span style={{ display: "block", fontFamily: "var(--font-grotesk)", fontSize: "0.68rem", letterSpacing: "0.16em", textTransform: "uppercase", color: "var(--accent)", marginBottom: "0.6rem" }}>{y.dateText}</span>
+            <span style={{ display: "block", fontFamily: "var(--font-grotesk)", fontSize: "0.68rem", letterSpacing: "0.16em", textTransform: "uppercase", color: "var(--accent-2)", marginBottom: "0.6rem" }}>{y.dateText}</span>
             <span style={{ display: "block", fontFamily: "var(--font-serif)", fontSize: "clamp(1.3rem, 3vw, 1.9rem)", lineHeight: 1.2, color: "var(--ink)", marginBottom: "0.6rem" }}>{y.title}</span>
             <span style={{ display: "block", fontSize: "0.98rem", lineHeight: 1.6, color: "var(--muted)" }}>{y.dek}</span>
             <span style={{ display: "inline-block", marginTop: "0.9rem", fontFamily: "var(--font-grotesk)", fontSize: "0.72rem", letterSpacing: "0.12em", textTransform: "uppercase", color: "var(--muted)" }}>{t.read} →</span>
@@ -105,7 +105,7 @@ export default async function YazilarPage() {
           <div style={{ display: "flex", flexDirection: "column" }}>
             {posts.map((p) => (
               <a key={p.link} href={p.link} target="_blank" rel="noopener noreferrer" style={{ display: "block", padding: "1.75rem 0", borderTop: "1px solid var(--line)" }}>
-                {p.date && <span style={{ display: "block", fontFamily: "var(--font-grotesk)", fontSize: "0.68rem", letterSpacing: "0.16em", textTransform: "uppercase", color: "var(--accent)", marginBottom: "0.6rem" }}>{p.date}</span>}
+                {p.date && <span style={{ display: "block", fontFamily: "var(--font-grotesk)", fontSize: "0.68rem", letterSpacing: "0.16em", textTransform: "uppercase", color: "var(--accent-2)", marginBottom: "0.6rem" }}>{p.date}</span>}
                 <span style={{ display: "block", fontFamily: "var(--font-serif)", fontSize: "clamp(1.3rem, 3vw, 1.9rem)", lineHeight: 1.2, color: "var(--ink)", marginBottom: "0.6rem" }}>{p.title}</span>
                 {p.snippet && <span style={{ display: "block", fontSize: "0.98rem", lineHeight: 1.6, color: "var(--muted)" }}>{p.snippet}…</span>}
                 <span style={{ display: "inline-block", marginTop: "0.9rem", fontFamily: "var(--font-grotesk)", fontSize: "0.72rem", letterSpacing: "0.12em", textTransform: "uppercase", color: "var(--muted)" }}>{t.read} {t.on} ↗</span>

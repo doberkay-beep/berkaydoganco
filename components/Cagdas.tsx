@@ -102,7 +102,7 @@ export function Cagdas() {
                   <p style={{ fontSize: "0.72rem", letterSpacing: "0.14em", textTransform: "uppercase", color: "var(--muted)" }}>{b.tasfiye.meta}</p>
                   <p className="cg-serif" style={{ fontStyle: "italic", fontSize: "clamp(1rem, 1.7vw, 1.2rem)", lineHeight: 1.6, color: "var(--ink)", maxWidth: "40ch" }}>{b.tasfiye.desc}</p>
                   <div className="ed-pull" style={{ fontSize: "clamp(1.15rem, 2.2vw, 1.45rem)", maxWidth: "34ch" }}>
-                    <span style={{ display: "block", fontFamily: "var(--font-grotesk)", fontStyle: "normal", fontSize: "0.58rem", fontWeight: 500, letterSpacing: "0.2em", textTransform: "uppercase", color: "var(--accent)", marginBottom: "0.5rem" }}>{t.taste}</span>
+                    <span style={{ display: "block", fontFamily: "var(--font-grotesk)", fontStyle: "normal", fontSize: "0.58rem", fontWeight: 500, letterSpacing: "0.2em", textTransform: "uppercase", color: "var(--accent-2)", marginBottom: "0.5rem" }}>{t.taste}</span>
                     {b.tasfiye.excerpt}
                   </div>
                   <div style={{ marginTop: "0.5rem", display: "flex", gap: "0.75rem", flexWrap: "wrap" }}>
@@ -137,7 +137,7 @@ export function Cagdas() {
                   <p style={{ fontSize: "0.72rem", letterSpacing: "0.14em", textTransform: "uppercase", color: "var(--muted)" }}>{b.murekkep.meta}</p>
                   <p className="cg-serif" style={{ fontStyle: "italic", fontSize: "clamp(1.05rem, 1.8vw, 1.3rem)", lineHeight: 1.55, color: "var(--ink)", maxWidth: "36ch" }}>{b.murekkep.desc}</p>
                   <div className="ed-pull" style={{ fontSize: "clamp(1.15rem, 2.2vw, 1.45rem)", maxWidth: "34ch", margin: "0.3rem 0" }}>
-                    <span style={{ display: "block", fontFamily: "var(--font-grotesk)", fontStyle: "normal", fontSize: "0.58rem", fontWeight: 500, letterSpacing: "0.2em", textTransform: "uppercase", color: "var(--accent)", marginBottom: "0.5rem" }}>{t.taste}</span>
+                    <span style={{ display: "block", fontFamily: "var(--font-grotesk)", fontStyle: "normal", fontSize: "0.58rem", fontWeight: 500, letterSpacing: "0.2em", textTransform: "uppercase", color: "var(--accent-2)", marginBottom: "0.5rem" }}>{t.taste}</span>
                     {b.murekkep.excerpt}
                   </div>
                   <div style={{ display: "flex", gap: "0.75rem", flexWrap: "wrap", marginTop: "0.5rem" }}>
