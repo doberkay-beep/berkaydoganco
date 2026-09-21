@@ -36,6 +36,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "monthly" as const,
       priority: 0.7,
     },
+    {
+      url: `${SITE}/atlas/`,
+      changeFrequency: "monthly" as const,
+      priority: 0.7,
+    },
     ...[...new Set(KAVRAMLAR.map((k) => kavramSlug(k.ad)))].map((s) => ({
       url: `${SITE}/sozluk/${s}/`,
       changeFrequency: "yearly" as const,
