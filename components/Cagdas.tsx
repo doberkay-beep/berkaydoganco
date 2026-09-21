@@ -90,6 +90,42 @@ export function Cagdas() {
             {/* GÜNÜN KÖZÜ */}
             <GununKozu t={t.kozu} verses={VERSES} />
 
+            {/* DENEYİMLER — interaktif keşif (yeni) */}
+            {(() => {
+              const L = (tr: string, en: string, fr: string) => (lang === "tr" ? tr : lang === "fr" ? fr : en);
+              const deneyimler = [
+                { yol: "/atlas", ad: L("Zihin Atlası", "Mind Atlas", "Atlas de l'esprit"), not: L("sözlerin tema haritası", "a thematic map of the lines", "carte thématique des vers") },
+                { yol: "/oda", ad: L("Okuma Odası", "Reading Room", "Salle de lecture"), not: L("ambiyans + radyo", "ambience + radio", "ambiance + radio") },
+                { yol: "/kitaplar/tasfiye/dunya", ad: L("Kitabın İç Dünyası", "Inside the Book", "L'intérieur du livre"), not: L("kitabın içinde gez", "wander inside the book", "explorez le livre") },
+                { yol: "/sozluk", ad: L("Kavramlar Sözlüğü", "Concept Lexicon", "Lexique des concepts"), not: L("yazarın kendi tanımları", "the author's own definitions", "définitions de l'auteur") },
+                { yol: "/evren", ad: L("Köz Evreni", "Ember Universe", "Univers de Braise"), not: L("dizeler takımyıldızı", "a constellation of verses", "constellation de vers") },
+                { yol: "/mahkeme", ad: L("Tasfiye Mahkemesi", "The Trial", "Le Procès"), not: L("okur hükmünü verir", "the reader gives the verdict", "le lecteur juge") },
+              ];
+              return (
+                <section className="cg-section">
+                  <div style={{ maxWidth: "1100px", margin: "0 auto" }}>
+                    <Reveal><Folio no="02">{L("Deneyimler", "Experiences", "Expériences")}</Folio></Reveal>
+                    <Reveal delay={0.06} as="p" style={{ margin: "1.4rem 0 2.5rem", fontFamily: "var(--font-serif)", fontStyle: "italic", fontWeight: 300, fontSize: "clamp(1.2rem, 2.6vw, 1.8rem)", lineHeight: 1.4, color: "var(--muted)", maxWidth: "40ch" }}>
+                      {L("Kitapların içinden doğan gezilebilir işler.", "Explorable works born from the books.", "Des œuvres à explorer, nées des livres.")}
+                    </Reveal>
+                    <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(230px, 1fr))", gap: "1rem" }}>
+                      {deneyimler.map((d, i) => (
+                        <Reveal key={d.yol} delay={0.04 * i}>
+                          <a href={d.yol} className="glass-card" style={{ display: "flex", flexDirection: "column", justifyContent: "space-between", minHeight: "150px", padding: "1.3rem 1.4rem", color: "var(--ink)", textDecoration: "none" }}>
+                            <span style={{ fontFamily: "var(--font-serif)", fontSize: "1.35rem", lineHeight: 1.15, letterSpacing: "-0.01em" }}>{d.ad}</span>
+                            <span>
+                              <span style={{ display: "block", fontFamily: "var(--font-grotesk)", fontSize: "0.72rem", color: "var(--muted)", marginBottom: "0.5rem" }}>{d.not}</span>
+                              <span style={{ fontFamily: "var(--font-grotesk)", fontSize: "0.7rem", letterSpacing: "0.14em", textTransform: "uppercase", color: "var(--accent-2)" }}>{L("keşfet", "explore", "explorer")} →</span>
+                            </span>
+                          </a>
+                        </Reveal>
+                      ))}
+                    </div>
+                  </div>
+                </section>
+              );
+            })()}
+
             {/* KİTAPLAR */}
             <section id="books" className="cg-section">
               <Reveal style={{ maxWidth: "1100px", margin: "0 auto clamp(3.5rem, 8vh, 6rem)" }}><Folio no="03">{b.label}</Folio></Reveal>
