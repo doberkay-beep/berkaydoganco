@@ -29,6 +29,9 @@ export default function KitaplarPage() {
         <span style={{ width: "7px", height: "7px", borderRadius: "50%", background: "var(--accent)" }} />Kitaplar
       </span>
       <h1 style={{ fontFamily: "var(--font-serif)", fontWeight: 500, fontSize: "clamp(2.6rem, 7vw, 5rem)", letterSpacing: "-0.015em", lineHeight: 0.95, margin: "1.5rem 0 1rem", color: "var(--ink)" }}>Kitaplar</h1>
+      <p style={{ fontFamily: "var(--font-serif)", fontStyle: "italic", fontSize: "clamp(1rem, 2.4vw, 1.25rem)", color: "var(--muted)", maxWidth: "560px" }}>
+        Bir Şairin Hesabı ile açıldı, Bir Yazarın Hesabı ile sürdü — iki kitap, tek hesap.
+      </p>
 
       <Reveal className="kl-grid">
         {KITAPLAR.map((k) => (

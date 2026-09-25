@@ -142,6 +142,7 @@ export function BentoHub({ lang }: { lang: Lang }) {
           <div className="col">
             <span className="bento-badge">{c.tasfiyeBadge}</span>
             <span className="bento-title">Tasfiye</span>
+            <span style={{ fontFamily: "var(--font-serif)", fontStyle: "italic", fontSize: "0.95rem", color: "var(--muted)" }}>Bir Yazarın Hesabı</span>
             <span style={{ fontSize: "0.88rem", color: "var(--accent-2)", fontFamily: "var(--font-grotesk)", fontWeight: 500 }}>{c.tasfiyeCta} →</span>
             <span className="bento-date">{c.tasfiyeDate}</span>
           </div>
@@ -153,6 +154,7 @@ export function BentoHub({ lang }: { lang: Lang }) {
           <div className="col">
             <span className="bento-kicker">{c.murekkepKind}</span>
             <span className="bento-title">Mürekkep ve Köz</span>
+            <span style={{ fontFamily: "var(--font-serif)", fontStyle: "italic", fontSize: "0.88rem", color: "var(--muted)" }}>Bir Şairin Hesabı</span>
             <span style={{ fontSize: "0.82rem", color: "var(--accent-2)", fontFamily: "var(--font-grotesk)", fontWeight: 500 }}>{c.murekkepCta} →</span>
           </div>
           <span className="arw" aria-hidden="true">↗</span>
