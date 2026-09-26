@@ -192,6 +192,26 @@ export function Cagdas() {
               </Reveal>
             </section>
 
+            {/* BÜLTEN — Substack aboneliği, site içinden */}
+            <section id="bulten" className="cg-section" style={{ paddingTop: "3.5rem", paddingBottom: "3.5rem" }}>
+              <div style={{ maxWidth: "1100px", margin: "0 auto" }}>
+                <Reveal>
+                  <p className="ed-display" style={{ fontSize: "clamp(1.5rem, 3.5vw, 2.4rem)", lineHeight: 1.2, maxWidth: "26ch" }}>
+                    {lang === "tr" ? "Mektuplarıma abone ol — yazılar önce oraya düşer." : lang === "fr" ? "Abonnez-vous à mes lettres — les textes y arrivent d'abord." : "Subscribe to my letters — new writing lands there first."}
+                  </p>
+                </Reveal>
+                <Reveal delay={0.08} style={{ marginTop: "1.5rem" }}>
+                  <iframe
+                    src="https://doberkay.substack.com/embed"
+                    title="Substack"
+                    style={{ width: "100%", maxWidth: "480px", height: "150px", border: "1px solid var(--line)", borderRadius: "12px", background: "transparent" }}
+                    frameBorder="0"
+                    scrolling="no"
+                  />
+                </Reveal>
+              </div>
+            </section>
+
             {/* İLETİŞİM */}
             <section id="contact" className="cg-section" style={{ background: "var(--bg-2)" }}>
               <div style={{ maxWidth: "1100px", margin: "0 auto" }}>

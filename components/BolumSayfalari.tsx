@@ -7,6 +7,8 @@ import { DENEYIMLER, BOLUMLER, FIHRIST_NO } from "@/lib/deneyimler";
 import { TasfiyeDuvari } from "./TasfiyeDuvari";
 import { Kahin } from "./Kahin";
 import { AlintiKarti } from "./AlintiKarti";
+import { OkurMektubu } from "./OkurMektubu";
+import { Sahne } from "./Sahne";
 import { Projeler } from "./Projeler";
 
 /* Ana sayfadan ayrılan bölüm sayfaları — hepsi Kabuk içinde, cg-* stilleriyle. */
@@ -265,6 +267,44 @@ export function KartSayfa() {
       {(lang) => (
         <main className="cg" style={{ paddingTop: "4.5rem" }}>
           <AlintiKarti lang={lang} />
+        </main>
+      )}
+    </Kabuk>
+  );
+}
+
+export function SahneSayfa() {
+  return (
+    <Kabuk>
+      {(lang) => (
+        <main className="cg" style={{ paddingTop: "4.5rem" }}>
+          <section className="cg-section" style={{ paddingTop: "2rem" }}>
+            <div style={{ maxWidth: "1100px", margin: "0 auto" }}>
+              <h1 className="ed-display" style={{ fontSize: "clamp(2rem, 5vw, 3.4rem)", lineHeight: 1.1, marginBottom: "1.5rem" }}>
+                {lang === "tr" ? "Sahne" : lang === "fr" ? "Sur scène" : "On Stage"}
+              </h1>
+              <Sahne lang={lang} />
+            </div>
+          </section>
+        </main>
+      )}
+    </Kabuk>
+  );
+}
+
+export function MektupSayfa() {
+  return (
+    <Kabuk>
+      {(lang) => (
+        <main className="cg" style={{ paddingTop: "4.5rem" }}>
+          <section className="cg-section" style={{ paddingTop: "2rem" }}>
+            <div style={{ maxWidth: "1100px", margin: "0 auto" }}>
+              <h1 className="ed-display" style={{ fontSize: "clamp(2rem, 5vw, 3.4rem)", lineHeight: 1.1, marginBottom: "1.25rem" }}>
+                {lang === "tr" ? "Okur Mektupları" : lang === "fr" ? "Lettres de lecteurs" : "Reader Letters"}
+              </h1>
+              <OkurMektubu lang={lang} />
+            </div>
+          </section>
         </main>
       )}
     </Kabuk>

@@ -155,6 +155,8 @@ export function Kabuk({ children }: { children: (lang: Lang, t: Copy) => React.R
     ...navLinks.slice(0, 5),
     ["/medya", t.nav.media],
     ["/projeler", t.nav.projects],
+    ["/mektup", lang === "tr" ? "Okur Mektupları" : lang === "fr" ? "Lettres" : "Reader Letters"],
+    ["/sahne", lang === "tr" ? "Sahne" : lang === "fr" ? "Sur scène" : "On Stage"],
     ["/takvim", lang === "tr" ? "Köz Takvimi" : lang === "fr" ? "Calendrier" : "Calendar"],
     ["/sozluk", lang === "tr" ? "Sözlük" : lang === "fr" ? "Lexique" : "Lexicon"],
     ["/#contact", t.nav.contact],
@@ -229,6 +231,8 @@ export function Kabuk({ children }: { children: (lang: Lang, t: Copy) => React.R
           <div>
             <p className="ed-footer-head">{lang === "tr" ? "Deneyimle" : lang === "fr" ? "Vivre" : "Experience"}</p>
             <a href="/deneyimler">{t.nav.experiences}</a>
+            <a href="/mektup">{lang === "tr" ? "Okur Mektupları" : lang === "fr" ? "Lettres" : "Reader Letters"}</a>
+            <a href="/sahne">{lang === "tr" ? "Sahne" : lang === "fr" ? "Sur scène" : "On Stage"}</a>
             <a href="/takvim">{lang === "tr" ? "Köz Takvimi" : lang === "fr" ? "Calendrier" : "Calendar"}</a>
             <a href="/posterler">{lang === "tr" ? "Posterler" : lang === "fr" ? "Affiches" : "Posters"}</a>
             <a href="/gom">{lang === "tr" ? "Sitene göm" : lang === "fr" ? "Intégrer" : "Embed"}</a>
