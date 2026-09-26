@@ -19,6 +19,61 @@
       "source": "/kitap/murekkep/",
       "destination": "/kitaplar/murekkep-ve-koz/",
       "permanent": true
+    },
+    {
+      "source": "/basinda",
+      "destination": "/press/",
+      "permanent": true
+    },
+    {
+      "source": "/basinda/",
+      "destination": "/press/",
+      "permanent": true
+    },
+    {
+      "source": "/en/basinda",
+      "destination": "/press/",
+      "permanent": true
+    },
+    {
+      "source": "/en/basinda/",
+      "destination": "/press/",
+      "permanent": true
+    },
+    {
+      "source": "/en/yazilar",
+      "destination": "/yazilar/",
+      "permanent": true
+    },
+    {
+      "source": "/en/yazilar/",
+      "destination": "/yazilar/",
+      "permanent": true
+    },
+    {
+      "source": "/en/medya",
+      "destination": "/medya/",
+      "permanent": true
+    },
+    {
+      "source": "/en/medya/",
+      "destination": "/medya/",
+      "permanent": true
+    },
+    {
+      "source": "/en",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/en/",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/en/:yol*",
+      "destination": "/",
+      "permanent": true
     }
   ],
   "headers": [
