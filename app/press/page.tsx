@@ -4,6 +4,7 @@ import { site, EMAIL, INSTAGRAM_URL, YOUTUBE_URL, SUBSTACK_URL } from "@/lib/sit
 import { KITAPLAR } from "@/lib/kitaplar";
 import { KITAP_ADI } from "@/lib/sozler";
 import { KopyalaMetin } from "@/components/KopyalaMetin";
+import { EKRAN } from "@/lib/basinda";
 import { Muhur } from "@/components/Muhur";
 import { BreadcrumbSchema } from "@/components/Schema";
 
@@ -228,6 +229,16 @@ export default function PressPage() {
       {/* BASINDA */}
       <section id="basinda" style={secStil}>
         <p style={secBaslik}>Basında & platformlarda</p>
+        {EKRAN.length > 0 && (
+          <div style={{ display: "flex", flexDirection: "column", gap: "0.9rem", marginBottom: "1.4rem" }}>
+            {EKRAN.map((e) => (
+              <a key={e.tarihISO + e.kanal} href={e.link || "#"} target={e.link ? "_blank" : undefined} rel="noopener noreferrer" className="cg-press-row" style={{ display: "flex", gap: "1rem", alignItems: "baseline", flexWrap: "wrap" }}>
+                <span style={{ fontFamily: "var(--font-grotesk)", fontWeight: 500, fontSize: "1.02rem", minWidth: "9ch", color: "var(--ink)" }}>{e.kanal}</span>
+                <span style={{ fontSize: "0.9rem", color: "var(--muted)" }}>{e.baslik} · {e.tur === "tv" ? "TV" : e.tur} · {new Date(e.tarihISO).toLocaleDateString("tr-TR", { month: "long", year: "numeric" })}</span>
+              </a>
+            ))}
+          </div>
+        )}
         <div style={{ display: "flex", flexDirection: "column", gap: "0.9rem" }}>
           {site.tr.recognition.press.map((p) => (
             <a key={p.name} href={p.url} target="_blank" rel="noopener noreferrer" className="cg-press-row" style={{ display: "flex", gap: "1rem", alignItems: "baseline", flexWrap: "wrap" }}>

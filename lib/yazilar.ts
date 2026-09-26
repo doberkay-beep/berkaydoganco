@@ -103,3 +103,9 @@ export const YAZILAR: Yazi[] = [
 ];
 
 export const YAYINDA = YAZILAR.filter((y) => !y.taslak);
+
+// Okuma süresi (dk) — ortalama 200 kelime/dk, en az 1.
+export function okumaSuresi(y: Yazi): number {
+  const kelime = y.paras.join(" ").split(/\s+/).filter(Boolean).length;
+  return Math.max(1, Math.ceil(kelime / 200));
+}

@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { site, SUBSTACK_URL } from "@/lib/site";
-import { YAYINDA } from "@/lib/yazilar";
+import { YAYINDA, okumaSuresi } from "@/lib/yazilar";
 import { BreadcrumbSchema } from "@/components/Schema";
 import { Reveal } from "@/components/Kabuk";
 
@@ -89,7 +89,7 @@ export default async function YazilarPage() {
       <Reveal as="section" style={{ marginTop: "clamp(3rem, 7vh, 5rem)" }}>
         {YAYINDA.map((y) => (
           <Link key={y.slug} href={`/yazilar/${y.slug}`} style={{ display: "block", padding: "1.75rem 0", borderTop: "1px solid var(--line)" }}>
-            <span style={{ display: "block", fontFamily: "var(--font-grotesk)", fontSize: "0.68rem", letterSpacing: "0.16em", textTransform: "uppercase", color: "var(--accent-2)", marginBottom: "0.6rem" }}>{y.dateText}</span>
+            <span style={{ display: "block", fontFamily: "var(--font-grotesk)", fontSize: "0.68rem", letterSpacing: "0.16em", textTransform: "uppercase", color: "var(--accent-2)", marginBottom: "0.6rem" }}>{y.dateText} · {okumaSuresi(y)} dk</span>
             <span style={{ display: "block", fontFamily: "var(--font-serif)", fontSize: "clamp(1.3rem, 3vw, 1.9rem)", lineHeight: 1.2, color: "var(--ink)", marginBottom: "0.6rem" }}>{y.title}</span>
             <span style={{ display: "block", fontSize: "0.98rem", lineHeight: 1.6, color: "var(--muted)" }}>{y.dek}</span>
             <span style={{ display: "inline-block", marginTop: "0.9rem", fontFamily: "var(--font-grotesk)", fontSize: "0.72rem", letterSpacing: "0.12em", textTransform: "uppercase", color: "var(--muted)" }}>{t.read} →</span>

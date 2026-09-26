@@ -36,6 +36,7 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://www.berkaydogan.co"),
   alternates: {
     canonical: "/",
+    types: { "application/rss+xml": [{ url: "/feed.xml", title: "Berkay Doğan — Yazılar" }] },
   },
   openGraph: {
     title: "Berkay Doğan — Şair & Yazar",

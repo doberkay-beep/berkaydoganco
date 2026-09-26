@@ -9,6 +9,7 @@ import { Kahin } from "./Kahin";
 import { AlintiKarti } from "./AlintiKarti";
 import { OkurMektubu } from "./OkurMektubu";
 import { Sahne } from "./Sahne";
+import { EKRAN } from "@/lib/basinda";
 import { Projeler } from "./Projeler";
 
 /* Ana sayfadan ayrılan bölüm sayfaları — hepsi Kabuk içinde, cg-* stilleriyle. */
@@ -106,6 +107,31 @@ export function MedyaSayfa() {
               <Reveal><Folio no="—">{t.media.label}</Folio></Reveal>
               <Reveal delay={0.05} as="h1" className="ed-display" style={{ fontSize: "clamp(2.2rem, 5vw, 3.8rem)", marginTop: "1.5rem" }}>{t.media.heading}</Reveal>
               <Reveal delay={0.1} as="p" style={{ marginTop: "1.25rem", fontSize: "1rem", lineHeight: 1.7, color: "var(--muted)", maxWidth: "48ch" }}>{t.media.podcastDesc}</Reveal>
+
+              {/* Ekran — TV & video röportajlar (lib/basinda; boşken görünmez) */}
+              {EKRAN.length > 0 && (
+                <Reveal delay={0.11} style={{ marginTop: "2.5rem" }}>
+                  <span style={{ display: "block", fontSize: "0.68rem", letterSpacing: "0.22em", textTransform: "uppercase", color: "var(--muted)", marginBottom: "1rem" }}>
+                    {lang === "tr" ? "Ekran" : lang === "fr" ? "À l'écran" : "On Screen"}
+                  </span>
+                  <div style={{ display: "flex", flexDirection: "column", gap: "1.1rem" }}>
+                    {EKRAN.map((e) => (
+                      <div key={e.tarihISO + e.kanal} style={{ borderLeft: "2px solid var(--accent-2, var(--accent))", paddingLeft: "1rem" }}>
+                        <p style={{ fontSize: "0.66rem", letterSpacing: "0.16em", textTransform: "uppercase", color: "var(--muted)" }}>
+                          {new Date(e.tarihISO).toLocaleDateString(lang === "tr" ? "tr-TR" : "en-US", { day: "numeric", month: "long", year: "numeric" })} · {e.tur === "tv" ? "TV" : e.tur}
+                        </p>
+                        <p style={{ fontFamily: "var(--font-grotesk)", fontWeight: 600, marginTop: "0.25rem", color: "var(--ink)" }}>{e.kanal}</p>
+                        <p style={{ fontSize: "0.9rem", color: "var(--muted)" }}>{e.baslik}</p>
+                        {e.link && (
+                          <a href={e.link} target="_blank" rel="noopener noreferrer" className="cg-link" style={{ fontSize: "0.8rem", color: "var(--accent-2, var(--accent))" }}>
+                            {lang === "tr" ? "izle" : "watch"} ↗
+                          </a>
+                        )}
+                      </div>
+                    ))}
+                  </div>
+                </Reveal>
+              )}
 
               <Reveal delay={0.12} style={{ marginTop: "2.5rem" }}>
                 <span style={{ display: "block", fontSize: "0.68rem", letterSpacing: "0.22em", textTransform: "uppercase", color: "var(--muted)", marginBottom: "1rem" }}>{t.media.podcast}</span>

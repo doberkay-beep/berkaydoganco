@@ -1,35 +1,11 @@
-import Link from "next/link";
 import type { Metadata } from "next";
+import { Kayip } from "@/components/Kayip";
 
 export const metadata: Metadata = {
-  title: "404 — Lost",
+  title: "404 — Kayıp",
   robots: { index: false, follow: false },
 };
 
 export default function NotFound() {
-  return (
-    <div style={{ position: "fixed", inset: 0, zIndex: 100, background: "var(--bg)", color: "var(--ink)", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", textAlign: "center", padding: "2rem 1.5rem" }}>
-      <p style={{ display: "inline-flex", alignItems: "center", gap: "0.6rem", fontFamily: "var(--font-grotesk)", fontSize: "0.72rem", fontWeight: 500, letterSpacing: "0.26em", textTransform: "uppercase", color: "var(--accent-2)", marginBottom: "2.25rem" }}>
-        <span style={{ width: "7px", height: "7px", borderRadius: "50%", background: "var(--accent)" }} />404 — Lost
-      </p>
-      <p style={{ fontFamily: "var(--font-serif)", fontStyle: "italic", fontWeight: 300, fontSize: "clamp(1.7rem, 5vw, 3.2rem)", lineHeight: 1.4, maxWidth: "22ch" }}>
-        This page wandered off somewhere. Everything worth finding is still back home.
-      </p>
-      <Link href="/" style={{ marginTop: "2.75rem", fontFamily: "var(--font-grotesk)", fontSize: "0.78rem", fontWeight: 500, letterSpacing: "0.1em", padding: "0.9rem 1.6rem", borderRadius: "100px", background: "var(--accent)", color: "var(--accent-ink)" }}>
-        ← Back home
-      </Link>
-      <nav style={{ marginTop: "1.75rem", display: "flex", gap: "1.25rem", flexWrap: "wrap", justifyContent: "center" }}>
-        {[
-          { href: "/kitaplar", ad: "Kitaplar" },
-          { href: "/yazilar", ad: "Yazılar" },
-          { href: "/sozler", ad: "Sözler" },
-          { href: "/hakkimda", ad: "Hakkımda" },
-        ].map((l) => (
-          <Link key={l.href} href={l.href} style={{ fontFamily: "var(--font-grotesk)", fontSize: "0.72rem", letterSpacing: "0.1em", textTransform: "uppercase", color: "var(--muted)", borderBottom: "1px solid var(--line)", paddingBottom: "2px" }}>
-            {l.ad}
-          </Link>
-        ))}
-      </nav>
-    </div>
-  );
+  return <Kayip />;
 }
