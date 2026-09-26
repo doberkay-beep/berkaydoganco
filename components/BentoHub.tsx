@@ -1,6 +1,6 @@
 "use client";
 
-import { type Lang, TRENDYOL_URL, SUBSTACK_URL, TASFIYE_URL } from "@/lib/site";
+import { type Lang, TRENDYOL_URL, TASFIYE_URL } from "@/lib/site";
 
 /* Masaüstü için modüler bento pano — hero'nun hemen altında bir "kontrol paneli":
    Tasfiye (büyük feature) + Mürekkep, Dinle, Oku, Tanınırlık, İletişim.
@@ -22,7 +22,7 @@ const COPY: Record<Lang, C> = {
     tasfiyeBadge: "Çıktı", tasfiyeDate: "25 Ağustos 2026", tasfiyeCta: "Satın al",
     murekkepKind: "Şiir · 2025", murekkepCta: "Satın al",
     listenTitle: "Dinle", listenSub: "Podcast & çalma listeleri",
-    readTitle: "Oku", readSub: "Substack'te yazılar",
+    readTitle: "Oku", readSub: "Yazılar & Substack",
     recogSub: "Trendyol'da 1. sıra · 10/10 · Valsanat No. 51",
     contactTitle: "İletişim", contactSub: "Kapı açık — yaz",
   },
@@ -31,7 +31,7 @@ const COPY: Record<Lang, C> = {
     tasfiyeBadge: "Out now", tasfiyeDate: "25 August 2026", tasfiyeCta: "Buy",
     murekkepKind: "Poetry · 2025", murekkepCta: "Buy",
     listenTitle: "Listen", listenSub: "Podcast & playlists",
-    readTitle: "Read", readSub: "Essays on Substack",
+    readTitle: "Read", readSub: "Essays & Substack",
     recogSub: "#1 Poetry on Trendyol · 10/10 · Valsanat No. 51",
     contactTitle: "Contact", contactSub: "The door is open",
   },
@@ -40,7 +40,7 @@ const COPY: Record<Lang, C> = {
     tasfiyeBadge: "Paru", tasfiyeDate: "25 août 2026", tasfiyeCta: "Acheter",
     murekkepKind: "Poésie · 2025", murekkepCta: "Acheter",
     listenTitle: "Écouter", listenSub: "Podcast & playlists",
-    readTitle: "Lire", readSub: "Essais sur Substack",
+    readTitle: "Lire", readSub: "Essais & Substack",
     recogSub: "N°1 Poésie sur Trendyol · 10/10 · Valsanat N°51",
     contactTitle: "Contact", contactSub: "La porte est ouverte",
   },
@@ -169,8 +169,8 @@ export function BentoHub({ lang }: { lang: Lang }) {
           </div>
         </a>
 
-        {/* D — Oku */}
-        <a href={SUBSTACK_URL} target="_blank" rel="noopener noreferrer" className="bento-card bento-sm">
+        {/* D — Oku (site içi /yazilar; Substack'e oradan da ulaşılır) */}
+        <a href="/yazilar" className="bento-card bento-sm">
           <span className="ic" aria-hidden="true">✎</span>
           <div>
             <span className="bento-title" style={{ display: "block" }}>{c.readTitle}</span>
