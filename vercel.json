@@ -74,6 +74,11 @@
       "source": "/en/:yol*",
       "destination": "/",
       "permanent": true
+    },
+    {
+      "source": "/en/:yol*/",
+      "destination": "/",
+      "permanent": true
     }
   ],
   "headers": [
