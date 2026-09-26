@@ -4,7 +4,8 @@
 - Görüntüler: Adobe Stock (ücretsiz lisanslı) — 467815955, 441782496, 474774502, 593707650, 521314732, 289799397, 625808743
 - Müzik: Adobe Stock "Happy Whistling Ukulele [loop]" — 513003339
 - Font: Poppins (Google Fonts, OFL)
-- `build.py`: montaj betiği (kaynak klipler `src/` klasörüne indirilip çalıştırılır; ffmpeg için `imageio-ffmpeg`, `pillow` gerekir)
+- Hareketlendirme: fotoğraf `rembg` (BiRefNet-portrait) ile katmanlara ayrıldı — salıncak sallanması, müziğe göre dans, hayvan sahnelerinde zıplayan çıkartmalar, kapanışta kalp/pati parçacıkları
+- `build.py`: montaj betiği (kaynak klipler ve `mask.png` `src/` klasörüne konup çalıştırılır; `imageio-ffmpeg`, `pillow`, `opencv-python-headless`, `numpy` gerekir)
 
 | Süre | Sahne |
 |---|---|
