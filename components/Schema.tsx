@@ -86,12 +86,16 @@ export function PersonSchema() {
         nationality: "TR",
         homeLocation: { "@type": "Place", name: "İstanbul, Türkiye" },
         sameAs: [
+          "https://x.com/thisisbdgn",
           INSTAGRAM_URL,
           YOUTUBE_URL,
           SUBSTACK_URL,
           GOODREADS_URL,
+          "https://1000kitap.com/BerkayDogan01",
+          "https://open.spotify.com/show/033qeXeBwqI0ZArYivqfaL",
           "https://necaliyor.co",
         ],
+        mainEntityOfPage: `${SITE}/hakkimda/`,
       }}
     />
   );
