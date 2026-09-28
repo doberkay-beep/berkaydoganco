@@ -1,5 +1,6 @@
 "use client";
 
+import { SimdiCanli } from "./SimdiCanli";
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { site, LANGS, type Lang, type Copy } from "@/lib/site";
@@ -237,6 +238,7 @@ export function Kabuk({ children }: { children: (lang: Lang, t: Copy) => React.R
             <a href="/posterler">{lang === "tr" ? "Posterler" : lang === "fr" ? "Affiches" : "Posters"}</a>
             <a href="/gom">{lang === "tr" ? "Sitene göm" : lang === "fr" ? "Intégrer" : "Embed"}</a>
             <a href="https://necaliyor.co" target="_blank" rel="noopener noreferrer">{lang === "tr" ? "ŞİMDİ — radyo projesi" : lang === "fr" ? "ŞİMDİ — projet radio" : "ŞİMDİ — radio project"}</a>
+            <SimdiCanli lang={lang} />
           </div>
           <div>
             <p className="ed-footer-head">{lang === "tr" ? "Bağlan" : lang === "fr" ? "Contact" : "Connect"}</p>
