@@ -42,7 +42,7 @@ export function Eyebrow({ children }: { children: React.ReactNode }) {
 export function Kabuk({ children }: { children: (lang: Lang, t: Copy) => React.ReactNode }) {
   const [lang, setLang] = useState<Lang>("tr");
   const [menuOpen, setMenuOpen] = useState(false);
-  const [theme, setTheme] = useState<"dark" | "light">("dark");
+  const [theme, setTheme] = useState<"dark" | "light">("light");
   const navRef = useRef<HTMLElement | null>(null);
   const t = site[lang];
 
