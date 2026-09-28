@@ -58,7 +58,7 @@ export function Cagdas() {
             </div>
 
             {/* HERO — kapak */}
-            <section className="cg-hero" style={{ minHeight: "84svh", paddingTop: "2.5rem" }}>
+            <section className="cg-hero" style={{ paddingTop: "2.5rem" }}>
               <div>
                 <h1 className="ed-display" style={{ fontSize: "clamp(3.4rem, 10vw, 9rem)", margin: "0 0 1.75rem" }} aria-label="Berkay Doğan">
                   {["Berkay", "Doğan"].map((word, wi) => (
