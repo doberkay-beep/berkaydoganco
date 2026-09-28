@@ -23,7 +23,7 @@ const TASFIYE_KANALLAR: { name: string; git: string }[] = [
 function TasfiyeBanner({ t }: { t: Copy }) {
   return (
     <div className="cg" style={{
-      margin: "4.6rem clamp(1.25rem, 4vw, 3.25rem) 0",
+      margin: "1.1rem clamp(1.25rem, 4vw, 3.25rem) 0",
       display: "flex", alignItems: "center", justifyContent: "space-between", gap: "1.25rem", flexWrap: "wrap",
       padding: "1rem 1.4rem", borderRadius: "16px",
       background: "radial-gradient(120% 160% at 85% 0%, color-mix(in srgb, var(--accent) 10%, transparent), transparent 55%), var(--glass-bg)",
@@ -49,6 +49,24 @@ export function Cagdas() {
         const b = t.books;
         return (
           <main className="cg" id="top">
+            {/* KAYAN MANŞET — kızıl şerit */}
+            {(() => {
+              const satir = lang === "tr"
+                ? "Tasfiye çıktı — yıkmak değil; temizlemek"
+                : lang === "fr"
+                  ? "Tasfiye est paru — non pas détruire ; purifier"
+                  : "Tasfiye is out — not to destroy; to cleanse";
+              const no1 = lang === "tr" ? "Trendyol'da şiirde 1 numara" : lang === "fr" ? "N°1 poésie sur Trendyol" : "#1 in poetry on Trendyol";
+              const parca = [satir, no1, "ŞİMDİ — necaliyor.co"];
+              return (
+                <div className="ed-marquee" style={{ marginTop: "3.6rem" }} aria-hidden>
+                  <div className="ed-marquee-track">
+                    {[0, 1].map((k) => parca.map((p) => <span key={`${k}-${p}`}>{p}</span>))}
+                  </div>
+                </div>
+              );
+            })()}
+
             {/* TASFİYE BANNER — kalıcı reklam şeridi */}
             <TasfiyeBanner t={t} />
 
@@ -60,7 +78,7 @@ export function Cagdas() {
             {/* HERO — kapak */}
             <section className="cg-hero" style={{ paddingTop: "2.5rem" }}>
               <div>
-                <h1 className="ed-display" style={{ fontSize: "clamp(3.4rem, 10vw, 9rem)", margin: "0 0 1.75rem" }} aria-label="Berkay Doğan">
+                <h1 className="ed-display" style={{ fontSize: "clamp(4rem, 13.5vw, 12.5rem)", margin: "0 0 1.75rem" }} aria-label="Berkay Doğan">
                   {["Berkay", "Doğan"].map((word, wi) => (
                     <span key={word} style={{ display: "block" }} aria-hidden="true">
                       {[...word].map((ch, i) => (

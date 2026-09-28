@@ -1,15 +1,35 @@
-/* ============ TEMA — BEYAZ SAYFA: kâğıt varsayılan + gece mürekkebi seçenek ============ */
-/* KÂĞIT (varsayılan) — sıcak beyaz zemin, mürekkep metin, tek mürekkep-mavisi vurgu */
-:root, [data-theme="light"] {
-  --bg:      #FAF8F2;   /* sıcak kâğıt */
-  --bg-2:    #FFFFFF;   /* saf sayfa — yükseltilmiş panel */
-  --ink:     #191813;   /* mürekkep — sıcak siyah */
-  --muted:   #6C685E;   /* solmuş mürekkep */
+/* ============ TEMA — KİNETİK MANŞET: mürekkep gecesi + KIZIL şok; kâğıt seçenek ============ */
+/* MÜREKKEP GECESİ (varsayılan) — sıcak siyah zemin, kâğıt beyazı metin, kızıl vurgu */
+:root, [data-theme="dark"] {
+  --bg:      #0A0908;   /* mürekkep siyahı — sıcak */
+  --bg-2:    #121110;   /* yükseltilmiş panel */
+  --ink:     #F4F1EA;   /* kâğıt beyazı */
+  --muted:   #94908A;
+  --line:    rgba(244, 241, 234, 0.12);
+  --accent:  #E5382C;   /* KIZIL — manşetin şok rengi */
+  --accent-2: #FF6B5E;  /* açık kızıl — küçük metin/link (karanlıkta AA) */
+  --accent-ink: #FFF6F2;
+  --glass-bg:     rgba(18, 17, 16, 0.55);
+  --glass-border: rgba(244, 241, 234, 0.13);
+  --glass-hi:     rgba(255, 255, 255, 0.07);
+  --nav-bg:       rgba(10, 9, 8, 0.65);
+  --photo-filter: grayscale(100%) contrast(1.08) brightness(0.92);
+  --grain: 0.055;
+  --shadow-card:       0 10px 30px rgba(0, 0, 0, 0.4);
+  --shadow-card-hover: 0 20px 46px rgba(0, 0, 0, 0.55);
+  color-scheme: dark;
+}
+
+/* KÂĞIT (seçenek) — sıcak beyaz zemin, mürekkep metin, koyu kızıl vurgu */
+[data-theme="light"] {
+  --bg:      #FAF8F2;
+  --bg-2:    #FFFFFF;
+  --ink:     #191813;
+  --muted:   #6C685E;
   --line:    rgba(25, 24, 19, 0.14);
-  --accent:  #2038B5;   /* mürekkep mavisi (dolgu, büyük başlık) */
-  --accent-2: #1D2F9C;  /* koyu mürekkep — küçük metin/link (AA) */
+  --accent:  #C22A1F;   /* koyu kızıl — kâğıtta mühür gibi */
+  --accent-2: #A62318;  /* link (açıkta AA) */
   --accent-ink: #FBFAF5;
-  /* Cam yüzeyler — kâğıt üstünde süt camı */
   --glass-bg:     rgba(255, 255, 255, 0.6);
   --glass-border: rgba(25, 24, 19, 0.12);
   --glass-hi:     rgba(255, 255, 255, 0.85);
@@ -19,27 +39,6 @@
   --shadow-card:       0 10px 30px rgba(25, 24, 19, 0.08);
   --shadow-card-hover: 0 20px 46px rgba(25, 24, 19, 0.13);
   color-scheme: light;
-}
-
-/* GECE MÜREKKEBİ (seçenek) — mavi-siyah gece, kâğıt beyazı metin */
-[data-theme="dark"] {
-  --bg:      #0D0E12;
-  --bg-2:    #14161C;
-  --ink:     #F0EFE9;   /* kâğıt beyazı */
-  --muted:   #8D8D84;
-  --line:    rgba(240, 239, 233, 0.12);
-  --accent:  #4C63E6;   /* gecede parlayan mürekkep */
-  --accent-2: #99A7FF;  /* açık mürekkep — link (karanlıkta AA) */
-  --accent-ink: #FFFFFF;
-  --glass-bg:     rgba(20, 22, 28, 0.55);
-  --glass-border: rgba(240, 239, 233, 0.13);
-  --glass-hi:     rgba(255, 255, 255, 0.07);
-  --nav-bg:       rgba(13, 14, 18, 0.65);
-  --photo-filter: grayscale(100%) contrast(1.05) brightness(0.9);
-  --grain: 0.045;
-  --shadow-card:       0 10px 30px rgba(0, 0, 0, 0.35);
-  --shadow-card-hover: 0 20px 46px rgba(0, 0, 0, 0.5);
-  color-scheme: dark;
 }
 /* Not: --font-grotesk / --font-serif next/font tarafından :root'a tanımlanır. */
 
@@ -78,12 +77,12 @@ body {
   line-height: 1.6;
 }
 
-/* Parlak yüzey ışıması — yalnız gece mürekkebinde; kâğıt kendi zeminiyle kalır. */
+/* Parlak yüzey ışıması — yalnız mürekkep gecesinde; kâğıt kendi zeminiyle kalır. */
 [data-theme="dark"] body::before {
   content: ""; position: fixed; inset: 0; z-index: 2147483646; pointer-events: none;
   background:
     radial-gradient(120% 60% at 50% -18%, rgba(255, 255, 255, 0.05), transparent 60%),
-    linear-gradient(118deg, rgba(255, 255, 255, 0.02) 0%, transparent 34%, transparent 72%, rgba(76, 99, 230, 0.03) 100%);
+    linear-gradient(118deg, rgba(255, 255, 255, 0.02) 0%, transparent 34%, transparent 72%, rgba(229, 56, 44, 0.035) 100%);
 }
 
 /* Kâğıt/film greni — her şeyin üstünde çok ince bir doku katmanı */
@@ -253,20 +252,20 @@ g[tabindex]:focus-visible { outline: 3px solid var(--accent-2); outline-offset: 
 /* Anchor hedeflerinin üstünde nefes payı (odaklanınca gizlenmesin) */
 :where(h1, h2, h3, [id]) { scroll-margin-top: 2rem; }
 
-/* ============ Aurora — kâğıtta çok hafif mürekkep buğusu; gecede belirginleşir ============ */
+/* ============ Kor bulutu — gecede nefes alan kızıl köz ışığı; kâğıtta hafif buğu ============ */
 .aurora {
   position: fixed; inset: -25%; z-index: 0; pointer-events: none; will-change: transform;
   background:
-    radial-gradient(38% 38% at 22% 28%, rgba(32, 56, 181, 0.07), transparent 70%),
-    radial-gradient(34% 34% at 82% 18%, rgba(96, 84, 220, 0.05), transparent 70%),
-    radial-gradient(42% 42% at 64% 82%, rgba(30, 100, 200, 0.05), transparent 70%);
-  filter: blur(36px); animation: auroraDrift 26s ease-in-out infinite alternate;
+    radial-gradient(38% 38% at 22% 28%, rgba(229, 56, 44, 0.16), transparent 70%),
+    radial-gradient(34% 34% at 82% 18%, rgba(255, 122, 60, 0.10), transparent 70%),
+    radial-gradient(42% 42% at 64% 82%, rgba(180, 30, 40, 0.13), transparent 70%);
+  filter: blur(36px); animation: auroraDrift 18s ease-in-out infinite alternate;
 }
-[data-theme="dark"] .aurora {
+[data-theme="light"] .aurora {
   background:
-    radial-gradient(38% 38% at 22% 28%, rgba(76, 99, 230, 0.16), transparent 70%),
-    radial-gradient(34% 34% at 82% 18%, rgba(120, 96, 230, 0.12), transparent 70%),
-    radial-gradient(42% 42% at 64% 82%, rgba(40, 120, 220, 0.12), transparent 70%);
+    radial-gradient(38% 38% at 22% 28%, rgba(194, 42, 31, 0.06), transparent 70%),
+    radial-gradient(34% 34% at 82% 18%, rgba(230, 110, 60, 0.05), transparent 70%),
+    radial-gradient(42% 42% at 64% 82%, rgba(160, 30, 40, 0.05), transparent 70%);
 }
 @keyframes auroraDrift {
   from { transform: translate3d(-2.5%, -1.5%, 0) rotate(0deg) scale(1.05); }
@@ -322,7 +321,7 @@ g[tabindex]:focus-visible { outline: 3px solid var(--accent-2); outline-offset: 
 /* İmleç ışığı — sayfa geneli köz parıltısı (Kabuk konumlandırır) */
 .cg-cursor-glow { display: none; position: fixed; left: 0; top: 0; width: 520px; height: 520px; margin: -260px 0 0 -260px;
   border-radius: 50%; pointer-events: none; z-index: 1;
-  background: radial-gradient(circle, rgba(76, 99, 230, 0.07), rgba(255, 255, 255, 0.015) 42%, transparent 68%);
+  background: radial-gradient(circle, rgba(229, 56, 44, 0.08), rgba(255, 255, 255, 0.015) 42%, transparent 68%);
   opacity: 0; transition: opacity 0.6s ease; will-change: transform; }
 [data-theme="dark"] .cg-cursor-glow { display: block; }
 
@@ -397,3 +396,21 @@ g[tabindex]:focus-visible { outline: 3px solid var(--accent-2); outline-offset: 
 .cg-drop-menu > a:first-child { border-top: 1px solid var(--glass-border); border-radius: 12px 12px 0 0; padding-top: 0.8rem; }
 .cg-drop-menu > a:last-child { border-bottom: 1px solid var(--glass-border); border-radius: 0 0 12px 12px; padding-bottom: 0.8rem; }
 .cg-drop-menu > a:hover { color: var(--accent-2); background: var(--bg-2); }
+
+/* ============ KİNETİK MANŞET katmanı — marquee + dev tipografi ============ */
+/* Kayan manşet şeridi — kızıl zemin, kesintisiz akış */
+.ed-marquee { overflow: hidden; white-space: nowrap; background: var(--accent); color: var(--accent-ink);
+  border-block: 1px solid color-mix(in srgb, var(--accent-ink) 20%, transparent); user-select: none; }
+.ed-marquee-track { display: inline-flex; padding: 0.62rem 0; animation: edMarquee 22s linear infinite; will-change: transform; }
+.ed-marquee-track > span { font-family: var(--font-grotesk); font-size: 0.72rem; font-weight: 600;
+  letter-spacing: 0.26em; text-transform: uppercase; padding-right: 2.4rem; }
+.ed-marquee-track > span::after { content: "✦"; margin-left: 2.4rem; opacity: 0.7; }
+@keyframes edMarquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+.ed-marquee:hover .ed-marquee-track { animation-play-state: paused; }
+@media (prefers-reduced-motion: reduce) { .ed-marquee-track { animation: none; } }
+
+/* Hayalet manşet gecede kor konturuyla */
+[data-theme="dark"] .cg-ghost { -webkit-text-stroke: 1px color-mix(in srgb, var(--accent) 34%, transparent); }
+
+/* Dev çekme alıntı — manşet dozunda */
+.ed-pull { font-size: 1.12em; }
