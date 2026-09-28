@@ -1,5 +1,6 @@
 import Link from "next/link";
 import type { Kitap } from "@/lib/kitaplar";
+import { YapiskanSatinAl } from "./YapiskanSatinAl";
 
 /* Kitap sayfası şablonu — brief'teki yapı, sitenin mevcut görsel diliyle:
    üst bant → kapak+künye → arka kapak → nereden alınır → kitaptan → diğer kitap.
@@ -109,7 +110,12 @@ export function KitapSayfasi({ kitap, diger }: { kitap: Kitap; diger: Kitap }) {
 
       {/* d. Satın alma */}
       <section style={{ marginTop: "clamp(3rem, 8vh, 5rem)" }}>
-        <p style={{ ...mono, color: "var(--muted)", marginBottom: "0.75rem" }}>Nereden alınır</p>
+        <p style={{ ...mono, color: "var(--muted)", marginBottom: "0.35rem" }}>Nereden alınır</p>
+        <p style={{ fontFamily: "var(--font-serif)", fontStyle: "italic", fontSize: "0.95rem", color: "var(--muted)", marginBottom: "0.9rem" }}>
+          {kitap.slug === "murekkep-ve-koz"
+            ? "Trendyol şiir listesinde 1 numaraya çıktı · 1000Kitap'ta 10/10"
+            : "Trendyol şiirde 1 numaraya çıkan şairin yeni kitabı · 151 sayfa"}
+        </p>
         <div>
           {kitap.kanallar.map((k) => (
             <a key={k.git} href={`/git/${k.git}/`} rel="noopener" className="ks-kanal">
@@ -151,6 +157,9 @@ export function KitapSayfasi({ kitap, diger }: { kitap: Kitap; diger: Kitap }) {
         .ks-kanal:hover { padding-left: 0.5rem; }
         .ks-kanal:last-child { border-bottom: 1px solid var(--line); }
       `}</style>
+
+      {/* Mobilde yapışkan satın al çubuğu */}
+      <YapiskanSatinAl ad={kitap.ad} fiyat={kitap.fiyat} git={kitap.kanallar[0].git} />
     </main>
   );
 }

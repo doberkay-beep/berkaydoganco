@@ -3,6 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { YAZILAR, YAYINDA, okumaSuresi } from "@/lib/yazilar";
 import { OkumaCubugu } from "@/components/OkumaCubugu";
+import { KitapCagrisi } from "@/components/KitapCagrisi";
 import { MEDIA, SUBSTACK_URL, AUTHOR_REF } from "@/lib/site";
 import { Paylas } from "@/components/Paylas";
 
@@ -156,6 +157,8 @@ export default async function YaziPage({ params }: { params: Promise<{ slug: str
             Tüm yazılar
           </Link>
           <Paylas url={`/yazilar/${y.slug}`} title={`${y.title} — Berkay Doğan`} />
+
+          <KitapCagrisi />
         </div>
       </footer>
     </main>

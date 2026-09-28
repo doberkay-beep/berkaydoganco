@@ -6,6 +6,7 @@ import {
 } from "@/lib/site";
 import { GununKozu } from "./GununKozu";
 import { BentoHub } from "./BentoHub";
+import { IlkZiyaret } from "./IlkZiyaret";
 import { Kabuk, Reveal } from "./Kabuk";
 import { Folio, Masthead } from "./Dergi";
 
@@ -85,6 +86,9 @@ export function Cagdas() {
             </section>
 
             {/* BENTO PANO */}
+            {/* İlk ziyaret turu — yalnız ilk gelişte görünür */}
+            <IlkZiyaret lang={lang} />
+
             <BentoHub lang={lang} />
 
             {/* GÜNÜN KÖZÜ */}
