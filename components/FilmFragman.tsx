@@ -9,10 +9,10 @@ import Link from "next/link";
 
 type Lang = "tr" | "en" | "fr";
 
-const COPY: Record<Lang, { baslik: string; alt: string; izle: string; tekrar: string; ipucu: string; geri: string; kitap: string; kisa: string; kisaAlt: string; sessiz: string }> = {
-  tr: { baslik: "Film", alt: "Tasfiye — Bir Yazarın Hesabı", izle: "Filmi izle", tekrar: "Tekrar izle", ipucu: "50 saniye · sesli izlemen önerilir", geri: "← berkaydogan.co", kitap: "Kitabı incele", kisa: "Kısa filmler", kisaAlt: "Kampanyadan üç kısa: bir dize, bir duygu, yirmi saniye.", sessiz: "sessiz" },
-  en: { baslik: "The Film", alt: "Tasfiye — A Writer's Reckoning", izle: "Play the film", tekrar: "Play again", ipucu: "50 seconds · best with sound on", geri: "← berkaydogan.co", kitap: "About the book", kisa: "Short films", kisaAlt: "Three shorts from the campaign: one line, one feeling, twenty seconds.", sessiz: "silent" },
-  fr: { baslik: "Le Film", alt: "Tasfiye — Le Bilan d'un écrivain", izle: "Lancer le film", tekrar: "Revoir", ipucu: "50 secondes · à regarder avec le son", geri: "← berkaydogan.co", kitap: "Découvrir le livre", kisa: "Courts métrages", kisaAlt: "Trois courts de la campagne : un vers, une émotion, vingt secondes.", sessiz: "muet" },
+const COPY: Record<Lang, { baslik: string; alt: string; filmNot: string; fragman: string; izle: string; tekrar: string; ipucu: string; geri: string; kitap: string; kisa: string; kisaAlt: string; sessiz: string }> = {
+  tr: { baslik: "Film", alt: "Tasfiye — Bir Yazarın Hesabı", filmNot: "8 dakikalık kısa film — metinler kitaptan, ses yazarın kendisinden.", fragman: "Fragman", izle: "Filmi izle", tekrar: "Tekrar izle", ipucu: "50 saniye · sesli izlemen önerilir", geri: "← berkaydogan.co", kitap: "Kitabı incele", kisa: "Kısa filmler", kisaAlt: "Kampanyadan üç kısa: bir dize, bir duygu, yirmi saniye.", sessiz: "sessiz" },
+  en: { baslik: "The Film", alt: "Tasfiye — A Writer's Reckoning", filmNot: "An 8-minute short film — words from the book, voice by the author.", fragman: "Trailer", izle: "Play the film", tekrar: "Play again", ipucu: "50 seconds · best with sound on", geri: "← berkaydogan.co", kitap: "About the book", kisa: "Short films", kisaAlt: "Three shorts from the campaign: one line, one feeling, twenty seconds.", sessiz: "silent" },
+  fr: { baslik: "Le Film", alt: "Tasfiye — Le Bilan d'un écrivain", filmNot: "Un court métrage de 8 minutes — les mots du livre, la voix de l'auteur.", fragman: "Bande-annonce", izle: "Lancer le film", tekrar: "Revoir", ipucu: "50 secondes · à regarder avec le son", geri: "← berkaydogan.co", kitap: "Découvrir le livre", kisa: "Courts métrages", kisaAlt: "Trois courts de la campagne : un vers, une émotion, vingt secondes.", sessiz: "muet" },
 };
 
 /* Kampanya kısaları — dikey 9:16, tıklayınca yerinde oynar. */
@@ -65,7 +65,7 @@ export default function FilmFragman() {
           display: flex; flex-direction: column; align-items: center; justify-content: center;
           gap: 22px; padding: 24px; font-family: var(--font-grotesk), sans-serif; }
         .flm-cerceve { position: relative; width: min(100%, 1060px); border-radius: 14px; overflow: hidden;
-          background: #000; box-shadow: 0 30px 90px rgba(0,0,0,.7), 0 0 70px rgba(58,91,217,.07); }
+          background: #000; box-shadow: 0 30px 90px rgba(0,0,0,.7), 0 0 70px rgba(229,56,44,.07); }
         .flm-cerceve.dikey { width: min(100%, 420px); }
         .flm-cerceve video { display: block; width: 100%; height: auto; }
         .flm-ortu { position: absolute; inset: 0; display: flex; flex-direction: column;
@@ -74,7 +74,7 @@ export default function FilmFragman() {
         .flm-oynat { width: 84px; height: 84px; border-radius: 50%; border: 1px solid rgba(250,250,250,.35);
           background: rgba(5,5,5,.55); backdrop-filter: blur(6px); display: grid; place-items: center;
           transition: transform .25s ease, border-color .25s ease, box-shadow .25s ease; }
-        .flm-ortu:hover .flm-oynat { transform: scale(1.06); border-color: #3A5BD9; box-shadow: 0 0 34px rgba(58,91,217,.35); }
+        .flm-ortu:hover .flm-oynat { transform: scale(1.06); border-color: #E5382C; box-shadow: 0 0 34px rgba(229,56,44,.35); }
         .flm-oynat svg { margin-left: 5px; }
         .flm-ortu span { font-size: 14px; letter-spacing: .18em; text-transform: uppercase; color: #FAFAFA; }
         .flm-ust { text-align: center; }
@@ -83,13 +83,29 @@ export default function FilmFragman() {
         .flm-alt { display: flex; align-items: center; gap: 18px; flex-wrap: wrap; justify-content: center; }
         .flm-alt a { color: #8a8a8a; font-size: 13px; letter-spacing: .08em; text-decoration: none; transition: color .2s ease; }
         .flm-alt a:hover { color: #FAFAFA; }
-        .flm-alt a.koz { color: #3A5BD9; }
+        .flm-alt a.koz { color: #E5382C; }
         .flm-ipucu { font-size: 12px; letter-spacing: .12em; color: #6a6a6a; }
       `}</style>
 
       <div className="flm-ust">
         <h1>{c.baslik}</h1>
         <p>{c.alt}</p>
+      </div>
+
+      {/* TASFİYE: Film — YouTube'daki 8 dakikalık kısa film */}
+      <div className="flm-cerceve" style={{ aspectRatio: "16 / 9" }}>
+        <iframe
+          src="https://www.youtube-nocookie.com/embed/YmMk8NG5QO4"
+          title="TASFİYE: Film — Bir Yazarın Hesabı"
+          style={{ position: "absolute", inset: 0, width: "100%", height: "100%", border: 0 }}
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowFullScreen
+        />
+      </div>
+      <p className="flm-ipucu">{c.filmNot}</p>
+
+      <div className="flm-ust" style={{ marginTop: 26 }}>
+        <h1 style={{ fontSize: "clamp(22px, 3.4vw, 30px)" }}>{c.fragman}</h1>
       </div>
 
       <div className={`flm-cerceve${dikey ? " dikey" : ""}`}>
