@@ -244,6 +244,7 @@ export function Kabuk({ children }: { children: (lang: Lang, t: Copy) => React.R
             <p className="ed-footer-head">{lang === "tr" ? "Bağlan" : lang === "fr" ? "Contact" : "Connect"}</p>
             <a href="/hakkimda">{t.nav.about}</a>
             <a href="/medya">{t.nav.media}</a>
+            <a href="/video">Video</a>
             <a href="/projeler">{t.nav.projects}</a>
             <a href="/press">{lang === "tr" ? "Basın Odası" : lang === "fr" ? "Presse" : "Press Room"}</a>
           </div>

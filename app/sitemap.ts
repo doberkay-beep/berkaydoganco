@@ -33,6 +33,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.6,
     },
     {
+      url: `${SITE}/video/`,
+      changeFrequency: "weekly" as const,
+      priority: 0.6,
+    },
+    {
       url: `${SITE}/posterler/`,
       changeFrequency: "monthly" as const,
       priority: 0.6,
