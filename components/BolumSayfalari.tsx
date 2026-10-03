@@ -1,13 +1,12 @@
 "use client";
 
-import { REVIEWS, MEDIA, PLAYLISTS } from "@/lib/site";
+import { REVIEWS, MEDIA, PLAYLISTS, type Lang, type Copy } from "@/lib/site";
 import { Kabuk, Reveal } from "./Kabuk";
 import { Folio } from "./Dergi";
 import { AlintiKarti } from "./AlintiKarti";
 import { OkurMektubu } from "./OkurMektubu";
 import { Sahne } from "./Sahne";
 import { EKRAN } from "@/lib/basinda";
-import { Projeler } from "./Projeler";
 
 /* Ana sayfadan ayrılan bölüm sayfaları — hepsi Kabuk içinde, cg-* stilleriyle. */
 
@@ -30,7 +29,7 @@ export function HakkimdaSayfa() {
                     ...t.about.works,
                     // TV ve video çıkışları lib/basinda'dan — yayınlandıkça çizelgeye kendiliğinden düşer.
                     ...[...EKRAN].reverse().map((e) => ({
-                      year: new Date(e.tarihISO).toLocaleDateString(lang === "tr" ? "tr-TR" : lang === "fr" ? "fr-FR" : "en-US", { month: "short", year: "numeric" }),
+                      year: new Date(e.tarihISO).toLocaleDateString(lang === "tr" ? "tr-TR" : "en-US", { month: "short", year: "numeric" }),
                       title: e.kanal,
                       kind: e.baslik,
                       href: e.link,
@@ -105,29 +104,34 @@ export function HakkimdaSayfa() {
               </div>
             </div>
           </section>
+
+          {/* OKUR MEKTUBU — form + onaylı mektuplar (menüde ayrı sayfa yok; /mektup yine açık) */}
+          <section id="mektup" className="cg-section">
+            <div style={{ maxWidth: "1100px", margin: "0 auto" }}>
+              <Reveal><Folio no="03">{lang === "tr" ? "Okur mektupları" : "Reader letters"}</Folio></Reveal>
+              <Reveal delay={0.05} style={{ marginTop: "1.5rem" }}><OkurMektubu lang={lang} /></Reveal>
+            </div>
+          </section>
         </main>
       )}
     </Kabuk>
   );
 }
 
-/* ---------- MEDYA: podcast + youtube + çalma listeleri ---------- */
-export function MedyaSayfa() {
+/* ---------- DİNLE: podcast + ekran + çalma listeleri (/video sayfasının alt bölümü) ---------- */
+export function DinleBolumu({ lang, t }: { lang: Lang; t: Copy }) {
   return (
-    <Kabuk>
-      {(lang, t) => (
-        <main className="cg">
-          <section className="cg-section" style={{ ...ustBosluk, borderTop: "none" }}>
-            <div style={{ maxWidth: "860px", margin: "0 auto" }}>
-              <Reveal><Folio no="—">{t.media.label}</Folio></Reveal>
-              <Reveal delay={0.05} as="h1" className="ed-display" style={{ fontSize: "clamp(2.2rem, 5vw, 3.8rem)", marginTop: "1.5rem" }}>{t.media.heading}</Reveal>
+          <section id="dinle" className="cg-section">
+            <div style={{ maxWidth: "1100px", margin: "0 auto" }}>
+              <Reveal><Folio no="02">{lang === "tr" ? "Dinle" : "Listen"}</Folio></Reveal>
+              <Reveal delay={0.05} as="h2" className="ed-display" style={{ fontSize: "clamp(2.2rem, 5vw, 3.8rem)", marginTop: "1.5rem" }}>{t.media.heading}</Reveal>
               <Reveal delay={0.1} as="p" style={{ marginTop: "1.25rem", fontSize: "1rem", lineHeight: 1.7, color: "var(--muted)", maxWidth: "48ch" }}>{t.media.podcastDesc}</Reveal>
 
               {/* Ekran — TV & video röportajlar (lib/basinda; boşken görünmez) */}
               {EKRAN.length > 0 && (
                 <Reveal delay={0.11} style={{ marginTop: "2.5rem" }}>
                   <span style={{ display: "block", fontSize: "0.68rem", letterSpacing: "0.22em", textTransform: "uppercase", color: "var(--muted)", marginBottom: "1rem" }}>
-                    {lang === "tr" ? "Ekran" : lang === "fr" ? "À l'écran" : "On Screen"}
+                    {lang === "tr" ? "Ekran" : "On Screen"}
                   </span>
                   <div style={{ display: "flex", flexDirection: "column", gap: "1.1rem" }}>
                     {EKRAN.map((e) => (
@@ -162,17 +166,11 @@ export function MedyaSayfa() {
                 </div>
               </Reveal>
 
-              <Reveal delay={0.14} style={{ marginTop: "2.75rem" }}>
-                <span style={{ display: "block", fontSize: "0.68rem", letterSpacing: "0.22em", textTransform: "uppercase", color: "var(--muted)", marginBottom: "1rem" }}>{t.media.video}</span>
-                <div className="cg-embed" style={{ aspectRatio: "16 / 9" }}>
-                  <iframe title="YouTube — Berkay Doğan" src={`https://www.youtube.com/embed/${MEDIA.youtube}`} width="100%" height="100%" frameBorder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen loading="lazy" style={{ display: "block" }} />
-                </div>
-              </Reveal>
 
               {PLAYLISTS.length > 0 && (
                 <Reveal delay={0.16} style={{ marginTop: "2.75rem" }}>
                   <span style={{ display: "block", fontSize: "0.68rem", letterSpacing: "0.22em", textTransform: "uppercase", color: "var(--muted)", marginBottom: "1.25rem" }}>
-                    {lang === "tr" ? "Şu sıralar dinlediklerim" : lang === "fr" ? "Ce que j'écoute en ce moment" : "What I'm listening to"}
+                    {lang === "tr" ? "Şu sıralar dinlediklerim" : "What I'm listening to"}
                   </span>
                   <div style={{ display: "grid", gap: "1rem", gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))" }}>
                     {PLAYLISTS.map((pl) => (
@@ -187,25 +185,10 @@ export function MedyaSayfa() {
               )}
             </div>
           </section>
-        </main>
-      )}
-    </Kabuk>
   );
 }
 
 /* ---------- İNCE SARMALAYICILAR ---------- */
-export function ProjelerSayfa() {
-  return (
-    <Kabuk>
-      {(lang) => (
-        <main className="cg" style={{ paddingTop: "4.5rem" }}>
-          <Projeler lang={lang} />
-        </main>
-      )}
-    </Kabuk>
-  );
-}
-
 export function KartSayfa() {
   return (
     <Kabuk>
@@ -226,7 +209,7 @@ export function SahneSayfa() {
           <section className="cg-section" style={{ paddingTop: "2rem" }}>
             <div style={{ maxWidth: "1100px", margin: "0 auto" }}>
               <h1 className="ed-display" style={{ fontSize: "clamp(2rem, 5vw, 3.4rem)", lineHeight: 1.1, marginBottom: "1.5rem" }}>
-                {lang === "tr" ? "Sahne" : lang === "fr" ? "Sur scène" : "On Stage"}
+                {lang === "tr" ? "Sahne" : "On Stage"}
               </h1>
               <Sahne lang={lang} />
             </div>
@@ -245,7 +228,7 @@ export function MektupSayfa() {
           <section className="cg-section" style={{ paddingTop: "2rem" }}>
             <div style={{ maxWidth: "1100px", margin: "0 auto" }}>
               <h1 className="ed-display" style={{ fontSize: "clamp(2rem, 5vw, 3.4rem)", lineHeight: 1.1, marginBottom: "1.25rem" }}>
-                {lang === "tr" ? "Okur Mektupları" : lang === "fr" ? "Lettres de lecteurs" : "Reader Letters"}
+                {lang === "tr" ? "Okur Mektupları" : "Reader Letters"}
               </h1>
               <OkurMektubu lang={lang} />
             </div>

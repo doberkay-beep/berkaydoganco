@@ -6,7 +6,7 @@ import Link from "next/link";
 /* Şiirli 404 — kaybolan ziyaretçiye markanın diliyle seslenir.
    Dil: bd-lang (site tercihi) → tarayıcı dili → TR. */
 
-type Lang = "tr" | "en" | "fr";
+type Lang = "tr" | "en";
 
 const COPY: Record<Lang, { etiket: string; satir1: string; satir2: string; geri: string }> = {
   tr: {
@@ -21,19 +21,13 @@ const COPY: Record<Lang, { etiket: string; satir1: string; satir2: string; geri:
     satir2: "But getting lost is a way of being found; someone here knows what you were looking for.",
     geri: "← back home",
   },
-  fr: {
-    etiket: "404 — perdu",
-    satir1: "La page que vous cherchez a été liquidée.",
-    satir2: "Mais se perdre est une façon d'être trouvé ; ici, quelqu'un sait ce que vous cherchiez.",
-    geri: "← retour",
-  },
 };
 
 const LINKLER: { href: string; ad: Record<Lang, string> }[] = [
-  { href: "/kitaplar", ad: { tr: "Kitaplar", en: "Books", fr: "Livres" } },
-  { href: "/yazilar", ad: { tr: "Yazılar", en: "Writing", fr: "Textes" } },
-  { href: "/sozler", ad: { tr: "Sözler", en: "Lines", fr: "Vers" } },
-  { href: "/mektup", ad: { tr: "Okur Mektupları", en: "Letters", fr: "Lettres" } },
+  { href: "/kitaplar", ad: { tr: "Kitaplar", en: "Books" } },
+  { href: "/yazilar", ad: { tr: "Yazılar", en: "Writing" } },
+  { href: "/sozler", ad: { tr: "Sözler", en: "Lines" } },
+  { href: "/mektup", ad: { tr: "Okur Mektupları", en: "Letters" } },
 ];
 
 export function Kayip() {
@@ -41,10 +35,10 @@ export function Kayip() {
   useEffect(() => {
     try {
       const s = localStorage.getItem("bd-lang");
-      if (s === "tr" || s === "en" || s === "fr") setLang(s);
+      if (s === "tr" || s === "en") setLang(s);
       else {
         const n = (navigator.language || "").toLowerCase();
-        setLang(n.startsWith("tr") ? "tr" : n.startsWith("fr") ? "fr" : "en");
+        setLang(n.startsWith("tr") ? "tr" : "en");
       }
     } catch { /* yoksay */ }
   }, []);

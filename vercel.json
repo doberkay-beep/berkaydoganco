@@ -194,6 +194,26 @@
       "source": "/deneyimler/",
       "destination": "/",
       "permanent": true
+    },
+    {
+      "source": "/medya",
+      "destination": "/video/",
+      "permanent": true
+    },
+    {
+      "source": "/medya/",
+      "destination": "/video/",
+      "permanent": true
+    },
+    {
+      "source": "/projeler",
+      "destination": "/hakkimda/",
+      "permanent": true
+    },
+    {
+      "source": "/projeler/",
+      "destination": "/hakkimda/",
+      "permanent": true
     }
   ],
   "headers": [

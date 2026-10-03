@@ -7,19 +7,18 @@ import Link from "next/link";
    Dikey/yatay kaynak ekran yönüne göre seçilir; ses kullanıcı jestiyle açık
    başlatılır çünkü skor ve daktilo sesi filmin yarısıdır. */
 
-type Lang = "tr" | "en" | "fr";
+type Lang = "tr" | "en";
 
 const COPY: Record<Lang, { baslik: string; alt: string; filmNot: string; fragman: string; izle: string; tekrar: string; ipucu: string; geri: string; kitap: string; kisa: string; kisaAlt: string; sessiz: string }> = {
   tr: { baslik: "Film", alt: "Tasfiye — Bir Yazarın Hesabı", filmNot: "8 dakikalık kısa film — metinler kitaptan, ses yazarın kendisinden.", fragman: "Fragman", izle: "Filmi izle", tekrar: "Tekrar izle", ipucu: "50 saniye · sesli izlemen önerilir", geri: "← berkaydogan.co", kitap: "Kitabı incele", kisa: "Kısa filmler", kisaAlt: "Kampanyadan üç kısa: bir dize, bir duygu, yirmi saniye.", sessiz: "sessiz" },
   en: { baslik: "The Film", alt: "Tasfiye — A Writer's Reckoning", filmNot: "An 8-minute short film — words from the book, voice by the author.", fragman: "Trailer", izle: "Play the film", tekrar: "Play again", ipucu: "50 seconds · best with sound on", geri: "← berkaydogan.co", kitap: "About the book", kisa: "Short films", kisaAlt: "Three shorts from the campaign: one line, one feeling, twenty seconds.", sessiz: "silent" },
-  fr: { baslik: "Le Film", alt: "Tasfiye — Le Bilan d'un écrivain", filmNot: "Un court métrage de 8 minutes — les mots du livre, la voix de l'auteur.", fragman: "Bande-annonce", izle: "Lancer le film", tekrar: "Revoir", ipucu: "50 secondes · à regarder avec le son", geri: "← berkaydogan.co", kitap: "Découvrir le livre", kisa: "Courts métrages", kisaAlt: "Trois courts de la campagne : un vers, une émotion, vingt secondes.", sessiz: "muet" },
 };
 
 /* Kampanya kısaları — dikey 9:16, tıklayınca yerinde oynar. */
 const KISALAR: { id: string; ad: Record<Lang, string>; not: Record<Lang, string>; sesli: boolean }[] = [
-  { id: "col", ad: { tr: "Çöl", en: "Desert", fr: "Désert" }, not: { tr: "Arzu bir çöldür.", en: "Desire is a desert.", fr: "Le désir est un désert." }, sesli: true },
-  { id: "gidis", ad: { tr: "Gidiş", en: "Departure", fr: "Départ" }, not: { tr: "Herkes bir gün gider.", en: "Everyone leaves one day.", fr: "Un jour, tout le monde part." }, sesli: true },
-  { id: "manifest", ad: { tr: "Manifest", en: "Manifesto", fr: "Manifeste" }, not: { tr: "Söz tutuldu.", en: "The promise was kept.", fr: "La promesse est tenue." }, sesli: false },
+  { id: "col", ad: { tr: "Çöl", en: "Desert" }, not: { tr: "Arzu bir çöldür.", en: "Desire is a desert." }, sesli: true },
+  { id: "gidis", ad: { tr: "Gidiş", en: "Departure" }, not: { tr: "Herkes bir gün gider.", en: "Everyone leaves one day." }, sesli: true },
+  { id: "manifest", ad: { tr: "Manifest", en: "Manifesto" }, not: { tr: "Söz tutuldu.", en: "The promise was kept." }, sesli: false },
 ];
 
 export default function FilmFragman() {
@@ -32,10 +31,10 @@ export default function FilmFragman() {
   useEffect(() => {
     try {
       const s = localStorage.getItem("bd-lang");
-      if (s === "tr" || s === "en" || s === "fr") setLang(s);
+      if (s === "tr" || s === "en") setLang(s);
       else {
         const n = (navigator.language || "").toLowerCase();
-        setLang(n.startsWith("tr") ? "tr" : n.startsWith("fr") ? "fr" : "en");
+        setLang(n.startsWith("tr") ? "tr" : "en");
       }
     } catch { /* yoksay */ }
     const mq = window.matchMedia("(orientation: portrait)");

@@ -109,16 +109,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.8,
     },
     {
-      url: `${SITE}/medya/`,
-      changeFrequency: "monthly",
-      priority: 0.6,
-    },
-    {
-      url: `${SITE}/projeler/`,
-      changeFrequency: "monthly",
-      priority: 0.6,
-    },
-    {
       url: `${SITE}/kart/`,
       changeFrequency: "monthly",
       priority: 0.5,

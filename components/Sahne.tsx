@@ -20,19 +20,12 @@ const COPY: Record<Lang, { bos: string; duyuru: string; gelecek: string; gecmis:
     gecmis: "Past",
     takvim: "add to calendar",
   },
-  fr: {
-    bos: "Aucun événement annoncé pour le moment.",
-    duyuru: "Les séances de dédicace sont annoncées d'abord sur X :",
-    gelecek: "À venir",
-    gecmis: "Passés",
-    takvim: "ajouter au calendrier",
-  },
 };
 
 function tarihYaz(iso: string, lang: Lang): string {
   try {
     const d = new Date(iso);
-    const gun = d.toLocaleDateString(lang === "tr" ? "tr-TR" : lang === "fr" ? "fr-FR" : "en-US", {
+    const gun = d.toLocaleDateString(lang === "tr" ? "tr-TR" : "en-US", {
       day: "numeric", month: "long", year: "numeric", weekday: "long",
     });
     return iso.includes("T") ? `${gun} · ${iso.slice(11, 16)}` : gun;

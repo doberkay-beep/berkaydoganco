@@ -33,22 +33,11 @@ const COPY: Record<Lang, {
     bos: "Be the first to leave a letter.",
     anonim: "a reader",
   },
-  fr: {
-    giris: "Laissez une ligne : une trace du livre, une objection, un bonjour. Les lettres apparaissent après lecture et approbation.",
-    adYer: "votre nom (facultatif)",
-    mesajYer: "votre lettre… (280 car.)",
-    gonder: "laisser la lettre",
-    gonderiliyor: "envoi…",
-    tesekkur: "Votre lettre est arrivée. Elle apparaîtra ici après approbation — merci.",
-    hata: "Échec — pas de liens, 2 à 280 caractères.",
-    bos: "Laissez la première lettre.",
-    anonim: "un lecteur",
-  },
 };
 
 function tarih(iso: string, lang: Lang): string {
   try {
-    return new Date(iso).toLocaleDateString(lang === "tr" ? "tr-TR" : lang === "fr" ? "fr-FR" : "en-US", {
+    return new Date(iso).toLocaleDateString(lang === "tr" ? "tr-TR" : "en-US", {
       day: "numeric", month: "long", year: "numeric",
     });
   } catch {

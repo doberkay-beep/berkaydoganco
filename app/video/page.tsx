@@ -3,11 +3,11 @@ import { VideoArsivi } from "@/components/VideoArsivi";
 import { sonVideolar, videoUrl, kapakUrl, KANAL_URL } from "@/lib/youtube";
 
 export const metadata: Metadata = {
-  title: { absolute: "Video — Berkay Doğan" },
-  description: "Fragmanlar, kısa filmler ve yazarlık günlüğü — Berkay Doğan'ın YouTube arşivi.",
+  title: { absolute: "İzle & Dinle — Berkay Doğan" },
+  description: "Berkay Doğan'ın kısa filmleri, fragmanları ve yazarlık günlüğü; Şairin Hesabı podcast'i ve dinledikleri.",
   alternates: { canonical: "/video" },
   openGraph: {
-    title: "Video — Berkay Doğan",
+    title: "İzle & Dinle — Berkay Doğan",
     description: "Fragmanlar, kısa filmler ve yazarlık günlüğü.",
     url: "https://www.berkaydogan.co/video",
     type: "website",

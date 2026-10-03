@@ -43,7 +43,7 @@ export function GununKozu({ t, verses }: { t: Copy; verses: string[] }) {
         .kozu-share:hover { color: var(--accent-2); }
         @media (max-width: 640px) { .kozu-band { justify-content: flex-start; } }
       `}</style>
-      <span className="kozu-label"><span className="ed-folio-no" style={{ marginRight: "0.35rem" }}>№ 02</span>{t.label}</span>
+      <span className="kozu-label"><span className="ed-folio-no" style={{ marginRight: "0.35rem" }}>№ 01</span>{t.label}</span>
       <p className="kozu-verse" suppressHydrationWarning>{verse ? `“${verse}”` : " "}</p>
       {verse && (
         <button className="kozu-share" onClick={() => shareVerse(verse, () => { setCopied(true); window.setTimeout(() => setCopied(false), 1600); })}>

@@ -5,6 +5,7 @@ import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { site, LANGS, type Lang, type Copy } from "@/lib/site";
 import { Muhur } from "./Muhur";
+import { ETKINLIKLER } from "@/lib/etkinlikler";
 
 /* Site kabuğu — nav + mobil menü + dil/tema durumu + mikro-etkileşimler.
    Tüm bölüm sayfaları bunu sarar; içerik render-prop ile (lang, t) alır.
@@ -75,12 +76,9 @@ export function Kabuk({ children }: { children: (lang: Lang, t: Copy) => React.R
       let next: Lang | null = null;
       try {
         const saved = localStorage.getItem("bd-lang");
-        if (saved === "tr" || saved === "en" || saved === "fr") next = saved;
+        if (saved === "tr" || saved === "en") next = saved;
       } catch { /* yoksay */ }
-      if (!next) {
-        const nav = (navigator.language || "").toLowerCase();
-        next = nav.startsWith("fr") ? "fr" : "tr";
-      }
+      if (!next) next = "tr";
       setLang(next);
     }, 0);
     return () => window.clearTimeout(id);
@@ -143,6 +141,7 @@ export function Kabuk({ children }: { children: (lang: Lang, t: Copy) => React.R
     return () => { document.removeEventListener("pointermove", onMove); if (magnet) magnet.style.translate = ""; };
   }, []);
 
+  const izleDinle = lang === "tr" ? "İzle & Dinle" : "Watch & Listen";
   const navLinks: [string, string][] = [
     ["/kitaplar", t.nav.books],
     ["/sozler", t.nav.sozler],
@@ -153,13 +152,11 @@ export function Kabuk({ children }: { children: (lang: Lang, t: Copy) => React.R
   ];
   const menuLinks: [string, string][] = [
     ...navLinks.slice(0, 5),
-    ["/video", "Video"],
-    ["/medya", t.nav.media],
-    ["/projeler", t.nav.projects],
-    ["/mektup", lang === "tr" ? "Okur Mektupları" : lang === "fr" ? "Lettres" : "Reader Letters"],
-    ["/sahne", lang === "tr" ? "Sahne" : lang === "fr" ? "Sur scène" : "On Stage"],
-    ["/takvim", lang === "tr" ? "Köz Takvimi" : lang === "fr" ? "Calendrier" : "Calendar"],
-    ["/sozluk", lang === "tr" ? "Sözlük" : lang === "fr" ? "Lexique" : "Lexicon"],
+    ["/video", izleDinle],
+    // Sahne yalnız etkinlik varken görünür (lib/etkinlikler).
+    ...(ETKINLIKLER.length > 0 ? [["/sahne", lang === "tr" ? "Sahne" : "On Stage"] as [string, string]] : []),
+    ["/takvim", lang === "tr" ? "Köz Takvimi" : "Calendar"],
+    ["/sozluk", lang === "tr" ? "Sözlük" : "Lexicon"],
     ["/#contact", t.nav.contact],
   ];
 
@@ -180,11 +177,11 @@ export function Kabuk({ children }: { children: (lang: Lang, t: Copy) => React.R
               <div key={href} className="cg-drop">
                 <a href={href} className="cg-link">{label} ▾</a>
                 <div className="cg-drop-menu">
-                  <a href="/sozler">{lang === "tr" ? "Tüm sözler" : lang === "fr" ? "Tous les vers" : "All verses"}</a>
-                  <a href="/takvim">{lang === "tr" ? "Köz Takvimi" : lang === "fr" ? "Calendrier" : "Calendar"}</a>
-                  <a href="/sozluk">{lang === "tr" ? "Kavramlar Sözlüğü" : lang === "fr" ? "Lexique" : "Lexicon"}</a>
-                  <a href="/posterler">{lang === "tr" ? "Posterler" : lang === "fr" ? "Affiches" : "Posters"}</a>
-                  <a href="/gom">{lang === "tr" ? "Sitene göm" : lang === "fr" ? "Intégrer" : "Embed"}</a>
+                  <a href="/sozler">{lang === "tr" ? "Tüm sözler" : "All verses"}</a>
+                  <a href="/takvim">{lang === "tr" ? "Köz Takvimi" : "Calendar"}</a>
+                  <a href="/sozluk">{lang === "tr" ? "Kavramlar Sözlüğü" : "Lexicon"}</a>
+                  <a href="/posterler">{lang === "tr" ? "Posterler" : "Posters"}</a>
+                  <a href="/gom">{lang === "tr" ? "Sitene göm" : "Embed"}</a>
                 </div>
               </div>
             ) : (
@@ -219,38 +216,35 @@ export function Kabuk({ children }: { children: (lang: Lang, t: Copy) => React.R
         <div className="ed-footer-grid">
           <div>
             <p className="ed-footer-motto">
-              {lang === "tr" ? "Yazmak, varoluşun en sessiz itirafıdır." : lang === "fr" ? "Écrire est l'aveu le plus silencieux de l'existence." : "Writing is the quietest confession of existence."}
+              {lang === "tr" ? "Yazmak, varoluşun en sessiz itirafıdır." : "Writing is the quietest confession of existence."}
             </p>
           </div>
           <div>
-            <p className="ed-footer-head">{lang === "tr" ? "Oku" : lang === "fr" ? "Lire" : "Read"}</p>
+            <p className="ed-footer-head">{lang === "tr" ? "Oku" : "Read"}</p>
             <a href="/kitaplar">{t.nav.books}</a>
             <a href="/sozler">{t.nav.sozler}</a>
             <a href="/yazilar">{t.nav.writing}</a>
-            <a href="/sozluk">{lang === "tr" ? "Kavramlar Sözlüğü" : lang === "fr" ? "Lexique" : "Lexicon"}</a>
+            <a href="/sozluk">{lang === "tr" ? "Kavramlar Sözlüğü" : "Lexicon"}</a>
           </div>
           <div>
-            <p className="ed-footer-head">{lang === "tr" ? "Keşfet" : lang === "fr" ? "Explorer" : "Explore"}</p>
-            <a href="/mektup">{lang === "tr" ? "Okur Mektupları" : lang === "fr" ? "Lettres" : "Reader Letters"}</a>
-            <a href="/sahne">{lang === "tr" ? "Sahne" : lang === "fr" ? "Sur scène" : "On Stage"}</a>
-            <a href="/takvim">{lang === "tr" ? "Köz Takvimi" : lang === "fr" ? "Calendrier" : "Calendar"}</a>
-            <a href="/posterler">{lang === "tr" ? "Posterler" : lang === "fr" ? "Affiches" : "Posters"}</a>
-            <a href="/gom">{lang === "tr" ? "Sitene göm" : lang === "fr" ? "Intégrer" : "Embed"}</a>
-            <a href="https://necaliyor.co" target="_blank" rel="noopener noreferrer">{lang === "tr" ? "ŞİMDİ — radyo projesi" : lang === "fr" ? "ŞİMDİ — projet radio" : "ŞİMDİ — radio project"}</a>
+            <p className="ed-footer-head">{lang === "tr" ? "Keşfet" : "Explore"}</p>
+            {ETKINLIKLER.length > 0 && <a href="/sahne">{lang === "tr" ? "Sahne" : "On Stage"}</a>}
+            <a href="/takvim">{lang === "tr" ? "Köz Takvimi" : "Calendar"}</a>
+            <a href="/posterler">{lang === "tr" ? "Posterler" : "Posters"}</a>
+            <a href="/gom">{lang === "tr" ? "Sitene göm" : "Embed"}</a>
+            <a href="https://necaliyor.co" target="_blank" rel="noopener noreferrer">{lang === "tr" ? "ŞİMDİ — radyo projesi" : "ŞİMDİ — radio project"}</a>
             <SimdiCanli lang={lang} />
           </div>
           <div>
-            <p className="ed-footer-head">{lang === "tr" ? "Bağlan" : lang === "fr" ? "Contact" : "Connect"}</p>
+            <p className="ed-footer-head">{lang === "tr" ? "Bağlan" : "Connect"}</p>
             <a href="/hakkimda">{t.nav.about}</a>
-            <a href="/medya">{t.nav.media}</a>
-            <a href="/video">Video</a>
-            <a href="/projeler">{t.nav.projects}</a>
-            <a href="/press">{lang === "tr" ? "Basın Odası" : lang === "fr" ? "Presse" : "Press Room"}</a>
+            <a href="/video">{izleDinle}</a>
+            <a href="/press">{lang === "tr" ? "Basın Odası" : "Press Room"}</a>
           </div>
         </div>
         <div className="ed-footer-bottom">
           <span>© 2026 Berkay Doğan</span>
-          <span>İstanbul — {lang === "tr" ? "Şair & Yazar" : lang === "fr" ? "Poète & Écrivain" : "Poet & Writer"}</span>
+          <span>İstanbul — {lang === "tr" ? "Şair & Yazar" : "Poet & Writer"}</span>
         </div>
       </footer>
     </div>

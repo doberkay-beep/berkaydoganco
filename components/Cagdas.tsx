@@ -5,13 +5,10 @@ import {
   RETAILERS, VERSES, type Lang, type Copy,
 } from "@/lib/site";
 import { GununKozu } from "./GununKozu";
-import { BentoHub } from "./BentoHub";
-import { IlkZiyaret } from "./IlkZiyaret";
 import { Kabuk, Reveal } from "./Kabuk";
 import { Folio, Masthead } from "./Dergi";
 
-/* Ana sayfa — inceltilmiş: Tasfiye banner'ı + hero + bento + günün közü +
-   kitaplar + iletişim. Hakkımda/medya/projeler kendi sayfalarında. */
+/* Ana sayfa — sade: Tasfiye bandı + hero + günün közü + kitaplar + iletişim. */
 
 // Tasfiye'nin diğer satıcıları — /git üzerinden (ölçümlü)
 const TASFIYE_KANALLAR: { name: string; git: string }[] = [
@@ -23,7 +20,7 @@ const TASFIYE_KANALLAR: { name: string; git: string }[] = [
 function TasfiyeBanner({ t }: { t: Copy }) {
   return (
     <div className="cg" style={{
-      margin: "1.1rem clamp(1.25rem, 4vw, 3.25rem) 0",
+      margin: "4.7rem clamp(1.25rem, 4vw, 3.25rem) 0",
       display: "flex", alignItems: "center", justifyContent: "space-between", gap: "1.25rem", flexWrap: "wrap",
       padding: "1rem 1.4rem", borderRadius: "16px",
       background: "radial-gradient(120% 160% at 85% 0%, color-mix(in srgb, var(--accent) 10%, transparent), transparent 55%), var(--glass-bg)",
@@ -49,24 +46,6 @@ export function Cagdas() {
         const b = t.books;
         return (
           <main className="cg" id="top">
-            {/* KAYAN MANŞET — kızıl şerit */}
-            {(() => {
-              const satir = lang === "tr"
-                ? "Tasfiye çıktı — yıkmak değil; temizlemek"
-                : lang === "fr"
-                  ? "Tasfiye est paru — non pas détruire ; purifier"
-                  : "Tasfiye is out — not to destroy; to cleanse";
-              const no1 = lang === "tr" ? "Trendyol'da şiirde 1 numara" : lang === "fr" ? "N°1 poésie sur Trendyol" : "#1 in poetry on Trendyol";
-              const parca = [satir, no1, "ŞİMDİ — necaliyor.co"];
-              return (
-                <div className="ed-marquee" style={{ marginTop: "3.6rem" }} aria-hidden>
-                  <div className="ed-marquee-track">
-                    {[0, 1].map((k) => parca.map((p) => <span key={`${k}-${p}`}>{p}</span>))}
-                  </div>
-                </div>
-              );
-            })()}
-
             {/* TASFİYE BANNER — kalıcı reklam şeridi */}
             <TasfiyeBanner t={t} />
 
@@ -103,18 +82,12 @@ export function Cagdas() {
               </Reveal>
             </section>
 
-            {/* BENTO PANO */}
-            {/* İlk ziyaret turu — yalnız ilk gelişte görünür */}
-            <IlkZiyaret lang={lang} />
-
-            <BentoHub lang={lang} />
-
             {/* GÜNÜN KÖZÜ */}
             <GununKozu t={t.kozu} verses={VERSES} />
 
             {/* KİTAPLAR */}
             <section id="books" className="cg-section">
-              <Reveal style={{ maxWidth: "1100px", margin: "0 auto clamp(3.5rem, 8vh, 6rem)" }}><Folio no="03">{b.label}</Folio></Reveal>
+              <Reveal style={{ maxWidth: "1100px", margin: "0 auto clamp(3.5rem, 8vh, 6rem)" }}><Folio no="02">{b.label}</Folio></Reveal>
 
               {/* Tasfiye — yeni kitap önce */}
               <Reveal className="cg-book rev">
@@ -129,7 +102,7 @@ export function Cagdas() {
                   </div>
                   <div style={{ marginTop: "0.5rem", display: "flex", gap: "0.75rem", flexWrap: "wrap" }}>
                     <a href={TASFIYE_URL} target="_blank" rel="noopener noreferrer" className="cg-btn cg-btn-fill">{b.tasfiye.cta} →</a>
-                    <a href="/kitaplar/tasfiye" className="cg-btn cg-btn-ghost">{lang === "tr" ? "Kitabın sayfası" : lang === "fr" ? "Page du livre" : "Book page"}</a>
+                    <a href="/kitaplar/tasfiye" className="cg-btn cg-btn-ghost">{lang === "tr" ? "Kitabın sayfası" : "Book page"}</a>
                   </div>
                   <div style={{ marginTop: "0.5rem" }}>
                     <span style={{ display: "block", fontSize: "0.62rem", letterSpacing: "0.16em", textTransform: "uppercase", color: "var(--muted)", marginBottom: "0.6rem" }}>{b.buyMore}</span>
@@ -164,7 +137,7 @@ export function Cagdas() {
                   </div>
                   <div style={{ display: "flex", gap: "0.75rem", flexWrap: "wrap", marginTop: "0.5rem" }}>
                     <a href={TRENDYOL_URL} target="_blank" rel="noopener noreferrer" className="cg-btn cg-btn-fill">{b.murekkep.cta} →</a>
-                    <a href="/kitaplar/murekkep-ve-koz" className="cg-btn cg-btn-ghost">{lang === "tr" ? "Kitabın sayfası" : lang === "fr" ? "Page du livre" : "Book page"}</a>
+                    <a href="/kitaplar/murekkep-ve-koz" className="cg-btn cg-btn-ghost">{lang === "tr" ? "Kitabın sayfası" : "Book page"}</a>
                   </div>
                   <div style={{ marginTop: "0.5rem" }}>
                     <span style={{ display: "block", fontSize: "0.62rem", letterSpacing: "0.16em", textTransform: "uppercase", color: "var(--muted)", marginBottom: "0.6rem" }}>{b.buyMore}</span>
@@ -178,30 +151,10 @@ export function Cagdas() {
               </Reveal>
             </section>
 
-            {/* BÜLTEN — Substack aboneliği, site içinden */}
-            <section id="bulten" className="cg-section" style={{ paddingTop: "3.5rem", paddingBottom: "3.5rem" }}>
-              <div style={{ maxWidth: "1100px", margin: "0 auto" }}>
-                <Reveal>
-                  <p className="ed-display" style={{ fontSize: "clamp(1.5rem, 3.5vw, 2.4rem)", lineHeight: 1.2, maxWidth: "26ch" }}>
-                    {lang === "tr" ? "Mektuplarıma abone ol — yazılar önce oraya düşer." : lang === "fr" ? "Abonnez-vous à mes lettres — les textes y arrivent d'abord." : "Subscribe to my letters — new writing lands there first."}
-                  </p>
-                </Reveal>
-                <Reveal delay={0.08} style={{ marginTop: "1.5rem" }}>
-                  <iframe
-                    src="https://doberkay.substack.com/embed"
-                    title="Substack"
-                    style={{ width: "100%", maxWidth: "480px", height: "150px", border: "1px solid var(--line)", borderRadius: "12px", background: "transparent" }}
-                    frameBorder="0"
-                    scrolling="no"
-                  />
-                </Reveal>
-              </div>
-            </section>
-
             {/* İLETİŞİM */}
             <section id="contact" className="cg-section" style={{ background: "var(--bg-2)" }}>
               <div style={{ maxWidth: "1100px", margin: "0 auto" }}>
-                <Reveal><Folio no="04">{t.contact.label}</Folio></Reveal>
+                <Reveal><Folio no="03">{t.contact.label}</Folio></Reveal>
                 <Reveal delay={0.06} as="p" className="ed-display" style={{ margin: "1.75rem 0 2.5rem", fontSize: "clamp(1.9rem, 5vw, 3.8rem)", lineHeight: 1.15, maxWidth: "20ch" }}>{t.contact.line}</Reveal>
                 <Reveal delay={0.12}>
                   <a href={`mailto:${EMAIL}`} className="cg-huge" style={{ display: "inline-block", fontSize: "clamp(1.4rem, 3.5vw, 2.6rem)", color: "var(--ink)", letterSpacing: "-0.02em" }}>{EMAIL}</a>
@@ -210,7 +163,7 @@ export function Cagdas() {
                   <a href={YOUTUBE_URL} target="_blank" rel="noopener noreferrer" className="cg-link">YouTube</a>
                   <a href={INSTAGRAM_URL} target="_blank" rel="noopener noreferrer" className="cg-link">Instagram</a>
                   <a href={SUBSTACK_URL} target="_blank" rel="noopener noreferrer" className="cg-link">Substack</a>
-                  <a href="/press" className="cg-link">{lang === "tr" ? "Basın kiti" : lang === "fr" ? "Presse" : "Press kit"}</a>
+                  <a href="/press" className="cg-link">{lang === "tr" ? "Basın kiti" : "Press kit"}</a>
                 </Reveal>
               </div>
             </section>

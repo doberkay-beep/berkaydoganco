@@ -10,7 +10,7 @@ const ANON =
 
 type Calan = { parca: string; slug: string; istasyon: string } | null;
 
-export function SimdiCanli({ lang }: { lang: "tr" | "en" | "fr" }) {
+export function SimdiCanli({ lang }: { lang: "tr" | "en" }) {
   const [calan, setCalan] = useState<Calan>(null);
 
   useEffect(() => {
@@ -31,7 +31,7 @@ export function SimdiCanli({ lang }: { lang: "tr" | "en" | "fr" }) {
   }, []);
 
   if (!calan) return null;
-  const on = lang === "tr" ? "ŞİMDİ'de şu an" : lang === "fr" ? "En ce moment sur ŞİMDİ" : "Now on ŞİMDİ";
+  const on = lang === "tr" ? "ŞİMDİ'de şu an" : "Now on ŞİMDİ";
   return (
     <a
       href={`https://necaliyor.co/radyo/${calan.slug}`}

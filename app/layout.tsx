@@ -44,7 +44,7 @@ export const metadata: Metadata = {
     url: "https://www.berkaydogan.co",
     siteName: "berkaydogan.co",
     locale: "tr_TR",
-    alternateLocale: ["en_US", "fr_FR"],
+    alternateLocale: ["en_US"],
     type: "website",
   },
   twitter: {

@@ -1,5 +1,5 @@
-export type Lang = "en" | "tr" | "fr";
-export const LANGS: Lang[] = ["en", "tr", "fr"];
+export type Lang = "en" | "tr";
+export const LANGS: Lang[] = ["tr", "en"];
 
 // Kanonik site + yazar entity kimliği. Tüm sayfalar aynı Person @id'sine
 // referans versin ki Google "Berkay Doğan" varlığını tek entity olarak
@@ -69,9 +69,8 @@ export { TUM_SOZLER as VERSES, SOZLER, temadan } from "./sozler";
 type Book = { title: string; meta: string; badge: string; desc: string; cta: string; excerpt: string };
 
 export type Copy = {
-  nav: { books: string; about: string; writing: string; contact: string; projects: string; film: string; media: string; sozler: string };
+  nav: { books: string; about: string; writing: string; contact: string; film: string; sozler: string };
   banner: { line: string; buy: string; watch: string };
-  projects: { label: string; heading: string; sub: string; simdiName: string; simdiTag: string; story: string[]; cta: string };
   card: { label: string; heading: string; sub: string; random: string; download: string; hint: string };
   yazilar: { title: string; sub: string; all: string; read: string; on: string; empty: string };
   taste: string;
@@ -93,18 +92,8 @@ export const TEASER_LINES = ["Yıkılamadım, yıktım.", "Yalan yaşanmışlık
 
 export const site: Record<Lang, Copy> = {
   en: {
-    nav: { books: "Books", about: "About", writing: "Writing", contact: "Contact", projects: "Projects", film: "Film", media: "Media", sozler: "Verses" },
+    nav: { books: "Books", about: "About", writing: "Writing", contact: "Contact", film: "Film", sozler: "Verses" },
     banner: { line: "Tasfiye is out — not to destroy; to cleanse.", buy: "Get the book", watch: "Watch the film" },
-    projects: {
-      label: "Projects", heading: "Beyond the words",
-      sub: "Alongside the writing — things other curiosities have built.",
-      simdiName: "ŞİMDİ", simdiTag: "Live radio · necaliyor.co",
-      story: [
-        "Poetry and radio are born in the same place: in listening. ŞİMDİ (“now”) shows what is playing this very moment across Turkey's radio stations — a poet chasing after sound.",
-        "A verse finds you at the right moment; so does the right song. I built ŞİMDİ to catch that “now” — a hundred stations, one screen, a live stream of the present tense.",
-      ],
-      cta: "Open the radio",
-    },
     card: {
       label: "Quote card", heading: "Pick a verse, share it",
       sub: "Choose one of the verses and download it as a card.",
@@ -135,7 +124,7 @@ export const site: Record<Lang, Copy> = {
       works: [
         { year: "2017", title: "Began writing", kind: "At seventeen" },
         { year: "Dec 2025", title: "Ink and Ember: A Poet's Reckoning", kind: "Poetry · #1 Poetry on Trendyol", href: "/kitaplar/murekkep-ve-koz" },
-        { year: "Jun 2026", title: "The Poet's Reckoning", kind: "Podcast", href: "/medya" },
+        { year: "Jun 2026", title: "The Poet's Reckoning", kind: "Podcast", href: "/video#dinle" },
         { year: "Aug 2026", title: "Tasfiye", kind: "Essay", href: "/kitaplar/tasfiye" },
         { year: "Aug 2026", title: "ŞİMDİ", kind: "Live radio · necaliyor.co", href: "https://necaliyor.co" },
         { year: "Sep 2026", title: "TASFİYE: The Film", kind: "Short film · 8 min", href: "/film" },
@@ -171,18 +160,8 @@ export const site: Record<Lang, Copy> = {
     contact: { label: "Contact", line: "Write — about the work, a collaboration, or whatever's on your mind. The door is open." },
   },
   tr: {
-    nav: { books: "Kitaplar", about: "Hakkımda", writing: "Yazılar", contact: "İletişim", projects: "Projeler", film: "Film", media: "Medya", sozler: "Sözler" },
+    nav: { books: "Kitaplar", about: "Hakkımda", writing: "Yazılar", contact: "İletişim", film: "Film", sozler: "Sözler" },
     banner: { line: "Tasfiye çıktı — yıkmak değil; temizlemek.", buy: "Kitabı al", watch: "Filmi izle" },
-    projects: {
-      label: "Projeler", heading: "Kelimelerin dışında",
-      sub: "Yazının yanında — başka merakların ürünleri.",
-      simdiName: "ŞİMDİ", simdiTag: "Canlı radyo · necaliyor.co",
-      story: [
-        "Şiir de radyo da aynı yerden doğar: dinlemekten. ŞİMDİ, Türkiye'nin radyolarında tam da bu an ne çaldığını gösterir — bir şairin sesin peşine düşmesi.",
-        "Bir dize insanı doğru anda nasıl bulursa, doğru şarkı da öyle bulur. ŞİMDİ'yi işte o 'şimdi'yi yakalamak için yaptım: yüz radyo, tek ekran, şimdiki zamanın canlı akışı.",
-      ],
-      cta: "Radyoyu aç",
-    },
     card: {
       label: "Alıntı kartı", heading: "Bir dize seç, paylaş",
       sub: "Dizelerden birini seç, güzel bir kart olarak indir.",
@@ -213,7 +192,7 @@ export const site: Record<Lang, Copy> = {
       works: [
         { year: "2017", title: "Yazmaya başladı", kind: "On yedi yaşında" },
         { year: "Ara 2025", title: "Mürekkep ve Köz: Bir Şairin Hesabı", kind: "Şiir · Trendyol Şiir'de #1", href: "/kitaplar/murekkep-ve-koz" },
-        { year: "Haz 2026", title: "Şairin Hesabı", kind: "Podcast", href: "/medya" },
+        { year: "Haz 2026", title: "Şairin Hesabı", kind: "Podcast", href: "/video#dinle" },
         { year: "Ağu 2026", title: "Tasfiye", kind: "Deneme", href: "/kitaplar/tasfiye" },
         { year: "Ağu 2026", title: "ŞİMDİ", kind: "Canlı radyo · necaliyor.co", href: "https://necaliyor.co" },
         { year: "Eyl 2026", title: "TASFİYE: Film", kind: "Kısa film · 8 dk", href: "/film" },
@@ -247,83 +226,5 @@ export const site: Record<Lang, Copy> = {
     teaser: { label: "Kitaptan", cta: "Devamı kitapta" },
     writing: { label: "Yazılar", line: "Aklımdan geçenler, gürültüsüz — bir e-posta uzaklıkta.", cta: "Substack'te oku" },
     contact: { label: "İletişim", line: "Yaz — iş için, bir iş birliği için ya da sadece aklındakiler için. Kapı açık." },
-  },
-  fr: {
-    nav: { books: "Livres", about: "À propos", writing: "Écrits", contact: "Contact", projects: "Projets", film: "Film", media: "Médias", sozler: "Vers" },
-    banner: { line: "Tasfiye est paru — non pour détruire ; pour purifier.", buy: "Acheter le livre", watch: "Voir le film" },
-    projects: {
-      label: "Projets", heading: "Au-delà des mots",
-      sub: "À côté de l'écriture — ce que d'autres curiosités ont bâti.",
-      simdiName: "ŞİMDİ", simdiTag: "Radio en direct · necaliyor.co",
-      story: [
-        "La poésie et la radio naissent au même endroit : dans l'écoute. ŞİMDİ (« maintenant ») montre ce qui passe en cet instant précis sur les radios de Turquie — un poète à la poursuite du son.",
-        "Un vers vous trouve au bon moment ; la bonne chanson aussi. J'ai fait ŞİMDİ pour saisir ce « maintenant » : cent stations, un seul écran, le flux vivant du présent.",
-      ],
-      cta: "Ouvrir la radio",
-    },
-    card: {
-      label: "Carte-citation", heading: "Choisis un vers, partage-le",
-      sub: "Choisis l'un des vers et télécharge-le en carte.",
-      random: "Mélanger", download: "Télécharger la carte", hint: "Enregistré en PNG",
-    },
-    yazilar: {
-      title: "Écrits", sub: "Sur la poésie, la littérature et les idées — sans bruit, sur Substack.",
-      all: "Tous les textes sur Substack", read: "Lire", on: "sur Substack",
-      empty: "Les écrits vivent sur Substack. Suivez-les là-bas.",
-    },
-    taste: "Extrait",
-    hero: {
-      role: "Poète & Écrivain — Istanbul",
-      line: "Écrire est l'aveu le plus silencieux de l'existence.",
-      sub: "Berkay Doğan écrit dans l'espace entre les contradictions — l'obscurité et l'oxygène, ce qui se brise et ce qui se rebâtit.",
-      ctaBooks: "Les livres", ctaAbout: "À propos", scroll: "Défiler",
-    },
-    about: {
-      label: "À propos", heading: "Poète, écrivain, fondateur de ŞİMDİ",
-      paras: [
-        "Il a commencé à écrire à dix-sept ans. Huit ans d'écriture en silence ; puis, en dix mois, deux livres, un film et une radio.",
-        "Berkay Doğan est un poète et écrivain basé à Istanbul. Pour lui, écrire n'est pas un choix mais une nécessité — l'aveu le plus silencieux de l'existence. Chaque jour sans écrire est un jour où il se trahit.",
-        "Il a commencé à écrire en 2017, à dix-sept ans. Pour la plupart, cet âge est encore un seuil d'innocence ; pour lui, ce fut le moment où il a commencé à voir le vrai visage de la société. Depuis, ce qui le nourrit, c'est la vie elle-même plus que la littérature : une paire d'yeux, un bâtiment criblé de trous, retraverser en homme changé les rues qu'il connaissait jadis.",
-        "Son premier livre, Encre et Braise : les comptes d'un poète (2025), a été arraché à une solitude étouffante, au chaos national et à une crise existentielle. Le second, Tasfiye, est une critique de l'ordre établi — un appel à retrouver la dose philosophique que nous avons perdue. Entre les deux court un règlement de comptes qui va de la poésie à l'essai.",
-        "La poésie et la radio naissent au même endroit : dans l'écoute. En 2026, il a fondé ŞİMDİ (necaliyor.co), qui montre — et compte — ce qui passe en cet instant sur les radios de Turquie : un poète à la poursuite du son.",
-      ],
-      worksLabel: "Le parcours",
-      works: [
-        { year: "2017", title: "Premiers écrits", kind: "À dix-sept ans" },
-        { year: "déc. 2025", title: "Encre et Braise : les comptes d'un poète", kind: "Poésie · N°1 poésie sur Trendyol", href: "/kitaplar/murekkep-ve-koz" },
-        { year: "juin 2026", title: "Les comptes du poète", kind: "Podcast", href: "/medya" },
-        { year: "août 2026", title: "Tasfiye", kind: "Essai", href: "/kitaplar/tasfiye" },
-        { year: "août 2026", title: "ŞİMDİ", kind: "Radio en direct · necaliyor.co", href: "https://necaliyor.co" },
-        { year: "sept. 2026", title: "TASFİYE : le film", kind: "Court métrage · 8 min", href: "/film" },
-      ],
-    },
-    books: {
-      label: "Livres",
-      murekkep: { title: "Encre et Braise", meta: "Poésie · İskenderiye · 2025", badge: "#1 Poésie sur Trendyol", desc: "Les comptes d'un poète. Plus de 200 poèmes arrachés à une solitude étouffante, au chaos national et à une crise existentielle.", cta: "Voir le livre", excerpt: "Je n'ai pas pu être abattu — alors je l'ai abattu moi-même." },
-      tasfiye: { title: "Tasfiye", meta: "Essai · İskenderiye · Août 2026", badge: "Paru", desc: "Le rideau se lève : sur scène, un tribunal ; au banc des accusés, l'écrivain lui-même. Non une accusation — un règlement de comptes. Depuis les décombres du monde moderne, une confrontation tendue vers l'humain qui porte sa propre guillotine. Tasfiye n'est pas détruire ; c'est purifier.", cta: "Acheter sur Trendyol", excerpt: "« un nom donné à tout ce que nous choisissons d'ignorer. »" },
-      countdown: ["JOURS", "H", "MIN"], epigraph: "un nom donné à tout ce que nous choisissons d'ignorer.", coverSoon: "Couverture bientôt",
-      buyMore: "Également disponible chez",
-    },
-    recognition: {
-      label: "Reconnaissance", heading: "Le règlement de comptes, en chiffres",
-      tiles: [
-        { value: "#1", label: "Poésie sur Trendyol — Le plus visité" },
-        { value: "10/10", label: "Note des lecteurs sur 1000Kitap" },
-        { value: "51", label: "Revue Valsanat — n° 51, poème publié" },
-      ],
-      pressLabel: "Dans la presse",
-      press: [
-        { name: "Revue Valsanat", detail: "Le poème « Ruh-u Katliam », n° 51", url: VALSANAT_URL },
-        { name: "Goodreads", detail: "Répertorié dans l'index mondial des auteurs", url: GOODREADS_URL },
-        { name: "Trendyol", detail: "#1 Le plus visité en poésie", url: TRENDYOL_URL },
-      ],
-    },
-    reviews: { label: "Lecteurs", heading: "Ce que disent les lecteurs" },
-    kozu: { label: "La braise du jour", share: "Partager", copied: "Copié", universe: "Calendrier" },
-    media: { label: "Médias", heading: "Les comptes du poète", podcast: "Écouter — Podcast", podcastDesc: "Conversations sur la poésie, la littérature et les idées. Sur Spotify et toutes les plateformes.", video: "Regarder — YouTube" },
-    notify: { title: "Ne rate pas la sortie", placeholder: "ton e-mail", button: "Préviens-moi", note: "Un seul e-mail à la sortie de Tasfiye. Rien d'autre." },
-    teaser: { label: "Extrait", cta: "La suite dans le livre" },
-    writing: { label: "Écrits", line: "Mes pensées, sans bruit — à un e-mail près.", cta: "Lire sur Substack" },
-    contact: { label: "Contact", line: "Écris — pour le travail, une collaboration, ou ce qui te passe par la tête. La porte est ouverte." },
   },
 };
