@@ -214,6 +214,26 @@
       "source": "/projeler/",
       "destination": "/hakkimda/",
       "permanent": true
+    },
+    {
+      "source": "/kitaplar/murekkep-ve-koz/dunya",
+      "destination": "/kitaplar/murekkep-ve-koz/",
+      "permanent": true
+    },
+    {
+      "source": "/kitaplar/murekkep-ve-koz/dunya/",
+      "destination": "/kitaplar/murekkep-ve-koz/",
+      "permanent": true
+    },
+    {
+      "source": "/kitaplar/tasfiye/dunya",
+      "destination": "/kitaplar/tasfiye/",
+      "permanent": true
+    },
+    {
+      "source": "/kitaplar/tasfiye/dunya/",
+      "destination": "/kitaplar/tasfiye/",
+      "permanent": true
     }
   ],
   "headers": [

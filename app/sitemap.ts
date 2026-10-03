@@ -2,7 +2,6 @@ import type { MetadataRoute } from "next";
 import { YAYINDA } from "@/lib/yazilar";
 import { SOZLER, sozSlug, TEMALAR } from "@/lib/sozler";
 import { KAVRAMLAR, kavramSlug } from "@/lib/sozluk";
-import { KITAPLAR } from "@/lib/kitaplar";
 
 // Statik export için zorunlu
 export const dynamic = "force-static";
@@ -52,11 +51,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "monthly" as const,
       priority: 0.7,
     },
-    ...KITAPLAR.filter((k) => k.slug === "murekkep-ve-koz" || k.slug === "tasfiye").map((k) => ({
-      url: `${SITE}/kitaplar/${k.slug}/dunya/`,
-      changeFrequency: "monthly" as const,
-      priority: 0.6,
-    })),
     ...[...new Set(KAVRAMLAR.map((k) => kavramSlug(k.ad)))].map((s) => ({
       url: `${SITE}/sozluk/${s}/`,
       changeFrequency: "yearly" as const,

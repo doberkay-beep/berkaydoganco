@@ -224,7 +224,7 @@ export const SOZLER: Soz[] = [
   { s: "Kendi hayatını yazmak, başkasının kurgusuna figüran olmaktan çok daha sancılı, çok daha zor ama çok daha onurludur.", k: "tas", p: 143, t: ["kimlik", "sanat"] },
 ];
 
-/* Geriye dönük uyumluluk: deneyimlerin okuduğu düz liste */
+/* Düz liste: günün közü ve takvim buradan okur */
 export const TUM_SOZLER: string[] = SOZLER.map((x) => x.s);
 
 /* Temaya göre süz (Kâhin/Leke için) */

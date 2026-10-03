@@ -41,7 +41,6 @@ export default function KitaplarPage() {
               <span style={{ display: "block", fontFamily: "var(--font-serif)", fontSize: "clamp(1.3rem, 3vw, 1.7rem)", color: "var(--ink)", marginTop: "1.1rem" }}>{k.ad}</span>
               <span style={{ display: "block", fontFamily: "var(--font-grotesk)", fontSize: "0.68rem", fontWeight: 500, letterSpacing: "0.16em", textTransform: "uppercase", color: "var(--muted)", marginTop: "0.4rem" }}>{k.tur} · {k.cikis}</span>
             </Link>
-            <Link href={`/kitaplar/${k.slug}/dunya`} style={{ display: "inline-block", marginTop: "0.7rem", fontFamily: "var(--font-grotesk)", fontSize: "0.66rem", fontWeight: 500, letterSpacing: "0.14em", textTransform: "uppercase", color: "var(--muted)", borderBottom: "1px solid var(--accent)", paddingBottom: "2px" }}>İç dünyaya gir →</Link>
           </div>
         ))}
       </Reveal>

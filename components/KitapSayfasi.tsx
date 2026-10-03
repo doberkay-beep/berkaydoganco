@@ -1,6 +1,11 @@
 import Link from "next/link";
 import type { Kitap } from "@/lib/kitaplar";
 import { YapiskanSatinAl } from "./YapiskanSatinAl";
+import { SOZLER, sozSlug, TEMA_ADI } from "@/lib/sozler";
+import { KAVRAMLAR, kavramSlug } from "@/lib/sozluk";
+
+// Kitap slug'ı → söz/kavram korpusundaki kod (eski /dunya sayfasından taşındı).
+const KOD: Record<string, "mvk" | "tas"> = { "murekkep-ve-koz": "mvk", tasfiye: "tas" };
 
 /* Kitap sayfası şablonu — brief'teki yapı, sitenin mevcut görsel diliyle:
    üst bant → kapak+künye → arka kapak → nereden alınır → kitaptan → diğer kitap.
@@ -14,6 +19,15 @@ const mono: React.CSSProperties = {
 };
 
 export function KitapSayfasi({ kitap, diger }: { kitap: Kitap; diger: Kitap }) {
+  // İç dünya: kitabın temaları, kavramları ve bütün sözleri
+  const kod = KOD[kitap.slug];
+  const sozler = kod ? SOZLER.filter((x) => x.k === kod) : [];
+  const kavramlar = kod ? KAVRAMLAR.filter((x) => x.k === kod) : [];
+  const temaSay = new Map<string, number>();
+  for (const x of sozler) for (const t of x.t) temaSay.set(t, (temaSay.get(t) || 0) + 1);
+  const temalar = [...temaSay.entries()].sort((a, b) => b[1] - a[1]);
+  const bolum: React.CSSProperties = { marginTop: "clamp(3rem, 8vh, 5rem)" };
+
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "Book",
@@ -132,6 +146,49 @@ export function KitapSayfasi({ kitap, diger }: { kitap: Kitap; diger: Kitap }) {
             ))}
           </div>
         </section>
+      )}
+
+      {/* g. İç dünya — temalar, kavramlar, bütün sözler (eski /dunya sayfası) */}
+      {temalar.length > 0 && (
+        <section style={bolum}>
+          <p style={{ ...mono, color: "var(--muted)", marginBottom: "1.2rem" }}>Duygu haritası</p>
+          <div style={{ display: "flex", flexWrap: "wrap", gap: "0.6rem" }}>
+            {temalar.map(([t, n]) => (
+              <Link key={t} href={`/tema/${t}`} style={{ display: "inline-flex", alignItems: "center", gap: "0.5rem", fontFamily: "var(--font-grotesk)", fontSize: "0.9rem", color: "var(--ink)", border: "1px solid var(--line)", borderRadius: "100px", padding: "0.5rem 1rem" }}>
+                {TEMA_ADI[t] ?? t}<span style={{ color: "var(--accent-2)", fontWeight: 700 }}>{n}</span>
+              </Link>
+            ))}
+          </div>
+        </section>
+      )}
+
+      {kavramlar.length > 0 && (
+        <section style={bolum}>
+          <p style={{ ...mono, color: "var(--muted)", marginBottom: "1.2rem" }}>Kavramlar</p>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(220px, 1fr))", gap: "1rem" }}>
+            {kavramlar.map((kv) => (
+              <Link key={kv.ad} href={`/sozluk/${kavramSlug(kv.ad)}`} className="glass-card" style={{ display: "block", padding: "1.1rem 1.2rem", color: "var(--ink)" }}>
+                <span style={{ fontFamily: "var(--font-grotesk)", fontWeight: 700, fontSize: "1rem", color: "var(--accent-2)" }}>{kv.ad}</span>
+                <span style={{ display: "block", marginTop: "0.4rem", fontFamily: "var(--font-serif)", fontStyle: "italic", fontSize: "0.92rem", lineHeight: 1.45, color: "var(--muted)" }}>
+                  {kv.tanim.length > 90 ? `${kv.tanim.slice(0, 87)}…` : kv.tanim}
+                </span>
+              </Link>
+            ))}
+          </div>
+        </section>
+      )}
+
+      {sozler.length > 0 && (
+        <details style={bolum} className="ks-sozler">
+          <summary style={{ ...mono, color: "var(--muted)", cursor: "pointer" }}>Bütün sözler ({sozler.length}) <span style={{ color: "var(--accent-2)" }}>↓</span></summary>
+          <div style={{ display: "flex", flexDirection: "column", marginTop: "1rem" }}>
+            {sozler.map((x) => (
+              <Link key={x.s} href={`/soz/${sozSlug(x.s)}`} style={{ display: "block", padding: "0.85rem 0", borderTop: "1px solid var(--line)", color: "var(--ink)", fontFamily: "var(--font-serif)", fontStyle: "italic", fontSize: "1.08rem", lineHeight: 1.5 }}>
+                &ldquo;{x.s}&rdquo;{x.p ? <span style={{ ...mono, fontSize: "0.6rem", color: "var(--muted)", marginLeft: "0.6rem" }}>s. {x.p}</span> : null}
+              </Link>
+            ))}
+          </div>
+        </details>
       )}
 
       {/* f. Alt bant — diğer kitap */}

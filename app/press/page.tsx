@@ -10,7 +10,7 @@ import { BreadcrumbSchema } from "@/components/Schema";
 
 export const metadata: Metadata = {
   title: { absolute: "Basın Odası — Berkay Doğan" },
-  description: "Berkay Doğan basın arşivi: künye, üç boy biyografi, kitap künyeleri, indirilebilir görseller, söyleşi konuları ve sık sorulanlar.",
+  description: "Berkay Doğan basın arşivi: künye, üç boy biyografi, kitap künyeleri, indirilebilir görseller ve söyleşi konuları.",
   alternates: { canonical: "/press" },
   openGraph: {
     title: "Basın Odası — Berkay Doğan",
@@ -22,30 +22,31 @@ export const metadata: Metadata = {
 
 /* ---- Veri ---- */
 
-const BIO_KISA_TR = "Berkay Doğan, İstanbul'da yaşayan şair ve yazar; Mürekkep ve Köz (şiir, 2025) ile Tasfiye (deneme, 2026) kitaplarının yazarıdır.";
-const BIO_ORTA_TR = "Berkay Doğan, İstanbul'da yaşayan şair ve yazardır. İlk kitabı Mürekkep ve Köz (İskenderiye Yayınları, 2025) Trendyol şiir listesinde 1 numaraya yükseldi ve 1000Kitap'ta 10/10 okur puanı aldı. İkinci kitabı Tasfiye (deneme, 25 Ağustos 2026) okuru sahneye kurulan bir mahkemede yüzleşmeye çağırıyor. Doğan ayrıca Şairin Hesabı podcast'ini yayınlıyor ve berkaydogan.co'da edebiyatı interaktif deneyimlere taşıyor.";
-const BIO_KISA_EN = "Berkay Doğan is a poet and writer based in Istanbul, the author of Mürekkep ve Köz (poetry, 2025) and Tasfiye (essays, 2026).";
-const BIO_ORTA_EN = "Berkay Doğan is a poet and writer based in Istanbul. His debut poetry collection Mürekkep ve Köz (İskenderiye, 2025) reached #1 on Trendyol's poetry chart and holds a 10/10 reader rating on 1000Kitap. His second book, the essay collection Tasfiye (August 2026), puts the reader in a courtroom of self-reckoning. He also hosts the podcast Şairin Hesabı and turns literature into interactive experiences at berkaydogan.co.";
+const BIO_KISA_TR = "Berkay Doğan, İstanbul'da yaşayan şair ve yazar; Mürekkep ve Köz (şiir, 2025) ile Tasfiye (deneme, 2026) kitaplarının yazarı ve Türkiye'nin radyolarında o an ne çaldığını canlı gösteren ŞİMDİ'nin (necaliyor.co) kurucusudur.";
+const BIO_ORTA_TR = "Berkay Doğan, İstanbul'da yaşayan şair ve yazardır. 2017'de, on yedi yaşında yazmaya başladı; sekiz yıl sessizce yazdıktan sonra on ay içinde iki kitap, bir kısa film ve bir radyo platformu çıkardı. İlk kitabı Mürekkep ve Köz (İskenderiye Yayınları, Aralık 2025) Trendyol'un şiir kategorisinde en çok ziyaret edilen kitap oldu ve 1000Kitap'ta 10/10 okur puanı aldı. İkinci kitabı Tasfiye (deneme, Ağustos 2026) okuru sahneye kurulan bir mahkemede yüzleşmeye çağırıyor; metinleri kitaptan, sesi yazardan olan TASFİYE: Film (8 dk) Eylül 2026'da YouTube'da yayımlandı. Doğan, Türkiye'nin radyolarında o an ne çaldığını gösteren ve sayan ŞİMDİ'nin (necaliyor.co) kurucusudur; Şairin Hesabı podcast'ini de yayınlıyor.";
+const BIO_KISA_EN = "Berkay Doğan is a poet and writer based in Istanbul, the author of Mürekkep ve Köz (poetry, 2025) and Tasfiye (essays, 2026), and the founder of ŞİMDİ (necaliyor.co), a live view of what Turkey's radio stations are playing right now.";
+const BIO_ORTA_EN = "Berkay Doğan is a poet and writer based in Istanbul. He began writing in 2017, at seventeen; after eight quiet years, he released two books, a short film and a radio platform within ten months. His debut poetry collection Mürekkep ve Köz (İskenderiye, December 2025) became the most visited title in Trendyol's poetry category and holds a 10/10 reader rating on 1000Kitap. His second book, the essay collection Tasfiye (August 2026), puts the reader in a courtroom of self-reckoning; its short film, TASFİYE: Film (8 min, text from the book, narrated by the author), was released on YouTube in September 2026. He is the founder of ŞİMDİ (necaliyor.co), which shows and counts what is playing right now across Turkey's radio stations, and hosts the podcast Şairin Hesabı.";
 
 const KUNYE: { k: string; v: string }[] = [
   { k: "Ad", v: "Berkay Doğan" },
-  { k: "Unvan", v: "Şair & Yazar" },
+  { k: "Unvan", v: "Şair, yazar · ŞİMDİ'nin kurucusu" },
   { k: "Şehir", v: "İstanbul, Türkiye" },
   { k: "Yayınevi", v: "İskenderiye Yayınları" },
   { k: "Kitaplar", v: "Mürekkep ve Köz (şiir, 2025) · Tasfiye (deneme, 2026)" },
+  { k: "Film", v: "TASFİYE: Film — kısa film, 8 dk (YouTube, Eylül 2026)" },
+  { k: "Radyo", v: "ŞİMDİ — Türkiye radyolarının canlı akışı ve sayımı (necaliyor.co)" },
   { k: "Podcast", v: "Şairin Hesabı (Spotify)" },
-  { k: "Yan proje", v: "ŞİMDİ — canlı radyo platformu (necaliyor.co)" },
   { k: "Web", v: "berkaydogan.co · Substack: doberkay.substack.com" },
   { k: "İletişim", v: EMAIL },
 ];
 
 const RAKAMLAR: { deger: string; aciklama: string }[] = [
-  { deger: "#1", aciklama: "Trendyol şiir listesi — Mürekkep ve Köz" },
+  { deger: "#1", aciklama: "Trendyol şiir — en çok ziyaret edilen: Mürekkep ve Köz" },
   { deger: "10/10", aciklama: "1000Kitap okur puanı" },
   { deger: "No. 51", aciklama: "Valsanat dergisinde yayın" },
   { deger: "2", aciklama: "kitap — şiir + deneme" },
   { deger: "200", aciklama: "söz: her birinin kendi sayfası ve paylaşım kartı" },
-  { deger: "11", aciklama: "interaktif deneyim — mahkeme, fragman, yaşayan kapak…" },
+  { deger: "8 yıl", aciklama: "ilk dizeden ilk kitaba (2017 → 2025)" },
 ];
 
 const GORSELLER: { ad: string; dosya: string; not: string }[] = [
@@ -59,35 +60,20 @@ const GORSELLER: { ad: string; dosya: string; not: string }[] = [
 ];
 
 const KONULAR: string[] = [
+  "Sekiz yıl sessizlik, on ayda iki kitap, bir film ve bir radyo: bir yazarın hızlanan yılı",
+  "Bir şair Türkiye'nin radyolarını saymaya başladı: ŞİMDİ ve aylık radyo endeksi",
   "Okurunu sanık koltuğuna oturtan kitap: Tasfiye'nin mahkeme konsepti",
-  "Genç bir yazarın yayın yolculuğu: ilk kitaptan Trendyol 1 numarasına",
-  "Edebiyatın dijitalde dokunulabilir hâli: berkaydogan.co'daki interaktif deneyimler",
+  "Kitaptan filme: metni kitaptan, sesi yazardan olan TASFİYE: Film",
   "Şiirden denemeye geçiş: Mürekkep ve Köz'den Tasfiye'ye",
-  "Teknoloji ile edebiyatın kesişimi: ŞİMDİ canlı radyo projesi",
   "Sosyal medya çağında derinlik: 'boş teneke' eleştirisi",
 ];
 
-const SSS: { s: string; c: string }[] = [
-  { s: "Tasfiye ne anlatıyor?", c: "Sahneye kurulan bir mahkemede yazarın kendisiyle hesaplaşmasını. Kitabın kendi cümlesiyle: “Tasfiye, yıkmak değil; temizlemektir.” Deneme türünde, 151 sayfa." },
-  { s: "Kitaplar hangi sırayla okunmalı?", c: "Bağımsızlar — Mürekkep ve Köz şiir, Tasfiye deneme. İkisi de kendi başına okunabilir; ikisi de 'hesap' alt başlığını taşır: Bir Şairin Hesabı ve Bir Yazarın Hesabı." },
-  { s: "Kitaplara nereden ulaşılır?", c: "Trendyol, bkmkitap, KitapStore ve İskenderiye Yayınları'ndan. Güncel bağlantılar sitedeki kitap sayfalarındadır." },
-  { s: "Sitedeki 'deneyimler' ne?", c: "Kitapların içinden doğan interaktif işler: okurun hükmünü aldığı Tasfiye Mahkemesi, mürekkep lekesi testi, kitabın sinematik fragmanı, yazıp buruşturduğunuz yaşayan kapak ve diğerleri — berkaydogan.co/deneyimler." },
-  { s: "Şairin Hesabı nedir?", c: "Berkay Doğan'ın Spotify'da yayınlanan podcast'i." },
-  { s: "ŞİMDİ nedir?", c: "Doğan'ın edebiyat dışındaki projesi: Türkiye radyolarında o an ne çaldığını gösteren canlı platform — necaliyor.co." },
-  { s: "Röportaj / söyleşi talebi nasıl iletilir?", c: `E-posta yeterli: ${EMAIL} — basılı inceleme nüshası gönderilebilir.` },
-  { s: "Görseller ve sözler kullanılabilir mi?", c: "Evet — haber, inceleme ve tanıtım amaçlı kullanım, 'Berkay Doğan / berkaydogan.co' kredisiyle serbesttir." },
-];
 
-const RENKLER: { ad: string; hex: string }[] = [
-  { ad: "Saf siyah (zemin)", hex: "#050505" },
-  { ad: "Beyaz (metin)", hex: "#FAFAFA" },
-  { ad: "Gece mavisi (vurgu)", hex: "#3A5BD9" },
-];
 
 const ICINDEKILER: [string, string][] = [
   ["#kunye", "Künye"], ["#biyografi", "Biyografi"], ["#kitaplar", "Kitaplar"],
   ["#rakamlar", "Rakamlarla"], ["#gorseller", "Görseller"], ["#basinda", "Basında"],
-  ["#konular", "Söyleşi konuları"], ["#sss", "Sık sorulanlar"], ["#marka", "Marka"],
+  ["#konular", "Söyleşi konuları"],
   ["#english", "English"], ["#iletisim", "İletişim"],
 ];
 
@@ -260,50 +246,6 @@ export default function PressPage() {
             </li>
           ))}
         </ul>
-      </section>
-
-      {/* SSS */}
-      <section id="sss" style={secStil}>
-        <p style={secBaslik}>Sık sorulanlar</p>
-        <div style={{ display: "flex", flexDirection: "column" }}>
-          {SSS.map((x) => (
-            <details key={x.s} style={{ borderTop: "1px solid var(--line)", padding: "1rem 0" }}>
-              <summary style={{ cursor: "pointer", fontFamily: "var(--font-grotesk)", fontWeight: 500, fontSize: "1.02rem", color: "var(--ink)", listStyle: "none" }}>
-                <span style={{ color: "var(--accent-2)", marginRight: "0.6rem" }}>+</span>{x.s}
-              </summary>
-              <p style={{ marginTop: "0.7rem", fontSize: "0.95rem", lineHeight: 1.7, color: "var(--muted)", maxWidth: "68ch", paddingLeft: "1.4rem" }}>{x.c}</p>
-            </details>
-          ))}
-        </div>
-      </section>
-
-      {/* MARKA */}
-      <section id="marka" style={secStil}>
-        <p style={secBaslik}>Marka · Görsel dil</p>
-        <div style={{ display: "flex", gap: "2.5rem", flexWrap: "wrap", alignItems: "flex-start" }}>
-          <div style={{ display: "flex", alignItems: "center", gap: "1rem" }}>
-            <span style={{ display: "inline-flex", padding: "0.9rem", background: "#050505", borderRadius: "14px", border: "1px solid var(--line)" }}>
-              <Muhur size={54} style={{ color: "#FAFAFA" }} />
-            </span>
-            <div>
-              <p style={{ fontFamily: "var(--font-grotesk)", fontWeight: 700, fontSize: "0.95rem", color: "var(--ink)" }}>BD mührü</p>
-              <p style={{ fontSize: "0.8rem", color: "var(--muted)", maxWidth: "26ch" }}>Oranı bozmadan, rengini değiştirmeden kullanın.</p>
-            </div>
-          </div>
-          <div style={{ display: "flex", gap: "0.9rem", flexWrap: "wrap" }}>
-            {RENKLER.map((r) => (
-              <div key={r.hex} style={{ display: "flex", flexDirection: "column", gap: "0.4rem", alignItems: "center" }}>
-                <span style={{ width: "52px", height: "52px", borderRadius: "12px", background: r.hex, border: "1px solid var(--line)" }} />
-                <span style={{ ...mono, fontSize: "0.56rem", color: "var(--muted)" }}>{r.hex}</span>
-                <span style={{ fontSize: "0.7rem", color: "var(--muted)" }}>{r.ad}</span>
-              </div>
-            ))}
-          </div>
-          <div style={{ fontSize: "0.85rem", color: "var(--muted)", lineHeight: 1.7 }}>
-            <p><strong style={{ color: "var(--ink)" }}>Başlık:</strong> Instrument Sans</p>
-            <p><strong style={{ color: "var(--ink)" }}>Edebi vurgu:</strong> Fraunces (italik)</p>
-          </div>
-        </div>
       </section>
 
       {/* ENGLISH */}

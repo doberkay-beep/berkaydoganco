@@ -173,20 +173,7 @@ export function Kabuk({ children }: { children: (lang: Lang, t: Copy) => React.R
         </Link>
         <div className="cg-nav-links">
           {navLinks.map(([href, label]) =>
-            href === "/sozler" ? (
-              <div key={href} className="cg-drop">
-                <a href={href} className="cg-link">{label} ▾</a>
-                <div className="cg-drop-menu">
-                  <a href="/sozler">{lang === "tr" ? "Tüm sözler" : "All verses"}</a>
-                  <a href="/takvim">{lang === "tr" ? "Köz Takvimi" : "Calendar"}</a>
-                  <a href="/sozluk">{lang === "tr" ? "Kavramlar Sözlüğü" : "Lexicon"}</a>
-                  <a href="/posterler">{lang === "tr" ? "Posterler" : "Posters"}</a>
-                  <a href="/gom">{lang === "tr" ? "Sitene göm" : "Embed"}</a>
-                </div>
-              </div>
-            ) : (
-              <a key={href} href={href} className="cg-link">{label}</a>
-            )
+            <a key={href} href={href} className="cg-link">{label}</a>
           )}
         </div>
         <div className="cg-actions">
