@@ -3,7 +3,6 @@
 import { REVIEWS, MEDIA, PLAYLISTS, type Lang, type Copy } from "@/lib/site";
 import { Kabuk, Reveal } from "./Kabuk";
 import { Folio } from "./Dergi";
-import { AlintiKarti } from "./AlintiKarti";
 import { OkurMektubu } from "./OkurMektubu";
 import { Sahne } from "./Sahne";
 import { EKRAN } from "@/lib/basinda";
@@ -189,18 +188,6 @@ export function DinleBolumu({ lang, t }: { lang: Lang; t: Copy }) {
 }
 
 /* ---------- İNCE SARMALAYICILAR ---------- */
-export function KartSayfa() {
-  return (
-    <Kabuk>
-      {(lang) => (
-        <main className="cg" style={{ paddingTop: "4.5rem" }}>
-          <AlintiKarti lang={lang} />
-        </main>
-      )}
-    </Kabuk>
-  );
-}
-
 export function SahneSayfa() {
   return (
     <Kabuk>

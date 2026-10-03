@@ -234,6 +234,16 @@
       "source": "/kitaplar/tasfiye/dunya/",
       "destination": "/kitaplar/tasfiye/",
       "permanent": true
+    },
+    {
+      "source": "/kart",
+      "destination": "/sozler/",
+      "permanent": true
+    },
+    {
+      "source": "/kart/",
+      "destination": "/sozler/",
+      "permanent": true
     }
   ],
   "headers": [

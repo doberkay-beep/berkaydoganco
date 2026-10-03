@@ -108,7 +108,7 @@ export const site: Record<Lang, Copy> = {
     hero: {
       role: "Poet & Writer — Istanbul",
       line: "Writing is the quietest confession of existence.",
-      sub: "Berkay Doğan writes in the space between contradictions — darkness and oxygen, what breaks and what is built again.",
+      sub: "He began writing at seventeen. For eight years he wrote in silence; then, in ten months, came two books, a film and a radio.",
       ctaBooks: "The books", ctaAbout: "About", scroll: "Scroll",
     },
     about: {
@@ -176,7 +176,7 @@ export const site: Record<Lang, Copy> = {
     hero: {
       role: "Şair & Yazar — İstanbul",
       line: "Yazmak, varoluşun en sessiz itirafıdır.",
-      sub: "Berkay Doğan çelişkilerin arasındaki boşlukta yazar — karanlık ile oksijen, kırılan ile yeniden kurulan arasında.",
+      sub: "17 yaşında yazmaya başladı. Sekiz yıl sessizce yazdı; sonra on ayda iki kitap, bir film ve bir radyo.",
       ctaBooks: "Kitaplar", ctaAbout: "Hakkımda", scroll: "Kaydır",
     },
     about: {

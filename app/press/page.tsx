@@ -208,6 +208,10 @@ export default function PressPage() {
             <span style={{ fontFamily: "var(--font-grotesk)", fontWeight: 500, fontSize: "0.95rem", color: "var(--ink)" }}>12 söz posteri</span>
             <span style={{ ...mono, fontSize: "0.6rem", color: "var(--accent-2)" }}>A4 PDF galerisi →</span>
           </Link>
+          <Link href="/gom" style={{ display: "flex", flexDirection: "column", gap: "0.35rem", padding: "1.2rem 1.3rem", border: "1px solid var(--line)", borderRadius: "10px", background: "var(--bg-2)" }}>
+            <span style={{ fontFamily: "var(--font-grotesk)", fontWeight: 500, fontSize: "0.95rem", color: "var(--ink)" }}>Günün Közü gereci</span>
+            <span style={{ ...mono, fontSize: "0.6rem", color: "var(--accent-2)" }}>Sitene göm — kod →</span>
+          </Link>
         </div>
         <p style={{ marginTop: "1.25rem", fontSize: "0.82rem", color: "var(--muted)" }}>Tüm görseller haber ve tanıtım amaçlı kullanım için serbesttir — kredi: Berkay Doğan / berkaydogan.co</p>
       </section>

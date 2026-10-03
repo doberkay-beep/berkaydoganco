@@ -40,7 +40,6 @@ export default function SozlerPage() {
         <Link href="/takvim" style={{ ...mono, fontSize: "0.66rem", color: "var(--accent-ink)", background: "var(--accent)", borderRadius: "100px", padding: "0.5rem 0.95rem" }}>Bugünün sözü →</Link>
         <Link href="/sozluk" style={{ ...mono, fontSize: "0.66rem", color: "var(--ink)", border: "1px solid var(--accent)", borderRadius: "100px", padding: "0.5rem 0.95rem" }}>Kavramlar Sözlüğü →</Link>
         <Link href="/posterler" style={{ ...mono, fontSize: "0.66rem", color: "var(--muted)", border: "1px solid var(--line)", borderRadius: "100px", padding: "0.5rem 0.95rem" }}>Posterler</Link>
-        <Link href="/gom" style={{ ...mono, fontSize: "0.66rem", color: "var(--muted)", border: "1px solid var(--line)", borderRadius: "100px", padding: "0.5rem 0.95rem" }}>Sitene göm</Link>
         {TEMALAR.map((tema) => (
           <Link key={tema} href={`/tema/${tema}`} style={{ ...mono, fontSize: "0.66rem", color: "var(--muted)", border: "1px solid var(--line)", borderRadius: "100px", padding: "0.5rem 0.95rem" }}>
             {TEMA_ADI[tema]}
