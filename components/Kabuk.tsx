@@ -146,7 +146,6 @@ export function Kabuk({ children }: { children: (lang: Lang, t: Copy) => React.R
   const navLinks: [string, string][] = [
     ["/kitaplar", t.nav.books],
     ["/sozler", t.nav.sozler],
-    ["/deneyimler", t.nav.experiences],
     ["/film", t.nav.film],
     ["/yazilar", t.nav.writing],
     ["/hakkimda", t.nav.about],
@@ -154,6 +153,7 @@ export function Kabuk({ children }: { children: (lang: Lang, t: Copy) => React.R
   ];
   const menuLinks: [string, string][] = [
     ...navLinks.slice(0, 5),
+    ["/video", "Video"],
     ["/medya", t.nav.media],
     ["/projeler", t.nav.projects],
     ["/mektup", lang === "tr" ? "Okur Mektupları" : lang === "fr" ? "Lettres" : "Reader Letters"],
@@ -230,8 +230,7 @@ export function Kabuk({ children }: { children: (lang: Lang, t: Copy) => React.R
             <a href="/sozluk">{lang === "tr" ? "Kavramlar Sözlüğü" : lang === "fr" ? "Lexique" : "Lexicon"}</a>
           </div>
           <div>
-            <p className="ed-footer-head">{lang === "tr" ? "Deneyimle" : lang === "fr" ? "Vivre" : "Experience"}</p>
-            <a href="/deneyimler">{t.nav.experiences}</a>
+            <p className="ed-footer-head">{lang === "tr" ? "Keşfet" : lang === "fr" ? "Explorer" : "Explore"}</p>
             <a href="/mektup">{lang === "tr" ? "Okur Mektupları" : lang === "fr" ? "Lettres" : "Reader Letters"}</a>
             <a href="/sahne">{lang === "tr" ? "Sahne" : lang === "fr" ? "Sur scène" : "On Stage"}</a>
             <a href="/takvim">{lang === "tr" ? "Köz Takvimi" : lang === "fr" ? "Calendrier" : "Calendar"}</a>

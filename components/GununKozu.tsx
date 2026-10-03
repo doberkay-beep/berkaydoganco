@@ -50,7 +50,7 @@ export function GununKozu({ t, verses }: { t: Copy; verses: string[] }) {
           {copied ? t.copied : t.share} ↗
         </button>
       )}
-      <a className="kozu-share" href="/evren" style={{ textDecoration: "none" }}>{t.universe} ✦</a>
+      <a className="kozu-share" href="/takvim" style={{ textDecoration: "none" }}>{t.universe} ✦</a>
     </section>
   );
 }

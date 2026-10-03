@@ -108,7 +108,6 @@ export default async function DunyaPage({ params }: { params: Promise<{ slug: st
               </Link>
             ))}
           </div>
-          <Link href="/atlas" style={{ display: "inline-block", marginTop: "1rem", ...mono, fontSize: "0.66rem", color: "var(--muted)", borderBottom: "1px solid var(--accent)", paddingBottom: "2px" }}>Zihin Atlası'nda gör →</Link>
         </Reveal>
       )}
 

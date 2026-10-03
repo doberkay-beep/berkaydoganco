@@ -63,40 +63,24 @@ export const PLAYLISTS: { name: string; path: string }[] = [
 ];
 
 /* Söz korpusu lib/sozler.ts'te yaşar (138 yayımlanmış satır, temalı).
-   Deneyimler bu düz listeden okur. */
+   Günün közü ve takvim bu düz listeden okur. */
 export { TUM_SOZLER as VERSES, SOZLER, temadan } from "./sozler";
-
-// Tasfiye Duvarı'nda arka planda süzülen köz parçaları — hepsi Berkay'ın kendi dizelerinden
-export const EMBER_FRAGMENTS: string[] = [
-  "Yıkılamadım, yıktım.",
-  "geleceğime âşığım",
-  "gri hayatlar",
-  "yalan yaşanmışlıklara veda ettim",
-  "yeniden kendi içime dönüyorum",
-  "Ben artık sadece kendimim.",
-  "renginizi kaçırmayın",
-  "bir köz",
-  "Ben bir Tanrı değilim.",
-  "ve ben yeniden doğdum",
-];
 
 type Book = { title: string; meta: string; badge: string; desc: string; cta: string; excerpt: string };
 
 export type Copy = {
-  nav: { books: string; about: string; writing: string; contact: string; projects: string; experiences: string; film: string; media: string; sozler: string };
+  nav: { books: string; about: string; writing: string; contact: string; projects: string; film: string; media: string; sozler: string };
   banner: { line: string; buy: string; watch: string };
   projects: { label: string; heading: string; sub: string; simdiName: string; simdiTag: string; story: string[]; cta: string };
   card: { label: string; heading: string; sub: string; random: string; download: string; hint: string };
   yazilar: { title: string; sub: string; all: string; read: string; on: string; empty: string };
   taste: string;
   hero: { role: string; line: string; sub: string; ctaBooks: string; ctaAbout: string; scroll: string };
-  about: { label: string; heading: string; paras: string[]; worksLabel: string; works: { year: string; title: string; kind: string }[] };
+  about: { label: string; heading: string; paras: string[]; worksLabel: string; works: { year: string; title: string; kind: string; href?: string }[] };
   books: { label: string; murekkep: Book; tasfiye: Book; countdown: string[]; epigraph: string; coverSoon: string; buyMore: string };
   recognition: { label: string; heading: string; tiles: { value: string; label: string }[]; pressLabel: string; press: { name: string; detail: string; url: string }[] };
   reviews: { label: string; heading: string };
-  duvari: { label: string; heading: string; sub: string; placeholder: string; button: string; result: string; again: string };
   kozu: { label: string; share: string; copied: string; universe: string };
-  kahin: { label: string; heading: string; placeholder: string; button: string; again: string; share: string; copied: string; note: string };
   media: { label: string; heading: string; podcast: string; podcastDesc: string; video: string };
   notify: { title: string; placeholder: string; button: string; note: string };
   teaser: { label: string; cta: string };
@@ -109,8 +93,8 @@ export const TEASER_LINES = ["Yıkılamadım, yıktım.", "Yalan yaşanmışlık
 
 export const site: Record<Lang, Copy> = {
   en: {
-    nav: { books: "Books", about: "About", writing: "Writing", contact: "Contact", projects: "Projects", experiences: "Experiences", film: "Film", media: "Media", sozler: "Verses" },
-    banner: { line: "Tasfiye is out — not to destroy; to cleanse.", buy: "Get the book", watch: "Watch the trailer" },
+    nav: { books: "Books", about: "About", writing: "Writing", contact: "Contact", projects: "Projects", film: "Film", media: "Media", sozler: "Verses" },
+    banner: { line: "Tasfiye is out — not to destroy; to cleanse.", buy: "Get the book", watch: "Watch the film" },
     projects: {
       label: "Projects", heading: "Beyond the words",
       sub: "Alongside the writing — things other curiosities have built.",
@@ -139,16 +123,22 @@ export const site: Record<Lang, Copy> = {
       ctaBooks: "The books", ctaAbout: "About", scroll: "Scroll",
     },
     about: {
-      label: "About", heading: "The writer",
+      label: "About", heading: "Poet, writer, founder of ŞİMDİ",
       paras: [
+        "He began writing at seventeen. For eight years he wrote in silence; then, in ten months, came two books, a film and a radio.",
         "Berkay Doğan is a poet and writer based in Istanbul. For him, writing is not a choice but a necessity — the quietest confession of existence. Every day he does not write is a day he betrays himself.",
         "He began writing in 2017, at seventeen. For most, that age is still a threshold of innocence; for him it was the moment he started to see the true face of society. Since then, what feeds him is life itself more than literature: a pair of eyes, a building riddled with holes, walking the streets he once knew as a changed man.",
         "His first book, Ink and Ember: A Poet's Reckoning (2025), was torn from within a suffocating solitude, national chaos, and existential crisis. His second, Tasfiye, is a critique of the existing order — a call to bring back the philosophical dose we have lost. Between the two runs a reckoning that stretches from poetry to essay.",
+        "Poetry and radio are born in the same place: in listening. In 2026 he founded ŞİMDİ (necaliyor.co), which shows — and counts — what is playing right now across Turkey's radio stations: a poet chasing after sound.",
       ],
-      worksLabel: "Selected works",
+      worksLabel: "The journey",
       works: [
-        { year: "2025", title: "Ink and Ember: A Poet's Reckoning", kind: "Poetry" },
-        { year: "2026", title: "Tasfiye", kind: "Essay" },
+        { year: "2017", title: "Began writing", kind: "At seventeen" },
+        { year: "Dec 2025", title: "Ink and Ember: A Poet's Reckoning", kind: "Poetry · #1 Poetry on Trendyol", href: "/kitaplar/murekkep-ve-koz" },
+        { year: "Jun 2026", title: "The Poet's Reckoning", kind: "Podcast", href: "/medya" },
+        { year: "Aug 2026", title: "Tasfiye", kind: "Essay", href: "/kitaplar/tasfiye" },
+        { year: "Aug 2026", title: "ŞİMDİ", kind: "Live radio · necaliyor.co", href: "https://necaliyor.co" },
+        { year: "Sep 2026", title: "TASFİYE: The Film", kind: "Short film · 8 min", href: "/film" },
       ],
     },
     books: {
@@ -173,18 +163,7 @@ export const site: Record<Lang, Copy> = {
       ],
     },
     reviews: { label: "Readers", heading: "What readers say" },
-    duvari: {
-      label: "A small ritual", heading: "What would you set down?",
-      sub: "Write one thing you'd rather not carry. Watch it lift and drift away. What stays with you is the lightness.",
-      placeholder: "a worry, a weight, a wish…", button: "Let it go",
-      result: "It drifted off. You're a little lighter now.", again: "Again",
-    },
-    kozu: { label: "Ember of the day", share: "Share", copied: "Copied", universe: "Ember Universe" },
-    kahin: {
-      label: "The oracle", heading: "Say a word. Let a verse fall to you.",
-      placeholder: "a word, a feeling…", button: "Summon", again: "Another",
-      share: "Share", copied: "Copied", note: "A verse by Berkay Doğan",
-    },
+    kozu: { label: "Ember of the day", share: "Share", copied: "Copied", universe: "Ember Calendar" },
     media: { label: "Media", heading: "The Poet's Reckoning", podcast: "Listen — Podcast", podcastDesc: "Conversations on poetry, literature and ideas. On Spotify and every platform.", video: "Watch — YouTube" },
     notify: { title: "Don't miss the launch", placeholder: "your email", button: "Notify me", note: "One quiet email when Tasfiye is out. Nothing else." },
     teaser: { label: "From the book", cta: "Continue in the book" },
@@ -192,8 +171,8 @@ export const site: Record<Lang, Copy> = {
     contact: { label: "Contact", line: "Write — about the work, a collaboration, or whatever's on your mind. The door is open." },
   },
   tr: {
-    nav: { books: "Kitaplar", about: "Hakkımda", writing: "Yazılar", contact: "İletişim", projects: "Projeler", experiences: "Deneyimler", film: "Film", media: "Medya", sozler: "Sözler" },
-    banner: { line: "Tasfiye çıktı — yıkmak değil; temizlemek.", buy: "Kitabı al", watch: "Fragmanı izle" },
+    nav: { books: "Kitaplar", about: "Hakkımda", writing: "Yazılar", contact: "İletişim", projects: "Projeler", film: "Film", media: "Medya", sozler: "Sözler" },
+    banner: { line: "Tasfiye çıktı — yıkmak değil; temizlemek.", buy: "Kitabı al", watch: "Filmi izle" },
     projects: {
       label: "Projeler", heading: "Kelimelerin dışında",
       sub: "Yazının yanında — başka merakların ürünleri.",
@@ -222,16 +201,22 @@ export const site: Record<Lang, Copy> = {
       ctaBooks: "Kitaplar", ctaAbout: "Hakkımda", scroll: "Kaydır",
     },
     about: {
-      label: "Hakkımda", heading: "Yazar",
+      label: "Hakkımda", heading: "Şair, yazar, ŞİMDİ'nin kurucusu",
       paras: [
+        "17 yaşında yazmaya başladı. Sekiz yıl sessizce yazdı; sonra on ayda iki kitap, bir film ve bir radyo.",
         "Berkay Doğan, İstanbul'da yaşayan şair ve yazardır. Onun için yazmak bir tercih değil, bir zorunluluktur: yazmak, varoluşun en sessiz itirafıdır. Yazmadığı her gün, kendine ihanet ettiği bir gündür.",
         "Yazıya 2017'de, on yedi yaşında başladı. O yaş çoğu için masumiyetin sürdüğü bir eşikti; onun içinse toplumun gerçek yüzünü görmeye başladığı an oldu. O günden bu yana onu besleyen şey, edebiyatın kendisinden çok hayatın kendisidir: bir çift göz, delik deşik mimari bir yapı, eskiden geçtiği sokakları değişmiş bir adam olarak yeniden geçmek.",
         "İlk kitabı Mürekkep ve Köz: Bir Şairin Hesabı (2025) boğucu bir yalnızlığın, ulusal kaosun ve varoluşsal krizin içinden sökülerek yazıldı. İkinci kitabı Tasfiye ise mevcut düzene bir eleştiri, kaybettiğimiz felsefi dozun yeniden hayata çağrılmasıdır. İkisi arasında, şiirden denemeye uzanan bir hesaplaşma vardır.",
+        "Şiir de radyo da aynı yerden doğar: dinlemekten. 2026'da kurduğu ŞİMDİ (necaliyor.co), Türkiye'nin radyolarında tam da bu an ne çaldığını gösterir ve sayar — bir şairin sesin peşine düşmesi.",
       ],
-      worksLabel: "Eserler",
+      worksLabel: "Yolculuk",
       works: [
-        { year: "2025", title: "Mürekkep ve Köz: Bir Şairin Hesabı", kind: "Şiir" },
-        { year: "2026", title: "Tasfiye", kind: "Deneme" },
+        { year: "2017", title: "Yazmaya başladı", kind: "On yedi yaşında" },
+        { year: "Ara 2025", title: "Mürekkep ve Köz: Bir Şairin Hesabı", kind: "Şiir · Trendyol Şiir'de #1", href: "/kitaplar/murekkep-ve-koz" },
+        { year: "Haz 2026", title: "Şairin Hesabı", kind: "Podcast", href: "/medya" },
+        { year: "Ağu 2026", title: "Tasfiye", kind: "Deneme", href: "/kitaplar/tasfiye" },
+        { year: "Ağu 2026", title: "ŞİMDİ", kind: "Canlı radyo · necaliyor.co", href: "https://necaliyor.co" },
+        { year: "Eyl 2026", title: "TASFİYE: Film", kind: "Kısa film · 8 dk", href: "/film" },
       ],
     },
     books: {
@@ -256,18 +241,7 @@ export const site: Record<Lang, Copy> = {
       ],
     },
     reviews: { label: "Okurlardan", heading: "Okurlar ne diyor" },
-    duvari: {
-      label: "Küçük bir ritüel", heading: "Neyi elinden bırakırdın?",
-      sub: "Taşımak istemediğin bir şey yaz. Yüksel ve savrulup gitsin. Sende kalan tek şey hafiflik olsun.",
-      placeholder: "bir tasa, bir ağırlık, bir dilek…", button: "Bırak gitsin",
-      result: "Savrulup gitti. Şimdi biraz daha hafifsin.", again: "Bir daha",
-    },
-    kozu: { label: "Günün közü", share: "Paylaş", copied: "Kopyalandı", universe: "Köz Evreni" },
-    kahin: {
-      label: "Kâhin", heading: "Bir kelime söyle. Sana bir dize düşsün.",
-      placeholder: "bir kelime, bir his…", button: "Çağır", again: "Bir daha",
-      share: "Paylaş", copied: "Kopyalandı", note: "Berkay Doğan'dan bir dize",
-    },
+    kozu: { label: "Günün közü", share: "Paylaş", copied: "Kopyalandı", universe: "Köz Takvimi" },
     media: { label: "Medya", heading: "Şairin Hesabı", podcast: "Dinle — Podcast", podcastDesc: "Şiir, edebiyat ve düşünceler üzerine konuşmalar. Spotify'da ve tüm platformlarda.", video: "İzle — YouTube" },
     notify: { title: "Lansmanı kaçırma", placeholder: "e-posta adresin", button: "Haber ver", note: "Tasfiye çıkınca tek bir e-posta. Başka hiçbir şey." },
     teaser: { label: "Kitaptan", cta: "Devamı kitapta" },
@@ -275,8 +249,8 @@ export const site: Record<Lang, Copy> = {
     contact: { label: "İletişim", line: "Yaz — iş için, bir iş birliği için ya da sadece aklındakiler için. Kapı açık." },
   },
   fr: {
-    nav: { books: "Livres", about: "À propos", writing: "Écrits", contact: "Contact", projects: "Projets", experiences: "Expériences", film: "Film", media: "Médias", sozler: "Vers" },
-    banner: { line: "Tasfiye est paru — non pour détruire ; pour purifier.", buy: "Acheter le livre", watch: "Voir la bande-annonce" },
+    nav: { books: "Livres", about: "À propos", writing: "Écrits", contact: "Contact", projects: "Projets", film: "Film", media: "Médias", sozler: "Vers" },
+    banner: { line: "Tasfiye est paru — non pour détruire ; pour purifier.", buy: "Acheter le livre", watch: "Voir le film" },
     projects: {
       label: "Projets", heading: "Au-delà des mots",
       sub: "À côté de l'écriture — ce que d'autres curiosités ont bâti.",
@@ -305,16 +279,22 @@ export const site: Record<Lang, Copy> = {
       ctaBooks: "Les livres", ctaAbout: "À propos", scroll: "Défiler",
     },
     about: {
-      label: "À propos", heading: "L'écrivain",
+      label: "À propos", heading: "Poète, écrivain, fondateur de ŞİMDİ",
       paras: [
+        "Il a commencé à écrire à dix-sept ans. Huit ans d'écriture en silence ; puis, en dix mois, deux livres, un film et une radio.",
         "Berkay Doğan est un poète et écrivain basé à Istanbul. Pour lui, écrire n'est pas un choix mais une nécessité — l'aveu le plus silencieux de l'existence. Chaque jour sans écrire est un jour où il se trahit.",
         "Il a commencé à écrire en 2017, à dix-sept ans. Pour la plupart, cet âge est encore un seuil d'innocence ; pour lui, ce fut le moment où il a commencé à voir le vrai visage de la société. Depuis, ce qui le nourrit, c'est la vie elle-même plus que la littérature : une paire d'yeux, un bâtiment criblé de trous, retraverser en homme changé les rues qu'il connaissait jadis.",
         "Son premier livre, Encre et Braise : les comptes d'un poète (2025), a été arraché à une solitude étouffante, au chaos national et à une crise existentielle. Le second, Tasfiye, est une critique de l'ordre établi — un appel à retrouver la dose philosophique que nous avons perdue. Entre les deux court un règlement de comptes qui va de la poésie à l'essai.",
+        "La poésie et la radio naissent au même endroit : dans l'écoute. En 2026, il a fondé ŞİMDİ (necaliyor.co), qui montre — et compte — ce qui passe en cet instant sur les radios de Turquie : un poète à la poursuite du son.",
       ],
-      worksLabel: "Œuvres choisies",
+      worksLabel: "Le parcours",
       works: [
-        { year: "2025", title: "Encre et Braise : les comptes d'un poète", kind: "Poésie" },
-        { year: "2026", title: "Tasfiye", kind: "Essai" },
+        { year: "2017", title: "Premiers écrits", kind: "À dix-sept ans" },
+        { year: "déc. 2025", title: "Encre et Braise : les comptes d'un poète", kind: "Poésie · N°1 poésie sur Trendyol", href: "/kitaplar/murekkep-ve-koz" },
+        { year: "juin 2026", title: "Les comptes du poète", kind: "Podcast", href: "/medya" },
+        { year: "août 2026", title: "Tasfiye", kind: "Essai", href: "/kitaplar/tasfiye" },
+        { year: "août 2026", title: "ŞİMDİ", kind: "Radio en direct · necaliyor.co", href: "https://necaliyor.co" },
+        { year: "sept. 2026", title: "TASFİYE : le film", kind: "Court métrage · 8 min", href: "/film" },
       ],
     },
     books: {
@@ -339,18 +319,7 @@ export const site: Record<Lang, Copy> = {
       ],
     },
     reviews: { label: "Lecteurs", heading: "Ce que disent les lecteurs" },
-    duvari: {
-      label: "Un petit rituel", heading: "Que déposerais-tu ?",
-      sub: "Écris une chose que tu préférerais ne pas porter. Regarde-la s'élever et s'envoler. Ce qui te reste, c'est la légèreté.",
-      placeholder: "un souci, un poids, un souhait…", button: "Laisse aller",
-      result: "Envolé. Un peu plus léger, à présent.", again: "Encore",
-    },
-    kozu: { label: "La braise du jour", share: "Partager", copied: "Copié", universe: "Univers de Braise" },
-    kahin: {
-      label: "L'oracle", heading: "Dis un mot. Qu'un vers te tombe dessus.",
-      placeholder: "un mot, un sentiment…", button: "Invoquer", again: "Encore",
-      share: "Partager", copied: "Copié", note: "Un vers de Berkay Doğan",
-    },
+    kozu: { label: "La braise du jour", share: "Partager", copied: "Copié", universe: "Calendrier" },
     media: { label: "Médias", heading: "Les comptes du poète", podcast: "Écouter — Podcast", podcastDesc: "Conversations sur la poésie, la littérature et les idées. Sur Spotify et toutes les plateformes.", video: "Regarder — YouTube" },
     notify: { title: "Ne rate pas la sortie", placeholder: "ton e-mail", button: "Préviens-moi", note: "Un seul e-mail à la sortie de Tasfiye. Rien d'autre." },
     teaser: { label: "Extrait", cta: "La suite dans le livre" },

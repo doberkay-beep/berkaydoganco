@@ -52,16 +52,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "monthly" as const,
       priority: 0.7,
     },
-    {
-      url: `${SITE}/atlas/`,
-      changeFrequency: "monthly" as const,
-      priority: 0.7,
-    },
-    {
-      url: `${SITE}/oda/`,
-      changeFrequency: "monthly" as const,
-      priority: 0.6,
-    },
     ...KITAPLAR.filter((k) => k.slug === "murekkep-ve-koz" || k.slug === "tasfiye").map((k) => ({
       url: `${SITE}/kitaplar/${k.slug}/dunya/`,
       changeFrequency: "monthly" as const,
@@ -99,11 +89,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.7,
     },
     {
-      url: `${SITE}/evren/`,
-      changeFrequency: "monthly",
-      priority: 0.7,
-    },
-    {
       url: `${SITE}/kitaplar/`,
       changeFrequency: "monthly",
       priority: 0.8,
@@ -124,11 +109,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.8,
     },
     {
-      url: `${SITE}/deneyimler/`,
-      changeFrequency: "monthly",
-      priority: 0.7,
-    },
-    {
       url: `${SITE}/medya/`,
       changeFrequency: "monthly",
       priority: 0.6,
@@ -139,49 +119,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.6,
     },
     {
-      url: `${SITE}/duvar/`,
-      changeFrequency: "monthly",
-      priority: 0.5,
-    },
-    {
-      url: `${SITE}/kahin/`,
-      changeFrequency: "monthly",
-      priority: 0.5,
-    },
-    {
       url: `${SITE}/kart/`,
       changeFrequency: "monthly",
       priority: 0.5,
-    },
-    {
-      url: `${SITE}/kapak/`,
-      changeFrequency: "monthly",
-      priority: 0.6,
-    },
-    {
-      url: `${SITE}/fragman/`,
-      changeFrequency: "monthly",
-      priority: 0.7,
-    },
-    {
-      url: `${SITE}/leke/`,
-      changeFrequency: "monthly",
-      priority: 0.6,
-    },
-    {
-      url: `${SITE}/mahkeme/`,
-      changeFrequency: "monthly",
-      priority: 0.7,
-    },
-    {
-      url: `${SITE}/siir/`,
-      changeFrequency: "monthly",
-      priority: 0.6,
-    },
-    {
-      url: `${SITE}/masa/`,
-      changeFrequency: "monthly",
-      priority: 0.6,
     },
     {
       url: `${SITE}/press/`,

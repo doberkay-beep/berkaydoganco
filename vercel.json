@@ -74,6 +74,126 @@
       "source": "/en/:yol(.*)",
       "destination": "/",
       "permanent": true
+    },
+    {
+      "source": "/mahkeme",
+      "destination": "/kitaplar/tasfiye/",
+      "permanent": true
+    },
+    {
+      "source": "/mahkeme/",
+      "destination": "/kitaplar/tasfiye/",
+      "permanent": true
+    },
+    {
+      "source": "/duvar",
+      "destination": "/kitaplar/tasfiye/",
+      "permanent": true
+    },
+    {
+      "source": "/duvar/",
+      "destination": "/kitaplar/tasfiye/",
+      "permanent": true
+    },
+    {
+      "source": "/kapak",
+      "destination": "/kitaplar/tasfiye/",
+      "permanent": true
+    },
+    {
+      "source": "/kapak/",
+      "destination": "/kitaplar/tasfiye/",
+      "permanent": true
+    },
+    {
+      "source": "/fragman",
+      "destination": "/film/",
+      "permanent": true
+    },
+    {
+      "source": "/fragman/",
+      "destination": "/film/",
+      "permanent": true
+    },
+    {
+      "source": "/leke",
+      "destination": "/sozler/",
+      "permanent": true
+    },
+    {
+      "source": "/leke/",
+      "destination": "/sozler/",
+      "permanent": true
+    },
+    {
+      "source": "/kahin",
+      "destination": "/sozler/",
+      "permanent": true
+    },
+    {
+      "source": "/kahin/",
+      "destination": "/sozler/",
+      "permanent": true
+    },
+    {
+      "source": "/evren",
+      "destination": "/sozler/",
+      "permanent": true
+    },
+    {
+      "source": "/evren/",
+      "destination": "/sozler/",
+      "permanent": true
+    },
+    {
+      "source": "/siir",
+      "destination": "/sozler/",
+      "permanent": true
+    },
+    {
+      "source": "/siir/",
+      "destination": "/sozler/",
+      "permanent": true
+    },
+    {
+      "source": "/atlas",
+      "destination": "/sozler/",
+      "permanent": true
+    },
+    {
+      "source": "/atlas/",
+      "destination": "/sozler/",
+      "permanent": true
+    },
+    {
+      "source": "/oda",
+      "destination": "/sozler/",
+      "permanent": true
+    },
+    {
+      "source": "/oda/",
+      "destination": "/sozler/",
+      "permanent": true
+    },
+    {
+      "source": "/masa",
+      "destination": "/hakkimda/",
+      "permanent": true
+    },
+    {
+      "source": "/masa/",
+      "destination": "/hakkimda/",
+      "permanent": true
+    },
+    {
+      "source": "/deneyimler",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/deneyimler/",
+      "destination": "/",
+      "permanent": true
     }
   ],
   "headers": [

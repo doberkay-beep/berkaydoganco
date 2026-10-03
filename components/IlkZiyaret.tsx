@@ -13,7 +13,7 @@ const COPY: Record<Lang, { etiket: string; adimlar: { href: string; ad: string; 
     etiket: "İlk kez mi buradasın? Üç adımlık tanışma",
     adimlar: [
       { href: "/sozler", ad: "Bir söz oku", alt: "30 saniye" },
-      { href: "/film", ad: "Fragmanı izle", alt: "50 saniye" },
+      { href: "/film", ad: "Filmi izle", alt: "8 dakika" },
       { href: "/kitaplar/tasfiye", ad: "Kitaba bak", alt: "Tasfiye" },
     ],
   },
@@ -21,7 +21,7 @@ const COPY: Record<Lang, { etiket: string; adimlar: { href: string; ad: string; 
     etiket: "First time here? A three-step introduction",
     adimlar: [
       { href: "/sozler", ad: "Read a line", alt: "30 seconds" },
-      { href: "/film", ad: "Watch the film", alt: "50 seconds" },
+      { href: "/film", ad: "Watch the film", alt: "8 minutes" },
       { href: "/kitaplar/tasfiye", ad: "See the book", alt: "Tasfiye" },
     ],
   },
@@ -29,7 +29,7 @@ const COPY: Record<Lang, { etiket: string; adimlar: { href: string; ad: string; 
     etiket: "Première visite ? Trois pas pour faire connaissance",
     adimlar: [
       { href: "/sozler", ad: "Lire un vers", alt: "30 secondes" },
-      { href: "/film", ad: "Voir le film", alt: "50 secondes" },
+      { href: "/film", ad: "Voir le film", alt: "8 minutes" },
       { href: "/kitaplar/tasfiye", ad: "Voir le livre", alt: "Tasfiye" },
     ],
   },

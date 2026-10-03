@@ -102,7 +102,7 @@ export function BentoHub({ lang }: { lang: Lang }) {
         .bento-f { grid-column: span 2; flex-direction: column; justify-content: center; gap: 0.4rem; }
         .bento-f .bento-title { font-size: 1.35rem; }
 
-        /* G — Deneyimler (tam genişlik) */
+        /* G — Keşfet (tam genişlik) */
         .bento-g { grid-column: span 4; flex-direction: column; gap: 0.9rem; cursor: default; }
         .bento-g:hover { transform: none; border-color: var(--glass-border); }
         .bento-g-row { display: flex; gap: 0.6rem; flex-wrap: wrap; }
@@ -194,19 +194,15 @@ export function BentoHub({ lang }: { lang: Lang }) {
           <span className="arw" aria-hidden="true" style={{ position: "absolute", top: "1.5rem", right: "1.6rem" }}>→</span>
         </a>
 
-        {/* G — Deneyimler (Evren · Şiir · Masa) */}
+        {/* G — Keşfet: kelimeler + film */}
         <div className="bento-card bento-g">
-          <span className="bento-kicker">{lang === "tr" ? "Deneyimler" : lang === "fr" ? "Expériences" : "Experiences"}</span>
+          <span className="bento-kicker">{lang === "tr" ? "Keşfet" : lang === "fr" ? "Explorer" : "Explore"}</span>
           <div className="bento-g-row">
+            <a href="/sozler"><span aria-hidden="true">❝</span> {lang === "tr" ? "Sözler" : lang === "fr" ? "Vers" : "Verses"}</a>
+            <a href="/sozluk"><span aria-hidden="true">◈</span> {lang === "tr" ? "Kavramlar Sözlüğü" : lang === "fr" ? "Lexique" : "Lexicon"}</a>
+            <a href="/takvim"><span aria-hidden="true">✦</span> {lang === "tr" ? "Köz Takvimi" : lang === "fr" ? "Calendrier" : "Calendar"}</a>
             <a href="/film"><span aria-hidden="true">▣</span> {lang === "tr" ? "Film" : "Film"}</a>
-            <a href="/fragman"><span aria-hidden="true">▸</span> {lang === "tr" ? "Fragman" : lang === "fr" ? "Bande-annonce" : "Trailer"}</a>
-            <a href="/mahkeme"><span aria-hidden="true">◈</span> {lang === "tr" ? "Tasfiye Mahkemesi" : lang === "fr" ? "Le Tribunal" : "The Tribunal"}</a>
-            <a href="/evren"><span aria-hidden="true">✦</span> {lang === "tr" ? "Köz Evreni" : lang === "fr" ? "Univers de Braise" : "Ember Universe"}</a>
-            <a href="/siir"><span aria-hidden="true">❋</span> {lang === "tr" ? "Canlı Şiir" : lang === "fr" ? "Poème Vivant" : "Living Poem"}</a>
-            <a href="/masa"><span aria-hidden="true">✎</span> {lang === "tr" ? "Şairin Masası" : lang === "fr" ? "Le Bureau" : "The Desk"}</a>
-            <a href="/kapak"><span aria-hidden="true">✳</span> {lang === "tr" ? "Yaşayan Kapak" : lang === "fr" ? "Couverture Vivante" : "Living Cover"}</a>
-            <a href="/leke"><span aria-hidden="true">❖</span> {lang === "tr" ? "Mürekkep Lekesi" : lang === "fr" ? "Tache d'Encre" : "Ink Blot"}</a>
-            <a href="/deneyimler" style={{ borderColor: "var(--accent)" }}><span aria-hidden="true">→</span> {lang === "tr" ? "Tümü" : lang === "fr" ? "Tout voir" : "See all"}</a>
+            <a href="/video"><span aria-hidden="true">▸</span> Video</a>
           </div>
         </div>
       </div>
