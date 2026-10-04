@@ -146,6 +146,7 @@ export const site: Record<Lang, Copy> = {
       ],
       pressLabel: "In the press",
       press: [
+        { name: "Edebiyat Magazin", detail: "Interview — “Write the true sentence, not the likeable one” (Oct 2026)", url: "https://emagazin.tv/haber/berkay-dogan-begenilecek-cumleyi-degil-dogru-cumleyi-yaz/2918" },
         { name: "Valsanat Magazine", detail: "The poem “Ruh-u Katliam”, Issue 51", url: VALSANAT_URL },
         { name: "Goodreads", detail: "Listed in the global author index", url: GOODREADS_URL },
         { name: "Trendyol", detail: "#1 Most Visited in Poetry", url: TRENDYOL_URL },
@@ -214,6 +215,7 @@ export const site: Record<Lang, Copy> = {
       ],
       pressLabel: "Basında",
       press: [
+        { name: "Edebiyat Magazin", detail: "Röportaj — “Beğenilecek cümleyi değil, doğru cümleyi yaz” (Ekim 2026)", url: "https://emagazin.tv/haber/berkay-dogan-begenilecek-cumleyi-degil-dogru-cumleyi-yaz/2918" },
         { name: "Valsanat Dergisi", detail: "“Ruh-u Katliam” şiiri, 51. sayı", url: VALSANAT_URL },
         { name: "Goodreads", detail: "Küresel yazar dizininde", url: GOODREADS_URL },
         { name: "Trendyol", detail: "Şiir kategorisinde #1 En Çok Ziyaret", url: TRENDYOL_URL },
