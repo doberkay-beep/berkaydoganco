@@ -165,6 +165,21 @@ export function DinleBolumu({ lang, t }: { lang: Lang; t: Copy }) {
                 </div>
               </Reveal>
 
+              {/* Şiir Rafım Radyosu — sesli şiir okumaları (siirrafim.art'ın YouTube çalma listesi) */}
+              <Reveal delay={0.13} style={{ marginTop: "2.75rem" }}>
+                <span style={{ display: "block", fontSize: "0.68rem", letterSpacing: "0.22em", textTransform: "uppercase", color: "var(--muted)", marginBottom: "0.6rem" }}>
+                  {lang === "tr" ? "Şiir dinle — Şiir Rafım Radyosu" : "Listen to poetry — Şiir Rafım Radio"}
+                </span>
+                <p style={{ fontSize: "0.92rem", lineHeight: 1.6, color: "var(--muted)", marginBottom: "1rem", maxWidth: "56ch" }}>
+                  {lang === "tr"
+                    ? "Nazım Hikmet'ten Can Yücel'e, Ahmed Arif'ten Ataol Behramoğlu'na 200'den fazla sesli şiir okuması. Hazırlayan: "
+                    : "More than 200 spoken readings, from Nazım Hikmet to Can Yücel, Ahmed Arif and Ataol Behramoğlu. Curated by "}
+                  <a href="https://www.siirrafim.art/p/siir-rafim-radyosu.html" target="_blank" rel="noopener noreferrer" className="cg-link" style={{ color: "var(--accent-2)" }}>Şiir Rafım ↗</a>
+                </p>
+                <div className="cg-embed" style={{ aspectRatio: "16 / 9" }}>
+                  <iframe title="Şiir Rafım Radyosu" src="https://www.youtube-nocookie.com/embed/videoseries?list=PLbW6sTxKenw8Ok_ErKcKTP-leBAbBTAIS&rel=0" width="100%" height="100%" frameBorder="0" allow="encrypted-media; picture-in-picture" allowFullScreen loading="lazy" style={{ display: "block" }} />
+                </div>
+              </Reveal>
 
               {PLAYLISTS.length > 0 && (
                 <Reveal delay={0.16} style={{ marginTop: "2.75rem" }}>
