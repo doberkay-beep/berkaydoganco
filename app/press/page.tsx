@@ -231,7 +231,7 @@ export default function PressPage() {
         )}
         <div style={{ display: "flex", flexDirection: "column", gap: "0.9rem" }}>
           {site.tr.recognition.press.map((p) => (
-            <a key={p.name} href={p.url} target="_blank" rel="noopener noreferrer" className="cg-press-row" style={{ display: "flex", gap: "1rem", alignItems: "baseline", flexWrap: "wrap" }}>
+            <a key={p.url} href={p.url} target="_blank" rel="noopener noreferrer" className="cg-press-row" style={{ display: "flex", gap: "1rem", alignItems: "baseline", flexWrap: "wrap" }}>
               <span style={{ fontFamily: "var(--font-grotesk)", fontWeight: 500, fontSize: "1.02rem", minWidth: "9ch", color: "var(--ink)" }}>{p.name}</span>
               <span style={{ color: "var(--muted)", fontSize: "0.9rem" }}>{p.detail} <span style={{ color: "var(--accent-2)" }}>↗</span></span>
             </a>

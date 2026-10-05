@@ -146,6 +146,7 @@ export const site: Record<Lang, Copy> = {
       ],
       pressLabel: "In the press",
       press: [
+        { name: "Şiir Rafım", detail: "Poem — “Geleceğime Âşığım”, Readers’ Poems (Oct 2026)", url: "https://www.siirrafim.art/2026/10/gelecegime-asigim-berkay-dogan-okur.html" },
         { name: "Şiir Rafım", detail: "Author profile — “Who is Berkay Doğan?” (Oct 2026)", url: "https://www.siirrafim.art/2026/10/berkay-dogan-kimdir-kitaplari-tasfiye-murekkep-ve-koz.html" },
         { name: "Edebiyat Magazin", detail: "Interview — “Write the true sentence, not the likeable one” (Oct 2026)", url: "https://emagazin.tv/haber/berkay-dogan-begenilecek-cumleyi-degil-dogru-cumleyi-yaz/2918" },
         { name: "Valsanat Magazine", detail: "The poem “Ruh-u Katliam”, Issue 51", url: VALSANAT_URL },
@@ -216,6 +217,7 @@ export const site: Record<Lang, Copy> = {
       ],
       pressLabel: "Basında",
       press: [
+        { name: "Şiir Rafım", detail: "Şiir — “Geleceğime Âşığım”, Okur Şiirleri (Ekim 2026)", url: "https://www.siirrafim.art/2026/10/gelecegime-asigim-berkay-dogan-okur.html" },
         { name: "Şiir Rafım", detail: "Yazar dosyası — “Berkay Doğan Kimdir?” (Ekim 2026)", url: "https://www.siirrafim.art/2026/10/berkay-dogan-kimdir-kitaplari-tasfiye-murekkep-ve-koz.html" },
         { name: "Edebiyat Magazin", detail: "Röportaj — “Beğenilecek cümleyi değil, doğru cümleyi yaz” (Ekim 2026)", url: "https://emagazin.tv/haber/berkay-dogan-begenilecek-cumleyi-degil-dogru-cumleyi-yaz/2918" },
         { name: "Valsanat Dergisi", detail: "“Ruh-u Katliam” şiiri, 51. sayı", url: VALSANAT_URL },
