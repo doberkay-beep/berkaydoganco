@@ -82,6 +82,36 @@ export function Cagdas() {
               </Reveal>
             </section>
 
+            {/* KEŞFET ŞERİDİ — altbilgideki işe yarar bağlantılar, ilk ekrana yakın */}
+            {(() => {
+              const tr = lang === "tr";
+              const linkler: [string, string, boolean?][] = [
+                ["/sozler", tr ? "Sözler" : "Verses"],
+                ["/sozluk", tr ? "Kavramlar Sözlüğü" : "Lexicon"],
+                ["/takvim", tr ? "Köz Takvimi" : "Ember Calendar"],
+                ["/posterler", tr ? "Posterler" : "Posters"],
+                ["/video", tr ? "İzle & Dinle" : "Watch & Listen"],
+                ["/yazilar", tr ? "Yazılar" : "Writing"],
+                ["/press", tr ? "Basın Odası" : "Press Room"],
+                ["https://necaliyor.co", tr ? "ŞİMDİ radyo ↗" : "ŞİMDİ radio ↗", true],
+              ];
+              return (
+                <nav aria-label={tr ? "Keşfet" : "Explore"} style={{ padding: "0 clamp(1.25rem, 4vw, 3.25rem) clamp(2rem, 5vh, 3rem)" }}>
+                  <span style={{ display: "block", fontFamily: "var(--font-grotesk)", fontSize: "0.62rem", fontWeight: 500, letterSpacing: "0.24em", textTransform: "uppercase", color: "var(--muted)", marginBottom: "0.8rem" }}>
+                    {tr ? "Keşfet" : "Explore"}
+                  </span>
+                  <div style={{ display: "flex", flexWrap: "wrap", gap: "0.5rem" }}>
+                    {linkler.map(([href, ad, dis]) => (
+                      <a key={href} href={href} className="cg-pill" {...(dis ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+                        style={{ fontFamily: "var(--font-grotesk)", fontSize: "0.84rem", fontWeight: 500, padding: "0.6rem 1.1rem", borderRadius: "100px", border: "1px solid var(--line)", color: "var(--ink)", textDecoration: "none" }}>
+                        {ad}
+                      </a>
+                    ))}
+                  </div>
+                </nav>
+              );
+            })()}
+
             {/* GÜNÜN KÖZÜ */}
             <GununKozu t={t.kozu} verses={VERSES} />
 

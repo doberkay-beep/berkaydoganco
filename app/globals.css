@@ -400,3 +400,7 @@ g[tabindex]:focus-visible { outline: 3px solid var(--accent-2); outline-offset: 
 
 /* Dev çekme alıntı — manşet dozunda */
 .ed-pull { font-size: 1.12em; }
+
+/* Ana sayfa Keşfet şeridi */
+.cg-pill{transition:border-color .25s ease,color .25s ease,transform .25s ease}
+.cg-pill:hover{border-color:var(--accent-2);color:var(--accent-2);transform:translateY(-2px)}
