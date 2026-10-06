@@ -44,6 +44,11 @@ export default function NotlarPage() {
             </div>
             <span style={{ display: "block", width: "48px", height: "2px", background: "var(--accent)", margin: "1.6rem 0 1.4rem" }} />
             <p style={{ fontFamily: "var(--font-serif)", fontStyle: "italic", fontSize: "clamp(1.45rem, 3.4vw, 2.2rem)", lineHeight: 1.35, color: "var(--ink)", maxWidth: "30ch" }}>{n.metin}</p>
+            {n.video && (
+              <a href={n.video} target="_blank" rel="noopener noreferrer" className="cg-pill" style={{ display: "inline-block", marginTop: "1.6rem", ...ust, fontSize: "0.68rem", letterSpacing: "0.16em", color: "var(--ink)", border: "1px solid var(--line)", borderRadius: "100px", padding: "0.6rem 1.1rem", textDecoration: "none" }}>
+                ▶ Sesimden dinle ↗
+              </a>
+            )}
           </article>
         ))}
       </Reveal>
