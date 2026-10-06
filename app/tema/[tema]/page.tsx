@@ -16,12 +16,13 @@ export async function generateMetadata({ params }: { params: Promise<{ tema: str
   const sayi = SOZLER.filter((x) => x.t.includes(tema)).length;
   return {
     title: { absolute: `${ad} Sözleri — Berkay Doğan` },
-    description: `Berkay Doğan'dan ${ad.toLocaleLowerCase("tr")} üzerine ${sayi} söz — Mürekkep ve Köz ile Tasfiye kitaplarından.`,
+    description: `Berkay Doğan'ın ${ad.toLocaleLowerCase("tr")} sözleri: Mürekkep ve Köz (şiir, 2025) ile Tasfiye (deneme, 2026) kitaplarından ${sayi} söz, her biri kaynak kitabıyla.`,
+    keywords: [`${ad} sözleri`, "Berkay Doğan sözleri"],
     alternates: { canonical: `/tema/${tema}` },
     openGraph: {
       title: `${ad} Sözleri — Berkay Doğan`,
       description: `${ad} üzerine ${sayi} söz.`,
-      url: `https://www.berkaydogan.co/tema/${tema}`,
+      url: `https://www.berkaydogan.co/tema/${tema}/`,
       type: "website",
     },
   };
@@ -37,6 +38,20 @@ export default async function TemaPage({ params }: { params: Promise<{ tema: str
 
   return (
     <main style={{ maxWidth: "860px", margin: "0 auto", padding: "clamp(3rem, 8vh, 6rem) clamp(1.25rem, 5vw, 3.25rem) 6rem" }}>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            itemListElement: [
+              { "@type": "ListItem", position: 1, name: "Berkay Doğan", item: "https://www.berkaydogan.co/" },
+              { "@type": "ListItem", position: 2, name: "Sözler", item: "https://www.berkaydogan.co/sozler/" },
+              { "@type": "ListItem", position: 3, name: `${ad} sözleri`, item: `https://www.berkaydogan.co/tema/${tema}/` },
+            ],
+          }).replace(/</g, "\\u003c"),
+        }}
+      />
       <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "clamp(3rem, 8vh, 5rem)", flexWrap: "wrap", gap: "1rem" }}>
         <Link href="/" style={{ fontFamily: "var(--font-grotesk)", fontWeight: 700, letterSpacing: "0.02em", color: "var(--ink)" }}>Berkay Doğan</Link>
         <Link href="/sozler" style={{ ...mono, fontSize: "0.72rem", letterSpacing: "0.14em", color: "var(--muted)", borderBottom: "1px solid var(--accent)", paddingBottom: "2px" }}>← Tüm sözler</Link>
@@ -45,8 +60,8 @@ export default async function TemaPage({ params }: { params: Promise<{ tema: str
       <span style={{ display: "inline-flex", alignItems: "center", gap: "0.6rem", ...mono, letterSpacing: "0.26em", color: "var(--ink)" }}>
         <span style={{ width: "7px", height: "7px", borderRadius: "50%", background: "var(--accent)" }} />Tema
       </span>
-      <h1 style={{ fontFamily: "var(--font-serif)", fontWeight: 500, fontSize: "clamp(2.2rem, 6vw, 4rem)", letterSpacing: "-0.015em", lineHeight: 0.98, margin: "1.5rem 0 1rem", color: "var(--ink)" }}>{ad}</h1>
-      <p style={{ ...mono, fontSize: "0.68rem", color: "var(--muted)" }}>{liste.length} söz</p>
+      <h1 style={{ fontFamily: "var(--font-serif)", fontWeight: 500, fontSize: "clamp(2.2rem, 6vw, 4rem)", letterSpacing: "-0.015em", lineHeight: 0.98, margin: "1.5rem 0 1rem", color: "var(--ink)" }}>{ad} sözleri</h1>
+      <p style={{ ...mono, fontSize: "0.68rem", color: "var(--muted)" }}>{liste.length} söz · Berkay Doğan</p>
 
       <div style={{ display: "flex", gap: "0.5rem", flexWrap: "wrap", margin: "1.75rem 0 0" }}>
         {TEMALAR.filter((x) => x !== tema).map((x) => (

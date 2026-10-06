@@ -43,6 +43,7 @@ export default async function KitapPage({ params }: { params: Promise<{ slug: st
     "@graph": [
       {
         "@type": "Book",
+        "@id": `${SITE}/kitaplar/${kitap.slug}/#book`,
         name: kitap.ad,
         author: AUTHOR_REF,
         inLanguage: "tr",

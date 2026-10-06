@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import { SOZLER, sozSlug, sozBul, KITAP_ADI, TEMA_ADI, ilgiliSozler } from "@/lib/sozler";
 import { SozAksiyon } from "@/components/SozAksiyon";
 import { AUTHOR_REF } from "@/lib/site";
+import { sozKaynak, sozAnahtar, sozTitle, sozDescription, YAYINEVI } from "@/lib/sozSeo";
 
 export const dynamic = "force-static";
 
@@ -17,16 +18,23 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const { slug } = await params;
   const soz = sozBul(slug);
   if (!soz) return {};
-  const kisa = soz.s.length > 60 ? soz.s.slice(0, 57) + "…" : soz.s;
+  const title = sozTitle(soz);
+  const description = sozDescription(soz);
   return {
-    title: { absolute: `“${kisa}” — Berkay Doğan` },
-    description: `Berkay Doğan, ${KITAP_ADI[soz.k]}${soz.p ? ` (s. ${soz.p})` : ""}: ${soz.s}`,
+    title: { absolute: title },
+    description,
     alternates: { canonical: `/soz/${slug}` },
     openGraph: {
-      title: `“${kisa}”`,
-      description: `Berkay Doğan — ${KITAP_ADI[soz.k]}`,
-      url: `${SITE}/soz/${slug}`,
+      title,
+      description,
+      url: `${SITE}/soz/${slug}/`,
       type: "article",
+      authors: ["Berkay Doğan"],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
     },
   };
 }
@@ -41,22 +49,35 @@ export default async function SozPage({ params }: { params: Promise<{ slug: stri
   const sonraki = SOZLER[(idx + 1) % SOZLER.length];
   const ilgili = ilgiliSozler(soz, 6);
   const kaynakMetni = `${KITAP_ADI[soz.k]}${soz.p ? `, s. ${soz.p}` : ""}`;
-  const kitapSayfa = soz.k === "mvk" ? "/kitaplar/murekkep-ve-koz" : "/kitaplar/tasfiye";
+  const kaynak = sozKaynak(soz);
+  const kitapSayfa = kaynak.sayfa;
+  const sayfaUrl = `${SITE}/soz/${slug}/`;
   const gitKanal = soz.k === "mvk" ? "mvk-trendyol" : "trendyol";
 
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "Quotation",
+    "@id": `${sayfaUrl}#soz`,
     text: soz.s,
     creator: AUTHOR_REF,
+    author: AUTHOR_REF,
+    inLanguage: "tr",
+    url: sayfaUrl,
+    mainEntityOfPage: sayfaUrl,
+    keywords: soz.t.map((t) => TEMA_ADI[t]).join(", "),
     isPartOf: {
       "@type": "Book",
-      name: KITAP_ADI[soz.k],
+      "@id": `${SITE}${kitapSayfa}/#book`,
+      name: kaynak.tamAd,
       author: AUTHOR_REF,
+      publisher: { "@type": "Organization", name: YAYINEVI },
+      datePublished: kaynak.kitap.datePublished,
+      genre: kaynak.kitap.tur,
+      inLanguage: "tr",
+      ...(kaynak.kitap.isbn ? { isbn: kaynak.kitap.isbn } : {}),
+      ...(kaynak.kitap.sayfaSayisi ? { numberOfPages: kaynak.kitap.sayfaSayisi } : {}),
       url: `${SITE}${kitapSayfa}/`,
     },
-    inLanguage: "tr",
-    url: `${SITE}/soz/${slug}/`,
   };
 
   const kirintiLd = {
@@ -65,7 +86,7 @@ export default async function SozPage({ params }: { params: Promise<{ slug: stri
     itemListElement: [
       { "@type": "ListItem", position: 1, name: "Berkay Doğan", item: `${SITE}/` },
       { "@type": "ListItem", position: 2, name: "Sözler", item: `${SITE}/sozler/` },
-      { "@type": "ListItem", position: 3, name: soz.s.length > 60 ? `${soz.s.slice(0, 57)}…` : soz.s },
+      { "@type": "ListItem", position: 3, name: sozAnahtar(soz.s, 60), item: sayfaUrl },
     ],
   };
 
@@ -73,8 +94,8 @@ export default async function SozPage({ params }: { params: Promise<{ slug: stri
 
   return (
     <main style={{ maxWidth: "760px", margin: "0 auto", minHeight: "100svh", display: "flex", flexDirection: "column", padding: "clamp(2.5rem, 6vh, 4rem) clamp(1.25rem, 5vw, 2rem) 4rem" }}>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(kirintiLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd).replace(/</g, "\\u003c") }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(kirintiLd).replace(/</g, "\\u003c") }} />
 
       <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: "1rem" }}>
         <Link href="/" style={{ fontFamily: "var(--font-grotesk)", fontWeight: 700, letterSpacing: "0.02em", color: "var(--ink)" }}>Berkay Doğan</Link>
@@ -83,12 +104,17 @@ export default async function SozPage({ params }: { params: Promise<{ slug: stri
 
       <article style={{ flex: 1, display: "flex", flexDirection: "column", justifyContent: "center", padding: "3rem 0" }}>
         <span aria-hidden="true" style={{ display: "block", width: "84px", height: "3px", background: "var(--accent)", marginBottom: "2rem" }} />
-        <blockquote style={{ margin: 0, fontFamily: "var(--font-serif)", fontStyle: "italic", fontWeight: 300, fontSize: soz.s.length > 100 ? "clamp(1.5rem, 4vw, 2.3rem)" : "clamp(1.9rem, 5.5vw, 3.2rem)", lineHeight: 1.4, color: "var(--ink)", textWrap: "balance" as never }}>
-          &ldquo;{soz.s}&rdquo;
+        <blockquote cite={`${SITE}${kitapSayfa}/`} style={{ margin: 0 }}>
+          <h1 style={{ margin: 0, fontFamily: "var(--font-serif)", fontStyle: "italic", fontWeight: 300, fontSize: soz.s.length > 100 ? "clamp(1.5rem, 4vw, 2.3rem)" : "clamp(1.9rem, 5.5vw, 3.2rem)", lineHeight: 1.4, letterSpacing: "normal", color: "var(--ink)", textWrap: "balance" as never }}>
+            &ldquo;{soz.s}&rdquo;
+          </h1>
         </blockquote>
         <p style={{ ...mono, color: "var(--accent-2)", marginTop: "1.75rem" }}>— Berkay Doğan</p>
-        <p style={{ marginTop: "0.5rem", fontSize: "0.9rem", color: "var(--muted)" }}>
-          <Link href={kitapSayfa} style={{ color: "var(--muted)", borderBottom: "1px solid var(--line)" }}>{kaynakMetni}</Link>
+        <p style={{ marginTop: "0.5rem", fontSize: "0.9rem", lineHeight: 1.6, color: "var(--muted)", maxWidth: "52ch" }}>
+          Berkay Doğan&apos;ın{" "}
+          <Link href={kitapSayfa} style={{ color: "var(--ink)", borderBottom: "1px solid var(--accent)" }}>{kaynak.tamAd}</Link>{" "}
+          ({kaynak.tur}, {YAYINEVI}, {kaynak.yil}) kitabından{soz.p ? `, s. ${soz.p}` : ""}.{" "}
+          <Link href={kitapSayfa} style={{ ...mono, fontSize: "0.62rem", color: "var(--accent-2)", whiteSpace: "nowrap" }}>Kitap sayfası →</Link>
         </p>
 
         <div style={{ display: "flex", gap: "0.5rem", flexWrap: "wrap", marginTop: "1.5rem" }}>
@@ -110,8 +136,8 @@ export default async function SozPage({ params }: { params: Promise<{ slug: stri
       </article>
 
       {ilgili.length > 0 && (
-        <section style={{ borderTop: "1px solid var(--line)", paddingTop: "1.75rem", marginBottom: "1.5rem" }} aria-label="İlgili sözler">
-          <h2 style={{ ...mono, fontSize: "0.66rem", color: "var(--muted)", marginBottom: "1rem" }}>İlgili sözler</h2>
+        <section style={{ borderTop: "1px solid var(--line)", paddingTop: "1.75rem", marginBottom: "1.5rem" }} aria-labelledby="benzer-sozler">
+          <h2 id="benzer-sozler" style={{ ...mono, fontSize: "0.66rem", color: "var(--muted)", marginBottom: "1rem" }}>Benzer sözler</h2>
           <ul style={{ listStyle: "none", margin: 0, padding: 0, display: "flex", flexDirection: "column", gap: "0.9rem" }}>
             {ilgili.map((o) => (
               <li key={sozSlug(o.s)}>
@@ -125,6 +151,14 @@ export default async function SozPage({ params }: { params: Promise<{ slug: stri
               </li>
             ))}
           </ul>
+          <p style={{ display: "flex", gap: "0.4rem 1rem", flexWrap: "wrap", marginTop: "1.25rem" }}>
+            {soz.t.map((tema) => (
+              <Link key={tema} href={`/tema/${tema}`} style={{ ...mono, fontSize: "0.6rem", color: "var(--accent-2)" }}>
+                Tüm {TEMA_ADI[tema]} sözleri →
+              </Link>
+            ))}
+            <Link href="/sozler" style={{ ...mono, fontSize: "0.6rem", color: "var(--muted)" }}>Berkay Doğan sözleri →</Link>
+          </p>
         </section>
       )}
 

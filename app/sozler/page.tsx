@@ -3,15 +3,20 @@ import Link from "next/link";
 import { SOZLER, sozSlug, KITAP_ADI, TEMA_ADI, TEMALAR } from "@/lib/sozler";
 import { BreadcrumbSchema } from "@/components/Schema";
 import { Reveal } from "@/components/Kabuk";
+import { PERSON_ID } from "@/lib/site";
+
+const SAYI = SOZLER.length;
+const SITE = "https://www.berkaydogan.co";
 
 export const metadata: Metadata = {
-  title: { absolute: "Berkay Doğan Sözleri — 200 Söz" },
-  description: "Berkay Doğan'ın Mürekkep ve Köz ile Tasfiye kitaplarından 200 söz — temalara göre: umut, yalnızlık, aşk, özgürlük, kimlik, yüzleşme ve daha fazlası.",
+  title: { absolute: `Berkay Doğan Sözleri — ${SAYI} Söz, Kaynağıyla` },
+  description: `Berkay Doğan sözleri: Mürekkep ve Köz (şiir, 2025) ve Tasfiye (deneme, 2026) kitaplarından ${SAYI} söz — umut, yalnızlık, aşk, özgürlük, kimlik ve daha fazlası.`,
+  keywords: ["Berkay Doğan sözleri", "Mürekkep ve Köz sözleri", "Tasfiye sözleri", "şiir sözleri", "anlamlı sözler"],
   alternates: { canonical: "/sozler" },
   openGraph: {
     title: "Berkay Doğan Sözleri",
-    description: "İki kitaptan 200 söz — her birinin kendi sayfası ve paylaşım kartı.",
-    url: "https://www.berkaydogan.co/sozler",
+    description: `İki kitaptan ${SAYI} söz — her birinin kendi sayfası ve paylaşım kartı.`,
+    url: `${SITE}/sozler/`,
     type: "website",
   },
 };
@@ -22,17 +27,37 @@ export default function SozlerPage() {
   return (
     <main style={{ maxWidth: "860px", margin: "0 auto", padding: "clamp(3rem, 8vh, 6rem) clamp(1.25rem, 5vw, 3.25rem) 6rem" }}>
       <BreadcrumbSchema name="Sözler" path="/sozler/" />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "CollectionPage",
+            "@id": `${SITE}/sozler/#sayfa`,
+            url: `${SITE}/sozler/`,
+            name: "Berkay Doğan Sözleri",
+            inLanguage: "tr",
+            about: { "@id": PERSON_ID },
+            isPartOf: { "@id": `${SITE}/#website` },
+            hasPart: TEMALAR.map((tema) => ({ "@type": "CollectionPage", name: `${TEMA_ADI[tema]} sözleri`, url: `${SITE}/tema/${tema}/` })),
+          }).replace(/</g, "\\u003c"),
+        }}
+      />
       <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "clamp(3rem, 8vh, 5rem)", flexWrap: "wrap", gap: "1rem" }}>
         <Link href="/" style={{ fontFamily: "var(--font-grotesk)", fontWeight: 700, letterSpacing: "0.02em", color: "var(--ink)" }}>Berkay Doğan</Link>
         <Link href="/" style={{ ...mono, fontSize: "0.72rem", letterSpacing: "0.14em", color: "var(--muted)", borderBottom: "1px solid var(--accent)", paddingBottom: "2px" }}>← berkaydogan.co</Link>
       </div>
 
       <span style={{ display: "inline-flex", alignItems: "center", gap: "0.6rem", ...mono, letterSpacing: "0.26em", color: "var(--ink)" }}>
-        <span style={{ width: "7px", height: "7px", borderRadius: "50%", background: "var(--accent)" }} />Sözler
+        <span style={{ width: "7px", height: "7px", borderRadius: "50%", background: "var(--accent)" }} />{SAYI} söz
       </span>
-      <h1 style={{ fontFamily: "var(--font-serif)", fontWeight: 500, fontSize: "clamp(2.6rem, 7vw, 5rem)", letterSpacing: "-0.015em", lineHeight: 0.95, margin: "1.5rem 0 1rem", color: "var(--ink)" }}>200 söz</h1>
+      <h1 style={{ fontFamily: "var(--font-serif)", fontWeight: 500, fontSize: "clamp(2.6rem, 7vw, 5rem)", letterSpacing: "-0.015em", lineHeight: 0.95, margin: "1.5rem 0 1rem", color: "var(--ink)" }}>Berkay Doğan sözleri</h1>
       <p style={{ fontFamily: "var(--font-serif)", fontStyle: "italic", fontWeight: 300, fontSize: "clamp(1.15rem, 2.4vw, 1.6rem)", color: "var(--muted)", maxWidth: "44ch" }}>
         İki kitaptan, sayfa sayfa seçildi. Her sözün kendi sayfası, kendi kartı var — tıkla, indir, paylaş.
+      </p>
+      <p style={{ marginTop: "1rem", fontSize: "0.92rem", lineHeight: 1.6, color: "var(--muted)", maxWidth: "60ch" }}>
+        Kaynaklar: <Link href="/kitaplar/murekkep-ve-koz" style={{ color: "var(--ink)", borderBottom: "1px solid var(--line)" }}>Mürekkep ve Köz</Link> (şiir, 2025) ve{" "}
+        <Link href="/kitaplar/tasfiye" style={{ color: "var(--ink)", borderBottom: "1px solid var(--line)" }}>Tasfiye</Link> (deneme, 2026) — İskenderiye Yayınları.
       </p>
 
       {/* Tema çipleri */}

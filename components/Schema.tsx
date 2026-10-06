@@ -108,6 +108,7 @@ export function MurekkepBookSchema() {
       data={{
         "@context": "https://schema.org",
         "@type": "Book",
+        "@id": `${SITE}/kitaplar/murekkep-ve-koz/#book`,
         name: "Mürekkep ve Köz: Bir Şairin Hesabı",
         author: AUTHOR_REF,
         publisher: { "@type": "Organization", name: "İskenderiye Yayınları" },
@@ -136,6 +137,7 @@ export function TasfiyeBookSchema() {
       data={{
         "@context": "https://schema.org",
         "@type": "Book",
+        "@id": `${SITE}/kitaplar/tasfiye/#book`,
         name: "Tasfiye",
         author: AUTHOR_REF,
         publisher: { "@type": "Organization", name: "İskenderiye Yayınları" },
