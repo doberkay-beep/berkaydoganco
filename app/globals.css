@@ -404,3 +404,20 @@ g[tabindex]:focus-visible { outline: 3px solid var(--accent-2); outline-offset: 
 /* Ana sayfa Keşfet şeridi */
 .cg-pill{transition:border-color .25s ease,color .25s ease,transform .25s ease}
 .cg-pill:hover{border-color:var(--accent-2);color:var(--accent-2);transform:translateY(-2px)}
+
+/* BASINDA DUVARI */
+.bd-duvar{display:grid;gap:1rem;grid-template-columns:repeat(auto-fill,minmax(260px,1fr))}
+.bd-kart{display:flex;flex-direction:column;padding:1.4rem 1.5rem;border:1px solid var(--line);border-radius:14px;background:var(--bg-2);text-decoration:none;color:inherit;transition:border-color .25s ease,transform .25s ease}
+a.bd-kart:hover{border-color:var(--accent-2);transform:translateY(-3px)}
+.bd-nabiz{display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 0 var(--accent);animation:bdNabiz 1.8s ease-out infinite}
+@keyframes bdNabiz{0%{box-shadow:0 0 0 0 color-mix(in srgb,var(--accent) 60%,transparent)}100%{box-shadow:0 0 0 9px transparent}}
+@media (prefers-reduced-motion:reduce){.bd-nabiz{animation:none}}
+
+/* ŞU AN BANDI — ana sayfa */
+.sa-band{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));border-block:1px solid var(--line);margin:0 clamp(1.25rem,4vw,3.25rem) clamp(2rem,5vh,3rem)}
+.sa-hucre{display:block;padding:1.2rem 1.25rem 1.3rem;text-decoration:none;color:inherit;transition:background .25s ease}
+.sa-hucre + .sa-hucre{border-left:1px solid var(--line)}
+.sa-hucre:hover{background:var(--bg-2)}
+.sa-not{display:-webkit-box!important;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+@media (max-width:640px){.sa-hucre + .sa-hucre{border-left:none;border-top:1px solid var(--line)}.sa-hucre{padding-inline:0}}
+.os-grid{display:grid;gap:1rem;grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}

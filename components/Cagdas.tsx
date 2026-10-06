@@ -5,6 +5,8 @@ import {
   RETAILERS, VERSES, type Lang, type Copy,
 } from "@/lib/site";
 import { GununKozu } from "./GununKozu";
+import { SuAnBandi } from "./SuAnBandi";
+import { OkurSesi } from "./OkurSesi";
 import { Kabuk, Reveal } from "./Kabuk";
 import { Folio, Masthead } from "./Dergi";
 
@@ -92,6 +94,7 @@ export function Cagdas() {
                 ["/posterler", tr ? "Posterler" : "Posters"],
                 ["/video", tr ? "İzle & Dinle" : "Watch & Listen"],
                 ["/yazilar", tr ? "Yazılar" : "Writing"],
+                ["/notlar", tr ? "Gece Notları" : "Night Notes"],
                 ["/press", tr ? "Basın Odası" : "Press Room"],
                 ["https://necaliyor.co", tr ? "ŞİMDİ radyo ↗" : "ŞİMDİ radio ↗", true],
               ];
@@ -111,6 +114,9 @@ export function Cagdas() {
                 </nav>
               );
             })()}
+
+            {/* ŞU AN — son basın çıkışı · ŞİMDİ canlı sayaç · son gece notu */}
+            <SuAnBandi lang={lang} />
 
             {/* GÜNÜN KÖZÜ */}
             <GununKozu t={t.kozu} verses={VERSES} />
@@ -181,10 +187,19 @@ export function Cagdas() {
               </Reveal>
             </section>
 
+            {/* OKUR SESİ — gerçek okur yorumları */}
+            <section id="okurlar" className="cg-section">
+              <div style={{ maxWidth: "1100px", margin: "0 auto" }}>
+                <Reveal><Folio no="03">{t.reviews.label}</Folio></Reveal>
+                <Reveal delay={0.05} as="h2" className="ed-display" style={{ fontSize: "clamp(2rem, 4.6vw, 3.4rem)", marginTop: "1.5rem", marginBottom: "clamp(2rem, 5vh, 3rem)" }}>{t.reviews.heading}</Reveal>
+                <OkurSesi lang={lang} />
+              </div>
+            </section>
+
             {/* İLETİŞİM */}
             <section id="contact" className="cg-section" style={{ background: "var(--bg-2)" }}>
               <div style={{ maxWidth: "1100px", margin: "0 auto" }}>
-                <Reveal><Folio no="03">{t.contact.label}</Folio></Reveal>
+                <Reveal><Folio no="04">{t.contact.label}</Folio></Reveal>
                 <Reveal delay={0.06} as="p" className="ed-display" style={{ margin: "1.75rem 0 2.5rem", fontSize: "clamp(1.9rem, 5vw, 3.8rem)", lineHeight: 1.15, maxWidth: "20ch" }}>{t.contact.line}</Reveal>
                 <Reveal delay={0.12}>
                   <a href={`mailto:${EMAIL}`} className="cg-huge" style={{ display: "inline-block", fontSize: "clamp(1.4rem, 3.5vw, 2.6rem)", color: "var(--ink)", letterSpacing: "-0.02em" }}>{EMAIL}</a>

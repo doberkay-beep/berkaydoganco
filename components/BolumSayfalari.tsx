@@ -1,6 +1,8 @@
 "use client";
 
 import { REVIEWS, MEDIA, PLAYLISTS, type Lang, type Copy } from "@/lib/site";
+import { BasinDuvari } from "./BasinDuvari";
+import { Masada } from "./Masada";
 import { Kabuk, Reveal } from "./Kabuk";
 import { Folio } from "./Dergi";
 import { OkurMektubu } from "./OkurMektubu";
@@ -52,6 +54,7 @@ export function HakkimdaSayfa() {
                     );
                   })}
                 </Reveal>
+                <Masada lang={lang} />
               </div>
               <div style={{ display: "flex", flexDirection: "column", gap: "1.5rem" }}>
                 {t.about.paras.map((p, i) => (
@@ -76,20 +79,13 @@ export function HakkimdaSayfa() {
               </div>
               <Reveal delay={0.1} style={{ marginTop: "clamp(3rem, 6vh, 4.5rem)", borderTop: "1px solid var(--line)", paddingTop: "2rem" }}>
                 <span style={{ display: "block", fontSize: "0.68rem", letterSpacing: "0.22em", textTransform: "uppercase", color: "var(--muted)", marginBottom: "1.25rem" }}>{t.recognition.pressLabel}</span>
-                <div style={{ display: "flex", flexDirection: "column", gap: "0.9rem" }}>
-                  {t.recognition.press.map((p) => (
-                    <a key={p.url} href={p.url} target="_blank" rel="noopener noreferrer" className="cg-press-row" style={{ display: "flex", gap: "1rem", alignItems: "baseline", flexWrap: "wrap" }}>
-                      <span style={{ fontFamily: "var(--font-grotesk)", fontWeight: 500, fontSize: "1.05rem", minWidth: "9ch" }}>{p.name}</span>
-                      <span style={{ color: "var(--muted)", fontSize: "0.92rem" }}>{p.detail} <span style={{ color: "var(--accent-2)" }}>↗</span></span>
-                    </a>
-                  ))}
-                </div>
+                <BasinDuvari lang={lang} />
               </Reveal>
             </div>
           </section>
 
           {/* OKUR YORUMLARI */}
-          <section className="cg-section" style={{ background: "var(--bg-2)" }}>
+          <section id="okurlar" className="cg-section" style={{ background: "var(--bg-2)" }}>
             <div style={{ maxWidth: "1150px", margin: "0 auto" }}>
               <Reveal><Folio no="02">{t.reviews.label}</Folio></Reveal>
               <Reveal delay={0.05} as="h2" className="ed-display" style={{ fontSize: "clamp(2.2rem, 5vw, 3.8rem)", marginTop: "1.5rem", marginBottom: "clamp(2.5rem, 6vh, 4rem)" }}>{t.reviews.heading}</Reveal>
@@ -97,7 +93,7 @@ export function HakkimdaSayfa() {
                 {REVIEWS.map((r, i) => (
                   <Reveal key={i} delay={(i % 3) * 0.06} className="cg-review-card">
                     <blockquote style={{ fontFamily: "var(--font-serif)", fontStyle: "italic", fontWeight: 400, fontSize: "1.1rem", lineHeight: 1.55, color: "var(--ink)" }}>&ldquo;{r.text}&rdquo;</blockquote>
-                    <span style={{ marginTop: "1.25rem", fontSize: "0.66rem", letterSpacing: "0.18em", textTransform: "uppercase", color: "var(--accent-2)" }}>{r.source}</span>
+                    <span style={{ marginTop: "1.25rem", fontSize: "0.66rem", letterSpacing: "0.18em", textTransform: "uppercase", color: "var(--accent-2)" }}>{r.source} · {r.kitap}</span>
                   </Reveal>
                 ))}
               </div>

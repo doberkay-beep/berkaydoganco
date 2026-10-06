@@ -211,6 +211,7 @@ export function Kabuk({ children }: { children: (lang: Lang, t: Copy) => React.R
             <a href="/kitaplar">{t.nav.books}</a>
             <a href="/sozler">{t.nav.sozler}</a>
             <a href="/yazilar">{t.nav.writing}</a>
+            <a href="/notlar">{lang === "tr" ? "Gece Notları" : "Night Notes"}</a>
             <a href="/sozluk">{lang === "tr" ? "Kavramlar Sözlüğü" : "Lexicon"}</a>
           </div>
           <div>

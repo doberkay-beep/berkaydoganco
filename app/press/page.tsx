@@ -4,7 +4,11 @@ import { site, EMAIL, INSTAGRAM_URL, YOUTUBE_URL, SUBSTACK_URL } from "@/lib/sit
 import { KITAPLAR } from "@/lib/kitaplar";
 import { KITAP_ADI } from "@/lib/sozler";
 import { KopyalaMetin } from "@/components/KopyalaMetin";
-import { EKRAN } from "@/lib/basinda";
+import { ALINTILAR, ALINTI_KAYNAK } from "@/lib/basinda";
+import { BIO_KISA_TR, BIO_ORTA_TR, BIO_KISA_EN, BIO_ORTA_EN, KUNYE, RAKAMLAR, KONULAR } from "@/lib/basinKiti";
+import { BasinDuvari } from "@/components/BasinDuvari";
+import { CanliSimdiKutu } from "@/components/CanliSimdi";
+import { OkurSesi } from "@/components/OkurSesi";
 import { Muhur } from "@/components/Muhur";
 import { BreadcrumbSchema } from "@/components/Schema";
 
@@ -22,32 +26,8 @@ export const metadata: Metadata = {
 
 /* ---- Veri ---- */
 
-const BIO_KISA_TR = "Berkay Doğan, İstanbul'da yaşayan şair ve yazar; Mürekkep ve Köz (şiir, 2025) ile Tasfiye (deneme, 2026) kitaplarının yazarı ve Türkiye'nin radyolarında o an ne çaldığını canlı gösteren ŞİMDİ'nin (necaliyor.co) kurucusudur.";
-const BIO_ORTA_TR = "Berkay Doğan, İstanbul'da yaşayan şair ve yazardır. 2017'de, on yedi yaşında yazmaya başladı; sekiz yıl sessizce yazdıktan sonra on ay içinde iki kitap, bir kısa film ve bir radyo platformu çıkardı. İlk kitabı Mürekkep ve Köz (İskenderiye Yayınları, Aralık 2025) Trendyol'un şiir kategorisinde en çok ziyaret edilen kitap oldu ve 1000Kitap'ta 10/10 okur puanı aldı. İkinci kitabı Tasfiye (deneme, Ağustos 2026) okuru sahneye kurulan bir mahkemede yüzleşmeye çağırıyor; metinleri kitaptan, sesi yazardan olan TASFİYE: Film (8 dk) Eylül 2026'da YouTube'da yayımlandı. Doğan, Türkiye'nin radyolarında o an ne çaldığını gösteren ve sayan ŞİMDİ'nin (necaliyor.co) kurucusudur; Şairin Hesabı podcast'ini de yayınlıyor.";
-const BIO_KISA_EN = "Berkay Doğan is a poet and writer based in Istanbul, the author of Mürekkep ve Köz (poetry, 2025) and Tasfiye (essays, 2026), and the founder of ŞİMDİ (necaliyor.co), a live view of what Turkey's radio stations are playing right now.";
-const BIO_ORTA_EN = "Berkay Doğan is a poet and writer based in Istanbul. He began writing in 2017, at seventeen; after eight quiet years, he released two books, a short film and a radio platform within ten months. His debut poetry collection Mürekkep ve Köz (İskenderiye, December 2025) became the most visited title in Trendyol's poetry category and holds a 10/10 reader rating on 1000Kitap. His second book, the essay collection Tasfiye (August 2026), puts the reader in a courtroom of self-reckoning; its short film, TASFİYE: Film (8 min, text from the book, narrated by the author), was released on YouTube in September 2026. He is the founder of ŞİMDİ (necaliyor.co), which shows and counts what is playing right now across Turkey's radio stations, and hosts the podcast Şairin Hesabı.";
 
-const KUNYE: { k: string; v: string }[] = [
-  { k: "Ad", v: "Berkay Doğan" },
-  { k: "Unvan", v: "Şair, yazar · ŞİMDİ'nin kurucusu" },
-  { k: "Şehir", v: "İstanbul, Türkiye" },
-  { k: "Yayınevi", v: "İskenderiye Yayınları" },
-  { k: "Kitaplar", v: "Mürekkep ve Köz (şiir, 2025) · Tasfiye (deneme, 2026)" },
-  { k: "Film", v: "TASFİYE: Film — kısa film, 8 dk (YouTube, Eylül 2026)" },
-  { k: "Radyo", v: "ŞİMDİ — Türkiye radyolarının canlı akışı ve sayımı (necaliyor.co)" },
-  { k: "Podcast", v: "Şairin Hesabı (Spotify)" },
-  { k: "Web", v: "berkaydogan.co · Substack: doberkay.substack.com" },
-  { k: "İletişim", v: EMAIL },
-];
 
-const RAKAMLAR: { deger: string; aciklama: string }[] = [
-  { deger: "#1", aciklama: "Trendyol şiir — en çok ziyaret edilen: Mürekkep ve Köz" },
-  { deger: "10/10", aciklama: "1000Kitap okur puanı" },
-  { deger: "No. 51", aciklama: "Valsanat dergisinde yayın" },
-  { deger: "2", aciklama: "kitap — şiir + deneme" },
-  { deger: "200", aciklama: "söz: her birinin kendi sayfası ve paylaşım kartı" },
-  { deger: "8 yıl", aciklama: "ilk dizeden ilk kitaba (2017 → 2025)" },
-];
 
 const GORSELLER: { ad: string; dosya: string; not: string }[] = [
   { ad: "Yazar portresi", dosya: "/images/portre.jpg", not: "S&B · JPG" },
@@ -59,20 +39,12 @@ const GORSELLER: { ad: string; dosya: string; not: string }[] = [
   { ad: "BD mührü — vektör", dosya: "/muhur.svg", not: "SVG" },
 ];
 
-const KONULAR: string[] = [
-  "Sekiz yıl sessizlik, on ayda iki kitap, bir film ve bir radyo: bir yazarın hızlanan yılı",
-  "Bir şair Türkiye'nin radyolarını saymaya başladı: ŞİMDİ ve aylık radyo endeksi",
-  "Okurunu sanık koltuğuna oturtan kitap: Tasfiye'nin mahkeme konsepti",
-  "Kitaptan filme: metni kitaptan, sesi yazardan olan TASFİYE: Film",
-  "Şiirden denemeye geçiş: Mürekkep ve Köz'den Tasfiye'ye",
-  "Sosyal medya çağında derinlik: 'boş teneke' eleştirisi",
-];
 
 
 
 const ICINDEKILER: [string, string][] = [
   ["#kunye", "Künye"], ["#biyografi", "Biyografi"], ["#kitaplar", "Kitaplar"],
-  ["#rakamlar", "Rakamlarla"], ["#gorseller", "Görseller"], ["#basinda", "Basında"],
+  ["#rakamlar", "Rakamlarla"], ["#gorseller", "Görseller"], ["#basinda", "Basında"], ["#okurlar", "Okurlardan"], ["#alintilar", "Alıntılar"],
   ["#konular", "Söyleşi konuları"],
   ["#english", "English"], ["#iletisim", "İletişim"],
 ];
@@ -112,6 +84,17 @@ export default function PressPage() {
       <p style={{ fontFamily: "var(--font-serif)", fontStyle: "italic", fontWeight: 300, fontSize: "clamp(1.15rem, 2.4vw, 1.6rem)", color: "var(--muted)", maxWidth: "44ch" }}>
         Bir gazetecinin ihtiyaç duyabileceği her şey: künye, biyografiler, görseller, konular. Krediyle kullanım serbesttir.
       </p>
+
+      {/* BASIN KİTİ — tek tık (scripts/basin-kiti.mts üretir) */}
+      <div style={{ display: "flex", flexWrap: "wrap", gap: "0.75rem", marginTop: "2rem" }}>
+        <a href="/basin/berkay-dogan-basin-kiti.zip" download className="cg-pill" style={{ fontFamily: "var(--font-grotesk)", fontWeight: 600, fontSize: "0.92rem", padding: "0.85rem 1.4rem", borderRadius: "100px", background: "var(--accent)", color: "var(--accent-ink)", textDecoration: "none" }}>
+          Basın kitini indir · ZIP ↓
+        </a>
+        <a href="/basin/berkay-dogan-basin-bulteni.pdf" target="_blank" rel="noopener" className="cg-pill" style={{ fontFamily: "var(--font-grotesk)", fontWeight: 500, fontSize: "0.92rem", padding: "0.85rem 1.4rem", borderRadius: "100px", border: "1px solid var(--line)", color: "var(--ink)", textDecoration: "none" }}>
+          Tek sayfa bülten · PDF ↗
+        </a>
+      </div>
+      <p style={{ marginTop: "0.7rem", fontSize: "0.8rem", color: "var(--muted)" }}>ZIP: biyografiler (TR/EN), künye, alıntılar, basın listesi, portre, kapaklar, mühür ve bülten.</p>
 
       {/* İçindekiler */}
       <nav aria-label="İçindekiler" style={{ display: "flex", gap: "0.5rem", flexWrap: "wrap", marginTop: "2rem" }}>
@@ -184,7 +167,7 @@ export default function PressPage() {
       {/* RAKAMLAR */}
       <section id="rakamlar" style={secStil}>
         <p style={secBaslik}>Rakamlarla</p>
-        <div style={{ display: "grid", gap: "1.25rem", gridTemplateColumns: "repeat(auto-fit, minmax(150px, 1fr))" }}>
+        <div style={{ display: "grid", gap: "1.25rem", gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 240px), 1fr))" }}>
           {RAKAMLAR.map((r) => (
             <div key={r.aciklama} style={{ borderTop: "2px solid var(--accent)", paddingTop: "0.9rem" }}>
               <span style={{ display: "block", fontFamily: "var(--font-grotesk)", fontWeight: 700, fontSize: "clamp(1.8rem, 4vw, 2.6rem)", lineHeight: 1, color: "var(--accent-2)", letterSpacing: "-0.03em" }}>{r.deger}</span>
@@ -192,6 +175,7 @@ export default function PressPage() {
             </div>
           ))}
         </div>
+        <CanliSimdiKutu />
       </section>
 
       {/* GÖRSELLER */}
@@ -216,25 +200,31 @@ export default function PressPage() {
         <p style={{ marginTop: "1.25rem", fontSize: "0.82rem", color: "var(--muted)" }}>Tüm görseller haber ve tanıtım amaçlı kullanım için serbesttir — kredi: Berkay Doğan / berkaydogan.co</p>
       </section>
 
-      {/* BASINDA */}
+      {/* BASINDA — duvar */}
       <section id="basinda" style={secStil}>
-        <p style={secBaslik}>Basında & platformlarda</p>
-        {EKRAN.length > 0 && (
-          <div style={{ display: "flex", flexDirection: "column", gap: "0.9rem", marginBottom: "1.4rem" }}>
-            {EKRAN.map((e) => (
-              <a key={e.tarihISO + e.kanal} href={e.link || "#"} target={e.link ? "_blank" : undefined} rel="noopener noreferrer" className="cg-press-row" style={{ display: "flex", gap: "1rem", alignItems: "baseline", flexWrap: "wrap" }}>
-                <span style={{ fontFamily: "var(--font-grotesk)", fontWeight: 500, fontSize: "1.02rem", minWidth: "9ch", color: "var(--ink)" }}>{e.kanal}</span>
-                <span style={{ fontSize: "0.9rem", color: "var(--muted)" }}>{e.baslik} · {e.tur === "tv" ? "TV" : e.tur} · {new Date(e.tarihISO).toLocaleDateString("tr-TR", { month: "long", year: "numeric" })}</span>
-              </a>
-            ))}
-          </div>
-        )}
-        <div style={{ display: "flex", flexDirection: "column", gap: "0.9rem" }}>
-          {site.tr.recognition.press.map((p) => (
-            <a key={p.url} href={p.url} target="_blank" rel="noopener noreferrer" className="cg-press-row" style={{ display: "flex", gap: "1rem", alignItems: "baseline", flexWrap: "wrap" }}>
-              <span style={{ fontFamily: "var(--font-grotesk)", fontWeight: 500, fontSize: "1.02rem", minWidth: "9ch", color: "var(--ink)" }}>{p.name}</span>
-              <span style={{ color: "var(--muted)", fontSize: "0.9rem" }}>{p.detail} <span style={{ color: "var(--accent-2)" }}>↗</span></span>
-            </a>
+        <p style={secBaslik}>Basında</p>
+        <BasinDuvari lang="tr" />
+      </section>
+
+      {/* OKURLARDAN */}
+      <section id="okurlar" style={secStil}>
+        <p style={secBaslik}>Okurlardan</p>
+        <OkurSesi lang="tr" adet={99} tumuLink={false} />
+      </section>
+
+      {/* ALINTILAR */}
+      <section id="alintilar" style={secStil}>
+        <p style={secBaslik}>Alıntılanabilir cümleler</p>
+        <p style={{ fontSize: "0.9rem", color: "var(--muted)", marginBottom: "1.5rem", maxWidth: "62ch" }}>
+          Berkay Doğan&apos;ın kendi sözleri, harfi harfine. Kaynak:{" "}
+          <a href={ALINTI_KAYNAK.url} target="_blank" rel="noopener noreferrer" style={{ color: "var(--accent-2)" }}>{ALINTI_KAYNAK.ad} ↗</a>
+        </p>
+        <div style={{ display: "grid", gap: "0.9rem", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))" }}>
+          {ALINTILAR.map((a) => (
+            <figure key={a} style={{ margin: 0, display: "flex", flexDirection: "column", gap: "0.9rem", justifyContent: "space-between", padding: "1.3rem 1.4rem", borderLeft: "2px solid var(--accent)", background: "var(--bg-2)", borderRadius: "0 10px 10px 0" }}>
+              <blockquote style={{ margin: 0, fontFamily: "var(--font-serif)", fontStyle: "italic", fontSize: "1.12rem", lineHeight: 1.45, color: "var(--ink)" }}>&ldquo;{a}&rdquo;</blockquote>
+              <KopyalaMetin metin={`“${a}” — Berkay Doğan`} />
+            </figure>
           ))}
         </div>
       </section>

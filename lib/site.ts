@@ -40,12 +40,13 @@ export const RETAILERS: { name: string; url: string }[] = [
 ];
 
 // Okur yorumları orijinal dilinde (Türkçe) — çeviri anlamı bozar
-export const REVIEWS: { text: string; source: string }[] = [
-  { text: "Bir genç şairden beklenmedik keskinlikte ve şaşırtıcı derecede güzel. Genç bir ruhun ülkemizde nasıl ruh halleri zincirinden geçtiğinin kanıtı.", source: "Trendyol" },
-  { text: "Kelimelerin köz gibi yavaşça içe işlediği bir şiir yolculuğu. Sade ama güçlü bir anlatım. Uzun zamandır bu kadar dokunan şiirler okumamıştım.", source: "Trendyol" },
-  { text: "İlk başta eğreti gibi gelen gizemli şiirlerin arasına serpiştirilmiş, hayrete düşüren güzellikte şiirler. İlerledikçe kilim gibi dokunmuş sayfalar. Filozof olsan yadırgamazdım. Mükemmel.", source: "Reddit · r/Kitap" },
-  { text: "Harika bir kitap, şimdiye kadar okuduğum şiir kitaplarından çok farklı. Okumak isteyenlere tavsiye ederim.", source: "Trendyol" },
-  { text: "Muazzam bir kitap. Bu kalemden çıkacak yeni eserleri merakla bekliyorum.", source: "Trendyol" },
+export const REVIEWS: { text: string; source: string; kitap: string }[] = [
+  // Her kayıt TEK okurun yorumu (6 Eki 2026'da Trendyol'la karşılaştırıldı; iki yorumu birleştiren eski kayıtlar ayrıldı).
+  { text: "Mürekkep ve Köz, kelimelerin köz gibi yavaşça içe işlediği bir şiir yolculuğu. Sade ama güçlü bir anlatım. Uzun zamandır bu kadar dokunan şiirler okumamıştım.", source: "Trendyol", kitap: "Mürekkep ve Köz" },
+  { text: "İlk başta eğreti gibi gelen gizemli şiirlerin arasına serpiştirilmiş, hayrete düşüren güzellikte şiirler. İlerledikçe kilim gibi dokunmuş sayfalar. Filozof olsan yadırgamazdım. Mükemmel.", source: "Reddit · r/Kitap", kitap: "Mürekkep ve Köz" },
+  { text: "Genç bir ruhun ülkemizde nasıl ruh halleri zincirinden geçtiğinin kanıtı, bu kalemden çıkacak yeni eserleri merakla bekliyorum.", source: "Trendyol", kitap: "Mürekkep ve Köz" },
+  { text: "Bir genç şairden beklenmedik keskinlikte ve şaşırtıcı derecede güzel.", source: "Trendyol", kitap: "Mürekkep ve Köz" },
+  { text: "Harika bir kitap, şimdiye kadar okuduğum şiir kitaplarından çok farklı. Okumak isteyenlere tavsiye ederim.", source: "Trendyol", kitap: "Mürekkep ve Köz" },
 ];
 
 export const MEDIA = {
@@ -77,7 +78,7 @@ export type Copy = {
   hero: { role: string; line: string; sub: string; ctaBooks: string; ctaAbout: string; scroll: string };
   about: { label: string; heading: string; paras: string[]; worksLabel: string; works: { year: string; title: string; kind: string; href?: string }[] };
   books: { label: string; murekkep: Book; tasfiye: Book; countdown: string[]; epigraph: string; coverSoon: string; buyMore: string };
-  recognition: { label: string; heading: string; tiles: { value: string; label: string }[]; pressLabel: string; press: { name: string; detail: string; url: string }[] };
+  recognition: { label: string; heading: string; tiles: { value: string; label: string }[]; pressLabel: string };
   reviews: { label: string; heading: string };
   kozu: { label: string; share: string; copied: string; universe: string };
   media: { label: string; heading: string; podcast: string; podcastDesc: string; video: string };
@@ -145,14 +146,6 @@ export const site: Record<Lang, Copy> = {
         { value: "51", label: "Valsanat Magazine — Issue 51, poem published" },
       ],
       pressLabel: "In the press",
-      press: [
-        { name: "Şiir Rafım", detail: "Poem — “Geleceğime Âşığım”, Readers’ Poems (Oct 2026)", url: "https://www.siirrafim.art/2026/10/gelecegime-asigim-berkay-dogan-okur.html" },
-        { name: "Şiir Rafım", detail: "Author profile — “Who is Berkay Doğan?” (Oct 2026)", url: "https://www.siirrafim.art/2026/10/berkay-dogan-kimdir-kitaplari-tasfiye-murekkep-ve-koz.html" },
-        { name: "Edebiyat Magazin", detail: "Interview — “Write the true sentence, not the likeable one” (Oct 2026)", url: "https://emagazin.tv/haber/berkay-dogan-begenilecek-cumleyi-degil-dogru-cumleyi-yaz/2918" },
-        { name: "Valsanat Magazine", detail: "The poem “Ruh-u Katliam”, Issue 51", url: VALSANAT_URL },
-        { name: "Goodreads", detail: "Listed in the global author index", url: GOODREADS_URL },
-        { name: "Trendyol", detail: "#1 Most Visited in Poetry", url: TRENDYOL_URL },
-      ],
     },
     reviews: { label: "Readers", heading: "What readers say" },
     kozu: { label: "Ember of the day", share: "Share", copied: "Copied", universe: "Ember Calendar" },
@@ -216,14 +209,6 @@ export const site: Record<Lang, Copy> = {
         { value: "51", label: "Valsanat Dergisi — 51. sayı, şiir yayınlandı" },
       ],
       pressLabel: "Basında",
-      press: [
-        { name: "Şiir Rafım", detail: "Şiir — “Geleceğime Âşığım”, Okur Şiirleri (Ekim 2026)", url: "https://www.siirrafim.art/2026/10/gelecegime-asigim-berkay-dogan-okur.html" },
-        { name: "Şiir Rafım", detail: "Yazar dosyası — “Berkay Doğan Kimdir?” (Ekim 2026)", url: "https://www.siirrafim.art/2026/10/berkay-dogan-kimdir-kitaplari-tasfiye-murekkep-ve-koz.html" },
-        { name: "Edebiyat Magazin", detail: "Röportaj — “Beğenilecek cümleyi değil, doğru cümleyi yaz” (Ekim 2026)", url: "https://emagazin.tv/haber/berkay-dogan-begenilecek-cumleyi-degil-dogru-cumleyi-yaz/2918" },
-        { name: "Valsanat Dergisi", detail: "“Ruh-u Katliam” şiiri, 51. sayı", url: VALSANAT_URL },
-        { name: "Goodreads", detail: "Küresel yazar dizininde", url: GOODREADS_URL },
-        { name: "Trendyol", detail: "Şiir kategorisinde #1 En Çok Ziyaret", url: TRENDYOL_URL },
-      ],
     },
     reviews: { label: "Okurlardan", heading: "Okurlar ne diyor" },
     kozu: { label: "Günün közü", share: "Paylaş", copied: "Kopyalandı", universe: "Köz Takvimi" },

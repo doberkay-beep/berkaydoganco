@@ -3,6 +3,7 @@ import Link from "next/link";
 import { KITAPLAR } from "@/lib/kitaplar";
 import { BreadcrumbSchema } from "@/components/Schema";
 import { Reveal } from "@/components/Kabuk";
+import { Masada } from "@/components/Masada";
 
 export const metadata: Metadata = {
   title: { absolute: "Kitaplar — Berkay Doğan" },
@@ -44,6 +45,8 @@ export default function KitaplarPage() {
           </div>
         ))}
       </Reveal>
+
+      <Masada lang="tr" />
 
       <style>{`
         .kl-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 380px)); gap: clamp(1.5rem, 5vw, 4rem); margin-top: clamp(2.5rem, 6vh, 4rem); }
