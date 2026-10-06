@@ -41,10 +41,14 @@ export const RETAILERS: { name: string; url: string }[] = [
 
 // Okur yorumları orijinal dilinde (Türkçe) — çeviri anlamı bozar
 export const REVIEWS: { text: string; source: string; kitap: string }[] = [
-  // Her kayıt TEK okurun yorumu (6 Eki 2026'da Trendyol'la karşılaştırıldı; iki yorumu birleştiren eski kayıtlar ayrıldı).
+  // Her kayıt TEK okurun yorumu, aynen (6 Eki 2026'da Trendyol'la karşılaştırıldı; Berkay seçti).
   { text: "Mürekkep ve Köz, kelimelerin köz gibi yavaşça içe işlediği bir şiir yolculuğu. Sade ama güçlü bir anlatım. Uzun zamandır bu kadar dokunan şiirler okumamıştım.", source: "Trendyol", kitap: "Mürekkep ve Köz" },
+  { text: "Okurken düşündüren ve hayatı sorgulatan bir kitap. Eline ve kalemine sağlık", source: "Trendyol", kitap: "Tasfiye" },
   { text: "İlk başta eğreti gibi gelen gizemli şiirlerin arasına serpiştirilmiş, hayrete düşüren güzellikte şiirler. İlerledikçe kilim gibi dokunmuş sayfalar. Filozof olsan yadırgamazdım. Mükemmel.", source: "Reddit · r/Kitap", kitap: "Mürekkep ve Köz" },
   { text: "Genç bir ruhun ülkemizde nasıl ruh halleri zincirinden geçtiğinin kanıtı, bu kalemden çıkacak yeni eserleri merakla bekliyorum.", source: "Trendyol", kitap: "Mürekkep ve Köz" },
+  { text: "Bu kadar genç bir şairden böyle bir performans çok başarılı. muhakkak okunmalı. tebrikler.", source: "Trendyol", kitap: "Mürekkep ve Köz" },
+  { text: "İçinden geldiği gibi, genç ve anlatısı kuvvetli bir kitap! Başarılarının devamını diliyorum...", source: "Trendyol", kitap: "Mürekkep ve Köz" },
+  { text: "Zevkle okudum bitirdim. Kalemine, ellerine ve yüreğine sağlık 🧿", source: "Trendyol", kitap: "Tasfiye" },
   { text: "Bir genç şairden beklenmedik keskinlikte ve şaşırtıcı derecede güzel.", source: "Trendyol", kitap: "Mürekkep ve Köz" },
   { text: "Harika bir kitap, şimdiye kadar okuduğum şiir kitaplarından çok farklı. Okumak isteyenlere tavsiye ederim.", source: "Trendyol", kitap: "Mürekkep ve Köz" },
 ];
