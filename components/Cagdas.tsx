@@ -9,15 +9,12 @@ import { SuAnBandi } from "./SuAnBandi";
 import { OkurSesi } from "./OkurSesi";
 import { Kabuk, Reveal } from "./Kabuk";
 import { Folio, Masthead } from "./Dergi";
+import { KITAPLAR } from "@/lib/kitaplar";
 
 /* Ana sayfa — sade: Tasfiye bandı + hero + günün közü + kitaplar + iletişim. */
 
 // Tasfiye'nin diğer satıcıları — /git üzerinden (ölçümlü)
-const TASFIYE_KANALLAR: { name: string; git: string }[] = [
-  { name: "bkmkitap", git: "bkmkitap" },
-  { name: "KitapStore", git: "kitapstore" },
-  { name: "İskenderiye Yayınları", git: "iskenderiye" },
-];
+const TASFIYE_KANALLAR = KITAPLAR.find((k) => k.slug === "tasfiye")!.kanallar.filter((k) => k.git !== "trendyol");
 
 function TasfiyeBanner({ t }: { t: Copy }) {
   return (

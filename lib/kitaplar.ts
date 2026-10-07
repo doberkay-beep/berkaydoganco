@@ -37,6 +37,9 @@ export const GIT_HEDEFLER: Record<string, string> = {
   "bkmkitap": "https://www.bkmkitap.com/tasfiye-982681",
   "kitapstore": "https://www.kitapstore.com/urun/785011/kitap/iskenderiye-kitap/berkay-dogan/tasfiye/",
   "iskenderiye": "https://www.iskenderiyekitap.com/urun/tasfiye-berkay-dogan-9786259031248",
+  "kitapyurdu": "https://www.kitapyurdu.com/kitap/tasfiye/765322.html",
+  "hepsiburada": "https://www.hepsiburada.com/tasfiye-pm-HBC0000I0GO81",
+  "istanbulkitapcisi": "https://www.istanbulkitapcisi.com/tasfiye-1070533",
   // Mürekkep ve Köz
   "mvk-trendyol": TRENDYOL_URL,
   "mvk-bkmkitap": "https://www.bkmkitap.com/murekkep-ve-koz",
@@ -78,11 +81,15 @@ export const KITAPLAR: Kitap[] = [
       { text: "Yaşamak, biraz da geride posa bırakmaktır.", sayfa: "S. 89" },
       { text: "Biz şehri terk ettiğimizde, anılarımız o şehrin taşlarına, duvarlarına emanet edilir.", sayfa: "S. 100" },
     ],
+    // 7 Eki 2026 doğrulandı (ISBN 9786259031248). bkmkitap "Tükendi" → listeden çıktı
+    // (/git/bkmkitap yönlendirmesi duruyor); Amazon yalnız 3. taraf satıcı, liste fiyatının üstünde → eklenmedi.
     kanallar: [
       { name: "Trendyol", git: "trendyol" },
-      { name: "bkmkitap", git: "bkmkitap" },
-      { name: "KitapStore", git: "kitapstore" },
       { name: "İskenderiye Yayınları", git: "iskenderiye" },
+      { name: "Kitapyurdu", git: "kitapyurdu" },
+      { name: "Hepsiburada", git: "hepsiburada" },
+      { name: "KitapStore", git: "kitapstore" },
+      { name: "İstanbul Kitapçısı", git: "istanbulkitapcisi" },
     ],
   },
   {
