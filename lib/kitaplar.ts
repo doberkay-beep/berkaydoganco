@@ -27,6 +27,7 @@ export type Kitap = {
   tur: string;
   fiyat: string | null;  // TRY — schema Offer için
   desc: string;          // meta description — arka kapağın ilk cümlesi
+  video?: { id: string; baslik: string; ust: string; alt: string; poster: string }; // kitap sayfasındaki YouTube bloğu
 };
 
 /* /git/[kanal] hedefleri — Vercel Analytics'te her kanal ayrı sayfa görüntülemesi
@@ -81,6 +82,13 @@ export const KITAPLAR: Kitap[] = [
       { text: "Yaşamak, biraz da geride posa bırakmaktır.", sayfa: "S. 89" },
       { text: "Biz şehri terk ettiğimizde, anılarımız o şehrin taşlarına, duvarlarına emanet edilir.", sayfa: "S. 100" },
     ],
+    video: {
+      id: "N3pN0KBLu24",
+      baslik: "Tasfiye Duruşması",
+      ust: "Tasfiye Duruşması · Jüri sensin",
+      alt: "Sanık koltuğunda yazar oturuyor; savcı kitabın kendi cümlelerini okuyor. Beş iddia, beş savunma. Kararını YouTube'da yoruma yaz: beraat mı, tasfiye mi?",
+      poster: "/durusma-kapak.jpg",
+    },
     // 7 Eki 2026 doğrulandı (ISBN 9786259031248). bkmkitap "Tükendi" → listeden çıktı
     // (/git/bkmkitap yönlendirmesi duruyor); Amazon yalnız 3. taraf satıcı, liste fiyatının üstünde → eklenmedi.
     kanallar: [

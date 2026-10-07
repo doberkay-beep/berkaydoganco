@@ -1,6 +1,7 @@
 import Link from "next/link";
 import type { Kitap } from "@/lib/kitaplar";
 import { YapiskanSatinAl } from "./YapiskanSatinAl";
+import { DurusmaVideo } from "./DurusmaVideo";
 import { SOZLER, sozSlug, TEMA_ADI } from "@/lib/sozler";
 import { KAVRAMLAR, kavramSlug } from "@/lib/sozluk";
 
@@ -114,6 +115,14 @@ export function KitapSayfasi({ kitap, diger }: { kitap: Kitap; diger: Kitap }) {
           ))}
         </div>
       </section>
+
+      {/* c2. Video (Tasfiye Duruşması) */}
+      {kitap.video && (
+        <section style={{ marginTop: "clamp(3rem, 8vh, 5rem)" }}>
+          <p style={{ ...mono, color: "var(--accent-2)", marginBottom: "1rem" }}>{kitap.video.ust}</p>
+          <DurusmaVideo id={kitap.video.id} baslik={kitap.video.baslik} alt={kitap.video.alt} poster={kitap.video.poster} />
+        </section>
+      )}
 
       {/* d. Satın alma */}
       <section style={{ marginTop: "clamp(3rem, 8vh, 5rem)" }}>
