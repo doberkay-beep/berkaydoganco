@@ -144,7 +144,7 @@ export default function EnglishPage() {
                 {b.original && (
                   <figure style={{ margin: "1.1rem 0 0" }}>
                     <blockquote lang="tr" style={{ margin: 0, fontFamily: "var(--font-serif)", fontStyle: "italic", fontSize: "1rem", lineHeight: 1.5, color: "var(--muted)" }}>&ldquo;{b.original}&rdquo;</blockquote>
-                    <figcaption style={{ ...mono, fontSize: "0.56rem", color: "var(--muted)", marginTop: "0.4rem" }}>From the book, in the original Turkish</figcaption>
+                    <figcaption style={{ ...mono, fontSize: "0.56rem", color: "var(--muted)", marginTop: "0.4rem" }}>From the book, in the original Turkish{b.literally ? <> · literally: “{b.literally}”</> : null}</figcaption>
                   </figure>
                 )}
                 <Link href={`/kitaplar/${b.slug}`} hrefLang="tr" style={{ display: "inline-block", marginTop: "1.1rem", ...mono, fontSize: "0.62rem", color: "var(--accent-2)" }}>Book page (Turkish) →</Link>
@@ -228,6 +228,9 @@ export default function EnglishPage() {
       <section id="contact" style={secStil}>
         <p style={secBaslik}>Contact</p>
         <a href={`mailto:${EMAIL}`} style={{ fontFamily: "var(--font-grotesk)", fontWeight: 700, fontSize: "clamp(1.3rem, 3vw, 2rem)", letterSpacing: "-0.02em", color: "var(--ink)" }}>{EMAIL}</a>
+        <p style={{ marginTop: "1rem", fontSize: "0.95rem", lineHeight: 1.7, color: "var(--muted)", maxWidth: "60ch" }}>
+          Available for interviews in English. Translation and publishing rights: İskenderiye Yayınları — enquiries are welcome at the address above and will be forwarded.
+        </p>
         <p style={{ marginTop: "0.6rem", fontSize: "0.9rem", color: "var(--muted)" }}>Interviews, reviews, events and other enquiries.</p>
         <div style={{ display: "flex", gap: "1.75rem", marginTop: "1.5rem", flexWrap: "wrap", ...mono, fontSize: "0.72rem", letterSpacing: "0.14em", color: "var(--muted)" }}>
           <a href={INSTAGRAM_URL} target="_blank" rel="noopener noreferrer">Instagram</a>

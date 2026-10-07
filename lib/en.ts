@@ -14,6 +14,7 @@ export type EnBook = {
   isbn: string;
   blurb: string[];        // düzyazı — korpus satırı içermez
   original?: string;      // Türkçe asıl (korpustan, çevrilmeden)
+  literally?: string;     // Berkay'ın onayladığı birebir anlam notu (7 Eki 2026) — dize yine Türkçe gösterilir
 };
 
 export const EN_BOOKS: EnBook[] = [
@@ -31,6 +32,7 @@ export const EN_BOOKS: EnBook[] = [
       "Its subtitle answers the first book’s: after A Poet’s Reckoning, A Writer’s Reckoning.",
     ],
     original: "Tasfiye, yıkmak değil; temizlemektir.",
+    literally: "Tasfiye is not destroying; it is cleansing.",
   },
   {
     slug: "murekkep-ve-koz",
@@ -46,6 +48,7 @@ export const EN_BOOKS: EnBook[] = [
       "It became the most visited title in the poetry category of the Turkish e-commerce platform Trendyol and holds a 10/10 reader rating on the Turkish reading platform 1000Kitap.",
     ],
     original: "Yazmak, varoluşun en sessiz itirafıdır.",
+    literally: "Writing is the quietest confession of existence.",
   },
 ];
 
@@ -71,7 +74,7 @@ export const EN_RECOGNITION: { value: string; label: string }[] = [
 export const EN_TOPICS: string[] = [
   "Eight silent years, then two books, a film and a radio platform in ten months: a writer’s accelerating year",
   "A poet who started counting Turkey’s radio stations: ŞİMDİ and its monthly radio index",
-  "The book that puts its reader in the dock: Tasfiye’s courtroom concept",
+  "The book that puts its own author in the dock: Tasfiye’s courtroom concept",
   "From page to screen: TASFİYE: Film, with text from the book and the author’s own voice",
   "From poetry to essay: the path from Mürekkep ve Köz to Tasfiye",
   "Depth in the age of social media: the “empty can” (boş teneke) critique",

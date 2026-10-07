@@ -203,7 +203,8 @@ export function Kabuk({ children }: { children: (lang: Lang, t: Copy) => React.R
         <div className="ed-footer-grid">
           <div>
             <p className="ed-footer-motto">
-              {lang === "tr" ? "Yazmak, varoluşun en sessiz itirafıdır." : "Writing is the quietest confession of existence."}
+              <span lang="tr">Yazmak, varoluşun en sessiz itirafıdır.</span>
+              {lang !== "tr" && <span style={{ display: "block", marginTop: "0.35rem", fontSize: "0.75em", opacity: 0.75 }}>literally: “Writing is the quietest confession of existence.”</span>}
             </p>
           </div>
           <div>

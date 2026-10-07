@@ -71,7 +71,7 @@ export const PLAYLISTS: { name: string; path: string }[] = [
    Günün közü ve takvim bu düz listeden okur. */
 export { TUM_SOZLER as VERSES, SOZLER, temadan } from "./sozler";
 
-type Book = { title: string; meta: string; badge: string; desc: string; cta: string; excerpt: string };
+type Book = { title: string; meta: string; badge: string; desc: string; cta: string; excerpt: string; excerptNote?: string };
 
 export type Copy = {
   nav: { books: string; about: string; writing: string; contact: string; film: string; sozler: string };
@@ -79,7 +79,7 @@ export type Copy = {
   card: { label: string; heading: string; sub: string; random: string; download: string; hint: string };
   yazilar: { title: string; sub: string; all: string; read: string; on: string; empty: string };
   taste: string;
-  hero: { role: string; line: string; sub: string; ctaBooks: string; ctaAbout: string; scroll: string };
+  hero: { role: string; line: string; lineNote?: string; sub: string; ctaBooks: string; ctaAbout: string; scroll: string };
   about: { label: string; heading: string; paras: string[]; worksLabel: string; works: { year: string; title: string; kind: string; href?: string }[] };
   books: { label: string; murekkep: Book; tasfiye: Book; countdown: string[]; epigraph: string; coverSoon: string; buyMore: string };
   recognition: { label: string; heading: string; tiles: { value: string; label: string }[]; pressLabel: string };
@@ -112,7 +112,8 @@ export const site: Record<Lang, Copy> = {
     taste: "A taste",
     hero: {
       role: "Poet & Writer — Istanbul",
-      line: "Writing is the quietest confession of existence.",
+      line: "Yazmak, varoluşun en sessiz itirafıdır.",
+      lineNote: "literally: “Writing is the quietest confession of existence.”",
       sub: "He began writing at seventeen. For eight years he wrote in silence; then, in ten months, came two books, a film and a radio platform.",
       ctaBooks: "The books", ctaAbout: "About", scroll: "Scroll",
     },
@@ -120,7 +121,7 @@ export const site: Record<Lang, Copy> = {
       label: "About", heading: "Poet, writer, founder of ŞİMDİ",
       paras: [
         "He began writing at seventeen. For eight years he wrote in silence; then, in ten months, came two books, a film and a radio platform.",
-        "Berkay Doğan is a poet and writer based in Istanbul. For him, writing is not a choice but a necessity — the quietest confession of existence. Every day he does not write is a day he betrays himself.",
+        "Berkay Doğan is a poet and writer based in Istanbul. For him, writing is not a choice but a necessity. Every day he does not write is a day he betrays himself.",
         "He began writing in 2017, at seventeen. For most, that age is still a threshold of innocence; for him it was the moment he started to see the true face of society. Since then, what feeds him is life itself more than literature: a pair of eyes, a building riddled with holes, walking again, as a changed man, through streets he once knew.",
         "His first book, Mürekkep ve Köz: Bir Şairin Hesabı (“Ink and Ember: A Poet’s Reckoning”, 2025), was wrenched out of a suffocating solitude, national chaos and existential crisis. His second, Tasfiye (Turkish for “purge” or “cleansing”), is a critique of the existing order — a call to revive the dose of philosophy we have lost. Between the two runs a reckoning that stretches from poetry to essay.",
         "Poetry and radio are born in the same place: in listening. In 2026 he founded ŞİMDİ (necaliyor.co), which shows — and counts — what is playing right now across Turkey's radio stations: a poet chasing after sound.",
@@ -137,8 +138,8 @@ export const site: Record<Lang, Copy> = {
     },
     books: {
       label: "Books",
-      murekkep: { title: "Mürekkep ve Köz", meta: "Poetry · İskenderiye Yayınları · 2025 · in Turkish", badge: "#1 Poetry on Trendyol", desc: "Literally “Ink and Ember: A Poet’s Reckoning”. More than 200 poems written out of a suffocating solitude, national chaos and existential crisis.", cta: "Buy on Trendyol", excerpt: "Yıkılamadım, yıktım." },
-      tasfiye: { title: "Tasfiye", meta: "Essays · İskenderiye Yayınları · August 2026 · in Turkish", badge: "Out now", desc: "The curtain rises: on stage, a courtroom; in the dock, the writer himself. Not an accusation — a reckoning. From the wreckage of the modern world, a confrontation reaching toward the person who carries their own guillotine.", cta: "Buy on Trendyol", excerpt: "“görmezden gelmeyi seçtiğimiz her şeye verilmiş bir isim.”" },
+      murekkep: { title: "Mürekkep ve Köz", meta: "Poetry · İskenderiye Yayınları · 2025 · in Turkish", badge: "#1 Poetry on Trendyol", desc: "Literally “Ink and Ember: A Poet’s Reckoning”. More than 200 poems written out of a suffocating solitude, national chaos and existential crisis.", cta: "Buy on Trendyol", excerpt: "Yıkılamadım, yıktım.", excerptNote: "literally: “I could not be torn down; I tore down.”" },
+      tasfiye: { title: "Tasfiye", meta: "Essays · İskenderiye Yayınları · August 2026 · in Turkish", badge: "Out now", desc: "The curtain rises: on stage, a courtroom; in the dock, the writer himself. Not an accusation — a reckoning. From the wreckage of the modern world, a confrontation reaching toward the person who carries their own guillotine.", cta: "Buy on Trendyol", excerpt: "“görmezden gelmeyi seçtiğimiz her şeye verilmiş bir isim.”", excerptNote: "literally: “a name given to everything we choose to ignore.”" },
       countdown: ["DAYS", "HRS", "MIN"], epigraph: "görmezden gelmeyi seçtiğimiz her şeye verilmiş bir isim.", coverSoon: "Cover soon",
       buyMore: "Also available at",
     },

@@ -71,7 +71,10 @@ export function Cagdas() {
                   ))}
                 </h1>
                 <Reveal delay={0.16} as="p" className="cg-serif" style={{ fontSize: "clamp(1.4rem, 3vw, 2.1rem)", lineHeight: 1.35, maxWidth: "20ch", color: "var(--ink)" }}>
-                  {t.hero.line}
+                  <span lang="tr">{t.hero.line}</span>
+                  {t.hero.lineNote && (
+                    <span style={{ display: "block", marginTop: "0.6rem", fontFamily: "var(--font-grotesk)", fontStyle: "normal", fontSize: "0.8rem", letterSpacing: "0.02em", color: "var(--muted)" }}>{t.hero.lineNote}</span>
+                  )}
                 </Reveal>
                 <Reveal delay={0.24} as="p" style={{ marginTop: "1.5rem", fontSize: "1rem", lineHeight: 1.7, color: "var(--muted)", maxWidth: "42ch" }}>
                   {t.hero.sub}
@@ -137,6 +140,7 @@ export function Cagdas() {
                   <div className="ed-pull" style={{ fontSize: "clamp(1.15rem, 2.2vw, 1.45rem)", maxWidth: "34ch" }}>
                     <span style={{ display: "block", fontFamily: "var(--font-grotesk)", fontStyle: "normal", fontSize: "0.58rem", fontWeight: 500, letterSpacing: "0.2em", textTransform: "uppercase", color: "var(--accent-2)", marginBottom: "0.5rem" }}>{t.taste}</span>
                     <span lang="tr">{b.tasfiye.excerpt}</span>
+                    {b.tasfiye.excerptNote && <span style={{ display: "block", marginTop: "0.4rem", fontFamily: "var(--font-grotesk)", fontStyle: "normal", fontSize: "0.72rem", color: "var(--muted)" }}>{b.tasfiye.excerptNote}</span>}
                   </div>
                   <div style={{ marginTop: "0.5rem", display: "flex", gap: "0.75rem", flexWrap: "wrap" }}>
                     <a href={TASFIYE_URL} target="_blank" rel="noopener noreferrer" className="cg-btn cg-btn-fill">{b.tasfiye.cta} →</a>
@@ -172,6 +176,7 @@ export function Cagdas() {
                   <div className="ed-pull" style={{ fontSize: "clamp(1.15rem, 2.2vw, 1.45rem)", maxWidth: "34ch", margin: "0.3rem 0" }}>
                     <span style={{ display: "block", fontFamily: "var(--font-grotesk)", fontStyle: "normal", fontSize: "0.58rem", fontWeight: 500, letterSpacing: "0.2em", textTransform: "uppercase", color: "var(--accent-2)", marginBottom: "0.5rem" }}>{t.taste}</span>
                     <span lang="tr">{b.murekkep.excerpt}</span>
+                    {b.murekkep.excerptNote && <span style={{ display: "block", marginTop: "0.4rem", fontFamily: "var(--font-grotesk)", fontStyle: "normal", fontSize: "0.72rem", color: "var(--muted)" }}>{b.murekkep.excerptNote}</span>}
                   </div>
                   <div style={{ display: "flex", gap: "0.75rem", flexWrap: "wrap", marginTop: "0.5rem" }}>
                     <a href={TRENDYOL_URL} target="_blank" rel="noopener noreferrer" className="cg-btn cg-btn-fill">{b.murekkep.cta} →</a>
