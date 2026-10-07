@@ -77,7 +77,9 @@ export function PersonSchema() {
         jobTitle: "Şair ve yazar",
         disambiguatingDescription: "Türk şair ve yazar; Mürekkep ve Köz (şiir) ve Tasfiye (deneme) kitaplarının yazarı.",
         description:
-          "İstanbul'da yaşayan şair ve yazar. Kitapları: Mürekkep ve Köz (şiir) ve Tasfiye (deneme).",
+          "İstanbul'da yaşayan şair ve yazar. Kitapları: Mürekkep ve Köz (şiir, 2025) ve Tasfiye (deneme, 2026). Türkiye radyolarını canlı sayan ŞİMDİ'nin (necaliyor.co) kurucusu.",
+        birthDate: "2000",
+        alumniOf: { "@type": "CollegeOrUniversity", name: "Trakya Üniversitesi", sameAs: "https://www.wikidata.org/wiki/Q845682" },
         hasOccupation: [
           { "@type": "Occupation", name: "Yazar" },
           { "@type": "Occupation", name: "Şair" },
@@ -86,6 +88,7 @@ export function PersonSchema() {
         nationality: "TR",
         homeLocation: { "@type": "Place", name: "İstanbul, Türkiye" },
         sameAs: [
+          "https://www.wikidata.org/wiki/Q141592752",
           "https://x.com/thisisbdgn",
           INSTAGRAM_URL,
           YOUTUBE_URL,

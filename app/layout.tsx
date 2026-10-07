@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     default: "Berkay Doğan | Şair & Yazar",
     template: "%s — Berkay Doğan",
   },
-  description: "Berkay Doğan — İstanbul'da yaşayan şair ve yazar. Kitaplar: Mürekkep ve Köz ile Tasfiye.",
+  description: "Berkay Doğan — İstanbul'da yaşayan şair ve yazar; Mürekkep ve Köz (şiir, 2025) ve Tasfiye (deneme, 2026) kitaplarının yazarı, ŞİMDİ radyosunun kurucusu.",
   keywords: ["Berkay Doğan", "şair", "yazar", "İstanbul", "Tasfiye", "Mürekkep ve Köz", "Türk şiiri", "Türk edebiyatı"],
   authors: [{ name: "Berkay Doğan" }],
   creator: "Berkay Doğan",
@@ -40,7 +40,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: "Berkay Doğan — Şair & Yazar",
-    description: "İstanbul'da yaşayan şair ve yazar. Kitaplar: Mürekkep ve Köz ile Tasfiye.",
+    description: "İstanbul'da yaşayan şair ve yazar; Mürekkep ve Köz (şiir, 2025) ve Tasfiye (deneme, 2026) kitaplarının yazarı, ŞİMDİ radyosunun kurucusu.",
     url: "https://www.berkaydogan.co",
     siteName: "berkaydogan.co",
     locale: "tr_TR",

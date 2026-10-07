@@ -65,6 +65,8 @@ export function Cagdas() {
                       {[...word].map((ch, i) => (
                         <span key={i} className="cg-ign" style={{ animationDelay: `${0.15 + (wi * 6 + i) * 0.05}s` }}>{ch}</span>
                       ))}
+                      {/* Görünmez boşluk: Google iki satırı "BerkayDoğan" diye bitişik okumasın */}
+                      {wi === 0 && " "}
                     </span>
                   ))}
                 </h1>
