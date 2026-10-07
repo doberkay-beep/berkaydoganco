@@ -97,8 +97,8 @@ export const TEASER_LINES = ["Yıkılamadım, yıktım.", "Yalan yaşanmışlık
 
 export const site: Record<Lang, Copy> = {
   en: {
-    nav: { books: "Books", about: "About", writing: "Writing", contact: "Contact", film: "Film", sozler: "Verses" },
-    banner: { line: "Tasfiye is out — not to destroy; to cleanse.", buy: "Get the book", watch: "Watch the film" },
+    nav: { books: "Books", about: "About", writing: "Writing", contact: "Contact", film: "Film", sozler: "Quotes" },
+    banner: { line: "Tasfiye, the new book of essays, is out.", buy: "Get the book", watch: "Watch the film" },
     card: {
       label: "Quote card", heading: "Pick a verse, share it",
       sub: "Choose one of the verses and download it as a card.",
@@ -113,41 +113,41 @@ export const site: Record<Lang, Copy> = {
     hero: {
       role: "Poet & Writer — Istanbul",
       line: "Writing is the quietest confession of existence.",
-      sub: "He began writing at seventeen. For eight years he wrote in silence; then, in ten months, came two books, a film and a radio.",
+      sub: "He began writing at seventeen. For eight years he wrote in silence; then, in ten months, came two books, a film and a radio platform.",
       ctaBooks: "The books", ctaAbout: "About", scroll: "Scroll",
     },
     about: {
       label: "About", heading: "Poet, writer, founder of ŞİMDİ",
       paras: [
-        "He began writing at seventeen. For eight years he wrote in silence; then, in ten months, came two books, a film and a radio.",
+        "He began writing at seventeen. For eight years he wrote in silence; then, in ten months, came two books, a film and a radio platform.",
         "Berkay Doğan is a poet and writer based in Istanbul. For him, writing is not a choice but a necessity — the quietest confession of existence. Every day he does not write is a day he betrays himself.",
-        "He began writing in 2017, at seventeen. For most, that age is still a threshold of innocence; for him it was the moment he started to see the true face of society. Since then, what feeds him is life itself more than literature: a pair of eyes, a building riddled with holes, walking the streets he once knew as a changed man.",
-        "His first book, Ink and Ember: A Poet's Reckoning (2025), was torn from within a suffocating solitude, national chaos, and existential crisis. His second, Tasfiye, is a critique of the existing order — a call to bring back the philosophical dose we have lost. Between the two runs a reckoning that stretches from poetry to essay.",
+        "He began writing in 2017, at seventeen. For most, that age is still a threshold of innocence; for him it was the moment he started to see the true face of society. Since then, what feeds him is life itself more than literature: a pair of eyes, a building riddled with holes, walking again, as a changed man, through streets he once knew.",
+        "His first book, Mürekkep ve Köz: Bir Şairin Hesabı (“Ink and Ember: A Poet’s Reckoning”, 2025), was wrenched out of a suffocating solitude, national chaos and existential crisis. His second, Tasfiye (Turkish for “purge” or “cleansing”), is a critique of the existing order — a call to revive the dose of philosophy we have lost. Between the two runs a reckoning that stretches from poetry to essay.",
         "Poetry and radio are born in the same place: in listening. In 2026 he founded ŞİMDİ (necaliyor.co), which shows — and counts — what is playing right now across Turkey's radio stations: a poet chasing after sound.",
       ],
       worksLabel: "The journey",
       works: [
         { year: "2017", title: "Began writing", kind: "At seventeen" },
-        { year: "Dec 2025", title: "Ink and Ember: A Poet's Reckoning", kind: "Poetry · #1 Poetry on Trendyol", href: "/kitaplar/murekkep-ve-koz" },
-        { year: "Jun 2026", title: "The Poet's Reckoning", kind: "Podcast", href: "/video#dinle" },
-        { year: "Aug 2026", title: "Tasfiye", kind: "Essay", href: "/kitaplar/tasfiye" },
+        { year: "Dec 2025", title: "Mürekkep ve Köz (Ink and Ember)", kind: "Poetry · #1 most visited on Trendyol", href: "/en/#murekkep-ve-koz" },
+        { year: "Jun 2026", title: "Şairin Hesabı (The Poet’s Reckoning)", kind: "Podcast", href: "/video#dinle" },
+        { year: "Aug 2026", title: "Tasfiye", kind: "Essays", href: "/en/#tasfiye" },
         { year: "Aug 2026", title: "ŞİMDİ", kind: "Live radio · necaliyor.co", href: "https://necaliyor.co" },
-        { year: "Sep 2026", title: "TASFİYE: The Film", kind: "Short film · 8 min", href: "/film" },
+        { year: "Sep 2026", title: "TASFİYE: Film", kind: "Short film · 8 min", href: "/film" },
       ],
     },
     books: {
       label: "Books",
-      murekkep: { title: "Ink and Ember", meta: "Poetry · İskenderiye · 2025", badge: "#1 Poetry on Trendyol", desc: "A Poet's Reckoning. More than 200 poems torn from a suffocating solitude, national chaos and existential crisis.", cta: "Get the book", excerpt: "I could not be brought down — so I brought it down myself." },
-      tasfiye: { title: "Tasfiye", meta: "Essay · İskenderiye · August 2026", badge: "Out now", desc: "The curtain rises: on stage, a courtroom; in the dock, the writer himself. Not an accusation — a reckoning. From the wreckage of the modern world, a confrontation reaching toward the human who carries their own guillotine. Tasfiye is not to destroy; it is to cleanse.", cta: "Buy on Trendyol", excerpt: "“a name given to everything we choose not to see.”" },
-      countdown: ["DAYS", "HRS", "MIN"], epigraph: "a name given to everything we choose not to see.", coverSoon: "Cover soon",
+      murekkep: { title: "Mürekkep ve Köz", meta: "Poetry · İskenderiye Yayınları · 2025 · in Turkish", badge: "#1 Poetry on Trendyol", desc: "Literally “Ink and Ember: A Poet’s Reckoning”. More than 200 poems written out of a suffocating solitude, national chaos and existential crisis.", cta: "Buy on Trendyol", excerpt: "Yıkılamadım, yıktım." },
+      tasfiye: { title: "Tasfiye", meta: "Essays · İskenderiye Yayınları · August 2026 · in Turkish", badge: "Out now", desc: "The curtain rises: on stage, a courtroom; in the dock, the writer himself. Not an accusation — a reckoning. From the wreckage of the modern world, a confrontation reaching toward the person who carries their own guillotine.", cta: "Buy on Trendyol", excerpt: "“görmezden gelmeyi seçtiğimiz her şeye verilmiş bir isim.”" },
+      countdown: ["DAYS", "HRS", "MIN"], epigraph: "görmezden gelmeyi seçtiğimiz her şeye verilmiş bir isim.", coverSoon: "Cover soon",
       buyMore: "Also available at",
     },
     recognition: {
       label: "Recognition", heading: "The reckoning, in numbers",
       tiles: [
-        { value: "#1", label: "Poetry on Trendyol — Most Visited" },
-        { value: "10/10", label: "Reader score on 1000Kitap" },
-        { value: "51", label: "Valsanat Magazine — Issue 51, poem published" },
+        { value: "#1", label: "Most visited poetry title on Trendyol" },
+        { value: "10/10", label: "Reader rating on 1000Kitap" },
+        { value: "51", label: "Poem published in Valsanat magazine, issue 51" },
       ],
       pressLabel: "In the press",
     },

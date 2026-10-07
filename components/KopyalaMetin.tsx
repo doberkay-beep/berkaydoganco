@@ -3,7 +3,7 @@
 import { useState } from "react";
 
 /* Basın kiti — metni tek tıkla panoya kopyalayan küçük düğme. */
-export function KopyalaMetin({ metin, etiket = "Kopyala" }: { metin: string; etiket?: string }) {
+export function KopyalaMetin({ metin, etiket = "Kopyala", tamam = "Kopyalandı ✓" }: { metin: string; etiket?: string; tamam?: string }) {
   const [ok, setOk] = useState(false);
   const kopyala = async () => {
     try {
@@ -22,7 +22,7 @@ export function KopyalaMetin({ metin, etiket = "Kopyala" }: { metin: string; eti
       border: `1px solid ${ok ? "var(--accent)" : "var(--line)"}`,
       transition: "color 0.2s ease, border-color 0.2s ease",
     }}>
-      {ok ? "Kopyalandı ✓" : etiket}
+      {ok ? tamam : etiket}
     </button>
   );
 }

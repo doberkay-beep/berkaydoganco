@@ -90,14 +90,14 @@ export function Cagdas() {
             {(() => {
               const tr = lang === "tr";
               const linkler: [string, string, boolean?][] = [
-                ["/sozler", tr ? "Sözler" : "Verses"],
+                ["/sozler", tr ? "Sözler" : "Quotes"],
                 ["/sozluk", tr ? "Kavramlar Sözlüğü" : "Lexicon"],
                 ["/takvim", tr ? "Köz Takvimi" : "Ember Calendar"],
                 ["/posterler", tr ? "Posterler" : "Posters"],
                 ["/video", tr ? "İzle & Dinle" : "Watch & Listen"],
                 ["/yazilar", tr ? "Yazılar" : "Writing"],
                 ["/notlar", tr ? "Gece Notları" : "Night Notes"],
-                ["/press", tr ? "Basın Odası" : "Press Room"],
+                [tr ? "/press" : "/en/#press-kit", tr ? "Basın Odası" : "Press Room"],
                 ["https://necaliyor.co", tr ? "ŞİMDİ radyo ↗" : "ŞİMDİ radio ↗", true],
               ];
               return (
@@ -136,11 +136,11 @@ export function Cagdas() {
                   <p className="cg-serif" style={{ fontStyle: "italic", fontSize: "clamp(1rem, 1.7vw, 1.2rem)", lineHeight: 1.6, color: "var(--ink)", maxWidth: "40ch" }}>{b.tasfiye.desc}</p>
                   <div className="ed-pull" style={{ fontSize: "clamp(1.15rem, 2.2vw, 1.45rem)", maxWidth: "34ch" }}>
                     <span style={{ display: "block", fontFamily: "var(--font-grotesk)", fontStyle: "normal", fontSize: "0.58rem", fontWeight: 500, letterSpacing: "0.2em", textTransform: "uppercase", color: "var(--accent-2)", marginBottom: "0.5rem" }}>{t.taste}</span>
-                    {b.tasfiye.excerpt}
+                    <span lang="tr">{b.tasfiye.excerpt}</span>
                   </div>
                   <div style={{ marginTop: "0.5rem", display: "flex", gap: "0.75rem", flexWrap: "wrap" }}>
                     <a href={TASFIYE_URL} target="_blank" rel="noopener noreferrer" className="cg-btn cg-btn-fill">{b.tasfiye.cta} →</a>
-                    <a href="/kitaplar/tasfiye" className="cg-btn cg-btn-ghost">{lang === "tr" ? "Kitabın sayfası" : "Book page"}</a>
+                    <a href={lang === "tr" ? "/kitaplar/tasfiye" : "/en/#tasfiye"} className="cg-btn cg-btn-ghost">{lang === "tr" ? "Kitabın sayfası" : "About the book"}</a>
                   </div>
                   <div style={{ marginTop: "0.5rem" }}>
                     <span style={{ display: "block", fontSize: "0.62rem", letterSpacing: "0.16em", textTransform: "uppercase", color: "var(--muted)", marginBottom: "0.6rem" }}>{b.buyMore}</span>
@@ -171,11 +171,11 @@ export function Cagdas() {
                   <p className="cg-serif" style={{ fontStyle: "italic", fontSize: "clamp(1.05rem, 1.8vw, 1.3rem)", lineHeight: 1.55, color: "var(--ink)", maxWidth: "36ch" }}>{b.murekkep.desc}</p>
                   <div className="ed-pull" style={{ fontSize: "clamp(1.15rem, 2.2vw, 1.45rem)", maxWidth: "34ch", margin: "0.3rem 0" }}>
                     <span style={{ display: "block", fontFamily: "var(--font-grotesk)", fontStyle: "normal", fontSize: "0.58rem", fontWeight: 500, letterSpacing: "0.2em", textTransform: "uppercase", color: "var(--accent-2)", marginBottom: "0.5rem" }}>{t.taste}</span>
-                    {b.murekkep.excerpt}
+                    <span lang="tr">{b.murekkep.excerpt}</span>
                   </div>
                   <div style={{ display: "flex", gap: "0.75rem", flexWrap: "wrap", marginTop: "0.5rem" }}>
                     <a href={TRENDYOL_URL} target="_blank" rel="noopener noreferrer" className="cg-btn cg-btn-fill">{b.murekkep.cta} →</a>
-                    <a href="/kitaplar/murekkep-ve-koz" className="cg-btn cg-btn-ghost">{lang === "tr" ? "Kitabın sayfası" : "Book page"}</a>
+                    <a href={lang === "tr" ? "/kitaplar/murekkep-ve-koz" : "/en/#murekkep-ve-koz"} className="cg-btn cg-btn-ghost">{lang === "tr" ? "Kitabın sayfası" : "About the book"}</a>
                   </div>
                   <div style={{ marginTop: "0.5rem" }}>
                     <span style={{ display: "block", fontSize: "0.62rem", letterSpacing: "0.16em", textTransform: "uppercase", color: "var(--muted)", marginBottom: "0.6rem" }}>{b.buyMore}</span>
@@ -210,7 +210,7 @@ export function Cagdas() {
                   <a href={YOUTUBE_URL} target="_blank" rel="noopener noreferrer" className="cg-link">YouTube</a>
                   <a href={INSTAGRAM_URL} target="_blank" rel="noopener noreferrer" className="cg-link">Instagram</a>
                   <a href={SUBSTACK_URL} target="_blank" rel="noopener noreferrer" className="cg-link">Substack</a>
-                  <a href="/press" className="cg-link">{lang === "tr" ? "Basın kiti" : "Press kit"}</a>
+                  <a href={lang === "tr" ? "/press" : "/en/#press-kit"} className="cg-link">{lang === "tr" ? "Basın kiti" : "Press kit"}</a>
                 </Reveal>
               </div>
             </section>

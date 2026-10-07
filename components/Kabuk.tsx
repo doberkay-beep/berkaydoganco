@@ -143,7 +143,7 @@ export function Kabuk({ children }: { children: (lang: Lang, t: Copy) => React.R
 
   const izleDinle = lang === "tr" ? "İzle & Dinle" : "Watch & Listen";
   const navLinks: [string, string][] = [
-    ["/kitaplar", t.nav.books],
+    [lang === "tr" ? "/kitaplar" : "/en/#books", t.nav.books],
     ["/sozler", t.nav.sozler],
     ["/film", t.nav.film],
     ["/yazilar", t.nav.writing],
@@ -155,7 +155,7 @@ export function Kabuk({ children }: { children: (lang: Lang, t: Copy) => React.R
     ["/video", izleDinle],
     // Sahne yalnız etkinlik varken görünür (lib/etkinlikler).
     ...(ETKINLIKLER.length > 0 ? [["/sahne", lang === "tr" ? "Sahne" : "On Stage"] as [string, string]] : []),
-    ["/takvim", lang === "tr" ? "Köz Takvimi" : "Calendar"],
+    ["/takvim", lang === "tr" ? "Köz Takvimi" : "Ember Calendar"],
     ["/sozluk", lang === "tr" ? "Sözlük" : "Lexicon"],
     ["/#contact", t.nav.contact],
   ];
@@ -217,7 +217,7 @@ export function Kabuk({ children }: { children: (lang: Lang, t: Copy) => React.R
           <div>
             <p className="ed-footer-head">{lang === "tr" ? "Keşfet" : "Explore"}</p>
             {ETKINLIKLER.length > 0 && <a href="/sahne">{lang === "tr" ? "Sahne" : "On Stage"}</a>}
-            <a href="/takvim">{lang === "tr" ? "Köz Takvimi" : "Calendar"}</a>
+            <a href="/takvim">{lang === "tr" ? "Köz Takvimi" : "Ember Calendar"}</a>
             <a href="/posterler">{lang === "tr" ? "Posterler" : "Posters"}</a>
             <a href="https://necaliyor.co" target="_blank" rel="noopener noreferrer">{lang === "tr" ? "ŞİMDİ — radyo projesi" : "ŞİMDİ — radio project"}</a>
             <SimdiCanli lang={lang} />
@@ -226,7 +226,8 @@ export function Kabuk({ children }: { children: (lang: Lang, t: Copy) => React.R
             <p className="ed-footer-head">{lang === "tr" ? "Bağlan" : "Connect"}</p>
             <a href="/hakkimda">{t.nav.about}</a>
             <a href="/video">{izleDinle}</a>
-            <a href="/press">{lang === "tr" ? "Basın Odası" : "Press Room"}</a>
+            <a href={lang === "tr" ? "/press" : "/en/#press-kit"}>{lang === "tr" ? "Basın Odası" : "Press Room"}</a>
+            <a href="/en/" hrefLang="en" lang="en">In English</a>
           </div>
         </div>
         <div className="ed-footer-bottom">

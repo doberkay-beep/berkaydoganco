@@ -76,6 +76,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
       url: `${SITE}/`,
       changeFrequency: "weekly",
       priority: 1,
+      alternates: { languages: { tr: `${SITE}/`, en: `${SITE}/en/` } },
+    },
+    {
+      url: `${SITE}/en/`,
+      changeFrequency: "monthly",
+      priority: 0.7,
+      alternates: { languages: { tr: `${SITE}/`, en: `${SITE}/en/` } },
     },
     {
       url: `${SITE}/yazilar/`,

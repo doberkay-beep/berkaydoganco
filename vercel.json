@@ -62,16 +62,11 @@
     },
     {
       "source": "/en",
-      "destination": "/",
+      "destination": "/en/",
       "permanent": true
     },
     {
-      "source": "/en/",
-      "destination": "/",
-      "permanent": true
-    },
-    {
-      "source": "/en/:yol(.*)",
+      "source": "/en/:yol(.+)",
       "destination": "/",
       "permanent": true
     },

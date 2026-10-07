@@ -54,12 +54,12 @@ const mono: React.CSSProperties = { fontFamily: "var(--font-grotesk)", fontSize:
 const secStil: React.CSSProperties = { marginTop: "clamp(3rem, 7vh, 5rem)", borderTop: "1px solid var(--line)", paddingTop: "2.5rem" };
 const secBaslik: React.CSSProperties = { ...mono, letterSpacing: "0.22em", color: "var(--accent-2)", marginBottom: "1.5rem" };
 
-function Bio({ baslik, metin }: { baslik: string; metin: string }) {
+function Bio({ baslik, metin, en = false }: { baslik: string; metin: string; en?: boolean }) {
   return (
     <div style={{ marginBottom: "2rem" }}>
       <div style={{ display: "flex", alignItems: "center", gap: "0.9rem", marginBottom: "0.8rem", flexWrap: "wrap" }}>
         <span style={{ ...mono, fontSize: "0.66rem", color: "var(--muted)" }}>{baslik}</span>
-        <KopyalaMetin metin={metin} />
+        {en ? <KopyalaMetin metin={metin} etiket="Copy" tamam="Copied ✓" /> : <KopyalaMetin metin={metin} />}
       </div>
       <p style={{ fontSize: "1rem", lineHeight: 1.75, color: "var(--ink)", maxWidth: "72ch" }}>{metin}</p>
     </div>
@@ -245,12 +245,16 @@ export default function PressPage() {
       {/* ENGLISH */}
       <section id="english" lang="en" style={secStil}>
         <p style={secBaslik}>English — press summary</p>
-        <Bio baslik="One line" metin={BIO_KISA_EN} />
-        <Bio baslik="Short paragraph" metin={BIO_ORTA_EN} />
+        <p style={{ fontSize: "0.95rem", color: "var(--ink)", marginBottom: "1.75rem" }}>
+          Full English page with books, images and interview topics:{" "}
+          <Link href="/en/" hrefLang="en" style={{ color: "var(--accent-2)", borderBottom: "1px solid var(--accent)" }}>berkaydogan.co/en →</Link>
+        </p>
+        <Bio en baslik="One line" metin={BIO_KISA_EN} />
+        <Bio en baslik="Short paragraph" metin={BIO_ORTA_EN} />
         <div style={{ display: "grid", gridTemplateColumns: "minmax(120px, 180px) 1fr", marginTop: "0.5rem" }}>
           {[
             ["Books", `${KITAP_ADI.mvk} — poetry, 2025, ISBN ${KITAPLAR[1].isbn} · ${KITAP_ADI.tas} — essays, 2026, ISBN ${KITAPLAR[0].isbn}`],
-            ["Recognition", "#1 Poetry on Trendyol · 10/10 on 1000Kitap · Valsanat No. 51"],
+            ["Recognition", "Most visited poetry title on Trendyol · 10/10 reader rating on 1000Kitap · poem in Valsanat magazine, issue 51"],
             ["Contact", EMAIL],
           ].map(([k, v]) => (
             <div key={k} style={{ display: "contents" }}>
