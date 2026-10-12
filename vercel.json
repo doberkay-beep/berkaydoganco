@@ -71,6 +71,16 @@
       "permanent": true
     },
     {
+      "source": "/yazilar/modern-dunyanin-enkazi",
+      "destination": "/kitaplar/tasfiye/",
+      "permanent": true
+    },
+    {
+      "source": "/yazilar/modern-dunyanin-enkazi/",
+      "destination": "/kitaplar/tasfiye/",
+      "permanent": true
+    },
+    {
       "source": "/mahkeme",
       "destination": "/kitaplar/tasfiye/",
       "permanent": true
