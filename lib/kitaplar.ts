@@ -45,6 +45,17 @@ export const GIT_HEDEFLER: Record<string, string> = {
   "mvk-trendyol": TRENDYOL_URL,
   "mvk-bkmkitap": "https://www.bkmkitap.com/murekkep-ve-koz",
   "mvk-iskenderiye": "https://www.iskenderiyekitap.com/urun/murekkep-ve-koz-bir-sairin-hesabi-berkay-dogan-9786259620329",
+  // Sosyal medya kanalları (12 Eki 2026) — hangi kanal satıyor, ayrı sayılsın.
+  // Ek yoksa Tasfiye, "-mvk" Mürekkep ve Köz (ikisi de Trendyol).
+  "ig-bio": "/kitaplar/",
+  "ig-story": "https://ty.gl/0fc28a9d0",
+  "ig-story-mvk": TRENDYOL_URL,
+  "ig-reklam": "https://ty.gl/0fc28a9d0",
+  "ig-reklam-mvk": TRENDYOL_URL,
+  "x": "https://ty.gl/0fc28a9d0",
+  "x-mvk": TRENDYOL_URL,
+  "yt": "https://ty.gl/0fc28a9d0",
+  "yt-mvk": TRENDYOL_URL,
 };
 
 export const KITAPLAR: Kitap[] = [
