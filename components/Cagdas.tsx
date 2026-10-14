@@ -81,9 +81,11 @@ export function Cagdas() {
                   <a href="/hakkimda" className="cg-btn cg-btn-ghost">{t.hero.ctaAbout}</a>
                 </Reveal>
               </div>
-              <Reveal delay={0.2} className="cg-portrait-wrap">
-                <img src="/images/portre.jpg" alt="Berkay Doğan" className="cg-portrait" />
-              </Reveal>
+              {/* Portre sayfanın en büyük öğesi (LCP): Reveal'in opacity:0 + JS beklemesi mobilde
+                  LCP'yi 5 sn'ye itiyordu. Artık hemen görünür; giriş yalnız CSS transform'la. */}
+              <div className="cg-portrait-wrap cg-portrait-in">
+                <img src="/images/portre-dikey.jpg" alt="Berkay Doğan" className="cg-portrait" width={827} height={1034} fetchPriority="high" decoding="async" />
+              </div>
             </section>
 
             {/* KEŞFET ŞERİDİ — altbilgideki işe yarar bağlantılar, ilk ekrana yakın */}
