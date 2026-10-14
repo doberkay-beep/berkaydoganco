@@ -10,6 +10,7 @@ import { OkurSesi } from "./OkurSesi";
 import { Kabuk, Reveal } from "./Kabuk";
 import { Folio, Masthead } from "./Dergi";
 import { KITAPLAR } from "@/lib/kitaplar";
+import { preload } from "react-dom";
 
 /* Ana sayfa — sade: Tasfiye bandı + hero + günün közü + kitaplar + iletişim. */
 
@@ -38,7 +39,12 @@ function TasfiyeBanner({ t }: { t: Copy }) {
   );
 }
 
+// Portre = LCP. Telefona 600, geniş ekrana 827 px; <head>'de yazı tiplerinden önce indirilsin.
+const PORTRE_SRCSET = "/images/portre-dikey-600.jpg 600w, /images/portre-dikey.jpg 827w";
+const PORTRE_SIZES = "(max-width: 860px) min(420px, calc(100vw - 2.5rem)), 40vw";
+
 export function Cagdas() {
+  preload("/images/portre-dikey.jpg", { as: "image", imageSrcSet: PORTRE_SRCSET, imageSizes: PORTRE_SIZES, fetchPriority: "high" });
   return (
     <Kabuk>
       {(lang: Lang, t: Copy) => {
@@ -84,7 +90,7 @@ export function Cagdas() {
               {/* Portre sayfanın en büyük öğesi (LCP): Reveal'in opacity:0 + JS beklemesi mobilde
                   LCP'yi 5 sn'ye itiyordu. Artık hemen görünür; giriş yalnız CSS transform'la. */}
               <div className="cg-portrait-wrap cg-portrait-in">
-                <img src="/images/portre-dikey.jpg" alt="Berkay Doğan" className="cg-portrait" width={827} height={1034} fetchPriority="high" decoding="async" />
+                <img src="/images/portre-dikey.jpg" srcSet={PORTRE_SRCSET} sizes={PORTRE_SIZES} alt="Berkay Doğan" className="cg-portrait" width={827} height={1034} fetchPriority="high" decoding="async" />
               </div>
             </section>
 
