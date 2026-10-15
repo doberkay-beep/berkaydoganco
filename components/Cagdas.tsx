@@ -106,6 +106,7 @@ export function Cagdas() {
                 ["/yazilar", tr ? "Yazılar" : "Writing"],
                 ["/notlar", tr ? "Gece Notları" : "Night Notes"],
                 [tr ? "/press" : "/en/#press-kit", tr ? "Basın Odası" : "Press Room"],
+                ...(tr ? [["/ogrenciler", "Öğrenciler için"] as [string, string]] : []),
                 ["https://necaliyor.co", tr ? "ŞİMDİ radyo ↗" : "ŞİMDİ radio ↗", true],
               ];
               return (

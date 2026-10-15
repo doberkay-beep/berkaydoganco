@@ -119,6 +119,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "monthly",
       priority: 0.6,
     },
+    {
+      url: `${SITE}/ogrenciler/`,
+      changeFrequency: "monthly",
+      priority: 0.6,
+    },
   ];
   // Tazelik sinyali: her girdiye son değişiklik tarihi.
   return girdiler.map((g) => ({ lastModified, ...g }));

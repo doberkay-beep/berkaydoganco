@@ -228,6 +228,7 @@ export function Kabuk({ children }: { children: (lang: Lang, t: Copy) => React.R
             <a href="/hakkimda">{t.nav.about}</a>
             <a href="/video">{izleDinle}</a>
             <a href={lang === "tr" ? "/press" : "/en/#press-kit"}>{lang === "tr" ? "Basın Odası" : "Press Room"}</a>
+            {lang === "tr" && <a href="/ogrenciler">Öğrenciler için</a>}
             <a href="/en/" hrefLang="en" lang="en">In English</a>
           </div>
         </div>
