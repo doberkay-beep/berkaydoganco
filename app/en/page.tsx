@@ -69,8 +69,14 @@ export default function EnglishPage() {
     url: `${SITE_URL}/en/`,
     name: "Berkay Doğan — Turkish poet and writer",
     inLanguage: "en",
-    mainEntity: { "@id": PERSON_ID },
-    about: { "@id": PERSON_ID },
+    mainEntity: {
+      "@type": "Person",
+      "@id": PERSON_ID,
+      name: "Berkay Doğan",
+      url: SITE_URL,
+      image: `${SITE_URL}/images/portre.jpg`,
+      jobTitle: "Poet and writer",
+    },
     isPartOf: { "@id": `${SITE_URL}/#website` },
   };
 

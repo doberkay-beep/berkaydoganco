@@ -54,8 +54,15 @@ export function ProfilePageSchema() {
         "@type": "ProfilePage",
         url: `${SITE}/hakkimda/`,
         name: "Berkay Doğan — Hakkında",
-        mainEntity: { "@id": PERSON_ID },
-        about: { "@id": PERSON_ID },
+        // Google, ProfilePage'in mainEntity'sini satır içi Person olarak istiyor (yalnız @id geçersiz sayılıyor).
+        mainEntity: {
+          "@type": "Person",
+          "@id": PERSON_ID,
+          name: "Berkay Doğan",
+          url: SITE,
+          image: `${SITE}/images/portre.jpg`,
+          jobTitle: "Şair ve yazar",
+        },
         isPartOf: { "@id": `${SITE}/#website` },
       }}
     />
