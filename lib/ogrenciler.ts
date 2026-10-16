@@ -13,6 +13,12 @@ export const TARTISMA: { s: string; soru: string }[] = [
   { s: "Cesaret, korkunun yokluğu değil, korkuya rağmen adım atabilme iradesidir.", soru: "Korkmadan yapılan bir şeye cesaret denebilir mi?" },
   { s: "Dil, düşüncenin hem evi hem de en hassas terazisidir.", soru: "Bir şeyi anlatacak kelimemiz yoksa, onu gerçekten düşünebilir miyiz?" },
   { s: "Ben artık sadece kendimim.", soru: "Başkalarının beklentilerinden arınmış bir \"ben\" mümkün mü?" },
+  { s: "Kendileriyle baş başa kalmak, çağımızın en büyük fobisi haline gelmiştir.", soru: "Telefonsuz, sessiz bir saat geçirmek neden bu kadar zor geliyor?" },
+  { s: "Boş teneke, kendi boşluğunu duymamak için sürekli başka tenekelere çarpmak zorundadır.", soru: "Sürekli gürültü ve meşguliyet neyi duymamamızı sağlıyor olabilir?" },
+  { s: "Konfor alanının en tehlikeli yanı, onun bir ceza gibi değil, bir ödül gibi sunulmasıdır.", soru: "Hangi alışkanlıklarımız bize ödül gibi görünüp aslında bizi sınırlıyor?" },
+  { s: "Kimlik, başkalarının bize biçtiği değil, bizim her an yeniden yazmaya cesaret edebildiğimiz bir metindir.", soru: "Kendi hikâyeni yeniden yazabilseydin ilk neyi değiştirirdin?" },
+  { s: "Gerçeğin keskin kenarları insanın ruhunu kanatır.", soru: "Acı veren bir gerçeği bilmek mi, ondan habersiz huzurlu yaşamak mı?" },
+  { s: "Acı bir yük değil; gerçeğe açılan bir kapı vardır.", soru: "Yaşadığın zor bir deneyim sana neyi gösterdi?" },
 ];
 export const CUMLELER = TARTISMA
   .map((t) => ({ ...t, soz: SOZLER.find((x) => x.s === t.s) }))

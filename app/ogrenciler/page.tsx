@@ -72,9 +72,41 @@ export default function OgrencilerPage() {
         </div>
       </section>
 
-      {/* 2 · Söyleşi */}
+      {/* 2 · Yazma çağrısı */}
+      <section id="cagri" style={secStil}>
+        <h2 style={secBaslik}>02 · Yazma çağrısı: Sesin Duyulsun</h2>
+        <p className="cg-serif" style={{ fontSize: "clamp(1.4rem, 3vw, 1.9rem)", lineHeight: 1.25, fontWeight: 600, maxWidth: "30ch", marginBottom: "1.2rem" }}>
+          Bir şiirin ya da bir denemen mi var? Gönder; okuyayım.
+        </p>
+        <div style={{ display: "grid", gap: "0.9rem", gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 340px), 1fr))", marginBottom: "1.6rem" }}>
+          {[
+            ["Kimler", "Türkiye'deki lise ve üniversite öğrencileri"],
+            ["Ne", "Kısa bir şiir (en fazla 30 dize) ya da kısa bir deneme (en fazla 500 kelime). Tema serbest."],
+            ["Son gün", "21 Aralık 2026"],
+            ["Sonra", "Seçilen 5 metin bu sitede yayımlanır; ilk üç metnin yazarına imzalı kitap seti gönderilir."],
+          ].map(([b, a]) => (
+            <div key={b} style={{ border: "1px solid var(--line)", borderRadius: "14px", padding: "1rem 1.2rem" }}>
+              <div style={{ ...mono, fontSize: "0.62rem", color: "var(--accent-2)" }}>{b}</div>
+              <div style={{ fontSize: "0.98rem", lineHeight: 1.55, marginTop: "0.4rem" }}>{a}</div>
+            </div>
+          ))}
+        </div>
+        <ul style={{ ...govde, paddingLeft: "1.2rem", fontSize: "0.95rem" }}>
+          <li>Metin sana ait ve özgün olmalı; yapay zekâyla yazılmamış olmalı.</li>
+          <li>Metnin hakları sende kalır; yalnızca bu sitede yayımlama izni isterim.</li>
+          <li>18 yaşından küçüksen, metnin yayımlanmadan önce velinin onayını isterim. İstersen adın yerine yalnızca ilk adın ya da bir takma ad görünür.</li>
+          <li>Her metni kendim okuyorum; seçilenlere e-postayla haber veririm.</li>
+        </ul>
+        <div style={{ marginTop: "1.6rem" }}>
+          <a href={mailto("Sesin Duyulsun — [şiir / deneme]", "Ad soyad: \nOkul ve sınıf: \nYaş: \nYayında görünmesini istediğim ad (ad, ilk ad ya da takma ad): \n\nMetnim (şiir ya da deneme):\n\n")} style={buton}>
+            Metnimi gönder ↗
+          </a>
+        </div>
+      </section>
+
+      {/* 3 · Söyleşi */}
       <section id="soylesi" style={secStil}>
-        <h2 style={secBaslik}>02 · Okul ve kulüp söyleşisi</h2>
+        <h2 style={secBaslik}>03 · Okul ve kulüp söyleşisi</h2>
         <p style={govde}>
           Lise ya da üniversite edebiyat, felsefe ve şiir kulüplerine, sınıflara çevrim içi ya da yüz yüze konuk olabilirim.
           Okul ve öğrenci kulüplerine yönelik söyleşiler <strong style={{ fontWeight: 600 }}>ücretsizdir</strong>. Konuyu birlikte belirleriz; işte birkaç öneri:
@@ -94,13 +126,18 @@ export default function OgrencilerPage() {
         </div>
       </section>
 
-      {/* 3 · Derste tartışmak için */}
+      {/* 4 · Derste tartışmak için */}
       <section id="tartisma" style={secStil}>
-        <h2 style={secBaslik}>03 · Derste tartışmak için</h2>
+        <h2 style={secBaslik}>04 · Derste tartışmak için</h2>
         <p style={govde}>
           Kitaplarımdan birebir alınmış cümleler ve her birinin altında sınıfta açılabilecek bir soru.
           Öğretmenler derste, öğrenciler ödevlerinde kaynak göstererek kullanabilir.
         </p>
+        <div style={{ marginTop: "1.2rem" }}>
+          <a href="/ogretmen-kiti.pdf" download style={{ ...buton, background: "transparent", color: "var(--ink)", border: "1px solid var(--accent)" }}>
+            Öğretmen kitini indir (PDF, 4 sayfa) ↓
+          </a>
+        </div>
         <div style={{ display: "grid", gap: "1.1rem", marginTop: "1.8rem" }}>
           {CUMLELER.map((c) => (
             <figure key={c.s} style={{ margin: 0, borderLeft: "3px solid var(--accent)", padding: "0.4rem 0 0.4rem 1.2rem" }}>
@@ -119,7 +156,7 @@ export default function OgrencilerPage() {
 
       {/* 4 · İletişim */}
       <section id="iletisim" style={secStil}>
-        <h2 style={secBaslik}>04 · Bana ulaş</h2>
+        <h2 style={secBaslik}>05 · Bana ulaş</h2>
         <p style={govde}>
           E-posta: <a href={`mailto:${EMAIL}`} style={{ borderBottom: "1px solid var(--accent)" }}>{EMAIL}</a>
           <br />

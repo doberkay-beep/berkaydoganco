@@ -27,6 +27,7 @@ export function OgrenciBandi() {
           <a href="/ogrenciler#roportaj" className="og-link">Röportaj iste →</a>
           <a href="/ogrenciler#soylesi" className="og-link">Söyleşiye davet et →</a>
           <a href="/ogrenciler#tartisma" className="og-link">Derste tartış →</a>
+          <a href="/ogrenciler#cagri" className="og-link">Yazma çağrısı →</a>
         </div>
       </div>
       {c && (
