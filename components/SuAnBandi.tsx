@@ -20,7 +20,7 @@ const TV = {
   gun: Date.parse("2026-10-16T00:00:00+03:00"),
   bas: Date.parse("2026-10-16T12:00:00+03:00"),
   bit: Date.parse("2026-10-16T13:30:00+03:00"),
-  link: "https://www.youtube.com/live/cRcLKok_QaQ",
+  link: "https://www.youtube.com/live/6Qx2tepnrYg",
 };
 type TvDurum = "yarin" | "bugun" | "canli" | null;
 
