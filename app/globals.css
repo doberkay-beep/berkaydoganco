@@ -425,3 +425,16 @@ a.bd-kart:hover{border-color:var(--accent-2);transform:translateY(-3px)}
 .sa-not{display:-webkit-box!important;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
 @media (max-width:640px){.sa-hucre + .sa-hucre{border-left:none;border-top:1px solid var(--line)}.sa-hucre{padding-inline:0}}
 .os-grid{display:grid;gap:1rem;grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+
+/* Öğrenci bandı (ana sayfa) */
+.og-bant{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:clamp(1.25rem,3vw,2.5rem);align-items:stretch;margin:0 clamp(1.25rem,4vw,3.25rem) clamp(2.5rem,6vh,4rem);padding:clamp(1.4rem,3vw,2.2rem);border:1px solid var(--line);border-radius:18px;background:linear-gradient(135deg,color-mix(in srgb,var(--accent) 9%,transparent),transparent 60%)}
+.og-sol{display:flex;flex-direction:column;gap:.9rem;justify-content:center}
+.og-baslik{font-size:clamp(1.5rem,3.2vw,2.3rem);line-height:1.12;font-weight:600;margin:0;color:var(--ink)}
+.og-linkler{display:flex;flex-wrap:wrap;gap:.5rem .6rem;margin-top:.3rem}
+.og-link{font-family:var(--font-grotesk);font-size:.72rem;letter-spacing:.08em;color:var(--ink);text-decoration:none;border:1px solid var(--line);border-radius:999px;padding:.55rem .9rem;transition:border-color .2s,background .2s}
+.og-link:hover{border-color:var(--accent);background:var(--bg-2)}
+.og-sag{display:flex;flex-direction:column;gap:.55rem;justify-content:center;text-decoration:none;color:inherit;border-left:3px solid var(--accent);padding:.4rem 0 .4rem 1.2rem;transition:background .25s}
+.og-sag:hover{background:var(--bg-2)}
+.og-alinti{font-size:clamp(1.1rem,2vw,1.35rem);line-height:1.4;font-style:italic;color:var(--ink)}
+.og-soru{font-size:.92rem;line-height:1.55;color:var(--ink);opacity:.85}
+@media (max-width:720px){.og-bant{grid-template-columns:1fr}}

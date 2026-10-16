@@ -6,6 +6,7 @@ import {
 } from "@/lib/site";
 import { GununKozu } from "./GununKozu";
 import { SuAnBandi } from "./SuAnBandi";
+import { OgrenciBandi } from "./OgrenciBandi";
 import { OkurSesi } from "./OkurSesi";
 import { Kabuk, Reveal } from "./Kabuk";
 import { Folio, Masthead } from "./Dergi";
@@ -131,6 +132,9 @@ export function Cagdas() {
 
             {/* GÜNÜN KÖZÜ */}
             <GununKozu t={t.kozu} verses={VERSES} />
+
+            {/* ÖĞRENCİLER VE ÖĞRETMENLER — röportaj, ücretsiz söyleşi, haftanın tartışma sorusu */}
+            {lang === "tr" && <OgrenciBandi />}
 
             {/* KİTAPLAR */}
             <section id="books" className="cg-section">
