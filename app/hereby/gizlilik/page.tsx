@@ -12,7 +12,7 @@ export default function GizlilikPage() {
     <HerebySayfa ust="Hereby" baslik="Gizlilik politikası" guncelleme="21 Ekim 2026">
       <p>Hereby'yi Berkay Doğan geliştirir. Bu sayfa, uygulamanın hangi bilgileri neden kullandığını açıklar.</p>
       <h2 style={h2}>Hesap</h2>
-      <p>Hereby kayıt istemez. Uygulama açıldığında telefonuna özel, anonim bir kimlik oluşturulur. Adın, e-postan ya da telefon numaran alınmaz.</p>
+      <p>Hereby kayıt istemez. Uygulama açıldığında telefonuna özel, anonim bir kimlik oluşturulur. Adın, e-postan ya da telefon numaran alınmaz. Bu kimlik telefonunun Anahtar Zinciri'nde saklanır; uygulamayı silip yeniden kursan da izlerin seninle kalır.</p>
       <h2 style={h2}>Konum</h2>
       <p>Yakınındaki izleri göstermek ve bırakacağın izin yerini belirlemek için konumun yaklaşık olarak (yaklaşık 100 metre hassasiyetle) kullanılır. Anlık konumun başka kullanıcılara gösterilmez ve sunucuda saklanmaz. Bir izin yeri de tam nokta yerine yaklaşık bir alan olarak gösterilir.</p>
       <p>Sık bulunduğun yerlere (evin, okulun gibi) iz bırakmadan önce seni uyarmak için, hangi bölgede kaç farklı gün bulunduğun yalnızca telefonunda tutulur; hiçbir sunucuya gönderilmez.</p>
@@ -30,6 +30,13 @@ export default function GizlilikPage() {
       <p>Veriler, Supabase altyapısıyla Avrupa Birliği'nde (Frankfurt) bulunan sunucularda saklanır.</p>
       <h2 style={h2}>Silme</h2>
       <p>Uygulamada İzlerim → Verilerimi sil ile bütün izlerin, cevapların ve anonim kimliğin kalıcı olarak silinir.</p>
+      <h2 style={h2}>KVKK kapsamında aydınlatma</h2>
+      <p><strong>Veri sorumlusu:</strong> Berkay Doğan (iletişim: do.berkay@icloud.com).</p>
+      <p><strong>İşlenen veriler:</strong> telefonuna özel anonim kimlik numarası; bıraktığın izlerin ve cevapların metni, tarihi ve yaklaşık konumu; şikâyet ve engelleme kayıtları. Ad, e-posta, telefon numarası gibi kimlik bilgileri işlenmez.</p>
+      <p><strong>Amaç ve hukuki sebep:</strong> veriler, Hereby hizmetinin sunulması (6698 sayılı Kanun m.5/2-c, sözleşmenin kurulması ve ifası) ile kullanıcıların güvenliği ve kurallara aykırı içeriğin incelenmesi (m.5/2-f, meşru menfaat) amacıyla işlenir. Reklam, profilleme ya da satış amacıyla işlenmez.</p>
+      <p><strong>Aktarım:</strong> veriler, barındırma hizmeti için Supabase altyapısıyla Almanya'daki (Avrupa Birliği) sunucularda saklanır; bu nedenle yurt dışına aktarılmış olur. Veriler başka hiçbir üçüncü kişiyle paylaşılmaz; yasal bir zorunluluk olursa yetkili mercilerle paylaşılabilir.</p>
+      <p><strong>Saklama süresi:</strong> izlerin ve cevapların, sen silene ya da kurallara aykırı olduğu için kaldırılana kadar saklanır. Verilerimi sil dediğinde anonim kimliğinle birlikte hepsi kalıcı olarak silinir.</p>
+      <p><strong>Hakların (m.11):</strong> verilerinin işlenip işlenmediğini öğrenme, bilgi isteme, işlenme amacını öğrenme, aktarıldığı kişileri bilme, eksik ya da yanlışsa düzeltilmesini, silinmesini isteme, itiraz etme ve zarara uğradıysan giderilmesini talep etme haklarına sahipsin. Başvurunu do.berkay@icloud.com adresine yazabilirsin; en geç 30 gün içinde yanıtlanır. Anonim kimlikle çalıştığımız için başvurunda hangi izden söz ettiğini belirtmen gerekebilir.</p>
     </HerebySayfa>
   );
 }
