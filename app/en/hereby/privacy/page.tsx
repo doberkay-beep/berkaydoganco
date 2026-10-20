@@ -18,6 +18,8 @@ export default function PrivacyPage() {
       <p>To warn you before you leave a trace at places you are often at (such as your home or school), how many different days you've been in an area is kept only on your phone and is never sent to any server.</p>
       <h2 style={h2}>Nearby notifications (optional)</h2>
       <p>The "Let me know when a trace is nearby" setting is off by default. If you turn it on, your location is used in the background, only on significant location changes (about every 500 meters): the app asks the server whether there is a trace you can open nearby and notifies you if there is. Your location is not stored in these requests. You can turn the setting off at any time.</p>
+      <h2 style={h2}>Pen name (optional)</h2>
+      <p>You can choose a pen name and sign your traces with it; you're asked each time. It appears only on traces you sign, to people who read them; a pen name cannot be used to find all of someone's traces. If you remove it, your past signatures become anonymous too.</p>
       <h2 style={h2}>Notes to self and time capsules</h2>
       <p>Traces you leave with the "Only me" option are visible only to you; to remind you when you return, their exact point is stored and never shown to any other user. The reminder works only if you have turned on nearby notifications and your phone allows it; the check happens on your phone and your location is not sent to the server. Time capsules cannot be read by anyone until their opening date.</p>
       <h2 style={h2}>Traces and replies you leave</h2>
