@@ -5,7 +5,7 @@ import { HerebySayfa } from "@/components/HerebySayfa";
 export const metadata: Metadata = {
   title: { absolute: "hereby. — Düşünceni bir yere bırak" },
   description: "Hereby, aklından geçen satırı geçtiğin yere bırakmanın yolu. Bir iz yalnızca oraya gidince okunur. Beğeni yok, takipçi yok.",
-  alternates: { canonical: "/hereby" },
+  alternates: { canonical: "/hereby", languages: { tr: "/hereby", en: "/en/hereby" } },
 };
 
 export default function HerebyPage() {

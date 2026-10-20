@@ -9,13 +9,15 @@ export const metadata: Metadata = {
 
 export default function GizlilikPage() {
   return (
-    <HerebySayfa ust="Hereby" baslik="Gizlilik politikası" guncelleme="20 Ekim 2026">
+    <HerebySayfa ust="Hereby" baslik="Gizlilik politikası" guncelleme="21 Ekim 2026">
       <p>Hereby'yi Berkay Doğan geliştirir. Bu sayfa, uygulamanın hangi bilgileri neden kullandığını açıklar.</p>
       <h2 style={h2}>Hesap</h2>
       <p>Hereby kayıt istemez. Uygulama açıldığında telefonuna özel, anonim bir kimlik oluşturulur. Adın, e-postan ya da telefon numaran alınmaz.</p>
       <h2 style={h2}>Konum</h2>
       <p>Yakınındaki izleri göstermek ve bırakacağın izin yerini belirlemek için konumun yaklaşık olarak (yaklaşık 100 metre hassasiyetle) kullanılır. Anlık konumun başka kullanıcılara gösterilmez ve sunucuda saklanmaz. Bir izin yeri de tam nokta yerine yaklaşık bir alan olarak gösterilir.</p>
       <p>Sık bulunduğun yerlere (evin, okulun gibi) iz bırakmadan önce seni uyarmak için, hangi bölgede kaç farklı gün bulunduğun yalnızca telefonunda tutulur; hiçbir sunucuya gönderilmez.</p>
+      <h2 style={h2}>Yakınlık bildirimi (isteğe bağlı)</h2>
+      <p>"Yakınında bir iz olunca haber ver" ayarı kapalı gelir. Açarsan, konumun arka planda ve yalnızca önemli yer değişikliklerinde (yaklaşık 500 metrede bir) kullanılır: uygulama sunucuya yakınında açılabilir bir iz olup olmadığını sorar ve varsa sana bildirim gönderir. Bu sorgularda konumun saklanmaz. Ayarı istediğin zaman kapatabilirsin.</p>
       <h2 style={h2}>Bıraktığın izler ve cevaplar</h2>
       <p>Yazdığın satırlar, bıraktığın yerin yaklaşık konumuyla birlikte saklanır ve o yere gelen kullanıcılara adsız olarak gösterilir. Kimin yazdığı hiçbir kullanıcıya gösterilmez.</p>
       <h2 style={h2}>Hesap defteri</h2>
