@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 
 export default function TermsPage() {
   return (
-    <HerebySayfa en ust="Hereby" baslik="Terms of use" guncelleme="October 21, 2026">
+    <HerebySayfa en ust="Hereby" baslik="Terms of use" guncelleme="October 20, 2026">
       <p>To write somewhere is to call someone to that place. By using Hereby, you agree to the rules below.</p>
       <h2 style={h2}>Thoughts are left here</h2>
       <p>Hereby is for leaving what a place makes you think. A line, a verse, a confession. A trace is at most 280 characters.</p>

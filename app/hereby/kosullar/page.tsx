@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 
 export default function KosullarPage() {
   return (
-    <HerebySayfa ust="Hereby" baslik="Kullanım koşulları" guncelleme="21 Ekim 2026">
+    <HerebySayfa ust="Hereby" baslik="Kullanım koşulları" guncelleme="20 Ekim 2026">
       <p>Bir yere yazmak, birini o yere çağırmaktır. Hereby'yi kullanarak aşağıdaki kuralları kabul etmiş olursun.</p>
       <h2 style={h2}>Burada düşünceler bırakılır</h2>
       <p>Hereby, bir yerin sana düşündürdüklerini bırakman için. Bir satır, bir dize, bir itiraf. Bir iz en fazla 280 karakterdir.</p>

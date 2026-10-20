@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 
 export default function GizlilikPage() {
   return (
-    <HerebySayfa ust="Hereby" baslik="Gizlilik politikası" guncelleme="21 Ekim 2026">
+    <HerebySayfa ust="Hereby" baslik="Gizlilik politikası" guncelleme="20 Ekim 2026">
       <p>Hereby'yi Berkay Doğan geliştirir. Bu sayfa, uygulamanın hangi bilgileri neden kullandığını açıklar.</p>
       <h2 style={h2}>Hesap</h2>
       <p>Hereby kayıt istemez. Uygulama açıldığında telefonuna özel, anonim bir kimlik oluşturulur. Adın, e-postan ya da telefon numaran alınmaz. Bu kimlik telefonunun Anahtar Zinciri'nde saklanır; uygulamayı silip yeniden kursan da izlerin seninle kalır.</p>

@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 
 export default function PrivacyPage() {
   return (
-    <HerebySayfa en ust="Hereby" baslik="Privacy policy" guncelleme="October 21, 2026">
+    <HerebySayfa en ust="Hereby" baslik="Privacy policy" guncelleme="October 20, 2026">
       <p>Hereby is developed by Berkay Doğan. This page explains what information the app uses and why.</p>
       <h2 style={h2}>Account</h2>
       <p>Hereby doesn't ask you to sign up. When the app opens, an anonymous identity unique to your phone is created. Your name, email or phone number is never collected. This identity is kept in your phone's Keychain, so your traces stay yours even if you delete and reinstall the app.</p>
