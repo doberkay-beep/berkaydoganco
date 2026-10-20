@@ -21,7 +21,7 @@ const TASFIYE_KANALLAR = KITAPLAR.find((k) => k.slug === "tasfiye")!.kanallar.fi
 function TasfiyeBanner({ t }: { t: Copy }) {
   return (
     <div className="cg" style={{
-      margin: "4.7rem clamp(1.25rem, 4vw, 3.25rem) 0",
+      margin: "0.75rem clamp(1.25rem, 4vw, 3.25rem) 0",
       display: "flex", alignItems: "center", justifyContent: "space-between", gap: "1.25rem", flexWrap: "wrap",
       padding: "1rem 1.4rem", borderRadius: "16px",
       background: "radial-gradient(120% 160% at 85% 0%, color-mix(in srgb, var(--accent) 10%, transparent), transparent 55%), var(--glass-bg)",
@@ -40,6 +40,38 @@ function TasfiyeBanner({ t }: { t: Copy }) {
   );
 }
 
+/* HEREBY BANDI — yeni uygulamanın duyurusu; kendi çivit rengini taşır. */
+function HerebyBandi({ lang }: { lang: Lang }) {
+  const tr = lang === "tr";
+  return (
+    <a href={tr ? "/hereby/" : "/en/hereby/"} className="cg hb-bant" style={{
+      margin: "4.7rem clamp(1.25rem, 4vw, 3.25rem) 0",
+      display: "flex", alignItems: "center", gap: "0.9rem", flexWrap: "wrap",
+      padding: "0.85rem 1.3rem", borderRadius: "16px", textDecoration: "none", color: "var(--ink)",
+      background: "radial-gradient(120% 200% at 0% 50%, rgba(109,102,255,0.22), transparent 60%), var(--glass-bg)",
+      border: "1px solid rgba(109,102,255,0.35)",
+      backdropFilter: "blur(18px) saturate(150%)", WebkitBackdropFilter: "blur(18px) saturate(150%)",
+    }}>
+      <style>{`@keyframes hb-nabiz{0%{box-shadow:0 0 0 0 rgba(109,102,255,.7)}100%{box-shadow:0 0 0 12px rgba(109,102,255,0)}}
+        .hb-bant .hb-nokta{width:10px;height:10px;border-radius:50%;background:#6d66ff;animation:hb-nabiz 1.8s ease-out infinite;flex-shrink:0}
+        .hb-bant:hover .hb-ok{transform:translateX(4px)} .hb-ok{transition:transform .2s ease}
+        @media (prefers-reduced-motion: reduce){.hb-bant .hb-nokta{animation:none}}`}</style>
+      <span className="hb-nokta" aria-hidden />
+      <span style={{ fontFamily: "var(--font-grotesk)", fontSize: "0.62rem", fontWeight: 600, letterSpacing: "0.2em", textTransform: "uppercase", color: "#8f89ff" }}>
+        {tr ? "Yeni · Uygulama" : "New · App"}
+      </span>
+      <span style={{ flex: 1, minWidth: "min(100%, 260px)", fontSize: "clamp(0.92rem, 1.8vw, 1.02rem)", lineHeight: 1.45 }}>
+        <strong className="cg-serif" style={{ fontWeight: 500, fontSize: "1.15em" }}>hereby<span style={{ color: "#6d66ff" }}>.</span></strong>{" "}
+        {tr ? "Düşünceni bir yere bırak; yalnızca oraya gelen okusun. Şiir yürüyüşleri, zaman kapsülleri, kendine notlar."
+            : "Leave a thought in a place; only someone who comes there can read it. Poetry walks, time capsules, notes to self."}
+      </span>
+      <span className="hb-ok" style={{ fontFamily: "var(--font-grotesk)", fontSize: "0.85rem", fontWeight: 600, color: "#8f89ff", whiteSpace: "nowrap" }}>
+        {tr ? "Keşfet →" : "Discover →"}
+      </span>
+    </a>
+  );
+}
+
 // Portre = LCP. Telefona 600, geniş ekrana 827 px; <head>'de yazı tiplerinden önce indirilsin.
 const PORTRE_SRCSET = "/images/portre-dikey-600.jpg 600w, /images/portre-dikey.jpg 827w";
 const PORTRE_SIZES = "(max-width: 860px) min(420px, calc(100vw - 2.5rem)), 40vw";
@@ -52,6 +84,9 @@ export function Cagdas() {
         const b = t.books;
         return (
           <main className="cg" id="top">
+            {/* HEREBY — yeni uygulama duyurusu */}
+            <HerebyBandi lang={lang} />
+
             {/* TASFİYE BANNER — kalıcı reklam şeridi */}
             <TasfiyeBanner t={t} />
 
@@ -99,6 +134,7 @@ export function Cagdas() {
             {(() => {
               const tr = lang === "tr";
               const linkler: [string, string, boolean?][] = [
+                [tr ? "/hereby/" : "/en/hereby/", tr ? "hereby. uygulaması" : "hereby. app"],
                 ["/sozler", tr ? "Sözler" : "Quotes"],
                 ["/sozluk", tr ? "Kavramlar Sözlüğü" : "Lexicon"],
                 ["/takvim", tr ? "Köz Takvimi" : "Ember Calendar"],
