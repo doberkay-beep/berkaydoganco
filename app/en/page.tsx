@@ -180,6 +180,20 @@ export default function EnglishPage() {
         </p>
       </section>
 
+      {/* HEREBY — the app */}
+      <section id="hereby" style={secStil}>
+        <p style={secBaslik}>The app</p>
+        <Link href="/en/hereby" style={{ ...kutu, background: "radial-gradient(120% 160% at 0% 0%, rgba(109,102,255,0.2), transparent 60%), var(--glass-bg)", border: "1px solid rgba(109,102,255,0.35)" }}>
+          <span style={{ fontFamily: "var(--font-serif, Georgia), Georgia, serif", fontSize: "clamp(1.8rem, 4vw, 2.4rem)", color: "var(--ink)", lineHeight: 1.1 }}>
+            hereby<span style={{ color: "#6d66ff" }}>.</span> <em style={{ fontSize: "0.7em", color: "var(--muted)" }}>Leave a thought in a place.</em>
+          </span>
+          <span style={{ fontSize: "0.95rem", lineHeight: 1.6, color: "var(--muted)", maxWidth: "60ch" }}>
+            An iOS app by Berkay Doğan, 2026. Leave the line on your mind in the place you pass; only someone who comes there can read it. No likes, no followers. It includes poetry walks through Kadıköy and Beşiktaş, where lines from his books open only when you arrive. Currently in private beta.
+          </span>
+          <span style={{ ...mono, fontSize: "0.6rem", color: "#8f89ff" }}>Discover hereby →</span>
+        </Link>
+      </section>
+
       {/* FILM & RADIO */}
       <section id="film-radio" style={secStil}>
         <p style={secBaslik}>Film & radio</p>
