@@ -18,6 +18,8 @@ export default function GizlilikPage() {
       <p>Sık bulunduğun yerlere (evin, okulun gibi) iz bırakmadan önce seni uyarmak için, hangi bölgede kaç farklı gün bulunduğun yalnızca telefonunda tutulur; hiçbir sunucuya gönderilmez.</p>
       <h2 style={h2}>Yakınlık bildirimi (isteğe bağlı)</h2>
       <p>"Yakınında bir iz olunca haber ver" ayarı kapalı gelir. Açarsan, konumun arka planda ve yalnızca önemli yer değişikliklerinde (yaklaşık 500 metrede bir) kullanılır: uygulama sunucuya yakınında açılabilir bir iz olup olmadığını sorar ve varsa sana bildirim gönderir. Bu sorgularda konumun saklanmaz. Ayarı istediğin zaman kapatabilirsin.</p>
+      <h2 style={h2}>Kendine izler ve zaman kapsülleri</h2>
+      <p>"Yalnız bana" seçeneğiyle bıraktığın izler yalnızca sana görünür; o yere döndüğünde hatırlatabilmek için bu izlerin tam noktası saklanır ve başka hiçbir kullanıcıya gösterilmez. Hatırlatma, yalnızca yakınlık bildirimini açtıysan ve telefonun izin verdiyse çalışır; bu kontrol telefonunda yapılır, konumun sunucuya gönderilmez. Zaman kapsülleri açılış tarihine kadar kimse tarafından okunamaz.</p>
       <h2 style={h2}>Bıraktığın izler ve cevaplar</h2>
       <p>Yazdığın satırlar, bıraktığın yerin yaklaşık konumuyla birlikte saklanır ve o yere gelen kullanıcılara adsız olarak gösterilir. Kimin yazdığı hiçbir kullanıcıya gösterilmez.</p>
       <h2 style={h2}>Hesap defteri</h2>
