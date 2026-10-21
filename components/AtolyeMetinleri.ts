@@ -42,6 +42,7 @@ export const ATOLYE_TR: AtolyeMetin = {
   ],
   kapanis: "Önce sözler, sonra frekanslar.",
   ilkeler: "Reklam yok · Beğeni yok · Takipçi yok",
+  studio: "Stüdyoyla çalış: uygulama ve web siteleri →", studioHref: "/studio",
   anaSayfa: "/",
 };
 
@@ -84,5 +85,6 @@ export const ATOLYE_EN: AtolyeMetin = {
   ],
   kapanis: "First words, then frequencies.",
   ilkeler: "No ads · No likes · No followers",
+  studio: "Work with the studio: apps and websites →", studioHref: "/en/studio",
   anaSayfa: "/en",
 };

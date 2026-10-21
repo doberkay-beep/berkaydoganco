@@ -43,7 +43,7 @@ export type AtolyeMetin = {
   alt: string; giris: string; telHereby: string; telNowby: string;
   byEtiket: string; by: [string, string, string]; islerEtiket: string; isler: Is[];
   soruEtiket: string; soruBaslik: string; sorular: Soru[];
-  kapanis: string; ilkeler: string; anaSayfa: string;
+  kapanis: string; ilkeler: string; studio: string; studioHref: string; anaSayfa: string;
 };
 
 export function AtolyeSayfa({ m }: { m: AtolyeMetin }) {
@@ -135,6 +135,7 @@ export function AtolyeSayfa({ m }: { m: AtolyeMetin }) {
         <Isaret boy="3.2rem" />
         <p style={{ ...serif, fontSize: "clamp(1.3rem, 3vw, 1.8rem)", fontStyle: "italic", marginTop: "1.4rem" }}>{m.kapanis}</p>
         <p style={{ ...mono, opacity: 0.6, marginTop: "1rem" }}>{m.ilkeler}</p>
+        <p style={{ marginTop: "1.6rem" }}><Link href={m.studioHref} style={{ ...mono, color: MOR, textDecoration: "none" }}>{m.studio}</Link></p>
         <p style={{ marginTop: "2rem", opacity: 0.7 }}><Link href={m.anaSayfa} style={{ color: "inherit" }}>berkaydogan.co</Link></p>
       </section>
     </main>

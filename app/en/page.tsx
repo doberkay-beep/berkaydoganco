@@ -195,6 +195,9 @@ export default function EnglishPage() {
         <Link href="/en/by" style={{ ...mono, fontSize: "0.62rem", display: "inline-block", marginTop: "1rem", color: "var(--muted)", textDecoration: "none" }}>
           From by. — Berkay Doğan&apos;s workshop · also nowby. →
         </Link>
+        <Link href="/en/studio" style={{ ...mono, fontSize: "0.62rem", display: "block", marginTop: "0.6rem", color: "var(--muted)", textDecoration: "none" }}>
+          Work with the studio · apps and websites →
+        </Link>
       </section>
 
       {/* FILM & RADIO */}
