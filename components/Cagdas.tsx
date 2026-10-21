@@ -44,7 +44,7 @@ function TasfiyeBanner({ t }: { t: Copy }) {
 function HerebyBandi({ lang }: { lang: Lang }) {
   const tr = lang === "tr";
   return (
-    <a href={tr ? "/by/" : "/en/hereby/"} className="cg hb-bant" style={{
+    <a href={tr ? "/by/" : "/en/by/"} className="cg hb-bant" style={{
       margin: "4.7rem clamp(1.25rem, 4vw, 3.25rem) 0",
       display: "flex", alignItems: "center", gap: "0.9rem", flexWrap: "wrap",
       padding: "0.85rem 1.3rem", borderRadius: "16px", textDecoration: "none", color: "var(--ink)",
@@ -58,7 +58,7 @@ function HerebyBandi({ lang }: { lang: Lang }) {
         @media (prefers-reduced-motion: reduce){.hb-bant .hb-nokta{animation:none}}`}</style>
       <span className="hb-nokta" aria-hidden />
       <span style={{ fontFamily: "var(--font-grotesk)", fontSize: "0.62rem", fontWeight: 600, letterSpacing: "0.2em", textTransform: "uppercase", color: "#8f89ff" }}>
-        {tr ? "Yeni · Atölye" : "New · App"}
+        {tr ? "Yeni · Atölye" : "New · Workshop"}
       </span>
       {tr ? (
         <span style={{ flex: 1, minWidth: "min(100%, 260px)", fontSize: "clamp(0.92rem, 1.8vw, 1.02rem)", lineHeight: 1.45 }}>
@@ -72,8 +72,13 @@ function HerebyBandi({ lang }: { lang: Lang }) {
         </span>
       ) : (
         <span style={{ flex: 1, minWidth: "min(100%, 260px)", fontSize: "clamp(0.92rem, 1.8vw, 1.02rem)", lineHeight: 1.45 }}>
-          <strong className="cg-serif" style={{ fontWeight: 500, fontSize: "1.15em" }}>hereby<span style={{ color: "#6d66ff" }}>.</span></strong>{" "}
-          Leave a thought in a place; only someone who comes there can read it. Poetry walks, time capsules, notes to self.
+          <span role="img" aria-label="by." style={{ display: "inline-flex", alignItems: "flex-end", fontSize: "1.25em", verticalAlign: "-0.12em", marginRight: "0.35em" }}>
+            <span aria-hidden style={{ display: "inline-block", width: "1.0567em", height: "1em", background: "currentColor", WebkitMaskImage: "url(/by/by-maske.png)", maskImage: "url(/by/by-maske.png)", WebkitMaskSize: "contain", maskSize: "contain", WebkitMaskRepeat: "no-repeat", maskRepeat: "no-repeat" }} />
+            <span aria-hidden style={{ display: "inline-block", width: "0.2em", height: "0.2em", borderRadius: "50%", marginLeft: "0.04em", marginBottom: "0.235em", background: "linear-gradient(135deg, #7c6cff, #FF6A3D)" }} />
+          </span>
+          Two apps from the workshop:{" "}
+          <strong className="cg-serif" style={{ fontWeight: 500, fontSize: "1.1em" }}>hereby<span style={{ color: "#6d66ff" }}>.</span></strong> leave a thought in a place,{" "}
+          <strong className="cg-serif" style={{ fontWeight: 500, fontSize: "1.1em" }}>nowby<span style={{ color: "#FF6A3D" }}>.</span></strong> what's on the radio right now.
         </span>
       )}
       <span className="hb-ok" style={{ fontFamily: "var(--font-grotesk)", fontSize: "0.85rem", fontWeight: 600, color: "#8f89ff", whiteSpace: "nowrap" }}>
@@ -145,7 +150,7 @@ export function Cagdas() {
             {(() => {
               const tr = lang === "tr";
               const linkler: [string, string, boolean?][] = [
-                ...(tr ? [["/by/", "by. atölyesi"] as [string, string]] : []),
+                [tr ? "/by/" : "/en/by/", tr ? "by. atölyesi" : "by. workshop"],
                 [tr ? "/hereby/" : "/en/hereby/", tr ? "hereby. uygulaması" : "hereby. app"],
                 ["/sozler", tr ? "Sözler" : "Quotes"],
                 ["/sozluk", tr ? "Kavramlar Sözlüğü" : "Lexicon"],

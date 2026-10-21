@@ -66,7 +66,7 @@
       "permanent": true
     },
     {
-      "source": "/en/:yol((?!hereby).+)",
+      "source": "/en/:yol((?!hereby|by(?:/|$)).+)",
       "destination": "/",
       "permanent": true
     },
