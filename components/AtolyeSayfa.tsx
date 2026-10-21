@@ -13,7 +13,7 @@ const bolum: React.CSSProperties = { maxWidth: "1080px", margin: "0 auto", paddi
 const kart: React.CSSProperties = { background: "var(--glass-bg)", border: "1px solid var(--glass-border)", borderRadius: "24px", backdropFilter: "blur(12px)" };
 
 // "by" glifi New York Bold'dan maske olarak (her cihazda aynı çizim, rengi temadan gelir); 634×600 oran.
-function Isaret({ boy }: { boy: string }) {
+export function Isaret({ boy }: { boy: string }) {
   return (
     <span role="img" aria-label="by." style={{ display: "inline-flex", alignItems: "flex-end", fontSize: boy, lineHeight: 1 }}>
       <span aria-hidden style={{
