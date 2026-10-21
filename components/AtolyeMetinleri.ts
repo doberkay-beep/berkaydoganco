@@ -26,6 +26,11 @@ export const ATOLYE_TR: AtolyeMetin = {
       m: "Türkiye'nin radyolarında şu an ne çalıyor? Yüzlerce frekans tek ekranda, canlı. Gerçek sayıma dayanan listeler, dünyanın radyoları, kitaplardan dizelerle Frekans Falı.",
       gorseller: [["/by/nowby-4.5.jpg", "Canlı radyo listesi"], ["/by/nowby-7.8.jpg", "Büyük çalar"], ["/by/nowby-13.5.jpg", "Atlas: ülke ülke radyolar"]],
     },
+    {
+      ad: "writtenby", renk: MOR, soru: "Kim?", href: "/hereby", dis: false, link: "hereby. içinde, yakında →",
+      m: "Bir şehrin yazdığı kitap. Her gün herkese aynı soru; bulunduğun yerden tek bir satır. Satırını yalnızca oraya gelenler okur. Yıl sonunda bu satırlardan basılı bir kitap kurulur; izin vermediğin hiçbir satır basılmaz. İlk kitap: İstanbul 2027.",
+      gorseller: [["/by/writtenby-1.5.jpg", "Günün sorusu"], ["/by/writtenby-10.2.jpg", "Tek satır ve basım izni"], ["/by/writtenby-13.2.jpg", "Bugünün satırı"]],
+    },
   ],
   soruEtiket: "Dört soru",
   soruBaslik: "Bu atölyeden bir uygulama çıkacaksa, dört soruya da \"evet\" demek zorunda.",
@@ -62,6 +67,11 @@ export const ATOLYE_EN: AtolyeMetin = {
       ad: "nowby", renk: TURUNCU, soru: "When?", href: "https://nowby.co", dis: true, link: "nowby.co →",
       m: "What is playing on Türkiye's radio right now? Hundreds of frequencies on one screen, live. Charts built on real airplay counts, the world's radio, and a Frequency Fortune with lines from the books.",
       gorseller: [["/by/nowby-4.5.jpg", "The live station list"], ["/by/nowby-7.8.jpg", "The big player"], ["/by/nowby-13.5.jpg", "Atlas: radio country by country"]],
+    },
+    {
+      ad: "writtenby", renk: MOR, soru: "Who?", href: "/en/hereby", dis: false, link: "Inside hereby., coming soon →",
+      m: "A book written by a city. Every day, the same question for everyone; one line from where you stand. Only those who come to that place can read it. At year's end the lines become a printed book, and no line is printed without permission. First book: Istanbul 2027.",
+      gorseller: [["/by/writtenby-1.5.jpg", "The question of the day"], ["/by/writtenby-10.2.jpg", "One line and print permission"], ["/by/writtenby-13.2.jpg", "Today's line"]],
     },
   ],
   soruEtiket: "Four questions",
