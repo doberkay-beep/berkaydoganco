@@ -50,6 +50,7 @@ export const HEREBY_TR: Metin = {
   yollar: [
     { ad: "Kadıköy şiir yürüyüşü", duraklar: ["Haydarpaşa Garı", "Kadıköy iskelesi", "Yeldeğirmeni", "Altıyol", "Moda sahili"] },
     { ad: "Beşiktaş yürüyüşü", duraklar: ["Abbasağa Parkı", "Beşiktaş Çarşı", "Beşiktaş iskelesi", "Ortaköy"] },
+    { ad: "Boğaziçi kampüs yürüyüşü", duraklar: ["Bebek Parkı", "Boğaziçi Güney Kampüs", "Albert Long Hall", "Rumelihisarı"] },
   ],
   kitaplar: "Kitapları tanı",
   ilkeEtiket: "İlkeler",
@@ -92,6 +93,7 @@ export const HEREBY_EN: Metin = {
   yollar: [
     { ad: "Kadıköy poetry walk", duraklar: ["Haydarpaşa Station", "Kadıköy pier", "Yeldeğirmeni", "Altıyol", "Moda shore"] },
     { ad: "Beşiktaş walk", duraklar: ["Abbasağa Park", "Beşiktaş Bazaar", "Beşiktaş pier", "Ortaköy"] },
+    { ad: "Boğaziçi campus walk", duraklar: ["Bebek Park", "Boğaziçi South Campus", "Albert Long Hall", "Rumelihisarı"] },
   ],
   kitaplar: "Discover the books",
   ilkeEtiket: "Principles",
