@@ -37,6 +37,15 @@ export const BASIN_TUR: Record<BasinTur, { tr: string; en: string }> = {
 
 export const BASIN: Basin[] = [
   {
+    tarihISO: "2026-10-21",
+    yayin: "Müstakil Düşünenler",
+    tur: "siir",
+    baslik: { tr: "“Çok Uzaklardaki Zihnim, Şimdi” ve “Karanlık Oksijen” — Sayı 13/14", en: "“Çok Uzaklardaki Zihnim, Şimdi” and “Karanlık Oksijen” — Issue 13/14" },
+    alinti: "Suyun altında olduğumuzu fark etmek, yüzeye doğru atılacak ilk ve en hayati kulaçtır.",
+    url: "https://www.kitapyurdu.com/dergi/mustakil-dusunenler-sayi-13-sayi-1314-20262/771856.html",
+    sadeceAy: true,
+  },
+  {
     tarihISO: "2026-10-05",
     yayin: "Şiir Rafım",
     tur: "siir",
