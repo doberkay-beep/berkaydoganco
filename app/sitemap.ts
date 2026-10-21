@@ -12,6 +12,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const lastModified = new Date();
   const girdiler: MetadataRoute.Sitemap = [
     {
+      url: `${SITE}/writtenby/`,
+      changeFrequency: "monthly" as const,
+      priority: 0.6,
+    },
+    {
       url: `${SITE}/sozler/`,
       changeFrequency: "weekly" as const,
       priority: 0.8,

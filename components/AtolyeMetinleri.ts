@@ -27,7 +27,7 @@ export const ATOLYE_TR: AtolyeMetin = {
       gorseller: [["/by/nowby-4.5.jpg", "Canlı radyo listesi"], ["/by/nowby-7.8.jpg", "Büyük çalar"], ["/by/nowby-13.5.jpg", "Atlas: ülke ülke radyolar"]],
     },
     {
-      ad: "writtenby", renk: MOR, soru: "Kim?", href: "/hereby", dis: false, link: "hereby. içinde, yakında →",
+      ad: "writtenby", renk: MOR, soru: "Kim?", href: "/writtenby", dis: false, link: "writtenby.'yi tanı →",
       m: "Bir şehrin yazdığı kitap. Her gün herkese aynı soru; bulunduğun yerden tek bir satır. Satırını yalnızca oraya gelenler okur. Yıl sonunda bu satırlardan basılı bir kitap kurulur; izin vermediğin hiçbir satır basılmaz. İlk kitap: İstanbul 2027.",
       gorseller: [["/by/writtenby-1.5.jpg", "Günün sorusu"], ["/by/writtenby-10.2.jpg", "Tek satır ve basım izni"], ["/by/writtenby-13.2.jpg", "Bugünün satırı"]],
     },
@@ -69,7 +69,7 @@ export const ATOLYE_EN: AtolyeMetin = {
       gorseller: [["/by/nowby-4.5.jpg", "The live station list"], ["/by/nowby-7.8.jpg", "The big player"], ["/by/nowby-13.5.jpg", "Atlas: radio country by country"]],
     },
     {
-      ad: "writtenby", renk: MOR, soru: "Who?", href: "/en/hereby", dis: false, link: "Inside hereby., coming soon →",
+      ad: "writtenby", renk: MOR, soru: "Who?", href: "/en/writtenby", dis: false, link: "Meet writtenby. →",
       m: "A book written by a city. Every day, the same question for everyone; one line from where you stand. Only those who come to that place can read it. At year's end the lines become a printed book, and no line is printed without permission. First book: Istanbul 2027.",
       gorseller: [["/by/writtenby-1.5.jpg", "The question of the day"], ["/by/writtenby-10.2.jpg", "One line and print permission"], ["/by/writtenby-13.2.jpg", "Today's line"]],
     },
