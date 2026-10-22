@@ -21,6 +21,7 @@ export function BasinDuvari({ lang }: { lang: Lang }) {
     alinti: undefined as string | undefined,
     url: e.link,
     gun: true,
+    izle: true,
   }));
   const yazili = BASIN.map((b) => ({
     tarihISO: b.tarihISO,
@@ -30,6 +31,7 @@ export function BasinDuvari({ lang }: { lang: Lang }) {
     alinti: b.alinti,
     url: b.url as string | undefined,
     gun: !b.sadeceAy,
+    izle: false,
   }));
   const kartlar = [...ekran, ...yazili].sort((a, b) => b.tarihISO.localeCompare(a.tarihISO));
 
@@ -52,7 +54,7 @@ export function BasinDuvari({ lang }: { lang: Lang }) {
               )}
               {k.url && (
                 <span style={{ display: "block", marginTop: "auto", paddingTop: "1.25rem", ...ust, color: "var(--accent-2)" }}>
-                  {tr ? "Oku" : "Read"} ↗
+                  {k.izle ? (tr ? "İzle" : "Watch") : (tr ? "Oku" : "Read")} ↗
                 </span>
               )}
             </>

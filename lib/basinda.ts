@@ -11,7 +11,9 @@ export type Ekran = {
   link?: string;      // varsa izleme bağlantısı (YouTube vb.)
 };
 
-export const EKRAN: Ekran[] = [];
+export const EKRAN: Ekran[] = [
+  { tarihISO: "2026-10-16", kanal: "Business Channel Türk", baslik: "“Yazmak varoluşun en sessiz itirafıdır”: Tasfiye, yazarlık ve şiir üzerine söyleşi", tur: "tv", link: "https://youtu.be/7zoHL4pIM7A" },
+];
 
 /* ---------- BASINDA DUVARI — yazılı basın ve dergi çıkışları (tek kaynak) ----------
    Yeni çıkış: EN ÜSTE ekle. Hakkımda, Basın Odası ve ana sayfadaki "Şu an" bandı
