@@ -147,11 +147,13 @@ export function Kabuk({ children }: { children: (lang: Lang, t: Copy) => React.R
     ["/sozler", t.nav.sozler],
     ["/film", t.nav.film],
     ["/yazilar", t.nav.writing],
+    // Uygulamalar tek sayfada: by. atölyesi (hereby., nowby., writtenby.)
+    [lang === "tr" ? "/by" : "/en/by", lang === "tr" ? "Uygulamalar" : "Apps"],
     ["/hakkimda", t.nav.about],
     ["/#contact", t.nav.contact],
   ];
   const menuLinks: [string, string][] = [
-    ...navLinks.slice(0, 5),
+    ...navLinks.slice(0, 6),
     ["/video", izleDinle],
     // Sahne yalnız etkinlik varken görünür (lib/etkinlikler).
     ...(ETKINLIKLER.length > 0 ? [["/sahne", lang === "tr" ? "Sahne" : "On Stage"] as [string, string]] : []),

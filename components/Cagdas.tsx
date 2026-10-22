@@ -13,80 +13,10 @@ import { Folio, Masthead } from "./Dergi";
 import { KITAPLAR } from "@/lib/kitaplar";
 import { preload } from "react-dom";
 
-/* Ana sayfa — sade: Tasfiye bandı + hero + günün közü + kitaplar + iletişim. */
+/* Ana sayfa — sade: hero + günün közü + kitaplar + iletişim. */
 
 // Tasfiye'nin diğer satıcıları — /git üzerinden (ölçümlü)
 const TASFIYE_KANALLAR = KITAPLAR.find((k) => k.slug === "tasfiye")!.kanallar.filter((k) => k.git !== "trendyol");
-
-function TasfiyeBanner({ t }: { t: Copy }) {
-  return (
-    <div className="cg" style={{
-      margin: "0.75rem clamp(1.25rem, 4vw, 3.25rem) 0",
-      display: "flex", alignItems: "center", justifyContent: "space-between", gap: "1.25rem", flexWrap: "wrap",
-      padding: "1rem 1.4rem", borderRadius: "16px",
-      background: "radial-gradient(120% 160% at 85% 0%, color-mix(in srgb, var(--accent) 10%, transparent), transparent 55%), var(--glass-bg)",
-      border: "1px solid var(--glass-border)",
-      backdropFilter: "blur(18px) saturate(150%)", WebkitBackdropFilter: "blur(18px) saturate(150%)",
-    }}>
-      <div style={{ display: "flex", alignItems: "center", gap: "1rem", minWidth: "min(100%, 300px)", flex: 1 }}>
-        <img src="/tasfiye-kapak-400.jpg" alt="Tasfiye" style={{ width: "46px", borderRadius: "3px", boxShadow: "0 10px 22px rgba(0,0,0,0.4)" }} />
-        <span className="cg-serif" style={{ fontStyle: "italic", fontSize: "clamp(0.98rem, 2vw, 1.15rem)", lineHeight: 1.4, color: "var(--ink)" }}>{t.banner.line}</span>
-      </div>
-      <div style={{ display: "flex", gap: "0.6rem", flexWrap: "wrap" }}>
-        <a href="/git/trendyol/" rel="noopener" className="cg-btn cg-btn-fill" style={{ padding: "0.7rem 1.3rem" }}>{t.banner.buy} →</a>
-        <a href="/film" className="cg-btn cg-btn-ghost" style={{ padding: "0.7rem 1.3rem" }}>{t.banner.watch}</a>
-      </div>
-    </div>
-  );
-}
-
-/* ATÖLYE BANDI — TR'de by. atölyesi (hereby. + nowby.), EN'de hereby. duyurusu. */
-function HerebyBandi({ lang }: { lang: Lang }) {
-  const tr = lang === "tr";
-  return (
-    <a href={tr ? "/by/" : "/en/by/"} className="cg hb-bant" style={{
-      margin: "4.7rem clamp(1.25rem, 4vw, 3.25rem) 0",
-      display: "flex", alignItems: "center", gap: "0.9rem", flexWrap: "wrap",
-      padding: "0.85rem 1.3rem", borderRadius: "16px", textDecoration: "none", color: "var(--ink)",
-      background: "radial-gradient(120% 200% at 0% 50%, rgba(109,102,255,0.22), transparent 60%), var(--glass-bg)",
-      border: "1px solid rgba(109,102,255,0.35)",
-      backdropFilter: "blur(18px) saturate(150%)", WebkitBackdropFilter: "blur(18px) saturate(150%)",
-    }}>
-      <style>{`@keyframes hb-nabiz{0%{box-shadow:0 0 0 0 rgba(109,102,255,.7)}100%{box-shadow:0 0 0 12px rgba(109,102,255,0)}}
-        .hb-bant .hb-nokta{width:10px;height:10px;border-radius:50%;background:#6d66ff;animation:hb-nabiz 1.8s ease-out infinite;flex-shrink:0}
-        .hb-bant:hover .hb-ok{transform:translateX(4px)} .hb-ok{transition:transform .2s ease}
-        @media (prefers-reduced-motion: reduce){.hb-bant .hb-nokta{animation:none}}`}</style>
-      <span className="hb-nokta" aria-hidden />
-      <span style={{ fontFamily: "var(--font-grotesk)", fontSize: "0.62rem", fontWeight: 600, letterSpacing: "0.2em", textTransform: "uppercase", color: "#8f89ff" }}>
-        {tr ? "Yeni · Atölye" : "New · Workshop"}
-      </span>
-      {tr ? (
-        <span style={{ flex: 1, minWidth: "min(100%, 260px)", fontSize: "clamp(0.92rem, 1.8vw, 1.02rem)", lineHeight: 1.45 }}>
-          <span role="img" aria-label="by." style={{ display: "inline-flex", alignItems: "flex-end", fontSize: "1.25em", verticalAlign: "-0.12em", marginRight: "0.35em" }}>
-            <span aria-hidden style={{ display: "inline-block", width: "1.0567em", height: "1em", background: "currentColor", WebkitMaskImage: "url(/by/by-maske.png)", maskImage: "url(/by/by-maske.png)", WebkitMaskSize: "contain", maskSize: "contain", WebkitMaskRepeat: "no-repeat", maskRepeat: "no-repeat" }} />
-            <span aria-hidden style={{ display: "inline-block", width: "0.2em", height: "0.2em", borderRadius: "50%", marginLeft: "0.04em", marginBottom: "0.235em", background: "linear-gradient(135deg, #7c6cff, #FF6A3D)" }} />
-          </span>
-          Atölyeden iki uygulama:{" "}
-          <strong className="cg-serif" style={{ fontWeight: 500, fontSize: "1.1em" }}>hereby<span style={{ color: "#6d66ff" }}>.</span></strong> düşünceni bir yere bırak,{" "}
-          <strong className="cg-serif" style={{ fontWeight: 500, fontSize: "1.1em" }}>nowby<span style={{ color: "#FF6A3D" }}>.</span></strong> radyoda şu an ne çalıyor.
-        </span>
-      ) : (
-        <span style={{ flex: 1, minWidth: "min(100%, 260px)", fontSize: "clamp(0.92rem, 1.8vw, 1.02rem)", lineHeight: 1.45 }}>
-          <span role="img" aria-label="by." style={{ display: "inline-flex", alignItems: "flex-end", fontSize: "1.25em", verticalAlign: "-0.12em", marginRight: "0.35em" }}>
-            <span aria-hidden style={{ display: "inline-block", width: "1.0567em", height: "1em", background: "currentColor", WebkitMaskImage: "url(/by/by-maske.png)", maskImage: "url(/by/by-maske.png)", WebkitMaskSize: "contain", maskSize: "contain", WebkitMaskRepeat: "no-repeat", maskRepeat: "no-repeat" }} />
-            <span aria-hidden style={{ display: "inline-block", width: "0.2em", height: "0.2em", borderRadius: "50%", marginLeft: "0.04em", marginBottom: "0.235em", background: "linear-gradient(135deg, #7c6cff, #FF6A3D)" }} />
-          </span>
-          Two apps from the workshop:{" "}
-          <strong className="cg-serif" style={{ fontWeight: 500, fontSize: "1.1em" }}>hereby<span style={{ color: "#6d66ff" }}>.</span></strong> leave a thought in a place,{" "}
-          <strong className="cg-serif" style={{ fontWeight: 500, fontSize: "1.1em" }}>nowby<span style={{ color: "#FF6A3D" }}>.</span></strong> what's on the radio right now.
-        </span>
-      )}
-      <span className="hb-ok" style={{ fontFamily: "var(--font-grotesk)", fontSize: "0.85rem", fontWeight: 600, color: "#8f89ff", whiteSpace: "nowrap" }}>
-        {tr ? "Keşfet →" : "Discover →"}
-      </span>
-    </a>
-  );
-}
 
 // Portre = LCP. Telefona 600, geniş ekrana 827 px; <head>'de yazı tiplerinden önce indirilsin.
 const PORTRE_SRCSET = "/images/portre-dikey-600.jpg 600w, /images/portre-dikey.jpg 827w";
@@ -100,14 +30,9 @@ export function Cagdas() {
         const b = t.books;
         return (
           <main className="cg" id="top">
-            {/* HEREBY — yeni uygulama duyurusu */}
-            <HerebyBandi lang={lang} />
-
-            {/* TASFİYE BANNER — kalıcı reklam şeridi */}
-            <TasfiyeBanner t={t} />
-
-            {/* KÜNYE SATIRI — dergi manşet başı */}
-            <div style={{ margin: "2.5rem clamp(1.25rem, 4vw, 3.25rem) 0" }}>
+            {/* Uygulamalar ve Tasfiye duyuruları üst menüye taşındı (Uygulamalar → /by, Kitaplar, Film). */}
+            {/* KÜNYE SATIRI — dergi manşet başı (sabit menünün altında başlar) */}
+            <div style={{ margin: "5.4rem clamp(1.25rem, 4vw, 3.25rem) 0" }}>
               <Masthead left="berkaydogan.co" center={t.hero.role} right="MMXXVI — İstanbul" />
             </div>
 
