@@ -22,7 +22,7 @@ export const ATOLYE_TR: AtolyeMetin = {
       gorseller: [["/hereby/vitrin-1.jpg", "Yeni iz yazma ekranı"], ["/hereby/vitrin-3.jpg", "Harita ve yakındaki izler"], ["/hereby/vitrin-5.jpg", "Bir iz ve yanına bırakılan satırlar"]],
     },
     {
-      ad: "nowby", renk: TURUNCU, soru: "Ne zaman?", href: "/nowby", dis: false, link: "nowby.'yu tanı →",
+      ad: "nowby", renk: TURUNCU, soru: "Ne zaman?", href: "/nowby", dis: false, link: "nowby'ı tanı →",
       m: "Türkiye'nin radyolarında şu an ne çalıyor? Yüzlerce frekans tek ekranda, canlı. Gerçek sayıma dayanan listeler, dünyanın radyoları, kitaplardan dizelerle Frekans Falı.",
       gorseller: [["/by/nowby-4.5.jpg", "Canlı radyo listesi"], ["/by/nowby-7.8.jpg", "Büyük çalar"], ["/by/nowby-13.5.jpg", "Atlas: ülke ülke radyolar"]],
     },
