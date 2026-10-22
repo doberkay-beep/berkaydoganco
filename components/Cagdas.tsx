@@ -152,6 +152,7 @@ export function Cagdas() {
               const linkler: [string, string, boolean?][] = [
                 [tr ? "/by/" : "/en/by/", tr ? "by. atölyesi" : "by. workshop"],
                 [tr ? "/hereby/" : "/en/hereby/", tr ? "hereby. uygulaması" : "hereby. app"],
+                [tr ? "/nowby/" : "/en/nowby/", tr ? "nowby. uygulaması" : "nowby. app"],
                 ["/sozler", tr ? "Sözler" : "Quotes"],
                 ["/sozluk", tr ? "Kavramlar Sözlüğü" : "Lexicon"],
                 ["/takvim", tr ? "Köz Takvimi" : "Ember Calendar"],
@@ -161,7 +162,7 @@ export function Cagdas() {
                 ["/notlar", tr ? "Gece Notları" : "Night Notes"],
                 [tr ? "/press" : "/en/#press-kit", tr ? "Basın Odası" : "Press Room"],
                 ...(tr ? [["/ogrenciler", "Öğrenciler için"] as [string, string]] : []),
-                ["https://necaliyor.co", tr ? "ŞİMDİ radyo ↗" : "ŞİMDİ radio ↗", true],
+                ["https://nowby.co", tr ? "nowby. radyo ↗" : "nowby. radio ↗", true],
               ];
               return (
                 <nav aria-label={tr ? "Keşfet" : "Explore"} style={{ padding: "0 clamp(1.25rem, 4vw, 3.25rem) clamp(2rem, 5vh, 3rem)" }}>
