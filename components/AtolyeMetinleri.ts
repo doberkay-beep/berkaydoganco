@@ -22,7 +22,7 @@ export const ATOLYE_TR: AtolyeMetin = {
       gorseller: [["/hereby/vitrin-1.jpg", "Yeni iz yazma ekranı"], ["/hereby/vitrin-3.jpg", "Harita ve yakındaki izler"], ["/hereby/vitrin-5.jpg", "Bir iz ve yanına bırakılan satırlar"]],
     },
     {
-      ad: "nowby", renk: TURUNCU, soru: "Ne zaman?", href: "https://nowby.co", dis: true, link: "nowby.co →",
+      ad: "nowby", renk: TURUNCU, soru: "Ne zaman?", href: "/nowby", dis: false, link: "nowby.'yu tanı →",
       m: "Türkiye'nin radyolarında şu an ne çalıyor? Yüzlerce frekans tek ekranda, canlı. Gerçek sayıma dayanan listeler, dünyanın radyoları, kitaplardan dizelerle Frekans Falı.",
       gorseller: [["/by/nowby-4.5.jpg", "Canlı radyo listesi"], ["/by/nowby-7.8.jpg", "Büyük çalar"], ["/by/nowby-13.5.jpg", "Atlas: ülke ülke radyolar"]],
     },
@@ -65,7 +65,7 @@ export const ATOLYE_EN: AtolyeMetin = {
       gorseller: [["/hereby/vitrin-1.jpg", "Writing a new trace"], ["/hereby/vitrin-3.jpg", "The map and nearby traces"], ["/hereby/vitrin-5.jpg", "A trace and the lines left beside it"]],
     },
     {
-      ad: "nowby", renk: TURUNCU, soru: "When?", href: "https://nowby.co", dis: true, link: "nowby.co →",
+      ad: "nowby", renk: TURUNCU, soru: "When?", href: "/en/nowby", dis: false, link: "Meet nowby. →",
       m: "What is playing on Türkiye's radio right now? Hundreds of frequencies on one screen, live. Charts built on real airplay counts, the world's radio, and a Frequency Fortune with lines from the books.",
       gorseller: [["/by/nowby-4.5.jpg", "The live station list"], ["/by/nowby-7.8.jpg", "The big player"], ["/by/nowby-13.5.jpg", "Atlas: radio country by country"]],
     },
