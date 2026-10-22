@@ -7,7 +7,7 @@ import { useSimdi, ayAdi } from "./CanliSimdi";
 import type { Lang } from "@/lib/site";
 
 /* ŞU AN BANDI — ana sayfada "site yaşıyor" satırı: son çıkış (yazılı basın
-   ya da ekran, hangisi yeniyse), ŞİMDİ'nin canlı sayacı ve son gece notu.
+   ya da ekran, hangisi yeniyse), nowby'ın canlı sayacı ve son gece notu.
    Hepsi kendi kaynağından; yeni kayıt girildikçe kendiliğinden değişir. */
 
 const etiket: React.CSSProperties = { display: "flex", alignItems: "center", gap: "0.5rem", fontFamily: "var(--font-grotesk)", fontSize: "0.6rem", fontWeight: 500, letterSpacing: "0.2em", textTransform: "uppercase", color: "var(--muted)" };
@@ -89,13 +89,13 @@ export function SuAnBandi({ lang }: { lang: Lang }) {
         )
       ) : null}
       {simdi?.ay_toplam ? (
-        <a href="https://necaliyor.co/endeks" target="_blank" rel="noopener noreferrer" className="sa-hucre">
-          <span style={etiket}><span className="bd-nabiz" />{tr ? "Canlı · ŞİMDİ radyo" : "Live · ŞİMDİ radio"}</span>
+        <a href="https://nowby.co/endeks" target="_blank" rel="noopener noreferrer" className="sa-hucre">
+          <span style={etiket}><span className="bd-nabiz" />{tr ? "Canlı · nowby radyo" : "Live · nowby radio"}</span>
           <span style={metin}>
             {tr ? (
-              <><strong style={{ fontWeight: 700, color: "var(--accent-2)", fontSize: "1.15rem" }}>{simdi.ay_toplam.toLocaleString("tr-TR")}</strong> şarkı {ayAdi(simdi.ay, true)} ayında Türkiye radyolarında çaldı — ŞİMDİ canlı sayıyor.</>
+              <><strong style={{ fontWeight: 700, color: "var(--accent-2)", fontSize: "1.15rem" }}>{simdi.ay_toplam.toLocaleString("tr-TR")}</strong> şarkı {ayAdi(simdi.ay, true)} ayında Türkiye radyolarında çaldı — nowby canlı sayıyor.</>
             ) : (
-              <><strong style={{ fontWeight: 700, color: "var(--accent-2)", fontSize: "1.15rem" }}>{simdi.ay_toplam.toLocaleString("en-US")}</strong> songs played on Turkish radio in {ayAdi(simdi.ay, false)}, counted live by ŞİMDİ.</>
+              <><strong style={{ fontWeight: 700, color: "var(--accent-2)", fontSize: "1.15rem" }}>{simdi.ay_toplam.toLocaleString("en-US")}</strong> songs played on Turkish radio in {ayAdi(simdi.ay, false)}, counted live by nowby.</>
             )}
             <span style={{ color: "var(--accent-2)" }}> ↗</span>
           </span>

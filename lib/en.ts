@@ -54,13 +54,13 @@ export const EN_BOOKS: EnBook[] = [
 
 export const EN_FACTS: { k: string; v: string }[] = [
   { k: "Name", v: "Berkay Doğan" },
-  { k: "Role", v: "Poet and writer · founder of ŞİMDİ" },
+  { k: "Role", v: "Poet and writer · founder of nowby" },
   { k: "Based in", v: "Istanbul, Turkey" },
   { k: "Writes in", v: "Turkish" },
   { k: "Publisher", v: "İskenderiye Yayınları (Istanbul)" },
   { k: "Books", v: "Mürekkep ve Köz (poetry, 2025) · Tasfiye (essays, 2026)" },
   { k: "Film", v: "TASFİYE: Film — short film, 8 min, narrated in Turkish by the author (YouTube, September 2026)" },
-  { k: "Radio", v: "ŞİMDİ — a live view and count of what Turkey’s radio stations are playing (necaliyor.co)" },
+  { k: "Radio", v: "nowby — a live view and count of what Turkey’s radio stations are playing (nowby.co)" },
   { k: "Podcast", v: "Şairin Hesabı (“The Poet’s Reckoning”), on Spotify" },
   { k: "Pronunciation", v: "Ber-kai Doh-ahn (the ğ is silent; it lengthens the vowel before it)" },
 ];
@@ -73,7 +73,7 @@ export const EN_RECOGNITION: { value: string; label: string }[] = [
 
 export const EN_TOPICS: string[] = [
   "Eight silent years, then two books, a film and a radio platform in ten months: a writer’s accelerating year",
-  "A poet who started counting Turkey’s radio stations: ŞİMDİ and its monthly radio index",
+  "A poet who started counting Turkey’s radio stations: nowby and its monthly radio index",
   "The book that puts its own author in the dock: Tasfiye’s courtroom concept",
   "From page to screen: TASFİYE: Film, with text from the book and the author’s own voice",
   "From poetry to essay: the path from Mürekkep ve Köz to Tasfiye",

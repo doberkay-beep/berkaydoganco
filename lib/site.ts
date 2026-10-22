@@ -118,13 +118,13 @@ export const site: Record<Lang, Copy> = {
       ctaBooks: "The books", ctaAbout: "About", scroll: "Scroll",
     },
     about: {
-      label: "About", heading: "Poet, writer, founder of ŞİMDİ",
+      label: "About", heading: "Poet, writer, founder of nowby",
       paras: [
         "He began writing at seventeen. For eight years he wrote in silence; then, in ten months, came two books, a film and a radio platform.",
         "Berkay Doğan is a poet and writer based in Istanbul. For him, writing is not a choice but a necessity. Every day he does not write is a day he betrays himself.",
         "He began writing in 2017, at seventeen. For most, that age is still a threshold of innocence; for him it was the moment he started to see the true face of society. Since then, what feeds him is life itself more than literature: a pair of eyes, a building riddled with holes, walking again, as a changed man, through streets he once knew.",
         "His first book, Mürekkep ve Köz: Bir Şairin Hesabı (“Ink and Ember: A Poet’s Reckoning”, 2025), was wrenched out of a suffocating solitude, national chaos and existential crisis. His second, Tasfiye (Turkish for “purge” or “cleansing”), is a critique of the existing order — a call to revive the dose of philosophy we have lost. Between the two runs a reckoning that stretches from poetry to essay.",
-        "Poetry and radio are born in the same place: in listening. In 2026 he founded ŞİMDİ (necaliyor.co), which shows — and counts — what is playing right now across Turkey's radio stations: a poet chasing after sound.",
+        "Poetry and radio are born in the same place: in listening. In 2026 he founded nowby (nowby.co), which shows — and counts — what is playing right now across Turkey's radio stations: a poet chasing after sound.",
       ],
       worksLabel: "The journey",
       works: [
@@ -132,7 +132,7 @@ export const site: Record<Lang, Copy> = {
         { year: "Dec 2025", title: "Mürekkep ve Köz (Ink and Ember)", kind: "Poetry · #1 most visited on Trendyol", href: "/en/#murekkep-ve-koz" },
         { year: "Jun 2026", title: "Şairin Hesabı (The Poet’s Reckoning)", kind: "Podcast", href: "/video#dinle" },
         { year: "Aug 2026", title: "Tasfiye", kind: "Essays", href: "/en/#tasfiye" },
-        { year: "Aug 2026", title: "ŞİMDİ", kind: "Live radio · necaliyor.co", href: "https://necaliyor.co" },
+        { year: "Aug 2026", title: "nowby.", kind: "Live radio · nowby.co (formerly ŞİMDİ)", href: "https://nowby.co" },
         { year: "Sep 2026", title: "TASFİYE: Film", kind: "Short film · 8 min", href: "/film" },
       ],
     },
@@ -181,13 +181,13 @@ export const site: Record<Lang, Copy> = {
       ctaBooks: "Kitaplar", ctaAbout: "Hakkımda", scroll: "Kaydır",
     },
     about: {
-      label: "Hakkımda", heading: "Şair, yazar, ŞİMDİ'nin kurucusu",
+      label: "Hakkımda", heading: "Şair, yazar, nowby'ın kurucusu",
       paras: [
         "17 yaşında yazmaya başladı. Sekiz yıl sessizce yazdı; sonra on ayda iki kitap, bir film ve bir radyo.",
         "Berkay Doğan, İstanbul'da yaşayan şair ve yazardır. Onun için yazmak bir tercih değil, bir zorunluluktur: yazmak, varoluşun en sessiz itirafıdır. Yazmadığı her gün, kendine ihanet ettiği bir gündür.",
         "Yazıya 2017'de, on yedi yaşında başladı. O yaş çoğu için masumiyetin sürdüğü bir eşikti; onun içinse toplumun gerçek yüzünü görmeye başladığı an oldu. O günden bu yana onu besleyen şey, edebiyatın kendisinden çok hayatın kendisidir: bir çift göz, delik deşik mimari bir yapı, eskiden geçtiği sokakları değişmiş bir adam olarak yeniden geçmek.",
         "İlk kitabı Mürekkep ve Köz: Bir Şairin Hesabı (2025) boğucu bir yalnızlığın, ulusal kaosun ve varoluşsal krizin içinden sökülerek yazıldı. İkinci kitabı Tasfiye ise mevcut düzene bir eleştiri, kaybettiğimiz felsefi dozun yeniden hayata çağrılmasıdır. İkisi arasında, şiirden denemeye uzanan bir hesaplaşma vardır.",
-        "Şiir de radyo da aynı yerden doğar: dinlemekten. 2026'da kurduğu ŞİMDİ (necaliyor.co), Türkiye'nin radyolarında tam da bu an ne çaldığını gösterir ve sayar — bir şairin sesin peşine düşmesi.",
+        "Şiir de radyo da aynı yerden doğar: dinlemekten. 2026'da kurduğu nowby (nowby.co), Türkiye'nin radyolarında tam da bu an ne çaldığını gösterir ve sayar — bir şairin sesin peşine düşmesi.",
       ],
       worksLabel: "Yolculuk",
       works: [
@@ -195,7 +195,7 @@ export const site: Record<Lang, Copy> = {
         { year: "Ara 2025", title: "Mürekkep ve Köz: Bir Şairin Hesabı", kind: "Şiir · Trendyol Şiir'de #1", href: "/kitaplar/murekkep-ve-koz" },
         { year: "Haz 2026", title: "Şairin Hesabı", kind: "Podcast", href: "/video#dinle" },
         { year: "Ağu 2026", title: "Tasfiye", kind: "Deneme", href: "/kitaplar/tasfiye" },
-        { year: "Ağu 2026", title: "ŞİMDİ", kind: "Canlı radyo · necaliyor.co", href: "https://necaliyor.co" },
+        { year: "Ağu 2026", title: "nowby.", kind: "Canlı radyo · nowby.co (eski adıyla ŞİMDİ)", href: "https://nowby.co" },
         { year: "Eyl 2026", title: "TASFİYE: Film", kind: "Kısa film · 8 dk", href: "/film" },
       ],
     },

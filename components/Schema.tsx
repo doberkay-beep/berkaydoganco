@@ -84,7 +84,7 @@ export function PersonSchema() {
         jobTitle: "Şair ve yazar",
         disambiguatingDescription: "Türk şair ve yazar; Mürekkep ve Köz (şiir) ve Tasfiye (deneme) kitaplarının yazarı.",
         description:
-          "İstanbul'da yaşayan şair ve yazar. Kitapları: Mürekkep ve Köz (şiir, 2025) ve Tasfiye (deneme, 2026). Türkiye radyolarını canlı sayan ŞİMDİ'nin (necaliyor.co) kurucusu.",
+          "İstanbul'da yaşayan şair ve yazar. Kitapları: Mürekkep ve Köz (şiir, 2025) ve Tasfiye (deneme, 2026). Türkiye radyolarını canlı sayan nowby'ın (nowby.co) kurucusu.",
         birthDate: "2000",
         alumniOf: { "@type": "CollegeOrUniversity", name: "Trakya Üniversitesi", sameAs: "https://www.wikidata.org/wiki/Q845682" },
         hasOccupation: [
@@ -103,6 +103,7 @@ export function PersonSchema() {
           GOODREADS_URL,
           "https://1000kitap.com/BerkayDogan01",
           "https://open.spotify.com/show/033qeXeBwqI0ZArYivqfaL",
+          "https://nowby.co",
           "https://necaliyor.co",
         ],
         mainEntityOfPage: `${SITE}/hakkimda/`,

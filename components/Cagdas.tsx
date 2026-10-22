@@ -181,7 +181,7 @@ export function Cagdas() {
               );
             })()}
 
-            {/* ŞU AN — son basın çıkışı · ŞİMDİ canlı sayaç · son gece notu */}
+            {/* ŞU AN — son basın çıkışı · nowby canlı sayaç · son gece notu */}
             <SuAnBandi lang={lang} />
 
             {/* GÜNÜN KÖZÜ */}

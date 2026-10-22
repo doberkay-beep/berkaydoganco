@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 
-/* ŞİMDİ'den canlı sayı — radyo sitesinin (necaliyor.co) ana_ozet satırı.
+/* nowby'dan canlı sayı — radyo sitesinin (nowby.co) ana_ozet satırı.
    Herkese açık okuma anahtarı (anon; RLS yalnız okumaya izin verir).
    Veri gelmezse bileşen hiç görünmez — sayfa statik kalır. */
 
@@ -46,9 +46,9 @@ export function CanliSimdiKutu() {
   if (!v?.ay_toplam) return null;
   const ilk = v.ay_ilk5?.[0];
   return (
-    <a href="https://necaliyor.co/endeks" target="_blank" rel="noopener noreferrer" className="bd-kart" style={{ marginTop: "1.25rem", gap: "0.4rem" }}>
+    <a href="https://nowby.co/endeks" target="_blank" rel="noopener noreferrer" className="bd-kart" style={{ marginTop: "1.25rem", gap: "0.4rem" }}>
       <span style={{ display: "flex", alignItems: "center", gap: "0.55rem", fontFamily: "var(--font-grotesk)", fontSize: "0.6rem", fontWeight: 500, letterSpacing: "0.2em", textTransform: "uppercase", color: "var(--muted)" }}>
-        <span className="bd-nabiz" /> Canlı · ŞİMDİ radyo endeksi
+        <span className="bd-nabiz" /> Canlı · nowby radyo endeksi
       </span>
       <span style={{ fontFamily: "var(--font-grotesk)", fontWeight: 700, fontSize: "clamp(2.2rem, 6vw, 3.4rem)", letterSpacing: "-0.03em", lineHeight: 1.05, color: "var(--accent-2)" }}>
         {v.ay_toplam.toLocaleString("tr-TR")}
@@ -57,7 +57,7 @@ export function CanliSimdiKutu() {
         şarkı {ayAdi(v.ay, true)} ayında Türkiye radyolarında çaldı ve sayıldı{ilk ? <> — zirvede <strong>{ilk.artist}</strong>, “{ilk.title}”.</> : "."}
       </span>
       <span style={{ fontSize: "0.8rem", color: "var(--muted)" }}>
-        Berkay Doğan'ın kurduğu ŞİMDİ, Türkiye radyolarında çalan her şarkıyı 7/24 sayıyor. Sayı her birkaç dakikada tazelenir; haberde kullanırken “ŞİMDİ verisine göre” diye kaynak gösterin. ↗
+        Berkay Doğan'ın kurduğu nowby, Türkiye radyolarında çalan her şarkıyı 7/24 sayıyor. Sayı her birkaç dakikada tazelenir; haberde kullanırken “nowby verisine göre” diye kaynak gösterin. ↗
       </span>
     </a>
   );

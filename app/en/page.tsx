@@ -14,7 +14,7 @@ import { Muhur } from "@/components/Muhur";
    gösterilen tek satır Türkçe aslıyla, lang="tr". */
 
 const DESC =
-  "Berkay Doğan is an Istanbul-based Turkish poet and writer: author of Mürekkep ve Köz (poetry, 2025) and Tasfiye (essays, 2026), founder of ŞİMDİ. Biography, books, press kit and contact in English.";
+  "Berkay Doğan is an Istanbul-based Turkish poet and writer: author of Mürekkep ve Köz (poetry, 2025) and Tasfiye (essays, 2026), founder of nowby. Biography, books, press kit and contact in English.";
 
 export const metadata: Metadata = {
   title: { absolute: "Berkay Doğan — Turkish Poet & Writer (in English)" },
@@ -96,7 +96,7 @@ export default function EnglishPage() {
       </span>
       <h1 style={{ fontFamily: "var(--font-serif)", fontWeight: 500, fontSize: "clamp(2.6rem, 7vw, 5rem)", letterSpacing: "-0.015em", lineHeight: 0.95, margin: "1.5rem 0 1rem", color: "var(--ink)" }}>Berkay Doğan</h1>
       <p style={{ fontFamily: "var(--font-serif)", fontStyle: "italic", fontWeight: 300, fontSize: "clamp(1.15rem, 2.4vw, 1.6rem)", color: "var(--muted)", maxWidth: "44ch" }}>
-        Turkish poet and writer, Istanbul. Founder of ŞİMDİ. His books are published in Turkish; this page is for international readers, editors and press.
+        Turkish poet and writer, Istanbul. Founder of nowby. His books are published in Turkish; this page is for international readers, editors and press.
       </p>
 
       <nav aria-label="Contents" style={{ display: "flex", gap: "0.5rem", flexWrap: "wrap", marginTop: "2rem" }}>
@@ -218,8 +218,8 @@ export default function EnglishPage() {
             <span style={{ fontSize: "0.88rem", lineHeight: 1.55, color: "var(--muted)" }}>An 8-minute short film built from the text of Tasfiye and narrated by the author in Turkish. Released on YouTube, September 2026.</span>
             <span style={{ ...mono, fontSize: "0.6rem", color: "var(--accent-2)" }}>Watch →</span>
           </Link>
-          <a href="https://necaliyor.co" target="_blank" rel="noopener noreferrer" style={kutu}>
-            <span style={{ fontFamily: "var(--font-grotesk)", fontWeight: 600, fontSize: "1rem", color: "var(--ink)" }}>ŞİMDİ — necaliyor.co</span>
+          <a href="https://nowby.co" target="_blank" rel="noopener noreferrer" style={kutu}>
+            <span style={{ fontFamily: "var(--font-grotesk)", fontWeight: 600, fontSize: "1rem", color: "var(--ink)" }}>nowby. — nowby.co</span>
             <span style={{ fontSize: "0.88rem", lineHeight: 1.55, color: "var(--muted)" }}>Founded by Berkay Doğan in 2026: a live view of what is playing right now across Turkey’s radio stations, and counted. A poet’s radio project, built around listening.</span>
             <span style={{ ...mono, fontSize: "0.6rem", color: "var(--accent-2)" }}>Open ↗</span>
           </a>

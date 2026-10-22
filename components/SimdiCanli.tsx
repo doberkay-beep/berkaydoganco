@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 
-// Footer'daki ŞİMDİ köprüsünü canlandırır: radyoda en son yakalanan parçayı
+// Footer'daki nowby köprüsünü canlandırır: radyoda en son yakalanan parçayı
 // gösterir. Radyo projesiyle aynı Supabase, public anon anahtar (salt okuma).
 const URL = "https://uiouzizblrkojmsqvbjk.supabase.co";
 const ANON =
@@ -31,15 +31,15 @@ export function SimdiCanli({ lang }: { lang: "tr" | "en" }) {
   }, []);
 
   if (!calan) return null;
-  const on = lang === "tr" ? "ŞİMDİ'de şu an" : "Now on ŞİMDİ";
+  const on = lang === "tr" ? "nowby'da şu an" : "Now on nowby";
   return (
     <a
-      href={`https://necaliyor.co/radyo/${calan.slug}`}
+      href={`https://nowby.co/radyo/${calan.slug}`}
       target="_blank"
       rel="noopener noreferrer"
       className="cg-link"
       style={{ display: "block", fontSize: "0.78rem", color: "var(--muted)", marginTop: "0.35rem", maxWidth: "34ch", overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}
-      title={`${calan.istasyon} · necaliyor.co`}
+      title={`${calan.istasyon} · nowby.co`}
     >
       <span style={{ color: "var(--accent-2)" }}>♪ {on}:</span> {calan.parca}
     </a>

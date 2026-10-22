@@ -220,7 +220,7 @@ export function Kabuk({ children }: { children: (lang: Lang, t: Copy) => React.R
             {ETKINLIKLER.length > 0 && <a href="/sahne">{lang === "tr" ? "Sahne" : "On Stage"}</a>}
             <a href="/takvim">{lang === "tr" ? "Köz Takvimi" : "Ember Calendar"}</a>
             <a href="/posterler">{lang === "tr" ? "Posterler" : "Posters"}</a>
-            <a href="https://necaliyor.co" target="_blank" rel="noopener noreferrer">{lang === "tr" ? "ŞİMDİ — radyo projesi" : "ŞİMDİ — radio project"}</a>
+            <a href="https://nowby.co" target="_blank" rel="noopener noreferrer">{lang === "tr" ? "nowby. — radyo projesi" : "nowby. — radio project"}</a>
             <SimdiCanli lang={lang} />
           </div>
           <div>
