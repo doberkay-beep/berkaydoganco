@@ -76,7 +76,7 @@ export function OutbySayfa() {
       <section style={{ position: "relative", height: "min(72vh, 640px)", minHeight: 440, overflow: "hidden" }}>
         <Harita />
         <IzIgnesi />
-        <div style={{ position: "absolute", top: "max(18px, env(safe-area-inset-top, 0px))", left: "max(16px, env(safe-area-inset-left, 0px))", right: "max(16px, env(safe-area-inset-right, 0px))", display: "flex", justifyContent: "center" }}>
+        <div style={{ position: "absolute", top: "max(68px, calc(env(safe-area-inset-top, 0px) + 50px))", left: "max(16px, env(safe-area-inset-left, 0px))", right: "max(16px, env(safe-area-inset-right, 0px))", display: "flex", justifyContent: "center" }}>
           <div style={{ display: "flex", alignItems: "center", gap: 10, width: "min(560px, 100%)", padding: "0.7rem 1.1rem", borderRadius: 999, background: "rgba(36,52,90,.82)", border: "1px solid rgba(242,236,228,.12)", backdropFilter: "blur(10px)", fontSize: "0.95rem" }}>
             <span style={{ ...serif, fontWeight: 700 }}>hereby<span style={{ color: KIZIL }}>.</span></span>
             <span style={{ opacity: 0.55 }}>Kadıköy iskelesi</span>

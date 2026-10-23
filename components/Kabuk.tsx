@@ -1,10 +1,11 @@
 "use client";
 
 import { SimdiCanli } from "./SimdiCanli";
-import { useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { site, LANGS, type Lang, type Copy } from "@/lib/site";
 import { Muhur } from "./Muhur";
+import { GrupluMenu } from "./SiteMenu";
 import { ETKINLIKLER } from "@/lib/etkinlikler";
 
 /* Site kabuğu — nav + mobil menü + dil/tema durumu + mikro-etkileşimler.
@@ -152,15 +153,8 @@ export function Kabuk({ children }: { children: (lang: Lang, t: Copy) => React.R
     ["/hakkimda", t.nav.about],
     ["/#contact", t.nav.contact],
   ];
-  const menuLinks: [string, string][] = [
-    ...navLinks.slice(0, 6),
-    ["/video", izleDinle],
-    // Sahne yalnız etkinlik varken görünür (lib/etkinlikler).
-    ...(ETKINLIKLER.length > 0 ? [["/sahne", lang === "tr" ? "Sahne" : "On Stage"] as [string, string]] : []),
-    ["/takvim", lang === "tr" ? "Köz Takvimi" : "Ember Calendar"],
-    ["/sozluk", lang === "tr" ? "Sözlük" : "Lexicon"],
-    ["/#contact", t.nav.contact],
-  ];
+  // Tam menü (her şey, dört başlık) components/SiteMenu.tsx'te; tüm sayfalarda aynı.
+  const kapatMenu = useCallback(() => setMenuOpen(false), []);
 
   return (
     <div>
@@ -185,18 +179,11 @@ export function Kabuk({ children }: { children: (lang: Lang, t: Copy) => React.R
             ))}
           </div>
           <button className="cg-theme" onClick={toggleTheme} aria-label={theme === "dark" ? "Light theme" : "Dark theme"}>{theme === "dark" ? "☀" : "☾"}</button>
-          <button className="cg-burger" onClick={() => setMenuOpen(true)} aria-label="Menu" aria-expanded={menuOpen}>Menu</button>
+          <button className="cg-burger" onClick={() => setMenuOpen(true)} aria-expanded={menuOpen}>{lang === "tr" ? "Menü" : "Menu"}</button>
         </div>
       </nav>
 
-      {menuOpen && (
-        <div className="cg-menu" role="dialog" aria-modal="true">
-          <button className="cg-menu-close" onClick={() => setMenuOpen(false)} aria-label="Close">✕</button>
-          {menuLinks.map(([href, label]) => (
-            <a key={href + label} href={href} onClick={() => setMenuOpen(false)}>{label}</a>
-          ))}
-        </div>
-      )}
+      {menuOpen && <GrupluMenu lang={lang} kapat={kapatMenu} />}
 
       {children(lang, t)}
 

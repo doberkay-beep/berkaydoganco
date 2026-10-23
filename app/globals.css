@@ -194,8 +194,28 @@ button { font-family: inherit; }
 
 /* Sağ aksiyon grubu + mobil menü */
 .cg-actions { display: flex; align-items: center; gap: 1.25rem; }
-.cg-burger { display: none; background: none; border: none; cursor: pointer; font-family: var(--font-grotesk); font-size: 0.72rem; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink); }
-@media (max-width: 800px) { .cg-burger { display: inline-block; } }
+.cg-burger { display: inline-block; background: none; border: 1px solid var(--line); border-radius: 100px; padding: 0.45rem 0.95rem; cursor: pointer; font-family: var(--font-grotesk); font-size: 0.72rem; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink); transition: border-color .25s ease, color .25s ease; }
+.cg-burger:hover { border-color: var(--accent-2); color: var(--accent-2); }
+
+/* Tek site menüsü (components/SiteMenu.tsx) — Kabuk'suz sayfalarda ince üst çubuk + tam ekran gruplu menü */
+.sm-bar { position: fixed; top: 0; left: 0; right: 0; z-index: 55; display: flex; align-items: center; justify-content: space-between; padding: 0.9rem clamp(1.25rem, 4vw, 3.25rem); background: linear-gradient(to bottom, color-mix(in srgb, var(--bg) 88%, transparent), transparent); pointer-events: none; }
+.sm-bar > * { pointer-events: auto; }
+body:has(.cg-nav) .sm-bar { display: none; }
+.sm-marka { display: inline-flex; align-items: center; gap: 0.55rem; font-family: var(--font-grotesk); font-weight: 700; font-size: 0.92rem; letter-spacing: 0.02em; color: var(--ink); text-decoration: none; }
+.sm-ac { background: color-mix(in srgb, var(--bg) 70%, transparent); backdrop-filter: blur(10px); border: 1px solid var(--line); border-radius: 100px; padding: 0.45rem 0.95rem; cursor: pointer; font-family: var(--font-grotesk); font-size: 0.72rem; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink); transition: border-color .25s ease, color .25s ease; }
+.sm-ac:hover { border-color: var(--accent-2); color: var(--accent-2); }
+.sm-menu { position: fixed; inset: 0; z-index: 70; background: var(--bg); overflow-y: auto; animation: cgMenuIn 0.3s ease both; padding: 0 clamp(1.25rem, 4vw, 3.25rem) 3rem; }
+.sm-menu-ust { display: flex; align-items: center; justify-content: space-between; padding: 0.9rem 0; position: sticky; top: 0; background: var(--bg); }
+.sm-kapat { background: none; border: none; cursor: pointer; font-size: 1.35rem; color: var(--ink); line-height: 1; padding: 0.4rem; }
+.sm-kapat:hover { color: var(--accent-2); }
+.sm-gruplar { display: grid; gap: 2.2rem 2rem; grid-template-columns: minmax(0, 1fr); max-width: 1100px; margin: clamp(1.5rem, 6vh, 4rem) auto 0; }
+@media (min-width: 640px) { .sm-gruplar { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (min-width: 1000px) { .sm-gruplar { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
+.sm-grup { display: flex; flex-direction: column; gap: 0.55rem; }
+.sm-grup-baslik { font-family: var(--font-grotesk); font-size: 0.66rem; font-weight: 600; letter-spacing: 0.24em; text-transform: uppercase; color: var(--accent-2); margin-bottom: 0.4rem; }
+.sm-grup a { font-family: var(--font-serif), Georgia, serif; font-size: clamp(1.35rem, 3.6vw, 1.75rem); line-height: 1.25; color: var(--ink); text-decoration: none; width: fit-content; transition: color .2s ease; }
+.sm-grup a:hover { color: var(--accent-2); }
+.sm-grup a.sm-alt { font-family: var(--font-grotesk); font-size: 0.95rem; color: var(--muted); margin: -0.2rem 0 0 0.15rem; }
 .cg-menu { position: fixed; inset: 0; z-index: 60; background: var(--bg); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2.25rem; animation: cgMenuIn 0.3s ease both; }
 @keyframes cgMenuIn { from { opacity: 0; } to { opacity: 1; } }
 .cg-menu a { font-family: var(--font-grotesk); font-weight: 500; font-size: clamp(1.7rem, 7vw, 2.4rem); letter-spacing: -0.01em; color: var(--ink); }
@@ -438,3 +458,6 @@ a.bd-kart:hover{border-color:var(--accent-2);transform:translateY(-3px)}
 .og-alinti{font-size:clamp(1.1rem,2vw,1.35rem);line-height:1.4;font-style:italic;color:var(--ink)}
 .og-soru{font-size:.92rem;line-height:1.55;color:var(--ink);opacity:.85}
 @media (max-width:720px){.og-bant{grid-template-columns:1fr}}
+
+/* Sayfaların eski üst şeridi (ad + ← berkaydogan.co): artık tek site menüsü var; yer korunur ki içerik çubuğun altında kalsın */
+.eski-ust { visibility: hidden; }

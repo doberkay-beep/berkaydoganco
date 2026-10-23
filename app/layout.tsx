@@ -4,6 +4,7 @@ import "./globals.css";
 import { Analytics } from "@vercel/analytics/next";
 import { MurekkepIz } from "@/components/MurekkepIz";
 import GlassHover from "@/components/GlassHover";
+import { SiteMenu } from "@/components/SiteMenu";
 
 // UI / etiket / buton — çağdaş nötr sans (CSS değişkeni tarihsel olarak --font-grotesk)
 const grotesk = Inter({
@@ -74,6 +75,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         />
         <a href="#main" className="skip-link">İçeriğe geç</a>
         <div className="aurora" aria-hidden="true" />
+        <SiteMenu />
         <div id="main">{children}</div>
         <MurekkepIz />
         <GlassHover />

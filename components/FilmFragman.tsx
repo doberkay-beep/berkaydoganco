@@ -62,7 +62,7 @@ export default function FilmFragman() {
       <style>{`
         .flm-sahne { min-height: 100svh; background: #050505; color: #FAFAFA;
           display: flex; flex-direction: column; align-items: center; justify-content: center;
-          gap: 22px; padding: 24px; font-family: var(--font-grotesk), sans-serif; }
+          gap: 22px; padding: 72px 24px 24px; font-family: var(--font-grotesk), sans-serif; }
         .flm-cerceve { position: relative; width: min(100%, 1060px); border-radius: 14px; overflow: hidden;
           background: #000; box-shadow: 0 30px 90px rgba(0,0,0,.7), 0 0 70px rgba(229,56,44,.07); }
         .flm-cerceve.dikey { width: min(100%, 420px); }
