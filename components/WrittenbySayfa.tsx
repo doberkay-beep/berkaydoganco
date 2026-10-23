@@ -20,6 +20,7 @@ export type WrittenbyMetin = {
   ornekEtiket: string; ornekSoru: string;
   yakinda: string; herebyLink: string; herebyHref: string;
   atolye: string; atolyeHref: string; anaSayfa: string;
+  sanatci?: { etiket: string; baslik: string; metin: string; link: string; href: string };
 };
 
 export const WRITTENBY_TR: WrittenbyMetin = {
@@ -51,6 +52,12 @@ export const WRITTENBY_TR: WrittenbyMetin = {
   yakinda: "writtenby. yakında hereby. ile iOS'ta. Android planlanıyor.",
   herebyLink: "hereby.'yi tanı →", herebyHref: "/hereby",
   atolye: "by. atölyesinin bir işi", atolyeHref: "/by", anaSayfa: "/",
+  sanatci: {
+    etiket: "İkinci katman",
+    baslik: "Bir şehrin satırları arasında, imzalı sayfalar.",
+    metin: "Seçilmiş sanatçılar kendi eserleriyle writtenby.'de yer alır; konu serbest, biçim serbest. Günü geldiğinde şehrin satırlarıyla aynı kitapta buluşurlar.",
+    link: "Sanatçılar için →", href: "/writtenby/sanatcilar",
+  },
 };
 
 export const WRITTENBY_EN: WrittenbyMetin = {
@@ -162,6 +169,18 @@ export function WrittenbySayfa({ m }: { m: WrittenbyMetin }) {
           <p style={{ ...serif, fontSize: "clamp(1.1rem, 2.4vw, 1.35rem)", lineHeight: 1.6, maxWidth: "620px", margin: "1.2rem auto 0", opacity: 0.85 }}>{m.kitapMetin}</p>
         </div>
       </section>
+
+      {/* İKİNCİ KATMAN: SANATÇILAR */}
+      {m.sanatci && (
+        <section style={{ ...bolum, maxWidth: "860px", textAlign: "center" }}>
+          <p style={{ ...mono, color: MOR }}>{m.sanatci.etiket}</p>
+          <h2 style={{ ...serif, fontStyle: "italic", fontWeight: 400, fontSize: "clamp(1.8rem, 5vw, 2.8rem)", lineHeight: 1.2, marginTop: "0.9rem" }}>{m.sanatci.baslik}</h2>
+          <p style={{ ...serif, fontSize: "clamp(1.1rem, 2.4vw, 1.3rem)", lineHeight: 1.6, maxWidth: "600px", margin: "1.1rem auto 0", opacity: 0.85 }}>{m.sanatci.metin}</p>
+          <p style={{ marginTop: "1.6rem" }}>
+            <Link href={m.sanatci.href} style={{ ...mono, color: MOR, textDecoration: "none" }}>{m.sanatci.link}</Link>
+          </p>
+        </section>
+      )}
 
       {/* KAPANIŞ */}
       <section style={{ ...bolum, textAlign: "center", paddingBottom: "clamp(4rem, 12vh, 7rem)" }}>
