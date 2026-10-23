@@ -89,6 +89,12 @@ export const WRITTENBY_EN: WrittenbyMetin = {
   yakinda: "writtenby. is coming soon to iOS with hereby. Android is planned.",
   herebyLink: "Meet hereby. →", herebyHref: "/en/hereby",
   atolye: "A work of the by. workshop", atolyeHref: "/en/by", anaSayfa: "/en",
+  sanatci: {
+    etiket: "The second layer",
+    baslik: "Among a city's lines, signed pages.",
+    metin: "Selected artists take their place on writtenby. with their own work; any subject, any form. When the day comes, they meet the city's lines in the same book.",
+    link: "For artists →", href: "/en/writtenby/artists",
+  },
 };
 
 function Logo({ boy }: { boy: string }) {
