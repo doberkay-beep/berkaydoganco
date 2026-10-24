@@ -22,7 +22,7 @@ export const ATOLYE_TR: AtolyeMetin = {
       id: "hereby", ad: "hereby", renk: MOR, soru: "Nerede?", href: "/hereby", link: "hereby.'yi tanı →",
       m: "Aklından geçen satırı geçtiğin yere bırak. Onu yalnızca oraya gelen biri okuyabilir. Kitaplardan satırlarla şiir yürüyüşleri, zaman kapsülleri, kendine notlar.",
       ilke: "Hiçbir iz sayılmaz, sıralanmaz.",
-      video: "/by/hereby-ekran.mp4", poster: "/hereby/vitrin-3.jpg", telefon: "hereby. uygulamasının ekranı",
+      video: "/by/hereby-koyu.mp4", poster: "/by/hereby-koyu.jpg", telefon: "hereby. uygulamasının ekranı",
       adimlar: [
         { b: "Bırak.", s: "Bir vapur iskelesinde, bir merdivende, bir sahilde aklından geçeni yaz. En fazla 280 karakter." },
         { b: "Yürü.", s: "İzler haritada kilitli durur. Uzaktan okumak yok: yaklaşık 300 metreye gelince açılır." },
@@ -46,7 +46,7 @@ export const ATOLYE_TR: AtolyeMetin = {
       id: "writtenby", ad: "writtenby", renk: MOR, soru: "Kim?", href: "/writtenby", link: "writtenby.'yi tanı →",
       m: "Bir şehrin yazdığı kitap. Her gün herkese aynı soru; bulunduğun yerden tek bir satır. Satırını yalnızca oraya gelenler okur. Yıl sonunda bu satırlardan basılı bir kitap kurulur; izin vermediğin hiçbir satır basılmaz. İlk kitap: İstanbul 2027.",
       ilke: "Kitaba girmek bir ödül değil, bir derleme kararı.",
-      video: "/writtenby/ekran.mp4", poster: "/writtenby/poster.jpg", telefon: "writtenby. ekranı: günün sorusu, tek satır ve basım izni",
+      video: "/by/writtenby-koyu.mp4", poster: "/by/writtenby-koyu.jpg", telefon: "writtenby. ekranı: günün sorusu, tek satır ve basım izni",
       adimlar: [
         { b: "Günün sorusu.", s: "Her sabah herkese aynı soru gelir. İstersen soruyu bırakıp özgür bir satır da yazabilirsin." },
         { b: "Tek satır.", s: "Bulunduğun yerden, en fazla 140 karakter. Günde yalnız bir satır; yazdıktan sonra değişmez." },
@@ -85,7 +85,7 @@ export const ATOLYE_EN: AtolyeMetin = {
       id: "hereby", ad: "hereby", renk: MOR, soru: "Where?", href: "/en/hereby", link: "Meet hereby. →",
       m: "Leave the line on your mind at the place you pass. Only someone who comes to that place can read it. Poetry walks with lines from the books, time capsules, notes to self.",
       ilke: "No trace is counted or ranked.",
-      video: "/by/hereby-ekran.mp4", poster: "/hereby/vitrin-3.jpg", telefon: "The hereby. app screen",
+      video: "/by/hereby-koyu.mp4", poster: "/by/hereby-koyu.jpg", telefon: "The hereby. app screen",
       adimlar: [
         { b: "Leave.", s: "On a ferry pier, on a staircase, by the sea: write what is on your mind. 280 characters at most." },
         { b: "Walk.", s: "Traces stay locked on the map. No reading from afar: they open when you are about 300 metres away." },
@@ -109,7 +109,7 @@ export const ATOLYE_EN: AtolyeMetin = {
       id: "writtenby", ad: "writtenby", renk: MOR, soru: "Who?", href: "/en/writtenby", link: "Meet writtenby. →",
       m: "A book written by a city. Every day, the same question for everyone; one line from where you stand. Only those who come to that place can read it. At year's end the lines become a printed book, and no line is printed without permission. First book: Istanbul 2027.",
       ilke: "Getting into the book isn't a prize, it's an editorial choice.",
-      video: "/writtenby/ekran.mp4", poster: "/writtenby/poster.jpg", telefon: "The writtenby. screen: the question of the day, one line and print permission",
+      video: "/by/writtenby-koyu.mp4", poster: "/by/writtenby-koyu.jpg", telefon: "The writtenby. screen: the question of the day, one line and print permission",
       adimlar: [
         { b: "The question of the day.", s: "Every morning everyone gets the same question. You can also skip it and write a free line." },
         { b: "One line.", s: "From where you are, up to 140 characters. Only one line a day; it can't be changed once written." },
