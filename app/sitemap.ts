@@ -27,6 +27,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.6,
     },
     {
+      url: `${SITE}/goruntu/`,
+      changeFrequency: "monthly" as const,
+      priority: 0.6,
+    },
+    {
       url: `${SITE}/writtenby/sanatcilar/`,
       changeFrequency: "monthly" as const,
       priority: 0.6,
