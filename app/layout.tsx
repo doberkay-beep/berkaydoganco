@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter, Playfair_Display } from "next/font/google";
 import "./globals.css";
 import { Analytics } from "@vercel/analytics/next";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import { MurekkepIz } from "@/components/MurekkepIz";
 import GlassHover from "@/components/GlassHover";
 import { SiteMenu } from "@/components/SiteMenu";
@@ -80,6 +81,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         <MurekkepIz />
         <GlassHover />
         <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );
