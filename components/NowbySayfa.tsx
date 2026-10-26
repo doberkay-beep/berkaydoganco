@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { EMAIL } from "@/lib/site";
 
 /* nowby. — by. atölyesinin ikinci işi. Türkiye'nin radyolarında şu an ne çalıyor?
    Canlı radyo sitesi nowby.co'da; bu sayfa uygulamaları (iPhone, iPad, Mac, Apple TV, Apple Watch) tanıtır. */
@@ -19,6 +20,7 @@ export type NowbyMetin = {
   soruEtiket: string; sorular: string[];
   ilkeler: string; kapanis: string;
   atolye: string; atolyeHref: string; anaSayfa: string;
+  destek: string; gizlilik: string; gizlilikHref: string;
 };
 
 export const NOWBY_TR: NowbyMetin = {
@@ -51,6 +53,7 @@ export const NOWBY_TR: NowbyMetin = {
   ilkeler: "Reklam yok · Beğeni yok · Takipçi yok",
   kapanis: "Önce sözler, sonra frekanslar.",
   atolye: "by. atölyesinin bir işi", atolyeHref: "/by", anaSayfa: "/",
+  destek: "Soru, öneri ya da eklenmesini istediğin bir radyo", gizlilik: "Gizlilik", gizlilikHref: "/nowby/gizlilik",
 };
 
 export const NOWBY_EN: NowbyMetin = {
@@ -83,6 +86,7 @@ export const NOWBY_EN: NowbyMetin = {
   ilkeler: "No ads · No likes · No followers",
   kapanis: "First words, then frequencies.",
   atolye: "A work of the by. workshop", atolyeHref: "/en/by", anaSayfa: "/en",
+  destek: "Questions, ideas, or a station you'd like added", gizlilik: "Privacy", gizlilikHref: "/en/nowby/privacy",
 };
 
 function Logo({ boy }: { boy: string }) {
@@ -171,7 +175,11 @@ export function NowbySayfa({ m }: { m: NowbyMetin }) {
         <p style={{ marginTop: "1.6rem" }}>
           <a href="https://nowby.co" style={{ ...mono, color: TURUNCU, textDecoration: "none" }}>{m.dinle}</a>
         </p>
-        <p style={{ ...mono, opacity: 0.6, marginTop: "2.4rem" }}><Link href={m.atolyeHref} style={{ color: "inherit", textDecoration: "none" }}>{m.atolye}</Link></p>
+        <p style={{ marginTop: "2.4rem", lineHeight: 1.6, opacity: 0.85 }}>
+          {m.destek}: <a href={`mailto:${EMAIL}`} style={{ color: "var(--ink)", textDecoration: "underline" }}>{EMAIL}</a>
+          {" · "}<Link href={m.gizlilikHref} style={{ color: "inherit" }}>{m.gizlilik}</Link>
+        </p>
+        <p style={{ ...mono, opacity: 0.6, marginTop: "1.6rem" }}><Link href={m.atolyeHref} style={{ color: "inherit", textDecoration: "none" }}>{m.atolye}</Link></p>
         <p style={{ marginTop: "1.2rem", opacity: 0.7 }}><Link href={m.anaSayfa} style={{ color: "inherit" }}>berkaydogan.co</Link></p>
       </section>
     </main>
