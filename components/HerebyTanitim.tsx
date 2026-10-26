@@ -122,7 +122,7 @@ function Simge({ ad }: { ad: string }) {
 
 export function HerebyTanitim({ m }: { m: Metin }) {
   const en = m === HEREBY_EN;
-  const betaHref = `mailto:do.berkay@icloud.com?subject=${encodeURIComponent(m.betaKonu)}`;
+  const betaHref = `mailto:hello@berkaydogan.co?subject=${encodeURIComponent(m.betaKonu)}`;
   return (
     <main lang={en ? "en" : "tr"} style={{ position: "relative", overflow: "hidden" }}>
       <style>{`
@@ -251,7 +251,7 @@ export function HerebyTanitim({ m }: { m: Metin }) {
           <Link href={m.dilHref} lang={en ? "tr" : "en"}>{m.dilLink}</Link>
         </nav>
         <p style={{ color: "var(--muted)", marginTop: "1.4rem", fontSize: "0.95rem" }}>
-          {m.soru}: <a href="mailto:do.berkay@icloud.com" style={{ color: "var(--ink)", textDecoration: "underline" }}>do.berkay@icloud.com</a>
+          {m.soru}: <a href="mailto:hello@berkaydogan.co" style={{ color: "var(--ink)", textDecoration: "underline" }}>hello@berkaydogan.co</a>
         </p>
       </section>
     </main>

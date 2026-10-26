@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { EMAIL } from "@/lib/site";
+import { DESTEK_EMAIL } from "@/lib/site";
 
 /* nowby. — by. atölyesinin ikinci işi. Türkiye'nin radyolarında şu an ne çalıyor?
    Canlı radyo sitesi nowby.co'da; bu sayfa uygulamaları (iPhone, iPad, Mac, Apple TV, Apple Watch) tanıtır. */
@@ -176,7 +176,7 @@ export function NowbySayfa({ m }: { m: NowbyMetin }) {
           <a href="https://nowby.co" style={{ ...mono, color: TURUNCU, textDecoration: "none" }}>{m.dinle}</a>
         </p>
         <p style={{ marginTop: "2.4rem", lineHeight: 1.6, opacity: 0.85 }}>
-          {m.destek}: <a href={`mailto:${EMAIL}`} style={{ color: "var(--ink)", textDecoration: "underline" }}>{EMAIL}</a>
+          {m.destek}: <a href={`mailto:${DESTEK_EMAIL}`} style={{ color: "var(--ink)", textDecoration: "underline" }}>{DESTEK_EMAIL}</a>
           {" · "}<Link href={m.gizlilikHref} style={{ color: "inherit" }}>{m.gizlilik}</Link>
         </p>
         <p style={{ ...mono, opacity: 0.6, marginTop: "1.6rem" }}><Link href={m.atolyeHref} style={{ color: "inherit", textDecoration: "none" }}>{m.atolye}</Link></p>

@@ -39,12 +39,12 @@ export default function GizlilikPage() {
       <h2 style={h2}>Silme</h2>
       <p>Uygulamada İzlerim → Verilerimi sil ile bütün izlerin, cevapların ve anonim kimliğin kalıcı olarak silinir.</p>
       <h2 style={h2}>KVKK kapsamında aydınlatma</h2>
-      <p><strong>Veri sorumlusu:</strong> Berkay Doğan (iletişim: do.berkay@icloud.com).</p>
+      <p><strong>Veri sorumlusu:</strong> Berkay Doğan (iletişim: hello@berkaydogan.co).</p>
       <p><strong>İşlenen veriler:</strong> telefonuna özel anonim kimlik numarası; bıraktığın izlerin, cevapların ve writtenby. satırlarının metni, tarihi, konumu ve semt adı; basım izni tercihin; isteğe bağlı mahlasın; şikâyet ve engelleme kayıtları. Ad, e-posta, telefon numarası gibi kimlik bilgileri işlenmez.</p>
       <p><strong>Amaç ve hukuki sebep:</strong> veriler, Hereby hizmetinin sunulması (6698 sayılı Kanun m.5/2-c, sözleşmenin kurulması ve ifası) ile kullanıcıların güvenliği ve kurallara aykırı içeriğin incelenmesi (m.5/2-f, meşru menfaat) amacıyla işlenir. Reklam, profilleme ya da satış amacıyla işlenmez.</p>
       <p><strong>Aktarım:</strong> veriler, barındırma hizmeti için Supabase altyapısıyla Almanya'daki (Avrupa Birliği) sunucularda saklanır; bu nedenle yurt dışına aktarılmış olur. Veriler başka hiçbir üçüncü kişiyle paylaşılmaz; yasal bir zorunluluk olursa yetkili mercilerle paylaşılabilir.</p>
       <p><strong>Saklama süresi:</strong> izlerin ve cevapların, sen silene ya da kurallara aykırı olduğu için kaldırılana kadar saklanır. Verilerimi sil dediğinde anonim kimliğinle birlikte hepsi kalıcı olarak silinir.</p>
-      <p><strong>Hakların (m.11):</strong> verilerinin işlenip işlenmediğini öğrenme, bilgi isteme, işlenme amacını öğrenme, aktarıldığı kişileri bilme, eksik ya da yanlışsa düzeltilmesini, silinmesini isteme, itiraz etme ve zarara uğradıysan giderilmesini talep etme haklarına sahipsin. Başvurunu do.berkay@icloud.com adresine yazabilirsin; en geç 30 gün içinde yanıtlanır. Anonim kimlikle çalıştığımız için başvurunda hangi izden söz ettiğini belirtmen gerekebilir.</p>
+      <p><strong>Hakların (m.11):</strong> verilerinin işlenip işlenmediğini öğrenme, bilgi isteme, işlenme amacını öğrenme, aktarıldığı kişileri bilme, eksik ya da yanlışsa düzeltilmesini, silinmesini isteme, itiraz etme ve zarara uğradıysan giderilmesini talep etme haklarına sahipsin. Başvurunu hello@berkaydogan.co adresine yazabilirsin; en geç 30 gün içinde yanıtlanır. Anonim kimlikle çalıştığımız için başvurunda hangi izden söz ettiğini belirtmen gerekebilir.</p>
     </HerebySayfa>
   );
 }

@@ -24,7 +24,7 @@ export function HerebySayfa({ ust, baslik, guncelleme, children, en = false }: {
       <p style={{ ...mono, color: "var(--muted)", marginBottom: "2.5rem" }}>{en ? "Last updated" : "Son güncelleme"}: {guncelleme}</p>
       <div className="hereby-metin" style={{ fontSize: "1.02rem", lineHeight: 1.75, color: "var(--ink)", maxWidth: "68ch" }}>{children}</div>
       <p style={{ marginTop: "3rem", borderTop: "1px solid var(--line)", paddingTop: "1.5rem", color: "var(--muted)", fontSize: "0.95rem" }}>
-        {en ? "Questions:" : "Sorular için:"} <a href="mailto:do.berkay@icloud.com" style={{ color: "var(--ink)", textDecoration: "underline" }}>do.berkay@icloud.com</a>
+        {en ? "Questions:" : "Sorular için:"} <a href="mailto:hello@berkaydogan.co" style={{ color: "var(--ink)", textDecoration: "underline" }}>hello@berkaydogan.co</a>
       </p>
     </main>
   );

@@ -22,7 +22,7 @@ export default function PrivacyPage() {
       <h2 style={h2}>"Listening with you" and Listen together</h2>
       <p>To show how many people are listening to the same station, the app uses a random number unique to your device. It is shared only live, while you listen; it is never stored and is not linked to you. Listen-together rooms also work with a random code, only while the room is open.</p>
       <h2 style={h2}>Memory code (optional)</h2>
-      <p>If you choose, you can back up your favourites, Song Catches and followed artists with a random memory code. The backup is stored on the server, linked only to that code; anyone who knows the code can restore it, so don't share it. To have your backup deleted, just send your code to do.berkay@icloud.com.</p>
+      <p>If you choose, you can back up your favourites, Song Catches and followed artists with a random memory code. The backup is stored on the server, linked only to that code; anyone who knows the code can restore it, so don't share it. To have your backup deleted, just send your code to hello@berkaydogan.co.</p>
       <h2 style={h2}>Station suggestions and wrong-song reports</h2>
       <p>The text of a suggestion or report you send is stored anonymously for review.</p>
       <h2 style={h2}>What stays on your device</h2>
@@ -32,7 +32,7 @@ export default function PrivacyPage() {
       <h2 style={h2}>Where is the data?</h2>
       <p>Station notes, memory-code backups and reports are stored on Supabase servers in Japan (Tokyo); the nowby.co website runs on Vercel.</p>
       <h2 style={h2}>Your rights</h2>
-      <p>The data controller is Berkay Doğan. You can ask what data is processed, request a copy, correction or deletion, or object to processing at any time by writing to do.berkay@icloud.com. Data is processed to provide the service and to review content that breaks the rules; it is never used for advertising, profiling or marketing.</p>
+      <p>The data controller is Berkay Doğan. You can ask what data is processed, request a copy, correction or deletion, or object to processing at any time by writing to hello@berkaydogan.co. Data is processed to provide the service and to review content that breaks the rules; it is never used for advertising, profiling or marketing.</p>
     </NowbyYasal>
   );
 }

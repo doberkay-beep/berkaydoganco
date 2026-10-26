@@ -20,6 +20,8 @@ export const SUBSTACK_URL = "https://doberkay.substack.com";
 export const YOUTUBE_URL = "https://youtube.com/@yazarberkaydogan";
 export const INSTAGRAM_URL = "https://instagram.com/berkaydgn__";
 export const EMAIL = "do.berkay@icloud.com";
+// by. uygulamalarının destek ve veri sorumlusu adresi (iCloud+ özel alan adı, 27 Eki 2026).
+export const DESTEK_EMAIL = "hello@berkaydogan.co";
 export const GOODREADS_URL = "https://www.goodreads.com/book/show/252900764-m-rekkep-ve-k-z";
 export const VALSANAT_URL = "https://online.fliphtml5.com/jqzww/ezec/#p=1";
 

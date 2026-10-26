@@ -39,12 +39,12 @@ export default function PrivacyPage() {
       <h2 style={h2}>Deletion</h2>
       <p>In the app, My traces → Delete my data permanently deletes all your traces, replies and your anonymous identity.</p>
       <h2 style={h2}>Notice under Turkish data protection law (KVKK)</h2>
-      <p><strong>Data controller:</strong> Berkay Doğan (contact: do.berkay@icloud.com).</p>
+      <p><strong>Data controller:</strong> Berkay Doğan (contact: hello@berkaydogan.co).</p>
       <p><strong>Data processed:</strong> an anonymous identifier unique to your phone; the text, date, location and neighbourhood name of the traces, replies and writtenby. lines you leave; your print permission choice; your optional pen name; report and block records. No identity information such as name, email or phone number is processed.</p>
       <p><strong>Purpose and legal basis:</strong> data is processed to provide the Hereby service (Law No. 6698, Art. 5/2-c, performance of a contract) and to keep users safe and review content that breaks the rules (Art. 5/2-f, legitimate interest). It is never processed for advertising, profiling or sale.</p>
       <p><strong>Transfer:</strong> data is stored on servers in Germany (European Union) using Supabase infrastructure for hosting, which means it is transferred abroad. It is not shared with any other third party, except with competent authorities where legally required.</p>
       <p><strong>Retention:</strong> your traces and replies are kept until you delete them or they are removed for breaking the rules. When you choose Delete my data, everything is permanently deleted along with your anonymous identity.</p>
-      <p><strong>Your rights (Art. 11):</strong> you have the right to learn whether your data is processed, to request information, to learn the purpose of processing, to know who it is transferred to, to request correction or deletion, to object, and to claim compensation for any damage. Write to do.berkay@icloud.com; you will receive a reply within 30 days at the latest. Because Hereby works with anonymous identities, you may need to tell us which trace your request is about.</p>
+      <p><strong>Your rights (Art. 11):</strong> you have the right to learn whether your data is processed, to request information, to learn the purpose of processing, to know who it is transferred to, to request correction or deletion, to object, and to claim compensation for any damage. Write to hello@berkaydogan.co; you will receive a reply within 30 days at the latest. Because Hereby works with anonymous identities, you may need to tell us which trace your request is about.</p>
     </HerebySayfa>
   );
 }

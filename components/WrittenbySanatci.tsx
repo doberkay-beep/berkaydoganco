@@ -63,7 +63,7 @@ export const SANATCI_TR: SanatciMetin = {
   onayKitap: "Kabul edilirsem eserimin writtenby. kitabında basılmasına izin veriyorum.",
   onayAydinlatma: "Aşağıdaki aydınlatma metnini okudum; bilgilerimin başvurumun değerlendirilmesi için işlenmesini kabul ediyorum.",
   aydinlatmaBaslik: "Aydınlatma metni",
-  aydinlatma: "Veri sorumlusu Berkay Doğan'dır. Bu formdaki adın, e-postan, şehrin, alanın, bağlantın, mektubun ve eserin yalnızca başvurunu değerlendirmek ve sana dönmek için işlenir; reklam ya da pazarlama için kullanılmaz, kimseye satılmaz ya da verilmez. Bilgiler Supabase'in Frankfurt (AB) sunucularında saklanır. Kabul edilmeyen başvurular en geç 6 ay içinde silinir. Kötüye kullanımı önlemek için IP adresinin geri döndürülemez bir özeti tutulur. Eserin, yalnızca verdiğin izinler ölçüsünde yayımlanır. KVKK kapsamındaki haklarını kullanmak ya da başvurunu geri çekmek için: do.berkay@icloud.com",
+  aydinlatma: "Veri sorumlusu Berkay Doğan'dır. Bu formdaki adın, e-postan, şehrin, alanın, bağlantın, mektubun ve eserin yalnızca başvurunu değerlendirmek ve sana dönmek için işlenir; reklam ya da pazarlama için kullanılmaz, kimseye satılmaz ya da verilmez. Bilgiler Supabase'in Frankfurt (AB) sunucularında saklanır. Kabul edilmeyen başvurular en geç 6 ay içinde silinir. Kötüye kullanımı önlemek için IP adresinin geri döndürülemez bir özeti tutulur. Eserin, yalnızca verdiğin izinler ölçüsünde yayımlanır. KVKK kapsamındaki haklarını kullanmak ya da başvurunu geri çekmek için: hello@berkaydogan.co",
   gonder: "Mektubu gönder", gidiyor: "Gönderiliyor…",
   tamamBaslik: "Mektubun ulaştı.", tamamMetin: "Her başvuru tek tek okunur. Cevabımız e-postana gelecek.",
   hatalar: {
@@ -106,7 +106,7 @@ export const SANATCI_EN: SanatciMetin = {
   onayKitap: "If accepted, I allow my work to be printed in the writtenby. book.",
   onayAydinlatma: "I have read the privacy notice below and agree to my information being processed to review my application.",
   aydinlatmaBaslik: "Privacy notice",
-  aydinlatma: "The data controller is Berkay Doğan. Your name, email, city, field, link, letter and work in this form are processed only to review your application and get back to you; they are never used for advertising or marketing, and never sold or given to anyone. The information is stored on Supabase servers in Frankfurt (EU). Applications that are not accepted are deleted within 6 months at the latest. To prevent abuse, an irreversible hash of your IP address is kept. Your work is published only to the extent of the permissions you give. To exercise your data protection rights or withdraw your application: do.berkay@icloud.com",
+  aydinlatma: "The data controller is Berkay Doğan. Your name, email, city, field, link, letter and work in this form are processed only to review your application and get back to you; they are never used for advertising or marketing, and never sold or given to anyone. The information is stored on Supabase servers in Frankfurt (EU). Applications that are not accepted are deleted within 6 months at the latest. To prevent abuse, an irreversible hash of your IP address is kept. Your work is published only to the extent of the permissions you give. To exercise your data protection rights or withdraw your application: hello@berkaydogan.co",
   gonder: "Send the letter", gidiyor: "Sending…",
   tamamBaslik: "Your letter has arrived.", tamamMetin: "Every application is read, one by one. Our reply will come to your email.",
   hatalar: {
