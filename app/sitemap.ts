@@ -17,6 +17,16 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.6,
     },
     {
+      url: `${SITE}/gidis/`,
+      changeFrequency: "monthly" as const,
+      priority: 0.6,
+    },
+    {
+      url: `${SITE}/en/departures/`,
+      changeFrequency: "monthly" as const,
+      priority: 0.5,
+    },
+    {
       url: `${SITE}/outby/`,
       changeFrequency: "monthly" as const,
       priority: 0.6,
