@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { HEREBY_APP_STORE } from "@/lib/site";
 
 /* HEREBY — uygulamanın tanıtım sayfası (TR / EN).
    Kendi çivit vurgusunu taşır; zemin ve yazı renkleri sitenin temasından gelir. */
@@ -26,8 +27,8 @@ export const HEREBY_TR: Metin = {
   ust: "Berkay Doğan'ın bir projesi",
   baslik: ["Düşünceni", "bir yere", "bırak."],
   alt: "Aklından geçen satırı geçtiğin yere bırak. Onu yalnızca oraya gelen biri okuyabilir. Beğeni yok, takipçi yok; sadece yerler ve cümleler.",
-  imza: "iOS · Yakında App Store'da",
-  beta: "Beta'ya katıl", betaKonu: "Hereby beta", yakinda: "Şu an kapalı beta aşamasında",
+  imza: "iOS · App Store'da",
+  beta: "App Store'dan indir", betaKonu: "Hereby beta", yakinda: "Ücretsiz · Reklamsız · Üyelik yok",
   manifestoEtiket: "Manifesto",
   manifesto: ["İnsanlar düşünmeyi unuttu.", "Bazen düşünürken içinden geçirirsin ve o düşünceni ancak o yere yeniden gittiğinde hatırlarsın.", "Değerli olanı hatırlamak önemlidir.", "Hereby bir ayna olsun."],
   adimEtiket: "Nasıl çalışır",
@@ -69,8 +70,8 @@ export const HEREBY_EN: Metin = {
   ust: "A project by Berkay Doğan",
   baslik: ["Leave", "a thought", "in a place."],
   alt: "Leave the line on your mind in the place you pass. Only someone who comes there can read it. No likes, no followers; just places and sentences.",
-  imza: "iOS · Coming soon to the App Store",
-  beta: "Join the beta", betaKonu: "Hereby beta", yakinda: "Currently in private beta",
+  imza: "iOS · On the App Store",
+  beta: "Download on the App Store", betaKonu: "Hereby beta", yakinda: "Free · No ads · No sign-up",
   manifestoEtiket: "Manifesto",
   manifesto: ["People have forgotten how to think.", "Sometimes a thought passes through you, and you only remember it when you return to that place.", "Remembering what is precious matters.", "Let Hereby be a mirror."],
   adimEtiket: "How it works",
@@ -122,7 +123,7 @@ function Simge({ ad }: { ad: string }) {
 
 export function HerebyTanitim({ m }: { m: Metin }) {
   const en = m === HEREBY_EN;
-  const betaHref = `mailto:hello@berkaydogan.co?subject=${encodeURIComponent(m.betaKonu)}`;
+  const betaHref = HEREBY_APP_STORE;
   return (
     <main lang={en ? "en" : "tr"} style={{ position: "relative", overflow: "hidden" }}>
       <style>{`

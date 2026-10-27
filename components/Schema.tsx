@@ -141,7 +141,7 @@ export function MurekkepBookSchema() {
   );
 }
 
-/** Tasfiye — Book (yakında) */
+/** Tasfiye — Book (25 Ağustos 2026'da çıktı) */
 export function TasfiyeBookSchema() {
   return (
     <JsonLd

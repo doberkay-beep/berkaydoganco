@@ -137,7 +137,7 @@ export const content = {
     },
     tasfiye: {
       kicker: "BERKAY DOĞAN — DENEME — AĞUSTOS 2026",
-      badge: "YAKINDA — AĞUSTOS 2026",
+      badge: "ÇIKTI — AĞUSTOS 2026",
       notifyBtn: "ÇIKINCA HABER VER →",
       notifyUrl: "https://doberkay.substack.com/subscribe",
       launchKicker: "LANSMANA KALAN",
@@ -254,7 +254,7 @@ export const content = {
       worksKicker: "ESERLER",
       works: [
         { yil: "2025", eser: "Mürekkep ve Köz: Bir Şairin Hesabı", tur: "ŞİİR", yayin: "İskenderiye Yayınları" },
-        { yil: "2026", eser: "Tasfiye", tur: "DENEME", yayin: "Yakında" },
+        { yil: "2026", eser: "Tasfiye", tur: "DENEME", yayin: "İskenderiye Yayınları" },
       ],
     },
     contact: {
@@ -460,7 +460,7 @@ export const content = {
     },
     tasfiye: {
       kicker: "BERKAY DOĞAN — ESSAY — AUGUST 2026",
-      badge: "COMING SOON — AUGUST 2026",
+      badge: "OUT NOW — AUGUST 2026",
       notifyBtn: "NOTIFY ME WHEN IT'S OUT →",
       notifyUrl: "https://doberkay.substack.com/subscribe",
       launchKicker: "COUNTDOWN TO LAUNCH",

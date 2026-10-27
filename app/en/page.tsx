@@ -188,7 +188,7 @@ export default function EnglishPage() {
             hereby<span style={{ color: "#6d66ff" }}>.</span> <em style={{ fontSize: "0.7em", color: "var(--muted)" }}>Leave a thought in a place.</em>
           </span>
           <span style={{ fontSize: "0.95rem", lineHeight: 1.6, color: "var(--muted)", maxWidth: "60ch" }}>
-            An iOS app by Berkay Doğan, 2026. Leave the line on your mind in the place you pass; only someone who comes there can read it. No likes, no followers. It includes poetry walks through Kadıköy and Beşiktaş, where lines from his books open only when you arrive. Currently in private beta.
+            An iOS app by Berkay Doğan, 2026. Leave the line on your mind in the place you pass; only someone who comes there can read it. No likes, no followers. It includes poetry walks through Kadıköy and Beşiktaş, where lines from his books open only when you arrive. Free on the App Store.
           </span>
           <span style={{ ...mono, fontSize: "0.6rem", color: "#8f89ff" }}>Discover hereby →</span>
         </Link>

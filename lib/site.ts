@@ -22,6 +22,8 @@ export const INSTAGRAM_URL = "https://instagram.com/berkaydgn__";
 export const EMAIL = "do.berkay@icloud.com";
 // by. uygulamalarının destek ve veri sorumlusu adresi (iCloud+ özel alan adı, 27 Eki 2026).
 export const DESTEK_EMAIL = "hello@berkaydogan.co";
+// App Store sayfaları (Apple kimlikleri App Store Connect'ten, 27 Eki 2026).
+export const HEREBY_APP_STORE = "https://apps.apple.com/app/id6825787016";
 export const GOODREADS_URL = "https://www.goodreads.com/book/show/252900764-m-rekkep-ve-k-z";
 export const VALSANAT_URL = "https://online.fliphtml5.com/jqzww/ezec/#p=1";
 

@@ -49,7 +49,7 @@ export const WRITTENBY_TR: WrittenbyMetin = {
   kitapMetin: "1 Ocak 2027'de başlıyor, 31 Aralık'ta kapanıyor. Bir yıl boyunca bir şehrin sokaklarından, iskelelerinden, pencerelerinden gelen satırlar. Kitaba girmek bir ödül değil, bir derleme kararı.",
   ornekEtiket: "Bir günün sorusu",
   ornekSoru: "Bugün nerede durdun?",
-  yakinda: "writtenby. yakında hereby. ile iOS'ta. Android planlanıyor.",
+  yakinda: "writtenby. iOS'ta, hereby.'nin içinde. Android planlanıyor.",
   herebyLink: "hereby.'yi tanı →", herebyHref: "/hereby",
   atolye: "by. atölyesinin bir işi", atolyeHref: "/by", anaSayfa: "/",
   sanatci: {
@@ -86,7 +86,7 @@ export const WRITTENBY_EN: WrittenbyMetin = {
   kitapMetin: "It opens on January 1, 2027 and closes on December 31. A year of lines from a city's streets, piers and windows. Getting into the book isn't a prize, it's an editorial choice.",
   ornekEtiket: "One day's question",
   ornekSoru: "Where did you stop today?",
-  yakinda: "writtenby. is coming soon to iOS with hereby. Android is planned.",
+  yakinda: "writtenby. is on iOS, inside hereby. Android is planned.",
   herebyLink: "Meet hereby. →", herebyHref: "/en/hereby",
   atolye: "A work of the by. workshop", atolyeHref: "/en/by", anaSayfa: "/en",
   sanatci: {
