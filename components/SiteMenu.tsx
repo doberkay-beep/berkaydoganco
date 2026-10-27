@@ -43,6 +43,7 @@ export function menuGruplari(lang: "tr" | "en"): Grup[] {
       linkler: [
         [tr ? "/by/" : "/en/by/", tr ? "by. atölyesi" : "by. workshop"],
         [tr ? "/hereby/" : "/en/hereby/", "hereby."],
+        [tr ? "/gidis/" : "/en/departures/", tr ? "Gidiş zinciri" : "Departure chain", true],
         [tr ? "/nowby/" : "/en/nowby/", "nowby."],
         [tr ? "/writtenby/" : "/en/writtenby/", "writtenby."],
         [tr ? "/writtenby/sanatcilar/" : "/en/writtenby/artists/", tr ? "Sanatçılar" : "Artists", true],
