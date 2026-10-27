@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { DESTEK_EMAIL } from "@/lib/site";
+import { DESTEK_EMAIL, NOWBY_APP_STORE } from "@/lib/site";
 
 /* nowby. — by. atölyesinin ikinci işi. Türkiye'nin radyolarında şu an ne çalıyor?
    Canlı radyo sitesi nowby.co'da; bu sayfa uygulamaları (iPhone, iPad, Mac, Apple TV, Apple Watch) tanıtır. */
@@ -14,7 +14,7 @@ const kart: React.CSSProperties = { background: "var(--glass-bg)", border: "1px 
 type Madde = { b: string; s: string };
 export type NowbyMetin = {
   dil: "tr" | "en";
-  alt: string; giris: string; durum: string; dinle: string;
+  alt: string; giris: string; durum: string; dinle: string; indir: string;
   cihazlarAlt: string; ekranEtiket: string; ekranBaslik: string; ekranlar: (Madde & { c: string })[];
   icerikEtiket: string; icerik: Madde[];
   soruEtiket: string; sorular: string[];
@@ -27,8 +27,9 @@ export const NOWBY_TR: NowbyMetin = {
   dil: "tr",
   alt: "Türkiye'nin radyolarında şu an ne çalıyor?",
   giris: "Yüzlerce frekans tek ekranda, canlı. Gerçek sayıma dayanan listeler, dünyanın radyoları, kitaplardan dizelerle Frekans Falı.",
-  durum: "nowby.co'da canlı · Uygulamalar yakında",
+  durum: "App Store'da · iPhone, iPad, Mac, Apple TV ve Apple Watch",
   dinle: "Şimdi dinle: nowby.co →",
+  indir: "App Store'dan indir",
   cihazlarAlt: "nowby. beş cihazda aynı anda: Apple TV, MacBook, iPad, iPhone ve Apple Watch. Hepsinde aynı radyo, aynı şarkı.",
   ekranEtiket: "Her ekranda",
   ekranBaslik: "Aynı frekans, her ekranda.",
@@ -58,10 +59,11 @@ export const NOWBY_TR: NowbyMetin = {
 
 export const NOWBY_EN: NowbyMetin = {
   dil: "en",
-  alt: "What is playing on Türkiye's radio right now?",
+  alt: "What is playing on the radio right now?",
   giris: "Hundreds of frequencies on one screen, live. Charts built on real airplay counts, the world's radio, and a Frequency Fortune with lines from the books.",
-  durum: "Live at nowby.co · Apps coming soon",
+  durum: "On the App Store · iPhone, iPad, Mac, Apple TV and Apple Watch",
   dinle: "Listen now: nowby.co →",
+  indir: "Download on the App Store",
   cihazlarAlt: "nowby. on five devices at once: Apple TV, MacBook, iPad, iPhone and Apple Watch. The same station, the same song on all of them.",
   ekranEtiket: "On every screen",
   ekranBaslik: "The same frequency, on every screen.",
@@ -117,8 +119,9 @@ export function NowbySayfa({ m }: { m: NowbyMetin }) {
         <h1 style={{ ...serif, fontStyle: "italic", fontWeight: 400, fontSize: "clamp(1.6rem, 4.4vw, 2.7rem)", lineHeight: 1.2, marginTop: "1rem" }}>{m.alt}</h1>
         <p style={{ ...serif, fontSize: "clamp(1.1rem, 2.4vw, 1.4rem)", lineHeight: 1.55, margin: "1.3rem auto 0", maxWidth: "640px", opacity: 0.85 }}>{m.giris}</p>
         <p style={{ ...mono, color: TURUNCU, marginTop: "1.6rem" }}>{m.durum}</p>
-        <p style={{ marginTop: "1.4rem" }}>
-          <a href="https://nowby.co" style={{ display: "inline-block", padding: "0.8rem 1.4rem", borderRadius: "999px", background: TURUNCU, color: "#160806", fontWeight: 700, textDecoration: "none" }}>{m.dinle}</a>
+        <p style={{ marginTop: "1.4rem", display: "flex", gap: "0.8rem", justifyContent: "center", flexWrap: "wrap" }}>
+          <a href={NOWBY_APP_STORE} style={{ display: "inline-block", padding: "0.8rem 1.4rem", borderRadius: "999px", background: TURUNCU, color: "#160806", fontWeight: 700, textDecoration: "none" }}>{m.indir} →</a>
+          <a href="https://nowby.co" style={{ display: "inline-block", padding: "0.8rem 1.4rem", borderRadius: "999px", border: `1px solid ${TURUNCU}`, color: TURUNCU, fontWeight: 700, textDecoration: "none" }}>{m.dinle}</a>
         </p>
       </section>
 
@@ -173,7 +176,7 @@ export function NowbySayfa({ m }: { m: NowbyMetin }) {
         <p style={{ ...serif, fontStyle: "italic", fontSize: "clamp(1.2rem, 2.8vw, 1.6rem)", marginTop: "1.1rem" }}>{m.kapanis}</p>
         <p style={{ ...mono, color: TURUNCU, marginTop: "1.2rem" }}>{m.ilkeler}</p>
         <p style={{ marginTop: "1.6rem" }}>
-          <a href="https://nowby.co" style={{ ...mono, color: TURUNCU, textDecoration: "none" }}>{m.dinle}</a>
+          <a href={NOWBY_APP_STORE} style={{ ...mono, color: TURUNCU, textDecoration: "none" }}>{m.indir} →</a>
         </p>
         <p style={{ marginTop: "2.4rem", lineHeight: 1.6, opacity: 0.85 }}>
           {m.destek}: <a href={`mailto:${DESTEK_EMAIL}`} style={{ color: "var(--ink)", textDecoration: "underline" }}>{DESTEK_EMAIL}</a>

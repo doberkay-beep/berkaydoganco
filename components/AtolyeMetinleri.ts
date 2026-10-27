@@ -94,7 +94,7 @@ export const ATOLYE_EN: AtolyeMetin = {
     },
     {
       id: "nowby", ad: "nowby", renk: TURUNCU, soru: "When?", href: "/en/nowby", link: "Meet nowby. →",
-      m: "What is playing on Türkiye's radio right now? Hundreds of frequencies on one screen, live. Charts built on real airplay counts, the world's radio, and a Frequency Fortune with lines from the books.",
+      m: "What is playing on the radio right now? Hundreds of frequencies on one screen, live. Charts built on real airplay counts, the world's radio, and a Frequency Fortune with lines from the books.",
       ilke: "It counts songs, not people.",
       cihazBaslik: "The same station, the same song on five devices.",
       cihazlar: [
