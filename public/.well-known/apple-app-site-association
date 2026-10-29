@@ -1,0 +1,13 @@
+{
+  "applinks": {
+    "details": [
+      {
+        "appIDs": ["8G5S22XSBZ.co.berkaydogan.hereby"],
+        "components": [
+          { "/": "/hereby/iz/*", "comment": "hediye izi (TR)" },
+          { "/": "/en/hereby/trace/*", "comment": "gift trace (EN)" }
+        ]
+      }
+    ]
+  }
+}

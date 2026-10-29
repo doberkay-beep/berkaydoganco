@@ -287,6 +287,33 @@
           "value": "image/png"
         }
       ]
+    },
+    {
+      "source": "/.well-known/apple-app-site-association",
+      "headers": [
+        {
+          "key": "Content-Type",
+          "value": "application/json"
+        }
+      ]
+    }
+  ],
+  "rewrites": [
+    {
+      "source": "/hereby/iz/:kod/",
+      "destination": "/hereby/iz/"
+    },
+    {
+      "source": "/hereby/iz/:kod",
+      "destination": "/hereby/iz/"
+    },
+    {
+      "source": "/en/hereby/trace/:kod/",
+      "destination": "/en/hereby/trace/"
+    },
+    {
+      "source": "/en/hereby/trace/:kod",
+      "destination": "/en/hereby/trace/"
     }
   ]
 }
