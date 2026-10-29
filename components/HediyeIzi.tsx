@@ -10,7 +10,7 @@ import { SUNUCU, ANAHTAR } from "@/components/WrittenbySanatci";
    Uygulama yüklüyse bağlantı Universal Link ile doğrudan uygulamayı açar; bu sayfa yüklü olmayanlar içindir. */
 
 const CIVIT = "#6d66ff";
-const KOD = /^[A-HJ-NP-Z2-9]{5}-[A-HJ-NP-Z2-9]{5}$/;
+const KOD = /^[A-HJKMNP-Z2-9]{5}-[A-HJKMNP-Z2-9]{5}$/;
 
 const mono: React.CSSProperties = { fontFamily: "var(--font-grotesk)", fontSize: "0.72rem", fontWeight: 600, letterSpacing: "0.18em", textTransform: "uppercase" };
 const serif: React.CSSProperties = { fontFamily: "var(--font-serif, Georgia), Georgia, serif" };
