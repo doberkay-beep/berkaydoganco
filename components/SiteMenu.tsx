@@ -34,7 +34,7 @@ export function menuGruplari(lang: "tr" | "en"): Grup[] {
         ["/film/", tr ? "Tasfiye: film" : "Tasfiye: the film"],
         ["/video/", tr ? "İzle & Dinle" : "Watch & Listen"],
         ["/posterler/", tr ? "Posterler" : "Posters"],
-        ...(tr ? [["/goruntu/", "Görüntü ve Dize"] as Baglanti] : []),
+        ...(tr ? [["/goruntu/", "Görüntü ve Dize"] as Baglanti, ["/tek-soz/", "Tek Söz"] as Baglanti] : []),
         ...(ETKINLIKLER.length > 0 ? [["/sahne/", tr ? "Sahne" : "On Stage"] as Baglanti] : []),
       ],
     },
