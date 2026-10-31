@@ -4,6 +4,7 @@ import Link from "next/link";
    Kendi çivit vurgusunu taşır; zemin ve yazı renkleri sitenin temasından gelir. */
 
 const CIVIT = "#6d66ff";
+const APP_STORE = "https://apps.apple.com/app/hereby/id6825787016";
 
 const mono: React.CSSProperties = { fontFamily: "var(--font-grotesk)", fontSize: "0.72rem", fontWeight: 600, letterSpacing: "0.18em", textTransform: "uppercase" };
 const serif: React.CSSProperties = { fontFamily: "var(--font-serif, Georgia), Georgia, serif" };
@@ -11,8 +12,8 @@ const bolum: React.CSSProperties = { maxWidth: "1080px", margin: "0 auto", paddi
 const kart: React.CSSProperties = { background: "var(--glass-bg)", border: "1px solid var(--glass-border)", borderRadius: "22px", padding: "1.5rem", backdropFilter: "blur(12px)" };
 
 type Metin = {
-  ust: string; baslik: [string, string, string]; alt: string; imza: string;
-  beta: string; betaKonu: string; yakinda: string;
+  ust: string; baslik: [string, string, string]; alt: string;
+  indir: string; yakinda: string;
   manifestoEtiket: string; manifesto: string[];
   adimEtiket: string; adimlar: { b: string; m: string; g: string; alt: string }[];
   ozellikEtiket: string; ozellikBaslik: string; ozellikler: { s: string; b: string; m: string }[];
@@ -26,8 +27,7 @@ export const HEREBY_TR: Metin = {
   ust: "Berkay Doğan'ın bir projesi",
   baslik: ["Düşünceni", "bir yere", "bırak."],
   alt: "Aklından geçen satırı geçtiğin yere bırak. Onu yalnızca oraya gelen biri okuyabilir. Beğeni yok, takipçi yok; sadece yerler ve cümleler.",
-  imza: "iOS · Yakında App Store'da",
-  beta: "Beta'ya katıl", betaKonu: "Hereby beta", yakinda: "Şu an kapalı beta aşamasında",
+  indir: "App Store'dan indir", yakinda: "iPhone için",
   manifestoEtiket: "Manifesto",
   manifesto: ["İnsanlar düşünmeyi unuttu.", "Bazen düşünürken içinden geçirirsin ve o düşünceni ancak o yere yeniden gittiğinde hatırlarsın.", "Değerli olanı hatırlamak önemlidir.", "Hereby bir ayna olsun."],
   adimEtiket: "Nasıl çalışır",
@@ -69,8 +69,7 @@ export const HEREBY_EN: Metin = {
   ust: "A project by Berkay Doğan",
   baslik: ["Leave", "a thought", "in a place."],
   alt: "Leave the line on your mind in the place you pass. Only someone who comes there can read it. No likes, no followers; just places and sentences.",
-  imza: "iOS · Coming soon to the App Store",
-  beta: "Join the beta", betaKonu: "Hereby beta", yakinda: "Currently in private beta",
+  indir: "Download on the App Store", yakinda: "For iPhone",
   manifestoEtiket: "Manifesto",
   manifesto: ["People have forgotten how to think.", "Sometimes a thought passes through you, and you only remember it when you return to that place.", "Remembering what is precious matters.", "Let Hereby be a mirror."],
   adimEtiket: "How it works",
@@ -122,7 +121,6 @@ function Simge({ ad }: { ad: string }) {
 
 export function HerebyTanitim({ m }: { m: Metin }) {
   const en = m === HEREBY_EN;
-  const betaHref = `mailto:hello@berkaydogan.co?subject=${encodeURIComponent(m.betaKonu)}`;
   return (
     <main lang={en ? "en" : "tr"} style={{ position: "relative", overflow: "hidden" }}>
       <style>{`
@@ -150,8 +148,7 @@ export function HerebyTanitim({ m }: { m: Metin }) {
         </h1>
         <p style={{ fontSize: "clamp(1.05rem, 2.2vw, 1.3rem)", lineHeight: 1.65, color: "var(--muted)", maxWidth: "40rem", margin: "0 auto 2.4rem", position: "relative" }}>{m.alt}</p>
         <div style={{ display: "flex", gap: "1rem", justifyContent: "center", flexWrap: "wrap", position: "relative" }}>
-          <a href={betaHref} className="hb-dugme" style={{ background: CIVIT, color: "#fff", boxShadow: `0 12px 34px ${CIVIT}55` }}>{m.beta} →</a>
-          <span className="hb-dugme" style={{ border: "1px solid var(--line)", color: "var(--muted)" }}>{m.imza}</span>
+          <a href={APP_STORE} className="hb-dugme" style={{ background: CIVIT, color: "#fff", boxShadow: `0 12px 34px ${CIVIT}55` }}>{m.indir} ↗</a>
         </div>
         <p style={{ ...mono, color: "var(--muted)", marginTop: "1.4rem", fontSize: "0.66rem", position: "relative" }}>{m.yakinda}</p>
       </section>
@@ -244,7 +241,7 @@ export function HerebyTanitim({ m }: { m: Metin }) {
         <p style={{ ...serif, fontSize: "clamp(2.2rem, 6vw, 3.8rem)", margin: "0 0 1.8rem", lineHeight: 1.05 }}>
           hereby<span style={{ color: CIVIT }}>.</span>
         </p>
-        <a href={betaHref} className="hb-dugme" style={{ background: CIVIT, color: "#fff", boxShadow: `0 12px 34px ${CIVIT}55` }}>{m.beta} →</a>
+        <a href={APP_STORE} className="hb-dugme" style={{ background: CIVIT, color: "#fff", boxShadow: `0 12px 34px ${CIVIT}55` }}>{m.indir} ↗</a>
         <nav style={{ display: "flex", gap: "1.4rem", justifyContent: "center", flexWrap: "wrap", marginTop: "2.6rem", ...mono, color: "var(--muted)" }}>
           <Link href={m.kosulHref}>{m.kosullar}</Link>
           <Link href={m.gizlilikHref}>{m.gizlilik}</Link>
