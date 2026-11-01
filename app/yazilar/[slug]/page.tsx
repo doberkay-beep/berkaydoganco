@@ -21,7 +21,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   if (!y) return {};
   return {
     title: { absolute: `${y.title} — Berkay Doğan` },
-    description: y.dek,
+    description: y.seoAciklama ?? y.dek,
     alternates: { canonical: `/yazilar/${y.slug}` },
     robots: y.taslak ? { index: false, follow: false } : undefined,
     openGraph: {

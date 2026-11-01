@@ -4,6 +4,8 @@
    (Berkay onaylayınca taslak kaldırılır). "[[video]]" paragrafı YouTube kartı olarak çizilir. */
 
 export type Yazi = {
+  /** Yalnız arama motoru açıklaması (sayfada görünmez); yoksa dek kullanılır. */
+  seoAciklama?: string;
   slug: string;
   title: string;
   dek: string;          // tek cümlelik alt başlık
@@ -62,6 +64,7 @@ export const YAZILAR: Yazi[] = [
   {
     slug: "siire-nereden-baslamali",
     title: "Şiire nereden başlamalı?",
+    seoAciklama: "Şiir okumaya nereden başlamalı? Şiir okumak isteyen ama nereden gireceğini bilemeyenler için Berkay Doğan'dan dürüst bir yol haritası.",
     dek: "Şiir okumak isteyen ama nereden gireceğini bilemeyenler için dürüst bir yol haritası.",
     dateISO: "2026-09-06",
     dateText: "6 Eylül 2026",
