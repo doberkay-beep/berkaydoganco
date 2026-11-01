@@ -72,7 +72,7 @@ export const STUDIO_TR: StudioMetin = {
   alt: "stüdyo",
   baslik: "Uygulama ve web siteleri, bir yazarın özeniyle.",
   giris: "Ben Berkay Doğan; kitapları yayımlanmış bir yazar ve geliştiriciyim. iOS uygulamaları, web siteleri ve canlı veri ürünleri tasarlıyor ve geliştiriyorum: ilk çizimden App Store'a kadar. Ekrandaki her kelimeyi bir kitaptaki satır kadar özenle yazıyorum.",
-  uzaktan: "Hollanda, Birleşik Krallık ve Avrupa'daki projelere uzaktan açığım.",
+  uzaktan: "Türkiye'den ve uzaktan projelere açığım.",
   paketEtiket: "Yazarlar için",
   paketBaslik: "İki net paket, sabit fiyat.",
   paketler: [
