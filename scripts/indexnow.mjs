@@ -14,7 +14,7 @@ if (yollar.length) {
   adresler = [...xml.matchAll(/<loc>([^<]+)<\/loc>/g)].map((m) => m[1]);
 }
 
-const yanit = await fetch("https://api.indexnow.org/indexnow", {
+const yanit = await fetch("https://www.bing.com/indexnow", {
   method: "POST",
   headers: { "Content-Type": "application/json; charset=utf-8" },
   body: JSON.stringify({ host: "www.berkaydogan.co", key: ANAHTAR, keyLocation: `${SITE}/${ANAHTAR}.txt`, urlList: adresler }),

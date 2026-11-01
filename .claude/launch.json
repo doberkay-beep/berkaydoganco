@@ -23,6 +23,20 @@
         "3001"
       ],
       "port": 3001
+    },
+    {
+      "name": "stillby",
+      "runtimeExecutable": "npx",
+      "runtimeArgs": [
+        "--yes",
+        "http-server@14.1.1",
+        "/Users/yazarberkay/Desktop/by-atolye/stillby-prototip",
+        "-p",
+        "4317",
+        "-c-1",
+        "--silent"
+      ],
+      "port": 4317
     }
   ]
 }
