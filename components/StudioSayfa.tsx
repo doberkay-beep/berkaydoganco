@@ -3,7 +3,7 @@ import { Isaret } from "./AtolyeSayfa";
 import { EMAIL } from "@/lib/site";
 
 /* by. studio — atölyenin hizmet yüzü: uygulama, web ve canlı veri işleri.
-   Örnek işler atölyenin kendi ürünleri; müşteri adı, fiyat ya da süre sözü yok. */
+   Örnek işler atölyenin kendi ürünleri; müşteri adı yok. TR sayfada yazarlara yönelik iki sabit fiyatlı paket var (Kasım 2026). */
 
 const MOR = "#7c6cff";
 const TURUNCU = "#FF6A3D";
@@ -14,11 +14,14 @@ const bolum: React.CSSProperties = { maxWidth: "1080px", margin: "0 auto", paddi
 const kart: React.CSSProperties = { background: "var(--glass-bg)", border: "1px solid var(--glass-border)", borderRadius: "24px", backdropFilter: "blur(12px)" };
 
 type Hizmet = { b: string; s: string };
+type Paket = { b: string; s: string; maddeler: string[]; sure: string; fiyat: string; ornek: string; ornekHref: string };
 type Is = { ad: string; renk: string; m: string; teknik: string; href: string; link: string; gorsel: string; alt: string };
 export type StudioMetin = {
   dil: "tr" | "en";
   alt: string; baslik: string; giris: string; uzaktan: string;
   hizmetEtiket: string; hizmetler: Hizmet[];
+  /** Yalnız TR: yazarlara yönelik sabit fiyatlı paketler. */
+  paketEtiket?: string; paketBaslik?: string; paketler?: Paket[];
   isEtiket: string; isler: Is[];
   surecEtiket: string; surec: Hizmet[];
   ilkeEtiket: string; ilkeler: Hizmet[];
@@ -70,6 +73,12 @@ export const STUDIO_TR: StudioMetin = {
   baslik: "Uygulama ve web siteleri, bir yazarın özeniyle.",
   giris: "Ben Berkay Doğan; kitapları yayımlanmış bir yazar ve geliştiriciyim. iOS uygulamaları, web siteleri ve canlı veri ürünleri tasarlıyor ve geliştiriyorum: ilk çizimden App Store'a kadar. Ekrandaki her kelimeyi bir kitaptaki satır kadar özenle yazıyorum.",
   uzaktan: "Hollanda, Birleşik Krallık ve Avrupa'daki projelere uzaktan açığım.",
+  paketEtiket: "Yazarlar için",
+  paketBaslik: "İki net paket, sabit fiyat.",
+  paketler: [
+    { b: "Yazar sitesi", s: "Kitapların, biyografin, basın kitin ve iletişim bilgin tek bir yerde; adınla aratan seni bulsun diye.", maddeler: ["Kitap sayfaları: kapak, tanıtım, satın alma bağlantıları", "Biyografi ve indirilebilir basın kiti", "Google için yapılandırılmış veri, arama motoru kayıtları ve Wikidata yazar kaydı", "Telefonda hızlı ve kusursuz; alan adı bağlantısı"], sure: "1–2 haftada teslim", fiyat: "10.000 TL", ornek: "Örnek: berkaydogan.co", ornekHref: "/" },
+    { b: "Kitap tanıtım paketi", s: "Kitabından tek bir satır, gerçek bir görüntünün üstünde, otuz saniyede.", maddeler: ["3 adet 30 saniyelik dikey video (Reels, Shorts, TikTok)", "1 story kartı ve 1 akış görseli", "Satır seçimi birlikte; müzik paylaşırken platformdan eklenir"], sure: "3–5 günde teslim", fiyat: "3.500 TL", ornek: "Örnek: Tek Söz videoları", ornekHref: "/tek-soz" },
+  ],
   hizmetEtiket: "Neler yapıyorum",
   hizmetler: [
     { b: "iOS uygulamaları", s: "Harita, ses, konum ve canlı güncellemeler içeren yerel SwiftUI uygulamaları; güncel iOS için tasarlanıp App Store'a çıkarılır." },
@@ -125,6 +134,30 @@ export function StudioSayfa({ m }: { m: StudioMetin }) {
         <p style={{ ...mono, color: MOR, marginTop: "1.6rem" }}>{m.uzaktan}</p>
         <a href={posta} style={{ ...mono, display: "inline-block", marginTop: "1.8rem", padding: "0.95rem 1.6rem", borderRadius: "999px", background: MOR, color: "#fff", textDecoration: "none" }}>{m.iletisimBaslik}</a>
       </section>
+
+      {/* PAKETLER (yalnız TR) */}
+      {m.paketler && (
+        <section style={bolum}>
+          <p style={{ ...mono, color: MOR }}>{m.paketEtiket}</p>
+          <h2 style={{ ...serif, fontWeight: 400, fontSize: "clamp(1.7rem, 4vw, 2.4rem)", marginTop: "0.8rem" }}>{m.paketBaslik}</h2>
+          <div className="st-izgara" style={{ marginTop: "1.6rem" }}>
+            {m.paketler.map((p) => (
+              <div key={p.b} style={{ ...kart, padding: "clamp(1.3rem, 3vw, 1.8rem)", display: "flex", flexDirection: "column" }}>
+                <h3 style={{ ...serif, fontSize: "1.55rem", fontWeight: 600 }}>{p.b}</h3>
+                <p style={{ marginTop: "0.6rem", lineHeight: 1.6, opacity: 0.85 }}>{p.s}</p>
+                <ul style={{ margin: "1rem 0 0", paddingLeft: "1.1rem", lineHeight: 1.7, opacity: 0.8 }}>
+                  {p.maddeler.map((x) => <li key={x}>{x}</li>)}
+                </ul>
+                <div style={{ marginTop: "auto", paddingTop: "1.4rem", display: "flex", justifyContent: "space-between", alignItems: "baseline", gap: "1rem", flexWrap: "wrap" }}>
+                  <span style={{ ...appYazi, fontSize: "1.9rem", color: MOR }}>{p.fiyat}</span>
+                  <span style={{ ...mono, opacity: 0.6 }}>{p.sure}</span>
+                </div>
+                <Link href={p.ornekHref} style={{ ...mono, display: "inline-block", marginTop: "0.9rem", color: MOR, textDecoration: "none" }}>{p.ornek} →</Link>
+              </div>
+            ))}
+          </div>
+        </section>
+      )}
 
       {/* HİZMETLER */}
       <section style={bolum}>
