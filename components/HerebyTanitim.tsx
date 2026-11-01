@@ -39,6 +39,7 @@ export const HEREBY_TR: Metin = {
   ],
   ozellikEtiket: "İçinde neler var", ozellikBaslik: "Ruhu olan küçük şeyler.",
   ozellikler: [
+    { s: "hediye", b: "Birine bırak", m: "Bir satırı bir yere bırak, bağlantısını tek bir kişiye gönder. Okumak için oraya gitmesi gerek; haritada başkasına görünmez." },
     { s: "yer-imi", b: "Kendine iz", m: "Yalnız senin görebileceğin bir not. O yere yeniden gittiğinde telefonun hatırlatır: \"Burada sana bir not bırakmıştın.\"" },
     { s: "kum-saati", b: "Zaman kapsülü", m: "Bir ay, bir yıl, beş yıl sonra açılsın. O güne kadar kimse okuyamaz." },
     { s: "pati", b: "Bir canlı için", m: "Bu köşede yaşayan kedinin, köpeğin adı, huyu, suyunun nerede olduğu." },
@@ -82,6 +83,7 @@ export const HEREBY_EN: Metin = {
   ],
   ozellikEtiket: "What's inside", ozellikBaslik: "Small things with a soul.",
   ozellikler: [
+    { s: "hediye", b: "Leave it for someone", m: "Leave a line in a place and send the link to one person. They have to go there to read it; no one else sees it on the map." },
     { s: "yer-imi", b: "Note to self", m: "A note only you can see. When you return to that place, your phone reminds you: \"You left yourself a note here.\"" },
     { s: "kum-saati", b: "Time capsule", m: "Let it open in a month, a year, five years. Until then, no one can read it." },
     { s: "pati", b: "For a creature", m: "The name of the cat or dog that lives on this corner, its ways, where its water is." },
@@ -112,6 +114,7 @@ export const HEREBY_EN: Metin = {
 function Simge({ ad }: { ad: string }) {
   const ortak = { width: 26, height: 26, viewBox: "0 0 24 24", fill: "none", stroke: CIVIT, strokeWidth: 1.8, strokeLinecap: "round" as const, strokeLinejoin: "round" as const };
   switch (ad) {
+    case "hediye": return <svg {...ortak}><path d="M4 11h16v10H4zM3 7h18v4H3zM12 7v14M12 7c-1.5-3-5-3.5-5-1.2C7 7 9.5 7 12 7zm0 0c1.5-3 5-3.5 5-1.2C17 7 14.5 7 12 7z" /></svg>;
     case "yer-imi": return <svg {...ortak}><path d="M6 3h12v18l-6-4-6 4z" /></svg>;
     case "kum-saati": return <svg {...ortak}><path d="M6 3h12M6 21h12M7 3c0 5 10 5 10 9s-10 4-10 9M17 3c0 5-10 5-10 9s10 4 10 9" /></svg>;
     case "pati": return <svg {...ortak}><circle cx="7" cy="9" r="1.8" /><circle cx="12" cy="6.5" r="1.8" /><circle cx="17" cy="9" r="1.8" /><path d="M8 17c0-3 2-5 4-5s4 2 4 5c0 2-2 2.5-4 2.5S8 19 8 17z" /></svg>;

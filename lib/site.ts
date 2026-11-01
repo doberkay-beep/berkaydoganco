@@ -138,6 +138,7 @@ export const site: Record<Lang, Copy> = {
         { year: "Aug 2026", title: "Tasfiye", kind: "Essays", href: "/en/#tasfiye" },
         { year: "Aug 2026", title: "nowby.", kind: "Live radio · nowby.co (formerly ŞİMDİ)", href: "https://nowby.co" },
         { year: "Sep 2026", title: "TASFİYE: Film", kind: "Short film · 8 min", href: "/film" },
+        { year: "Oct 2026", title: "hereby.", kind: "App · App Store", href: "/en/hereby" },
       ],
     },
     books: {
@@ -201,6 +202,7 @@ export const site: Record<Lang, Copy> = {
         { year: "Ağu 2026", title: "Tasfiye", kind: "Deneme", href: "/kitaplar/tasfiye" },
         { year: "Ağu 2026", title: "nowby.", kind: "Canlı radyo · nowby.co (eski adıyla ŞİMDİ)", href: "https://nowby.co" },
         { year: "Eyl 2026", title: "TASFİYE: Film", kind: "Kısa film · 8 dk", href: "/film" },
+        { year: "Eki 2026", title: "hereby.", kind: "Uygulama · App Store", href: "/hereby" },
       ],
     },
     books: {
