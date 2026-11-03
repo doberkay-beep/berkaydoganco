@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 
 export default function TermsPage() {
   return (
-    <HerebySayfa en ust="Hereby" baslik="Terms of use" guncelleme="October 20, 2026">
+    <HerebySayfa en ust="Hereby" baslik="Terms of use" guncelleme="November 3, 2026">
       <p>To write somewhere is to call someone to that place. By using Hereby, you agree to the rules below.</p>
       <h2 style={h2}>Thoughts are left here</h2>
       <p>Hereby is for leaving what a place makes you think. A line, a verse, a confession. A trace is at most 280 characters.</p>
@@ -20,7 +20,7 @@ export default function TermsPage() {
       <h2 style={h2}>No ads, no spam</h2>
       <p>Hereby is not a notice board. Commercial promotion and repetitive content are removed.</p>
       <h2 style={h2}>Reporting, blocking and removal</h2>
-      <p>You can report a disturbing trace from within the app and block its author. A trace reported by three different people is hidden from everyone until it is reviewed. Traces that break the rules are removed; repeat offenders lose access. Reports are reviewed within 24 hours.</p>
+      <p>You can report a disturbing trace from within the app and block its author. A trace reported by three different people is hidden from everyone until it is reviewed. Sensitive traces, such as those left for a creature, and traces reported for harm to an animal or for accusing someone are hidden after the first report. Traces that break the rules are removed; repeat offenders lose access. Reports are reviewed within 24 hours.</p>
       <h2 style={h2}>If you're going through a hard time</h2>
       <p>If you are thinking about harming yourself or someone else, call your local emergency number (112 in Türkiye and Europe, 911 in the US).</p>
       <h2 style={h2}>Your content is yours</h2>
