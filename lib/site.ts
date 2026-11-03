@@ -24,6 +24,8 @@ export const EMAIL = "do.berkay@icloud.com";
 export const DESTEK_EMAIL = "hello@berkaydogan.co";
 // App Store sayfaları (Apple kimlikleri App Store Connect'ten, 27 Eki 2026).
 export const HEREBY_APP_STORE = "https://apps.apple.com/app/id6825787016";
+// nowby. App Store'da (iPhone, iPad, Apple TV) — 3 Kas 2026.
+export const NOWBY_APP_STORE = "https://apps.apple.com/app/id6825787056";
 export const GOODREADS_URL = "https://www.goodreads.com/book/show/252900764-m-rekkep-ve-k-z";
 export const VALSANAT_URL = "https://online.fliphtml5.com/jqzww/ezec/#p=1";
 
@@ -139,6 +141,7 @@ export const site: Record<Lang, Copy> = {
         { year: "Aug 2026", title: "nowby.", kind: "Live radio · nowby.co (formerly ŞİMDİ)", href: "https://nowby.co" },
         { year: "Sep 2026", title: "TASFİYE: Film", kind: "Short film · 8 min", href: "/film" },
         { year: "Oct 2026", title: "hereby.", kind: "App · App Store", href: "/en/hereby" },
+        { year: "Nov 2026", title: "nowby.", kind: "App · App Store", href: "/en/nowby" },
       ],
     },
     books: {
@@ -203,6 +206,7 @@ export const site: Record<Lang, Copy> = {
         { year: "Ağu 2026", title: "nowby.", kind: "Canlı radyo · nowby.co (eski adıyla ŞİMDİ)", href: "https://nowby.co" },
         { year: "Eyl 2026", title: "TASFİYE: Film", kind: "Kısa film · 8 dk", href: "/film" },
         { year: "Eki 2026", title: "hereby.", kind: "Uygulama · App Store", href: "/hereby" },
+        { year: "Kas 2026", title: "nowby.", kind: "Uygulama · App Store", href: "/nowby" },
       ],
     },
     books: {

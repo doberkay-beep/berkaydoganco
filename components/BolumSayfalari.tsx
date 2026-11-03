@@ -9,6 +9,14 @@ import { OkurMektubu } from "./OkurMektubu";
 import { Sahne } from "./Sahne";
 import { EKRAN } from "@/lib/basinda";
 
+/* Çizelgeyi tarihe göre sırala: "Ara 2025", "Dec 2025", "2017" gibi etiketlerden ay anahtarı (yıl·12 + ay). */
+const AYLAR = ["oca|jan", "şub|feb", "mar", "nis|apr", "may", "haz|jun", "tem|jul", "ağu|aug", "eyl|sep", "eki|oct", "kas|nov", "ara|dec"];
+function ayAnahtari(etiket: string): number {
+  const yil = Number(etiket.match(/\d{4}/)?.[0] ?? 0);
+  const ay = AYLAR.findIndex((a) => new RegExp(`^(${a})`, "i").test(etiket.trim().toLocaleLowerCase("tr")));
+  return yil * 12 + (ay < 0 ? 0 : ay);
+}
+
 /* Ana sayfadan ayrılan bölüm sayfaları — hepsi Kabuk içinde, cg-* stilleriyle. */
 
 const ustBosluk: React.CSSProperties = { paddingTop: "6.5rem" };
@@ -27,15 +35,16 @@ export function HakkimdaSayfa() {
                 <Reveal delay={0.12} style={{ marginTop: "2.5rem" }}>
                   <p style={{ fontSize: "0.7rem", letterSpacing: "0.22em", textTransform: "uppercase", color: "var(--muted)", marginBottom: "1.25rem" }}>{t.about.worksLabel}</p>
                   {[
-                    ...t.about.works,
+                    ...t.about.works.map((w) => ({ ...w, sira: ayAnahtari(w.year) })),
                     // TV ve video çıkışları lib/basinda'dan — yayınlandıkça çizelgeye kendiliğinden düşer.
                     ...[...EKRAN].reverse().map((e) => ({
                       year: new Date(e.tarihISO).toLocaleDateString(lang === "tr" ? "tr-TR" : "en-US", { month: "short", year: "numeric" }),
                       title: e.kanal,
                       kind: e.baslik,
                       href: e.link,
+                      sira: (() => { const d = new Date(e.tarihISO); return d.getFullYear() * 12 + d.getMonth(); })(),
                     })),
-                  ].map((w, i) => {
+                  ].sort((a, b) => a.sira - b.sira).map((w, i) => {
                     const dis = w.href?.startsWith("http");
                     const satir = (
                       <>
