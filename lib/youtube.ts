@@ -15,7 +15,13 @@ export type Video = {
 };
 
 // Besleme kapsamından düşen eski videolar buraya elle eklenir (yeni → eski).
-const EK_VIDEOLAR: Video[] = [];
+const EK_VIDEOLAR: Video[] = [
+  { id: "N3pN0KBLu24", baslik: "Kendi Kitabımın Sanık Sandalyesinde Oturdum | Tasfiye Duruşması", tarih: "2026-10-07T12:00:00Z", aciklama: "Beraat mı, tasfiye mi? Karar senin; yoruma yaz.", izlenme: null, shorts: false },
+  { id: "YmMk8NG5QO4", baslik: "TASFİYE: Film — Bir Yazarın Hesabı | Berkay Doğan", tarih: "2026-09-29T12:00:00Z", aciklama: "Perde açılıyor. Sahne boş. Gitmeye hazır mısınız? Tasfiye — Bir Yazarın Hesabı'nın dünyasından 8 dakikalık bir kısa film.", izlenme: null, shorts: false },
+  { id: "KCNMUtiehSA", baslik: "Antrenman Sezonu Bitti", tarih: "2026-09-26T12:00:00Z", aciklama: "kimse beklemiyordu. ben de kimseye söylemedim.", izlenme: null, shorts: true },
+  { id: "5ctxZ4-J9Cc", baslik: "giyotinimizi kendi omuzlarımızda taşıyoruz", tarih: "2026-07-15T12:00:00Z", aciklama: "ucuz parfüm, ter ve kronik uykusuzluk. sabah metrosu.", izlenme: null, shorts: false },
+  { id: "SV7C6fD8gh8", baslik: "Bir Şairin Hesaplaşması: Mürekkep ve Köz Nasıl Yazıldı?", tarih: "2026-05-13T12:00:00Z", aciklama: "2017'de başlayan sessiz bir isyan, 2022'de biten koca bir hesaplaşma ve 2025'te ellerimde tuttuğum ilk göz ağrım: Mürekkep ve Köz.", izlenme: null, shorts: false },
+];
 
 function alan(xml: string, etiket: string): string {
   const m = xml.match(new RegExp(`<${etiket}[^>]*>([\\s\\S]*?)</${etiket}>`));
