@@ -76,7 +76,7 @@ export function SozAksiyon({ soz, kaynak }: { soz: string; kaynak: string }) {
 
   return (
     <div style={{ display: "flex", gap: "0.7rem", flexWrap: "wrap" }}>
-      <button onClick={() => indir()} style={{ ...stil, background: "var(--accent)", color: "var(--accent-ink)", border: "1px solid transparent" }}>
+      <button onClick={() => indir()} style={{ ...stil, background: "transparent", color: "var(--ink)", border: "1px solid var(--line)" }}>
         Kartı indir
       </button>
       <button onClick={() => indir(1920, "-story")} style={{ ...stil, background: "transparent", color: "var(--ink)", border: "1px solid var(--line)" }}>

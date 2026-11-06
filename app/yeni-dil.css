@@ -78,8 +78,11 @@ body::before, body::after, .aurora, .cg-cursor-glow, .cg-theme, body > canvas { 
 
 /* Satır içi stille yazılmış haplar ve dolu düğmeler de bağlantıya döner */
 a[style*="border-radius:100px"], button[style*="border-radius:100px"],
+a[style*="border-radius: 100px"], button[style*="border-radius: 100px"],
 a[style*="border-radius:999px"], button[style*="border-radius:999px"],
-a[style*="background:var(--accent)"], button[style*="background:var(--accent)"] {
+a[style*="border-radius: 999px"], button[style*="border-radius: 999px"],
+a[style*="background:var(--accent)"], button[style*="background:var(--accent)"],
+a[style*="background: var(--accent)"], button[style*="background: var(--accent)"] {
   background: none !important;
   border: 0 !important;
   border-bottom: 1px solid currentColor !important;
@@ -89,7 +92,7 @@ a[style*="background:var(--accent)"], button[style*="background:var(--accent)"] 
   font-size: 1rem !important;
   font-style: normal;
 }
-a[style*="border-radius:100px"]:hover, a[style*="background:var(--accent)"]:hover { color: var(--accent) !important; }
+a[style*="border-radius"]:hover, button[style*="border-radius"]:hover { color: var(--accent) !important; }
 
 /* Süs başlık satırı ve bölüm numaraları kalkar */
 .ed-masthead, .ed-folio-no { display: none !important; }
