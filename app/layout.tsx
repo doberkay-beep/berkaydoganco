@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Newsreader } from "next/font/google";
+import { Newsreader, Bodoni_Moda } from "next/font/google";
 import "./globals.css";
 import "./yeni-dil.css";
 import { Analytics } from "@vercel/analytics/next";
@@ -13,6 +13,15 @@ const yazi = Newsreader({
   weight: ["300", "400", "500", "600"],
   style: ["normal", "italic"],
   variable: "--font-yazi",
+  display: "swap",
+});
+
+// Başlık yazısı: nowby.co ile aynı. Küçük metinler Newsreader.
+const baslik = Bodoni_Moda({
+  subsets: ["latin", "latin-ext"],
+  weight: ["400", "500"],
+  style: ["normal", "italic"],
+  variable: "--font-baslik",
   display: "swap",
 });
 
@@ -58,7 +67,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="tr" data-theme="light" suppressHydrationWarning className={yazi.variable}>
+    <html lang="tr" data-theme="light" suppressHydrationWarning className={`${yazi.variable} ${baslik.variable}`}>
       <body>
         <a href="#main" className="skip-link">İçeriğe geç</a>
         <div className="aurora" aria-hidden="true" />

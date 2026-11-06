@@ -3,7 +3,7 @@
    Süs yok: cam, parıltı, gölge, hap düğme, minik aralıklı etiket kalkar. */
 :root, [data-theme="dark"], [data-theme="light"] {
   --font-grotesk: var(--font-yazi), Georgia, serif;
-  --font-serif: var(--font-yazi), Georgia, serif;
+  --font-serif: var(--font-baslik), Georgia, serif;
   --bg: #ffffff;
   --bg-2: #ffffff;
   --ink: #0a0a0a;
@@ -73,7 +73,8 @@ body::before, body::after, .aurora, .cg-cursor-glow, .cg-theme, body > canvas { 
 /* Yuvarlak işaretler ve logo noktaları yuvarlak kalır */
 [style*="border-radius"]:not([style*="border-radius:50%"]):not([style*="border-radius: 50%"]) { border-radius: 0 !important; }
 [style*="box-shadow"] { box-shadow: none !important; }
-.ed-display, .cg-serif { font-weight: 300 !important; letter-spacing: -0.02em !important; }
+h1, h2, .ed-display, .cg-serif { font-family: var(--font-baslik), Georgia, serif; }
+.ed-display, .cg-serif { font-weight: 400 !important; letter-spacing: -0.02em !important; }
 .bd-nabiz { animation: none !important; box-shadow: none !important; }
 .cg-ghost { display: none !important; }
 
