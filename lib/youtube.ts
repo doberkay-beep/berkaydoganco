@@ -49,8 +49,10 @@ export async function sonVideolar(): Promise<Video[]> {
         shorts: link.includes("/shorts/"),
       };
     }).filter((v) => v.id);
-    const idler = new Set(liste.map((v) => v.id));
-    return [...liste, ...EK_VIDEOLAR.filter((v) => !idler.has(v.id))];
+    // Boş canlı yayın kaydı ve eski marka adıyla kalan video arşivde görünmesin.
+    const gosterilen = liste.filter((v) => !/Canlı Yayını|^ŞİMDİ/.test(v.baslik));
+    const idler = new Set(gosterilen.map((v) => v.id));
+    return [...gosterilen, ...EK_VIDEOLAR.filter((v) => !idler.has(v.id))];
   } catch {
     return EK_VIDEOLAR; // besleme ulaşılamazsa nazikçe elle liste
   }

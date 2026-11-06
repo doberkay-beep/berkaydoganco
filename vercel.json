@@ -1,5 +1,11 @@
 {
   "redirects": [
+    { "source": "/tasfiye/", "destination": "/kitaplar/tasfiye/", "permanent": true },
+    { "source": "/murekkep-ve-koz/", "destination": "/kitaplar/murekkep-ve-koz/", "permanent": true },
+    { "source": "/kitap/murekkep-ve-koz/", "destination": "/kitaplar/murekkep-ve-koz/", "permanent": true },
+    { "source": "/tasfiye", "destination": "/kitaplar/tasfiye/", "permanent": true },
+    { "source": "/murekkep-ve-koz", "destination": "/kitaplar/murekkep-ve-koz/", "permanent": true },
+    { "source": "/kitap/murekkep-ve-koz", "destination": "/kitaplar/murekkep-ve-koz/", "permanent": true },
     {
       "source": "/kitap/tasfiye",
       "destination": "/kitaplar/tasfiye/",

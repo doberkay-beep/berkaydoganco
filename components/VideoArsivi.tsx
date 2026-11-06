@@ -78,7 +78,6 @@ export function VideoArsivi({ videolar }: { videolar: Video[] }) {
                             </span>
                             <span style={{ display: "block", marginTop: "0.5rem", fontFamily: "var(--font-grotesk)", fontSize: "0.68rem", letterSpacing: "0.12em", textTransform: "uppercase", color: "var(--muted)" }}>
                               {tarihYaz(v.tarih, lang)}
-                              {v.izlenme != null && ` · ${v.izlenme.toLocaleString(lang === "tr" ? "tr-TR" : "en-GB")} ${L("izlenme", "views")}`}
                             </span>
                           </span>
                         </a>
