@@ -85,7 +85,7 @@ ul{list-style:none}li{padding:1.1mm 0;border-top:.5px solid #d9d5ca}
 </style></head><body>
 <div class="ust"><span><b>Basın bülteni</b> · ${esc(new Date().toLocaleDateString("tr-TR", { month: "long", year: "numeric" }))}</span><span>berkaydogan.co/press</span></div>
 <h1>Berkay Doğan</h1>
-<p class="unvan">Şair, yazar · ŞİMDİ'nin kurucusu</p>
+<p class="unvan">Şair, yazar · nowby'ın kurucusu</p>
 <p class="lead">${esc(BIO_ORTA_TR)}</p>
 <p class="k">Rakamlarla</p>
 <div class="rak">${[...RAKAMLAR.slice(0, 3), { deger: "__SIMDI__", aciklama: "__SIMDI_ACK__" }]
@@ -116,7 +116,7 @@ try {
   const v = (await r.json())?.[0]?.veri;
   if (v?.ay_toplam) {
     const gun = new Date().toLocaleDateString("tr-TR", { day: "numeric", month: "long" });
-    simdi = { deger: Number(v.ay_toplam).toLocaleString("tr-TR"), aciklama: `şarkı bu ay Türkiye radyolarında çaldı — ŞİMDİ sayımı (${gun} itibarıyla)` };
+    simdi = { deger: Number(v.ay_toplam).toLocaleString("tr-TR"), aciklama: `şarkı bu ay Türkiye radyolarında çaldı — nowby sayımı (${gun} itibarıyla)` };
   }
 } catch { /* çevrimdışı: dördüncü rakam kalır */ }
 const sonHtml = html.replace("__SIMDI__", esc(simdi.deger)).replace("__SIMDI_ACK__", esc(simdi.aciklama));
