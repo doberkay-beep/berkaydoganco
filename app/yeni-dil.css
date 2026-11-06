@@ -70,7 +70,8 @@ body::before, body::after, .aurora, .cg-cursor-glow, .cg-theme, body > canvas { 
 }
 .cg-nav-links { font-size: 1rem; letter-spacing: 0; }
 [style*="letter-spacing"] { letter-spacing: normal !important; }
-[style*="border-radius"] { border-radius: 0 !important; }
+/* Yuvarlak işaretler ve logo noktaları yuvarlak kalır */
+[style*="border-radius"]:not([style*="border-radius:50%"]):not([style*="border-radius: 50%"]) { border-radius: 0 !important; }
 [style*="box-shadow"] { box-shadow: none !important; }
 .ed-display, .cg-serif { font-weight: 300 !important; letter-spacing: -0.02em !important; }
 .bd-nabiz { animation: none !important; box-shadow: none !important; }

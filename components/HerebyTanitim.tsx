@@ -143,7 +143,6 @@ export function HerebyTanitim({ m }: { m: Metin }) {
 
       {/* KAHRAMAN */}
       <section style={{ ...bolum, paddingTop: "clamp(4rem, 12vh, 8rem)", textAlign: "center", position: "relative" }}>
-        <div aria-hidden style={{ position: "absolute", inset: "-20% -10% auto", height: "620px", background: `radial-gradient(closest-side, ${CIVIT}33, transparent)`, pointerEvents: "none" }} />
         <div aria-hidden style={{ position: "relative", width: 150, height: 150, margin: "0 auto 2.2rem" }}>
           <span className="hb-halka" /><span className="hb-halka" /><span className="hb-halka" />
           <span style={{ position: "absolute", inset: "calc(50% - 15px)", width: 30, height: 30, borderRadius: "50%", background: CIVIT, boxShadow: `0 0 40px ${CIVIT}` }} />
