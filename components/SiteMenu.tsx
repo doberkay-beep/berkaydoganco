@@ -26,6 +26,7 @@ export function menuGruplari(lang: "tr" | "en"): Grup[] {
         ["/notlar/", tr ? "Gece Notları" : "Night Notes"],
         ["/sozluk/", tr ? "Kavramlar Sözlüğü" : "Lexicon"],
         ["/takvim/", tr ? "Köz Takvimi" : "Ember Calendar"],
+        ...(tr ? [["/gom/", "Sitene Göm"] as Baglanti] : []),
       ],
     },
     {
@@ -43,10 +44,14 @@ export function menuGruplari(lang: "tr" | "en"): Grup[] {
       linkler: [
         [tr ? "/by/" : "/en/by/", tr ? "by. atölyesi" : "by. workshop"],
         [tr ? "/hereby/" : "/en/hereby/", "hereby."],
+        [tr ? "/hereby/gizlilik/" : "/en/hereby/privacy/", tr ? "Gizlilik" : "Privacy", true],
+        [tr ? "/hereby/kosullar/" : "/en/hereby/terms/", tr ? "Koşullar" : "Terms", true],
         [tr ? "/gidis/" : "/en/departures/", tr ? "Gidiş zinciri" : "Departure chain", true],
         [tr ? "/nowby/" : "/en/nowby/", "nowby."],
+        [tr ? "/nowby/gizlilik/" : "/en/nowby/privacy/", tr ? "Gizlilik" : "Privacy", true],
         [tr ? "/writtenby/" : "/en/writtenby/", "writtenby."],
         [tr ? "/writtenby/sanatcilar/" : "/en/writtenby/artists/", tr ? "Sanatçılar" : "Artists", true],
+        [tr ? "/studio/" : "/en/studio/", tr ? "by. stüdyo" : "by. studio"],
       ],
     },
     {
