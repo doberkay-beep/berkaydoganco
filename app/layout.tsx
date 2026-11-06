@@ -1,25 +1,18 @@
 import type { Metadata } from "next";
-import { Inter, Playfair_Display } from "next/font/google";
+import { Newsreader } from "next/font/google";
 import "./globals.css";
+import "./yeni-dil.css";
 import { Analytics } from "@vercel/analytics/next";
 import { MurekkepIz } from "@/components/MurekkepIz";
 import GlassHover from "@/components/GlassHover";
 import { SiteMenu } from "@/components/SiteMenu";
 
-// UI / etiket / buton — çağdaş nötr sans (CSS değişkeni tarihsel olarak --font-grotesk)
-const grotesk = Inter({
+// Tek yazı ailesi: müze kataloğu gibi. CSS değişkenleri eski adlarıyla kalır.
+const yazi = Newsreader({
   subsets: ["latin", "latin-ext"],
-  weight: ["400", "500", "600", "700"],
-  variable: "--font-grotesk",
-  display: "swap",
-});
-
-// Edebi vurgu — yüksek kontrastlı display serif (CSS'te var(--font-serif))
-const fraunces = Playfair_Display({
-  subsets: ["latin", "latin-ext"],
-  weight: ["400", "500", "600", "700", "800", "900"],
+  weight: ["300", "400", "500", "600"],
   style: ["normal", "italic"],
-  variable: "--font-serif",
+  variable: "--font-yazi",
   display: "swap",
 });
 
@@ -65,14 +58,8 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="tr" data-theme="dark" suppressHydrationWarning className={`${grotesk.variable} ${fraunces.variable}`}>
+    <html lang="tr" data-theme="light" suppressHydrationWarning className={yazi.variable}>
       <body>
-        <script
-          dangerouslySetInnerHTML={{
-            __html:
-              "(function(){try{var t=localStorage.getItem('bd-theme');if(t==='light'||t==='dark')document.documentElement.setAttribute('data-theme',t);}catch(e){}})();",
-          }}
-        />
         <a href="#main" className="skip-link">İçeriğe geç</a>
         <div className="aurora" aria-hidden="true" />
         <SiteMenu />

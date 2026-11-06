@@ -1,0 +1,99 @@
+/* ============ YENİ DİL — müze kataloğu ============
+   Ana sayfanın siyah duvarından beyaz sayfalara çıkılır. Tek yazı ailesi, tek vurgu.
+   Süs yok: cam, parıltı, gölge, hap düğme, minik aralıklı etiket kalkar. */
+:root, [data-theme="dark"], [data-theme="light"] {
+  --font-grotesk: var(--font-yazi), Georgia, serif;
+  --font-serif: var(--font-yazi), Georgia, serif;
+  --bg: #ffffff;
+  --bg-2: #ffffff;
+  --ink: #0a0a0a;
+  --muted: #66665f;
+  --line: rgba(10, 10, 10, 0.16);
+  --accent: #c9241a;
+  --accent-2: #b01f16;
+  --accent-ink: #ffffff;
+  --glass-bg: transparent;
+  --glass-border: rgba(10, 10, 10, 0.16);
+  --glass-hi: transparent;
+  --nav-bg: #ffffff;
+  --photo-filter: grayscale(100%);
+  --grain: 0;
+  --shadow-card: none;
+  --shadow-card-hover: none;
+  color-scheme: light;
+}
+html { background: #fff; color: #0a0a0a; }
+body { font-size: 18px; line-height: 1.55; }
+body::before, body::after, .aurora, .cg-cursor-glow, .cg-theme, body > canvas { display: none !important; }
+
+/* Yüzeyler: kart değil, sayfa */
+.glass, .glass-card, .cg-review-card, .cg-embed, .cg-playlist, .bd-kart, .kl-card, .og-bant {
+  background: transparent !important;
+  -webkit-backdrop-filter: none !important;
+  backdrop-filter: none !important;
+  box-shadow: none !important;
+  border-radius: 0 !important;
+  border: 0 !important;
+  border-top: 1px solid var(--line) !important;
+  transform: none !important;
+}
+.glass::before, .glass-card::before, .glass-card::after, .cg-portrait-wrap::before { display: none !important; }
+.cg-nav, .cg-nav[data-solid="1"] { background: #fff !important; -webkit-backdrop-filter: none !important; backdrop-filter: none !important; box-shadow: none !important; }
+
+/* Düğme ve haplar: altı çizili bağlantı */
+.cg-btn, .cg-pill, .og-link, .cg-burger, .sm-ac {
+  background: none !important;
+  -webkit-backdrop-filter: none !important;
+  backdrop-filter: none !important;
+  border: 0 !important;
+  border-bottom: 1px solid currentColor !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  padding: 2px 0 !important;
+  color: var(--ink) !important;
+  font-size: 1rem !important;
+  font-weight: 400 !important;
+  letter-spacing: 0 !important;
+  text-transform: none !important;
+}
+.cg-btn::before, .cg-btn::after { display: none !important; }
+.cg-btn:hover, .cg-pill:hover, .og-link:hover, .cg-burger:hover, .sm-ac:hover { color: var(--accent) !important; }
+
+/* Minik aralıklı etiketler: künye gibi eğik */
+.ed-folio-label, .ed-footer-head, .sm-grup-baslik, .cg-playlist-meta, .cg-lang,
+[style*="text-transform:uppercase"], [style*="text-transform: uppercase"] {
+  text-transform: none !important;
+  letter-spacing: 0 !important;
+  font-style: italic;
+  font-size: 0.95rem !important;
+  font-weight: 400 !important;
+}
+.cg-nav-links { font-size: 1rem; letter-spacing: 0; }
+[style*="letter-spacing"] { letter-spacing: normal !important; }
+[style*="border-radius"] { border-radius: 0 !important; }
+[style*="box-shadow"] { box-shadow: none !important; }
+.ed-display, .cg-serif { font-weight: 300 !important; letter-spacing: -0.02em !important; }
+.bd-nabiz { animation: none !important; box-shadow: none !important; }
+.cg-ghost { display: none !important; }
+
+/* Satır içi stille yazılmış haplar ve dolu düğmeler de bağlantıya döner */
+a[style*="border-radius:100px"], button[style*="border-radius:100px"],
+a[style*="border-radius:999px"], button[style*="border-radius:999px"],
+a[style*="background:var(--accent)"], button[style*="background:var(--accent)"] {
+  background: none !important;
+  border: 0 !important;
+  border-bottom: 1px solid currentColor !important;
+  padding: 2px 0 !important;
+  margin-right: 0.5rem;
+  color: var(--ink) !important;
+  font-size: 1rem !important;
+  font-style: normal;
+}
+a[style*="border-radius:100px"]:hover, a[style*="background:var(--accent)"]:hover { color: var(--accent) !important; }
+
+/* Süs başlık satırı ve bölüm numaraları kalkar */
+.ed-masthead, .ed-folio-no { display: none !important; }
+
+/* Üst çubuk her zeminde okunur: beyazda siyah, siyahta beyaz */
+.sm-bar { background: none !important; -webkit-backdrop-filter: none !important; backdrop-filter: none !important; box-shadow: none !important; mix-blend-mode: difference; }
+.sm-marka, .sm-ac { color: #fff !important; }
