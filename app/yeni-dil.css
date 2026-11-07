@@ -102,6 +102,8 @@ a[style*="border-radius"]:hover, button[style*="border-radius"]:hover { color: v
 /* Üst çubuk her zeminde okunur: beyazda siyah, siyahta beyaz */
 .sm-bar { background: none !important; -webkit-backdrop-filter: none !important; backdrop-filter: none !important; box-shadow: none !important; mix-blend-mode: difference; }
 .sm-marka, .sm-ac { color: #fff !important; }
+/* Açık menü beyaz zeminde: içindeki ad koyu kalsın. */
+.sm-menu .sm-marka { color: var(--ink, #0a0a0a) !important; }
 
 /* Köz Takvimi: köşesiz */
 .tk-cal, .tk-cal-bas button, .tk-gun { border-radius: 0 !important; }

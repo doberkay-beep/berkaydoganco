@@ -210,12 +210,20 @@ body:has(.cg-nav) .sm-bar { display: none; }
 .sm-kapat:hover { color: var(--accent-2); }
 .sm-gruplar { display: grid; gap: 2.2rem 2rem; grid-template-columns: minmax(0, 1fr); max-width: 1100px; margin: clamp(1.5rem, 6vh, 4rem) auto 0; }
 @media (min-width: 640px) { .sm-gruplar { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
-@media (min-width: 1000px) { .sm-gruplar { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
+@media (min-width: 1000px) { .sm-gruplar { grid-template-columns: 1.25fr 1fr 1fr; } }
 .sm-grup { display: flex; flex-direction: column; gap: 0.55rem; }
 .sm-grup-baslik { font-family: var(--font-grotesk); font-size: 0.66rem; font-weight: 600; letter-spacing: 0.24em; text-transform: uppercase; color: var(--accent-2); margin-bottom: 0.4rem; }
 .sm-grup a { font-family: var(--font-serif), Georgia, serif; font-size: clamp(1.35rem, 3.6vw, 1.75rem); line-height: 1.25; color: var(--ink); text-decoration: none; width: fit-content; transition: color .2s ease; }
 .sm-grup a:hover { color: var(--accent-2); }
 .sm-grup a.sm-alt { font-family: var(--font-grotesk); font-size: 0.95rem; color: var(--muted); margin: -0.2rem 0 0 0.15rem; }
+.sm-ana a { font-size: clamp(1.9rem, 5.2vw, 2.9rem); line-height: 1.12; }
+.sm-ara { font-family: var(--font-grotesk); font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); margin: 0.9rem 0 0; }
+.sm-grup .sm-grup-baslik + .sm-ara { margin-top: 0; }
+.sm-grup a:focus-visible, .sm-dil a:focus-visible { outline: 2px solid currentColor; outline-offset: 3px; }
+.sm-dil { max-width: 1100px; margin: clamp(2rem, 6vh, 3.5rem) auto 0; padding-top: 1.2rem; border-top: 1px solid color-mix(in srgb, var(--ink) 15%, transparent); font-family: var(--font-grotesk); font-size: 0.95rem; }
+.sm-dil a { display: inline-block; padding: 0.45rem 0; color: var(--muted); text-decoration: none; }
+.sm-grup a.sm-alt { padding: 0.3rem 0; }
+.sm-dil a:hover { color: var(--accent-2); }
 .cg-menu { position: fixed; inset: 0; z-index: 60; background: var(--bg); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2.25rem; animation: cgMenuIn 0.3s ease both; }
 @keyframes cgMenuIn { from { opacity: 0; } to { opacity: 1; } }
 .cg-menu a { font-family: var(--font-grotesk); font-weight: 500; font-size: clamp(1.7rem, 7vw, 2.4rem); letter-spacing: -0.01em; color: var(--ink); }
