@@ -183,23 +183,23 @@ export default function EnglishPage() {
       {/* HEREBY — the app */}
       <section id="hereby" style={secStil}>
         <p style={secBaslik}>The apps</p>
-        <Link href="/en/hereby" style={{ ...kutu, background: "radial-gradient(120% 160% at 0% 0%, rgba(109,102,255,0.2), transparent 60%), var(--glass-bg)", border: "1px solid rgba(109,102,255,0.35)" }}>
+        <Link href="/en/hereby" style={{ ...kutu, background: "none", border: "1px solid var(--line)" }}>
           <span style={{ fontFamily: "var(--font-serif, Georgia), Georgia, serif", fontSize: "clamp(1.8rem, 4vw, 2.4rem)", color: "var(--ink)", lineHeight: 1.1 }}>
-            hereby<span style={{ color: "#6d66ff" }}>.</span> <em style={{ fontSize: "0.7em", color: "var(--muted)" }}>Leave a thought in a place.</em>
+            hereby<span style={{ color: "#c9241a" }}>.</span> <em style={{ fontSize: "0.7em", color: "var(--muted)" }}>Leave a thought in a place.</em>
           </span>
           <span style={{ fontSize: "0.95rem", lineHeight: 1.6, color: "var(--muted)", maxWidth: "60ch" }}>
             An iOS app by Berkay Doğan, 2026. Leave the line on your mind in the place you pass; only someone who comes there can read it. No likes, no followers. It includes poetry walks through Kadıköy and Beşiktaş, where lines from his books open only when you arrive. Free on the App Store.
           </span>
-          <span style={{ ...mono, fontSize: "0.6rem", color: "#8f89ff" }}>Discover hereby →</span>
+          <span style={{ ...mono, fontSize: "0.6rem", color: "#c9241a" }}>Discover hereby →</span>
         </Link>
-        <Link href="/en/nowby" style={{ ...kutu, marginTop: "1rem", background: "radial-gradient(120% 160% at 0% 0%, rgba(255,106,61,0.2), transparent 60%), var(--glass-bg)", border: "1px solid rgba(255,106,61,0.35)" }}>
+        <Link href="/en/nowby" style={{ ...kutu, marginTop: "1rem", background: "none", border: "1px solid var(--line)" }}>
           <span style={{ fontFamily: "var(--font-serif, Georgia), Georgia, serif", fontSize: "clamp(1.8rem, 4vw, 2.4rem)", color: "var(--ink)", lineHeight: 1.1 }}>
-            nowby<span style={{ color: "#FF6A3D" }}>.</span> <em style={{ fontSize: "0.7em", color: "var(--muted)" }}>What&apos;s on the radio right now.</em>
+            nowby<span style={{ color: "#c9241a" }}>.</span> <em style={{ fontSize: "0.7em", color: "var(--muted)" }}>What&apos;s on the radio right now.</em>
           </span>
           <span style={{ fontSize: "0.95rem", lineHeight: 1.6, color: "var(--muted)", maxWidth: "60ch" }}>
             Hundreds of frequencies on one screen, live. Charts built on real airplay counts, the world&apos;s radio, and a Frequency Fortune with lines from the books. The same frequency on iPhone, iPad, Mac, Apple TV and Apple Watch.
           </span>
-          <span style={{ ...mono, fontSize: "0.6rem", color: "#FF8A63" }}>Discover nowby →</span>
+          <span style={{ ...mono, fontSize: "0.6rem", color: "#c9241a" }}>Discover nowby →</span>
         </Link>
         <Link href="/en/by" style={{ ...mono, fontSize: "0.62rem", display: "inline-block", marginTop: "1rem", color: "var(--muted)", textDecoration: "none" }}>
           From by. — Berkay Doğan&apos;s workshop →

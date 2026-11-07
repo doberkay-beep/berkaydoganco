@@ -5,8 +5,8 @@ import { EMAIL } from "@/lib/site";
 /* by. studio — atölyenin hizmet yüzü: uygulama, web ve canlı veri işleri.
    Örnek işler atölyenin kendi ürünleri; müşteri adı yok. TR sayfada yazarlara yönelik iki sabit fiyatlı paket var (Kasım 2026). */
 
-const MOR = "#7c6cff";
-const TURUNCU = "#FF6A3D";
+const MOR = "#c9241a";
+const TURUNCU = "#c9241a";
 const mono: React.CSSProperties = { fontFamily: "var(--font-grotesk)", fontSize: "0.72rem", fontWeight: 600, letterSpacing: "0.18em", textTransform: "uppercase" };
 const serif: React.CSSProperties = { fontFamily: "var(--font-serif, Georgia), Georgia, serif" };
 const appYazi: React.CSSProperties = { fontFamily: "ui-serif, 'New York', Georgia, serif", fontWeight: 700, lineHeight: 1 };
@@ -124,7 +124,7 @@ export function StudioSayfa({ m }: { m: StudioMetin }) {
       `}</style>
 
       {/* AÇILIŞ */}
-      <section style={{ ...bolum, paddingTop: "clamp(4rem, 12vh, 7rem)", textAlign: "center" }}>
+      <section style={{ ...bolum, paddingTop: "max(84px, 9vh)", textAlign: "center" }}>
         <div style={{ display: "inline-flex", alignItems: "flex-end", gap: "0.35em" }}>
           <Isaret boy="clamp(4.5rem, 16vw, 8rem)" />
           <span style={{ ...serif, fontStyle: "italic", fontSize: "clamp(2rem, 6vw, 3.4rem)", marginBottom: "0.18em", opacity: 0.85 }}>{m.alt}</span>

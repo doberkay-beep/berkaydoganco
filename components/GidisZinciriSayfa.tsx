@@ -7,7 +7,7 @@ import Link from "next/link";
 const KIZIL = "#E5382C";
 const KAGIT = "#F2ECE4";
 const MUREKKEP = "#16141A";
-const DENIZ = "#14223F";
+const DENIZ = "#0a0a0a";
 
 const serif: React.CSSProperties = { fontFamily: "ui-serif, 'New York', var(--font-serif, Georgia), Georgia, serif" };
 const etiket: React.CSSProperties = { fontFamily: "var(--font-grotesk), system-ui, sans-serif", fontSize: "0.7rem", fontWeight: 700, letterSpacing: "0.16em", textTransform: "uppercase" };
@@ -88,7 +88,7 @@ function Harita({ m }: { m: GidisMetin }) {
   return (
     <svg viewBox={`0 0 ${G} ${Y}`} preserveAspectRatio="xMidYMid meet" role="img" aria-label={DURAKLAR.map((d) => d.sehir[i]).join(" → ")} style={{ display: "block", width: "100%", height: "auto" }}>
       <rect width={G} height={Y} fill={DENIZ} />
-      <g stroke="#22335C" strokeWidth="1">
+      <g stroke="#242424" strokeWidth="1">
         {Array.from({ length: 9 }, (_, k) => <line key={`b${k}`} x1={(k + 1) * 80} y1="0" x2={(k + 1) * 80} y2={Y} />)}
         {Array.from({ length: 6 }, (_, k) => <line key={`e${k}`} x1="0" y1={(k + 1) * 80} x2={G} y2={(k + 1) * 80} />)}
       </g>
@@ -119,7 +119,7 @@ export function GidisZinciriSayfa({ m }: { m: GidisMetin }) {
       `}</style>
 
       {/* GİRİŞ */}
-      <section style={{ maxWidth: 760, margin: "0 auto", padding: `clamp(5rem, 14vh, 7rem) ${kenar} 1.6rem` }}>
+      <section style={{ maxWidth: 760, margin: "0 auto", padding: `max(84px, 9vh) ${kenar} 1.6rem` }}>
         <p style={{ ...etiket, color: KIZIL }}>{m.ust}</p>
         <h1 style={{ ...serif, fontSize: "clamp(2.8rem, 10vw, 5rem)", fontWeight: 700, lineHeight: 1, margin: "0.7rem 0 1.4rem", letterSpacing: "-0.01em" }}>
           {m.baslik}<span style={{ color: KIZIL }}>.</span>
@@ -155,7 +155,7 @@ export function GidisZinciriSayfa({ m }: { m: GidisMetin }) {
       {/* NASIL */}
       <section style={{ maxWidth: 760, margin: "0 auto", padding: `2.8rem ${kenar} 0` }}>
         <p style={{ ...etiket, color: KIZIL, marginBottom: "1rem" }}>{m.nasilEtiket}</p>
-        <div style={{ borderRadius: 22, overflow: "hidden", background: "rgba(36,52,90,.55)", border: "1px solid rgba(242,236,228,.1)" }}>
+        <div style={{ borderRadius: 22, overflow: "hidden", border: "1px solid rgba(242,236,228,.1)" }}>
           {m.nasil.map((y, k) => (
             <div key={y.b} style={{ padding: "1.15rem 1.3rem", borderTop: k ? "1px solid rgba(242,236,228,.08)" : "none", display: "grid", gridTemplateColumns: "2rem minmax(0,1fr)", gap: "0.2rem 0.8rem" }}>
               <span style={{ gridRow: "span 2", color: KIZIL, fontWeight: 700, fontSize: "1.1rem" }}>{k + 1}</span>

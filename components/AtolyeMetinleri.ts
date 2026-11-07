@@ -3,8 +3,8 @@ import type { AtolyeMetin } from "./AtolyeSayfa";
 /* by. sayfasının metinleri. Uygulama metinleri onaylı kaynaklardan:
    adımlar HerebyTanitim / WrittenbySayfa'dan, cihaz satırları NowbySayfa'dan, ilkeler "Dört soru"dan ve writtenby sayfasından. */
 
-const MOR = "#7c6cff";
-const TURUNCU = "#FF6A3D";
+const MOR = "#c9241a";
+const TURUNCU = "#c9241a";
 
 export const ATOLYE_TR: AtolyeMetin = {
   dil: "tr",

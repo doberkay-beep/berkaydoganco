@@ -10,13 +10,13 @@ export function NowbyYasal({ baslik, guncelleme, children, en = false }: { basli
     <main lang={en ? "en" : "tr"} style={{ maxWidth: "760px", margin: "0 auto", padding: "clamp(3rem, 8vh, 6rem) clamp(1.25rem, 5vw, 3.25rem) 6rem" }}>
       <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "clamp(2.5rem, 7vh, 4rem)", flexWrap: "wrap", gap: "1rem" }}>
         <Link href={en ? "/en/nowby" : "/nowby"} style={{ fontFamily: "var(--font-serif, Georgia), Georgia, serif", fontSize: "1.6rem", color: "var(--ink)" }}>
-          nowby<span style={{ color: "#FF6A3D" }}>.</span>
+          nowby<span style={{ color: "#c9241a" }}>.</span>
         </Link>
         <nav style={{ display: "flex", gap: "1.2rem", ...mono, color: "var(--muted)" }}>
           <Link href={en ? "/nowby/gizlilik" : "/en/nowby/privacy"} lang={en ? "tr" : "en"}>{en ? "Türkçe" : "English"}</Link>
         </nav>
       </div>
-      <div style={{ ...mono, color: "#FF6A3D", marginBottom: "0.8rem" }}>nowby.</div>
+      <div style={{ ...mono, color: "#c9241a", marginBottom: "0.8rem" }}>nowby.</div>
       <h1 className="cg-serif" style={{ fontSize: "clamp(2.2rem, 6vw, 3.4rem)", lineHeight: 1.05, margin: "0 0 1rem" }}>{baslik}</h1>
       <p style={{ ...mono, color: "var(--muted)", marginBottom: "2.5rem" }}>{en ? "Last updated" : "Son güncelleme"}: {guncelleme}</p>
       <div style={{ fontSize: "1.02rem", lineHeight: 1.75, color: "var(--ink)", maxWidth: "68ch" }}>{children}</div>

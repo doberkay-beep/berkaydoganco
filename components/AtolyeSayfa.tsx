@@ -4,9 +4,9 @@ import Link from "next/link";
    İşaret: New York Bold "by" (maske görseli) + mordan (hereby) turuncuya (nowby) akan nokta.
    Her iş kendi bölümünde: nowby beş cihazlık sahneyle, hereby ve writtenby gerçek ekran videosu + adımlarla. */
 
-const MOR = "#7c6cff";
-const TURUNCU = "#FF6A3D";
-const GECIS = `linear-gradient(135deg, ${MOR}, ${TURUNCU})`;
+const MOR = "#c9241a";
+const TURUNCU = "#c9241a";
+const GECIS = MOR;
 const appYazi: React.CSSProperties = { fontFamily: "ui-serif, 'New York', Georgia, serif", fontWeight: 700, lineHeight: 1 };
 const mono: React.CSSProperties = { fontFamily: "var(--font-grotesk)", fontSize: "0.72rem", fontWeight: 600, letterSpacing: "0.18em", textTransform: "uppercase" };
 const serif: React.CSSProperties = { fontFamily: "var(--font-serif, Georgia), Georgia, serif" };
@@ -126,7 +126,7 @@ export function AtolyeSayfa({ m }: { m: AtolyeMetin }) {
         .cz-izgara{display:grid;gap:clamp(1rem,2.5vw,1.6rem);grid-template-columns:minmax(0,1fr);margin-top:2.4rem}
         @media (min-width:760px){.cz-izgara{grid-template-columns:repeat(6,minmax(0,1fr))}.cz-tv,.cz-mac{grid-column:span 3}.cz-ipad,.cz-iphone,.cz-saat{grid-column:span 2}}
         .cz-kart{margin:0;padding:clamp(1.2rem,3vw,1.8rem);border-radius:24px;border:1px solid var(--glass-border);
-          background:radial-gradient(120% 90% at 50% 0%,rgba(255,106,61,.16),transparent 60%),var(--glass-bg);display:flex;flex-direction:column;gap:1.3rem}
+          background:radial-gradient(120% 90% at 50% 0%,transparent,transparent),var(--glass-bg);display:flex;flex-direction:column;gap:1.3rem}
         .cz-sahne{flex:1;display:flex;align-items:center;justify-content:center;min-height:clamp(200px,28vw,300px)}
         .cz-cerceve img{display:block;width:100%;height:auto}
         .cz-cerceve{background:#000;box-shadow:0 30px 60px rgba(0,0,0,.45),0 0 0 1px rgba(255,255,255,.06);overflow:hidden}
@@ -150,7 +150,7 @@ export function AtolyeSayfa({ m }: { m: AtolyeMetin }) {
       `}</style>
 
       {/* AÇILIŞ: işaret + üç iş */}
-      <section style={{ ...bolum, paddingTop: "clamp(4.5rem, 13vh, 7.5rem)", textAlign: "center" }}>
+      <section style={{ ...bolum, paddingTop: "max(84px, 9vh)", textAlign: "center" }}>
         <Isaret boy="clamp(5.5rem, 20vw, 10rem)" />
         <p style={{ ...mono, opacity: 0.6, marginTop: "1.4rem" }}>{m.alt}</p>
         <p style={{ ...serif, fontSize: "clamp(1.3rem, 3vw, 1.9rem)", maxWidth: "660px", margin: "1.6rem auto 0", lineHeight: 1.45 }}>{m.giris}</p>

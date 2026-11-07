@@ -3,7 +3,7 @@ import Link from "next/link";
 /* writtenby. — by. atölyesinin üçüncü işi, hereby.'nin içinde yaşar.
    Bir şehrin yazdığı kitap: günde tek soru, bulunduğun yerden tek satır, yıl sonunda basılı kitap. */
 
-const MOR = "#7c6cff";
+const MOR = "#c9241a";
 const appYazi: React.CSSProperties = { fontFamily: "ui-serif, 'New York', Georgia, serif", fontWeight: 700, lineHeight: 1 };
 const mono: React.CSSProperties = { fontFamily: "var(--font-grotesk)", fontSize: "0.72rem", fontWeight: 600, letterSpacing: "0.18em", textTransform: "uppercase" };
 const serif: React.CSSProperties = { fontFamily: "var(--font-serif, Georgia), Georgia, serif" };
@@ -119,7 +119,7 @@ export function WrittenbySayfa({ m }: { m: WrittenbyMetin }) {
       `}</style>
 
       {/* AÇILIŞ */}
-      <section style={{ ...bolum, paddingTop: "clamp(4rem, 12vh, 7rem)" }}>
+      <section style={{ ...bolum, paddingTop: "max(84px, 9vh)" }}>
         <div className="wb-acilis">
           <div>
             <Logo boy="clamp(3.4rem, 13vw, 5.6rem)" />

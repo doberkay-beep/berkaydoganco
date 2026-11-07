@@ -34,7 +34,7 @@ export default function Page() {
       <TasfiyeBookSchema />
       <div className={`${s.sayfa} ${yazi.className}`}>
         <style>{SAYFA_STILI}</style>
-        <Ruzgar />
+        <Ruzgar stil={{ top: "0.75rem", bottom: "auto", lineHeight: 1.2, right: "calc(clamp(1.25rem, 4vw, 3.25rem) + 62px)" }} />
         <Duvar
           tasfiye={{ slug: tasfiye.slug, ad: tasfiye.ad, kapak: tasfiye.kapak, tur: tasfiye.tur, cikis: tasfiye.cikis, desc: tasfiye.desc }}
           murekkep={{ slug: murekkep.slug, ad: murekkep.ad, kapak: murekkep.kapak, tur: murekkep.tur, cikis: murekkep.cikis, desc: murekkep.desc }}

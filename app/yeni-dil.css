@@ -105,3 +105,53 @@ a[style*="border-radius"]:hover, button[style*="border-radius"]:hover { color: v
 
 /* Köz Takvimi: köşesiz */
 .tk-cal, .tk-cal-bas button, .tk-gun { border-radius: 0 !important; }
+
+/* İç sayfalar: üst boşluk üst çubuğu aşacak kadar, bölüm araları orantılı */
+#main > main[style*="padding"] { padding-top: max(84px, 10vh) !important; }
+.cg-section { padding-top: clamp(3.5rem, 8vh, 6rem) !important; padding-bottom: clamp(3.5rem, 8vh, 6rem) !important; }
+#main > .cg-section:first-child, #main > :first-child > .cg-section:first-child { padding-top: max(84px, 10vh) !important; border-top: 0 !important; }
+
+/* Her sayfa aynı dilde: uygulama sayfaları ve üst menü */
+.cg-nav-links { display: none !important; }
+[style*="backdrop-filter"] {
+  -webkit-backdrop-filter: none !important;
+  backdrop-filter: none !important;
+  background: transparent !important;
+  border: 0 !important;
+  border-top: 1px solid var(--line) !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+.by-isler a, .hb-dugme, .ts-cip, .ts-dugme {
+  background: none !important;
+  -webkit-backdrop-filter: none !important;
+  backdrop-filter: none !important;
+  border: 0 !important;
+  border-bottom: 1px solid currentColor !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  padding: 2px 0 !important;
+  color: var(--ink) !important;
+  font-weight: 400 !important;
+  transform: none !important;
+}
+.by-isler a:hover, .hb-dugme:hover, .ts-cip:hover, .ts-dugme:hover { color: var(--accent) !important; }
+.by-isler { gap: 1.2rem 1.8rem !important; }
+.by-ayrac { background: var(--line) !important; }
+.cz-kart {
+  border: 0 !important;
+  border-top: 1px solid var(--line) !important;
+  border-radius: 0 !important;
+  background: none !important;
+  padding: 1.4rem 0 0 !important;
+}
+.cz-cerceve, .by-telefon, .wb-telefon { box-shadow: none !important; }
+.cz-saat .cz-cerceve::before, .cz-saat .cz-cerceve::after { background: #222 !important; }
+.st-is img, .flm-cerceve, .flm-kisa { border-radius: 0 !important; box-shadow: none !important; }
+.flm-oynat, .flm-kisa-oynat { box-shadow: none !important; }
+.hb-halka { border-width: 1px !important; }
+
+.flm-ortu span, .flm-ust p, .flm-kisa-not { text-transform: none !important; letter-spacing: 0 !important; font-style: italic; }
+.ts-cip[aria-pressed="true"] { color: var(--accent) !important; }
+.tk-cal { background: none !important; -webkit-backdrop-filter: none !important; backdrop-filter: none !important; }
+.ed-footer-bottom, .ed-footer-bottom span, .tk-cal .bas { text-transform: none !important; letter-spacing: 0 !important; }

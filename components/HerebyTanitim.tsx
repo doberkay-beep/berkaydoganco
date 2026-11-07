@@ -4,7 +4,7 @@ import { HEREBY_APP_STORE } from "@/lib/site";
 /* HEREBY — uygulamanın tanıtım sayfası (TR / EN).
    Kendi çivit vurgusunu taşır; zemin ve yazı renkleri sitenin temasından gelir. */
 
-const CIVIT = "#6d66ff";
+const CIVIT = "#c9241a";
 
 const mono: React.CSSProperties = { fontFamily: "var(--font-grotesk)", fontSize: "0.72rem", fontWeight: 600, letterSpacing: "0.18em", textTransform: "uppercase" };
 const serif: React.CSSProperties = { fontFamily: "var(--font-serif, Georgia), Georgia, serif" };
@@ -142,7 +142,7 @@ export function HerebyTanitim({ m }: { m: Metin }) {
       `}</style>
 
       {/* KAHRAMAN */}
-      <section style={{ ...bolum, paddingTop: "clamp(4rem, 12vh, 8rem)", textAlign: "center", position: "relative" }}>
+      <section style={{ ...bolum, paddingTop: "max(100px, 11vh)", textAlign: "center", position: "relative" }}>
         <div aria-hidden style={{ position: "relative", width: 150, height: 150, margin: "0 auto 2.2rem" }}>
           <span className="hb-halka" /><span className="hb-halka" /><span className="hb-halka" />
           <span style={{ position: "absolute", inset: "calc(50% - 15px)", width: 30, height: 30, borderRadius: "50%", background: CIVIT, boxShadow: `0 0 40px ${CIVIT}` }} />

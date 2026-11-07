@@ -7,7 +7,7 @@ import { useState } from "react";
    bu katmanda seçilmiş sanatçılar kendi eserleriyle durur. İkisi yıl sonunda aynı kitapta buluşur.
    Başvurular hereby sunucusundaki sanatci_basvur fonksiyonuna gider (tablo dışarıdan okunamaz). */
 
-export const MOR = "#7c6cff";
+export const MOR = "#c9241a";
 export const SUNUCU = "https://cfulorbeeevcsebinnwt.supabase.co";
 export const ANAHTAR = "sb_publishable_lcE-SDFRydKEHpYHmH6KqQ_-FdTFUoI";
 

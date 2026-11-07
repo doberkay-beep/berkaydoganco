@@ -9,7 +9,7 @@ import { SUNUCU, ANAHTAR } from "@/components/WrittenbySanatci";
    hediye_iz_bul yalnız semti ve okunup okunmadığını döner. Satır, bırakan, konum burada asla görünmez.
    Uygulama yüklüyse bağlantı Universal Link ile doğrudan uygulamayı açar; bu sayfa yüklü olmayanlar içindir. */
 
-const CIVIT = "#6d66ff";
+const CIVIT = "#c9241a";
 const KOD = /^[A-HJKMNP-Z2-9]{5}-[A-HJKMNP-Z2-9]{5}$/;
 
 const mono: React.CSSProperties = { fontFamily: "var(--font-grotesk)", fontSize: "0.72rem", fontWeight: 600, letterSpacing: "0.18em", textTransform: "uppercase" };

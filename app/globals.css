@@ -460,4 +460,4 @@ a.bd-kart:hover{border-color:var(--accent-2);transform:translateY(-3px)}
 @media (max-width:720px){.og-bant{grid-template-columns:1fr}}
 
 /* Sayfaların eski üst şeridi (ad + ← berkaydogan.co): artık tek site menüsü var; yer korunur ki içerik çubuğun altında kalsın */
-.eski-ust { visibility: hidden; }
+.eski-ust { display: none !important; }

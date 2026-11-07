@@ -63,7 +63,6 @@ export function Duvar({ tasfiye, murekkep }: { tasfiye: Eser; murekkep: Eser }) 
     <section ref={kok} className={s.koridor}>
       <div className={s.sabit}>
         <p ref={ipucu} className={s.ipucu}>Aşağı kaydır, duvar boyunca yürü <span aria-hidden>→</span></p>
-        <div className={s.zemin} aria-hidden />
         <div ref={hat} className={s.hat}>
           <div className={s.acilis}>
             <h1>Berkay Doğan</h1>

@@ -4,7 +4,7 @@ import { DESTEK_EMAIL, NOWBY_APP_STORE } from "@/lib/site";
 /* nowby. — by. atölyesinin ikinci işi. Türkiye'nin radyolarında şu an ne çalıyor?
    Canlı radyo sitesi nowby.co'da; bu sayfa uygulamaları (iPhone, iPad, Mac, Apple TV, Apple Watch) tanıtır. */
 
-const TURUNCU = "#FF6A3D";
+const TURUNCU = "#c9241a";
 const appYazi: React.CSSProperties = { fontFamily: "ui-serif, 'New York', Georgia, serif", fontWeight: 700, lineHeight: 1 };
 const mono: React.CSSProperties = { fontFamily: "var(--font-grotesk)", fontSize: "0.72rem", fontWeight: 600, letterSpacing: "0.18em", textTransform: "uppercase" };
 const serif: React.CSSProperties = { fontFamily: "var(--font-serif, Georgia), Georgia, serif" };
@@ -114,7 +114,7 @@ export function NowbySayfa({ m }: { m: NowbyMetin }) {
       `}</style>
 
       {/* AÇILIŞ */}
-      <section style={{ ...bolum, paddingTop: "clamp(4rem, 12vh, 7rem)", paddingBottom: "1.5rem", textAlign: "center" }}>
+      <section style={{ ...bolum, paddingTop: "max(84px, 9vh)", paddingBottom: "1.5rem", textAlign: "center" }}>
         <Logo boy="clamp(3.6rem, 14vw, 6.2rem)" />
         <h1 style={{ ...serif, fontStyle: "italic", fontWeight: 400, fontSize: "clamp(1.6rem, 4.4vw, 2.7rem)", lineHeight: 1.2, marginTop: "1rem" }}>{m.alt}</h1>
         <p style={{ ...serif, fontSize: "clamp(1.1rem, 2.4vw, 1.4rem)", lineHeight: 1.55, margin: "1.3rem auto 0", maxWidth: "640px", opacity: 0.85 }}>{m.giris}</p>
