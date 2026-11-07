@@ -67,6 +67,11 @@ export function Duvar({ tasfiye, murekkep }: { tasfiye: Eser; murekkep: Eser }) 
           <div className={s.acilis}>
             <h1>Berkay Doğan</h1>
             <p>İstanbul&apos;da yaşayan şair ve yazar.</p>
+            {/* İlk kez gelen okura iki başlangıç noktası. */}
+            <div className={s.davet}>
+              <Link href="/kitaplar/">Kitapları keşfet <span aria-hidden>↗</span></Link>
+              <Link href="/yazilar/buraya-gurultuden-kacanlar-icin/">Bir metin oku <span aria-hidden>↗</span></Link>
+            </div>
           </div>
           <figure className={s.eser}>
             <Link href={`/kitaplar/${murekkep.slug}/`}><img src={murekkep.kapak} alt={`${murekkep.ad} kapağı`} /></Link>

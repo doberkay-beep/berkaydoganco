@@ -7,6 +7,12 @@
 .acilis { width:100vw; flex:none; text-align:center; }
 .acilis h1 { margin:0; font-family:var(--font-baslik),Georgia,serif; font-weight:400; font-size:clamp(3.4rem,13.5vw,17rem); line-height:1; letter-spacing:-.04em; white-space:nowrap; }
 .acilis p { margin:clamp(28px,4.5svh,48px) 0 0; font-size:21px; font-style:italic; color:var(--zs,#a39c92); }
+.davet { display:flex; flex-wrap:wrap; justify-content:center; gap:10px clamp(28px,4vw,48px); margin:clamp(22px,3.5svh,36px) 0 0; font-size:18px; line-height:1.4; }
+.davet a { color:var(--zy); padding:10px 2px; border-radius:2px; transition:color .2s ease; }
+.davet a span { display:inline-block; margin-left:.15em; color:var(--zs); transition:color .2s ease, transform .2s ease; }
+.davet a:hover, .davet a:hover span { color:var(--zv); }
+.davet a:focus-visible { outline:2px solid var(--zy); outline-offset:4px; }
+@media (prefers-reduced-motion: no-preference) { .davet a:hover span { transform:translate(2px,-2px); } }
 .eser { position:relative; flex:none; margin:var(--bar) 0 0; align-self:flex-start; }
 .eser img { display:block; height:calc(100svh - 2*var(--bar)); width:auto; }
 .eser figcaption { position:absolute; top:100%; left:0; right:0; display:flex; flex-wrap:wrap; gap:0 .6em; padding:calc(var(--bar)/2 - 11px) 0 0; font-size:15px; line-height:22px; font-style:italic; color:var(--zs); white-space:nowrap; }
