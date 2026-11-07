@@ -9,12 +9,12 @@ export const metadata: Metadata = {
 
 export default function PrivacyPage() {
   return (
-    <NowbyYasal en baslik="Privacy policy" guncelleme="October 22, 2026">
-      <p>nowby. is developed by Berkay Doğan. This page explains what information the nowby. apps on iPhone, iPad, Mac, Apple TV and Apple Watch use and why.</p>
+    <NowbyYasal en baslik="Privacy policy" guncelleme="November 8, 2026">
+      <p>nowby. is developed by Berkay Doğan. This page explains what information the nowby. apps on iPhone, iPad, Mac, Apple TV, Apple Watch and Android use and why.</p>
       <h2 style={h2}>No account</h2>
       <p>nowby. doesn't ask you to sign up. Your name, email, phone number or location is never collected.</p>
       <h2 style={h2}>Radio streams</h2>
-      <p>When you listen to a station, the stream is played directly from that station's own server; like any internet connection, the station sees your IP address. Some streams are relayed through nowby.co for technical reasons; in that case your IP address is used only momentarily to limit abuse and is not stored. Apart from our hosting provider's (Vercel) standard server logs, no records are kept.</p>
+      <p>When you listen to a station, the stream is played directly from that station's own server; like any internet connection, the station sees your IP address. For some stations, nowby.co only redirects you to the station's official stream address; the stream never passes through our servers. Apart from our hosting provider's (Vercel) standard server logs, no records are kept.</p>
       <h2 style={h2}>Song information and search</h2>
       <p>The songs playing on the radio come from nowby.co. Searches you make in the app are sent to the server to fetch results and are not stored.</p>
       <h2 style={h2}>Station notes</h2>
@@ -26,7 +26,7 @@ export default function PrivacyPage() {
       <h2 style={h2}>Station suggestions and wrong-song reports</h2>
       <p>The text of a suggestion or report you send is stored anonymously for review.</p>
       <h2 style={h2}>What stays on your device</h2>
-      <p>Your favourites, Song Catches, listening time, radio alarm and settings are stored only on your device. To sync them between your devices, Apple's iCloud is used; this data stays in your iCloud account and never reaches us. The connection between Apple Watch and iPhone and the Home Screen widget also work only between your devices. Radio alarm notifications are created on your phone.</p>
+      <p>Your favourites, Song Catches, listening time, radio alarm and settings are stored only on your device. To sync them between your devices, Apple's iCloud is used; this data stays in your iCloud account and never reaches us. The connection between Apple Watch and iPhone and the Home Screen widget also work only between your devices. Radio alarm notifications are created on your phone. On Android this data is not synced and is not included in your phone's backup; it stays only on your phone.</p>
       <h2 style={h2}>No ads, analytics or tracking</h2>
       <p>nowby. shows no ads, uses no analytics or advertising tools, doesn't track you across other apps or websites, and doesn't sell your data. nowby. counts songs, not people.</p>
       <h2 style={h2}>Where is the data?</h2>

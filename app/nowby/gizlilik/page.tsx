@@ -9,12 +9,12 @@ export const metadata: Metadata = {
 
 export default function GizlilikPage() {
   return (
-    <NowbyYasal baslik="Gizlilik politikası" guncelleme="22 Ekim 2026">
-      <p>nowby'ı Berkay Doğan geliştirir. Bu sayfa; iPhone, iPad, Mac, Apple TV ve Apple Watch'taki nowby. uygulamalarının hangi bilgileri neden kullandığını açıklar.</p>
+    <NowbyYasal baslik="Gizlilik politikası" guncelleme="8 Kasım 2026">
+      <p>nowby'ı Berkay Doğan geliştirir. Bu sayfa; iPhone, iPad, Mac, Apple TV, Apple Watch ve Android'deki nowby. uygulamalarının hangi bilgileri neden kullandığını açıklar.</p>
       <h2 style={h2}>Hesap yok</h2>
       <p>nowby. kayıt istemez. Adın, e-postan, telefon numaran ya da konumun alınmaz.</p>
       <h2 style={h2}>Radyo yayınları</h2>
-      <p>Bir radyoyu dinlediğinde yayın doğrudan o radyonun kendi sunucusundan çalınır; radyo, her internet bağlantısında olduğu gibi IP adresini görür. Bazı yayınlar teknik nedenle nowby.co üzerinden aktarılır; bu durumda IP adresin yalnızca kötüye kullanımı sınırlamak için anlık kullanılır ve kaydedilmez. Barındırma sağlayıcımızın (Vercel) olağan sunucu kayıtları dışında hiçbir kayıt tutulmaz.</p>
+      <p>Bir radyoyu dinlediğinde yayın doğrudan o radyonun kendi sunucusundan çalınır; radyo, her internet bağlantısında olduğu gibi IP adresini görür. Bazı radyolarda nowby.co seni yalnızca radyonun resmî yayın adresine yönlendirir; yayın sunucumuzdan geçmez. Barındırma sağlayıcımızın (Vercel) olağan sunucu kayıtları dışında hiçbir kayıt tutulmaz.</p>
       <h2 style={h2}>Şarkı bilgileri ve arama</h2>
       <p>Radyolarda çalan şarkılar nowby.co'dan alınır. Uygulamada yaptığın aramalar sonuçları getirmek için sunucuya gönderilir, saklanmaz.</p>
       <h2 style={h2}>Radyo notları (Kalp defteri)</h2>
@@ -26,7 +26,7 @@ export default function GizlilikPage() {
       <h2 style={h2}>İstasyon önerisi ve yanlış şarkı bildirimi</h2>
       <p>Gönderdiğin öneri ya da bildirim metni, incelenmek üzere adsız olarak saklanır.</p>
       <h2 style={h2}>Yalnızca cihazında kalanlar</h2>
-      <p>Favorilerin, Av Defteri'n, dinleme sürelerin, radyo alarmın ve ayarların yalnızca cihazında saklanır. Cihazların arasında eşitlemek için Apple'ın iCloud hizmeti kullanılır; bu veriler senin iCloud hesabında kalır, bize gelmez. Apple Watch ile iPhone arasındaki bağlantı ve ana ekran bileşeni de yalnızca cihazların arasında çalışır. Radyo alarmı bildirimleri telefonunda oluşturulur.</p>
+      <p>Favorilerin, Av Defteri'n, dinleme sürelerin, radyo alarmın ve ayarların yalnızca cihazında saklanır. Cihazların arasında eşitlemek için Apple'ın iCloud hizmeti kullanılır; bu veriler senin iCloud hesabında kalır, bize gelmez. Apple Watch ile iPhone arasındaki bağlantı ve ana ekran bileşeni de yalnızca cihazların arasında çalışır. Radyo alarmı bildirimleri telefonunda oluşturulur. Android'de bu veriler eşitlenmez ve telefonun yedeğine de alınmaz; yalnızca telefonunda kalır.</p>
       <h2 style={h2}>Reklam, analitik ve takip yok</h2>
       <p>nowby. reklam göstermez, analitik ya da reklam aracı kullanmaz, seni başka uygulamalar ya da siteler arasında takip etmez ve verini satmaz. nowby. şarkıları sayar, insanları değil.</p>
       <h2 style={h2}>Verilerin nerede?</h2>
