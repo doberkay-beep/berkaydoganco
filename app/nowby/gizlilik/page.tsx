@@ -14,7 +14,12 @@ export default function GizlilikPage() {
       <h2 style={h2}>Hesap yok</h2>
       <p>nowby. kayıt istemez. Adın, e-postan, telefon numaran ya da konumun alınmaz.</p>
       <h2 style={h2}>Radyo yayınları</h2>
-      <p>Bir radyoyu dinlediğinde yayın doğrudan o radyonun kendi sunucusundan çalınır; radyo, her internet bağlantısında olduğu gibi IP adresini görür. Bazı radyolarda nowby.co seni yalnızca radyonun resmî yayın adresine yönlendirir; yayın sunucumuzdan geçmez. Barındırma sağlayıcımızın (Vercel) olağan sunucu kayıtları dışında hiçbir kayıt tutulmaz.</p>
+      <p>Bir radyoyu dinlediğinde yayın doğrudan o radyonun kendi sunucusundan çalınır; radyo, her internet bağlantısında olduğu gibi IP adresini görür. Bazı radyolarda nowby.co seni yalnızca radyonun resmî yayın adresine yönlendirir; yayın sunucumuzdan geçmez. Yayının kendisi hiçbir yerde kaydedilmez; dinlemelerin nasıl sayıldığı aşağıdaki "Dinleme sayımı" bölümünde.</p>
+      <h2 style={h2}>Dinleme sayımı</h2>
+      <p>nowby., radyolara "nowby üzerinden ne sıklıkta dinleniyorsunuz" sorusunun cevabını verebilmek için dinlemeleri sayar.</p>
+      <p>iPhone, iPad, Mac, Apple TV ve Apple Watch uygulamalarında bir radyo çalmaya başladığında sunucuya yalnızca hangi radyonun, hangi platformda dinlenmeye başladığı gider. Cihaz kimliği, rastgele bir sayı ya da seni tanımlayabilecek hiçbir bilgi gönderilmez.</p>
+      <p>nowby.co'da ve nowby.co'yu açan Android uygulamasında "Dinle"ye bastığında, aynı tarayıcıdan gelen tekrarları elemek için tarayıcında rastgele bir sayı tutulur; bu sayı radyo ve zamanla birlikte saklanır. Adınla, e-postanla ya da başka bir bilgiyle ilişkilendirilmez.</p>
+      <p>Bu kayıtlar yalnızca radyo başına toplam olarak kullanılır; izin veren radyolarla yalnızca toplam rakam (ör. "geçen ay 120 dinleme") paylaşılabilir.</p>
       <h2 style={h2}>Şarkı bilgileri ve arama</h2>
       <p>Radyolarda çalan şarkılar nowby.co'dan alınır. Uygulamada yaptığın aramalar sonuçları getirmek için sunucuya gönderilir, saklanmaz.</p>
       <h2 style={h2}>Radyo notları (Kalp defteri)</h2>
@@ -27,16 +32,16 @@ export default function GizlilikPage() {
       <p>Gönderdiğin öneri ya da bildirim metni, incelenmek üzere adsız olarak saklanır.</p>
       <h2 style={h2}>Yalnızca cihazında kalanlar</h2>
       <p>Favorilerin, Av Defteri'n, dinleme sürelerin, radyo alarmın ve ayarların yalnızca cihazında saklanır. Cihazların arasında eşitlemek için Apple'ın iCloud hizmeti kullanılır; bu veriler senin iCloud hesabında kalır, bize gelmez. Apple Watch ile iPhone arasındaki bağlantı ve ana ekran bileşeni de yalnızca cihazların arasında çalışır. Radyo alarmı bildirimleri telefonunda oluşturulur. Android'de bu veriler eşitlenmez ve telefonun yedeğine de alınmaz; yalnızca telefonunda kalır.</p>
-      <h2 style={h2}>Reklam, analitik ve takip yok</h2>
-      <p>nowby. reklam göstermez, analitik ya da reklam aracı kullanmaz, seni başka uygulamalar ya da siteler arasında takip etmez ve verini satmaz. nowby. şarkıları sayar, insanları değil.</p>
+      <h2 style={h2}>Reklam, üçüncü taraf analitik ve takip yok</h2>
+      <p>nowby. reklam göstermez, üçüncü taraf analitik ya da reklam aracı kullanmaz, seni başka uygulamalar ya da siteler arasında takip etmez ve verini satmaz. nowby. şarkıları ve dinlemeleri sayar, insanları değil.</p>
       <h2 style={h2}>Verilerin nerede?</h2>
-      <p>Radyo notları, hafıza kodu yedekleri ve bildirimler Supabase altyapısıyla Japonya'da (Tokyo) bulunan sunucularda; nowby.co sitesi Vercel altyapısında saklanır.</p>
+      <p>Radyo notları, dinleme kayıtları, hafıza kodu yedekleri ve bildirimler Supabase altyapısıyla Japonya'da (Tokyo) bulunan sunucularda; nowby.co sitesi Vercel altyapısında saklanır.</p>
       <h2 style={h2}>KVKK kapsamında aydınlatma</h2>
       <p><strong>Veri sorumlusu:</strong> Berkay Doğan (iletişim: hello@berkaydogan.co).</p>
-      <p><strong>İşlenen veriler:</strong> radyo notlarının, önerilerin ve bildirimlerin metni ile tarihi; isteğe bağlı hafıza kodu yedeği (favoriler, Av Defteri, takip edilen sanatçılar). Ad, e-posta, telefon numarası, konum gibi kimlik bilgileri işlenmez.</p>
+      <p><strong>İşlenen veriler:</strong> radyo notlarının, önerilerin ve bildirimlerin metni ile tarihi; isteğe bağlı hafıza kodu yedeği (favoriler, Av Defteri, takip edilen sanatçılar); dinleme kayıtları (radyo, platform ve zaman; nowby.co'da ayrıca tarayıcıdaki rastgele sayı). Ad, e-posta, telefon numarası, konum gibi kimlik bilgileri işlenmez.</p>
       <p><strong>Amaç ve hukuki sebep:</strong> veriler, nowby. hizmetinin sunulması (6698 sayılı Kanun m.5/2-c) ile kurallara aykırı içeriğin incelenmesi ve hizmetin kötüye kullanılmasının önlenmesi (m.5/2-f, meşru menfaat) amacıyla işlenir. Reklam, profilleme ya da pazarlama amacıyla işlenmez.</p>
       <p><strong>Aktarım:</strong> veriler barındırma hizmeti için Japonya'daki (Supabase) ve Vercel'in sunucularında saklanır; bu nedenle yurt dışına aktarılmış olur. Başka hiçbir üçüncü kişiyle paylaşılmaz; yasal bir zorunluluk olursa yetkili mercilerle paylaşılabilir.</p>
-      <p><strong>Saklama süresi:</strong> radyo notları kaldırılana kadar, öneri ve bildirimler incelendikten sonra makul bir süre, hafıza kodu yedekleri sen silinmesini isteyene kadar saklanır.</p>
+      <p><strong>Saklama süresi:</strong> radyo notları kaldırılana kadar, öneri ve bildirimler incelendikten sonra makul bir süre, hafıza kodu yedekleri sen silinmesini isteyene kadar, dinleme kayıtları en fazla 24 ay saklanır.</p>
       <p><strong>Hakların (m.11):</strong> verilerinin işlenip işlenmediğini öğrenme, bilgi isteme, işlenme amacını öğrenme, aktarıldığı kişileri bilme, eksik ya da yanlışsa düzeltilmesini, silinmesini isteme, itiraz etme ve zarara uğradıysan giderilmesini talep etme haklarına sahipsin. Başvurularını hello@berkaydogan.co adresine gönderebilirsin.</p>
     </NowbyYasal>
   );
