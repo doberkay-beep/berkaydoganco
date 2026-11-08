@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 
 export default function PrivacyPage() {
   return (
-    <HerebySayfa en ust="Hereby" baslik="Privacy policy" guncelleme="October 22, 2026">
+    <HerebySayfa en ust="Hereby" baslik="Privacy policy" guncelleme="November 8, 2026">
       <p>Hereby is developed by Berkay Doğan. This page explains what information the app uses and why.</p>
       <h2 style={h2}>Account</h2>
       <p>Hereby doesn't ask you to sign up. When the app opens, an anonymous identity unique to your phone is created. Your name, email or phone number is never collected. This identity is kept in your phone's Keychain, so your traces stay yours even if you delete and reinstall the app.</p>
@@ -24,6 +24,11 @@ export default function PrivacyPage() {
       <p>Traces you leave with the "Only me" option are visible only to you; to remind you when you return, their exact point is stored and never shown to any other user. The reminder works only if you have turned on nearby notifications and your phone allows it; the check happens on your phone and your location is not sent to the server. Time capsules cannot be read by anyone until their opening date.</p>
       <h2 style={h2}>Traces and replies you leave</h2>
       <p>The lines you write are stored with the approximate location where you left them and are shown anonymously to users who come to that place. Who wrote them is never shown to any user.</p>
+      <h2 style={h2}>Photos (optional)</h2>
+      <p>You can add a photo to a trace. The photo is resized and saved again on your phone; in the process its location and device information (EXIF) is removed and never reaches the server. The photo is stored in a storage area that anyone with its link can open, and it is shown with your trace to the people who read it.</p>
+      <p>Photos are reviewed before they are published. A notification is sent to Berkay Doğan for review; it goes through the ntfy.sh service and contains the photo's link, but nothing about who you are. A photo that isn't approved is hidden, and the text of your trace stays visible. When you choose Delete my data, your photos are deleted from storage too.</p>
+      <h2 style={h2}>Leave it for someone</h2>
+      <p>When you leave a line for a particular person, a random code and link are created. Only the person you share the link with can open it. The person who opens it sees the neighbourhood and an approximate area of about 150 meters where the line was left. Who opened the link is recorded with their anonymous identity; you are only shown whether and when your line was read, never who read it.</p>
       <h2 style={h2}>writtenby. (the Book tab)</h2>
       <p>The lines you write in the Book tab are stored with the location and neighbourhood name of where you wrote them and are shown anonymously to users who come to that place. Print permission is off by default. Lines you give permission for may be compiled by Berkay Doğan into the book printed at the end of the year; you appear under your pen name or anonymously. Until the book goes to print, you can revoke permission or withdraw your line entirely.</p>
       <h2 style={h2}>Attaching a song</h2>
@@ -37,12 +42,12 @@ export default function PrivacyPage() {
       <h2 style={h2}>Where is your data?</h2>
       <p>Data is stored on servers in the European Union (Frankfurt), using Supabase infrastructure.</p>
       <h2 style={h2}>Deletion</h2>
-      <p>In the app, My traces → Delete my data permanently deletes all your traces, replies and your anonymous identity.</p>
+      <p>In the app, My traces → Delete my data permanently deletes all your traces, replies, photos and your anonymous identity.</p>
       <h2 style={h2}>Notice under Turkish data protection law (KVKK)</h2>
       <p><strong>Data controller:</strong> Berkay Doğan (contact: hello@berkaydogan.co).</p>
-      <p><strong>Data processed:</strong> an anonymous identifier unique to your phone; the text, date, location and neighbourhood name of the traces, replies and writtenby. lines you leave; your print permission choice; your optional pen name; report and block records. No identity information such as name, email or phone number is processed.</p>
+      <p><strong>Data processed:</strong> an anonymous identifier unique to your phone; the text, date, location and neighbourhood name of the traces, replies and writtenby. lines you leave; your print permission choice; your optional pen name; photos you add to traces; records of who opened "Leave it for someone" links; report and block records. No identity information such as name, email or phone number is processed.</p>
       <p><strong>Purpose and legal basis:</strong> data is processed to provide the Hereby service (Law No. 6698, Art. 5/2-c, performance of a contract) and to keep users safe and review content that breaks the rules (Art. 5/2-f, legitimate interest). It is never processed for advertising, profiling or sale.</p>
-      <p><strong>Transfer:</strong> data is stored on servers in Germany (European Union) using Supabase infrastructure for hosting, which means it is transferred abroad. It is not shared with any other third party, except with competent authorities where legally required.</p>
+      <p><strong>Transfer:</strong> data is stored on servers in Germany (European Union) using Supabase infrastructure for hosting, which means it is transferred abroad. The photo review notification is delivered through the ntfy.sh service and contains only the photo's link. Beyond this, data is not shared with any other third party, except with competent authorities where legally required.</p>
       <p><strong>Retention:</strong> your traces and replies are kept until you delete them or they are removed for breaking the rules. When you choose Delete my data, everything is permanently deleted along with your anonymous identity.</p>
       <p><strong>Your rights (Art. 11):</strong> you have the right to learn whether your data is processed, to request information, to learn the purpose of processing, to know who it is transferred to, to request correction or deletion, to object, and to claim compensation for any damage. Write to hello@berkaydogan.co; you will receive a reply within 30 days at the latest. Because Hereby works with anonymous identities, you may need to tell us which trace your request is about.</p>
     </HerebySayfa>

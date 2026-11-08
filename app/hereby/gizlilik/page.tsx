@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 
 export default function GizlilikPage() {
   return (
-    <HerebySayfa ust="Hereby" baslik="Gizlilik politikası" guncelleme="22 Ekim 2026">
+    <HerebySayfa ust="Hereby" baslik="Gizlilik politikası" guncelleme="8 Kasım 2026">
       <p>Hereby'yi Berkay Doğan geliştirir. Bu sayfa, uygulamanın hangi bilgileri neden kullandığını açıklar.</p>
       <h2 style={h2}>Hesap</h2>
       <p>Hereby kayıt istemez. Uygulama açıldığında telefonuna özel, anonim bir kimlik oluşturulur. Adın, e-postan ya da telefon numaran alınmaz. Bu kimlik telefonunun Anahtar Zinciri'nde saklanır; uygulamayı silip yeniden kursan da izlerin seninle kalır.</p>
@@ -24,6 +24,11 @@ export default function GizlilikPage() {
       <p>"Yalnız bana" seçeneğiyle bıraktığın izler yalnızca sana görünür; o yere döndüğünde hatırlatabilmek için bu izlerin tam noktası saklanır ve başka hiçbir kullanıcıya gösterilmez. Hatırlatma, yalnızca yakınlık bildirimini açtıysan ve telefonun izin verdiyse çalışır; bu kontrol telefonunda yapılır, konumun sunucuya gönderilmez. Zaman kapsülleri açılış tarihine kadar kimse tarafından okunamaz.</p>
       <h2 style={h2}>Bıraktığın izler ve cevaplar</h2>
       <p>Yazdığın satırlar, bıraktığın yerin yaklaşık konumuyla birlikte saklanır ve o yere gelen kullanıcılara adsız olarak gösterilir. Kimin yazdığı hiçbir kullanıcıya gösterilmez.</p>
+      <h2 style={h2}>Fotoğraflar (isteğe bağlı)</h2>
+      <p>Bir ize fotoğraf ekleyebilirsin. Fotoğraf telefonunda küçültülüp yeniden kaydedilir; bu sırada içindeki konum ve cihaz bilgisi (EXIF) silinir, sunucuya hiç gitmez. Fotoğraf, bağlantısını bilen herkesin açabileceği bir depolama alanında saklanır ve izi okuyanlara izin metniyle birlikte gösterilir.</p>
+      <p>Fotoğraflar yayımlanmadan önce incelenir. İnceleme için Berkay Doğan'a bir bildirim gider; bu bildirim ntfy.sh hizmeti üzerinden gönderilir ve fotoğrafın bağlantısını içerir, senin kim olduğuna dair bir bilgi içermez. Uygun bulunmayan fotoğraf gizlenir, izin metni görünmeye devam eder. Verilerimi sil dediğinde fotoğrafların da depodan silinir.</p>
+      <h2 style={h2}>Birine bırak</h2>
+      <p>Bir satırı belirli birine bırakmak istediğinde rastgele bir kod ve bağlantı oluşturulur. Bağlantıyı yalnızca senin paylaştığın kişi açabilir. Bağlantıyı açan kişiye satırın bırakıldığı semt ve yaklaşık 150 metrelik alan gösterilir. Bağlantıyı kimin açtığı, anonim kimliğiyle kaydedilir; sana yalnızca satırının okunup okunmadığı ve ne zaman okunduğu gösterilir, okuyanın kim olduğu gösterilmez.</p>
       <h2 style={h2}>writtenby. (Kitap sekmesi)</h2>
       <p>Kitap sekmesinde yazdığın satırlar; yazdığın yerin konumu ve semt adıyla birlikte saklanır ve o yere gelen kullanıcılara adsız olarak gösterilir. Basım izni kendiliğinden kapalıdır. İzin verdiğin satırlar, yıl sonunda basılacak kitap için Berkay Doğan tarafından derlenebilir; kitapta mahlasınla ya da adsız yer alırsın. Kitap baskıya gidene kadar iznini geri alabilir, satırını tamamen çekebilirsin.</p>
       <h2 style={h2}>Şarkı iliştirme</h2>
@@ -37,12 +42,12 @@ export default function GizlilikPage() {
       <h2 style={h2}>Verilerin nerede?</h2>
       <p>Veriler, Supabase altyapısıyla Avrupa Birliği'nde (Frankfurt) bulunan sunucularda saklanır.</p>
       <h2 style={h2}>Silme</h2>
-      <p>Uygulamada İzlerim → Verilerimi sil ile bütün izlerin, cevapların ve anonim kimliğin kalıcı olarak silinir.</p>
+      <p>Uygulamada İzlerim → Verilerimi sil ile bütün izlerin, cevapların, fotoğrafların ve anonim kimliğin kalıcı olarak silinir.</p>
       <h2 style={h2}>KVKK kapsamında aydınlatma</h2>
       <p><strong>Veri sorumlusu:</strong> Berkay Doğan (iletişim: hello@berkaydogan.co).</p>
-      <p><strong>İşlenen veriler:</strong> telefonuna özel anonim kimlik numarası; bıraktığın izlerin, cevapların ve writtenby. satırlarının metni, tarihi, konumu ve semt adı; basım izni tercihin; isteğe bağlı mahlasın; şikâyet ve engelleme kayıtları. Ad, e-posta, telefon numarası gibi kimlik bilgileri işlenmez.</p>
+      <p><strong>İşlenen veriler:</strong> telefonuna özel anonim kimlik numarası; bıraktığın izlerin, cevapların ve writtenby. satırlarının metni, tarihi, konumu ve semt adı; basım izni tercihin; isteğe bağlı mahlasın; izlere eklediğin fotoğraflar; Birine bırak bağlantılarının açılma kayıtları; şikâyet ve engelleme kayıtları. Ad, e-posta, telefon numarası gibi kimlik bilgileri işlenmez.</p>
       <p><strong>Amaç ve hukuki sebep:</strong> veriler, Hereby hizmetinin sunulması (6698 sayılı Kanun m.5/2-c, sözleşmenin kurulması ve ifası) ile kullanıcıların güvenliği ve kurallara aykırı içeriğin incelenmesi (m.5/2-f, meşru menfaat) amacıyla işlenir. Reklam, profilleme ya da satış amacıyla işlenmez.</p>
-      <p><strong>Aktarım:</strong> veriler, barındırma hizmeti için Supabase altyapısıyla Almanya'daki (Avrupa Birliği) sunucularda saklanır; bu nedenle yurt dışına aktarılmış olur. Veriler başka hiçbir üçüncü kişiyle paylaşılmaz; yasal bir zorunluluk olursa yetkili mercilerle paylaşılabilir.</p>
+      <p><strong>Aktarım:</strong> veriler, barındırma hizmeti için Supabase altyapısıyla Almanya'daki (Avrupa Birliği) sunucularda saklanır; bu nedenle yurt dışına aktarılmış olur. Fotoğraf incelemesi için gönderilen bildirim ntfy.sh hizmeti üzerinden iletilir ve yalnızca fotoğrafın bağlantısını içerir. Veriler bunların dışında hiçbir üçüncü kişiyle paylaşılmaz; yasal bir zorunluluk olursa yetkili mercilerle paylaşılabilir.</p>
       <p><strong>Saklama süresi:</strong> izlerin ve cevapların, sen silene ya da kurallara aykırı olduğu için kaldırılana kadar saklanır. Verilerimi sil dediğinde anonim kimliğinle birlikte hepsi kalıcı olarak silinir.</p>
       <p><strong>Hakların (m.11):</strong> verilerinin işlenip işlenmediğini öğrenme, bilgi isteme, işlenme amacını öğrenme, aktarıldığı kişileri bilme, eksik ya da yanlışsa düzeltilmesini, silinmesini isteme, itiraz etme ve zarara uğradıysan giderilmesini talep etme haklarına sahipsin. Başvurunu hello@berkaydogan.co adresine yazabilirsin; en geç 30 gün içinde yanıtlanır. Anonim kimlikle çalıştığımız için başvurunda hangi izden söz ettiğini belirtmen gerekebilir.</p>
     </HerebySayfa>
