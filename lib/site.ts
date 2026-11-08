@@ -120,17 +120,17 @@ export const site: Record<Lang, Copy> = {
       role: "Poet & Writer — Istanbul",
       line: "Yazmak, varoluşun en sessiz itirafıdır.",
       lineNote: "literally: “Writing is the quietest confession of existence.”",
-      sub: "He began writing at seventeen. For eight years he wrote in silence; then, in ten months, came two books, a film and a radio platform.",
+      sub: "He began writing at seventeen. For eight years he wrote in silence; then, in ten months, came two books, a short film and two apps.",
       ctaBooks: "The books", ctaAbout: "About", scroll: "Scroll",
     },
     about: {
-      label: "About", heading: "Poet, writer, founder of nowby",
+      label: "About", heading: "Poet and writer",
       paras: [
-        "He began writing at seventeen. For eight years he wrote in silence; then, in ten months, came two books, a film and a radio platform.",
+        "He began writing at seventeen. For eight years he wrote in silence; then, in ten months, came two books, a short film and two apps.",
         "Berkay Doğan is a poet and writer based in Istanbul. For him, writing is not a choice but a necessity. Every day he does not write is a day he betrays himself.",
         "He began writing in 2017, at seventeen. For most, that age is still a threshold of innocence; for him it was the moment he started to see the true face of society. Since then, what feeds him is life itself more than literature: a pair of eyes, a building riddled with holes, walking again, as a changed man, through streets he once knew.",
-        "His first book, Mürekkep ve Köz: Bir Şairin Hesabı (“Ink and Ember: A Poet’s Reckoning”, 2025), was wrenched out of a suffocating solitude, national chaos and existential crisis. His second, Tasfiye (Turkish for “purge” or “cleansing”), is a critique of the existing order — a call to revive the dose of philosophy we have lost. Between the two runs a reckoning that stretches from poetry to essay.",
-        "Poetry and radio are born in the same place: in listening. In 2026 he founded nowby (nowby.co), which shows — and counts — what is playing right now across Turkey's radio stations: a poet chasing after sound.",
+        "His first book, Mürekkep ve Köz: Bir Şairin Hesabı (“Ink and Ember: A Poet’s Reckoning”, 2025), was wrenched out of a suffocating solitude, national chaos and existential crisis. His second, Tasfiye (Turkish for “purge” or “cleansing”), is a critique of the existing order — a call to revive the dose of philosophy we have lost. Between the two runs a reckoning that stretches from poetry to essay. He keeps publishing poems, essays and night notes on this site and on Substack.",
+        "Alongside writing, he builds digital experiences, gathered in his workshop, by. hereby. lets you leave the line on your mind at the place where you thought it; only someone who comes to that place can read it. nowby. was born of a question: “Art at its simplest is listening. Could the music flowing through different radio stations meet in a single vein?” Today it shows, on one screen, the songs playing right now on stations that have given permission for their broadcasts to be shared.",
       ],
       worksLabel: "The journey",
       works: [
@@ -185,17 +185,17 @@ export const site: Record<Lang, Copy> = {
     hero: {
       role: "Şair & Yazar — İstanbul",
       line: "Yazmak, varoluşun en sessiz itirafıdır.",
-      sub: "17 yaşında yazmaya başladı. Sekiz yıl sessizce yazdı; sonra on ayda iki kitap, bir film ve bir radyo.",
+      sub: "17 yaşında yazmaya başladı. Sekiz yıl sessizce yazdı; sonra on ayda iki kitap, bir kısa film ve iki uygulama.",
       ctaBooks: "Kitaplar", ctaAbout: "Hakkımda", scroll: "Kaydır",
     },
     about: {
-      label: "Hakkımda", heading: "Şair, yazar, nowby'ın kurucusu",
+      label: "Hakkımda", heading: "Şair ve yazar",
       paras: [
-        "17 yaşında yazmaya başladı. Sekiz yıl sessizce yazdı; sonra on ayda iki kitap, bir film ve bir radyo.",
+        "17 yaşında yazmaya başladı. Sekiz yıl sessizce yazdı; sonra on ayda iki kitap, bir kısa film ve iki uygulama.",
         "Berkay Doğan, İstanbul'da yaşayan şair ve yazardır. Onun için yazmak bir tercih değil, bir zorunluluktur: yazmak, varoluşun en sessiz itirafıdır. Yazmadığı her gün, kendine ihanet ettiği bir gündür.",
         "Yazıya 2017'de, on yedi yaşında başladı. O yaş çoğu için masumiyetin sürdüğü bir eşikti; onun içinse toplumun gerçek yüzünü görmeye başladığı an oldu. O günden bu yana onu besleyen şey, edebiyatın kendisinden çok hayatın kendisidir: bir çift göz, delik deşik mimari bir yapı, eskiden geçtiği sokakları değişmiş bir adam olarak yeniden geçmek.",
-        "İlk kitabı Mürekkep ve Köz: Bir Şairin Hesabı (2025) boğucu bir yalnızlığın, ulusal kaosun ve varoluşsal krizin içinden sökülerek yazıldı. İkinci kitabı Tasfiye ise mevcut düzene bir eleştiri, kaybettiğimiz felsefi dozun yeniden hayata çağrılmasıdır. İkisi arasında, şiirden denemeye uzanan bir hesaplaşma vardır.",
-        "Şiir de radyo da aynı yerden doğar: dinlemekten. 2026'da kurduğu nowby (nowby.co), Türkiye'nin radyolarında tam da bu an ne çaldığını gösterir ve sayar — bir şairin sesin peşine düşmesi.",
+        "İlk kitabı Mürekkep ve Köz: Bir Şairin Hesabı (2025) boğucu bir yalnızlığın, ulusal kaosun ve varoluşsal krizin içinden sökülerek yazıldı. İkinci kitabı Tasfiye ise mevcut düzene bir eleştiri, kaybettiğimiz felsefi dozun yeniden hayata çağrılmasıdır. İkisi arasında, şiirden denemeye uzanan bir hesaplaşma vardır. Şiirlerini, yazılarını ve gece notlarını bu sitede ve Substack'te yayımlamayı sürdürüyor.",
+        "Yazının yanında dijital deneyimler de geliştiriyor; hepsi by. atölyesinde bir araya geliyor. hereby., bir yerde aklından geçen satırı oraya bırakmanı sağlıyor; o satırı yalnızca oraya gelen okuyabiliyor. nowby. ise bir sorudan doğdu: “Sanatın en basit hâli: dinlemek. Farklı radyolarda akan müzik tek bir damarda buluşabilir miydi?” Bugün, yayınlarının paylaşılmasına izin veren radyolarda o an çalan şarkıları tek ekranda gösteriyor.",
       ],
       worksLabel: "Yolculuk",
       works: [

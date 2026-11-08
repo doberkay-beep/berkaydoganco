@@ -8,7 +8,7 @@ const TURUNCU = "#c9241a";
 
 export const ATOLYE_TR: AtolyeMetin = {
   dil: "tr",
-  alt: "Berkay Doğan'ın atölyesi",
+  alt: "Şair ve yazar Berkay Doğan'ın atölyesi",
   giris: "Beğenisiz, takipçisiz, sonsuz akışsız. Seni telefondan alıp bir yere, bir âna götüren uygulamalar.",
   byEtiket: "by ne demek",
   by: [
@@ -31,14 +31,13 @@ export const ATOLYE_TR: AtolyeMetin = {
     },
     {
       id: "nowby", ad: "nowby", renk: TURUNCU, soru: "Ne zaman?", href: "/nowby", link: "nowby'ı tanı →",
-      m: "Türkiye'nin radyolarında şu an ne çalıyor? Yüzlerce frekans tek ekranda, canlı. Gerçek sayıma dayanan listeler, dünyanın radyoları, kitaplardan dizelerle Frekans Falı.",
+      m: "Radyolarda şu an ne çalıyor? Yayınlarını paylaşmamıza izin veren radyolar tek ekranda, canlı. Gerçek sayıma dayanan listeler, dünyanın radyoları, kitaplardan dizelerle Frekans Falı.",
       ilke: "Şarkıları sayar, insanları değil.",
-      cihazBaslik: "Beş cihazda aynı radyo, aynı şarkı.",
+      cihazBaslik: "Dört cihazda aynı radyo, aynı şarkı.",
       cihazlar: [
         { tur: "tv", c: "Apple TV", b: "Salonda, kocaman.", s: "Kanepeden okunan şarkı adları.", alt: "nowby. Apple TV'de: şu an çalan şarkı büyük ekranda" },
-        { tur: "mac", c: "Mac", b: "Masanda, yan panelde.", s: "Kenar çubuğu, şarkı kartları, altta boydan boya çalar.", alt: "nowby. Mac'te: kenar çubuğu, şarkı kartları ve çalar" },
         { tur: "ipad", c: "iPad", b: "Kucağında, üç sütun.", s: "Kenar çubuğu, şarkı kartları ve büyük çalar aynı ekranda.", alt: "nowby. iPad'de: üç sütunlu ekran" },
-        { tur: "iphone", c: "iPhone", b: "Cebinde, canlı.", s: "Yüzlerce radyo, şu an çalan şarkılarıyla.", alt: "nowby. iPhone'da: canlı radyo listesi" },
+        { tur: "iphone", c: "iPhone", b: "Cebinde, canlı.", s: "İzin veren radyolar, şu an çalan şarkılarıyla.", alt: "nowby. iPhone'da: canlı radyo listesi" },
         { tur: "saat", c: "Apple Watch", b: "Bileğinde, tek dokunuş.", s: "Telefondaki çaların kumandası; şarkıyı oradan yakala.", alt: "nowby. Apple Watch'ta: çalan şarkı ve Yakala düğmesi" },
       ],
     },
@@ -71,7 +70,7 @@ export const ATOLYE_TR: AtolyeMetin = {
 
 export const ATOLYE_EN: AtolyeMetin = {
   dil: "en",
-  alt: "Berkay Doğan's workshop",
+  alt: "The workshop of poet and writer Berkay Doğan",
   giris: "No likes, no followers, no endless feed. Apps that take you off your phone and into a place, a moment.",
   byEtiket: "What by means",
   by: [
@@ -94,14 +93,13 @@ export const ATOLYE_EN: AtolyeMetin = {
     },
     {
       id: "nowby", ad: "nowby", renk: TURUNCU, soru: "When?", href: "/en/nowby", link: "Meet nowby. →",
-      m: "What is playing on Türkiye's radio right now? Hundreds of frequencies on one screen, live. Charts built on real airplay counts, the world's radio, and a Frequency Fortune with lines from the books.",
+      m: "What is playing on the radio right now? Stations that gave us permission to share their broadcasts, on one screen, live. Charts built on real airplay counts, the world's radio, and a Frequency Fortune with lines from the books.",
       ilke: "It counts songs, not people.",
-      cihazBaslik: "The same station, the same song on five devices.",
+      cihazBaslik: "The same station, the same song on four devices.",
       cihazlar: [
         { tur: "tv", c: "Apple TV", b: "In the living room, huge.", s: "Song titles you can read from the couch.", alt: "nowby. on Apple TV: the song playing now on the big screen" },
-        { tur: "mac", c: "Mac", b: "On your desk, in a side panel.", s: "A sidebar, song cards and a full-width player along the bottom.", alt: "nowby. on Mac: sidebar, song cards and player" },
         { tur: "ipad", c: "iPad", b: "On your lap, three columns.", s: "Sidebar, song cards and the big player on one screen.", alt: "nowby. on iPad: three-column layout" },
-        { tur: "iphone", c: "iPhone", b: "In your pocket, live.", s: "Hundreds of stations with the song playing right now.", alt: "nowby. on iPhone: the live station list" },
+        { tur: "iphone", c: "iPhone", b: "In your pocket, live.", s: "Stations that gave permission, with the song playing right now.", alt: "nowby. on iPhone: the live station list" },
         { tur: "saat", c: "Apple Watch", b: "On your wrist, one tap.", s: "A remote for the player on your phone; catch the song from there.", alt: "nowby. on Apple Watch: the song playing and the Catch button" },
       ],
     },
