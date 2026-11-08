@@ -54,13 +54,13 @@ export const EN_BOOKS: EnBook[] = [
 
 export const EN_FACTS: { k: string; v: string }[] = [
   { k: "Name", v: "Berkay Doğan" },
-  { k: "Role", v: "Poet and writer · founder of nowby" },
+  { k: "Role", v: "Poet and writer · developer of hereby. and nowby." },
   { k: "Based in", v: "Istanbul, Turkey" },
   { k: "Writes in", v: "Turkish" },
   { k: "Publisher", v: "İskenderiye Yayınları (Istanbul)" },
   { k: "Books", v: "Mürekkep ve Köz (poetry, 2025) · Tasfiye (essays, 2026)" },
   { k: "Film", v: "TASFİYE: Film — short film, 8 min, narrated in Turkish by the author (YouTube, September 2026)" },
-  { k: "Radio", v: "nowby — a live view and count of what Turkey’s radio stations are playing (nowby.co)" },
+  { k: "Apps", v: "hereby. (lines left at a place) · nowby. (songs playing right now on radio stations, nowby.co)" },
   { k: "Podcast", v: "Şairin Hesabı (“The Poet’s Reckoning”), on Spotify" },
   { k: "Pronunciation", v: "Ber-kai Doh-ahn (the ğ is silent; it lengthens the vowel before it)" },
 ];
