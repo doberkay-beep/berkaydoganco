@@ -11,9 +11,11 @@ const serif: React.CSSProperties = { fontFamily: "var(--font-serif, Georgia), Ge
 const bolum: React.CSSProperties = { maxWidth: "1080px", margin: "0 auto", padding: "clamp(3.5rem, 9vh, 6.5rem) clamp(1.25rem, 5vw, 3rem)" };
 const kart: React.CSSProperties = { background: "var(--glass-bg)", border: "1px solid var(--glass-border)", borderRadius: "22px", padding: "1.5rem", backdropFilter: "blur(12px)" };
 
+const WEBRAZZI = "https://webrazzi.com/2026/11/12/konuma-bagli-dijital-izler-birakmayi-saglayan-ios-uygulamasi-hereby";
+
 type Metin = {
   ust: string; baslik: [string, string, string]; alt: string; imza: string;
-  beta: string; betaKonu: string; yakinda: string;
+  beta: string; betaKonu: string; yakinda: string; basin: string;
   manifestoEtiket: string; manifesto: string[];
   adimEtiket: string; adimlar: { b: string; m: string; g: string; alt: string }[];
   ozellikEtiket: string; ozellikBaslik: string; ozellikler: { s: string; b: string; m: string }[];
@@ -28,7 +30,7 @@ export const HEREBY_TR: Metin = {
   baslik: ["Düşünceni", "bir yere", "bırak."],
   alt: "Aklından geçen satırı geçtiğin yere bırak. Onu yalnızca oraya gelen biri okuyabilir. Beğeni yok, takipçi yok; sadece yerler ve cümleler.",
   imza: "iOS · App Store'da",
-  beta: "App Store'dan indir", betaKonu: "Hereby beta", yakinda: "Ücretsiz · Reklamsız · Üyelik yok",
+  beta: "App Store'dan indir", betaKonu: "Hereby beta", yakinda: "Ücretsiz · Reklamsız · Üyelik yok", basin: "Webrazzi'de yer aldı",
   manifestoEtiket: "Manifesto",
   manifesto: ["İnsanlar düşünmeyi unuttu.", "Bazen düşünürken içinden geçirirsin ve o düşünceni ancak o yere yeniden gittiğinde hatırlarsın.", "Değerli olanı hatırlamak önemlidir.", "Hereby bir ayna olsun."],
   adimEtiket: "Nasıl çalışır",
@@ -72,7 +74,7 @@ export const HEREBY_EN: Metin = {
   baslik: ["Leave", "a thought", "in a place."],
   alt: "Leave the line on your mind in the place you pass. Only someone who comes there can read it. No likes, no followers; just places and sentences.",
   imza: "iOS · On the App Store",
-  beta: "Download on the App Store", betaKonu: "Hereby beta", yakinda: "Free · No ads · No sign-up",
+  beta: "Download on the App Store", betaKonu: "Hereby beta", yakinda: "Free · No ads · No sign-up", basin: "Featured on Webrazzi",
   manifestoEtiket: "Manifesto",
   manifesto: ["People have forgotten how to think.", "Sometimes a thought passes through you, and you only remember it when you return to that place.", "Remembering what is precious matters.", "Let Hereby be a mirror."],
   adimEtiket: "How it works",
@@ -157,6 +159,10 @@ export function HerebyTanitim({ m }: { m: Metin }) {
           <span className="hb-dugme" style={{ border: "1px solid var(--line)", color: "var(--muted)" }}>{m.imza}</span>
         </div>
         <p style={{ ...mono, color: "var(--muted)", marginTop: "1.4rem", fontSize: "0.66rem", position: "relative" }}>{m.yakinda}</p>
+        {/* Basın: 12 Kas 2026 Webrazzi girişim incelemesi (lib/basinda.ts ile aynı bağlantı) */}
+        <p style={{ marginTop: "1.1rem", fontSize: "0.92rem", position: "relative" }}>
+          <a href={WEBRAZZI} target="_blank" rel="noopener noreferrer" style={{ color: CIVIT, textDecoration: "underline", textUnderlineOffset: "4px" }}>{m.basin} ↗</a>
+        </p>
       </section>
 
       {/* MANİFESTO */}
