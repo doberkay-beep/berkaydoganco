@@ -20,7 +20,7 @@ export const EKRAN: Ekran[] = [
    buradan beslenir. `alinti` YALNIZ yayımlanmış metinden, harfi harfine
    (Berkay'ın kendi cevabı ya da kitapta/dergide yayımlanmış dize). */
 
-export type BasinTur = "roportaj" | "siir" | "dosya";
+export type BasinTur = "roportaj" | "siir" | "dosya" | "haber";
 export type Basin = {
   tarihISO: string;
   yayin: string;
@@ -35,9 +35,17 @@ export const BASIN_TUR: Record<BasinTur, { tr: string; en: string }> = {
   roportaj: { tr: "Röportaj", en: "Interview" },
   siir: { tr: "Şiir", en: "Poem" },
   dosya: { tr: "Yazar dosyası", en: "Author profile" },
+  haber: { tr: "Haber", en: "News" },
 };
 
 export const BASIN: Basin[] = [
+  {
+    tarihISO: "2026-11-12",
+    yayin: "Webrazzi",
+    tur: "haber",
+    baslik: { tr: "Konuma bağlı dijital izler bırakmayı sağlayan iOS uygulaması: hereby", en: "hereby: an iOS app for leaving digital traces tied to a place" },
+    url: "https://webrazzi.com/2026/11/12/konuma-bagli-dijital-izler-birakmayi-saglayan-ios-uygulamasi-hereby",
+  },
   {
     tarihISO: "2026-10-30",
     yayin: "Şiir Rafım",
