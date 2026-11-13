@@ -47,6 +47,15 @@ export const BASIN: Basin[] = [
     url: "https://www.teknoblog.com/hereby-iphonedaki-notlari-yalnizca-bulundugu-yerde-aciyor/",
   },
   {
+    // Berkay'ın kararıyla eklendi (13 Kas). Not: foro3d başka yayınları otomatik yeniden yazan bir site;
+    // Global Talent dosyasında kanıt olarak kullanılmaz.
+    tarihISO: "2026-11-12",
+    yayin: "Foro3D (İspanyolca)",
+    tur: "haber",
+    baslik: { tr: "hereby: okumak için orada olmayı gerektiren dijital notlar", en: "hereby: digital notes that require being there to read them (in Spanish)" },
+    url: "https://foro3d.com/2026/noviembre/hereby-notas-digitales-que-exigen-presencia-fisica-para-leerlas.html",
+  },
+  {
     tarihISO: "2026-11-12",
     yayin: "Webrazzi",
     tur: "haber",
