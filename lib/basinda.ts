@@ -20,7 +20,7 @@ export const EKRAN: Ekran[] = [
    buradan beslenir. `alinti` YALNIZ yayımlanmış metinden, harfi harfine
    (Berkay'ın kendi cevabı ya da kitapta/dergide yayımlanmış dize). */
 
-export type BasinTur = "roportaj" | "siir" | "dosya" | "haber";
+export type BasinTur = "roportaj" | "siir" | "siirDeneme" | "dosya" | "haber";
 export type Basin = {
   tarihISO: string;
   yayin: string;
@@ -34,6 +34,7 @@ export type Basin = {
 export const BASIN_TUR: Record<BasinTur, { tr: string; en: string }> = {
   roportaj: { tr: "Röportaj", en: "Interview" },
   siir: { tr: "Şiir", en: "Poem" },
+  siirDeneme: { tr: "Şiir ve deneme", en: "Poem and essay" },
   dosya: { tr: "Yazar dosyası", en: "Author profile" },
   haber: { tr: "Haber", en: "News" },
 };
@@ -72,7 +73,8 @@ export const BASIN: Basin[] = [
   {
     tarihISO: "2026-10-21",
     yayin: "Müstakil Düşünenler",
-    tur: "siir",
+    // "Çok Uzaklardaki Zihnim, Şimdi" şiir; "Karanlık Oksijen" Tasfiye'nin ilk denemesi (aynı adlı İnfaz şiiri DEĞİL).
+    tur: "siirDeneme",
     baslik: { tr: "“Çok Uzaklardaki Zihnim, Şimdi” ve “Karanlık Oksijen” — Sayı 13/14", en: "“Çok Uzaklardaki Zihnim, Şimdi” and “Karanlık Oksijen” — Issue 13/14" },
     alinti: "Suyun altında olduğumuzu fark etmek, yüzeye doğru atılacak ilk ve en hayati kulaçtır.",
     url: "https://www.kitapyurdu.com/dergi/mustakil-dusunenler-sayi-13-sayi-1314-20262/771856.html",
