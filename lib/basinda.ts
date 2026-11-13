@@ -41,6 +41,13 @@ export const BASIN_TUR: Record<BasinTur, { tr: string; en: string }> = {
 export const BASIN: Basin[] = [
   {
     tarihISO: "2026-11-12",
+    yayin: "Teknoblog",
+    tur: "haber",
+    baslik: { tr: "hereby, iPhone'daki notları yalnızca bulunduğu yerde açıyor", en: "hereby opens iPhone notes only where they were left" },
+    url: "https://www.teknoblog.com/hereby-iphonedaki-notlari-yalnizca-bulundugu-yerde-aciyor/",
+  },
+  {
+    tarihISO: "2026-11-12",
     yayin: "Webrazzi",
     tur: "haber",
     baslik: { tr: "Konuma bağlı dijital izler bırakmayı sağlayan iOS uygulaması: hereby", en: "hereby: an iOS app for leaving digital traces tied to a place" },
