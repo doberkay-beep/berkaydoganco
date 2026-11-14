@@ -62,7 +62,7 @@ export function HerebyAppSchema() {
         creator: { "@id": PERSON_ID },
         datePublished: "2026-10-28",
         inLanguage: ["tr", "en"],
-        sameAs: ["https://apps.apple.com/tr/app/hereby/id6825787016"],
+        sameAs: ["https://apps.apple.com/tr/app/hereby/id6825787016", "https://www.wikidata.org/wiki/Q142153975"],
         subjectOf: basinYazilari((b) => b.tur === "haber"),
       }}
     />
