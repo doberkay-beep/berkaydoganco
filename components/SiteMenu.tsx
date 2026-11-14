@@ -5,6 +5,7 @@ import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import { Muhur } from "./Muhur";
 import { menuGruplari } from "@/lib/menu";
+import { TemaDugmesi } from "./TemaDugmesi";
 
 /* Sitenin tek menüsü. Önce okura en çok gereken beş bağlantı, sonra okuma arşivi, sonra diğer çalışmalar.
    Gizlilik ve koşullar burada değil; ilgili uygulama sayfalarının altında duruyor.
@@ -75,6 +76,7 @@ export function SiteMenu() {
               <a key={href} href={href}><span aria-hidden>{String(i + 1).padStart(2, "0")}</span>{ad}</a>
             ))}
           </nav>
+          <TemaDugmesi lang={lang} />
           <button className="sm-ac" onClick={() => setAcik(true)} aria-expanded={acik} aria-haspopup="dialog">{lang === "tr" ? "Menü" : "Menu"}</button>
         </div>
       </header>

@@ -6,6 +6,7 @@ import Link from "next/link";
 import { site, LANGS, type Lang, type Copy } from "@/lib/site";
 import { Muhur } from "./Muhur";
 import { GrupluMenu } from "./SiteMenu";
+import { TemaDugmesi } from "./TemaDugmesi";
 import { ETKINLIKLER } from "@/lib/etkinlikler";
 
 /* Site kabuğu — nav + mobil menü + dil/tema durumu + mikro-etkileşimler.
@@ -45,25 +46,8 @@ export function Eyebrow({ children }: { children: React.ReactNode }) {
 export function Kabuk({ children }: { children: (lang: Lang, t: Copy) => React.ReactNode }) {
   const [lang, setLang] = useState<Lang>("tr");
   const [menuOpen, setMenuOpen] = useState(false);
-  const [theme, setTheme] = useState<"dark" | "light">("dark");
   const navRef = useRef<HTMLElement | null>(null);
   const t = site[lang];
-
-  useEffect(() => {
-    const id = window.setTimeout(() => {
-      const cur = document.documentElement.getAttribute("data-theme");
-      if (cur === "light" || cur === "dark") setTheme(cur);
-    }, 0);
-    return () => window.clearTimeout(id);
-  }, []);
-  const toggleTheme = () => {
-    setTheme((prev) => {
-      const next = prev === "dark" ? "light" : "dark";
-      document.documentElement.setAttribute("data-theme", next);
-      try { localStorage.setItem("bd-theme", next); } catch { /* yoksay */ }
-      return next;
-    });
-  };
 
   const changeLang = (l: Lang) => {
     setLang(l);
@@ -178,7 +162,7 @@ export function Kabuk({ children }: { children: (lang: Lang, t: Copy) => React.R
               <button key={l} data-on={l === lang ? "1" : "0"} onClick={() => changeLang(l)} aria-label={l.toUpperCase()}>{l.toUpperCase()}</button>
             ))}
           </div>
-          <button className="cg-theme" onClick={toggleTheme} aria-label={theme === "dark" ? "Light theme" : "Dark theme"}>{theme === "dark" ? "☀" : "☾"}</button>
+          <TemaDugmesi lang={lang} className="tema-dugme cg-tema" />
           <button className="cg-burger" onClick={() => setMenuOpen(true)} aria-expanded={menuOpen}>{lang === "tr" ? "Menü" : "Menu"}</button>
         </div>
       </nav>

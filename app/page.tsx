@@ -7,6 +7,7 @@ import { site, EMAIL, YOUTUBE_URL, INSTAGRAM_URL, SUBSTACK_URL } from "@/lib/sit
 import { BASIN, BASIN_TUR, EKRAN } from "@/lib/basinda";
 import { YAYINDA } from "@/lib/yazilar";
 import { menuGruplari } from "@/lib/menu";
+import { KARELER } from "@/lib/goruntu";
 import s from "@/components/anasayfa/noir.module.css";
 
 // hreflang çifti: Türkçe ana sayfa ↔ İngilizce tanıtım sayfası (/en/).
@@ -24,6 +25,7 @@ export const metadata: Metadata = {
    lib/yazilar (yazılar). Dize yalnız yayımlanmış satırlardan. */
 
 const t = site.tr;
+const acilisKare = KARELER.find((k) => k.no === "0334")!;
 const AY = ["Oca", "Şub", "Mar", "Nis", "May", "Haz", "Tem", "Ağu", "Eyl", "Eki", "Kas", "Ara"];
 function tarih(iso: string, sadeceAy = false) {
   const [y, m, d] = iso.split("-").map(Number);
@@ -81,7 +83,12 @@ export default function Page() {
 
       <div className={s.sayfa}>
         {/* [00] AÇILIŞ */}
-        <header className={s.acilis} id="top">
+        <header className={`${s.acilis} ana-acilis`} id="top">
+          {/* Başlığın arkasında Berkay'ın kendi karesi (Görüntü ve Dize, 0334); dizesi lib/goruntu.ts'ten. */}
+          <figure className={`${s.foto} ${s.acilisFoto}`}>
+            <img src={`/goruntu/${acilisKare.no}.jpg`} alt="Fırtınalı bir günde İstanbul Boğazı; bulutların altında köprü ve dalgalar" width={acilisKare.w} height={acilisKare.h} fetchPriority="high" />
+            <figcaption><span>[00]</span> İstanbul Boğazı · fotoğraf Berkay Doğan</figcaption>
+          </figure>
           <div className={s.kunye}>
             <span className={s.etiket}>[00] {t.hero.role}</span>
             <span className={`${s.etiket} ${s.kunyeOrta}`}>

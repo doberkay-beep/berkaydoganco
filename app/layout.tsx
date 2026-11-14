@@ -5,6 +5,7 @@ import "./yeni-dil.css";
 import "./yazar-noir.css";
 import { Analytics } from "@vercel/analytics/next";
 import { SiteMenu } from "@/components/SiteMenu";
+import { TEMA_BETIGI } from "@/lib/tema";
 
 // Yazar-noir: tek aile, sıkı aralıklı grotesk. Eski değişken adları (--font-yazi,
 // --font-baslik) yazar-noir.css'te buna bağlanır; eski bileşenler bozulmaz.
@@ -59,6 +60,10 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="tr" data-theme="light" suppressHydrationWarning className={sans.variable}>
+      <head>
+        {/* Tema ilk boyamadan önce: kayıtlı seçim > sistem tercihi > aydınlık */}
+        <script dangerouslySetInnerHTML={{ __html: TEMA_BETIGI }} />
+      </head>
       <body>
         <a href="#main" className="skip-link">İçeriğe geç</a>
         <SiteMenu />
