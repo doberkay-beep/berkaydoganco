@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { DurusmaVideo } from "./DurusmaVideo";
 
 /* by. — Berkay Doğan'ın uygulama atölyesi. hereby., nowby. ve writtenby. bu atölyenin işleri.
    İşaret: New York Bold "by" (maske görseli) + mordan (hereby) turuncuya (nowby) akan nokta.
@@ -43,6 +44,7 @@ export type AtolyeMetin = {
   byEtiket: string; by: [string, string, string]; islerEtiket: string; isler: Is[];
   soruEtiket: string; soruBaslik: string; sorular: Soru[];
   kapanis: string; ilkeler: string; studio: string; studioHref: string; anaSayfa: string;
+  kanal: { etiket: string; baslik: string; video: string; videoBaslik: string; alt: string; link: string; href: string };
 };
 
 const CIHAZ_GORSEL: Record<Cihaz["tur"], [string, number, number]> = {
@@ -206,6 +208,18 @@ export function AtolyeSayfa({ m }: { m: AtolyeMetin }) {
           </section>
         </div>
       ))}
+
+      <div className="by-ayrac" />
+
+      {/* YOUTUBE: by. studio kanalı */}
+      <section style={{ ...bolum, maxWidth: "980px" }}>
+        <p style={{ ...mono, opacity: 0.6 }}>{m.kanal.etiket}</p>
+        <h2 style={{ ...serif, fontSize: "clamp(1.6rem, 4vw, 2.5rem)", lineHeight: 1.25, marginTop: "0.8rem", maxWidth: "760px", fontWeight: 400 }}>{m.kanal.baslik}</h2>
+        <div style={{ marginTop: "2rem" }}>
+          <DurusmaVideo id={m.kanal.video} baslik={m.kanal.videoBaslik} alt={m.kanal.alt} poster="/by/by-studio-fragman.jpg" />
+        </div>
+        <p style={{ marginTop: "1.2rem" }}><a href={m.kanal.href} target="_blank" rel="noopener noreferrer" style={{ ...mono, color: MOR, textDecoration: "none" }}>{m.kanal.link}</a></p>
+      </section>
 
       <div className="by-ayrac" />
 

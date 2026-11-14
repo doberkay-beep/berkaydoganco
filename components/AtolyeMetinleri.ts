@@ -66,6 +66,13 @@ export const ATOLYE_TR: AtolyeMetin = {
   ilkeler: "Reklam yok · Beğeni yok · Takipçi yok",
   studio: "Stüdyoyla çalış: uygulama ve web siteleri →", studioHref: "/studio",
   anaSayfa: "/",
+  kanal: {
+    etiket: "by. studio · YouTube",
+    baslik: "Atölyeden videolar: her cuma nowby. Dünya Listesi, hereby. rotaları ve uygulamaların tanıtımları.",
+    video: "Ah0DjSb5ihw", videoBaslik: "by. studio — seni dışarı çağıran küçük uygulamalar",
+    alt: "Kanal fragmanı, 45 saniye.",
+    link: "Kanalı aç: @made.by.berkay →", href: "https://www.youtube.com/@made.by.berkay",
+  },
 };
 
 export const ATOLYE_EN: AtolyeMetin = {
@@ -128,4 +135,11 @@ export const ATOLYE_EN: AtolyeMetin = {
   ilkeler: "No ads · No likes · No followers",
   studio: "Work with the studio: apps and websites →", studioHref: "/en/studio",
   anaSayfa: "/en",
+  kanal: {
+    etiket: "by. studio · YouTube",
+    baslik: "Videos from the workshop: the nowby. World Chart every Friday, hereby. routes and app introductions.",
+    video: "Ah0DjSb5ihw", videoBaslik: "by. studio — small apps that call you outside",
+    alt: "Channel trailer, 45 seconds (in Turkish).",
+    link: "Open the channel: @made.by.berkay →", href: "https://www.youtube.com/@made.by.berkay",
+  },
 };
