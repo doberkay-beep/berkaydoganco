@@ -11,6 +11,27 @@ const SITE = "https://www.berkaydogan.co";
 export default function sitemap(): MetadataRoute.Sitemap {
   const lastModified = new Date();
   const girdiler: MetadataRoute.Sitemap = [
+    // 14 Kas 2026: hereby ve İngilizce uygulama sayfaları haritada yoktu; Google /hereby/'yi hiç tanımıyordu.
+    {
+      url: `${SITE}/hereby/`,
+      changeFrequency: "weekly" as const,
+      priority: 0.9,
+      alternates: { languages: { tr: `${SITE}/hereby/`, en: `${SITE}/en/hereby/` } },
+    },
+    {
+      url: `${SITE}/en/hereby/`,
+      changeFrequency: "weekly" as const,
+      priority: 0.7,
+      alternates: { languages: { tr: `${SITE}/hereby/`, en: `${SITE}/en/hereby/` } },
+    },
+    { url: `${SITE}/en/nowby/`, changeFrequency: "monthly" as const, priority: 0.5 },
+    { url: `${SITE}/en/writtenby/`, changeFrequency: "monthly" as const, priority: 0.5 },
+    { url: `${SITE}/en/departures/`, changeFrequency: "monthly" as const, priority: 0.4 },
+    { url: `${SITE}/film/`, changeFrequency: "yearly" as const, priority: 0.6 },
+    { url: `${SITE}/studio/`, changeFrequency: "monthly" as const, priority: 0.4 },
+    { url: `${SITE}/en/studio/`, changeFrequency: "monthly" as const, priority: 0.3 },
+    { url: `${SITE}/by/`, changeFrequency: "monthly" as const, priority: 0.5 },
+    { url: `${SITE}/en/by/`, changeFrequency: "monthly" as const, priority: 0.3 },
     {
       url: `${SITE}/nowby/`,
       changeFrequency: "monthly" as const,
