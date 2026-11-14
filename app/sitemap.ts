@@ -43,6 +43,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.6,
     },
     {
+      url: `${SITE}/sait-faik-120/`,
+      changeFrequency: "weekly" as const,
+      priority: 0.7,
+    },
+    {
       url: `${SITE}/writtenby/`,
       changeFrequency: "monthly" as const,
       priority: 0.6,
