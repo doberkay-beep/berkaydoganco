@@ -1,4 +1,5 @@
 import { TRENDYOL_URL } from "@/lib/content";
+import { BASIN, EKRAN } from "@/lib/basinda";
 import { TASFIYE_URL, PERSON_ID, AUTHOR_REF, SUBSTACK_URL, YOUTUBE_URL, INSTAGRAM_URL, GOODREADS_URL } from "@/lib/site";
 
 const SITE = "https://www.berkaydogan.co";
@@ -24,6 +25,46 @@ function JsonLd({ data }: { data: object }) {
     <script
       type="application/ld+json"
       dangerouslySetInnerHTML={{ __html: JSON.stringify(data) }}
+    />
+  );
+}
+
+
+// Basında çıkan yazılar → Person/uygulama kaydına "subjectOf" olarak bağlanır (Google haberleri kişiyle eşleştirsin).
+// Tek kaynak lib/basinda.ts: yeni haber oraya eklenince burası da kendiliğinden güncellenir.
+function basinYazilari(filtre?: (b: (typeof BASIN)[number]) => boolean) {
+  return BASIN.filter((b) => (filtre ? filtre(b) : true)).map((b) => ({
+    "@type": b.tur === "haber" ? "NewsArticle" : "Article",
+    headline: b.baslik.tr,
+    url: b.url,
+    datePublished: b.sadeceAy ? b.tarihISO.slice(0, 7) : b.tarihISO,
+    publisher: { "@type": "Organization", name: b.yayin },
+    about: { "@id": PERSON_ID },
+  }));
+}
+
+/** /hereby — SoftwareApplication (uygulama kimliği + hakkındaki haberler) */
+export function HerebyAppSchema() {
+  return (
+    <JsonLd
+      data={{
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "@id": `${SITE}/hereby#app`,
+        name: "hereby.",
+        alternateName: "hereby",
+        url: `${SITE}/hereby`,
+        description: "Aklından geçen satırı geçtiğin yere bırak; yalnızca oraya gelen okuyabilir. Beğeni yok, takipçi yok.",
+        applicationCategory: "LifestyleApplication",
+        operatingSystem: "iOS 26 ve üzeri",
+        offers: { "@type": "Offer", price: "0", priceCurrency: "TRY" },
+        author: { "@id": PERSON_ID },
+        creator: { "@id": PERSON_ID },
+        datePublished: "2026-10-28",
+        inLanguage: ["tr", "en"],
+        sameAs: ["https://apps.apple.com/tr/app/hereby/id6825787016"],
+        subjectOf: basinYazilari((b) => b.tur === "haber"),
+      }}
     />
   );
 }
@@ -84,7 +125,7 @@ export function PersonSchema() {
         jobTitle: "Şair ve yazar",
         disambiguatingDescription: "Türk şair ve yazar; Mürekkep ve Köz (şiir) ve Tasfiye (deneme) kitaplarının yazarı.",
         description:
-          "İstanbul'da yaşayan şair ve yazar. Kitapları: Mürekkep ve Köz (şiir, 2025) ve Tasfiye (deneme, 2026). Türkiye radyolarını canlı sayan nowby'ın (nowby.co) kurucusu.",
+          "İstanbul'da yaşayan şair ve yazar. Kitapları: Mürekkep ve Köz (şiir, 2025) ve Tasfiye (deneme, 2026). Konum tabanlı not uygulaması hereby'nin ve radyolarda o an çalan şarkıyı gösteren nowby'ın (nowby.co) geliştiricisi.",
         birthDate: "2000",
         alumniOf: { "@type": "CollegeOrUniversity", name: "Trakya Üniversitesi", sameAs: "https://www.wikidata.org/wiki/Q845682" },
         hasOccupation: [
@@ -107,6 +148,17 @@ export function PersonSchema() {
           "https://necaliyor.co",
         ],
         mainEntityOfPage: `${SITE}/hakkimda/`,
+        subjectOf: [
+          ...basinYazilari(),
+          ...EKRAN.filter((e) => e.link).map((e) => ({
+            "@type": "VideoObject",
+            name: e.baslik,
+            url: e.link,
+            uploadDate: e.tarihISO,
+            publisher: { "@type": "Organization", name: e.kanal },
+            about: { "@id": PERSON_ID },
+          })),
+        ],
       }}
     />
   );
