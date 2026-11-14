@@ -1,11 +1,35 @@
 {
   "redirects": [
-    { "source": "/tasfiye/", "destination": "/kitaplar/tasfiye/", "permanent": true },
-    { "source": "/murekkep-ve-koz/", "destination": "/kitaplar/murekkep-ve-koz/", "permanent": true },
-    { "source": "/kitap/murekkep-ve-koz/", "destination": "/kitaplar/murekkep-ve-koz/", "permanent": true },
-    { "source": "/tasfiye", "destination": "/kitaplar/tasfiye/", "permanent": true },
-    { "source": "/murekkep-ve-koz", "destination": "/kitaplar/murekkep-ve-koz/", "permanent": true },
-    { "source": "/kitap/murekkep-ve-koz", "destination": "/kitaplar/murekkep-ve-koz/", "permanent": true },
+    {
+      "source": "/tasfiye/",
+      "destination": "/kitaplar/tasfiye/",
+      "permanent": true
+    },
+    {
+      "source": "/murekkep-ve-koz/",
+      "destination": "/kitaplar/murekkep-ve-koz/",
+      "permanent": true
+    },
+    {
+      "source": "/kitap/murekkep-ve-koz/",
+      "destination": "/kitaplar/murekkep-ve-koz/",
+      "permanent": true
+    },
+    {
+      "source": "/tasfiye",
+      "destination": "/kitaplar/tasfiye/",
+      "permanent": true
+    },
+    {
+      "source": "/murekkep-ve-koz",
+      "destination": "/kitaplar/murekkep-ve-koz/",
+      "permanent": true
+    },
+    {
+      "source": "/kitap/murekkep-ve-koz",
+      "destination": "/kitaplar/murekkep-ve-koz/",
+      "permanent": true
+    },
     {
       "source": "/kitap/tasfiye",
       "destination": "/kitaplar/tasfiye/",
@@ -72,7 +96,7 @@
       "permanent": true
     },
     {
-      "source": "/en/:yol((?!hereby|writtenby|nowby|studio|by(?:/|$)).+)",
+      "source": "/en/:yol((?!hereby|writtenby|nowby|studio|opengraph-image|twitter-image|by(?:/|$)).+)",
       "destination": "/",
       "permanent": true
     },
@@ -258,6 +282,60 @@
     }
   ],
   "headers": [
+    {
+      "source": "/en/(opengraph-image|twitter-image)",
+      "headers": [
+        {
+          "key": "Content-Type",
+          "value": "image/png"
+        }
+      ]
+    },
+    {
+      "source": "/en/(opengraph-image|twitter-image)/",
+      "headers": [
+        {
+          "key": "Content-Type",
+          "value": "image/png"
+        }
+      ]
+    },
+    {
+      "source": "/kitaplar/(.*)/opengraph-image",
+      "headers": [
+        {
+          "key": "Content-Type",
+          "value": "image/png"
+        }
+      ]
+    },
+    {
+      "source": "/kitaplar/(.*)/opengraph-image/",
+      "headers": [
+        {
+          "key": "Content-Type",
+          "value": "image/png"
+        }
+      ]
+    },
+    {
+      "source": "/yazilar/(.*)/opengraph-image",
+      "headers": [
+        {
+          "key": "Content-Type",
+          "value": "image/png"
+        }
+      ]
+    },
+    {
+      "source": "/yazilar/(.*)/opengraph-image/",
+      "headers": [
+        {
+          "key": "Content-Type",
+          "value": "image/png"
+        }
+      ]
+    },
     {
       "source": "/soz/(.*)/opengraph-image",
       "headers": [
