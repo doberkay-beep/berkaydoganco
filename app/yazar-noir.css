@@ -1,0 +1,163 @@
+/* ============ YAZAR-NOİR — kırık beyaz + siyaha yakın, sıkı grotesk, ince dikey ızgara ============
+   Bu katman globals.css ve yeni-dil.css'ten SONRA yüklenir; eski bileşenlerin satır içi
+   stillerini sözcük değiştirmeden aynı dile çeker. Kural: kart yok, gradyan yok, parıltı yok.
+   Renk iki tondur; vurgu da mürekkeptir (alt çizgi). */
+
+:root, [data-theme="dark"], [data-theme="light"] {
+  --font-yazi: var(--font-sans), "Helvetica Neue", Arial, sans-serif;
+  --font-baslik: var(--font-sans), "Helvetica Neue", Arial, sans-serif;
+  --font-grotesk: var(--font-sans), "Helvetica Neue", Arial, sans-serif;
+  --font-serif: var(--font-sans), "Helvetica Neue", Arial, sans-serif;
+
+  --kagit: #eeede8;      /* kırık beyaz */
+  --kagit-2: #e4e3dc;
+  --gece: #141414;       /* siyaha yakın */
+  --gece-2: #1d1d1c;
+  --murekkep: #161616;
+  --soluk: #5c5b55;      /* #eeede8 üstünde 5.9:1 */
+  --soluk-gece: #a3a29b; /* #141414 üstünde 7.6:1 */
+  --izgara: rgba(22, 22, 22, 0.075);
+  --izgara-gece: rgba(239, 238, 232, 0.07);
+  --kenar: clamp(18px, 3vw, 48px);
+
+  --bg: var(--kagit);
+  --bg-2: var(--kagit-2);
+  --ink: var(--murekkep);
+  --muted: var(--soluk);
+  --line: rgba(22, 22, 22, 0.16);
+  --accent: var(--murekkep);
+  --accent-2: var(--murekkep);
+  --accent-ink: var(--kagit);
+  --glass-border: rgba(22, 22, 22, 0.16);
+  --nav-bg: var(--kagit);
+  color-scheme: light;
+}
+
+html { background: var(--kagit); color: var(--murekkep); font-family: var(--font-sans), "Helvetica Neue", Arial, sans-serif; }
+body {
+  background: var(--kagit);
+  font-family: var(--font-sans), "Helvetica Neue", Arial, sans-serif;
+  font-size: 17px;
+  line-height: 1.55;
+  letter-spacing: -0.012em;
+  font-feature-settings: "ss01", "cv11";
+}
+::selection { background: var(--murekkep); color: var(--kagit); }
+
+/* İnce dikey ızgara — altı sütun; sayfanın kâğıdına çizili */
+body::before {
+  content: ""; display: block !important; position: fixed; inset: 0 var(--kenar); z-index: 0; pointer-events: none;
+  background-image: linear-gradient(to right, var(--izgara) 1px, transparent 1px);
+  background-size: calc(100% / 6) 100%;
+  border-right: 1px solid var(--izgara);
+}
+@media (max-width: 700px) { body::before { background-size: calc(100% / 3) 100%; } }
+
+/* Başlıklar: büyük, sıkı, orta kalınlık */
+h1, h2, h3, .ed-display, .cg-serif, .cg-huge {
+  font-family: var(--font-sans), "Helvetica Neue", Arial, sans-serif !important;
+  font-style: normal;
+  font-weight: 500 !important;
+  letter-spacing: -0.045em !important;
+  line-height: 1.02;
+}
+h1 { letter-spacing: -0.06em !important; }
+.ed-display em, .ed-display i, h1 em, h2 em { font-style: normal; }
+
+/* Bağlantı: tek vurgu alt çizgi */
+a:hover { text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 0.22em; }
+a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible, select:focus-visible,
+[tabindex]:focus-visible, [role="button"]:focus-visible, summary:focus-visible {
+  outline: 2px solid currentColor !important; outline-offset: 4px; border-radius: 0 !important;
+}
+.skip-link { background: var(--murekkep); color: var(--kagit); border-radius: 0; font-size: 12px; letter-spacing: 0; }
+
+/* Küçük künye etiketleri: italik değil, küçük büyük harf */
+.ed-folio-label, .ed-footer-head, .sm-grup-baslik, .cg-playlist-meta, .cg-lang,
+[style*="text-transform:uppercase"], [style*="text-transform: uppercase"] {
+  font-style: normal !important;
+  text-transform: uppercase !important;
+  font-size: 11px !important;
+  letter-spacing: 0.02em !important;
+  font-weight: 400 !important;
+}
+.ed-folio-no { display: inline !important; font-style: normal; font-size: 11px; color: var(--soluk); }
+.ed-folio-no::before { content: "["; } .ed-folio-no::after { content: "]"; }
+.ed-pull { border-left-color: var(--murekkep); font-style: normal; }
+.ed-pull::before { display: none; }
+.ed-dropcap::first-letter { float: none; font: inherit; padding: 0; color: inherit; }
+
+/* Fotoğraflar her yerde siyah-beyaz */
+main img:not([src$=".svg"]):not([src*="kapak"]):not([src*="poster"]):not([src*="/by/"]):not([src*="/hereby/"]):not([src*="/nowby/"]):not([src*="/writtenby/"]) {
+  filter: grayscale(1) contrast(1.12);
+}
+
+/* ---------- Üst çubuk (components/SiteMenu.tsx) ---------- */
+.sm-bar {
+  display: grid !important; grid-template-columns: 1fr auto; align-items: baseline; gap: 20px;
+  padding: 16px var(--kenar) !important;
+  mix-blend-mode: difference;
+}
+.sm-marka {
+  font-family: var(--font-sans), Arial, sans-serif !important; font-weight: 500 !important;
+  font-size: 15px !important; letter-spacing: -0.04em !important; text-transform: lowercase; gap: 0 !important;
+}
+.sm-marka svg { display: none; }
+.sm-sag { display: flex; align-items: baseline; gap: clamp(14px, 2vw, 28px); }
+.sm-kisa { display: flex; gap: clamp(14px, 2vw, 28px); }
+.sm-kisa a, .sm-ac {
+  font-family: var(--font-sans), Arial, sans-serif !important;
+  font-size: 11px !important; line-height: 1.4; letter-spacing: 0.02em !important; text-transform: uppercase !important;
+  color: #fff !important; text-decoration: none;
+}
+.sm-kisa a span { opacity: 0.6; margin-right: 0.35em; }
+/* Çubuk sayfanın başında kalır (metnin üstüne binmesin); yalnız Menü sabit, her zeminde okunur. */
+.sm-bar { position: absolute !important; }
+.sm-ac { position: fixed; z-index: 56; top: 16px; right: var(--kenar); mix-blend-mode: difference; border: 0 !important; padding: 0 !important; cursor: pointer; background: none !important; }
+.sm-kisa { margin-right: 64px; }
+.sm-ac:hover, .sm-kisa a:hover { text-decoration: underline; text-underline-offset: 0.25em; }
+@media (max-width: 760px) { .sm-kisa { display: none; } }
+/* Kabuk'lu sayfalarda kendi üst çubuğu var; ikisi aynı anda görünmez. */
+body:has(.cg-nav) .sm-bar { display: none !important; }
+
+/* ---------- Tam ekran menü ---------- */
+.sm-menu { background: var(--gece) !important; color: var(--kagit); padding: 0 var(--kenar) 48px !important; animation: none !important; }
+.sm-menu-ust { background: var(--gece) !important; padding: 16px 0 !important; }
+.sm-menu .sm-marka { color: var(--kagit) !important; }
+.sm-kapat { color: var(--kagit) !important; font-size: 11px !important; text-transform: uppercase; letter-spacing: 0.02em; font-family: inherit; }
+.sm-gruplar { max-width: none !important; margin-top: clamp(28px, 8vh, 80px) !important; gap: 40px 24px !important; }
+@media (min-width: 1000px) { .sm-gruplar { grid-template-columns: 2fr 1fr 1fr !important; } }
+.sm-grup-baslik { color: var(--soluk-gece) !important; margin-bottom: 10px !important; }
+.sm-grup a { font-family: inherit !important; color: var(--kagit) !important; font-size: clamp(22px, 2.4vw, 30px) !important; letter-spacing: -0.04em; line-height: 1.12 !important; }
+.sm-ana a { font-size: clamp(40px, 6vw, 84px) !important; letter-spacing: -0.065em; line-height: 0.98 !important; }
+.sm-grup a.sm-alt { font-size: 15px !important; color: var(--soluk-gece) !important; letter-spacing: -0.01em; }
+.sm-ara { color: var(--soluk-gece) !important; font-size: 11px !important; letter-spacing: 0.02em !important; margin-top: 18px !important; }
+.sm-dil { max-width: none !important; border-top-color: var(--izgara-gece) !important; }
+.sm-dil a { color: var(--soluk-gece) !important; font-size: 11px; text-transform: uppercase; letter-spacing: 0.02em; }
+.sm-menu a:hover { text-decoration: underline; }
+
+/* ---------- Kabuk'lu sayfalar (Hakkımda, İzle & Dinle…) ---------- */
+.cg-nav, .cg-nav[data-solid="1"] { background: transparent !important; mix-blend-mode: difference; padding: 16px var(--kenar) !important; }
+.cg-nav, .cg-nav a, .cg-nav button { color: #fff !important; }
+.cg-nav svg { display: none; }
+.cg-nav > a, .cg-nav > div:first-child { font-size: 15px; font-weight: 500; letter-spacing: -0.04em; text-transform: lowercase; }
+.cg-burger, .cg-lang button { font-size: 11px !important; text-transform: uppercase !important; letter-spacing: 0.02em !important; border: 0 !important; }
+.ed-footer { border-top: 0 !important; background: var(--gece); color: var(--kagit); margin-top: clamp(64px, 12vh, 140px) !important; padding-inline: var(--kenar) !important; }
+.ed-footer a, .ed-footer-motto { color: var(--kagit) !important; }
+.ed-footer-head, .ed-footer-bottom { color: var(--soluk-gece) !important; border-color: var(--izgara-gece) !important; }
+.ed-footer-grid, .ed-footer-bottom { max-width: none !important; }
+
+/* Kabuk'un ortaya çıkış animasyonu (Reveal) kısa ve sade: components/Kabuk.tsx */
+
+/* İç sayfa yüzeyleri: kart değil, ızgara üstünde düz satır */
+.glass, .glass-card, .cg-review-card, .cg-embed, .cg-playlist, .bd-kart, .kl-card, .og-bant, .cz-kart, .ed-cover {
+  background: transparent !important; border-radius: 0 !important; box-shadow: none !important;
+}
+.ed-toc-row:hover { background: transparent !important; padding-left: 0.4rem; }
+.ed-toc-no { font-style: normal; color: var(--soluk); font-size: 11px; }
+.ed-masthead { display: none !important; }
+
+/* İç sayfaların içeriği ızgaranın üstünde dursun */
+#main { position: relative; z-index: 1; }
+
+.sr-only { position: absolute !important; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }

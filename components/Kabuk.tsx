@@ -27,9 +27,9 @@ export function Reveal({ children, as: Tag = "div", delay = 0, className, style 
   }, []);
   return (
     <Tag ref={ref} className={className} style={{
-      opacity: shown ? 1 : 0, transform: shown ? "translateY(0)" : "translateY(28px)",
-      filter: shown ? "blur(0)" : "blur(7px)",
-      transition: `opacity 0.95s cubic-bezier(0.22,1,0.36,1) ${delay}s, transform 0.95s cubic-bezier(0.22,1,0.36,1) ${delay}s, filter 0.95s cubic-bezier(0.22,1,0.36,1) ${delay}s`, ...style,
+      // Yazar-noir: kısa ve işlevsel — bulanıklık yok, küçük bir kayma.
+      opacity: shown ? 1 : 0, transform: shown ? "translateY(0)" : "translateY(10px)",
+      transition: `opacity 0.45s ease-out ${delay * 0.5}s, transform 0.45s ease-out ${delay * 0.5}s`, ...style,
     }}>{children}</Tag>
   );
 }

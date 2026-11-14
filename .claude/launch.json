@@ -37,6 +37,18 @@
         "--silent"
       ],
       "port": 4317
+    },
+    {
+      "name": "noir",
+      "runtimeExecutable": "npx",
+      "runtimeArgs": [
+        "next",
+        "dev",
+        "--webpack",
+        "-p",
+        "3010"
+      ],
+      "port": 3010
     }
   ]
 }

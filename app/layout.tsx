@@ -1,27 +1,18 @@
 import type { Metadata } from "next";
-import { Newsreader, Bodoni_Moda } from "next/font/google";
+import { Inter_Tight } from "next/font/google";
 import "./globals.css";
 import "./yeni-dil.css";
+import "./yazar-noir.css";
 import { Analytics } from "@vercel/analytics/next";
-import { MurekkepIz } from "@/components/MurekkepIz";
-import GlassHover from "@/components/GlassHover";
 import { SiteMenu } from "@/components/SiteMenu";
 
-// Tek yazı ailesi: müze kataloğu gibi. CSS değişkenleri eski adlarıyla kalır.
-const yazi = Newsreader({
+// Yazar-noir: tek aile, sıkı aralıklı grotesk. Eski değişken adları (--font-yazi,
+// --font-baslik) yazar-noir.css'te buna bağlanır; eski bileşenler bozulmaz.
+const sans = Inter_Tight({
   subsets: ["latin", "latin-ext"],
   weight: ["300", "400", "500", "600"],
   style: ["normal", "italic"],
-  variable: "--font-yazi",
-  display: "swap",
-});
-
-// Başlık yazısı: nowby.co ile aynı. Küçük metinler Newsreader.
-const baslik = Bodoni_Moda({
-  subsets: ["latin", "latin-ext"],
-  weight: ["400", "500"],
-  style: ["normal", "italic"],
-  variable: "--font-baslik",
+  variable: "--font-sans",
   display: "swap",
 });
 
@@ -67,14 +58,11 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="tr" data-theme="light" suppressHydrationWarning className={`${yazi.variable} ${baslik.variable}`}>
+    <html lang="tr" data-theme="light" suppressHydrationWarning className={sans.variable}>
       <body>
         <a href="#main" className="skip-link">İçeriğe geç</a>
-        <div className="aurora" aria-hidden="true" />
         <SiteMenu />
         <div id="main">{children}</div>
-        <MurekkepIz />
-        <GlassHover />
         <Analytics />
       </body>
     </html>
