@@ -116,7 +116,7 @@ export const BASIN: Basin[] = [
 /* Kayıtlar — basın değil ama tanınırlık: platform ve dizin kayıtları. */
 export const KAYITLAR: { ad: string; tr: string; en: string; url: string }[] = [
   { ad: "Trendyol", tr: "Şiirde #1 en çok ziyaret edilen", en: "#1 most visited in poetry", url: "https://www.trendyol.com/iskenderiye-kitap/murekkep-ve-koz-berkay-dogan-p-1072536167" },
-  { ad: "1000Kitap", tr: "10/10 okur puanı", en: "10/10 reader rating", url: "https://1000kitap.com/BerkayDogan01" },
+  { ad: "1000Kitap", tr: "10/10 okur puanı", en: "10/10 reader rating", url: "https://1000kitap.com/yazarberkaydogan" },
   { ad: "Goodreads", tr: "Küresel yazar dizininde", en: "In the global author index", url: "https://www.goodreads.com/book/show/252900764-m-rekkep-ve-k-z" },
   { ad: "Wikidata", tr: "Yazar kaydı Q141592752", en: "Author record Q141592752", url: "https://www.wikidata.org/wiki/Q141592752" },
 ];

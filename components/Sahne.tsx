@@ -77,8 +77,8 @@ export function Sahne({ lang }: { lang: Lang }) {
         <p style={{ fontFamily: "var(--font-serif)", fontStyle: "italic", fontSize: "1.1rem", color: "var(--muted)" }}>{c.bos}</p>
         <p style={{ marginTop: "0.9rem", fontSize: "0.9rem", color: "var(--muted)" }}>
           {c.duyuru}{" "}
-          <a href="https://x.com/thisisbdgn" target="_blank" rel="noopener noreferrer" className="cg-link" style={{ color: "var(--accent-2, var(--accent))" }}>
-            @thisisbdgn
+          <a href="https://x.com/yazarberkaydgn" target="_blank" rel="noopener noreferrer" className="cg-link" style={{ color: "var(--accent-2, var(--accent))" }}>
+            @yazarberkaydgn
           </a>
         </p>
       </div>

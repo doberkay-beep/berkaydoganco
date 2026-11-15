@@ -16,7 +16,7 @@ export const AUTHOR_REF = {
 
 export const TRENDYOL_URL =
   "https://www.trendyol.com/iskenderiye-kitap/murekkep-ve-koz-berkay-dogan-p-1072536167";
-export const SUBSTACK_URL = "https://doberkay.substack.com";
+export const SUBSTACK_URL = "https://yazarberkaydogan.substack.com";
 export const YOUTUBE_URL = "https://youtube.com/@yazarberkaydogan";
 export const INSTAGRAM_URL = "https://instagram.com/berkaydgn__";
 export const EMAIL = "do.berkay@icloud.com";
