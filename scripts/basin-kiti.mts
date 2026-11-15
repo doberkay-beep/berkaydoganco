@@ -1,7 +1,7 @@
 /* BASIN KİTİ — public/basin/ altına tek ZIP + tek sayfalık PDF bülten üretir.
    Kaynak: lib/basinKiti.ts, lib/basinda.ts, lib/site.ts (sitedeki Basın Odası ile aynı veri).
-   Çalıştırma (Chrome + puppeteer-core gerekir):
-     PUPPETEER_PATH=/yol/node_modules/puppeteer-core/lib/esm/puppeteer/puppeteer-core.js node scripts/basin-kiti.mts
+   Çalıştırma (yalnız Google Chrome gerekir; PDF Chrome'un başsız modundan basılır):
+     node scripts/basin-kiti.mts
    Bülten metni değişince yeniden çalıştırıp çıktıyı commit'le. */
 
 import { mkdirSync, writeFileSync, copyFileSync, rmSync, existsSync } from "node:fs";
@@ -59,33 +59,37 @@ const GORSEL: [string, string][] = [
 ];
 for (const [kaynak, ad] of GORSEL) copyFileSync(join(KOK, "public", kaynak), join(GECICI, "gorseller", ad));
 
-/* 3) PDF bülten — tek sayfa A4 */
+/* 3) PDF bülten — tek sayfa A4, yazar-noir dili (kırık beyaz kâğıt, Inter Tight, ince ızgara, vurgu alt çizgi; kızıl yok) */
 const esc = (s: string) => s.replace(/&/g, "&amp;").replace(/</g, "&lt;");
 const kitapSatiri = KUNYE.find((f) => f.k === "Kitaplar")?.v ?? "";
+const ytSatiri = KUNYE.find((f) => f.k === "YouTube")?.v ?? "";
 const html = `<!doctype html><html lang="tr"><head><meta charset="utf-8">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Playfair+Display:ital,wght@0,500;1,400&display=block" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,400;0,500;0,600;0,700;1,400&display=block" rel="stylesheet">
 <style>
 @page{size:A4;margin:0}*{margin:0;padding:0;box-sizing:border-box}
-body{font-family:Inter;color:#191813;background:#fbfaf5;width:210mm;height:297mm;padding:15mm 16mm 13mm;display:flex;flex-direction:column;font-size:8.6pt;line-height:1.5}
-.ust{display:flex;justify-content:space-between;align-items:center;font-size:7pt;letter-spacing:.22em;text-transform:uppercase;color:#6b665c;border-bottom:1.5px solid #E5382C;padding-bottom:3mm}
-.ust b{color:#E5382C;font-weight:700}
-h1{font-family:"Playfair Display";font-weight:500;font-size:30pt;letter-spacing:-.01em;margin-top:6mm;line-height:1}
-.unvan{font-family:"Playfair Display";font-style:italic;font-size:12pt;color:#6b665c;margin-top:1.5mm}
-.lead{font-size:9.6pt;line-height:1.6;margin-top:5mm}
-.k{font-size:6.6pt;letter-spacing:.2em;text-transform:uppercase;color:#A62318;font-weight:700;margin:5mm 0 2mm}
+body{font-family:"Inter Tight",sans-serif;color:#191813;background:#FAF8F2;width:210mm;height:297mm;padding:15mm 16mm 13mm;display:flex;flex-direction:column;font-size:8.6pt;line-height:1.5;
+  background-image:linear-gradient(to right,rgba(25,24,19,.06) 1px,transparent 1px);background-size:44.5mm 100%;background-position:16mm 0}
+.ust{display:flex;justify-content:space-between;align-items:center;font-size:6.8pt;letter-spacing:.24em;text-transform:uppercase;color:#6C685E;border-bottom:1px solid #191813;padding-bottom:3mm}
+.ust b{color:#191813;font-weight:600}
+h1{font-weight:600;font-size:34pt;letter-spacing:-.035em;margin-top:7mm;line-height:.95}
+.unvan{font-size:11pt;color:#6C685E;margin-top:2mm;letter-spacing:-.005em}
+.imza{font-style:italic;font-size:11.5pt;margin-top:5mm;display:inline-block;border-bottom:1px solid #191813;padding-bottom:.6mm}
+.lead{font-size:9.4pt;line-height:1.6;margin-top:5mm;color:#2b2a25}
+.k{font-size:6.4pt;letter-spacing:.24em;text-transform:uppercase;color:#6C685E;font-weight:600;margin:5.5mm 0 2mm}
 .rak{display:grid;grid-template-columns:repeat(4,1fr);gap:3mm}
-.rak div{border-top:1.5px solid #E5382C;padding-top:1.5mm}
-.rak b{display:block;font-size:15pt;letter-spacing:-.02em;color:#A62318}
-.rak span{font-size:7pt;color:#6b665c;line-height:1.35;display:block;margin-top:.5mm}
+.rak div{border-top:1px solid #191813;padding-top:1.6mm}
+.rak b{display:block;font-size:17pt;font-weight:600;letter-spacing:-.03em}
+.rak span{font-size:7pt;color:#6C685E;line-height:1.35;display:block;margin-top:.5mm}
 .iki{display:grid;grid-template-columns:1fr 1fr;gap:7mm}
-ul{list-style:none}li{padding:1.1mm 0;border-top:.5px solid #d9d5ca}
-.al{font-family:"Playfair Display";font-style:italic;font-size:10.5pt;line-height:1.4;border-left:1.5px solid #E5382C;padding-left:3mm;margin-bottom:2.2mm}
-.alt{margin-top:auto;display:flex;justify-content:space-between;align-items:flex-end;border-top:.5px solid #d9d5ca;padding-top:3mm;font-size:8pt}
-.alt b{font-size:10pt}
+ul{list-style:none}li{padding:1.1mm 0;border-top:.5px solid rgba(25,24,19,.16)}
+.al{font-style:italic;font-size:10.2pt;line-height:1.42;padding-left:3mm;border-left:1px solid #191813;margin-bottom:2.2mm}
+.alt{margin-top:auto;display:flex;justify-content:space-between;align-items:flex-end;border-top:1px solid #191813;padding-top:3mm;font-size:8pt}
+.alt b{font-size:9.6pt;font-weight:600}
 </style></head><body>
 <div class="ust"><span><b>Basın bülteni</b> · ${esc(new Date().toLocaleDateString("tr-TR", { month: "long", year: "numeric" }))}</span><span>berkaydogan.co/press</span></div>
 <h1>Berkay Doğan</h1>
-<p class="unvan">Şair, yazar · nowby'ın kurucusu</p>
+<p class="unvan">Şair ve yazar · İstanbul</p>
+<p class="imza">“Yazmak, varoluşun en sessiz itirafıdır.”</p>
 <p class="lead">${esc(BIO_ORTA_TR)}</p>
 <p class="k">Rakamlarla</p>
 <div class="rak">${[...RAKAMLAR.slice(0, 3), { deger: "__SIMDI__", aciklama: "__SIMDI_ACK__" }]
@@ -100,15 +104,16 @@ ul{list-style:none}li{padding:1.1mm 0;border-top:.5px solid #d9d5ca}
   <div>
     <p class="k">Kendi sözleriyle</p>
     ${ALINTILAR.slice(0, 4).map((a) => `<p class="al">“${esc(a)}”</p>`).join("")}
-    <p style="font-size:6.8pt;color:#6b665c">${esc(ALINTI_KAYNAK.ad)}</p>
+    <p style="font-size:6.8pt;color:#6C685E">${esc(ALINTI_KAYNAK.ad)}</p>
     <p class="k">Kitaplar</p>
     <p>${esc(kitapSatiri)} — İskenderiye Yayınları</p>
+    ${ytSatiri ? `<p class="k">İzle</p><p>${esc(ytSatiri)}</p>` : ""}
   </div>
 </div>
 <div class="alt"><div><b>İletişim</b><br>do.berkay@icloud.com</div><div style="text-align:right">Biyografiler, görseller, kitap künyeleri:<br><b>berkaydogan.co/press</b></div></div>
 </body></html>`;
 
-// ŞİMDİ canlı sayısı (yoksa yerine dördüncü rakam)
+// nowby canlı sayısı (yoksa yerine dördüncü rakam)
 let simdi: { deger: string; aciklama: string } = RAKAMLAR[3];
 try {
   const ANON = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InVpb3V6aXpibHJrb2ptc3F2YmprIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODY3ODExMTQsImV4cCI6MjEwMjM1NzExNH0.rAPFD8zjD_LdGf4hnZW_asnxUS705XCxTII-RqhmZDM";
@@ -121,14 +126,14 @@ try {
 } catch { /* çevrimdışı: dördüncü rakam kalır */ }
 const sonHtml = html.replace("__SIMDI__", esc(simdi.deger)).replace("__SIMDI_ACK__", esc(simdi.aciklama));
 
-const pp = await import(process.env.PUPPETEER_PATH ?? "puppeteer-core");
-const tarayici = await (pp.default ?? pp).launch({ executablePath: "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome" });
-const sayfa = await tarayici.newPage();
-await sayfa.setContent(sonHtml, { waitUntil: "networkidle0" });
-await sayfa.evaluate(() => document.fonts.ready);
+// PDF: Chrome'un başsız modu (puppeteer gerekmez). Yazı tipi yüklensin diye sanal zaman payı.
+const htmlYol = join(KOK, ".basin-kiti-tmp", "bulten.html");
+writeFileSync(htmlYol, sonHtml);
 const pdfYol = join(CIKTI, "berkay-dogan-basin-bulteni.pdf");
-await sayfa.pdf({ path: pdfYol, format: "A4", printBackground: true, pageRanges: "1" });
-await tarayici.close();
+execFileSync("/Applications/Google Chrome.app/Contents/MacOS/Google Chrome", [
+  "--headless=new", "--disable-gpu", "--no-pdf-header-footer", "--virtual-time-budget=8000",
+  `--print-to-pdf=${pdfYol}`, `file://${htmlYol}`,
+], { stdio: "ignore" });
 copyFileSync(pdfYol, join(GECICI, "berkay-dogan-basin-bulteni.pdf"));
 
 /* 4) ZIP */
