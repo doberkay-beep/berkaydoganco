@@ -1,4 +1,4 @@
-/* SÖZ KORPUSU — 200 söz, tamamı Berkay'ın YAYIMLANMIŞ satırları.
+/* SÖZ KORPUSU — 202 söz, tamamı Berkay'ın YAYIMLANMIŞ satırları.
    Kaynaklar: mvk = Mürekkep ve Köz (şiir), tas = Tasfiye (deneme).
    p = kitap sayfası (arka kapak / tanıtım metinlerinde yok).
    Temalar: yikim, umut, yalnizlik, ask, sehir, yuzlesme, ozgurluk,
@@ -200,6 +200,8 @@ export const SOZLER: Soz[] = [
   { s: "Delirmiş olan siz değilsiniz, dünya delirmiş durumda ve sizin tek suçunuz bunun farkında olmanız.", k: "tas", p: 19, t: ["yuzlesme", "karanlik"] },
   { s: "Kendi zincirini seven köle, zincirini kırmak isteyenin de en azılı gardiyanına dönüşür.", k: "tas", p: 21, t: ["ozgurluk"] },
   { s: "Düşünmek, doğası gereği yıkıcı bir eylemdir.", k: "tas", p: 23, t: ["sanat", "yikim"] },
+  { s: "Tarihin hiçbir döneminde bilgiye bu kadar kolay ulaşılan bir çağ yaşanmamıştır.", k: "tas", p: 24, t: ["zaman", "yuzlesme"] },
+  { s: "Bu çağın cahili, okuma yazma bilmeyen ya da dünyadan habersiz olan biri değildir.", k: "tas", p: 24, t: ["yuzlesme", "kimlik"] },
   { s: "Acının, rahatsızlığın ve belirsizliğin olmadığı yerde, büyüme de durur.", k: "tas", p: 39, t: ["hayat", "umut"] },
   { s: "Bir şeyin adını koyduğumuz an, anlamanın bittiğine dair o sahte rahatlama duygusuna teslim oluruz.", k: "tas", p: 50, t: ["yuzlesme", "sanat"] },
   { s: "Empati yeteneğini yitirmiş bir toplum, ne kadar silahlı olursa olsun, içten içe çökmeye mahkûmdur.", k: "tas", p: 56, t: ["yuzlesme"] },
