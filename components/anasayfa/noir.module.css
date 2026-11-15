@@ -173,6 +173,17 @@
 .satirAd span { display: block; margin-top: 5px; font-size: 14px; line-height: 1.45; letter-spacing: -0.01em; color: var(--soluk); }
 .satirOk { text-align: right; }
 
+/* Sahne sayfası */
+.sahneUst { padding-top: clamp(96px, 14vh, 150px) !important; border-top: 0 !important; }
+.sahneBaslik { margin-top: 18px; font-size: clamp(56px, 9vw, 150px) !important; line-height: 0.86 !important; letter-spacing: -0.075em !important; font-weight: 500 !important; }
+.sahneGiris { margin-top: 22px; font-size: 15px; line-height: 1.5; color: var(--soluk); max-width: 30ch; }
+.sahneIslem { display: flex !important; flex-wrap: wrap; gap: 6px 20px; margin-top: 10px !important; font-size: 11px !important; letter-spacing: 0.02em !important; text-transform: uppercase; color: var(--murekkep) !important; }
+.sahneIslem button { background: none; border: 0; border-bottom: 1px solid currentColor; padding: 4px 0; font: inherit; color: inherit; cursor: pointer; text-transform: inherit; letter-spacing: inherit; }
+.sahneIslem a { border-bottom: 1px solid currentColor; padding: 4px 0; }
+.sahneBos { font-size: clamp(22px, 2.2vw, 32px); line-height: 1.25; letter-spacing: -0.04em; max-width: 26ch; padding: 22px 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.sahneNot { margin-top: 18px; display: grid; gap: 8px; font-size: 15px; line-height: 1.6; color: var(--soluk); max-width: 56ch; }
+.sahneNot a { color: var(--murekkep); border-bottom: 1px solid currentColor; }
+
 /* ---------- [05] İletişim ---------- */
 .son { background: var(--gece); color: var(--kagit); position: relative; z-index: 1; }
 .son .ic { padding: 40px 0 26px; }

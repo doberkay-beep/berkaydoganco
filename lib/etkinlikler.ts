@@ -3,13 +3,24 @@
    "geçmiş" bölümüne düşer. Liste boşken sayfa nazik bir boş durum gösterir.
    UYDURMA ETKİNLİK EKLENMEZ — yalnız Berkay'ın teyit ettikleri girilir. */
 
+export type EtkinlikTur = "soylesi" | "okuma" | "imza" | "iz";
+
 export type Etkinlik = {
   tarihISO: string;      // "2026-11-02" ya da saatli "2026-11-02T14:00"
   baslik: string;        // "Tasfiye imza günü"
   mekan: string;         // "İskenderiye Kitap standı, TÜYAP"
   sehir: string;
+  tur?: EtkinlikTur;     // söyleşi / okuma / imza / hereby izi
+  adres?: string;        // yapısal veri için açık adres (isteğe bağlı)
   not?: string;          // "14:00–17:00 arası" gibi
   link?: string;         // bilet/duyuru bağlantısı
+};
+
+export const TUR_ADI: Record<EtkinlikTur, string> = {
+  soylesi: "Söyleşi",
+  okuma: "Okuma",
+  imza: "İmza günü",
+  iz: "hereby. izi",
 };
 
 export const ETKINLIKLER: Etkinlik[] = [];
@@ -44,4 +55,25 @@ export function icsUret(e: Etkinlik): string {
     "END:VEVENT",
     "END:VCALENDAR",
   ].filter(Boolean).join("\r\n");
+}
+
+/* Yapısal veri (schema.org Event) — Google'ın etkinlik sonuçları ve bilgi paneli için.
+   Yalnız tarihli, teyitli kayıtlardan üretilir. */
+export function etkinlikLd(e: Etkinlik, personId: string) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Event",
+    name: `${e.baslik} — Berkay Doğan`,
+    startDate: e.tarihISO.includes("T") ? `${e.tarihISO}:00+03:00` : e.tarihISO,
+    eventStatus: "https://schema.org/EventScheduled",
+    eventAttendanceMode: "https://schema.org/OfflineEventAttendanceMode",
+    location: {
+      "@type": "Place",
+      name: e.mekan,
+      address: { "@type": "PostalAddress", addressLocality: e.sehir, addressCountry: "TR", ...(e.adres ? { streetAddress: e.adres } : {}) },
+    },
+    performer: { "@id": personId },
+    ...(e.link ? { url: e.link } : {}),
+    ...(e.not ? { description: e.not } : {}),
+  };
 }

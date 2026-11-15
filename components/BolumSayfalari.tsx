@@ -6,7 +6,6 @@ import { Masada } from "./Masada";
 import { Kabuk, Reveal } from "./Kabuk";
 import { Folio } from "./Dergi";
 import { OkurMektubu } from "./OkurMektubu";
-import { Sahne } from "./Sahne";
 import { EKRAN } from "@/lib/basinda";
 
 /* Çizelgeyi tarihe göre sırala: "Ara 2025", "Dec 2025", "2017" gibi etiketlerden ay anahtarı (yıl·12 + ay). */
@@ -208,25 +207,6 @@ export function DinleBolumu({ lang, t }: { lang: Lang; t: Copy }) {
 }
 
 /* ---------- İNCE SARMALAYICILAR ---------- */
-export function SahneSayfa() {
-  return (
-    <Kabuk>
-      {(lang) => (
-        <main className="cg" style={{ paddingTop: "4.5rem" }}>
-          <section className="cg-section" style={{ paddingTop: "2rem" }}>
-            <div style={{ maxWidth: "1100px", margin: "0 auto" }}>
-              <h1 className="ed-display" style={{ fontSize: "clamp(2rem, 5vw, 3.4rem)", lineHeight: 1.1, marginBottom: "1.5rem" }}>
-                {lang === "tr" ? "Sahne" : "On Stage"}
-              </h1>
-              <Sahne lang={lang} />
-            </div>
-          </section>
-        </main>
-      )}
-    </Kabuk>
-  );
-}
-
 export function MektupSayfa() {
   return (
     <Kabuk>
