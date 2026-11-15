@@ -6,6 +6,7 @@ import { Masada } from "./Masada";
 import { Kabuk, Reveal } from "./Kabuk";
 import { Folio } from "./Dergi";
 import { OkurMektubu } from "./OkurMektubu";
+import { DurusmaVideo } from "./DurusmaVideo";
 import { EKRAN } from "@/lib/basinda";
 
 /* Çizelgeyi tarihe göre sırala: "Ara 2025", "Dec 2025", "2017" gibi etiketlerden ay anahtarı (yıl·12 + ay). */
@@ -68,6 +69,18 @@ export function HakkimdaSayfa() {
                 {t.about.paras.map((p, i) => (
                   <Reveal key={i} as="p" delay={i * 0.07} className={i === 0 ? "ed-dropcap" : undefined} style={{ fontSize: i === 0 ? "clamp(1.15rem, 2vw, 1.5rem)" : "1.02rem", fontFamily: i === 0 ? "var(--font-serif)" : "var(--font-grotesk)", lineHeight: i === 0 ? 1.55 : 1.75, color: i === 0 ? "var(--ink)" : "var(--muted)" }}>{p}</Reveal>
                 ))}
+                {/* Kanal fragmanı (YouTube, 53 sn) — tıklayınca yüklenir */}
+                <Reveal delay={0.2} style={{ marginTop: "1rem" }}>
+                  <span style={{ display: "block", fontSize: "0.68rem", letterSpacing: "0.22em", textTransform: "uppercase", color: "var(--muted)", marginBottom: "1rem" }}>
+                    {lang === "tr" ? "53 saniyede" : "In 53 seconds"}
+                  </span>
+                  <DurusmaVideo
+                    id="bn5b5rkuBSk"
+                    baslik={lang === "tr" ? "Berkay Doğan — şair ve yazar" : "Berkay Doğan — poet and writer"}
+                    alt={lang === "tr" ? "Kanal fragmanı · görüntüler TASFİYE: Film'den" : "Channel trailer · footage from TASFİYE: Film"}
+                    poster="/kanal-fragmani.jpg"
+                  />
+                </Reveal>
               </div>
             </div>
           </section>
