@@ -153,3 +153,21 @@ export const ALINTI_KAYNAK = {
   ad: "Edebiyat Magazin Gazetesi söyleşisi, 4 Ekim 2026",
   url: "https://emagazin.tv/haber/berkay-dogan-begenilecek-cumleyi-degil-dogru-cumleyi-yaz/2918",
 };
+
+/* Varyasyon Kalemler röportajındaki KENDİ cevaplarından, harfi harfine (16 Kas 2026). */
+export const ALINTILAR_2: string[] = [
+  "Konuştuğumda duyulmadığımı hissettiğim yerde yazmaya başladım; kâğıt, sözümün kesilmediği tek yerdi.",
+  "Süslü ama yalan bir cümleyi, çıplak ama doğru bir cümleye hiçbir zaman tercih etmem.",
+  "İlham benim için gökten inen bir şey değil, bakmayı bilmekle ilgili.",
+  "Okuru kandırabilirsiniz ama kendi cümlenizi kandıramazsınız.",
+];
+export const ALINTI_KAYNAK_2 = {
+  ad: "Varyasyon Kalemler Dergisi röportajı, 16 Kasım 2026",
+  url: "https://varyasyonkalemler.com/roportaj-berkay-dogan/",
+};
+
+/* Basın Odası ve basın kiti için: kaynaklarıyla birlikte bütün alıntılar. */
+export const ALINTI_GRUPLARI = [
+  { kaynak: ALINTI_KAYNAK_2, cumleler: ALINTILAR_2 },
+  { kaynak: ALINTI_KAYNAK, cumleler: ALINTILAR },
+];

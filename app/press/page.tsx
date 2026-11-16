@@ -4,7 +4,7 @@ import { site, EMAIL, INSTAGRAM_URL, YOUTUBE_URL, SUBSTACK_URL } from "@/lib/sit
 import { KITAPLAR } from "@/lib/kitaplar";
 import { KITAP_ADI } from "@/lib/sozler";
 import { KopyalaMetin } from "@/components/KopyalaMetin";
-import { ALINTILAR, ALINTI_KAYNAK } from "@/lib/basinda";
+import { ALINTI_GRUPLARI } from "@/lib/basinda";
 import { BIO_KISA_TR, BIO_ORTA_TR, BIO_KISA_EN, BIO_ORTA_EN, KUNYE, RAKAMLAR, KONULAR } from "@/lib/basinKiti";
 import { BasinDuvari } from "@/components/BasinDuvari";
 import { CanliSimdiKutu } from "@/components/CanliSimdi";
@@ -99,7 +99,7 @@ export default function PressPage() {
       {/* İçindekiler */}
       <nav aria-label="İçindekiler" style={{ display: "flex", gap: "0.5rem", flexWrap: "wrap", marginTop: "2rem" }}>
         {ICINDEKILER.map(([href, ad]) => (
-          <a key={href} href={href} style={{ ...mono, fontSize: "0.64rem", color: "var(--muted)", border: "1px solid var(--line)", borderRadius: "100px", padding: "0.45rem 0.9rem" }}>{ad}</a>
+          <a key={href} href={href} lang={href === "#english" ? "en" : undefined} className="pr-cip" style={{ ...mono, fontSize: "0.64rem", color: "var(--muted)", border: "1px solid var(--line)", borderRadius: "100px", padding: "0.45rem 0.9rem" }}>{ad}</a>
         ))}
       </nav>
 
@@ -137,7 +137,7 @@ export default function PressPage() {
         <p style={secBaslik}>Kitaplar</p>
         <div style={{ display: "grid", gap: "1.25rem", gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))" }}>
           {KITAPLAR.map((kitap) => (
-            <article key={kitap.slug} style={{ border: "1px solid var(--line)", borderRadius: "14px", padding: "1.5rem 1.6rem", background: "var(--bg-2)" }}>
+            <article key={kitap.slug} className="pr-kart" style={{ border: "1px solid var(--line)", borderRadius: "14px", padding: "1.5rem 1.6rem", background: "var(--bg-2)" }}>
               <div style={{ display: "flex", gap: "1.1rem", alignItems: "flex-start" }}>
                 <img src={kitap.kapak400} alt={`${kitap.ad} — kapak`} loading="lazy" decoding="async" style={{ width: "76px", borderRadius: "3px", boxShadow: "0 12px 26px rgba(0,0,0,0.35)" }} />
                 <div>
@@ -183,16 +183,16 @@ export default function PressPage() {
         <p style={secBaslik}>Görsel arşivi · İndirilebilir</p>
         <div style={{ display: "grid", gap: "1rem", gridTemplateColumns: "repeat(auto-fit, minmax(210px, 1fr))" }}>
           {GORSELLER.map((g) => (
-            <a key={g.dosya} href={g.dosya} download style={{ display: "flex", flexDirection: "column", gap: "0.35rem", padding: "1.2rem 1.3rem", border: "1px solid var(--line)", borderRadius: "10px", background: "var(--bg-2)" }}>
+            <a key={g.dosya} href={g.dosya} download className="pr-kart" style={{ display: "flex", flexDirection: "column", gap: "0.35rem", padding: "1.2rem 1.3rem", border: "1px solid var(--line)", borderRadius: "10px", background: "var(--bg-2)" }}>
               <span style={{ fontFamily: "var(--font-grotesk)", fontWeight: 500, fontSize: "0.95rem", color: "var(--ink)" }}>{g.ad}</span>
               <span style={{ ...mono, fontSize: "0.6rem", color: "var(--accent-2)" }}>{g.not} — İndir</span>
             </a>
           ))}
-          <Link href="/posterler" style={{ display: "flex", flexDirection: "column", gap: "0.35rem", padding: "1.2rem 1.3rem", border: "1px solid var(--line)", borderRadius: "10px", background: "var(--bg-2)" }}>
+          <Link href="/posterler" className="pr-kart" style={{ display: "flex", flexDirection: "column", gap: "0.35rem", padding: "1.2rem 1.3rem", border: "1px solid var(--line)", borderRadius: "10px", background: "var(--bg-2)" }}>
             <span style={{ fontFamily: "var(--font-grotesk)", fontWeight: 500, fontSize: "0.95rem", color: "var(--ink)" }}>12 söz posteri</span>
             <span style={{ ...mono, fontSize: "0.6rem", color: "var(--accent-2)" }}>A4 PDF galerisi</span>
           </Link>
-          <Link href="/gom" style={{ display: "flex", flexDirection: "column", gap: "0.35rem", padding: "1.2rem 1.3rem", border: "1px solid var(--line)", borderRadius: "10px", background: "var(--bg-2)" }}>
+          <Link href="/gom" className="pr-kart" style={{ display: "flex", flexDirection: "column", gap: "0.35rem", padding: "1.2rem 1.3rem", border: "1px solid var(--line)", borderRadius: "10px", background: "var(--bg-2)" }}>
             <span style={{ fontFamily: "var(--font-grotesk)", fontWeight: 500, fontSize: "0.95rem", color: "var(--ink)" }}>Günün Közü gereci</span>
             <span style={{ ...mono, fontSize: "0.6rem", color: "var(--accent-2)" }}>Sitene göm — kod</span>
           </Link>
@@ -216,17 +216,23 @@ export default function PressPage() {
       <section id="alintilar" style={secStil}>
         <p style={secBaslik}>Alıntılanabilir cümleler</p>
         <p style={{ fontSize: "0.9rem", color: "var(--muted)", marginBottom: "1.5rem", maxWidth: "62ch" }}>
-          Berkay Doğan&apos;ın kendi sözleri, harfi harfine. Kaynak:{" "}
-          <a href={ALINTI_KAYNAK.url} target="_blank" rel="noopener noreferrer" style={{ color: "var(--accent-2)" }}>{ALINTI_KAYNAK.ad}</a>
+          Berkay Doğan&apos;ın söyleşilerdeki kendi sözleri, harfi harfine. Kullanırken kaynağı belirtmeniz yeterli.
         </p>
-        <div style={{ display: "grid", gap: "0.9rem", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))" }}>
-          {ALINTILAR.map((a) => (
-            <figure key={a} style={{ margin: 0, display: "flex", flexDirection: "column", gap: "0.9rem", justifyContent: "space-between", padding: "1.3rem 1.4rem", borderLeft: "2px solid var(--accent)", background: "var(--bg-2)", borderRadius: "0 10px 10px 0" }}>
-              <blockquote style={{ margin: 0, fontFamily: "var(--font-serif)", fontStyle: "italic", fontSize: "1.12rem", lineHeight: 1.45, color: "var(--ink)" }}>&ldquo;{a}&rdquo;</blockquote>
-              <KopyalaMetin metin={`“${a}” — Berkay Doğan`} />
-            </figure>
-          ))}
-        </div>
+        {ALINTI_GRUPLARI.map((g) => (
+          <div key={g.kaynak.url} style={{ marginBottom: "2rem" }}>
+            <p style={{ ...mono, fontSize: "0.62rem", color: "var(--muted)", marginBottom: "0.9rem" }}>
+              <a href={g.kaynak.url} target="_blank" rel="noopener noreferrer" className="pr-kaynak">{g.kaynak.ad}</a>
+            </p>
+            <div style={{ display: "grid", gap: "0.9rem", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))" }}>
+              {g.cumleler.map((a) => (
+                <figure key={a} className="pr-alinti" style={{ margin: 0, display: "flex", flexDirection: "column", gap: "0.9rem", justifyContent: "space-between", padding: "1.3rem 1.4rem", borderLeft: "2px solid var(--accent)", background: "var(--bg-2)", borderRadius: "0 10px 10px 0" }}>
+                  <blockquote style={{ margin: 0, fontFamily: "var(--font-serif)", fontStyle: "italic", fontSize: "1.12rem", lineHeight: 1.45, color: "var(--ink)" }}>&ldquo;{a}&rdquo;</blockquote>
+                  <KopyalaMetin metin={`“${a}” — Berkay Doğan (${g.kaynak.ad})`} />
+                </figure>
+              ))}
+            </div>
+          </div>
+        ))}
       </section>
 
       {/* SÖYLEŞİ KONULARI */}
@@ -244,7 +250,7 @@ export default function PressPage() {
 
       {/* ENGLISH */}
       <section id="english" lang="en" style={secStil}>
-        <p style={secBaslik}>English — press summary</p>
+        <p style={secBaslik}>English · Press summary</p>
         <p style={{ fontSize: "0.95rem", color: "var(--ink)", marginBottom: "1.75rem" }}>
           Full English page with books, images and interview topics:{" "}
           <Link href="/en/" hrefLang="en" style={{ color: "var(--accent-2)", borderBottom: "1px solid var(--accent)" }}>berkaydogan.co/en</Link>
@@ -254,7 +260,7 @@ export default function PressPage() {
         <div style={{ display: "grid", gridTemplateColumns: "minmax(120px, 180px) 1fr", marginTop: "0.5rem" }}>
           {[
             ["Books", `${KITAP_ADI.mvk} — poetry, 2025, ISBN ${KITAPLAR[1].isbn} · ${KITAP_ADI.tas} — essays, 2026, ISBN ${KITAPLAR[0].isbn}`],
-            ["Recognition", "Most visited poetry title on Trendyol · 10/10 reader rating on 1000Kitap · poem in Valsanat magazine, issue 51"],
+            ["Recognition", "Most visited poetry title on Trendyol · 10/10 reader rating on 1000Kitap · hereby. covered by Webrazzi and Teknoblog (November 2026)"],
             ["Contact", EMAIL],
           ].map(([k, v]) => (
             <div key={k} style={{ display: "contents" }}>

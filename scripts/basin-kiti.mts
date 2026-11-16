@@ -9,7 +9,7 @@ import { execFileSync } from "node:child_process";
 import { join, dirname } from "node:path";
 import { fileURLToPath } from "node:url";
 import { BIO_KISA_TR, BIO_ORTA_TR, BIO_KISA_EN, BIO_ORTA_EN, KUNYE, RAKAMLAR, KONULAR } from "../lib/basinKiti.ts";
-import { BASIN, BASIN_TUR, ALINTILAR, ALINTI_KAYNAK } from "../lib/basinda.ts";
+import { BASIN, BASIN_TUR, EKRAN, ALINTI_GRUPLARI } from "../lib/basinda.ts";
 import { registerHooks } from "node:module";
 
 // lib/ dosyaları Next tarzı uzantısız import kullanır ("./sozler") — Node'a .ts'yi denemesini söyle.
@@ -40,10 +40,14 @@ writeFileSync(join(GECICI, "biography-en.txt"),
   `BERKAY DOĞAN — BIOGRAPHY\n\nONE LINE\n${BIO_KISA_EN}\n\nSHORT\n${BIO_ORTA_EN}\n\nLONG\n${site.en.about.paras.join("\n\n")}\n`);
 writeFileSync(join(GECICI, "kunye.txt"), KUNYE.map((f) => `${f.k}: ${f.v}`).join("\n") + "\n");
 writeFileSync(join(GECICI, "alintilar.txt"),
-  `Berkay Doğan'ın kendi sözleri, harfi harfine.\nKaynak: ${ALINTI_KAYNAK.ad} — ${ALINTI_KAYNAK.url}\n\n` + ALINTILAR.map((a) => `“${a}”`).join("\n\n") + "\n");
+  `Berkay Doğan'ın söyleşilerdeki kendi sözleri, harfi harfine.\n\n` +
+  ALINTI_GRUPLARI.map((g) => `KAYNAK: ${g.kaynak.ad} — ${g.kaynak.url}\n\n` + g.cumleler.map((a) => `“${a}”`).join("\n\n")).join("\n\n\n") + "\n");
 writeFileSync(join(GECICI, "soylesi-konulari.txt"), KONULAR.map((k) => `• ${k}`).join("\n") + "\n");
 writeFileSync(join(GECICI, "basinda.txt"),
-  BASIN.map((b) => `${tarihTR(b.tarihISO, b.sadeceAy)} · ${b.yayin} · ${BASIN_TUR[b.tur].tr} — ${b.baslik.tr}\n${b.url}`).join("\n\n") + "\n");
+  [
+    ...BASIN.map((b) => ({ iso: b.tarihISO, satir: `${tarihTR(b.tarihISO, b.sadeceAy)} · ${b.yayin} · ${BASIN_TUR[b.tur].tr} — ${b.baslik.tr}\n${b.url}` })),
+    ...EKRAN.map((e) => ({ iso: e.tarihISO, satir: `${tarihTR(e.tarihISO)} · ${e.kanal} · TV — ${e.baslik}${e.link ? `\n${e.link}` : ""}` })),
+  ].sort((a, b) => b.iso.localeCompare(a.iso)).map((x) => x.satir).join("\n\n") + "\n");
 writeFileSync(join(GECICI, "OKU-BENI.txt"),
   "Berkay Doğan basın kiti — berkaydogan.co/press\n\nTüm metin ve görseller haber ve tanıtım amaçlı serbestçe kullanılabilir.\nKredi: Berkay Doğan / berkaydogan.co\nİletişim: do.berkay@icloud.com\n");
 
@@ -97,14 +101,14 @@ ul{list-style:none}li{padding:1.1mm 0;border-top:.5px solid rgba(25,24,19,.16)}
 <div class="iki">
   <div>
     <p class="k">Basında</p>
-    <ul>${BASIN.map((b) => `<li><b>${esc(b.yayin)}</b> · ${esc(BASIN_TUR[b.tur].tr)} · ${esc(tarihTR(b.tarihISO, b.sadeceAy))}</li>`).join("")}</ul>
+    <ul>${BASIN.slice(0, 8).map((b) => `<li><b>${esc(b.yayin)}</b> · ${esc(BASIN_TUR[b.tur].tr)} · ${esc(tarihTR(b.tarihISO, b.sadeceAy))}</li>`).join("")}${BASIN.length + EKRAN.length > 8 ? `<li style="color:#6C685E">ve ${BASIN.length + EKRAN.length - 8} çıkış daha (TV dahil) — tam liste basın kitinde</li>` : ""}</ul>
     <p class="k">Söyleşi konuları</p>
     <ul>${KONULAR.slice(0, 4).map((k) => `<li>${esc(k)}</li>`).join("")}</ul>
   </div>
   <div>
     <p class="k">Kendi sözleriyle</p>
-    ${ALINTILAR.slice(0, 4).map((a) => `<p class="al">“${esc(a)}”</p>`).join("")}
-    <p style="font-size:6.8pt;color:#6C685E">${esc(ALINTI_KAYNAK.ad)}</p>
+    ${ALINTI_GRUPLARI.flatMap((g) => g.cumleler.slice(0, 2)).map((a) => `<p class="al">“${esc(a)}”</p>`).join("")}
+    <p style="font-size:6.8pt;color:#6C685E">${ALINTI_GRUPLARI.map((g) => esc(g.kaynak.ad)).join(" · ")}</p>
     <p class="k">Kitaplar</p>
     <p>${esc(kitapSatiri)} — İskenderiye Yayınları</p>
     ${ytSatiri ? `<p class="k">İzle</p><p>${esc(ytSatiri)}</p>` : ""}
