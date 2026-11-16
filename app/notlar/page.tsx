@@ -24,7 +24,7 @@ export default function NotlarPage() {
       <BreadcrumbSchema name="Notlar" path="/notlar/" />
       <div className="eski-ust" style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "clamp(3rem, 8vh, 5rem)", flexWrap: "wrap", gap: "1rem" }}>
         <Link href="/" style={{ fontFamily: "var(--font-grotesk)", fontWeight: 700, letterSpacing: "0.02em" }}>Berkay Doğan</Link>
-        <Link href="/" style={{ ...ust, fontSize: "0.72rem", letterSpacing: "0.14em", color: "var(--muted)", borderBottom: "1px solid var(--accent)", paddingBottom: "2px" }}>← berkaydogan.co</Link>
+        <Link href="/" style={{ ...ust, fontSize: "0.72rem", letterSpacing: "0.14em", color: "var(--muted)", borderBottom: "1px solid var(--accent)", paddingBottom: "2px" }}>berkaydogan.co</Link>
       </div>
 
       <span style={{ display: "inline-flex", alignItems: "center", gap: "0.6rem", ...ust, letterSpacing: "0.26em", color: "var(--ink)" }}>
@@ -46,7 +46,7 @@ export default function NotlarPage() {
             <p style={{ fontFamily: "var(--font-serif)", fontStyle: "italic", fontSize: "clamp(1.45rem, 3.4vw, 2.2rem)", lineHeight: 1.35, color: "var(--ink)", maxWidth: "30ch" }}>{n.metin}</p>
             {n.video && (
               <a href={n.video} target="_blank" rel="noopener noreferrer" className="cg-pill" style={{ display: "inline-block", marginTop: "1.6rem", ...ust, fontSize: "0.68rem", letterSpacing: "0.16em", color: "var(--ink)", border: "1px solid var(--line)", borderRadius: "100px", padding: "0.6rem 1.1rem", textDecoration: "none" }}>
-                ▶ Sesimden dinle ↗
+                ▶ Sesimden dinle
               </a>
             )}
           </article>

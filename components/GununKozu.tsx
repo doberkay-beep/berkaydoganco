@@ -47,7 +47,7 @@ export function GununKozu({ t, verses }: { t: Copy; verses: string[] }) {
       <p className="kozu-verse" suppressHydrationWarning>{verse ? `“${verse}”` : " "}</p>
       {verse && (
         <button className="kozu-share" onClick={() => shareVerse(verse, () => { setCopied(true); window.setTimeout(() => setCopied(false), 1600); })}>
-          {copied ? t.copied : t.share} ↗
+          {copied ? t.copied : t.share}
         </button>
       )}
       <a className="kozu-share" href="/takvim" style={{ textDecoration: "none" }}>{t.universe} ✦</a>

@@ -155,13 +155,13 @@ export function HerebyTanitim({ m }: { m: Metin }) {
         </h1>
         <p style={{ fontSize: "clamp(1.05rem, 2.2vw, 1.3rem)", lineHeight: 1.65, color: "var(--muted)", maxWidth: "40rem", margin: "0 auto 2.4rem", position: "relative" }}>{m.alt}</p>
         <div style={{ display: "flex", gap: "1rem", justifyContent: "center", flexWrap: "wrap", position: "relative" }}>
-          <a href={betaHref} className="hb-dugme" style={{ background: CIVIT, color: "#fff", boxShadow: `0 12px 34px ${CIVIT}55` }}>{m.beta} →</a>
+          <a href={betaHref} className="hb-dugme" style={{ background: CIVIT, color: "#fff", boxShadow: `0 12px 34px ${CIVIT}55` }}>{m.beta}</a>
           <span className="hb-dugme" style={{ border: "1px solid var(--line)", color: "var(--muted)" }}>{m.imza}</span>
         </div>
         <p style={{ ...mono, color: "var(--muted)", marginTop: "1.4rem", fontSize: "0.66rem", position: "relative" }}>{m.yakinda}</p>
         {/* Basın: 12 Kas 2026 Webrazzi girişim incelemesi (lib/basinda.ts ile aynı bağlantı) */}
         <p style={{ marginTop: "1.1rem", fontSize: "0.92rem", position: "relative" }}>
-          <a href={WEBRAZZI} target="_blank" rel="noopener noreferrer" style={{ color: CIVIT, textDecoration: "underline", textUnderlineOffset: "4px" }}>{m.basin} ↗</a>
+          <a href={WEBRAZZI} target="_blank" rel="noopener noreferrer" style={{ color: CIVIT, textDecoration: "underline", textUnderlineOffset: "4px" }}>{m.basin}</a>
         </p>
       </section>
 
@@ -231,7 +231,7 @@ export function HerebyTanitim({ m }: { m: Metin }) {
           ))}
         </div>
         <p style={{ marginTop: "1.6rem" }}>
-          <Link href={en ? "/en/" : "/kitaplar/"} style={{ color: CIVIT, textDecoration: "underline", textUnderlineOffset: "4px" }}>{m.kitaplar} →</Link>
+          <Link href={en ? "/en/" : "/kitaplar/"} style={{ color: CIVIT, textDecoration: "underline", textUnderlineOffset: "4px" }}>{m.kitaplar}</Link>
         </p>
       </section>
 
@@ -253,7 +253,7 @@ export function HerebyTanitim({ m }: { m: Metin }) {
         <p style={{ ...serif, fontSize: "clamp(2.2rem, 6vw, 3.8rem)", margin: "0 0 1.8rem", lineHeight: 1.05 }}>
           hereby<span style={{ color: CIVIT }}>.</span>
         </p>
-        <a href={betaHref} className="hb-dugme" style={{ background: CIVIT, color: "#fff", boxShadow: `0 12px 34px ${CIVIT}55` }}>{m.beta} →</a>
+        <a href={betaHref} className="hb-dugme" style={{ background: CIVIT, color: "#fff", boxShadow: `0 12px 34px ${CIVIT}55` }}>{m.beta}</a>
         <nav style={{ display: "flex", gap: "1.4rem", justifyContent: "center", flexWrap: "wrap", marginTop: "2.6rem", ...mono, color: "var(--muted)" }}>
           <Link href={m.kosulHref}>{m.kosullar}</Link>
           <Link href={m.gizlilikHref}>{m.gizlilik}</Link>

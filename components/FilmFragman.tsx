@@ -10,8 +10,8 @@ import Link from "next/link";
 type Lang = "tr" | "en";
 
 const COPY: Record<Lang, { baslik: string; alt: string; filmNot: string; fragman: string; izle: string; tekrar: string; ipucu: string; geri: string; kitap: string; kisa: string; kisaAlt: string; sessiz: string }> = {
-  tr: { baslik: "Film", alt: "Tasfiye — Bir Yazarın Hesabı", filmNot: "8 dakikalık kısa film — metinler kitaptan, ses yazarın kendisinden.", fragman: "Fragman", izle: "Filmi izle", tekrar: "Tekrar izle", ipucu: "50 saniye · sesli izlemen önerilir", geri: "← berkaydogan.co", kitap: "Kitabı incele", kisa: "Kısa filmler", kisaAlt: "Kampanyadan üç kısa: bir dize, bir duygu, yirmi saniye.", sessiz: "sessiz" },
-  en: { baslik: "The Film", alt: "Tasfiye — A Writer's Reckoning", filmNot: "An 8-minute short film — words from the book, voice by the author.", fragman: "Trailer", izle: "Play the film", tekrar: "Play again", ipucu: "50 seconds · best with sound on", geri: "← berkaydogan.co", kitap: "About the book", kisa: "Short films", kisaAlt: "Three shorts from the campaign: one line, one feeling, twenty seconds.", sessiz: "silent" },
+  tr: { baslik: "Film", alt: "Tasfiye — Bir Yazarın Hesabı", filmNot: "8 dakikalık kısa film — metinler kitaptan, ses yazarın kendisinden.", fragman: "Fragman", izle: "Filmi izle", tekrar: "Tekrar izle", ipucu: "50 saniye · sesli izlemen önerilir", geri: "berkaydogan.co", kitap: "Kitabı incele", kisa: "Kısa filmler", kisaAlt: "Kampanyadan üç kısa: bir dize, bir duygu, yirmi saniye.", sessiz: "sessiz" },
+  en: { baslik: "The Film", alt: "Tasfiye — A Writer's Reckoning", filmNot: "An 8-minute short film — words from the book, voice by the author.", fragman: "Trailer", izle: "Play the film", tekrar: "Play again", ipucu: "50 seconds · best with sound on", geri: "berkaydogan.co", kitap: "About the book", kisa: "Short films", kisaAlt: "Three shorts from the campaign: one line, one feeling, twenty seconds.", sessiz: "silent" },
 };
 
 /* Kampanya kısaları — dikey 9:16, tıklayınca yerinde oynar. */
@@ -185,7 +185,7 @@ export default function FilmFragman() {
 
       <div className="flm-alt">
         <Link href="/">{c.geri}</Link>
-        <Link className="koz" href="/kitaplar/tasfiye">{c.kitap} →</Link>
+        <Link className="koz" href="/kitaplar/tasfiye">{c.kitap}</Link>
       </div>
     </main>
   );

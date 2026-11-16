@@ -19,7 +19,7 @@ export const ATOLYE_TR: AtolyeMetin = {
   islerEtiket: "Atölyenin işleri",
   isler: [
     {
-      id: "hereby", ad: "hereby", renk: MOR, soru: "Nerede?", href: "/hereby", link: "hereby.'yi tanı →",
+      id: "hereby", ad: "hereby", renk: MOR, soru: "Nerede?", href: "/hereby", link: "hereby.'yi tanı",
       m: "Aklından geçen satırı geçtiğin yere bırak. Onu yalnızca oraya gelen biri okuyabilir. Kitaplardan satırlarla şiir yürüyüşleri, zaman kapsülleri, kendine notlar.",
       ilke: "Hiçbir iz sayılmaz, sıralanmaz.",
       video: "/by/hereby-koyu.mp4", poster: "/by/hereby-koyu.jpg", telefon: "hereby. uygulamasının ekranı",
@@ -30,7 +30,7 @@ export const ATOLYE_TR: AtolyeMetin = {
       ],
     },
     {
-      id: "nowby", ad: "nowby", renk: TURUNCU, soru: "Ne zaman?", href: "/nowby", link: "nowby'ı tanı →",
+      id: "nowby", ad: "nowby", renk: TURUNCU, soru: "Ne zaman?", href: "/nowby", link: "nowby'ı tanı",
       m: "Radyolarda şu an ne çalıyor? Yayınlarını paylaşmamıza izin veren radyolar tek ekranda, canlı. Gerçek sayıma dayanan listeler, dünyanın radyoları, kitaplardan dizelerle Frekans Falı.",
       ilke: "Şarkıları sayar, insanları değil.",
       cihazBaslik: "Dört cihazda aynı radyo, aynı şarkı.",
@@ -42,7 +42,7 @@ export const ATOLYE_TR: AtolyeMetin = {
       ],
     },
     {
-      id: "writtenby", ad: "writtenby", renk: MOR, soru: "Kim?", href: "/writtenby", link: "writtenby.'yi tanı →",
+      id: "writtenby", ad: "writtenby", renk: MOR, soru: "Kim?", href: "/writtenby", link: "writtenby.'yi tanı",
       m: "Bir şehrin yazdığı kitap. Her gün herkese aynı soru; bulunduğun yerden tek bir satır. Satırını yalnızca oraya gelenler okur. Yıl sonunda bu satırlardan basılı bir kitap kurulur; izin vermediğin hiçbir satır basılmaz. İlk kitap: İstanbul 2027.",
       ilke: "Kitaba girmek bir ödül değil, bir derleme kararı.",
       video: "/by/writtenby-koyu.mp4", poster: "/by/writtenby-koyu.jpg", telefon: "writtenby. ekranı: günün sorusu, tek satır ve basım izni",
@@ -51,7 +51,7 @@ export const ATOLYE_TR: AtolyeMetin = {
         { b: "Tek satır.", s: "Bulunduğun yerden, en fazla 140 karakter. Günde yalnız bir satır; yazdıktan sonra değişmez." },
         { b: "Yıl sonunda kitap.", s: "Satırlar Berkay Doğan tarafından derlenir ve basılı bir kitap olur. Kitaba girenlere haber verilir." },
       ],
-      ek: { etiket: "İkinci katman", link: "Sanatçılar →", href: "/writtenby/sanatcilar" },
+      ek: { etiket: "İkinci katman", link: "Sanatçılar", href: "/writtenby/sanatcilar" },
     },
   ],
   soruEtiket: "Dört soru",
@@ -64,14 +64,14 @@ export const ATOLYE_TR: AtolyeMetin = {
   ],
   kapanis: "Önce sözler, sonra frekanslar.",
   ilkeler: "Reklam yok · Beğeni yok · Takipçi yok",
-  studio: "Stüdyoyla çalış: uygulama ve web siteleri →", studioHref: "/studio",
+  studio: "Stüdyoyla çalış: uygulama ve web siteleri", studioHref: "/studio",
   anaSayfa: "/",
   kanal: {
     etiket: "by. studio · YouTube",
     baslik: "Atölyeden videolar: her cuma nowby. Dünya Listesi, hereby. rotaları ve uygulamaların tanıtımları.",
     video: "Ah0DjSb5ihw", videoBaslik: "by. studio — seni dışarı çağıran küçük uygulamalar",
     alt: "Kanal fragmanı, 45 saniye.",
-    link: "Kanalı aç: @made.by.berkay →", href: "https://www.youtube.com/@made.by.berkay",
+    link: "Kanalı aç: @made.by.berkay", href: "https://www.youtube.com/@made.by.berkay",
   },
 };
 
@@ -88,7 +88,7 @@ export const ATOLYE_EN: AtolyeMetin = {
   islerEtiket: "From the workshop",
   isler: [
     {
-      id: "hereby", ad: "hereby", renk: MOR, soru: "Where?", href: "/en/hereby", link: "Meet hereby. →",
+      id: "hereby", ad: "hereby", renk: MOR, soru: "Where?", href: "/en/hereby", link: "Meet hereby.",
       m: "Leave the line on your mind at the place you pass. Only someone who comes to that place can read it. Poetry walks with lines from the books, time capsules, notes to self.",
       ilke: "No trace is counted or ranked.",
       video: "/by/hereby-koyu.mp4", poster: "/by/hereby-koyu.jpg", telefon: "The hereby. app screen",
@@ -99,7 +99,7 @@ export const ATOLYE_EN: AtolyeMetin = {
       ],
     },
     {
-      id: "nowby", ad: "nowby", renk: TURUNCU, soru: "When?", href: "/en/nowby", link: "Meet nowby. →",
+      id: "nowby", ad: "nowby", renk: TURUNCU, soru: "When?", href: "/en/nowby", link: "Meet nowby.",
       m: "What is playing on the radio right now? Stations that gave us permission to share their broadcasts, on one screen, live. Charts built on real airplay counts, the world's radio, and a Frequency Fortune with lines from the books.",
       ilke: "It counts songs, not people.",
       cihazBaslik: "The same station, the same song on four devices.",
@@ -111,7 +111,7 @@ export const ATOLYE_EN: AtolyeMetin = {
       ],
     },
     {
-      id: "writtenby", ad: "writtenby", renk: MOR, soru: "Who?", href: "/en/writtenby", link: "Meet writtenby. →",
+      id: "writtenby", ad: "writtenby", renk: MOR, soru: "Who?", href: "/en/writtenby", link: "Meet writtenby.",
       m: "A book written by a city. Every day, the same question for everyone; one line from where you stand. Only those who come to that place can read it. At year's end the lines become a printed book, and no line is printed without permission. First book: Istanbul 2027.",
       ilke: "Getting into the book isn't a prize, it's an editorial choice.",
       video: "/by/writtenby-koyu.mp4", poster: "/by/writtenby-koyu.jpg", telefon: "The writtenby. screen: the question of the day, one line and print permission",
@@ -120,7 +120,7 @@ export const ATOLYE_EN: AtolyeMetin = {
         { b: "One line.", s: "From where you are, up to 140 characters. Only one line a day; it can't be changed once written." },
         { b: "A book at year's end.", s: "Berkay Doğan compiles the lines into a printed book. Those included are notified." },
       ],
-      ek: { etiket: "The second layer", link: "Artists →", href: "/en/writtenby/artists" },
+      ek: { etiket: "The second layer", link: "Artists", href: "/en/writtenby/artists" },
     },
   ],
   soruEtiket: "Four questions",
@@ -133,13 +133,13 @@ export const ATOLYE_EN: AtolyeMetin = {
   ],
   kapanis: "First words, then frequencies.",
   ilkeler: "No ads · No likes · No followers",
-  studio: "Work with the studio: apps and websites →", studioHref: "/en/studio",
+  studio: "Work with the studio: apps and websites", studioHref: "/en/studio",
   anaSayfa: "/en",
   kanal: {
     etiket: "by. studio · YouTube",
     baslik: "Videos from the workshop: the nowby. World Chart every Friday, hereby. routes and app introductions.",
     video: "Ah0DjSb5ihw", videoBaslik: "by. studio — small apps that call you outside",
     alt: "Channel trailer, 45 seconds (in Turkish).",
-    link: "Open the channel: @made.by.berkay →", href: "https://www.youtube.com/@made.by.berkay",
+    link: "Open the channel: @made.by.berkay", href: "https://www.youtube.com/@made.by.berkay",
   },
 };

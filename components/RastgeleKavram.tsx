@@ -5,7 +5,7 @@ import { useState } from "react";
 
 // Rastgele keşif — verilen slug listesinden birine götürür. Sitede kalma +
 // içerik keşfi. Statik export uyumlu (istemci tarafında seçer).
-export function RastgeleKavram({ slugs, etiket = "Rastgele bir kavram →" }: { slugs: string[]; etiket?: string }) {
+export function RastgeleKavram({ slugs, etiket = "Rastgele bir kavram" }: { slugs: string[]; etiket?: string }) {
   const router = useRouter();
   const [gidiyor, setGidiyor] = useState(false);
 

@@ -18,7 +18,7 @@ export function OkurSesi({ lang, adet = 3, tumuLink = true }: { lang: Lang; adet
       </div>
       {tumuLink && REVIEWS.length > adet && (
         <a href="/hakkimda#okurlar" className="cg-link" style={{ display: "inline-block", marginTop: "1.25rem", fontFamily: "var(--font-grotesk)", fontSize: "0.72rem", letterSpacing: "0.14em", textTransform: "uppercase", color: "var(--muted)" }}>
-          {tr ? `Tüm yorumlar (${REVIEWS.length})` : `All reviews (${REVIEWS.length})`} →
+          {tr ? `Tüm yorumlar (${REVIEWS.length})` : `All reviews (${REVIEWS.length})`}
         </a>
       )}
     </div>

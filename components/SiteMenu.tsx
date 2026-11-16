@@ -51,7 +51,7 @@ export function GrupluMenu({ lang, kapat }: { lang: "tr" | "en"; kapat: () => vo
         ))}
       </nav>
       <p className="sm-dil">
-        {lang === "tr" ? <a href="/en/" lang="en" onClick={kapat}>In English →</a> : <a href="/" lang="tr" onClick={kapat}>Türkçe →</a>}
+        {lang === "tr" ? <a href="/en/" lang="en" onClick={kapat}>In English</a> : <a href="/" lang="tr" onClick={kapat}>Türkçe</a>}
       </p>
     </div>
   );

@@ -61,7 +61,7 @@ function Satirlar({ satirlar }: { satirlar: Satir[] }) {
               {r.alt && <span lang="en">{r.alt}</span>}
             </span>
             <span className={s.satirTur}>{r.tur}</span>
-            <span className={s.satirOk} aria-hidden>{r.href ? (r.indir ? "↓" : disari ? "↗" : "→") : ""}</span>
+            
           </>
         );
         return (
@@ -159,15 +159,15 @@ export default function EnglishPage() {
           <span className={s.adIkinci}>doğan</span>
         </h1>
         <div className={s.acilisAlt}>
-          <a href="#about" className={s.ok} aria-label="Go to About">↘</a>
+          <a href="#about" className={s.ok} aria-label="Go to About"><span className={s.akis} aria-hidden /></a>
           <p className={s.giris}>
             <span className={s.yildiz} aria-hidden>∗∗∗</span>
             Turkish poet and writer, Istanbul. Founder of nowby. His books are published in Turkish; this page is for international readers, editors and press.
           </p>
           <nav className={s.davet} aria-label="Contents">
-            <a href="#books">Books <span aria-hidden>↓</span></a>
-            <a href="#press-kit">Press kit <span aria-hidden>↓</span></a>
-            <Link href="/" hrefLang="tr" lang="tr">Türkçe <span aria-hidden>→</span></Link>
+            <a href="#books">Books</a>
+            <a href="#press-kit">Press kit</a>
+            <Link href="/" hrefLang="tr" lang="tr">Türkçe</Link>
           </nav>
         </div>
       </header>
@@ -201,7 +201,6 @@ export default function EnglishPage() {
           <div className={s.bolumBas}>
             <span className={s.etiket}>[02] Books</span>
             <h2 id="books-heading">Books, published in Turkish.</h2>
-            <span className={s.okSag} aria-hidden>↙</span>
           </div>
           <div className={s.kitaplar}>
             {EN_BOOKS.map((b, i) => {
@@ -232,7 +231,7 @@ export default function EnglishPage() {
                     ))}
                   </dl>
                   <p className={s.kitapLink}>
-                    <Link href={`/kitaplar/${b.slug}/`} hrefLang="tr">Book page (Turkish) →</Link>
+                    <Link href={`/kitaplar/${b.slug}/`} hrefLang="tr">Book page (Turkish)</Link>
                   </p>
                 </article>
               );
@@ -266,7 +265,7 @@ export default function EnglishPage() {
         <div className={s.ic}>
           <div className={s.sonUst}>
             <span className={s.etiket}>[04] Contact</span>
-            <a href="#top" className={s.etiket}>Back to top ↑</a>
+            <a href="#top" className={s.etiket}>Back to top</a>
           </div>
           <a className={s.posta} href={`mailto:${EMAIL}`}>{EMAIL}</a>
           <div className={s.sonMetin}>
@@ -274,10 +273,10 @@ export default function EnglishPage() {
             <p>Interviews, reviews, events and other enquiries.</p>
           </div>
           <p className={s.sosyal}>
-            <a href={INSTAGRAM_URL} {...dis}>Instagram ↗</a>
-            <a href={YOUTUBE_URL} {...dis}>YouTube ↗</a>
-            <a href={SUBSTACK_URL} {...dis}>Substack (Turkish) ↗</a>
-            <Link href="/" hrefLang="tr" lang="tr">Türkçe →</Link>
+            <a href={INSTAGRAM_URL} {...dis}>Instagram</a>
+            <a href={YOUTUBE_URL} {...dis}>YouTube</a>
+            <a href={SUBSTACK_URL} {...dis}>Substack (Turkish)</a>
+            <Link href="/" hrefLang="tr" lang="tr">Türkçe</Link>
           </p>
           <nav className={s.siteDizin} aria-label="Site index">
             {menuGruplari("en").map((g, gi) => (

@@ -32,7 +32,7 @@ export function KitapCagrisi() {
             onClick={() => satinAlTikla("trendyol", "yazi-karti")}
             style={{ fontFamily: "var(--font-grotesk)", fontSize: "0.76rem", fontWeight: 600, letterSpacing: "0.08em", padding: "0.65rem 1.2rem", borderRadius: "100px", background: "var(--accent)", color: "var(--accent-ink)" }}
           >
-            Satın al →
+            Satın al
           </a>
           <Link href="/kitaplar/tasfiye" style={{ fontFamily: "var(--font-grotesk)", fontSize: "0.72rem", letterSpacing: "0.1em", textTransform: "uppercase", color: "var(--muted)", borderBottom: "1px solid var(--accent)", paddingBottom: "2px" }}>
             Kitabı incele

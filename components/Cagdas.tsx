@@ -60,7 +60,7 @@ export function Cagdas() {
                   {t.hero.sub}
                 </Reveal>
                 <Reveal delay={0.32} style={{ marginTop: "2.25rem", display: "flex", gap: "0.75rem", flexWrap: "wrap" }}>
-                  <a href="#books" className="cg-btn cg-btn-fill">{t.hero.ctaBooks} →</a>
+                  <a href="#books" className="cg-btn cg-btn-fill">{t.hero.ctaBooks}</a>
                   <a href="/hakkimda" className="cg-btn cg-btn-ghost">{t.hero.ctaAbout}</a>
                 </Reveal>
               </div>
@@ -99,7 +99,7 @@ export function Cagdas() {
                     {b.tasfiye.excerptNote && <span style={{ display: "block", marginTop: "0.4rem", fontFamily: "var(--font-grotesk)", fontStyle: "normal", fontSize: "0.72rem", color: "var(--muted)" }}>{b.tasfiye.excerptNote}</span>}
                   </div>
                   <div style={{ marginTop: "0.5rem", display: "flex", gap: "0.75rem", flexWrap: "wrap" }}>
-                    <a href={TASFIYE_URL} target="_blank" rel="noopener noreferrer" className="cg-btn cg-btn-fill">{b.tasfiye.cta} →</a>
+                    <a href={TASFIYE_URL} target="_blank" rel="noopener noreferrer" className="cg-btn cg-btn-fill">{b.tasfiye.cta}</a>
                     <a href={lang === "tr" ? "/kitaplar/tasfiye" : "/en/#tasfiye"} className="cg-btn cg-btn-ghost">{lang === "tr" ? "Kitabın sayfası" : "About the book"}</a>
                   </div>
                   <div style={{ marginTop: "0.5rem" }}>
@@ -135,7 +135,7 @@ export function Cagdas() {
                     {b.murekkep.excerptNote && <span style={{ display: "block", marginTop: "0.4rem", fontFamily: "var(--font-grotesk)", fontStyle: "normal", fontSize: "0.72rem", color: "var(--muted)" }}>{b.murekkep.excerptNote}</span>}
                   </div>
                   <div style={{ display: "flex", gap: "0.75rem", flexWrap: "wrap", marginTop: "0.5rem" }}>
-                    <a href={TRENDYOL_URL} target="_blank" rel="noopener noreferrer" className="cg-btn cg-btn-fill">{b.murekkep.cta} →</a>
+                    <a href={TRENDYOL_URL} target="_blank" rel="noopener noreferrer" className="cg-btn cg-btn-fill">{b.murekkep.cta}</a>
                     <a href={lang === "tr" ? "/kitaplar/murekkep-ve-koz" : "/en/#murekkep-ve-koz"} className="cg-btn cg-btn-ghost">{lang === "tr" ? "Kitabın sayfası" : "About the book"}</a>
                   </div>
                   <div style={{ marginTop: "0.5rem" }}>

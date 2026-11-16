@@ -103,7 +103,7 @@ export function SaitFaikSayfa() {
               <span aria-hidden="true" style={{ ...serif, fontStyle: "italic", opacity: 0.3, filter: "blur(4px)", userSelect: "none", marginTop: "0.3rem" }}>········ ···· ·········· ·····</span>
               <span style={{ fontSize: "0.85rem", opacity: 0.75, display: "flex", justifyContent: "space-between", gap: "0.6rem", flexWrap: "wrap" }}>
                 <span>🔒 Yalnız orada açılır</span>
-                <a href={`https://maps.apple.com/?ll=${d.lat},${d.lon}&q=${encodeURIComponent(d.yer)}`} target="_blank" rel="noopener noreferrer">Haritada aç →</a>
+                <a href={`https://maps.apple.com/?ll=${d.lat},${d.lon}&q=${encodeURIComponent(d.yer)}`} target="_blank" rel="noopener noreferrer">Haritada aç</a>
               </span>
             </li>
           ))}

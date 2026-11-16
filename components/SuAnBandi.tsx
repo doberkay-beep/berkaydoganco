@@ -62,7 +62,7 @@ export function SuAnBandi({ lang }: { lang: Lang }) {
       <span style={metin}>
         <strong style={{ fontWeight: 600 }}>{son.yayin}</strong>
         {son.alinti ? <> — <em className="cg-serif" lang="tr">“{son.alinti}”</em></> : <> — {son.baslik}</>}
-        {son.url && <span style={{ color: "var(--accent-2)" }}> ↗</span>}
+        
       </span>
     </>
   );
@@ -78,7 +78,7 @@ export function SuAnBandi({ lang }: { lang: Lang }) {
           <span style={metin}>
             <strong style={{ fontWeight: 600 }}>Business Channel Türk</strong>
             {tr ? " — Tasfiye, yazarlık ve şiir üzerine; canlı izle" : " — on Tasfiye, writing and poetry; watch live"}
-            <span style={{ color: "var(--accent-2)" }}> ↗</span>
+
           </span>
         </a>
       ) : son ? (
@@ -97,7 +97,7 @@ export function SuAnBandi({ lang }: { lang: Lang }) {
             ) : (
               <><strong style={{ fontWeight: 700, color: "var(--accent-2)", fontSize: "1.15rem" }}>{simdi.ay_toplam.toLocaleString("en-US")}</strong> songs played on Turkish radio in {ayAdi(simdi.ay, false)}, counted live by nowby.</>
             )}
-            <span style={{ color: "var(--accent-2)" }}> ↗</span>
+
           </span>
         </a>
       ) : null}

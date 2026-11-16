@@ -38,7 +38,7 @@ export default function OgrencilerPage() {
         <Link href="/" style={{ display: "inline-flex", alignItems: "center", gap: "0.6rem", fontFamily: "var(--font-grotesk)", fontWeight: 700, letterSpacing: "0.02em", color: "var(--ink)" }}>
           <Muhur size={22} /> Berkay Doğan
         </Link>
-        <Link href="/" style={{ ...mono, fontSize: "0.72rem", letterSpacing: "0.14em", color: "var(--muted)", borderBottom: "1px solid var(--accent)", paddingBottom: "2px" }}>← berkaydogan.co</Link>
+        <Link href="/" style={{ ...mono, fontSize: "0.72rem", letterSpacing: "0.14em", color: "var(--muted)", borderBottom: "1px solid var(--accent)", paddingBottom: "2px" }}>berkaydogan.co</Link>
       </div>
 
       <span style={{ ...mono, letterSpacing: "0.26em", color: "var(--accent-2)" }}>Öğrenciler ve öğretmenler için</span>
@@ -67,7 +67,7 @@ export default function OgrencilerPage() {
         </ul>
         <div style={{ marginTop: "1.6rem" }}>
           <a href={mailto("Öğrenci röportajı — [okul / ders]", "Merhaba Berkay Bey,\n\nAdım ... , ... okulunda ... sınıf öğrencisiyim. ... dersi için bir proje hazırlıyorum.\n\nTeslim tarihi: ...\n\nSorularım:\n1. \n2. \n3. \n")} style={buton}>
-            Sorularımı gönder ↗
+            Sorularımı gönder
           </a>
         </div>
       </section>
@@ -99,7 +99,7 @@ export default function OgrencilerPage() {
         </ul>
         <div style={{ marginTop: "1.6rem" }}>
           <a href={mailto("Sesin Duyulsun — [şiir / deneme]", "Ad soyad: \nOkul ve sınıf: \nYaş: \nYayında görünmesini istediğim ad (ad, ilk ad ya da takma ad): \n\nMetnim (şiir ya da deneme):\n\n")} style={buton}>
-            Metnimi gönder ↗
+            Metnimi gönder
           </a>
         </div>
       </section>
@@ -121,7 +121,7 @@ export default function OgrencilerPage() {
         </div>
         <div style={{ marginTop: "1.6rem" }}>
           <a href={mailto("Okul / kulüp söyleşisi daveti", "Merhaba Berkay Bey,\n\nOkul / kulüp: ...\nŞehir: ...\nÇevrim içi mi, yüz yüze mi: ...\nDüşündüğümüz tarih: ...\nKatılımcılar (yaklaşık sayı, sınıf): ...\n\n")} style={buton}>
-            Söyleşiye davet et ↗
+            Söyleşiye davet et
           </a>
         </div>
       </section>
@@ -135,7 +135,7 @@ export default function OgrencilerPage() {
         </p>
         <div style={{ marginTop: "1.2rem" }}>
           <a href="/ogretmen-kiti.pdf" download style={{ ...buton, background: "transparent", color: "var(--ink)", border: "1px solid var(--accent)" }}>
-            Öğretmen kitini indir (PDF, 4 sayfa) ↓
+            Öğretmen kitini indir (PDF, 4 sayfa)
           </a>
         </div>
         <div style={{ display: "grid", gap: "1.1rem", marginTop: "1.8rem" }}>
@@ -160,7 +160,7 @@ export default function OgrencilerPage() {
         <p style={govde}>
           E-posta: <a href={`mailto:${EMAIL}`} style={{ borderBottom: "1px solid var(--accent)" }}>{EMAIL}</a>
           <br />
-          Instagram: <a href={INSTAGRAM_URL} target="_blank" rel="noopener noreferrer" style={{ borderBottom: "1px solid var(--accent)" }}>mesaj gönder ↗</a>
+          Instagram: <a href={INSTAGRAM_URL} target="_blank" rel="noopener noreferrer" style={{ borderBottom: "1px solid var(--accent)" }}>mesaj gönder</a>
         </p>
         <p style={{ ...govde, marginTop: "1rem", color: "var(--muted)" }}>Gelen her mesajı kendim okuyor ve yanıtlıyorum.</p>
       </section>

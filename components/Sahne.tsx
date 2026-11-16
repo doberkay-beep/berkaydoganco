@@ -39,17 +39,16 @@ function Liste({ baslik, no, liste, gecmis }: { baslik: string; no: string; list
                 </span>
                 {!gecmis && (
                   <span className={s.sahneIslem}>
-                    <button type="button" onClick={() => indirIcs(e)}>Takvime ekle ↓</button>
+                    <button type="button" onClick={() => indirIcs(e)}>Takvime ekle</button>
                     {e.link && (
                       <a href={e.link} target="_blank" rel="noopener noreferrer">
-                        {e.link.replace(/^https?:\/\//, "").split("/")[0]} ↗
+                        {e.link.replace(/^https?:\/\//, "").split("/")[0]}
                       </a>
                     )}
                   </span>
                 )}
               </span>
               <span className={s.satirTur}>{e.tur ? TUR_ADI[e.tur] : ""}</span>
-              <span className={s.satirOk} aria-hidden />
             </div>
           </li>
         ))}

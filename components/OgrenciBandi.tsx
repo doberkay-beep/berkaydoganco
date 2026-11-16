@@ -24,10 +24,10 @@ export function OgrenciBandi() {
         <span style={{ ...etiket, color: "var(--accent-2)" }}>Öğrenciler ve öğretmenler için</span>
         <h2 className="cg-serif og-baslik">Ödevin için röportaj, okuluna ücretsiz söyleşi.</h2>
         <div className="og-linkler">
-          <a href="/ogrenciler#roportaj" className="og-link">Röportaj iste →</a>
-          <a href="/ogrenciler#soylesi" className="og-link">Söyleşiye davet et →</a>
-          <a href="/ogrenciler#tartisma" className="og-link">Derste tartış →</a>
-          <a href="/ogrenciler#cagri" className="og-link">Yazma çağrısı →</a>
+          <a href="/ogrenciler#roportaj" className="og-link">Röportaj iste</a>
+          <a href="/ogrenciler#soylesi" className="og-link">Söyleşiye davet et</a>
+          <a href="/ogrenciler#tartisma" className="og-link">Derste tartış</a>
+          <a href="/ogrenciler#cagri" className="og-link">Yazma çağrısı</a>
         </div>
       </div>
       {c && (

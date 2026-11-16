@@ -103,14 +103,14 @@ export default function Page() {
           </h1>
 
           <div className={s.acilisAlt}>
-            <a href="#gorsel" className={s.ok} aria-label="Görsel alanına in">↘</a>
+            <a href="#gorsel" className={s.ok} aria-label="Görsel alanına in"><span className={s.akis} aria-hidden /></a>
             <p className={s.giris}>
               <span className={s.yildiz} aria-hidden>∗∗∗</span>
               İstanbul&apos;da yaşayan şair ve yazar. {t.hero.sub}
             </p>
             <nav className={s.davet} aria-label="Başlangıç">
-              <Link href="/kitaplar/">Kitapları keşfet <span aria-hidden>↗</span></Link>
-              <Link href="/yazilar/buraya-gurultuden-kacanlar-icin/">Bir metin oku <span aria-hidden>↗</span></Link>
+              <Link href="/kitaplar/">Kitapları keşfet</Link>
+              <Link href="/yazilar/buraya-gurultuden-kacanlar-icin/">Bir metin oku</Link>
             </nav>
           </div>
         </header>
@@ -140,7 +140,6 @@ export default function Page() {
             <div className={s.bolumBas}>
               <span className={s.etiket}>[02] Kitaplar</span>
               <h2 id="kitaplar-baslik">İkisi arasında, şiirden denemeye uzanan bir hesaplaşma vardır.</h2>
-              <span className={s.okSag} aria-hidden>↙</span>
             </div>
             <div className={s.kitaplar}>
               {kitaplar.map(({ k, satin, alinti, yil }, i) => (
@@ -155,7 +154,7 @@ export default function Page() {
                     />
                   </Link>
                   <div className={s.meta}>
-                    <span>[{no(i + 1)}] {k.ad} <span aria-hidden>↗</span></span>
+                    <span>[{no(i + 1)}] {k.ad}</span>
                     <span>{k.tur} / {yil}</span>
                   </div>
                   <h3 className={s.kitapAd}>{k.ad}<span>{k.altBaslik}</span></h3>
@@ -169,8 +168,8 @@ export default function Page() {
                     ))}
                   </dl>
                   <p className={s.kitapLink}>
-                    <Link href={`/kitaplar/${k.slug}/`}>Kitap sayfası →</Link>
-                    <a href={satin} {...dis}>Satın al ↗</a>
+                    <Link href={`/kitaplar/${k.slug}/`}>Kitap sayfası</Link>
+                    <a href={satin} {...dis}>Satın al</a>
                   </p>
                 </article>
               ))}
@@ -186,7 +185,7 @@ export default function Page() {
             <div className={s.bioKucuk}>
               <p>{t.about.paras[2]}</p>
               <p>{t.about.paras[4]}</p>
-              <p><Link href="/hakkimda/">Hakkımda: yolculuk ve okur yorumları →</Link></p>
+              <p><Link href="/hakkimda/">Hakkımda: yolculuk ve okur yorumları</Link></p>
             </div>
           </div>
           <figure className={`${s.foto} ${s.fotoPortre}`}>
@@ -206,7 +205,7 @@ export default function Page() {
               <div key={g.baslik} className={s.dizinGrup}>
                 <h3 className={s.dizinGrupAd}>
                   <span>{no(gi + 1)}</span> {g.baslik}
-                  {g.tum && <Link href={g.tum.href}>{g.tum.ad} →</Link>}
+                  {g.tum && <Link href={g.tum.href}>{g.tum.ad}</Link>}
                 </h3>
                 <ul>
                   {g.satirlar.map((r) => {
@@ -220,8 +219,7 @@ export default function Page() {
                             {r.alt && <span>{r.alt}</span>}
                           </span>
                           <span className={s.satirTur}>{r.tur}</span>
-                          <span className={s.satirOk} aria-hidden>{disari ? "↗" : "→"}</span>
-                          {disari && <span className="sr-only"> (yeni sekmede açılır)</span>}
+                                                    {disari && <span className="sr-only"> (yeni sekmede açılır)</span>}
                         </a>
                       </li>
                     );
@@ -237,14 +235,14 @@ export default function Page() {
           <div className={s.ic}>
             <div className={s.sonUst}>
               <span className={s.etiket}>[05] İletişim</span>
-              <a href="#top" className={s.etiket}>Başa dön ↑</a>
+              <a href="#top" className={s.etiket}>Başa dön</a>
             </div>
             <a className={s.posta} href={`mailto:${EMAIL}`}>{EMAIL}</a>
             <p className={s.sosyal}>
-              <a href={YOUTUBE_URL} {...dis}>YouTube ↗</a>
-              <a href={INSTAGRAM_URL} {...dis}>Instagram ↗</a>
-              <a href={SUBSTACK_URL} {...dis}>Substack ↗</a>
-              <a href="/en/" lang="en">In English →</a>
+              <a href={YOUTUBE_URL} {...dis}>YouTube</a>
+              <a href={INSTAGRAM_URL} {...dis}>Instagram</a>
+              <a href={SUBSTACK_URL} {...dis}>Substack</a>
+              <a href="/en/" lang="en">In English</a>
             </p>
             <nav className={s.siteDizin} aria-label="Site dizini">
               {menuGruplari("tr").map((g, gi) => (

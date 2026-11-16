@@ -39,7 +39,7 @@ export function VideoArsivi({ videolar }: { videolar: Video[] }) {
                 </Reveal>
                 <Reveal delay={0.14} style={{ marginTop: "1.75rem" }}>
                   <a href={KANAL_URL} target="_blank" rel="noopener noreferrer" className="cg-btn cg-btn-fill">
-                    {L("Kanala abone ol", "Subscribe on YouTube")} →
+                    {L("Kanala abone ol", "Subscribe on YouTube")}
                   </a>
                 </Reveal>
 

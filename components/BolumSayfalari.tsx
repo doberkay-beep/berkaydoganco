@@ -50,7 +50,7 @@ export function HakkimdaSayfa() {
                       <>
                         <span style={{ fontFamily: "var(--font-grotesk)", fontWeight: 700, color: "var(--accent-2)", fontSize: "0.72rem", letterSpacing: "0.08em", textTransform: "uppercase", minWidth: "8.5ch" }}>{w.year}</span>
                         <span style={{ flex: 1 }}>
-                          <span style={{ display: "block", fontFamily: "var(--font-serif)", fontSize: "1.15rem", lineHeight: 1.25 }}>{w.title}{w.href && <span style={{ color: "var(--accent-2)", fontSize: "0.85rem" }}> {dis ? "↗" : "→"}</span>}</span>
+                          <span style={{ display: "block", fontFamily: "var(--font-serif)", fontSize: "1.15rem", lineHeight: 1.25 }}>{w.title}</span>
                           <span style={{ fontSize: "0.68rem", letterSpacing: "0.14em", textTransform: "uppercase", color: "var(--muted)" }}>{w.kind}</span>
                         </span>
                       </>
@@ -159,7 +159,7 @@ export function DinleBolumu({ lang, t }: { lang: Lang; t: Copy }) {
                         <p style={{ fontSize: "0.9rem", color: "var(--muted)" }}>{e.baslik}</p>
                         {e.link && (
                           <a href={e.link} target="_blank" rel="noopener noreferrer" className="cg-link" style={{ fontSize: "0.8rem", color: "var(--accent-2, var(--accent))" }}>
-                            {lang === "tr" ? "izle" : "watch"} ↗
+                            {lang === "tr" ? "izle" : "watch"}
                           </a>
                         )}
                       </div>
@@ -191,7 +191,7 @@ export function DinleBolumu({ lang, t }: { lang: Lang; t: Copy }) {
                   {lang === "tr"
                     ? "Nazım Hikmet'ten Can Yücel'e, Ahmed Arif'ten Ataol Behramoğlu'na 200'den fazla sesli şiir okuması. Hazırlayan: "
                     : "More than 200 spoken readings, from Nazım Hikmet to Can Yücel, Ahmed Arif and Ataol Behramoğlu. Curated by "}
-                  <a href="https://www.siirrafim.art/p/siir-rafim-radyosu.html" target="_blank" rel="noopener noreferrer" className="cg-link" style={{ color: "var(--accent-2)" }}>Şiir Rafım ↗</a>
+                  <a href="https://www.siirrafim.art/p/siir-rafim-radyosu.html" target="_blank" rel="noopener noreferrer" className="cg-link" style={{ color: "var(--accent-2)" }}>Şiir Rafım</a>
                 </p>
                 <div className="cg-embed" style={{ aspectRatio: "16 / 9" }}>
                   <iframe title="Şiir Rafım Radyosu" src="https://www.youtube-nocookie.com/embed/videoseries?list=PLbW6sTxKenw8Ok_ErKcKTP-leBAbBTAIS&rel=0" width="100%" height="100%" frameBorder="0" allow="encrypted-media; picture-in-picture" allowFullScreen loading="lazy" style={{ display: "block" }} />
@@ -208,7 +208,7 @@ export function DinleBolumu({ lang, t }: { lang: Lang; t: Copy }) {
                       <a key={pl.path} href={`https://music.apple.com${pl.path}`} target="_blank" rel="noopener noreferrer" className="cg-playlist">
                         <span className="cg-playlist-icon" aria-hidden="true">♪</span>
                         <span className="cg-playlist-name">{pl.name}</span>
-                        <span className="cg-playlist-meta">Apple Music →</span>
+                        <span className="cg-playlist-meta">Apple Music</span>
                       </a>
                     ))}
                   </div>

@@ -60,11 +60,22 @@
 .ad span { display: block; }
 .adIkinci { padding-left: calc(var(--s) * 1); margin-top: 0.02em; }
 .acilisAlt { align-items: end; }
+/* Aşağı in: ok yerine ince, yavaş akan bir çizgi */
 .ok {
   grid-column: 1;
-  font-size: clamp(48px, 5.5vw, 84px); line-height: 0.8; font-weight: 200; letter-spacing: -0.08em;
-  width: fit-content;
+  display: block; width: 24px; height: clamp(56px, 6vw, 88px); position: relative;
 }
+.akis {
+  position: absolute; left: 50%; top: 0; bottom: 0; width: 1px; transform: translateX(-50%);
+  background: color-mix(in srgb, currentColor 22%, transparent); overflow: hidden;
+}
+.akis::after {
+  content: ""; position: absolute; left: 0; width: 1px; height: 40%; top: -40%;
+  background: currentColor; animation: akis 2.4s cubic-bezier(0.65, 0, 0.35, 1) infinite;
+}
+.ok:hover .akis::after { animation-duration: 1.2s; }
+@keyframes akis { 0% { top: -40%; } 100% { top: 100%; } }
+@media (prefers-reduced-motion: reduce) { .akis::after { animation: none; top: 30%; } }
 .giris { grid-column: 3 / 5; max-width: 36ch; font-size: 15px; line-height: 1.5; letter-spacing: -0.02em; }
 .yildiz { display: block; font-size: 18px; letter-spacing: 4px; margin-bottom: 14px; }
 .davet { grid-column: 6; display: flex; flex-direction: column; align-items: flex-end; text-align: right; font-size: 11px; text-transform: uppercase; letter-spacing: 0.02em; gap: 4px; }
@@ -163,15 +174,20 @@
 .dizinGrupAd > span { color: var(--soluk); }
 .dizinGrupAd a { margin-left: auto; color: var(--soluk); }
 .satir {
-  display: grid; grid-template-columns: 11ch minmax(0, 1fr) 15ch 1.5ch; gap: 16px; align-items: baseline;
+  display: grid; grid-template-columns: 11ch minmax(0, 1fr) 15ch; gap: 16px; align-items: baseline;
   padding: 18px 0; border-bottom: 1px solid var(--line);
 }
 .satir:hover { text-decoration: none !important; }
-.satir:hover .satirAd { text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 0.2em; }
+/* Ok yerine: başlığın altında soldan sağa açılan ince çizgi + satır hafifçe içeri kayar */
+.satirAd {
+  text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 0.2em;
+  text-decoration-color: transparent;
+  transition: text-decoration-color 0.35s ease, transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.satir:hover .satirAd { text-decoration-color: currentColor; transform: translateX(6px); }
 .satirTarih, .satirTur { font-size: 11px; letter-spacing: 0.02em; text-transform: uppercase; color: var(--soluk); }
 .satirAd { font-size: clamp(19px, 1.7vw, 26px); line-height: 1.15; letter-spacing: -0.045em; }
 .satirAd span { display: block; margin-top: 5px; font-size: 14px; line-height: 1.45; letter-spacing: -0.01em; color: var(--soluk); }
-.satirOk { text-align: right; }
 
 /* Sahne sayfası */
 .sahneUst { padding-top: clamp(96px, 14vh, 150px) !important; border-top: 0 !important; }
@@ -238,11 +254,10 @@
   .fotoPortre { grid-column: 2 / 4; margin: 44px var(--ic) 0; }
   .dizinBas { grid-column: 1 / 4; position: static; }
   .dizinGovde { grid-column: 1 / 4; margin-top: 40px; }
-  .satir { grid-template-columns: minmax(0, 1fr) 1.5ch; gap: 6px 12px; padding: 16px 0; }
+  .satir { grid-template-columns: minmax(0, 1fr); gap: 6px 12px; padding: 16px 0; }
   .satirTarih { grid-column: 1; grid-row: 1; }
   .satirAd { grid-column: 1; grid-row: 2; }
   .satirTur { grid-column: 1; grid-row: 3; }
-  .satirOk { grid-column: 2; grid-row: 2; }
   .siteDizin { grid-template-columns: 1fr 1fr; }
   .siteDizin > div:first-child { grid-column: 1 / 3; }
 }
