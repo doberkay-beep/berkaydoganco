@@ -150,14 +150,22 @@ export function PersonSchema() {
         mainEntityOfPage: `${SITE}/hakkimda/`,
         subjectOf: [
           ...basinYazilari(),
-          ...EKRAN.filter((e) => e.link).map((e) => ({
-            "@type": "VideoObject",
-            name: e.baslik,
-            url: e.link,
-            uploadDate: e.tarihISO,
-            publisher: { "@type": "Organization", name: e.kanal },
-            about: { "@id": PERSON_ID },
-          })),
+          ...EKRAN.filter((e) => e.link).map((e) => {
+            const yt = e.link!.match(/(?:youtu\.be\/|[?&]v=)([\w-]{11})/)?.[1];
+            return {
+              "@type": "VideoObject",
+              name: e.baslik,
+              description: `${e.kanal} — ${e.baslik}`,
+              url: e.link,
+              ...(yt && {
+                thumbnailUrl: `https://i.ytimg.com/vi/${yt}/hqdefault.jpg`,
+                embedUrl: `https://www.youtube.com/embed/${yt}`,
+              }),
+              uploadDate: `${e.tarihISO}T00:00:00+03:00`,
+              publisher: { "@type": "Organization", name: e.kanal },
+              about: { "@id": PERSON_ID },
+            };
+          }),
         ],
       }}
     />
