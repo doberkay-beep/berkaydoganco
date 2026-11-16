@@ -41,6 +41,14 @@ export const BASIN_TUR: Record<BasinTur, { tr: string; en: string }> = {
 
 export const BASIN: Basin[] = [
   {
+    tarihISO: "2026-11-15",
+    yayin: "Şiir Rafım",
+    tur: "siir",
+    baslik: { tr: "“Yalnızlık Masası” — Okur Şiirleri (yorum yazısıyla)", en: "“Yalnızlık Masası” — Readers’ Poems (with commentary)" },
+    alinti: "Ben bu masayı kurduğumda siz yoktunuz efendim",
+    url: "https://www.siirrafim.art/2026/11/yalnizlik-masasi-berkay-dogan-okur.html",
+  },
+  {
     tarihISO: "2026-11-12",
     yayin: "Teknoblog",
     tur: "haber",
