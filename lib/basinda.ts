@@ -41,6 +41,14 @@ export const BASIN_TUR: Record<BasinTur, { tr: string; en: string }> = {
 
 export const BASIN: Basin[] = [
   {
+    tarihISO: "2026-11-16",
+    yayin: "Varyasyon Kalemler Dergisi",
+    tur: "roportaj",
+    baslik: { tr: "Röportaj: Berkay Doğan (20 soru)", en: "Interview: Berkay Doğan (20 questions)" },
+    alinti: "İlham benim için gökten inen bir şey değil, bakmayı bilmekle ilgili.",
+    url: "https://varyasyonkalemler.com/roportaj-berkay-dogan/",
+  },
+  {
     tarihISO: "2026-11-15",
     yayin: "Şiir Rafım",
     tur: "siir",
