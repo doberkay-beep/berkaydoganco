@@ -34,7 +34,7 @@ const NASIL = [
   { b: "hereby.'yi indir", a: "iPhone'da, ücretsiz." },
   { b: "Durağa git", a: "Her cümle haritada kilitli durur, yaklaşık 300 metre kala açılır. Uzaktan okumak yok." },
   { b: "Aç ve paylaş", a: "Cümleyi açtığın ekranı ve bulunduğun yeri paylaş: #SaitFaik120, @made.by.berkay." },
-  { b: "Altısını tamamla", a: "Altı durağın hepsini açıp paylaşanların adı, izin verirlerse, 18 Kasım'da bu sayfada anılır." },
+  { b: "Altısını tamamla", a: "Altı durağın hepsini açıp paylaşanların adı, izin verirlerse, bu sayfada anılır." },
 ];
 
 function Harita() {
@@ -73,12 +73,12 @@ export function SaitFaikSayfa() {
       `}</style>
 
       <section style={{ maxWidth: 760, margin: "0 auto", padding: `max(84px, 9vh) ${kenar} 1.6rem` }}>
-        <p style={{ ...etiket, color: KIZIL }}>hereby. · Sait Faik 120 · 15–18 Kasım 2026</p>
+        <p style={{ ...etiket, color: KIZIL }}>hereby. · Sait Faik 120 · 18 Kasım 2026</p>
         <h1 style={{ ...serif, fontSize: "clamp(2.6rem, 9vw, 4.6rem)", fontWeight: 700, lineHeight: 1, margin: "0.7rem 0 1.4rem", letterSpacing: "-0.01em" }}>
           Sait Faik&apos;in İstanbul&apos;u<span style={{ color: KIZIL }}>.</span>
         </h1>
         <p style={{ ...serif, fontSize: "clamp(1.15rem, 2.6vw, 1.4rem)", lineHeight: 1.55, opacity: 0.88, textWrap: "pretty" }}>
-          Sait Faik Abasıyanık 18 Kasım 1906&apos;da doğdu. 120. yaş gününe kadar öykülerinden altı cümle İstanbul&apos;da altı yerde seni bekliyor.
+          Sait Faik Abasıyanık 18 Kasım 1906&apos;da doğdu. 120. yaş gününde öykülerinden altı cümle İstanbul&apos;da altı yerde seni bekliyor. Doğum gününden sonra da yerlerinde kalıyorlar.
         </p>
         <p style={{ ...serif, fontSize: "clamp(1.15rem, 2.6vw, 1.4rem)", lineHeight: 1.55, opacity: 0.88, marginTop: "0.8rem", textWrap: "pretty" }}>
           Galata&apos;dan Alemdağı&apos;na, Süleymaniye&apos;den Burgaz&apos;a. Cümleler burada yazmıyor; okumak için oraya yürümen gerek.
