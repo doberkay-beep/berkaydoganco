@@ -2,7 +2,7 @@ import Link from "next/link";
 import { DESTEK_EMAIL, NOWBY_APP_STORE } from "@/lib/site";
 
 /* nowby. — by. atölyesinin ikinci işi. Türkiye'nin radyolarında şu an ne çalıyor?
-   Canlı radyo sitesi nowby.co'da; bu sayfa uygulamaları (iPhone, iPad, Mac, Apple TV, Apple Watch) tanıtır. */
+   Canlı radyo sitesi nowby.co'da; bu sayfa uygulamaları (iPhone, iPad, Mac, Apple TV, Apple Watch; Windows ve Android yolda) tanıtır. */
 
 const TURUNCU = "#c9241a";
 const appYazi: React.CSSProperties = { fontFamily: "ui-serif, 'New York', Georgia, serif", fontWeight: 700, lineHeight: 1 };
@@ -15,7 +15,8 @@ type Madde = { b: string; s: string };
 export type NowbyMetin = {
   dil: "tr" | "en";
   alt: string; giris: string; durum: string; dinle: string; indir: string;
-  cihazlarAlt: string; ekranEtiket: string; ekranBaslik: string; ekranlar: (Madde & { c: string })[];
+  cihazlarAlt: string; ekranEtiket: string; ekranBaslik: string; ekranlar: (Madde & { c: string; d?: string })[];
+  radyoEtiket: string; radyoBaslik: string; radyoMetin: string; radyoIzin: string; radyoRozet: string;
   icerikEtiket: string; icerik: Madde[];
   soruEtiket: string; sorular: string[];
   ilkeler: string; kapanis: string;
@@ -25,21 +26,29 @@ export type NowbyMetin = {
 
 export const NOWBY_TR: NowbyMetin = {
   dil: "tr",
-  alt: "Türkiye'nin radyolarında şu an ne çalıyor?",
-  giris: "Yüzlerce frekans tek ekranda, canlı. Gerçek sayıma dayanan listeler, dünyanın radyoları, kitaplardan dizelerle Frekans Falı.",
-  durum: "App Store'da: iPhone, iPad, Mac, Apple TV",
-  dinle: "Şimdi dinle: nowby.co",
+  alt: "Radyoda şu an ne çalıyor?",
+  giris: "Radyolarda tam bu dakika ne çaldığını gösterir, tek dokunuşla dinletir. Gerçek sayıma dayanan listeler, dünyanın radyoları, kitaplardan dizelerle Frekans Falı.",
+  durum: "App Store'da: iPhone, iPad, Mac, Apple TV, Apple Watch",
+  dinle: "Web'de dinle: nowby.co",
   indir: "App Store'dan indir",
   cihazlarAlt: "nowby. beş cihazda aynı anda: Apple TV, MacBook, iPad, iPhone ve Apple Watch. Hepsinde aynı radyo, aynı şarkı.",
   ekranEtiket: "Her ekranda",
   ekranBaslik: "Aynı frekans, her ekranda.",
   ekranlar: [
-    { c: "iPhone", b: "Cebinde, canlı.", s: "Yüzlerce radyo, şu an çalan şarkılarıyla." },
+    { c: "iPhone", b: "Cebinde, canlı.", s: "Radyolar, şu an çalan şarkılarıyla; widget, Sürüş modu, alarm." },
     { c: "iPad", b: "Kucağında, üç sütun.", s: "Kenar çubuğu, şarkı kartları ve büyük çalar aynı ekranda." },
     { c: "Mac", b: "Masanda, yan panelde.", s: "Kenar çubuğu, şarkı kartları, altta boydan boya çalar." },
     { c: "Apple TV", b: "Salonda, kocaman.", s: "Kanepeden okunan şarkı adları." },
     { c: "Apple Watch", b: "Bileğinde, tek dokunuş.", s: "Telefondaki çaların kumandası; şarkıyı oradan yakala." },
+    { c: "Web", b: "Tarayıcında, kurmadan.", s: "nowby.co'da aynı çalar; hiçbir şey indirmeden dinle." },
+    { c: "Windows", d: "Yakında", b: "Bilgisayarında, Store'dan.", s: "Microsoft Store'dan kurulan nowby." },
+    { c: "Android", d: "Testte", b: "Telefonunda, Play'den.", s: "Google Play'de kapalı testte; yakında herkese." },
   ],
+  radyoEtiket: "Radyolar için",
+  radyoBaslik: "Yalnız izin veren radyolar.",
+  radyoMetin: "nowby. yayınları kaydetmez ve aktarmaz; dinleyiciyi radyonun kendi resmî yayınına götürür. Uygulamalarda yalnız yazılı izin veren radyolar yer alır; izin veren radyo aynı gün eklenir, istemeyen aynı gün çıkar.",
+  radyoIzin: "Radyonuz için yazın",
+  radyoRozet: "Rozet ve şu an çalan kutusu",
   icerikEtiket: "İçinde neler var",
   icerik: [
     { b: "Şarkı adı, sesle aynı anda.", s: "Dinlediğin radyoda şarkının adı yayının kendisinden okunur; kulağına gelenle ekrandaki hep aynı." },
@@ -59,21 +68,29 @@ export const NOWBY_TR: NowbyMetin = {
 
 export const NOWBY_EN: NowbyMetin = {
   dil: "en",
-  alt: "What is playing on Türkiye's radio right now?",
-  giris: "Hundreds of frequencies on one screen, live. Charts built on real airplay counts, the world's radio, and a Frequency Fortune with lines from the books.",
-  durum: "On the App Store: iPhone, iPad, Mac, Apple TV",
-  dinle: "Listen now: nowby.co",
+  alt: "What is playing on the radio right now?",
+  giris: "It shows what stations are playing this very minute and lets you listen with one tap. Charts built on real airplay counts, the world's radio, and a Frequency Fortune with lines from the books.",
+  durum: "On the App Store: iPhone, iPad, Mac, Apple TV, Apple Watch",
+  dinle: "Listen on the web: nowby.co",
   indir: "Download on the App Store",
   cihazlarAlt: "nowby. on five devices at once: Apple TV, MacBook, iPad, iPhone and Apple Watch. The same station, the same song on all of them.",
   ekranEtiket: "On every screen",
   ekranBaslik: "The same frequency, on every screen.",
   ekranlar: [
-    { c: "iPhone", b: "In your pocket, live.", s: "Hundreds of stations with the song playing right now." },
+    { c: "iPhone", b: "In your pocket, live.", s: "Stations with the song playing right now; widget, driving mode, alarm." },
     { c: "iPad", b: "On your lap, three columns.", s: "Sidebar, song cards and the big player on one screen." },
     { c: "Mac", b: "On your desk, in a side panel.", s: "A sidebar, song cards and a full-width player along the bottom." },
     { c: "Apple TV", b: "In the living room, huge.", s: "Song titles you can read from the couch." },
     { c: "Apple Watch", b: "On your wrist, one tap.", s: "A remote for the player on your phone; catch the song from there." },
+    { c: "Web", b: "In your browser, nothing to install.", s: "The same player on nowby.co; listen without downloading anything." },
+    { c: "Windows", d: "Coming soon", b: "On your PC, from the Store.", s: "nowby. installed from the Microsoft Store." },
+    { c: "Android", d: "In testing", b: "On your phone, from Play.", s: "In closed testing on Google Play; open to everyone soon." },
   ],
+  radyoEtiket: "For stations",
+  radyoBaslik: "Only stations that said yes.",
+  radyoMetin: "nowby. does not record or relay broadcasts; it sends listeners to the station's own official stream. Only stations that have given written permission appear in the apps; a station that says yes is added the same day, and one that would rather not be listed is removed the same day.",
+  radyoIzin: "Write to us about your station",
+  radyoRozet: "Badge and now-playing box",
   icerikEtiket: "What's inside",
   icerik: [
     { b: "The title, in sync with the sound.", s: "On the station you're listening to, the song title is read from the broadcast itself, so what you hear and what you see always match." },
@@ -105,7 +122,7 @@ export function NowbySayfa({ m }: { m: NowbyMetin }) {
       <style>{`
         .nb-ekranlar{display:grid;gap:1rem;grid-template-columns:minmax(0,1fr)}
         @media (min-width:700px){.nb-ekranlar{grid-template-columns:repeat(2,minmax(0,1fr))}}
-        @media (min-width:1000px){.nb-ekranlar{grid-template-columns:repeat(5,minmax(0,1fr))}}
+        @media (min-width:1000px){.nb-ekranlar{grid-template-columns:repeat(4,minmax(0,1fr))}}
         .nb-icerik{display:grid;gap:1rem;grid-template-columns:minmax(0,1fr)}
         @media (min-width:760px){.nb-icerik{grid-template-columns:repeat(2,minmax(0,1fr))}}
         @media (min-width:1000px){.nb-icerik{grid-template-columns:repeat(3,minmax(0,1fr))}}
@@ -138,7 +155,10 @@ export function NowbySayfa({ m }: { m: NowbyMetin }) {
         <div className="nb-ekranlar" style={{ marginTop: "2.2rem" }}>
           {m.ekranlar.map((e) => (
             <div key={e.c} style={{ ...kart, padding: "1.3rem 1.2rem" }}>
-              <p style={{ ...mono, color: TURUNCU, textTransform: "none", letterSpacing: "0.04em", fontSize: "0.85rem" }}>{e.c}</p>
+              <p style={{ ...mono, color: TURUNCU, textTransform: "none", letterSpacing: "0.04em", fontSize: "0.85rem", display: "flex", justifyContent: "space-between", gap: "0.5rem" }}>
+                <span>{e.c}</span>
+                {e.d && <span style={{ opacity: 0.6, color: "var(--ink)" }}>{e.d}</span>}
+              </p>
               <h3 style={{ ...serif, fontSize: "1.25rem", fontWeight: 600, marginTop: "0.6rem", lineHeight: 1.25 }}>{e.b}</h3>
               <p style={{ marginTop: "0.5rem", lineHeight: 1.55, opacity: 0.78, fontSize: "0.95rem" }}>{e.s}</p>
             </div>
@@ -158,6 +178,17 @@ export function NowbySayfa({ m }: { m: NowbyMetin }) {
             </div>
           ))}
         </div>
+      </section>
+
+      {/* RADYOLAR İÇİN — 19 Kas 2026: uygulamalar yalnız yazılı izinli radyoları gösterir */}
+      <section style={{ ...bolum, maxWidth: "900px" }}>
+        <p style={{ ...mono, opacity: 0.6 }}>{m.radyoEtiket}</p>
+        <h2 style={{ ...serif, fontWeight: 400, fontSize: "clamp(1.8rem, 4.6vw, 2.8rem)", lineHeight: 1.15, marginTop: "0.8rem" }}>{m.radyoBaslik}</h2>
+        <p style={{ marginTop: "1rem", lineHeight: 1.65, opacity: 0.85, maxWidth: "680px" }}>{m.radyoMetin}</p>
+        <p style={{ marginTop: "1.4rem", display: "flex", gap: "1.4rem", flexWrap: "wrap" }}>
+          <a href={`mailto:${DESTEK_EMAIL}?subject=nowby.`} style={{ ...mono, color: TURUNCU, textDecoration: "none" }}>{m.radyoIzin} →</a>
+          <a href="https://nowby.co/rozet" style={{ ...mono, color: TURUNCU, textDecoration: "none" }}>{m.radyoRozet} →</a>
+        </p>
       </section>
 
       {/* DÖRT SORU */}
