@@ -14,7 +14,7 @@ const kart: React.CSSProperties = { background: "var(--glass-bg)", border: "1px 
 type Madde = { b: string; s: string };
 export type NowbyMetin = {
   dil: "tr" | "en";
-  alt: string; giris: string; durum: string; dinle: string; indir: string;
+  alt: string; giris: string; durum: string; yakinda: string; dinle: string; indir: string;
   cihazlarAlt: string; ekranEtiket: string; ekranBaslik: string; ekranlar: (Madde & { c: string; d?: string })[];
   radyoEtiket: string; radyoBaslik: string; radyoMetin: string; radyoIzin: string; radyoRozet: string;
   icerikEtiket: string; icerik: Madde[];
@@ -29,6 +29,7 @@ export const NOWBY_TR: NowbyMetin = {
   alt: "Radyoda şu an ne çalıyor?",
   giris: "Radyolarda tam bu dakika ne çaldığını gösterir, tek dokunuşla dinletir. Gerçek sayıma dayanan listeler, dünyanın radyoları, kitaplardan dizelerle Frekans Falı.",
   durum: "App Store'da: iPhone, iPad, Mac, Apple TV, Apple Watch",
+  yakinda: "Yakında Windows ve Android'de de",
   dinle: "Web'de dinle: nowby.co",
   indir: "App Store'dan indir",
   cihazlarAlt: "nowby. beş cihazda aynı anda: Apple TV, MacBook, iPad, iPhone ve Apple Watch. Hepsinde aynı radyo, aynı şarkı.",
@@ -71,6 +72,7 @@ export const NOWBY_EN: NowbyMetin = {
   alt: "What is playing on the radio right now?",
   giris: "It shows what stations are playing this very minute and lets you listen with one tap. Charts built on real airplay counts, the world's radio, and a Frequency Fortune with lines from the books.",
   durum: "On the App Store: iPhone, iPad, Mac, Apple TV, Apple Watch",
+  yakinda: "Coming soon to Windows and Android",
   dinle: "Listen on the web: nowby.co",
   indir: "Download on the App Store",
   cihazlarAlt: "nowby. on five devices at once: Apple TV, MacBook, iPad, iPhone and Apple Watch. The same station, the same song on all of them.",
@@ -136,6 +138,7 @@ export function NowbySayfa({ m }: { m: NowbyMetin }) {
         <h1 style={{ ...serif, fontStyle: "italic", fontWeight: 400, fontSize: "clamp(1.6rem, 4.4vw, 2.7rem)", lineHeight: 1.2, marginTop: "1rem" }}>{m.alt}</h1>
         <p style={{ ...serif, fontSize: "clamp(1.1rem, 2.4vw, 1.4rem)", lineHeight: 1.55, margin: "1.3rem auto 0", maxWidth: "640px", opacity: 0.85 }}>{m.giris}</p>
         <p style={{ ...mono, color: TURUNCU, marginTop: "1.6rem" }}>{m.durum}</p>
+        <p style={{ ...mono, opacity: 0.6, marginTop: "0.6rem" }}>{m.yakinda}</p>
         <p style={{ marginTop: "1.4rem", display: "flex", gap: "0.7rem", justifyContent: "center", flexWrap: "wrap" }}>
           <a href={NOWBY_APP_STORE} style={{ display: "inline-block", padding: "0.8rem 1.4rem", borderRadius: "999px", background: TURUNCU, color: "#160806", fontWeight: 700, textDecoration: "none" }}>{m.indir}</a>
           <a href="https://nowby.co" style={{ display: "inline-block", padding: "0.8rem 1.4rem", borderRadius: "999px", border: `1px solid ${TURUNCU}`, color: TURUNCU, fontWeight: 700, textDecoration: "none" }}>{m.dinle}</a>
