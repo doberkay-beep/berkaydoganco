@@ -17,6 +17,7 @@ export type NowbyMetin = {
   alt: string; giris: string; durum: string; yakinda: string; dinle: string; indir: string;
   cihazlarAlt: string; ekranEtiket: string; ekranBaslik: string; ekranlar: (Madde & { c: string; d?: string })[];
   radyoEtiket: string; radyoBaslik: string; radyoMetin: string; radyoIzin: string; radyoRozet: string;
+  arabaEtiket: string; arabaBaslik: string; arabaMetin: string; arabaAlt1: string; arabaAlt2: string; arabaNot: string;
   icerikEtiket: string; icerik: Madde[];
   soruEtiket: string; sorular: string[];
   ilkeler: string; kapanis: string;
@@ -44,7 +45,14 @@ export const NOWBY_TR: NowbyMetin = {
     { c: "Web", b: "Tarayıcında, kurmadan.", s: "nowby.co'da aynı çalar; hiçbir şey indirmeden dinle." },
     { c: "Windows", d: "Yakında", b: "Bilgisayarında, Store'dan.", s: "Microsoft Store'dan kurulan nowby." },
     { c: "Android", d: "Testte", b: "Telefonunda, Play'den.", s: "Google Play'de kapalı testte; yakında herkese." },
+    { c: "CarPlay", d: "Yakında", b: "Arabada, gözün yolda.", s: "Şimdi çalanlar ve favorilerin araba ekranında; dokun, dinle." },
   ],
+  arabaEtiket: "Arabada",
+  arabaBaslik: "Yol boyunca, aynı frekans.",
+  arabaMetin: "nowby. CarPlay'e geliyor. Araba ekranında iki sekme var: radyolarda şu an çalanlar ve favorilerin. Bir radyoya dokunursun, çalar; gerisi direksiyondaki tuşlarda. Yazı yok, kaydırma yok, göz yolda kalır.",
+  arabaAlt1: "nowby. CarPlay'de: radyolarda şu an çalanlar",
+  arabaAlt2: "nowby. CarPlay'de: favori radyolar ve çalan şarkılar",
+  arabaNot: "Apple incelemesinde; onaylanınca iPhone güncellemesiyle gelir.",
   radyoEtiket: "Radyolar için",
   radyoBaslik: "Yalnız izin veren radyolar.",
   radyoMetin: "nowby. yayınları kaydetmez ve aktarmaz; dinleyiciyi radyonun kendi resmî yayınına götürür. Uygulamalarda yalnız yazılı izin veren radyolar yer alır; izin veren radyo aynı gün eklenir, istemeyen aynı gün çıkar.",
@@ -87,7 +95,14 @@ export const NOWBY_EN: NowbyMetin = {
     { c: "Web", b: "In your browser, nothing to install.", s: "The same player on nowby.co; listen without downloading anything." },
     { c: "Windows", d: "Coming soon", b: "On your PC, from the Store.", s: "nowby. installed from the Microsoft Store." },
     { c: "Android", d: "In testing", b: "On your phone, from Play.", s: "In closed testing on Google Play; open to everyone soon." },
+    { c: "CarPlay", d: "Coming soon", b: "In the car, eyes on the road.", s: "What's playing now and your favorites on the car screen; tap and listen." },
   ],
+  arabaEtiket: "In the car",
+  arabaBaslik: "The same frequency, all the way.",
+  arabaMetin: "nowby. is coming to CarPlay. The car screen has two tabs: what stations are playing right now, and your favorites. Tap a station and it plays; the rest is on the steering-wheel buttons. No typing, no scrolling, eyes stay on the road.",
+  arabaAlt1: "nowby. on CarPlay: what stations are playing now",
+  arabaAlt2: "nowby. on CarPlay: favorite stations and their songs",
+  arabaNot: "In Apple review; it arrives with the iPhone update once approved.",
   radyoEtiket: "For stations",
   radyoBaslik: "Only stations that said yes.",
   radyoMetin: "nowby. does not record or relay broadcasts; it sends listeners to the station's own official stream. Only stations that have given written permission appear in the apps; a station that says yes is added the same day, and one that would rather not be listed is removed the same day.",
@@ -124,7 +139,9 @@ export function NowbySayfa({ m }: { m: NowbyMetin }) {
       <style>{`
         .nb-ekranlar{display:grid;gap:1rem;grid-template-columns:minmax(0,1fr)}
         @media (min-width:700px){.nb-ekranlar{grid-template-columns:repeat(2,minmax(0,1fr))}}
-        @media (min-width:1000px){.nb-ekranlar{grid-template-columns:repeat(4,minmax(0,1fr))}}
+        @media (min-width:1000px){.nb-ekranlar{grid-template-columns:repeat(3,minmax(0,1fr))}}
+        .nb-araba{display:grid;gap:1rem;grid-template-columns:minmax(0,1fr)}
+        @media (min-width:860px){.nb-araba{grid-template-columns:repeat(2,minmax(0,1fr))}}
         .nb-icerik{display:grid;gap:1rem;grid-template-columns:minmax(0,1fr)}
         @media (min-width:760px){.nb-icerik{grid-template-columns:repeat(2,minmax(0,1fr))}}
         @media (min-width:1000px){.nb-icerik{grid-template-columns:repeat(3,minmax(0,1fr))}}
@@ -181,6 +198,20 @@ export function NowbySayfa({ m }: { m: NowbyMetin }) {
             </div>
           ))}
         </div>
+      </section>
+
+      {/* ARABADA — CarPlay (19 Kas 2026: Apple izni geldi, 1.0.3 incelemede) */}
+      <section style={bolum}>
+        <p style={{ ...mono, opacity: 0.6, textAlign: "center" }}>{m.arabaEtiket}</p>
+        <h2 style={{ ...serif, fontWeight: 400, fontSize: "clamp(2rem, 5.4vw, 3.4rem)", lineHeight: 1.1, marginTop: "0.8rem", textAlign: "center" }}>{m.arabaBaslik}</h2>
+        <p style={{ marginTop: "1rem", lineHeight: 1.65, opacity: 0.85, maxWidth: "640px", marginLeft: "auto", marginRight: "auto", textAlign: "center" }}>{m.arabaMetin}</p>
+        <div className="nb-araba" style={{ marginTop: "2rem" }}>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src="/nowby/carplay-simdi.jpg" alt={m.arabaAlt1} width={1400} height={845} loading="lazy" style={{ width: "100%", height: "auto", borderRadius: "18px", display: "block" }} />
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src="/nowby/carplay-favoriler.jpg" alt={m.arabaAlt2} width={1400} height={845} loading="lazy" style={{ width: "100%", height: "auto", borderRadius: "18px", display: "block" }} />
+        </div>
+        <p style={{ ...mono, opacity: 0.6, marginTop: "1.2rem", textAlign: "center" }}>{m.arabaNot}</p>
       </section>
 
       {/* RADYOLAR İÇİN — 19 Kas 2026: uygulamalar yalnız yazılı izinli radyoları gösterir */}
