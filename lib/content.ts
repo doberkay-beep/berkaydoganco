@@ -21,7 +21,7 @@ export const content = {
     },
     home: {
       kicker: "BERKAYDOGAN.CO — 2026",
-      heroSub: ["Yıkmak, kurmanın tek yoludur.", "161 sayfalık bir varoluş infazına", "hoş geldiniz."],
+      heroSub: ["Yıkmak, kurmanın tek yoludur.", "151 sayfalık bir varoluş infazına", "hoş geldiniz."],
       ctaBook: "KİTABI GÖR",
       ctaAuthor: "YAZAR",
       heroPanelTop: "DENEME KİTABI",
@@ -152,7 +152,7 @@ export const content = {
       meta: [
         { label: "YIL", value: "2026" },
         { label: "TÜR", value: "DENEME" },
-        { label: "SAYFA", value: "161" },
+        { label: "SAYFA", value: "151" },
         { label: "DURUM", value: "YAKINLAŞIYOR" },
       ],
       aboutKicker: "KİTAP HAKKINDA",
@@ -344,7 +344,7 @@ export const content = {
     },
     home: {
       kicker: "BERKAYDOGAN.CO — 2026",
-      heroSub: ["To destroy is the only way to build.", "Welcome to a 161-page", "execution of existence."],
+      heroSub: ["To destroy is the only way to build.", "Welcome to a 151-page", "execution of existence."],
       ctaBook: "VIEW THE BOOK",
       ctaAuthor: "AUTHOR",
       heroPanelTop: "ESSAY COLLECTION",
@@ -475,7 +475,7 @@ export const content = {
       meta: [
         { label: "YEAR", value: "2026" },
         { label: "GENRE", value: "ESSAY" },
-        { label: "PAGES", value: "161" },
+        { label: "PAGES", value: "151" },
         { label: "STATUS", value: "APPROACHING" },
       ],
       aboutKicker: "ABOUT THE BOOK",
