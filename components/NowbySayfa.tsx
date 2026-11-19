@@ -29,7 +29,7 @@ export const NOWBY_TR: NowbyMetin = {
   dil: "tr",
   alt: "Radyoda şu an ne çalıyor?",
   giris: "Radyolarda tam bu dakika ne çaldığını gösterir, tek dokunuşla dinletir. Gerçek sayıma dayanan listeler, dünyanın radyoları, kitaplardan dizelerle Frekans Falı.",
-  durum: "App Store'da: iPhone, iPad, Mac, Apple TV, Apple Watch",
+  durum: "App Store'da: iPhone, iPad, Mac, Apple TV, Apple Watch, CarPlay",
   yakinda: "Yakında Windows ve Android'de de",
   dinle: "Web'de dinle: nowby.co",
   indir: "App Store'dan indir",
@@ -45,11 +45,11 @@ export const NOWBY_TR: NowbyMetin = {
     { c: "Web", b: "Tarayıcında, kurmadan.", s: "nowby.co'da aynı çalar; hiçbir şey indirmeden dinle." },
     { c: "Windows", d: "Yakında", b: "Bilgisayarında, Store'dan.", s: "Microsoft Store'dan kurulan nowby." },
     { c: "Android", d: "Testte", b: "Telefonunda, Play'den.", s: "Google Play'de kapalı testte; yakında herkese." },
-    { c: "CarPlay", d: "Yakında", b: "Arabada, gözün yolda.", s: "Şimdi çalanlar ve favorilerin araba ekranında; dokun, dinle." },
+    { c: "CarPlay", b: "Arabada, gözün yolda.", s: "Şimdi çalanlar ve favorilerin araba ekranında; dokun, dinle." },
   ],
   arabaEtiket: "Arabada",
   arabaBaslik: "Yol boyunca, aynı frekans.",
-  arabaMetin: "nowby. CarPlay'e geliyor. Araba ekranında iki sekme var: radyolarda şu an çalanlar ve favorilerin. Bir radyoya dokunursun, çalar; gerisi direksiyondaki tuşlarda. Yazı yok, kaydırma yok, göz yolda kalır.",
+  arabaMetin: "nowby. artık CarPlay'de. Araba ekranında iki sekme var: radyolarda şu an çalanlar ve favorilerin. Bir radyoya dokunursun, çalar; gerisi direksiyondaki tuşlarda. Yazı yok, kaydırma yok, göz yolda kalır.",
   arabaAlt1: "nowby. CarPlay'de: radyolarda şu an çalanlar",
   arabaAlt2: "nowby. CarPlay'de: favori radyolar ve çalan şarkılar",
   arabaNot: "Apple incelemesinde; onaylanınca iPhone güncellemesiyle gelir.",
@@ -79,7 +79,7 @@ export const NOWBY_EN: NowbyMetin = {
   dil: "en",
   alt: "What is playing on the radio right now?",
   giris: "It shows what stations are playing this very minute and lets you listen with one tap. Charts built on real airplay counts, the world's radio, and a Frequency Fortune with lines from the books.",
-  durum: "On the App Store: iPhone, iPad, Mac, Apple TV, Apple Watch",
+  durum: "On the App Store: iPhone, iPad, Mac, Apple TV, Apple Watch, CarPlay",
   yakinda: "Coming soon to Windows and Android",
   dinle: "Listen on the web: nowby.co",
   indir: "Download on the App Store",
@@ -95,11 +95,11 @@ export const NOWBY_EN: NowbyMetin = {
     { c: "Web", b: "In your browser, nothing to install.", s: "The same player on nowby.co; listen without downloading anything." },
     { c: "Windows", d: "Coming soon", b: "On your PC, from the Store.", s: "nowby. installed from the Microsoft Store." },
     { c: "Android", d: "In testing", b: "On your phone, from Play.", s: "In closed testing on Google Play; open to everyone soon." },
-    { c: "CarPlay", d: "Coming soon", b: "In the car, eyes on the road.", s: "What's playing now and your favorites on the car screen; tap and listen." },
+    { c: "CarPlay", b: "In the car, eyes on the road.", s: "What's playing now and your favorites on the car screen; tap and listen." },
   ],
   arabaEtiket: "In the car",
   arabaBaslik: "The same frequency, all the way.",
-  arabaMetin: "nowby. is coming to CarPlay. The car screen has two tabs: what stations are playing right now, and your favorites. Tap a station and it plays; the rest is on the steering-wheel buttons. No typing, no scrolling, eyes stay on the road.",
+  arabaMetin: "nowby. is now on CarPlay. The car screen has two tabs: what stations are playing right now, and your favorites. Tap a station and it plays; the rest is on the steering-wheel buttons. No typing, no scrolling, eyes stay on the road.",
   arabaAlt1: "nowby. on CarPlay: what stations are playing now",
   arabaAlt2: "nowby. on CarPlay: favorite stations and their songs",
   arabaNot: "In Apple review; it arrives with the iPhone update once approved.",
@@ -200,7 +200,7 @@ export function NowbySayfa({ m }: { m: NowbyMetin }) {
         </div>
       </section>
 
-      {/* ARABADA — CarPlay (19 Kas 2026: Apple izni geldi, 1.0.3 incelemede) */}
+      {/* ARABADA — CarPlay (19 Kas 2026: iOS 1.0.3 ile App Store'da) */}
       <section style={bolum}>
         <p style={{ ...mono, opacity: 0.6, textAlign: "center" }}>{m.arabaEtiket}</p>
         <h2 style={{ ...serif, fontWeight: 400, fontSize: "clamp(2rem, 5.4vw, 3.4rem)", lineHeight: 1.1, marginTop: "0.8rem", textAlign: "center" }}>{m.arabaBaslik}</h2>
