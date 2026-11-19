@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { NowbySayfa, NOWBY_TR } from "@/components/NowbySayfa";
 
 export const metadata: Metadata = {
+  itunes: { appId: "6825787056" },
   title: { absolute: "nowby. — Radyoda şu an ne çalıyor?" },
   description: "nowby.: radyolarda şu an çalan şarkılar, canlı. iPhone, iPad, Mac, Apple TV ve Apple Watch'ta aynı frekans. Berkay Doğan'ın by. atölyesinden.",
   alternates: { canonical: "/nowby", languages: { tr: "/nowby", en: "/en/nowby" } },

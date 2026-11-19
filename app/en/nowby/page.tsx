@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { NowbySayfa, NOWBY_EN } from "@/components/NowbySayfa";
 
 export const metadata: Metadata = {
+  itunes: { appId: "6825787056" },
   title: { absolute: "nowby. — What is playing on the radio right now?" },
   description: "nowby.: the songs playing on the radio right now, live. The same frequency on iPhone, iPad, Mac, Apple TV and Apple Watch. From Berkay Doğan's by. workshop.",
   alternates: { canonical: "/en/nowby", languages: { tr: "/nowby", en: "/en/nowby" } },
