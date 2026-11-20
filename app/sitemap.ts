@@ -47,7 +47,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "weekly" as const,
       priority: 0.7,
     },
-    { url: `${SITE}/en/writers/`, changeFrequency: "monthly" as const, priority: 0.5 },
+    { url: `${SITE}/en/hereby/writers/`, changeFrequency: "monthly" as const, priority: 0.5 },
     {
       url: `${SITE}/writtenby/`,
       changeFrequency: "monthly" as const,
