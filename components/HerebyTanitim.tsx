@@ -31,7 +31,7 @@ export const HEREBY_TR: Metin = {
   ust: "Berkay Doğan'ın bir projesi",
   baslik: ["Düşünceni", "bir yere", "bırak."],
   alt: "Aklından geçen satırı geçtiğin yere bırak. Onu yalnızca oraya gelen biri okuyabilir. Beğeni yok, takipçi yok; sadece yerler ve cümleler.",
-  imza: "iOS · App Store'da",
+  imza: "iPhone · Apple Watch · App Store'da",
   beta: "App Store'dan indir", betaKonu: "Hereby beta", yakinda: "Ücretsiz · Reklamsız · Üyelik yok", basin: "Webrazzi'de yer aldı",
   manifestoEtiket: "Manifesto",
   manifesto: ["İnsanlar düşünmeyi unuttu.", "Bazen düşünürken içinden geçirirsin ve o düşünceni ancak o yere yeniden gittiğinde hatırlarsın.", "Değerli olanı hatırlamak önemlidir.", "Hereby bir ayna olsun."],
@@ -50,6 +50,9 @@ export const HEREBY_TR: Metin = {
     { s: "soru", b: "Haftanın sorusu", m: "Her hafta tek bir soru. Cevabını bulunduğun yere bırakırsın." },
     { s: "imza", b: "Mahlas", m: "İstersen bir takma adla imzalarsın; istemezsen adsız kalırsın. Profil yok, takip yok." },
     { s: "kart", b: "Davet kartı", m: "\"Burada bir iz bıraktım.\" Metni göstermeyen bir hikâye kartı: merak eden, okumak için oraya gider." },
+    { s: "saat", b: "Bileğinde", m: "Bir satırın yanından geçerken bileğin hafifçe titrer, satır saatte açılır; telefon cebinde kalır. Yürüyüşte saat sıradaki durağın yönünü ve uzaklığını gösterir." },
+    { s: "widget", b: "Widget", m: "Ana ekranda ve kilit ekranında sana en yakın satırın uzaklığı. Satırın kendisi yine yalnızca oraya gidince açılır." },
+    { s: "paylas", b: "Satırı paylaş", m: "Okuduğun bir yazar izini ya da kendi satırını kaynağıyla birlikte görsel olarak paylaş." },
   ],
   haritaEtiket: "Harita", haritaBaslik: "Şehirde bekleyen satırlar.",
   haritaAlt: "Haritada yalnız ışıklar var: birileri o köşeye bir satır bıraktı. Ne yazdığını görmek için oraya git, uygulamayı aç.",
@@ -77,7 +80,7 @@ export const HEREBY_EN: Metin = {
   ust: "A project by Berkay Doğan",
   baslik: ["Leave", "a thought", "in a place."],
   alt: "Leave the line on your mind in the place you pass. Only someone who comes there can read it. No likes, no followers; just places and sentences.",
-  imza: "iOS · On the App Store",
+  imza: "iPhone · Apple Watch · On the App Store",
   beta: "Download on the App Store", betaKonu: "Hereby beta", yakinda: "Free · No ads · No sign-up", basin: "Featured on Webrazzi",
   manifestoEtiket: "Manifesto",
   manifesto: ["People have forgotten how to think.", "Sometimes a thought passes through you, and you only remember it when you return to that place.", "Remembering what is precious matters.", "Let Hereby be a mirror."],
@@ -96,6 +99,9 @@ export const HEREBY_EN: Metin = {
     { s: "soru", b: "Question of the week", m: "One question each week. You leave your answer where you are." },
     { s: "imza", b: "Pen name", m: "Sign with a pen name if you like, or stay anonymous. No profiles, no following." },
     { s: "kart", b: "Invite card", m: "\"I left a trace here.\" A story card that never shows the text: whoever is curious has to go there." },
+    { s: "saat", b: "On your wrist", m: "Walk past a line and your wrist taps gently; the line opens on your watch while your phone stays in your pocket. On a walk, the watch shows the direction and distance of the next stop." },
+    { s: "widget", b: "Widget", m: "The distance to the nearest line, on your Home Screen and Lock Screen. The line itself still opens only when you get there." },
+    { s: "paylas", b: "Share the line", m: "Share a writer's line you've read, or one of your own, as an image with its source." },
   ],
   haritaEtiket: "Map", haritaBaslik: "Lines waiting in the city.",
   haritaAlt: "The map only shows lights: someone left a line at that corner. To see what it says, go there and open the app.",
@@ -127,6 +133,9 @@ function Simge({ ad }: { ad: string }) {
     case "kum-saati": return <svg {...ortak}><path d="M6 3h12M6 21h12M7 3c0 5 10 5 10 9s-10 4-10 9M17 3c0 5-10 5-10 9s10 4 10 9" /></svg>;
     case "pati": return <svg {...ortak}><circle cx="7" cy="9" r="1.8" /><circle cx="12" cy="6.5" r="1.8" /><circle cx="17" cy="9" r="1.8" /><path d="M8 17c0-3 2-5 4-5s4 2 4 5c0 2-2 2.5-4 2.5S8 19 8 17z" /></svg>;
     case "soru": return <svg {...ortak}><path d="M4 5h16v11H9l-5 4z" /><path d="M10 9a2 2 0 1 1 3 1.7c-.6.4-1 .8-1 1.5M12 14.5h0" /></svg>;
+    case "saat": return <svg {...ortak}><rect x="7" y="6" width="10" height="12" rx="3" /><path d="M9 6l.8-3.5h4.4L15 6M9 18l.8 3.5h4.4L15 18M12 9.5V12l1.5 1" /></svg>;
+    case "widget": return <svg {...ortak}><rect x="3.5" y="3.5" width="7" height="7" rx="2" /><rect x="13.5" y="3.5" width="7" height="7" rx="2" /><rect x="3.5" y="13.5" width="17" height="7" rx="2" /></svg>;
+    case "paylas": return <svg {...ortak}><path d="M12 3v12M7.5 7.5 12 3l4.5 4.5M5 12v7.5h14V12" /></svg>;
     case "imza": return <svg {...ortak}><path d="M3 17c3-1 4-9 6-9s0 8 2 8 2-4 4-4 1 3 3 3h3M3 21h18" /></svg>;
     default: return <svg {...ortak}><rect x="6" y="2.5" width="12" height="19" rx="2.5" /><path d="M9 7h6M9 11h6M12 15v3M10.5 16.5 12 18l1.5-1.5" /></svg>;
   }

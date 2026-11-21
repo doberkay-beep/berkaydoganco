@@ -19,7 +19,7 @@ export const KUNYE: { k: string; v: string }[] = [
   { k: "Yayınevi", v: "İskenderiye Yayınları" },
   { k: "Kitaplar", v: "Mürekkep ve Köz (şiir, 2025) · Tasfiye (deneme, 2026)" },
   { k: "Film", v: "TASFİYE: Film — kısa film, 8 dk (YouTube, Eylül 2026)" },
-  { k: "Uygulamalar", v: "hereby. (yere bırakılan satırlar; App Store, Ekim 2026) · nowby. (radyolarda şu an çalan şarkılar; App Store: iPhone, iPad, Mac, Apple TV, Apple Watch, CarPlay · Microsoft Store · nowby.co)" },
+  { k: "Uygulamalar", v: "hereby. (yere bırakılan satırlar; App Store: iPhone ve Apple Watch, Ekim 2026) · nowby. (radyolarda şu an çalan şarkılar; App Store: iPhone, iPad, Mac, Apple TV, Apple Watch, CarPlay · Microsoft Store · nowby.co)" },
   { k: "Podcast", v: "Şairin Hesabı (Spotify)" },
   { k: "YouTube", v: "youtube.com/@yazarberkaydogan · 53 sn kanal fragmanı: youtu.be/bn5b5rkuBSk" },
   { k: "Web", v: "berkaydogan.co · Substack: yazarberkaydogan.substack.com" },
@@ -30,14 +30,14 @@ export const RAKAMLAR: { deger: string; aciklama: string }[] = [
   { deger: "#1", aciklama: "Trendyol şiir — en çok ziyaret edilen: Mürekkep ve Köz" },
   { deger: "10/10", aciklama: "1000Kitap okur puanı" },
   { deger: "12", aciklama: "basın çıkışı: dergi, gazete, haber sitesi ve TV (2026)" },
-  { deger: "75", aciklama: "radyonun yazılı izni, 19 ülkeden (nowby.)" },
+  { deger: "79", aciklama: "radyonun yazılı izni, 19 ülkeden (nowby.)" },
   { deger: "2 + 1 + 2", aciklama: "kitap, kısa film ve uygulama — on ay içinde" },
   { deger: "8 yıl", aciklama: "ilk dizeden ilk kitaba (2017–2025)" },
 ];
 
 export const KONULAR: string[] = [
   "Havalimanında gece vardiyası: sekiz yıl sessizlikten sonra on ayda iki kitap, bir film ve iki uygulama",
-  "Radyolara tek tek mektup yazan şair: nowby. için 19 ülkeden 75 radyonun yazılı izni",
+  "Radyolara tek tek mektup yazan şair: nowby. için 19 ülkeden 79 radyonun yazılı izni",
   "Satırlar yalnızca yerinde açılıyor: hereby. ve şehre bırakılan edebiyat izleri (Orhan Veli, Sait Faik)",
   "Yazarını sanık koltuğuna oturtan kitap: Tasfiye'nin mahkeme konsepti",
   "Kitaptan filme: metni kitaptan, sesi yazardan olan TASFİYE: Film",
