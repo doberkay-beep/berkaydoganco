@@ -6,7 +6,7 @@ import { KITAPLAR } from "@/lib/kitaplar";
 import { site, EMAIL, YOUTUBE_URL, INSTAGRAM_URL, SUBSTACK_URL, REVIEWS } from "@/lib/site";
 import { BASIN, EKRAN } from "@/lib/basinda";
 import { YAYINDA } from "@/lib/yazilar";
-import { menuGruplari } from "@/lib/menu";
+import { menuGruplari, arsivBaglantilari } from "@/lib/menu";
 import { KARELER } from "@/lib/goruntu";
 import { TemaDugmesi } from "@/components/TemaDugmesi";
 import { Bugun } from "@/components/anasayfa/Bugun";
@@ -45,7 +45,7 @@ export default function Page() {
     ...EKRAN.map((e) => ({ iso: e.tarihISO, yayin: e.kanal, baslik: e.baslik, url: e.link ?? "/video/", ay: false })),
   ].sort((a, b) => b.iso.localeCompare(a.iso)).slice(0, 6);
   const okurlar = REVIEWS.slice(1, 4);
-  const arsiv = menuGruplari("tr").slice(1).flatMap((g) => g.linkler).filter(([href, , tur]) => href && tur !== "ara" && tur !== true);
+  const arsiv = arsivBaglantilari("tr");
 
   return (
     <>

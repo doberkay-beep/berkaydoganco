@@ -77,3 +77,11 @@ export function menuGruplari(lang: "tr" | "en"): Grup[] {
   ];
 }
 
+
+/** Ana sayfa alt bilgisindeki kısa arşiv satırı: okuma arşivi + film, video ve posterler.
+    Uygulamalar ve Öğrenciler için zaten sayfanın üstünde; tam liste menüde. */
+const ARSIV = ["/sozler/", "/notlar/", "/sozluk/", "/takvim/", "/mektup/", "/film/", "/video/", "/posterler/"];
+export function arsivBaglantilari(lang: "tr" | "en"): Baglanti[] {
+  const hepsi = menuGruplari(lang).flatMap((g) => g.linkler);
+  return ARSIV.map((h) => hepsi.find(([href]) => href === h)).filter((b): b is Baglanti => !!b);
+}

@@ -6,7 +6,7 @@ import { BIO_KISA_EN, BIO_ORTA_EN } from "@/lib/basinKiti";
 import { EN_BOOKS, EN_FACTS, EN_RECOGNITION, EN_TOPICS, EN_IMAGES } from "@/lib/en";
 import { KITAPLAR } from "@/lib/kitaplar";
 import { KARELER } from "@/lib/goruntu";
-import { menuGruplari } from "@/lib/menu";
+import { menuGruplari, arsivBaglantilari } from "@/lib/menu";
 import { KopyalaMetin } from "@/components/KopyalaMetin";
 import { MASADA } from "@/lib/masada";
 import { TemaDugmesi } from "@/components/TemaDugmesi";
@@ -68,7 +68,7 @@ export default function EnglishPage() {
   const [tasfiye, murekkep] = EN_BOOKS;
   const kitap = (slug: string) => KITAPLAR.find((x) => x.slug === slug)!;
   const tk = kitap(tasfiye.slug);
-  const arsiv = menuGruplari("en").slice(1).flatMap((g) => g.linkler).filter(([href, , tur]) => href && tur !== "ara" && tur !== true);
+  const arsiv = arsivBaglantilari("en");
 
   return (
     <div className={`${s.sayfa} gz-ana`} lang="en" id="top">
