@@ -6,6 +6,7 @@ import Link from "next/link";
 import { site, LANGS, type Lang, type Copy } from "@/lib/site";
 import { Muhur } from "./Muhur";
 import { GrupluMenu } from "./SiteMenu";
+import { menuGruplari } from "@/lib/menu";
 import { TemaDugmesi } from "./TemaDugmesi";
 import { ETKINLIKLER } from "@/lib/etkinlikler";
 
@@ -126,17 +127,8 @@ export function Kabuk({ children }: { children: (lang: Lang, t: Copy) => React.R
     return () => { document.removeEventListener("pointermove", onMove); if (magnet) magnet.style.translate = ""; };
   }, []);
 
-  const izleDinle = lang === "tr" ? "İzle & Dinle" : "Watch & Listen";
-  const navLinks: [string, string][] = [
-    [lang === "tr" ? "/kitaplar" : "/en/#books", t.nav.books],
-    ["/sozler", t.nav.sozler],
-    ["/film", t.nav.film],
-    ["/yazilar", t.nav.writing],
-    // Uygulamalar tek sayfada: by. atölyesi (hereby., nowby., writtenby.)
-    [lang === "tr" ? "/by" : "/en/by", lang === "tr" ? "Uygulamalar" : "Apps"],
-    ["/hakkimda", t.nav.about],
-    ["/#contact", t.nav.contact],
-  ];
+  // Üst bağlantılar sitenin ortak menüsünden (lib/menu) — gazete başlığıyla aynı altı bağlantı.
+  const navLinks = menuGruplari(lang).slice(0, 1).flatMap((g) => g.linkler).map(([href, ad]) => [href, ad] as [string, string]);
   // Tam menü (her şey, dört başlık) components/SiteMenu.tsx'te; tüm sayfalarda aynı.
   const kapatMenu = useCallback(() => setMenuOpen(false), []);
 
@@ -199,7 +191,7 @@ export function Kabuk({ children }: { children: (lang: Lang, t: Copy) => React.R
           <div>
             <p className="ed-footer-head">{lang === "tr" ? "Bağlan" : "Connect"}</p>
             <a href="/hakkimda">{t.nav.about}</a>
-            <a href="/video">{izleDinle}</a>
+            <a href="/video">{lang === "tr" ? "İzle & Dinle" : "Watch & Listen"}</a>
             <a href={lang === "tr" ? "/press" : "/en/#press-kit"}>{lang === "tr" ? "Basın Odası" : "Press Room"}</a>
             {lang === "tr" && <a href="/ogrenciler">Öğrenciler için</a>}
             <a href="/en/" hrefLang="en" lang="en">In English</a>

@@ -4,7 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import { Muhur } from "./Muhur";
-import { menuGruplari } from "@/lib/menu";
+import { menuGruplari, digerDil } from "@/lib/menu";
 import { TemaDugmesi } from "./TemaDugmesi";
 
 /* Sitenin tek menüsü. Önce okura en çok gereken beş bağlantı, sonra okuma arşivi, sonra diğer çalışmalar.
@@ -59,25 +59,30 @@ export function GrupluMenu({ lang, kapat }: { lang: "tr" | "en"; kapat: () => vo
 
 const GIZLI = ["/embed", "/git", "/writtenby/masa"];
 
-/** Kabuk'suz sayfalardaki ince üst çubuk: solda ad (ana sayfa), sağda Menü. */
+/** Gazete üst başlığı (ana sayfa dışında her sayfa): solda ad, ortada altı bağlantı,
+    sağda dil ve tema. Dil bağlantısı sayfanın öteki dildeki karşılığına gider (lib/menu digerDil).
+    Telefonda bağlantılar tam menüye taşınır. Ana sayfanın kendi büyük manşeti var (gz-ana). */
 export function SiteMenu() {
   const yol = usePathname() ?? "/";
   const [acik, setAcik] = useState(false);
   if (GIZLI.some((g) => yol.startsWith(g))) return null;
   const lang = yol.startsWith("/en") ? "en" : "tr";
+  const tr = lang === "tr";
+  const ana = menuGruplari(lang)[0].linkler;
   return (
     <>
-      <header className="sm-bar">
-        <Link href={lang === "tr" ? "/" : "/en/"} className="sm-marka"><Muhur size={20} />Berkay Doğan</Link>
-        <div className="sm-sag">
-          {/* Masaüstünde okura en çok gereken dört bağlantı; tamamı Menü'de. */}
-          <nav className="sm-kisa" aria-label={lang === "tr" ? "Kısa menü" : "Quick menu"}>
-            {menuGruplari(lang)[0].linkler.slice(0, 4).map(([href, ad], i) => (
-              <a key={href} href={href}><span aria-hidden>{String(i + 1).padStart(2, "0")}</span>{ad}</a>
-            ))}
-          </nav>
-          <TemaDugmesi lang={lang} />
-          <button className="sm-ac" onClick={() => setAcik(true)} aria-expanded={acik} aria-haspopup="dialog">{lang === "tr" ? "Menü" : "Menu"}</button>
+      <header className="gz-bas">
+        <Link href={tr ? "/" : "/en/"} className="gz-bas-ad">Berkay Doğan</Link>
+        <nav className="gz-bas-menu" aria-label={tr ? "Ana menü" : "Main menu"}>
+          {ana.map(([href, ad]) => <a key={href} href={href}>{ad}</a>)}
+        </nav>
+        <div className="gz-bas-sag">
+          <span className="gz-dil">
+            {tr ? <><b>Türkçe</b><a href={digerDil(yol)} lang="en" hrefLang="en">English</a></>
+                : <><a href={digerDil(yol)} lang="tr" hrefLang="tr">Türkçe</a><b>English</b></>}
+          </span>
+          <TemaDugmesi lang={lang} className="tema-dugme gz-tema" />
+          <button className="gz-menu-ac" onClick={() => setAcik(true)} aria-expanded={acik} aria-haspopup="dialog">{tr ? "Menü" : "Menu"}</button>
         </div>
       </header>
       {acik && <GrupluMenu lang={lang} kapat={() => setAcik(false)} />}

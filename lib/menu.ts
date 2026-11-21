@@ -1,5 +1,24 @@
 import { ETKINLIKLER } from "@/lib/etkinlikler";
 
+/** Bir sayfanın öteki dildeki karşılığı; karşılığı yoksa öteki dilin ana sayfası. */
+const ESLER: [tr: string, en: string][] = [
+  ["/", "/en/"],
+  ["/hereby/", "/en/hereby/"],
+  ["/nowby/", "/en/nowby/"],
+  ["/by/", "/en/by/"],
+  ["/writtenby/sanatcilar/", "/en/writtenby/artists/"],
+  ["/writtenby/", "/en/writtenby/"],
+  ["/gidis/", "/en/departures/"],
+  ["/studio/", "/en/studio/"],
+];
+export function digerDil(yol: string): string {
+  const y = yol.endsWith("/") ? yol : `${yol}/`;
+  const en = y.startsWith("/en/");
+  const es = ESLER.find(([t, e]) => (en ? e : t) === y);
+  if (es) return en ? es[0] : es[1];
+  return en ? "/" : "/en/";
+}
+
 /* Sitenin tek menü verisi (components/SiteMenu.tsx ve ana sayfanın site dizini okur).
    Yeni sayfa → buraya. Sunucu bileşenleri de çağırabilsin diye "use client" dışında. */
 
@@ -16,8 +35,9 @@ export function menuGruplari(lang: "tr" | "en"): Grup[] {
       linkler: [
         [tr ? "/kitaplar/" : "/en/#books", tr ? "Kitaplar" : "Books"],
         ["/yazilar/", tr ? "Yazılar" : "Writing"],
-        ["/hakkimda/", tr ? "Hakkımda" : "About"],
-        [tr ? "/press/" : "/en/#press-kit", tr ? "Basın odası" : "Press room"],
+        [tr ? "/press/" : "/en/#press-kit", tr ? "Basında" : "Press"],
+        [tr ? "/hakkimda/" : "/en/#about", tr ? "Hakkımda" : "About"],
+        [tr ? "/by/" : "/en/by/", tr ? "Uygulamalar" : "Apps"],
         [tr ? "/#contact" : "/en/#contact", tr ? "İletişim" : "Contact"],
       ],
     },
