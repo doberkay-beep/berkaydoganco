@@ -19,7 +19,7 @@ export const KUNYE: { k: string; v: string }[] = [
   { k: "Yayınevi", v: "İskenderiye Yayınları" },
   { k: "Kitaplar", v: "Mürekkep ve Köz (şiir, 2025) · Tasfiye (deneme, 2026)" },
   { k: "Film", v: "TASFİYE: Film — kısa film, 8 dk (YouTube, Eylül 2026)" },
-  { k: "Uygulamalar", v: "hereby. (yere bırakılan satırlar; App Store, Ekim 2026) · nowby. (radyolarda şu an çalan şarkılar, nowby.co)" },
+  { k: "Uygulamalar", v: "hereby. (yere bırakılan satırlar; App Store, Ekim 2026) · nowby. (radyolarda şu an çalan şarkılar; App Store: iPhone, iPad, Mac, Apple TV, Apple Watch, CarPlay · Microsoft Store · nowby.co)" },
   { k: "Podcast", v: "Şairin Hesabı (Spotify)" },
   { k: "YouTube", v: "youtube.com/@yazarberkaydogan · 53 sn kanal fragmanı: youtu.be/bn5b5rkuBSk" },
   { k: "Web", v: "berkaydogan.co · Substack: yazarberkaydogan.substack.com" },
