@@ -22,6 +22,12 @@ export const ATOLYE_TR: AtolyeMetin = {
       id: "hereby", ad: "hereby", renk: MOR, soru: "Nerede?", href: "/hereby", link: "hereby.'yi tanı",
       m: "Aklından geçen satırı geçtiğin yere bırak. Onu yalnızca oraya gelen biri okuyabilir. Kitaplardan satırlarla şiir yürüyüşleri, zaman kapsülleri, kendine notlar.",
       ilke: "Hiçbir iz sayılmaz, sıralanmaz.",
+      durum: [
+        { c: "iPhone", d: "App Store'da", href: "https://apps.apple.com/app/id6825787016" },
+        { c: "Apple Watch", d: "Yakında" },
+        { c: "Android", d: "Testte" },
+        { c: "Web", d: "Işık haritası", href: "/hereby" },
+      ],
       video: "/by/hereby-koyu.mp4", poster: "/by/hereby-koyu.jpg", telefon: "hereby. uygulamasının ekranı",
       adimlar: [
         { b: "Bırak.", s: "Bir vapur iskelesinde, bir merdivende, bir sahilde aklından geçeni yaz. En fazla 280 karakter." },
@@ -33,9 +39,16 @@ export const ATOLYE_TR: AtolyeMetin = {
       id: "nowby", ad: "nowby", renk: TURUNCU, soru: "Ne zaman?", href: "/nowby", link: "nowby'ı tanı",
       m: "Radyolarda şu an ne çalıyor? Yayınlarını paylaşmamıza izin veren radyolar tek ekranda, canlı. Gerçek sayıma dayanan listeler, dünyanın radyoları, kitaplardan dizelerle Frekans Falı.",
       ilke: "Şarkıları sayar, insanları değil.",
-      cihazBaslik: "Dört cihazda aynı radyo, aynı şarkı.",
+      durum: [
+        { c: "iPhone · iPad · Mac · Apple TV · Apple Watch · CarPlay", d: "App Store'da", href: "https://apps.apple.com/app/id6825787056" },
+        { c: "Windows", d: "Microsoft Store'da", href: "https://apps.microsoft.com/detail/9PFGNB14G620" },
+        { c: "Android", d: "Testte" },
+        { c: "Web", d: "nowby.co", href: "https://nowby.co" },
+      ],
+      cihazBaslik: "Her ekranda aynı radyo, aynı şarkı.",
       cihazlar: [
         { tur: "tv", c: "Apple TV", b: "Salonda, kocaman.", s: "Kanepeden okunan şarkı adları.", alt: "nowby. Apple TV'de: şu an çalan şarkı büyük ekranda" },
+        { tur: "mac", c: "Mac", b: "Masanda, yan panelde.", s: "Kenar çubuğu, şarkı kartları, altta boydan boya çalar.", alt: "nowby. Mac'te: kenar çubuğu ve radyo kartları" },
         { tur: "ipad", c: "iPad", b: "Kucağında, üç sütun.", s: "Kenar çubuğu, şarkı kartları ve büyük çalar aynı ekranda.", alt: "nowby. iPad'de: üç sütunlu ekran" },
         { tur: "iphone", c: "iPhone", b: "Cebinde, canlı.", s: "İzin veren radyolar, şu an çalan şarkılarıyla.", alt: "nowby. iPhone'da: canlı radyo listesi" },
         { tur: "saat", c: "Apple Watch", b: "Bileğinde, tek dokunuş.", s: "Telefondaki çaların kumandası; şarkıyı oradan yakala.", alt: "nowby. Apple Watch'ta: çalan şarkı ve Yakala düğmesi" },
@@ -45,6 +58,11 @@ export const ATOLYE_TR: AtolyeMetin = {
       id: "writtenby", ad: "writtenby", renk: MOR, soru: "Kim?", href: "/writtenby", link: "writtenby.'yi tanı",
       m: "Bir şehrin yazdığı kitap. Her gün herkese aynı soru; bulunduğun yerden tek bir satır. Satırını yalnızca oraya gelenler okur. Yıl sonunda bu satırlardan basılı bir kitap kurulur; izin vermediğin hiçbir satır basılmaz. İlk kitap: İstanbul 2027.",
       ilke: "Kitaba girmek bir ödül değil, bir derleme kararı.",
+      durum: [
+        { c: "iPhone", d: "hereby.'nin içinde", href: "https://apps.apple.com/app/id6825787016" },
+        { c: "Deneme dönemi", d: "Kitap 1 Ocak'ta başlıyor" },
+        { c: "Android", d: "Planlanıyor" },
+      ],
       video: "/by/writtenby-koyu.mp4", poster: "/by/writtenby-koyu.jpg", telefon: "writtenby. ekranı: günün sorusu, tek satır ve basım izni",
       adimlar: [
         { b: "Günün sorusu.", s: "Her sabah herkese aynı soru gelir. İstersen soruyu bırakıp özgür bir satır da yazabilirsin." },
@@ -91,6 +109,12 @@ export const ATOLYE_EN: AtolyeMetin = {
       id: "hereby", ad: "hereby", renk: MOR, soru: "Where?", href: "/en/hereby", link: "Meet hereby.",
       m: "Leave the line on your mind at the place you pass. Only someone who comes to that place can read it. Poetry walks with lines from the books, time capsules, notes to self.",
       ilke: "No trace is counted or ranked.",
+      durum: [
+        { c: "iPhone", d: "On the App Store", href: "https://apps.apple.com/app/id6825787016" },
+        { c: "Apple Watch", d: "Coming soon" },
+        { c: "Android", d: "In testing" },
+        { c: "Web", d: "Map of lights", href: "/en/hereby" },
+      ],
       video: "/by/hereby-koyu.mp4", poster: "/by/hereby-koyu.jpg", telefon: "The hereby. app screen",
       adimlar: [
         { b: "Leave.", s: "On a ferry pier, on a staircase, by the sea: write what is on your mind. 280 characters at most." },
@@ -102,9 +126,16 @@ export const ATOLYE_EN: AtolyeMetin = {
       id: "nowby", ad: "nowby", renk: TURUNCU, soru: "When?", href: "/en/nowby", link: "Meet nowby.",
       m: "What is playing on the radio right now? Stations that gave us permission to share their broadcasts, on one screen, live. Charts built on real airplay counts, the world's radio, and a Frequency Fortune with lines from the books.",
       ilke: "It counts songs, not people.",
-      cihazBaslik: "The same station, the same song on four devices.",
+      durum: [
+        { c: "iPhone · iPad · Mac · Apple TV · Apple Watch · CarPlay", d: "On the App Store", href: "https://apps.apple.com/app/id6825787056" },
+        { c: "Windows", d: "On the Microsoft Store", href: "https://apps.microsoft.com/detail/9PFGNB14G620" },
+        { c: "Android", d: "In testing" },
+        { c: "Web", d: "nowby.co", href: "https://nowby.co" },
+      ],
+      cihazBaslik: "The same station, the same song on every screen.",
       cihazlar: [
         { tur: "tv", c: "Apple TV", b: "In the living room, huge.", s: "Song titles you can read from the couch.", alt: "nowby. on Apple TV: the song playing now on the big screen" },
+        { tur: "mac", c: "Mac", b: "On your desk, in a side panel.", s: "A sidebar, song cards and a full-width player along the bottom.", alt: "nowby. on Mac: sidebar and station cards" },
         { tur: "ipad", c: "iPad", b: "On your lap, three columns.", s: "Sidebar, song cards and the big player on one screen.", alt: "nowby. on iPad: three-column layout" },
         { tur: "iphone", c: "iPhone", b: "In your pocket, live.", s: "Stations that gave permission, with the song playing right now.", alt: "nowby. on iPhone: the live station list" },
         { tur: "saat", c: "Apple Watch", b: "On your wrist, one tap.", s: "A remote for the player on your phone; catch the song from there.", alt: "nowby. on Apple Watch: the song playing and the Catch button" },
@@ -114,6 +145,11 @@ export const ATOLYE_EN: AtolyeMetin = {
       id: "writtenby", ad: "writtenby", renk: MOR, soru: "Who?", href: "/en/writtenby", link: "Meet writtenby.",
       m: "A book written by a city. Every day, the same question for everyone; one line from where you stand. Only those who come to that place can read it. At year's end the lines become a printed book, and no line is printed without permission. First book: Istanbul 2027.",
       ilke: "Getting into the book isn't a prize, it's an editorial choice.",
+      durum: [
+        { c: "iPhone", d: "Inside hereby.", href: "https://apps.apple.com/app/id6825787016" },
+        { c: "Trial period", d: "The book begins on January 1" },
+        { c: "Android", d: "Planned" },
+      ],
       video: "/by/writtenby-koyu.mp4", poster: "/by/writtenby-koyu.jpg", telefon: "The writtenby. screen: the question of the day, one line and print permission",
       adimlar: [
         { b: "The question of the day.", s: "Every morning everyone gets the same question. You can also skip it and write a free line." },

@@ -36,6 +36,8 @@ type Is = {
   adimlar?: Adim[];
   cihazBaslik?: string; cihazlar?: Cihaz[];
   ek?: { etiket: string; link: string; href: string };
+  /* Nerede var: platform ve durum (App Store'da, Testte, Yakında…); href varsa mağazaya gider. */
+  durum?: { c: string; d: string; href?: string }[];
 };
 type Soru = { b: string; s: string; h: string; n: string };
 export type AtolyeMetin = {
@@ -49,7 +51,7 @@ export type AtolyeMetin = {
 
 const CIHAZ_GORSEL: Record<Cihaz["tur"], [string, number, number]> = {
   tv: ["/by/cihaz/tv.jpg", 1600, 900],
-  mac: ["/by/cihaz/mac.jpg", 1400, 875],
+  mac: ["/by/cihaz/mac.jpg", 1400, 767],
   ipad: ["/by/cihaz/ipad.jpg", 825, 1100],
   iphone: ["/by/cihaz/iphone.jpg", 557, 1240],
   saat: ["/by/cihaz/saat.jpg", 416, 496],
@@ -100,12 +102,39 @@ function Adimlar({ i }: { i: Is }) {
   );
 }
 
+function Durum({ i }: { i: Is }) {
+  if (!i.durum) return null;
+  return (
+    <ul style={{ listStyle: "none", padding: 0, margin: "1.8rem 0 0", display: "flex", flexWrap: "wrap", gap: "0.7rem 1.6rem" }}>
+      {i.durum.map((d) => {
+        const ic = (
+          <>
+            <span style={{ fontWeight: 600 }}>{d.c}</span>
+            <span style={{ ...mono, fontSize: "0.62rem", color: d.href ? i.renk : "inherit", opacity: d.href ? 1 : 0.6 }}>{d.d}</span>
+          </>
+        );
+        /* Gazete teması bağlantılara alt çizgi veriyor; bağlantısız satırlar da aynı çizgide, kesik. */
+        const st: React.CSSProperties = { display: "inline-flex", alignItems: "baseline", gap: "0.6rem", padding: "2px 0", color: "inherit", textDecoration: "none", fontSize: "0.95rem" };
+        const stDuz: React.CSSProperties = { ...st, borderBottom: "1px dashed var(--glass-border)" };
+        return (
+          <li key={d.c}>
+            {d.href ? <a href={d.href} target={d.href.startsWith("http") ? "_blank" : undefined} rel="noopener noreferrer" style={st}>{ic}</a> : <span style={stDuz}>{ic}</span>}
+          </li>
+        );
+      })}
+    </ul>
+  );
+}
+
 function Linkler({ i }: { i: Is }) {
   return (
+    <>
+    <Durum i={i} />
     <p style={{ marginTop: "1.8rem", display: "flex", gap: "1.6rem", flexWrap: "wrap" }}>
       <Link href={i.href} style={{ ...mono, color: i.renk, textDecoration: "none" }}>{i.link}</Link>
       {i.ek && <Link href={i.ek.href} style={{ ...mono, color: "inherit", opacity: 0.75, textDecoration: "none" }}>{i.ek.etiket} · {i.ek.link}</Link>}
     </p>
+    </>
   );
 }
 
