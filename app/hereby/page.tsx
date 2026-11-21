@@ -3,6 +3,7 @@ import { HerebyTanitim, HEREBY_TR } from "@/components/HerebyTanitim";
 import { HerebyAppSchema } from "@/components/Schema";
 
 export const metadata: Metadata = {
+  itunes: { appId: "6825787016" },
   title: { absolute: "hereby. — Düşünceni bir yere bırak · Konum tabanlı not uygulaması" },
   description: "Berkay Doğan'ın uygulaması Hereby: aklından geçen satırı geçtiğin yere bırak, yalnızca oraya gelen okusun. Birine bırakılan satırlar, şiir yürüyüşleri, zaman kapsülleri, kendine notlar. Beğeni yok, takipçi yok.",
   alternates: { canonical: "/hereby", languages: { tr: "/hereby", en: "/en/hereby" } },

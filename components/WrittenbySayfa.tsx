@@ -50,13 +50,13 @@ export const WRITTENBY_TR: WrittenbyMetin = {
   ornekEtiket: "Bir günün sorusu",
   ornekSoru: "Bugün nerede durdun?",
   yakinda: "writtenby. iOS'ta, hereby.'nin içinde. Android planlanıyor.",
-  herebyLink: "hereby.'yi tanı →", herebyHref: "/hereby",
+  herebyLink: "hereby.'yi tanı", herebyHref: "/hereby",
   atolye: "by. atölyesinin bir işi", atolyeHref: "/by", anaSayfa: "/",
   sanatci: {
     etiket: "İkinci katman",
     baslik: "Bir şehrin satırları arasında, imzalı sayfalar.",
     metin: "Seçilmiş sanatçılar kendi eserleriyle writtenby.'de yer alır; konu serbest, biçim serbest. Günü geldiğinde şehrin satırlarıyla aynı kitapta buluşurlar.",
-    link: "Sanatçılar için →", href: "/writtenby/sanatcilar",
+    link: "Sanatçılar için", href: "/writtenby/sanatcilar",
   },
 };
 
@@ -87,13 +87,13 @@ export const WRITTENBY_EN: WrittenbyMetin = {
   ornekEtiket: "One day's question",
   ornekSoru: "Where did you stop today?",
   yakinda: "writtenby. is on iOS, inside hereby. Android is planned.",
-  herebyLink: "Meet hereby. →", herebyHref: "/en/hereby",
+  herebyLink: "Meet hereby.", herebyHref: "/en/hereby",
   atolye: "A work of the by. workshop", atolyeHref: "/en/by", anaSayfa: "/en",
   sanatci: {
     etiket: "The second layer",
     baslik: "Among a city's lines, signed pages.",
     metin: "Selected artists take their place on writtenby. with their own work; any subject, any form. When the day comes, they meet the city's lines in the same book.",
-    link: "For artists →", href: "/en/writtenby/artists",
+    link: "For artists", href: "/en/writtenby/artists",
   },
 };
 

@@ -45,7 +45,7 @@ export default function SozlerPage() {
       />
       <div className="eski-ust" style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "clamp(3rem, 8vh, 5rem)", flexWrap: "wrap", gap: "1rem" }}>
         <Link href="/" style={{ fontFamily: "var(--font-grotesk)", fontWeight: 700, letterSpacing: "0.02em", color: "var(--ink)" }}>Berkay Doğan</Link>
-        <Link href="/" style={{ ...mono, fontSize: "0.72rem", letterSpacing: "0.14em", color: "var(--muted)", borderBottom: "1px solid var(--accent)", paddingBottom: "2px" }}>← berkaydogan.co</Link>
+        <Link href="/" style={{ ...mono, fontSize: "0.72rem", letterSpacing: "0.14em", color: "var(--muted)", borderBottom: "1px solid var(--accent)", paddingBottom: "2px" }}>berkaydogan.co</Link>
       </div>
 
       <span style={{ display: "inline-flex", alignItems: "center", gap: "0.6rem", ...mono, letterSpacing: "0.26em", color: "var(--ink)" }}>
@@ -62,8 +62,8 @@ export default function SozlerPage() {
 
       {/* Tema çipleri */}
       <div style={{ display: "flex", gap: "0.5rem", flexWrap: "wrap", margin: "2.25rem 0 0" }}>
-        <Link href="/takvim" style={{ ...mono, fontSize: "0.66rem", color: "var(--accent-ink)", background: "var(--accent)", borderRadius: "100px", padding: "0.5rem 0.95rem" }}>Bugünün sözü →</Link>
-        <Link href="/sozluk" style={{ ...mono, fontSize: "0.66rem", color: "var(--ink)", border: "1px solid var(--accent)", borderRadius: "100px", padding: "0.5rem 0.95rem" }}>Kavramlar Sözlüğü →</Link>
+        <Link href="/takvim" style={{ ...mono, fontSize: "0.66rem", color: "var(--accent-ink)", background: "var(--accent)", borderRadius: "100px", padding: "0.5rem 0.95rem" }}>Bugünün sözü</Link>
+        <Link href="/sozluk" style={{ ...mono, fontSize: "0.66rem", color: "var(--ink)", border: "1px solid var(--accent)", borderRadius: "100px", padding: "0.5rem 0.95rem" }}>Kavramlar Sözlüğü</Link>
         <Link href="/posterler" style={{ ...mono, fontSize: "0.66rem", color: "var(--muted)", border: "1px solid var(--line)", borderRadius: "100px", padding: "0.5rem 0.95rem" }}>Posterler</Link>
         {TEMALAR.map((tema) => (
           <Link key={tema} href={`/tema/${tema}`} style={{ ...mono, fontSize: "0.66rem", color: "var(--muted)", border: "1px solid var(--line)", borderRadius: "100px", padding: "0.5rem 0.95rem" }}>

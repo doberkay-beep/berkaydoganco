@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { HEREBY_APP_STORE } from "@/lib/site";
+import HerebyHarita from "@/components/HerebyHarita";
 
 /* HEREBY — uygulamanın tanıtım sayfası (TR / EN).
    Kendi çivit vurgusunu taşır; zemin ve yazı renkleri sitenin temasından gelir. */
@@ -20,6 +21,7 @@ type Metin = {
   adimEtiket: string; adimlar: { b: string; m: string; g: string; alt: string }[];
   ozellikEtiket: string; ozellikBaslik: string; ozellikler: { s: string; b: string; m: string }[];
   yolEtiket: string; yolBaslik: string; yolAlt: string; yollar: { ad: string; duraklar: string[] }[]; kitaplar: string;
+  haritaEtiket: string; haritaBaslik: string; haritaAlt: string;
   ilkeEtiket: string; ilkeler: { b: string; m: string }[];
   kosullar: string; gizlilik: string; dilLink: string; dilHref: string; kok: string; kosulHref: string; gizlilikHref: string;
   soru: string;
@@ -49,6 +51,8 @@ export const HEREBY_TR: Metin = {
     { s: "imza", b: "Mahlas", m: "İstersen bir takma adla imzalarsın; istemezsen adsız kalırsın. Profil yok, takip yok." },
     { s: "kart", b: "Davet kartı", m: "\"Burada bir iz bıraktım.\" Metni göstermeyen bir hikâye kartı: merak eden, okumak için oraya gider." },
   ],
+  haritaEtiket: "Harita", haritaBaslik: "Şehirde bekleyen satırlar.",
+  haritaAlt: "Haritada yalnız ışıklar var: birileri o köşeye bir satır bıraktı. Ne yazdığını görmek için oraya git, uygulamayı aç.",
   yolEtiket: "İz yolları", yolBaslik: "Bir semti yürüyerek oku.",
   yolAlt: "Her durakta Mürekkep ve Köz ya da Tasfiye'den bir satır seni bekliyor. Satırlar yalnızca oraya varınca açılır.",
   yollar: [
@@ -93,6 +97,8 @@ export const HEREBY_EN: Metin = {
     { s: "imza", b: "Pen name", m: "Sign with a pen name if you like, or stay anonymous. No profiles, no following." },
     { s: "kart", b: "Invite card", m: "\"I left a trace here.\" A story card that never shows the text: whoever is curious has to go there." },
   ],
+  haritaEtiket: "Map", haritaBaslik: "Lines waiting in the city.",
+  haritaAlt: "The map only shows lights: someone left a line at that corner. To see what it says, go there and open the app.",
   yolEtiket: "Trace walks", yolBaslik: "Read a neighbourhood on foot.",
   yolAlt: "At each stop, a line from Mürekkep ve Köz or Tasfiye is waiting for you. The lines open only when you arrive.",
   yollar: [
@@ -155,13 +161,13 @@ export function HerebyTanitim({ m }: { m: Metin }) {
         </h1>
         <p style={{ fontSize: "clamp(1.05rem, 2.2vw, 1.3rem)", lineHeight: 1.65, color: "var(--muted)", maxWidth: "40rem", margin: "0 auto 2.4rem", position: "relative" }}>{m.alt}</p>
         <div style={{ display: "flex", gap: "1rem", justifyContent: "center", flexWrap: "wrap", position: "relative" }}>
-          <a href={betaHref} className="hb-dugme" style={{ background: CIVIT, color: "#fff", boxShadow: `0 12px 34px ${CIVIT}55` }}>{m.beta} →</a>
+          <a href={betaHref} className="hb-dugme" style={{ background: CIVIT, color: "#fff", boxShadow: `0 12px 34px ${CIVIT}55` }}>{m.beta}</a>
           <span className="hb-dugme" style={{ border: "1px solid var(--line)", color: "var(--muted)" }}>{m.imza}</span>
         </div>
         <p style={{ ...mono, color: "var(--muted)", marginTop: "1.4rem", fontSize: "0.66rem", position: "relative" }}>{m.yakinda}</p>
         {/* Basın: 12 Kas 2026 Webrazzi girişim incelemesi (lib/basinda.ts ile aynı bağlantı) */}
         <p style={{ marginTop: "1.1rem", fontSize: "0.92rem", position: "relative" }}>
-          <a href={WEBRAZZI} target="_blank" rel="noopener noreferrer" style={{ color: CIVIT, textDecoration: "underline", textUnderlineOffset: "4px" }}>{m.basin} ↗</a>
+          <a href={WEBRAZZI} target="_blank" rel="noopener noreferrer" style={{ color: CIVIT, textDecoration: "underline", textUnderlineOffset: "4px" }}>{m.basin}</a>
         </p>
       </section>
 
@@ -231,8 +237,16 @@ export function HerebyTanitim({ m }: { m: Metin }) {
           ))}
         </div>
         <p style={{ marginTop: "1.6rem" }}>
-          <Link href={en ? "/en/" : "/kitaplar/"} style={{ color: CIVIT, textDecoration: "underline", textUnderlineOffset: "4px" }}>{m.kitaplar} →</Link>
+          <Link href={en ? "/en/" : "/kitaplar/"} style={{ color: CIVIT, textDecoration: "underline", textUnderlineOffset: "4px" }}>{m.kitaplar}</Link>
         </p>
+      </section>
+
+      {/* HARİTA — yalnız ışıklar, metin yok (19 Kas 2026) */}
+      <section style={bolum}>
+        <div style={{ ...mono, color: CIVIT, marginBottom: "1rem" }}>{m.haritaEtiket}</div>
+        <h2 style={{ ...serif, fontSize: "clamp(2rem, 5vw, 3rem)", margin: "0 0 1rem", fontWeight: 500 }}>{m.haritaBaslik}</h2>
+        <p style={{ fontSize: "1.1rem", lineHeight: 1.7, color: "var(--muted)", maxWidth: "36rem", margin: "0 0 2rem" }}>{m.haritaAlt}</p>
+        <HerebyHarita en={en} />
       </section>
 
       {/* İLKELER */}
@@ -253,7 +267,7 @@ export function HerebyTanitim({ m }: { m: Metin }) {
         <p style={{ ...serif, fontSize: "clamp(2.2rem, 6vw, 3.8rem)", margin: "0 0 1.8rem", lineHeight: 1.05 }}>
           hereby<span style={{ color: CIVIT }}>.</span>
         </p>
-        <a href={betaHref} className="hb-dugme" style={{ background: CIVIT, color: "#fff", boxShadow: `0 12px 34px ${CIVIT}55` }}>{m.beta} →</a>
+        <a href={betaHref} className="hb-dugme" style={{ background: CIVIT, color: "#fff", boxShadow: `0 12px 34px ${CIVIT}55` }}>{m.beta}</a>
         <nav style={{ display: "flex", gap: "1.4rem", justifyContent: "center", flexWrap: "wrap", marginTop: "2.6rem", ...mono, color: "var(--muted)" }}>
           <Link href={m.kosulHref}>{m.kosullar}</Link>
           <Link href={m.gizlilikHref}>{m.gizlilik}</Link>

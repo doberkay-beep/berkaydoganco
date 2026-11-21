@@ -23,7 +23,7 @@ export const YAZILAR: Yazi[] = [
     dek: "Uzun bir sessizliğin ardından: kamera, siteye bırakılan parçalar ve Tasfiye'nin tarihi.",
     dateISO: "2026-06-26",
     dateText: "26 Haziran 2026",
-    substackUrl: "https://doberkay.substack.com/p/sustum-ama-yok-olmadm",
+    substackUrl: "https://yazarberkaydogan.substack.com/p/sustum-ama-yok-olmadm",
     paras: [
       "Uzun zamandır buraya yazmadım. Açıkçası ne yazacağımı da bilemedim.",
       "Bazen insan, paylaşacak bir şeyi olduğunda değil; paylaşacak birini bulduğunda yazıyor. Ben de o yüzden buradayım. Çünkü buraya, gürültüden kaçanlar için yazıyorum. Ve siz, bu sessizliği benimle paylaşan az sayıdaki insansınız.",
@@ -48,7 +48,7 @@ export const YAZILAR: Yazi[] = [
     dek: "Bu köşe neden var — gürültüden kaçanlara açık bir davet.",
     dateISO: "2026-06-15",
     dateText: "15 Haziran 2026",
-    substackUrl: "https://doberkay.substack.com/p/buraya-gurultuden-kacanlar-icin",
+    substackUrl: "https://yazarberkaydogan.substack.com/p/buraya-gurultuden-kacanlar-icin",
     paras: [
       "Bir köşe açtım kendime. Sosyal medyanın akışından, bildirimlerin gürültüsünden uzak; sadece kelimelerin kaldığı bir yer.",
       "Burada ne bulacaksınız? Yeni yazılar — denemeler, kesitler, dağınık düşünceler. Kitaplarımdan haberler. Ara sıra, bir şiir. Bazen sadece bir cümle, günlerce üstüne düşündüğüm.",

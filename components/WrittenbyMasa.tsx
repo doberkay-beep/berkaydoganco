@@ -99,7 +99,7 @@ export function WrittenbyMasa() {
                 <p style={{ marginTop: "0.4rem", opacity: 0.75, lineHeight: 1.6 }}>
                   {b.alan}{b.sehir ? ` · ${b.sehir}` : ""} · {okunur(b.olusturma)}<br />
                   <a href={`mailto:${b.eposta}`} style={{ color: MOR }}>{b.eposta}</a>
-                  {b.baglanti && <> · <a href={b.baglanti} target="_blank" rel="noopener noreferrer" style={{ color: MOR }}>bağlantı ↗</a></>}
+                  {b.baglanti && <> · <a href={b.baglanti} target="_blank" rel="noopener noreferrer" style={{ color: MOR }}>bağlantı</a></>}
                 </p>
 
                 <p style={{ ...mono, opacity: 0.55, marginTop: "1.4rem" }}>Mektup</p>

@@ -41,7 +41,7 @@ export function YapiskanSatinAl({ ad, fiyat, git }: { ad: string; fiyat: string 
         onClick={() => satinAlTikla(git, "yapiskan-cubuk")}
         style={{ flexShrink: 0, fontFamily: "var(--font-grotesk)", fontSize: "0.78rem", fontWeight: 600, letterSpacing: "0.08em", padding: "0.75rem 1.4rem", borderRadius: "100px", background: "var(--accent)", color: "var(--accent-ink)" }}
       >
-        Satın al →
+        Satın al
       </a>
     </div>
   );

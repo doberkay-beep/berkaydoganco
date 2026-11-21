@@ -41,6 +41,22 @@ export const BASIN_TUR: Record<BasinTur, { tr: string; en: string }> = {
 
 export const BASIN: Basin[] = [
   {
+    tarihISO: "2026-11-16",
+    yayin: "Varyasyon Kalemler Dergisi",
+    tur: "roportaj",
+    baslik: { tr: "Röportaj: Berkay Doğan (20 soru)", en: "Interview: Berkay Doğan (20 questions)" },
+    alinti: "İlham benim için gökten inen bir şey değil, bakmayı bilmekle ilgili.",
+    url: "https://varyasyonkalemler.com/roportaj-berkay-dogan/",
+  },
+  {
+    tarihISO: "2026-11-15",
+    yayin: "Şiir Rafım",
+    tur: "siir",
+    baslik: { tr: "“Yalnızlık Masası” — Okur Şiirleri (yorum yazısıyla)", en: "“Yalnızlık Masası” — Readers’ Poems (with commentary)" },
+    alinti: "Ben bu masayı kurduğumda siz yoktunuz efendim",
+    url: "https://www.siirrafim.art/2026/11/yalnizlik-masasi-berkay-dogan-okur.html",
+  },
+  {
     tarihISO: "2026-11-12",
     yayin: "Teknoblog",
     tur: "haber",
@@ -116,7 +132,7 @@ export const BASIN: Basin[] = [
 /* Kayıtlar — basın değil ama tanınırlık: platform ve dizin kayıtları. */
 export const KAYITLAR: { ad: string; tr: string; en: string; url: string }[] = [
   { ad: "Trendyol", tr: "Şiirde #1 en çok ziyaret edilen", en: "#1 most visited in poetry", url: "https://www.trendyol.com/iskenderiye-kitap/murekkep-ve-koz-berkay-dogan-p-1072536167" },
-  { ad: "1000Kitap", tr: "10/10 okur puanı", en: "10/10 reader rating", url: "https://1000kitap.com/BerkayDogan01" },
+  { ad: "1000Kitap", tr: "10/10 okur puanı", en: "10/10 reader rating", url: "https://1000kitap.com/yazarberkaydogan" },
   { ad: "Goodreads", tr: "Küresel yazar dizininde", en: "In the global author index", url: "https://www.goodreads.com/book/show/252900764-m-rekkep-ve-k-z" },
   { ad: "Wikidata", tr: "Yazar kaydı Q141592752", en: "Author record Q141592752", url: "https://www.wikidata.org/wiki/Q141592752" },
 ];
@@ -137,3 +153,21 @@ export const ALINTI_KAYNAK = {
   ad: "Edebiyat Magazin Gazetesi söyleşisi, 4 Ekim 2026",
   url: "https://emagazin.tv/haber/berkay-dogan-begenilecek-cumleyi-degil-dogru-cumleyi-yaz/2918",
 };
+
+/* Varyasyon Kalemler röportajındaki KENDİ cevaplarından, harfi harfine (16 Kas 2026). */
+export const ALINTILAR_2: string[] = [
+  "Konuştuğumda duyulmadığımı hissettiğim yerde yazmaya başladım; kâğıt, sözümün kesilmediği tek yerdi.",
+  "Süslü ama yalan bir cümleyi, çıplak ama doğru bir cümleye hiçbir zaman tercih etmem.",
+  "İlham benim için gökten inen bir şey değil, bakmayı bilmekle ilgili.",
+  "Okuru kandırabilirsiniz ama kendi cümlenizi kandıramazsınız.",
+];
+export const ALINTI_KAYNAK_2 = {
+  ad: "Varyasyon Kalemler Dergisi röportajı, 16 Kasım 2026",
+  url: "https://varyasyonkalemler.com/roportaj-berkay-dogan/",
+};
+
+/* Basın Odası ve basın kiti için: kaynaklarıyla birlikte bütün alıntılar. */
+export const ALINTI_GRUPLARI = [
+  { kaynak: ALINTI_KAYNAK_2, cumleler: ALINTILAR_2 },
+  { kaynak: ALINTI_KAYNAK, cumleler: ALINTILAR },
+];

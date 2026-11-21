@@ -99,7 +99,7 @@ export default async function SozPage({ params }: { params: Promise<{ slug: stri
 
       <div className="eski-ust" style={{ display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: "1rem" }}>
         <Link href="/" style={{ fontFamily: "var(--font-grotesk)", fontWeight: 700, letterSpacing: "0.02em", color: "var(--ink)" }}>Berkay Doğan</Link>
-        <Link href="/sozler" style={{ ...mono, fontSize: "0.72rem", letterSpacing: "0.14em", color: "var(--muted)", borderBottom: "1px solid var(--accent)", paddingBottom: "2px" }}>← Tüm sözler</Link>
+        <Link href="/sozler" style={{ ...mono, fontSize: "0.72rem", letterSpacing: "0.14em", color: "var(--muted)", borderBottom: "1px solid var(--accent)", paddingBottom: "2px" }}>Tüm sözler</Link>
       </div>
 
       <article style={{ flex: 1, display: "flex", flexDirection: "column", justifyContent: "center", padding: "3rem 0" }}>
@@ -114,7 +114,7 @@ export default async function SozPage({ params }: { params: Promise<{ slug: stri
           Berkay Doğan&apos;ın{" "}
           <Link href={kitapSayfa} style={{ color: "var(--ink)", borderBottom: "1px solid var(--accent)" }}>{kaynak.tamAd}</Link>{" "}
           ({kaynak.tur}, {YAYINEVI}, {kaynak.yil}) kitabından{soz.p ? `, s. ${soz.p}` : ""}.{" "}
-          <Link href={kitapSayfa} style={{ ...mono, fontSize: "0.62rem", color: "var(--accent-2)", whiteSpace: "nowrap" }}>Kitap sayfası →</Link>
+          <Link href={kitapSayfa} style={{ ...mono, fontSize: "0.62rem", color: "var(--accent-2)", whiteSpace: "nowrap" }}>Kitap sayfası</Link>
         </p>
 
         <div style={{ display: "flex", gap: "0.5rem", flexWrap: "wrap", marginTop: "1.5rem" }}>
@@ -131,7 +131,7 @@ export default async function SozPage({ params }: { params: Promise<{ slug: stri
 
         <a href={`/git/${gitKanal}/`} rel="noopener" style={{ display: "inline-flex", alignSelf: "flex-start", alignItems: "center", gap: "0.6rem", marginTop: "2rem", padding: "1rem 1.3rem", border: "1px solid var(--line)", borderRadius: "12px", background: "var(--bg-2)" }}>
           <span style={{ fontFamily: "var(--font-serif)", fontStyle: "italic", fontSize: "0.98rem", color: "var(--ink)" }}>Bu söz {KITAP_ADI[soz.k]}&apos;den — kitabı al</span>
-          <span style={{ color: "var(--accent-2)" }} aria-hidden="true">→</span>
+
         </a>
       </article>
 
@@ -154,17 +154,17 @@ export default async function SozPage({ params }: { params: Promise<{ slug: stri
           <p style={{ display: "flex", gap: "0.4rem 1rem", flexWrap: "wrap", marginTop: "1.25rem" }}>
             {soz.t.map((tema) => (
               <Link key={tema} href={`/tema/${tema}`} style={{ ...mono, fontSize: "0.6rem", color: "var(--accent-2)" }}>
-                Tüm {TEMA_ADI[tema]} sözleri →
+                Tüm {TEMA_ADI[tema]} sözleri
               </Link>
             ))}
-            <Link href="/sozler" style={{ ...mono, fontSize: "0.6rem", color: "var(--muted)" }}>Berkay Doğan sözleri →</Link>
+            <Link href="/sozler" style={{ ...mono, fontSize: "0.6rem", color: "var(--muted)" }}>Berkay Doğan sözleri</Link>
           </p>
         </section>
       )}
 
       <nav style={{ display: "flex", justifyContent: "space-between", gap: "1rem", borderTop: "1px solid var(--line)", paddingTop: "1.5rem" }} aria-label="Sözler arası gezinme">
-        <Link href={`/soz/${sozSlug(onceki.s)}`} style={{ ...mono, fontSize: "0.68rem", color: "var(--muted)", maxWidth: "45%" }}>← önceki söz</Link>
-        <Link href={`/soz/${sozSlug(sonraki.s)}`} style={{ ...mono, fontSize: "0.68rem", color: "var(--muted)", maxWidth: "45%", textAlign: "right" }}>sonraki söz →</Link>
+        <Link href={`/soz/${sozSlug(onceki.s)}`} style={{ ...mono, fontSize: "0.68rem", color: "var(--muted)", maxWidth: "45%" }}>önceki söz</Link>
+        <Link href={`/soz/${sozSlug(sonraki.s)}`} style={{ ...mono, fontSize: "0.68rem", color: "var(--muted)", maxWidth: "45%", textAlign: "right" }}>sonraki söz</Link>
       </nav>
     </main>
   );

@@ -75,7 +75,7 @@ export const SANATCI_TR: SanatciMetin = {
     yogun: "Şu an çok fazla başvuru var. Biraz sonra yeniden dener misin?",
   },
   genelHata: "Mektubun gönderilemedi. Bağlantını kontrol edip yeniden dener misin?",
-  geri: "← writtenby.: bir şehrin yazdığı kitap", geriHref: "/writtenby/",
+  geri: "writtenby.: bir şehrin yazdığı kitap", geriHref: "/writtenby/",
   atolye: "by. atölyesinin bir işi", atolyeHref: "/by/",
 };
 
@@ -118,7 +118,7 @@ export const SANATCI_EN: SanatciMetin = {
     yogun: "There are too many applications right now. Could you try again a little later?",
   },
   genelHata: "Your letter couldn't be sent. Please check your connection and try again.",
-  geri: "← writtenby.: a book written by a city", geriHref: "/en/writtenby/",
+  geri: "writtenby.: a book written by a city", geriHref: "/en/writtenby/",
   atolye: "A work of the by. workshop", atolyeHref: "/en/by/",
 };
 

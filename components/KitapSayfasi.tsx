@@ -70,7 +70,7 @@ export function KitapSayfasi({ kitap, diger }: { kitap: Kitap; diger: Kitap }) {
       {/* Site içi dönüş */}
       <div className="eski-ust" style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "clamp(2.5rem, 6vh, 4rem)", flexWrap: "wrap", gap: "1rem" }}>
         <Link href="/" style={{ fontFamily: "var(--font-grotesk)", fontWeight: 700, letterSpacing: "0.02em", color: "var(--ink)" }}>Berkay Doğan</Link>
-        <Link href="/kitaplar" style={{ ...mono, fontSize: "0.72rem", letterSpacing: "0.14em", color: "var(--muted)", borderBottom: "1px solid var(--accent)", paddingBottom: "2px" }}>← Kitaplar</Link>
+        <Link href="/kitaplar" style={{ ...mono, fontSize: "0.72rem", letterSpacing: "0.14em", color: "var(--muted)", borderBottom: "1px solid var(--accent)", paddingBottom: "2px" }}>Kitaplar</Link>
       </div>
 
       {/* a. Üst bant */}
@@ -136,7 +136,6 @@ export function KitapSayfasi({ kitap, diger }: { kitap: Kitap; diger: Kitap }) {
           {kitap.kanallar.map((k) => (
             <a key={k.git} href={`/git/${k.git}/`} rel="noopener" className="ks-kanal">
               <span style={{ fontFamily: "var(--font-serif)", fontSize: "clamp(1.25rem, 2.6vw, 1.5rem)", color: "var(--ink)" }}>{k.name}</span>
-              <span aria-hidden="true" style={{ color: "var(--accent-2)", fontSize: "1.1rem" }}>→</span>
             </a>
           ))}
         </div>
@@ -189,7 +188,7 @@ export function KitapSayfasi({ kitap, diger }: { kitap: Kitap; diger: Kitap }) {
 
       {sozler.length > 0 && (
         <details style={bolum} className="ks-sozler">
-          <summary style={{ ...mono, color: "var(--muted)", cursor: "pointer" }}>Bütün sözler ({sozler.length}) <span style={{ color: "var(--accent-2)" }}>↓</span></summary>
+          <summary style={{ ...mono, color: "var(--muted)", cursor: "pointer" }}>Bütün sözler ({sozler.length})</summary>
           <div style={{ display: "flex", flexDirection: "column", marginTop: "1rem" }}>
             {sozler.map((x) => (
               <Link key={x.s} href={`/soz/${sozSlug(x.s)}`} style={{ display: "block", padding: "0.85rem 0", borderTop: "1px solid var(--line)", color: "var(--ink)", fontFamily: "var(--font-serif)", fontStyle: "italic", fontSize: "1.08rem", lineHeight: 1.5 }}>
@@ -204,7 +203,7 @@ export function KitapSayfasi({ kitap, diger }: { kitap: Kitap; diger: Kitap }) {
       <hr style={{ border: "none", borderTop: "1px solid var(--line)", margin: "clamp(3rem, 8vh, 5rem) 0 0" }} />
       <Link href={`/kitaplar/${diger.slug}`} style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline", gap: "1rem", flexWrap: "wrap", padding: "1.75rem 0 0" }}>
         <span style={{ ...mono, fontSize: "0.68rem", color: "var(--muted)" }}>Diğer kitap</span>
-        <span style={{ fontFamily: "var(--font-serif)", fontSize: "clamp(1.3rem, 3vw, 1.7rem)", color: "var(--ink)" }}>{diger.ad} <span style={{ color: "var(--accent-2)" }}>→</span></span>
+        <span style={{ fontFamily: "var(--font-serif)", fontSize: "clamp(1.3rem, 3vw, 1.7rem)", color: "var(--ink)" }}>{diger.ad}</span>
       </Link>
 
       <style>{`

@@ -19,7 +19,7 @@ export default function TakvimPage() {
     <main style={{ minHeight: "100svh" }}>
       <div className="eski-ust" style={{ display: "flex", justifyContent: "space-between", alignItems: "center", maxWidth: "980px", margin: "0 auto", padding: "1.5rem clamp(1.25rem, 4vw, 3.25rem) 0", flexWrap: "wrap", gap: "1rem" }}>
         <Link href="/" style={{ fontFamily: "var(--font-grotesk)", fontWeight: 700, letterSpacing: "0.02em", color: "var(--ink)" }}>Berkay Doğan</Link>
-        <Link href="/sozler" style={{ fontFamily: "var(--font-grotesk)", fontSize: "0.72rem", letterSpacing: "0.14em", textTransform: "uppercase", color: "var(--muted)", borderBottom: "1px solid var(--accent)", paddingBottom: "2px" }}>← Tüm sözler</Link>
+        <Link href="/sozler" style={{ fontFamily: "var(--font-grotesk)", fontSize: "0.72rem", letterSpacing: "0.14em", textTransform: "uppercase", color: "var(--muted)", borderBottom: "1px solid var(--accent)", paddingBottom: "2px" }}>Tüm sözler</Link>
       </div>
       <div style={{ maxWidth: "980px", margin: "2rem auto 0", padding: "0 clamp(1.25rem, 4vw, 3.25rem)" }}>
         <h1 style={{ fontFamily: "var(--font-serif)", fontWeight: 500, fontSize: "clamp(2.2rem, 6vw, 3.6rem)", letterSpacing: "-0.015em", lineHeight: 0.98, color: "var(--ink)" }}>Köz Takvimi</h1>

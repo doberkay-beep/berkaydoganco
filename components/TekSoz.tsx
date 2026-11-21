@@ -90,7 +90,7 @@ export function TekSoz() {
           <div style={{ display: "flex", gap: ".8rem", flexWrap: "wrap" }}>
             <button className="ts-dugme" style={{ background: KIRMIZI, color: "#fff" }} onClick={paylas}>{kopyalandi ? "Kopyalandı" : "Paylaş"}</button>
             <button className="ts-dugme" style={{ background: "transparent", color: "inherit", border: "1px solid var(--line)" }} onClick={() => setSira((s) => s + 1)}>Başka bir söz</button>
-            <Link href={`/soz/${sozSlug(soz.s)}/`} className="ts-dugme" style={{ background: "transparent", color: "var(--muted)", padding: ".85rem .4rem" }}>Sözün sayfası →</Link>
+            <Link href={`/soz/${sozSlug(soz.s)}/`} className="ts-dugme" style={{ background: "transparent", color: "var(--muted)", padding: ".85rem .4rem" }}>Sözün sayfası</Link>
           </div>
         </div>
       </div>

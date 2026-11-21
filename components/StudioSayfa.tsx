@@ -44,9 +44,9 @@ export const STUDIO_EN: StudioMetin = {
   ],
   isEtiket: "Selected work",
   isler: [
-    { ad: "nowby", renk: TURUNCU, m: "What is playing on the radio right now? A live tracker for 350+ stations, with charts built from real airplay counts, artist pages and a world radio atlas.", teknik: "Next.js · Supabase · realtime · SwiftUI iOS app · 30 languages", href: "https://nowby.co", link: "nowby.co →", gorsel: "/by/nowby-4.5.jpg", alt: "nowby live station list" },
-    { ad: "hereby", renk: MOR, m: "A location-based iOS app: leave a line where you are, and only someone who comes to that place can read it. Poetry walks, time capsules, moderation tools.", teknik: "SwiftUI · MapKit · PostGIS · Supabase · 30 languages", href: "/en/hereby", link: "About hereby. →", gorsel: "/by/hereby-9.jpg", alt: "hereby map with nearby traces" },
-    { ad: "writtenby", renk: MOR, m: "A book written by a city, built inside hereby.: one question a day, one line from where you stand, and a printed book at the end of the year.", teknik: "SwiftUI · Supabase · consent and moderation flows", href: "/en/writtenby", link: "About writtenby. →", gorsel: "/by/writtenby-10.2.jpg", alt: "writtenby. writing screen" },
+    { ad: "nowby", renk: TURUNCU, m: "What is playing on the radio right now? A live tracker for 350+ stations, with charts built from real airplay counts, artist pages and a world radio atlas.", teknik: "Next.js · Supabase · realtime · SwiftUI iOS app · 30 languages", href: "https://nowby.co", link: "nowby.co", gorsel: "/by/nowby-4.5.jpg", alt: "nowby live station list" },
+    { ad: "hereby", renk: MOR, m: "A location-based iOS app: leave a line where you are, and only someone who comes to that place can read it. Poetry walks, time capsules, moderation tools.", teknik: "SwiftUI · MapKit · PostGIS · Supabase · 30 languages", href: "/en/hereby", link: "About hereby.", gorsel: "/by/hereby-9.jpg", alt: "hereby map with nearby traces" },
+    { ad: "writtenby", renk: MOR, m: "A book written by a city, built inside hereby.: one question a day, one line from where you stand, and a printed book at the end of the year.", teknik: "SwiftUI · Supabase · consent and moderation flows", href: "/en/writtenby", link: "About writtenby.", gorsel: "/by/writtenby-10.2.jpg", alt: "writtenby. writing screen" },
   ],
   surecEtiket: "How we work",
   surec: [
@@ -88,9 +88,9 @@ export const STUDIO_TR: StudioMetin = {
   ],
   isEtiket: "Örnek işler",
   isler: [
-    { ad: "nowby", renk: TURUNCU, m: "Radyoda şu an ne çalıyor? 350'den fazla istasyonu canlı izleyen; gerçek çalınma sayılarına dayanan listeler, sanatçı sayfaları ve dünya radyo atlası.", teknik: "Next.js · Supabase · gerçek zamanlı · SwiftUI iOS uygulaması · 30 dil", href: "https://nowby.co", link: "nowby.co →", gorsel: "/by/nowby-4.5.jpg", alt: "nowby canlı istasyon listesi" },
-    { ad: "hereby", renk: MOR, m: "Konum tabanlı bir iOS uygulaması: bulunduğun yere bir satır bırak, onu yalnızca oraya gelen okusun. Şiir yürüyüşleri, zaman kapsülleri, moderasyon araçları.", teknik: "SwiftUI · MapKit · PostGIS · Supabase · 30 dil", href: "/hereby", link: "hereby.'yi tanı →", gorsel: "/by/hereby-9.jpg", alt: "hereby haritası ve yakındaki izler" },
-    { ad: "writtenby", renk: MOR, m: "hereby.'nin içinde bir şehrin yazdığı kitap: günde tek soru, bulunduğun yerden tek satır, yıl sonunda basılı kitap.", teknik: "SwiftUI · Supabase · izin ve moderasyon akışları", href: "/writtenby", link: "writtenby.'yi tanı →", gorsel: "/by/writtenby-10.2.jpg", alt: "writtenby. yazma ekranı" },
+    { ad: "nowby", renk: TURUNCU, m: "Radyoda şu an ne çalıyor? 350'den fazla istasyonu canlı izleyen; gerçek çalınma sayılarına dayanan listeler, sanatçı sayfaları ve dünya radyo atlası.", teknik: "Next.js · Supabase · gerçek zamanlı · SwiftUI iOS uygulaması · 30 dil", href: "https://nowby.co", link: "nowby.co", gorsel: "/by/nowby-4.5.jpg", alt: "nowby canlı istasyon listesi" },
+    { ad: "hereby", renk: MOR, m: "Konum tabanlı bir iOS uygulaması: bulunduğun yere bir satır bırak, onu yalnızca oraya gelen okusun. Şiir yürüyüşleri, zaman kapsülleri, moderasyon araçları.", teknik: "SwiftUI · MapKit · PostGIS · Supabase · 30 dil", href: "/hereby", link: "hereby.'yi tanı", gorsel: "/by/hereby-9.jpg", alt: "hereby haritası ve yakındaki izler" },
+    { ad: "writtenby", renk: MOR, m: "hereby.'nin içinde bir şehrin yazdığı kitap: günde tek soru, bulunduğun yerden tek satır, yıl sonunda basılı kitap.", teknik: "SwiftUI · Supabase · izin ve moderasyon akışları", href: "/writtenby", link: "writtenby.'yi tanı", gorsel: "/by/writtenby-10.2.jpg", alt: "writtenby. yazma ekranı" },
   ],
   surecEtiket: "Nasıl çalışıyoruz",
   surec: [
@@ -152,7 +152,7 @@ export function StudioSayfa({ m }: { m: StudioMetin }) {
                   <span style={{ ...appYazi, fontSize: "1.9rem", color: MOR }}>{p.fiyat}</span>
                   <span style={{ ...mono, opacity: 0.6 }}>{p.sure}</span>
                 </div>
-                <Link href={p.ornekHref} style={{ ...mono, display: "inline-block", marginTop: "0.9rem", color: MOR, textDecoration: "none" }}>{p.ornek} →</Link>
+                <Link href={p.ornekHref} style={{ ...mono, display: "inline-block", marginTop: "0.9rem", color: MOR, textDecoration: "none" }}>{p.ornek}</Link>
               </div>
             ))}
           </div>

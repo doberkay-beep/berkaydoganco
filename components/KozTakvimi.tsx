@@ -75,7 +75,7 @@ export default function KozTakvimi() {
             <SozAksiyon soz={soz.s} kaynak={kaynak} />
           </div>
           <Link href={`/soz/${sozSlug(soz.s)}`} style={{ display: "inline-block", marginTop: "1.4rem", fontFamily: "var(--font-grotesk)", fontSize: "0.72rem", letterSpacing: "0.14em", textTransform: "uppercase", color: "var(--muted)", borderBottom: "1px solid var(--accent)", paddingBottom: "2px" }}>
-            Sözün sayfasına git →
+            Sözün sayfasına git
           </Link>
         </div>
 

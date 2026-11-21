@@ -77,7 +77,7 @@ export default async function YaziPage({ params }: { params: Promise<{ slug: str
 
       <div className="eski-ust" style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "clamp(3rem, 8vh, 5rem)", flexWrap: "wrap", gap: "1rem" }}>
         <Link href="/" style={{ fontFamily: "var(--font-grotesk)", fontWeight: 700, letterSpacing: "0.02em" }}>Berkay Doğan</Link>
-        <Link href="/yazilar" style={{ fontFamily: "var(--font-grotesk)", fontSize: "0.72rem", letterSpacing: "0.14em", textTransform: "uppercase", color: "var(--muted)", borderBottom: "1px solid var(--accent)", paddingBottom: "2px" }}>← Yazılar</Link>
+        <Link href="/yazilar" style={{ fontFamily: "var(--font-grotesk)", fontSize: "0.72rem", letterSpacing: "0.14em", textTransform: "uppercase", color: "var(--muted)", borderBottom: "1px solid var(--accent)", paddingBottom: "2px" }}>Yazılar</Link>
       </div>
 
       {y.taslak && (
@@ -99,7 +99,7 @@ export default async function YaziPage({ params }: { params: Promise<{ slug: str
               <a key={i} href={`https://www.youtube.com/watch?v=${MEDIA.youtube}`} target="_blank" rel="noopener noreferrer"
                 style={{ display: "flex", alignItems: "center", gap: "0.9rem", margin: "0.5rem 0 1.6rem", padding: "1.1rem 1.3rem", border: "1px solid var(--line)", borderRadius: "12px", background: "var(--bg-2)" }}>
                 <span style={{ color: "var(--accent-2)", fontSize: "1.2rem" }} aria-hidden="true">▶</span>
-                <span style={{ fontFamily: "var(--font-grotesk)", fontWeight: 500, fontSize: "0.95rem", color: "var(--ink)" }}>Bahsettiğim video — YouTube'da izle ↗</span>
+                <span style={{ fontFamily: "var(--font-grotesk)", fontWeight: 500, fontSize: "0.95rem", color: "var(--ink)" }}>Bahsettiğim video — YouTube'da izle</span>
               </a>
             );
           }
@@ -150,7 +150,7 @@ export default async function YaziPage({ params }: { params: Promise<{ slug: str
         <div style={{ display: "flex", gap: "0.75rem", flexWrap: "wrap" }}>
           <a href={`${SUBSTACK_URL}/subscribe`} target="_blank" rel="noopener noreferrer"
             style={{ display: "inline-flex", alignItems: "center", gap: "0.5rem", fontFamily: "var(--font-grotesk)", fontSize: "0.78rem", fontWeight: 500, letterSpacing: "0.08em", padding: "0.9rem 1.5rem", borderRadius: "100px", background: "var(--accent)", color: "var(--accent-ink)" }}>
-            Yeni yazılar e-postana gelsin →
+            Yeni yazılar e-postana gelsin
           </a>
           <Link href="/yazilar"
             style={{ display: "inline-flex", alignItems: "center", gap: "0.5rem", fontFamily: "var(--font-grotesk)", fontSize: "0.78rem", fontWeight: 500, letterSpacing: "0.08em", padding: "0.9rem 1.5rem", borderRadius: "100px", border: "1px solid var(--line)", color: "var(--ink)" }}>

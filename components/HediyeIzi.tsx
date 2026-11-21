@@ -108,14 +108,14 @@ export function HediyeIzi({ dil }: { dil: "tr" | "en" }) {
         )}
 
         <div style={{ display: "flex", gap: "1rem", justifyContent: "center", flexWrap: "wrap", position: "relative" }}>
-          <a href={HEREBY_APP_STORE} className="hz-dugme" style={{ background: CIVIT, color: "#fff", boxShadow: `0 12px 34px ${CIVIT}55` }}>{m.indir} →</a>
+          <a href={HEREBY_APP_STORE} className="hz-dugme" style={{ background: CIVIT, color: "#fff", boxShadow: `0 12px 34px ${CIVIT}55` }}>{m.indir}</a>
           {durum.tur === "var" && (
             <a href={uygulamaHref} className="hz-dugme" style={{ border: "1px solid var(--line)", color: "var(--fg, inherit)" }}>{m.ac}</a>
           )}
         </div>
         <p style={{ ...mono, color: "var(--muted)", marginTop: "1.4rem", fontSize: "0.66rem", position: "relative" }}>{m.dip}</p>
         <p style={{ marginTop: "2.4rem", position: "relative" }}>
-          <a href={m.neHref} style={{ ...mono, color: CIVIT, fontSize: "0.68rem" }}>{m.ne} →</a>
+          <a href={m.neHref} style={{ ...mono, color: CIVIT, fontSize: "0.68rem" }}>{m.ne}</a>
         </p>
       </section>
     </main>

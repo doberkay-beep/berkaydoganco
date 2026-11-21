@@ -57,7 +57,7 @@ export function CanliSimdiKutu() {
         şarkı {ayAdi(v.ay, true)} ayında Türkiye radyolarında çaldı ve sayıldı{ilk ? <> — zirvede <strong>{ilk.artist}</strong>, “{ilk.title}”.</> : "."}
       </span>
       <span style={{ fontSize: "0.8rem", color: "var(--muted)" }}>
-        Berkay Doğan'ın kurduğu nowby, Türkiye radyolarında çalan her şarkıyı 7/24 sayıyor. Sayı her birkaç dakikada tazelenir; haberde kullanırken “nowby verisine göre” diye kaynak gösterin. ↗
+        Berkay Doğan'ın kurduğu nowby, Türkiye radyolarında çalan her şarkıyı 7/24 sayıyor. Sayı her birkaç dakikada tazelenir; haberde kullanırken “nowby verisine göre” diye kaynak gösterin.
       </span>
     </a>
   );

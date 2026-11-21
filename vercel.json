@@ -111,6 +111,66 @@
       "permanent": true
     },
     {
+      "source": "/yazilar/dark-oxygen",
+      "destination": "/kitaplar/tasfiye/",
+      "permanent": true
+    },
+    {
+      "source": "/yazilar/dark-oxygen/",
+      "destination": "/kitaplar/tasfiye/",
+      "permanent": true
+    },
+    {
+      "source": "/yazilar/i-am-not-a-god",
+      "destination": "/kitaplar/tasfiye/",
+      "permanent": true
+    },
+    {
+      "source": "/yazilar/i-am-not-a-god/",
+      "destination": "/kitaplar/tasfiye/",
+      "permanent": true
+    },
+    {
+      "source": "/yazilar/karanlik-oksijen",
+      "destination": "/kitaplar/tasfiye/",
+      "permanent": true
+    },
+    {
+      "source": "/yazilar/karanlik-oksijen/",
+      "destination": "/kitaplar/tasfiye/",
+      "permanent": true
+    },
+    {
+      "source": "/yazilar/bir-tanri-degilim",
+      "destination": "/kitaplar/tasfiye/",
+      "permanent": true
+    },
+    {
+      "source": "/yazilar/bir-tanri-degilim/",
+      "destination": "/kitaplar/tasfiye/",
+      "permanent": true
+    },
+    {
+      "source": "/yazilar/a-writers-reckoning",
+      "destination": "/kitaplar/tasfiye/",
+      "permanent": true
+    },
+    {
+      "source": "/yazilar/a-writers-reckoning/",
+      "destination": "/kitaplar/tasfiye/",
+      "permanent": true
+    },
+    {
+      "source": "/yazilar/bir-yazarin-hesabi",
+      "destination": "/kitaplar/tasfiye/",
+      "permanent": true
+    },
+    {
+      "source": "/yazilar/bir-yazarin-hesabi/",
+      "destination": "/kitaplar/tasfiye/",
+      "permanent": true
+    },
+    {
       "source": "/mahkeme",
       "destination": "/kitaplar/tasfiye/",
       "permanent": true

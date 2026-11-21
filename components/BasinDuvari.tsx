@@ -54,7 +54,7 @@ export function BasinDuvari({ lang }: { lang: Lang }) {
               )}
               {k.url && (
                 <span style={{ display: "block", marginTop: "auto", paddingTop: "1.25rem", ...ust, color: "var(--accent-2)" }}>
-                  {k.izle ? (tr ? "İzle" : "Watch") : (tr ? "Oku" : "Read")} ↗
+                  {k.izle ? (tr ? "İzle" : "Watch") : (tr ? "Oku" : "Read")}
                 </span>
               )}
             </>
@@ -71,7 +71,7 @@ export function BasinDuvari({ lang }: { lang: Lang }) {
         <span style={{ ...ust, color: "var(--muted)" }}>{tr ? "Kayıtlar" : "Listings"}</span>
         {KAYITLAR.map((k) => (
           <a key={k.ad} href={k.url} target="_blank" rel="noopener noreferrer" className="cg-link" style={{ fontSize: "0.86rem", color: "var(--ink)", textDecoration: "none" }}>
-            <strong style={{ fontWeight: 600 }}>{k.ad}</strong> <span style={{ color: "var(--muted)" }}>· {tr ? k.tr : k.en}</span> <span style={{ color: "var(--accent-2)" }}>↗</span>
+            <strong style={{ fontWeight: 600 }}>{k.ad}</strong> <span style={{ color: "var(--muted)" }}>· {tr ? k.tr : k.en}</span>
           </a>
         ))}
       </div>

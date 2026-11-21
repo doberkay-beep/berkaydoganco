@@ -13,13 +13,13 @@ const COPY: Record<Lang, { etiket: string; satir1: string; satir2: string; geri:
     etiket: "404 — kayıp",
     satir1: "Aradığın sayfa tasfiye edilmiş.",
     satir2: "Ama kaybolmak da bir tür bulunmaktır; ne aradığını burada bilen biri var.",
-    geri: "← eve dön",
+    geri: "eve dön",
   },
   en: {
     etiket: "404 — lost",
     satir1: "The page you seek has been cleared away.",
     satir2: "But getting lost is a way of being found; someone here knows what you were looking for.",
-    geri: "← back home",
+    geri: "back home",
   },
 };
 

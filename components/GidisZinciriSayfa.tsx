@@ -53,7 +53,7 @@ export const GIDIS_TR: GidisMetin = {
     { b: "Oku", a: "İz yaklaşınca açılır. Satır Türkçedir; altında sıradaki şehrin ipucu yazar." },
     { b: "Devret", a: "Sıradaki şehre sen gidemiyorsan, oraya giden birine anlat." },
   ],
-  dugme: "Yerinde oku → hereby.",
+  dugme: "Yerinde oku: hereby.",
   herebyHref: "/hereby",
   ilkeler: "Reklam yok · Beğeni yok · Sıralama yok",
   atolye: "by. atölyesinin bir işi", atolyeHref: "/by",
@@ -75,7 +75,7 @@ export const GIDIS_EN: GidisMetin = {
     { b: "Read", a: "The trace opens as you arrive. The line is in Turkish; beneath it is the hint to the next city." },
     { b: "Pass it on", a: "If you can't reach the next city, tell someone who will." },
   ],
-  dugme: "Read it there → hereby.",
+  dugme: "Read it there: hereby.",
   herebyHref: "/en/hereby",
   ilkeler: "No ads · No likes · No rankings",
   atolye: "A work of the by. workshop", atolyeHref: "/en/by",
@@ -86,7 +86,7 @@ function Harita({ m }: { m: GidisMetin }) {
   const p = DURAKLAR;
   const yol = [...p, p[0]].map((n, k) => `${k ? "L" : "M"}${n.x.toFixed(1)} ${n.y.toFixed(1)}`).join(" ");
   return (
-    <svg viewBox={`0 0 ${G} ${Y}`} preserveAspectRatio="xMidYMid meet" role="img" aria-label={DURAKLAR.map((d) => d.sehir[i]).join(" → ")} style={{ display: "block", width: "100%", height: "auto" }}>
+    <svg viewBox={`0 0 ${G} ${Y}`} preserveAspectRatio="xMidYMid meet" role="img" aria-label={DURAKLAR.map((d) => d.sehir[i]).join(" ")} style={{ display: "block", width: "100%", height: "auto" }}>
       <rect width={G} height={Y} fill={DENIZ} />
       <g stroke="#242424" strokeWidth="1">
         {Array.from({ length: 9 }, (_, k) => <line key={`b${k}`} x1={(k + 1) * 80} y1="0" x2={(k + 1) * 80} y2={Y} />)}

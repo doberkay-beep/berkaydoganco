@@ -84,7 +84,7 @@ export default async function KavramPage({ params }: { params: Promise<{ terim: 
 
       <div className="eski-ust" style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "clamp(3rem, 8vh, 5rem)", flexWrap: "wrap", gap: "1rem" }}>
         <Link href="/" style={{ fontFamily: "var(--font-grotesk)", fontWeight: 700, letterSpacing: "0.02em", color: "var(--ink)" }}>Berkay Doğan</Link>
-        <Link href="/sozluk" style={{ ...mono, fontSize: "0.72rem", letterSpacing: "0.14em", color: "var(--muted)", borderBottom: "1px solid var(--accent)", paddingBottom: "2px" }}>← Sözlük</Link>
+        <Link href="/sozluk" style={{ ...mono, fontSize: "0.72rem", letterSpacing: "0.14em", color: "var(--muted)", borderBottom: "1px solid var(--accent)", paddingBottom: "2px" }}>Sözlük</Link>
       </div>
 
       <span style={{ display: "inline-flex", alignItems: "center", gap: "0.6rem", ...mono, letterSpacing: "0.26em", color: "var(--ink)" }}>
@@ -100,7 +100,7 @@ export default async function KavramPage({ params }: { params: Promise<{ terim: 
           {KITAP_ADI[k.k]}{k.p ? ` · s. ${k.p}` : ""}
         </Link>
         <Link href={`/soz/${sozSlug(k.tanim)}`} style={{ marginLeft: "1.2rem", ...mono, fontSize: "0.66rem", color: "var(--muted)" }}>
-          bu cümlenin sayfası →
+          bu cümlenin sayfası
         </Link>
       </p>
 
