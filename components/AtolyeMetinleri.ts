@@ -23,8 +23,7 @@ export const ATOLYE_TR: AtolyeMetin = {
       m: "Aklından geçen satırı geçtiğin yere bırak. Onu yalnızca oraya gelen biri okuyabilir. Kitaplardan satırlarla şiir yürüyüşleri, zaman kapsülleri, kendine notlar.",
       ilke: "Hiçbir iz sayılmaz, sıralanmaz.",
       durum: [
-        { c: "iPhone", d: "App Store'da", href: "https://apps.apple.com/app/id6825787016" },
-        { c: "Apple Watch", d: "Yakında" },
+        { c: "iPhone · Apple Watch", d: "App Store'da", href: "https://apps.apple.com/app/id6825787016" },
         { c: "Android", d: "Testte" },
         { c: "Web", d: "Işık haritası", href: "/hereby" },
       ],
@@ -110,8 +109,7 @@ export const ATOLYE_EN: AtolyeMetin = {
       m: "Leave the line on your mind at the place you pass. Only someone who comes to that place can read it. Poetry walks with lines from the books, time capsules, notes to self.",
       ilke: "No trace is counted or ranked.",
       durum: [
-        { c: "iPhone", d: "On the App Store", href: "https://apps.apple.com/app/id6825787016" },
-        { c: "Apple Watch", d: "Coming soon" },
+        { c: "iPhone · Apple Watch", d: "On the App Store", href: "https://apps.apple.com/app/id6825787016" },
         { c: "Android", d: "In testing" },
         { c: "Web", d: "Map of lights", href: "/en/hereby" },
       ],
