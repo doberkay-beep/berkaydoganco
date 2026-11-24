@@ -27,7 +27,7 @@ export const ETKINLIKLER: Etkinlik[] = [
   // Berkay teyit etti (24 Kas 2026).
   { tarihISO: "2026-12-12", baslik: "Kitap Fuarı'nda hereby. izleri", mekan: "TÜYAP Fuar ve Kongre Merkezi", sehir: "İstanbul", tur: "iz",
     not: "12–20 Aralık. Stant yok; fuar boyunca kitaplardan yayımlanmış dizeler hereby. ile fuar alanına bırakılıyor." },
-  { tarihISO: "2026-12-21", baslik: "Açık Hava Edebiyat Müzesi açılıyor", mekan: "hereby.", sehir: "İstanbul",
+  { tarihISO: "2026-12-21", baslik: "Açık Hava Edebiyat Müzesi açılıyor", mekan: "hereby. uygulaması", sehir: "İstanbul",
     not: "Yazarların izleri şehirde, hereby. ile." },
 ];
 
