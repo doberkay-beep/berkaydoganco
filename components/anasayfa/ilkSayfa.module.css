@@ -45,7 +45,7 @@
   display: grid; place-items: center; text-align: center;
   padding: 48px 24px 72px;
 }
-.acilis > div { width: 100%; display: flex; flex-direction: column; align-items: center; }
+.acilis > div:not(.kare) { width: 100%; display: flex; flex-direction: column; align-items: center; }
 .dize { margin: 0; width: 100%; max-width: 11em; font-size: clamp(38px, 6.2vw, 84px); }
 .dize blockquote {
   margin: 0;
@@ -60,6 +60,28 @@
 .imza { margin-top: 64px; font-family: var(--font-etiket), Arial, sans-serif; font-size: 13px; color: var(--soluk); }
 .imza b { display: block; margin-bottom: 4px; font-family: var(--font-manset), Georgia, serif; font-weight: 400; font-size: 26px; color: var(--yazi); letter-spacing: -0.01em; }
 .nokta { display: inline-block; width: 7px; height: 7px; border-radius: 50%; background: var(--kizil); margin-left: 3px; vertical-align: 0.05em; }
+
+/* ---------- açılış: Berkay'ın fotoğrafı + dize ---------- */
+.kare {
+  display: grid; align-items: center; gap: clamp(32px, 5vw, 80px);
+  width: 100%; max-width: 1120px; margin: 0 auto; text-align: left;
+}
+.yatay { grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); }
+.dikey { grid-template-columns: minmax(0, 5fr) minmax(0, 6fr); }
+.kareFoto { margin: 0; }
+.kareFoto img { display: block; width: 100%; height: auto; max-height: calc(100svh - 170px); object-fit: contain; object-position: left center; filter: none !important; }
+.dikey .kareFoto img { width: auto; max-width: 100%; }
+.kareFoto figcaption { margin-top: 10px; font-family: var(--font-etiket), Arial, sans-serif; font-size: 12px; color: var(--soluk); }
+.kareYazi .dize { max-width: 12em; font-size: clamp(32px, 4.2vw, 60px); }
+.kareYazi .imza { margin-top: 48px; }
+.acilis:has(.kare) { place-items: center stretch; padding: 32px 32px 64px; }
+
+/* ---------- görüntü şeridi ---------- */
+.serit { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+.serit figure { margin: 0; }
+.serit img { display: block; width: 100%; height: auto; aspect-ratio: 4 / 5; object-fit: cover; filter: none !important; }
+.serit figcaption { margin-top: 12px; font-style: italic; font-size: 16px; line-height: 1.45; }
+.serit figcaption span { display: block; margin-top: 4px; font-style: normal; font-family: var(--font-etiket), Arial, sans-serif; font-size: 12px; color: var(--soluk); }
 
 /* ---------- ortak bölüm ---------- */
 .bolum { max-width: 1120px; margin: 0 auto; padding: 96px 32px; border-top: 1px solid var(--cizgi); }
@@ -108,6 +130,16 @@
 .alt span { display: flex; gap: 20px; flex-wrap: wrap; color: var(--soluk); }
 
 @media (max-width: 860px) {
+  .kare, .yatay, .dikey { grid-template-columns: 1fr; gap: 28px; }
+  .kareFoto img { max-height: 50svh; margin: 0 auto; object-position: center; }
+  .dikey .kareFoto img { width: auto; }
+  .kareFoto figcaption { text-align: center; }
+  .kareYazi { text-align: center; }
+  .kareYazi .dize { margin: 0 auto; font-size: clamp(30px, 8.4vw, 40px); }
+  .kareYazi .imza { margin-top: 32px; }
+  .acilis:has(.kare) { padding: 24px 16px 48px; }
+  .serit { grid-template-columns: 1fr 1fr; gap: 16px; }
+  .serit figure:nth-child(3) { display: none; }
   .ust { padding: 18px 16px 0; }
   .menu { order: 3; width: 100%; gap: 16px; }
   .acilis { min-height: calc(100svh - 110px); padding: 40px 16px 56px; }

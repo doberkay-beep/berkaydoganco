@@ -8,9 +8,8 @@ import { BASIN } from "@/lib/basinda";
 import { YAYINDA } from "@/lib/yazilar";
 import { menuGruplari } from "@/lib/menu";
 import { KARELER } from "@/lib/goruntu";
-import { SOZLER } from "@/lib/sozler";
 import { TemaDugmesi } from "@/components/TemaDugmesi";
-import { GununDizesi, type Dize } from "@/components/anasayfa/GununDizesi";
+import { GununKaresi, type GunKaresi } from "@/components/anasayfa/GununKaresi";
 import s from "@/components/anasayfa/ilkSayfa.module.css";
 
 // hreflang çifti: Türkçe ana sayfa ↔ İngilizce sayfa (/en/).
@@ -36,10 +35,13 @@ function tarih(iso: string, sadeceAy = false) {
 const dis = { target: "_blank", rel: "noopener noreferrer" } as const;
 const KITAP_ADI = { mvk: "Mürekkep ve Köz", tas: "Tasfiye" } as const;
 
-// Açılışa yalnız sayfası bilinen ve kısa dizeler: kaynağı tam gösterilebilsin, ekrana tek nefeste sığsın.
-const DIZELER: Dize[] = SOZLER.filter((z) => z.p && z.s.length <= 56).map((z) => ({ s: z.s, kaynak: `${KITAP_ADI[z.k]}, s. ${z.p}` }));
-const kare = KARELER.find((k) => k.no === "0323")!;
-const ILK: Dize = { s: kare.s, kaynak: `${KITAP_ADI[kare.k]}, s. ${kare.p}` };
+// Açılış: Berkay'ın kendi fotoğrafları ve yanlarındaki doğrulanmış dizeler (lib/goruntu).
+const kaynak = (k: (typeof KARELER)[number]) => `${KITAP_ADI[k.k]}${k.p ? `, s. ${k.p}` : ""}`;
+const KARELER_GUN: GunKaresi[] = KARELER.map((k) => ({ no: k.no, w: k.w, h: k.h, s: k.s, kaynak: kaynak(k) }));
+const ILK = KARELER_GUN.find((k) => k.no === "0323")!;
+
+// Şerit: açılıştakinden farklı, kısa dizeli üç kare (sabit; sayfa her gün aynı üçlüyü göstermesin diye açılış döner).
+const SERIT = KARELER_GUN.filter((k) => ["0219", "0734", "0254"].includes(k.no));
 
 export default function Page() {
   const [tasfiye, murekkep] = KITAPLAR;
@@ -68,14 +70,12 @@ export default function Page() {
           </span>
         </header>
 
-        <section className={s.acilis} aria-label="Günün dizesi">
-          <div>
-            <GununDizesi dizeler={DIZELER} ilk={ILK} />
-            <p className={s.imza}>
-              <b>Berkay Doğan<span className={s.nokta} aria-hidden /></b>
-              Şair ve yazar. İstanbul.
-            </p>
-          </div>
+        <section className={s.acilis} aria-label="Günün fotoğrafı ve dizesi">
+          <GununKaresi
+            kareler={KARELER_GUN}
+            ilk={ILK}
+            imza={<p className={s.imza}><b>Berkay Doğan<span className={s.nokta} aria-hidden /></b>Şair ve yazar. İstanbul.</p>}
+          />
         </section>
 
         <main>
@@ -100,6 +100,19 @@ export default function Page() {
                 );
               })}
             </div>
+          </section>
+
+          <section className={s.bolum} aria-labelledby="goruntu-baslik">
+            <h2 id="goruntu-baslik" className={s.etiket}>Görüntü ve dize</h2>
+            <div className={s.serit}>
+              {SERIT.map((k) => (
+                <figure key={k.no}>
+                  <Link href="/goruntu/"><img src={`/goruntu/${k.no}.jpg`} alt="Berkay Doğan'ın fotoğrafı" width={k.w} height={k.h} loading="lazy" /></Link>
+                  <figcaption>“{k.s}”<span>{k.kaynak}</span></figcaption>
+                </figure>
+              ))}
+            </div>
+            <p className={s.tumu}><Link href="/goruntu/">Bütün fotoğraflar</Link></p>
           </section>
 
           <section className={s.bolum} aria-labelledby="yazar-baslik">
