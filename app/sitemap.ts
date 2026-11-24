@@ -30,6 +30,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${SITE}/film/`, changeFrequency: "yearly" as const, priority: 0.6 },
     { url: `${SITE}/studio/`, changeFrequency: "monthly" as const, priority: 0.4 },
     { url: `${SITE}/en/studio/`, changeFrequency: "monthly" as const, priority: 0.3 },
+    { url: `${SITE}/studio/radyo/`, changeFrequency: "monthly" as const, priority: 0.4 },
+    { url: `${SITE}/en/studio/radio/`, changeFrequency: "monthly" as const, priority: 0.3 },
     { url: `${SITE}/by/`, changeFrequency: "monthly" as const, priority: 0.5 },
     { url: `${SITE}/en/by/`, changeFrequency: "monthly" as const, priority: 0.3 },
     {

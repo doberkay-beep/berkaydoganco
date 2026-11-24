@@ -25,6 +25,8 @@ export type StudioMetin = {
   isEtiket: string; isler: Is[];
   surecEtiket: string; surec: Hizmet[];
   ilkeEtiket: string; ilkeler: Hizmet[];
+  /** Radyolara özel sayfaya bağlantı. */
+  radyo: string; radyoHref: string;
   iletisimBaslik: string; iletisimMetin: string; konu: string;
   atolye: string; atolyeHref: string; anaSayfa: string;
 };
@@ -61,6 +63,7 @@ export const STUDIO_EN: StudioMetin = {
     { b: "Words matter.", s: "Every button, empty state and error message is written, not filled in." },
     { b: "Small and direct.", s: "You work with the person who designs and builds your product." },
   ],
+  radyo: "Run a radio station? See what I build for radio", radyoHref: "/en/studio/radio",
   iletisimBaslik: "Have a project in mind?",
   iletisimMetin: "Write a few lines about what you'd like to build. I reply personally.",
   konu: "Project enquiry",
@@ -105,6 +108,7 @@ export const STUDIO_TR: StudioMetin = {
     { b: "Kelimeler önemli.", s: "Her düğme, boş ekran ve hata mesajı doldurulmaz, yazılır." },
     { b: "Küçük ve doğrudan.", s: "Ürününü tasarlayan ve geliştiren kişiyle doğrudan çalışırsın." },
   ],
+  radyo: "Radyonuz mu var? Radyolar için yaptıklarım", radyoHref: "/studio/radyo",
   iletisimBaslik: "Aklında bir proje mi var?",
   iletisimMetin: "Yapmak istediğin şeyi birkaç satırla yaz. Kendim cevap veriyorum.",
   konu: "Proje",
@@ -132,6 +136,7 @@ export function StudioSayfa({ m }: { m: StudioMetin }) {
         <h1 style={{ ...serif, fontWeight: 400, fontSize: "clamp(1.9rem, 5vw, 3.2rem)", lineHeight: 1.15, maxWidth: "760px", margin: "1.6rem auto 0" }}>{m.baslik}</h1>
         <p style={{ fontSize: "clamp(1.05rem, 2.2vw, 1.25rem)", lineHeight: 1.6, maxWidth: "640px", margin: "1.4rem auto 0", opacity: 0.85 }}>{m.giris}</p>
         <p style={{ ...mono, color: MOR, marginTop: "1.6rem" }}>{m.uzaktan}</p>
+        <p style={{ marginTop: "0.9rem" }}><Link href={m.radyoHref} style={{ ...mono, color: "var(--ink)", opacity: 0.75 }}>{m.radyo} →</Link></p>
         <a href={posta} style={{ ...mono, display: "inline-block", marginTop: "1.8rem", padding: "0.95rem 1.6rem", borderRadius: "999px", background: MOR, color: "#fff", textDecoration: "none" }}>{m.iletisimBaslik}</a>
       </section>
 
