@@ -92,6 +92,16 @@
 .satirlar p { margin: 0; font-size: 17px; line-height: 1.55; }
 .satirlar b { display: block; margin-bottom: 8px; font-family: var(--font-etiket), Arial, sans-serif; font-size: 13px; font-weight: 400; color: var(--soluk); }
 
+/* ---------- İngilizce sayfa ekleri ---------- */
+.metin { margin: 0 0 16px; font-size: 17px; line-height: 1.6; max-width: 46ch; }
+.not { display: block; margin: 8px 0 16px; font-family: var(--font-etiket), Arial, sans-serif; font-size: 13px; line-height: 1.5; color: var(--soluk); font-style: normal; }
+.kisaListe { list-style: none; margin: 0 0 16px; padding: 0; }
+.kisaListe li, .kisaListe > div { padding: 12px 0; border-bottom: 1px solid var(--cizgi); font-size: 16px; line-height: 1.5; }
+.kisaListe li:first-child, .kisaListe > div:first-child { border-top: 1px solid var(--cizgi); }
+.kisaListe b, .kisaListe dt { display: block; font-family: var(--font-etiket), Arial, sans-serif; font-size: 12px; font-weight: 600; color: var(--soluk); margin-bottom: 2px; }
+.kisaListe dd { margin: 0; }
+.satirlar > div > p { font-size: 16px; line-height: 1.55; margin: 0 0 14px; }
+
 /* ---------- alt ---------- */
 .alt { max-width: 1120px; margin: 0 auto; padding: 56px 32px 64px; border-top: 1px solid var(--cizgi); display: flex; justify-content: space-between; gap: 24px; flex-wrap: wrap; font-family: var(--font-etiket), Arial, sans-serif; font-size: 14px; }
 .alt .posta { font-family: var(--font-manset), Georgia, serif; font-size: 22px; }
