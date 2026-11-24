@@ -9,6 +9,9 @@ import { YAYINDA } from "@/lib/yazilar";
 import { menuGruplari } from "@/lib/menu";
 import { KARELER } from "@/lib/goruntu";
 import { TemaDugmesi } from "@/components/TemaDugmesi";
+import { MenuDugmesi } from "@/components/anasayfa/MenuDugmesi";
+import { SON_HABER } from "@/lib/haber";
+import { ayrilmis, TUR_ADI } from "@/lib/etkinlikler";
 import { GununKaresi, type GunKaresi } from "@/components/anasayfa/GununKaresi";
 import s from "@/components/anasayfa/ilkSayfa.module.css";
 
@@ -25,6 +28,9 @@ export const metadata: Metadata = {
 /* "İlk sayfa" (taslak, 24 Kas): bir kitabın iç kapağı gibi. Önce bir dize, sonra ad, sonra kitaplar.
    Bütün metinler sitenin mevcut kaynaklarından: lib/sozler (yayımlanmış, doğrulanmış dizeler),
    lib/kitaplar, lib/site (Hakkımda), lib/yazilar, lib/basinda. Yeni metin yazılmaz. */
+
+// "Yakında" listesi tarihe bağlı: sayfa günde bir yenilensin, geçen etkinlik kendiliğinden düşsün.
+export const revalidate = 86400;
 
 const t = site.tr;
 const AY = ["Ocak", "Şubat", "Mart", "Nisan", "Mayıs", "Haziran", "Temmuz", "Ağustos", "Eylül", "Ekim", "Kasım", "Aralık"];
@@ -43,11 +49,18 @@ const ILK = KARELER_GUN.find((k) => k.no === "0323")!;
 // Şerit: açılıştakinden farklı, kısa dizeli üç kare (sabit; sayfa her gün aynı üçlüyü göstermesin diye açılış döner).
 const SERIT = KARELER_GUN.filter((k) => ["0219", "0734", "0254"].includes(k.no));
 
+// "Yakında": önümüzdeki 45 gün (lib/etkinlikler; yalnız teyitli kayıtlar). Boşsa bölüm görünmez.
+function yakinda() {
+  const sinir = Date.now() + 45 * 86400000;
+  return ayrilmis().gelecek.filter((e) => new Date(e.tarihISO).getTime() <= sinir).slice(0, 4);
+}
+
 export default function Page() {
   const [tasfiye, murekkep] = KITAPLAR;
   const yazilar = [...YAYINDA].sort((a, b) => b.dateISO.localeCompare(a.dateISO)).slice(0, 3);
   const sonBasin = [...BASIN].sort((a, b) => b.tarihISO.localeCompare(a.tarihISO))[0];
   const menu = menuGruplari("tr")[0].linkler;
+  const buAy = yakinda();
 
   return (
     <>
@@ -67,8 +80,15 @@ export default function Page() {
             <b>Türkçe</b>
             <a href="/en/" lang="en" hrefLang="en">English</a>
             <TemaDugmesi lang="tr" className="tema-dugme" />
+            <MenuDugmesi lang="tr" className={s.menuAc} />
           </span>
         </header>
+        {SON_HABER && (
+          <p className={s.haber}>
+            <span>{tarih(SON_HABER.tarihISO)}</span>
+            {SON_HABER.url ? <a href={SON_HABER.url}>{SON_HABER.metin}</a> : SON_HABER.metin}
+          </p>
+        )}
 
         <section className={s.acilis} aria-label="Günün fotoğrafı ve dizesi">
           <GununKaresi
@@ -139,6 +159,22 @@ export default function Page() {
             </ul>
             <p className={s.tumu}><Link href="/yazilar/">Bütün yazılar</Link></p>
           </section>
+
+          {buAy.length > 0 && (
+            <section className={s.bolum} aria-labelledby="ajanda-baslik">
+              <h2 id="ajanda-baslik" className={s.etiket}>Yakında</h2>
+              <ul className={`${s.liste} ${s.ajanda}`}>
+                {buAy.map((e) => (
+                  <li key={e.tarihISO + e.baslik}>
+                    <time dateTime={e.tarihISO}>{tarih(e.tarihISO.slice(0, 10))}</time>
+                    {e.link ? <a href={e.link}>{e.baslik}</a> : <Link href="/sahne/">{e.baslik}</Link>}
+                    <span className={s.yer}>{e.tur ? `${TUR_ADI[e.tur]} · ` : ""}{e.mekan}, {e.sehir}</span>
+                  </li>
+                ))}
+              </ul>
+              <p className={s.tumu}><Link href="/sahne/">Bütün etkinlikler</Link></p>
+            </section>
+          )}
 
           <section className={s.bolum} aria-label="Basın ve atölye">
             <div className={s.satirlar}>

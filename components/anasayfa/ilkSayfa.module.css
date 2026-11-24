@@ -38,6 +38,14 @@
 .sag b { color: var(--yazi); font-weight: 600; }
 .sag button { all: unset; cursor: pointer; color: var(--soluk); text-transform: none !important; letter-spacing: 0 !important; font-size: 13px !important; font-family: var(--font-etiket), Arial, sans-serif !important; }
 .sag button:hover { color: var(--yazi); }
+.sag .menuAc { display: none; }
+
+/* ---------- haber ve "bu ay" satırları ---------- */
+.haber { max-width: 1120px; margin: 18px auto 0; padding: 0 32px; font-family: var(--font-etiket), Arial, sans-serif; font-size: 14px; }
+.haber span { color: var(--soluk); margin-right: 10px; }
+.haber span::before { content: ""; display: inline-block; width: 6px; height: 6px; border-radius: 50%; background: var(--kizil); margin-right: 8px; vertical-align: 0.15em; }
+.ajanda li { grid-template-columns: 150px 1fr auto; }
+.ajanda .yer { font-family: var(--font-etiket), Arial, sans-serif; font-size: 13px; color: var(--soluk); }
 
 /* ---------- açılış: günün dizesi ---------- */
 .acilis {
@@ -141,7 +149,11 @@
   .serit { grid-template-columns: 1fr 1fr; gap: 16px; }
   .serit figure:nth-child(3) { display: none; }
   .ust { padding: 18px 16px 0; }
-  .menu { order: 3; width: 100%; gap: 16px; }
+  .menu { display: none; }
+  .sag .menuAc { display: inline; cursor: pointer; color: var(--yazi) !important; font-weight: 600; font-family: var(--font-etiket), Arial, sans-serif !important; font-size: 13px !important; text-transform: none !important; letter-spacing: 0 !important; }
+  .sag :global(.tema-dugme) { display: none; }
+  .haber { padding: 0 16px; }
+  .ajanda li { grid-template-columns: 1fr; }
   .acilis { min-height: calc(100svh - 110px); padding: 40px 16px 56px; }
   .bolum { padding: 64px 16px; }
   .kitaplar, .yazar, .satirlar { grid-template-columns: 1fr; gap: 56px; }

@@ -9,6 +9,9 @@ import { menuGruplari, arsivBaglantilari } from "@/lib/menu";
 import { KopyalaMetin } from "@/components/KopyalaMetin";
 import { MASADA } from "@/lib/masada";
 import { TemaDugmesi } from "@/components/TemaDugmesi";
+import { KARELER } from "@/lib/goruntu";
+import { MenuDugmesi } from "@/components/anasayfa/MenuDugmesi";
+import { SON_HABER } from "@/lib/haber";
 import s from "@/components/anasayfa/ilkSayfa.module.css";
 
 /* /en/ — tek sayfalık İngilizce tanıtım + basın kiti, ana sayfayla aynı "İlk sayfa" düzeni (taslak, 24 Kas).
@@ -65,6 +68,7 @@ export default function EnglishPage() {
   const [tasfiye, murekkep] = EN_BOOKS;
   const kitap = (slug: string) => KITAPLAR.find((x) => x.slug === slug)!;
   const arsiv = arsivBaglantilari("en");
+  const kare = KARELER.find((k) => k.s === murekkep.original) ?? KARELER.find((k) => k.no === "0406")!;
 
   return (
     <div className={`${s.sayfa} gz-ana`} lang="en" id="top">
@@ -79,20 +83,33 @@ export default function EnglishPage() {
           <Link href="/" hrefLang="tr" lang="tr">Türkçe</Link>
           <b>English</b>
           <TemaDugmesi lang="en" className="tema-dugme" />
+          <MenuDugmesi lang="en" className={s.menuAc} />
         </span>
       </header>
+      {SON_HABER?.metinEn && (
+        <p className={s.haber}>
+          {SON_HABER.url ? <a href={SON_HABER.url}>{SON_HABER.metinEn}</a> : SON_HABER.metinEn}
+        </p>
+      )}
 
-      {/* Dize çevrilmez: Türkçe aslı, altında Berkay'ın onayladığı birebir anlam notu (lib/en). */}
-      <section className={s.acilis} aria-label="A line from the books">
-        <div>
-          <figure className={s.dize}>
-            <blockquote lang="tr">{murekkep.original}</blockquote>
-            <figcaption>literally: “{murekkep.literally}” · <span lang="tr">{murekkep.title}</span></figcaption>
+      {/* Dize çevrilmez: Türkçe aslı, altında Berkay'ın onayladığı birebir anlam notu (lib/en).
+          Fotoğraf, aynı dizeyle eşleşmiş kendi karesi (lib/goruntu); onaylı notu olan dize az olduğu için sabit. */}
+      <section className={s.acilis} aria-label="A photograph and a line from the books">
+        <div className={`${s.kare} ${kare.h > kare.w ? s.dikey : s.yatay}`}>
+          <figure className={s.kareFoto}>
+            <img src={`/goruntu/${kare.no}.jpg`} alt="Photograph by Berkay Doğan" width={kare.w} height={kare.h} fetchPriority="high" />
+            <figcaption>Photograph: Berkay Doğan</figcaption>
           </figure>
-          <p className={s.imza}>
-            <b>Berkay Doğan<span className={s.nokta} aria-hidden /></b>
-            Turkish poet and writer, Istanbul. His books are published in Turkish; this page is for international readers, editors and press.
-          </p>
+          <div className={s.kareYazi}>
+            <figure className={s.dize}>
+              <blockquote lang="tr">{murekkep.original}</blockquote>
+              <figcaption>literally: “{murekkep.literally}” · <span lang="tr">{murekkep.title}</span></figcaption>
+            </figure>
+            <p className={s.imza}>
+              <b>Berkay Doğan<span className={s.nokta} aria-hidden /></b>
+              Turkish poet and writer, Istanbul. His books are published in Turkish; this page is for international readers, editors and press.
+            </p>
+          </div>
         </div>
       </section>
 
