@@ -4,6 +4,7 @@ import "./globals.css";
 import "./yeni-dil.css";
 import "./yazar-noir.css";
 import "./gazete.css";
+import "./ilk-sayfa.css";
 import { Analytics } from "@vercel/analytics/next";
 import { SiteMenu } from "@/components/SiteMenu";
 import { TEMA_BETIGI } from "@/lib/tema";

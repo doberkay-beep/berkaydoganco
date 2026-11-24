@@ -1,0 +1,78 @@
+/* ============ İLK SAYFA — iç sayfalar (taslak, 24 Kas) ============
+   gazete.css'ten SONRA yüklenir ve onun gazete izlerini siler: çift çizgiler tek ince çizgiye,
+   kâğıt grisi by. kremine, mürekkep by. siyahına döner. Tek vurgu by. kızılı (#E5382C), yalnız küçük
+   işaretlerde ve bağlantı altı çizgisinde. Ana sayfanın kendi katmanı: components/anasayfa/ilkSayfa.module.css. */
+
+:root, [data-theme="light"] {
+  --kizil: #e5382c;
+  --zemin: #f2eee6;
+  --zemin-2: #ebe6dc;
+  --murekkep: #0e0d0c;
+  --soluk: #5f5a52;            /* kremde 6.4:1 */
+  --cizgi: rgba(14, 13, 12, 0.16);
+  --cizgi-ince: rgba(14, 13, 12, 0.12);
+  --line: rgba(14, 13, 12, 0.14);
+  --gece: #ebe6dc;
+  --gece-2: #e3ddd2;
+  --kagit: #0e0d0c;
+  --soluk-gece: #5f5a52;
+  --nav-bg: var(--zemin);
+  --accent: var(--murekkep);   /* metin vurgusu mürekkep; kızıl yalnız işaretlerde */
+  --accent-2: var(--murekkep);
+}
+[data-theme="dark"] {
+  --zemin: #0e0d0c;
+  --zemin-2: #171614;
+  --murekkep: #f2eee6;
+  --soluk: #a49e93;            /* siyahta 7.6:1 */
+  --cizgi: rgba(242, 238, 230, 0.16);
+  --cizgi-ince: rgba(242, 238, 230, 0.12);
+  --line: rgba(242, 238, 230, 0.14);
+  --gece: #171614;
+  --gece-2: #1f1e1b;
+  --kagit: #f2eee6;
+  --soluk-gece: #a49e93;
+  --accent: var(--murekkep);
+  --accent-2: var(--murekkep);
+}
+html, body { background: var(--zemin); color: var(--murekkep); }
+
+/* Bağlantılar: altı çizgi yalnız üzerine gelince, ince ve kızıl */
+main a:hover, .gz-bas a:hover, .cg-nav-links a:hover, .ed-footer a:hover {
+  text-decoration: underline !important;
+  text-decoration-color: var(--kizil) !important;
+  text-decoration-thickness: 1px !important;
+  text-underline-offset: 4px !important;
+}
+
+/* ---------- Üst satır: ana sayfadaki gibi, çizgisiz ve sakin ---------- */
+.gz-bas {
+  border-bottom: 0 !important;
+  max-width: 1120px; padding: 26px 32px 0;
+  background: var(--zemin);
+}
+.gz-bas-ad { font-size: 20px !important; }
+.gz-bas-menu { font-weight: 400 !important; font-size: 13px !important; gap: 4px 22px !important; }
+.gz-bas-sag, .gz-bas .tema-dugme, .gz-menu-ac { font-size: 13px !important; }
+@media (max-width: 999px) { .gz-bas { padding: 18px 16px 0; } .gz-bas-ad { font-size: 20px !important; } }
+
+.sm-menu-ust { border-bottom: 1px solid var(--cizgi) !important; }
+
+/* Kabuk'lu sayfaların çubuğu da aynı */
+.cg-nav, .cg-nav[data-solid="1"] { border-bottom: 1px solid var(--cizgi-ince) !important; }
+.cg-nav > a, .cg-nav > div:first-child { font-size: 20px !important; }
+.cg-nav .cg-link { font-weight: 400 !important; font-size: 13px !important; }
+
+/* Alt bilgi: tek ince çizgi */
+.ed-footer { border-top: 1px solid var(--cizgi) !important; }
+
+/* Küçük künye etiketlerinin önünde kızıl nokta (ana sayfadaki bölüm etiketleri gibi) */
+.ed-folio-label::before {
+  content: ""; display: inline-block; width: 6px; height: 6px; border-radius: 50%;
+  background: var(--kizil); margin-right: 10px; vertical-align: 0.15em;
+}
+
+/* Başlıklar biraz daha nefes alsın */
+main h1 { line-height: 1.04; }
+
+::selection { background: var(--kizil); color: #fff; }
