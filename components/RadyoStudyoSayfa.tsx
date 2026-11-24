@@ -91,7 +91,7 @@ export const RADYO_EN: RadyoMetin = {
   dil: "en",
   alt: "for radio",
   baslik: "An app and a website for your station.",
-  giris: "I'm Berkay Doğan, and I made nowby.: a free, ad-free radio app that shows the song playing right now on every station, on one screen. I bring the same care to your station's own app and website: your name, your logo, your stream.",
+  giris: "I'm Berkay Doğan, and I made nowby, a free, ad-free radio app that shows the song playing right now on every station, on one screen. I bring the same care to your station's own app and website: your name, your logo, your stream.",
   kanitEtiket: "nowby. today",
   kanitlar: [
     { sayi: "84", s: "stations in the app, each with its own written permission" },
