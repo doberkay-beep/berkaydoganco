@@ -1,0 +1,110 @@
+/* "İlk sayfa": bir kitabın iç kapağı gibi. Tek sütun, bol boşluk, tek vurgu.
+   Renkler by. sistemi (24 Kas): siyah #0E0D0C, krem #F2EEE6, tek kızıl #E5382C.
+   Kart yok, gölge yok, gradyan yok; bölümler yalnız boşluk ve ince çizgiyle ayrılır. */
+
+.sayfa {
+  --krem: #f2eee6;
+  --siyah: #0e0d0c;
+  --kizil: #e5382c;
+  --zemin: var(--krem);
+  --yazi: var(--siyah);
+  --soluk: #5f5a52;           /* kremde 6.4:1 */
+  --cizgi: rgba(14, 13, 12, 0.16);
+  background: var(--zemin);
+  color: var(--yazi);
+  min-height: 100vh;
+  font-family: var(--font-sans), Georgia, serif;
+}
+:global([data-theme="dark"]) .sayfa {
+  --zemin: var(--siyah);
+  --yazi: var(--krem);
+  --soluk: #a49e93;           /* siyahta 7.6:1 */
+  --cizgi: rgba(242, 238, 230, 0.16);
+}
+.sayfa a { color: inherit; text-decoration: none; }
+.sayfa h1, .sayfa h2, .sayfa h3, .sayfa p, .sayfa blockquote, .sayfa time { color: inherit; }
+.sayfa a:hover { text-decoration: underline; text-decoration-color: var(--kizil); text-underline-offset: 4px; text-decoration-thickness: 1px; }
+
+/* ---------- üst satır ---------- */
+.ust {
+  display: flex; justify-content: space-between; align-items: baseline; gap: 16px; flex-wrap: wrap;
+  max-width: 1120px; margin: 0 auto; padding: 26px 32px 0;
+  font-family: var(--font-etiket), Arial, sans-serif; font-size: 13px;
+}
+.marka { font-family: var(--font-manset), Georgia, serif; font-size: 20px; letter-spacing: -0.01em; }
+.marka i { color: var(--kizil); font-style: normal; }
+.menu { display: flex; gap: 22px; flex-wrap: wrap; }
+.sag { display: flex; gap: 14px; color: var(--soluk); }
+.sag b { color: var(--yazi); font-weight: 600; }
+.sag button { all: unset; cursor: pointer; color: var(--soluk); text-transform: none !important; letter-spacing: 0 !important; font-size: 13px !important; font-family: var(--font-etiket), Arial, sans-serif !important; }
+.sag button:hover { color: var(--yazi); }
+
+/* ---------- açılış: günün dizesi ---------- */
+.acilis {
+  min-height: calc(100svh - 70px);
+  display: grid; place-items: center; text-align: center;
+  padding: 48px 24px 72px;
+}
+.acilis > div { width: 100%; display: flex; flex-direction: column; align-items: center; }
+.dize { margin: 0; width: 100%; max-width: 11em; font-size: clamp(38px, 6.2vw, 84px); }
+.dize blockquote {
+  margin: 0;
+  font-family: var(--font-manset), Georgia, serif;
+  font-size: 1em; line-height: 1.06; letter-spacing: -0.015em;
+  text-wrap: balance;
+}
+.dize figcaption {
+  margin-top: 28px;
+  font-family: var(--font-etiket), Arial, sans-serif; font-size: 13px; color: var(--soluk);
+}
+.imza { margin-top: 64px; font-family: var(--font-etiket), Arial, sans-serif; font-size: 13px; color: var(--soluk); }
+.imza b { display: block; margin-bottom: 4px; font-family: var(--font-manset), Georgia, serif; font-weight: 400; font-size: 26px; color: var(--yazi); letter-spacing: -0.01em; }
+.nokta { display: inline-block; width: 7px; height: 7px; border-radius: 50%; background: var(--kizil); margin-left: 3px; vertical-align: 0.05em; }
+
+/* ---------- ortak bölüm ---------- */
+.bolum { max-width: 1120px; margin: 0 auto; padding: 96px 32px; border-top: 1px solid var(--cizgi); }
+.etiket { margin: 0 0 40px; font-family: var(--font-etiket), Arial, sans-serif !important; font-size: 13px !important; font-weight: 600; letter-spacing: 0 !important; text-transform: none !important; color: var(--soluk); }
+.etiket::before { content: ""; display: inline-block; width: 6px; height: 6px; border-radius: 50%; background: var(--kizil); margin-right: 10px; vertical-align: 0.15em; }
+
+/* ---------- kitaplar ---------- */
+.kitaplar { display: grid; grid-template-columns: 1fr 1fr; gap: 72px; }
+.kitap img { display: block; width: auto; height: 460px; max-width: 100%; object-fit: contain; object-position: left bottom; margin-bottom: 28px; }
+.kitap h2 { margin: 0; font-family: var(--font-manset), Georgia, serif; font-weight: 400; font-size: clamp(30px, 3.4vw, 42px); letter-spacing: -0.01em; line-height: 1.05; }
+.kitap .tur { margin: 8px 0 18px; font-family: var(--font-etiket), Arial, sans-serif; font-size: 13px; color: var(--soluk); }
+.kitap .alinti { margin: 0 0 20px; font-style: italic; font-size: 19px; line-height: 1.45; max-width: 30ch; }
+.baglar { display: flex; gap: 20px; font-family: var(--font-etiket), Arial, sans-serif; font-size: 14px; font-weight: 600; }
+
+/* ---------- yazar ---------- */
+.yazar { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: 72px; align-items: start; }
+.yazar p.giris { margin: 0 0 24px; font-family: var(--font-manset), Georgia, serif; font-size: clamp(26px, 3vw, 38px); line-height: 1.18; letter-spacing: -0.01em; }
+.yazar p { margin: 0 0 24px; font-size: 18px; line-height: 1.6; max-width: 58ch; }
+.yazar img { width: 100%; height: auto; display: block; filter: grayscale(1); }
+
+/* ---------- yazılar + kısa satırlar ---------- */
+.liste { list-style: none; margin: 0; padding: 0; }
+.liste li { display: grid; grid-template-columns: 1fr auto; gap: 24px; padding: 18px 0; border-bottom: 1px solid var(--cizgi); align-items: baseline; }
+.liste li:first-child { border-top: 1px solid var(--cizgi); }
+.liste a { font-family: var(--font-manset), Georgia, serif; font-size: clamp(21px, 2.2vw, 26px); letter-spacing: -0.005em; }
+.liste time { font-family: var(--font-etiket), Arial, sans-serif; font-size: 13px; color: var(--soluk); white-space: nowrap; }
+.tumu { margin-top: 22px; font-family: var(--font-etiket), Arial, sans-serif; font-size: 14px; font-weight: 600; }
+
+.satirlar { display: grid; grid-template-columns: repeat(3, 1fr); gap: 48px; }
+.satirlar p { margin: 0; font-size: 17px; line-height: 1.55; }
+.satirlar b { display: block; margin-bottom: 8px; font-family: var(--font-etiket), Arial, sans-serif; font-size: 13px; font-weight: 400; color: var(--soluk); }
+
+/* ---------- alt ---------- */
+.alt { max-width: 1120px; margin: 0 auto; padding: 56px 32px 64px; border-top: 1px solid var(--cizgi); display: flex; justify-content: space-between; gap: 24px; flex-wrap: wrap; font-family: var(--font-etiket), Arial, sans-serif; font-size: 14px; }
+.alt .posta { font-family: var(--font-manset), Georgia, serif; font-size: 22px; }
+.alt span { display: flex; gap: 20px; flex-wrap: wrap; color: var(--soluk); }
+
+@media (max-width: 860px) {
+  .ust { padding: 18px 16px 0; }
+  .menu { order: 3; width: 100%; gap: 16px; }
+  .acilis { min-height: calc(100svh - 110px); padding: 40px 16px 56px; }
+  .bolum { padding: 64px 16px; }
+  .kitaplar, .yazar, .satirlar { grid-template-columns: 1fr; gap: 56px; }
+  .kitap img { height: 340px; }
+  .yazar img { max-width: 260px; }
+  .liste li { grid-template-columns: 1fr; gap: 4px; }
+  .alt { padding: 40px 16px 48px; }
+}
