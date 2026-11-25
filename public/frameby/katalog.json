@@ -1,6 +1,6 @@
 {
  "surum": 1,
- "guncelleme": "2026-11-25T17:00",
+ "guncelleme": "2026-11-25T21:00",
  "gorselKoku": "/frameby/kareler/",
  "ozelKoku": "/api/frameby/kare/",
  "anahtarAdresi": "/api/frameby/anahtar/",
@@ -1499,6 +1499,105 @@
    "id": "arsiv-tophane",
    "dikey": false,
    "semt": "Tophane, Boğazkesen",
+   "saat": "1880'ler",
+   "radyo": "a-mississippi-blues",
+   "katman": "arsiv",
+   "fotografci": "Guillaume Berggren"
+  },
+  {
+   "id": "arsiv-kuleli-bogaz",
+   "dikey": false,
+   "semt": "Kuleli'den Boğaz",
+   "saat": "1890'lar",
+   "radyo": "kiyi-caz",
+   "katman": "arsiv",
+   "fotografci": "Photoglob Co., Zürich"
+  },
+  {
+   "id": "arsiv-hisarlar",
+   "dikey": false,
+   "semt": "Rumeli ve Anadolu hisarları",
+   "saat": "1890'lar",
+   "radyo": "borusan-klasik",
+   "katman": "arsiv",
+   "fotografci": "Photoglob Co., Zürich"
+  },
+  {
+   "id": "arsiv-halic-renkli",
+   "dikey": false,
+   "semt": "Haliç",
+   "saat": "1890'lar",
+   "radyo": "a-mississippi-blues",
+   "katman": "arsiv",
+   "fotografci": "Photoglob Co., Zürich"
+  },
+  {
+   "id": "arsiv-galata-koprusu-renkli",
+   "dikey": false,
+   "semt": "Galata Köprüsü",
+   "saat": "1890'lar",
+   "radyo": "retro-turk",
+   "katman": "arsiv",
+   "fotografci": "Photoglob Co., Zürich"
+  },
+  {
+   "id": "arsiv-fenerbahce",
+   "dikey": false,
+   "semt": "Fenerbahçe Feneri",
+   "saat": "1890'lar",
+   "radyo": "kiyi-caz",
+   "katman": "arsiv",
+   "fotografci": "Photoglob Co., Zürich"
+  },
+  {
+   "id": "arsiv-yedikule-surlar",
+   "dikey": false,
+   "semt": "Yedikule surları",
+   "saat": "1890'lar",
+   "radyo": "borusan-klasik",
+   "katman": "arsiv",
+   "fotografci": "Photoglob Co., Zürich"
+  },
+  {
+   "id": "arsiv-galata-koprusu",
+   "dikey": false,
+   "semt": "Galata Köprüsü",
+   "saat": "1880'ler",
+   "radyo": "a-mississippi-blues",
+   "katman": "arsiv",
+   "fotografci": "Guillaume Berggren"
+  },
+  {
+   "id": "arsiv-bogaz-genel",
+   "dikey": false,
+   "semt": "Boğaz'a genel bakış",
+   "saat": "1880'ler",
+   "radyo": "retro-turk",
+   "katman": "arsiv",
+   "fotografci": "Guillaume Berggren"
+  },
+  {
+   "id": "arsiv-silivrikapi",
+   "dikey": false,
+   "semt": "Silivrikapı",
+   "saat": "1880'ler",
+   "radyo": "kiyi-caz",
+   "katman": "arsiv",
+   "fotografci": "Guillaume Berggren"
+  },
+  {
+   "id": "arsiv-bozdogan",
+   "dikey": false,
+   "semt": "Bozdoğan Kemeri",
+   "saat": "1880'ler",
+   "radyo": "borusan-klasik",
+   "katman": "arsiv",
+   "fotografci": "Guillaume Berggren"
+  },
+  {
+   "id": "arsiv-yedikule-kiyi",
+   "dikey": false,
+   "semt": "Yedikule kıyısı",
    "saat": "1880'ler",
    "radyo": "a-mississippi-blues",
    "katman": "arsiv",
