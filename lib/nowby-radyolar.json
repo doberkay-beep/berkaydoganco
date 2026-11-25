@@ -1,0 +1,512 @@
+[
+{
+"ad": "Show Radyo",
+"slug": "show-radyo",
+"renk": "#c65a8a",
+"ulke": "tr"
+},
+{
+"ad": "Radyo Viva",
+"slug": "radyo-viva",
+"renk": "#8a7ab0",
+"ulke": "tr"
+},
+{
+"ad": "Joy Türk",
+"slug": "joy-turk",
+"renk": "#c65a8a",
+"ulke": "tr"
+},
+{
+"ad": "Damar Türk FM",
+"slug": "damar-turk-fm",
+"renk": "#b5342f",
+"ulke": "tr"
+},
+{
+"ad": "Pop 90",
+"slug": "pop-90",
+"renk": "#e06c9f",
+"ulke": "tr"
+},
+{
+"ad": "Kurd1 Radyo",
+"slug": "kurd1-fm",
+"renk": "#c0392b",
+"ulke": "fr"
+},
+{
+"ad": "JoyTürk Rock",
+"slug": "joyturk-rock",
+"renk": "#8b3a3a",
+"ulke": "tr"
+},
+{
+"ad": "Türk Rock FM",
+"slug": "turk-rock-fm",
+"renk": "#9c3535",
+"ulke": "tr"
+},
+{
+"ad": "Romantik Ses Isparta",
+"slug": "romantik-ses-isparta",
+"renk": "#a8577a",
+"ulke": "tr"
+},
+{
+"ad": "Romantik Ses Sakarya",
+"slug": "romantik-ses-sakarya",
+"renk": "#a8577a",
+"ulke": "www"
+},
+{
+"ad": "Borusan Klasik",
+"slug": "borusan-klasik",
+"renk": "#1b4f8a",
+"ulke": "tr"
+},
+{
+"ad": "Baba Radyo",
+"slug": "baba-radyo",
+"renk": "#8a2b2b",
+"ulke": "tr"
+},
+{
+"ad": "Radio 70 80 90",
+"slug": "radio-70-80-90-marche",
+"renk": "#c09230",
+"ulke": "it"
+},
+{
+"ad": "Radio Antalya",
+"slug": "radio-antalya",
+"renk": "#2ca6a4",
+"ulke": "tr"
+},
+{
+"ad": "0N 80s",
+"slug": "0-n-80s-on-radio",
+"renk": "#ca9d4e",
+"ulke": "de"
+},
+{
+"ad": "100% Acid Jazz",
+"slug": "100-acid-jazz",
+"renk": "#9c8240",
+"ulke": "ca"
+},
+{
+"ad": "DKFM Shoegaze Radio",
+"slug": "dkfm-shoegaze-radio",
+"renk": "#b94163",
+"ulke": "ca"
+},
+{
+"ad": "Italian Radio",
+"slug": "italian-radio-only-romantic-italian-musi",
+"renk": "#ca445d",
+"ulke": "it"
+},
+{
+"ad": "Real Hardstyle Radio",
+"slug": "real-hardstyle-radio",
+"renk": "#c0309e",
+"ulke": "nl"
+},
+{
+"ad": "Future Funk Radio",
+"slug": "real-love-music-radio-future-funk",
+"renk": "#cd9c47",
+"ulke": "jp"
+},
+{
+"ad": "Dünyadan Sesler",
+"slug": "dunyadan-sesler",
+"renk": "#c2703d",
+"ulke": "tr"
+},
+{
+"ad": "Jazz Sakura",
+"slug": "jazz-sakura",
+"renk": "#c337c3",
+"ulke": "jp"
+},
+{
+"ad": "Bodrum FM",
+"slug": "bodrum-fm",
+"renk": "#1f8fb8",
+"ulke": "tr"
+},
+{
+"ad": "J-Rock Powerplay",
+"slug": "j-rock-powerplay-asia-dream-radio",
+"renk": "#a83e8d",
+"ulke": "jp"
+},
+{
+"ad": "SA Rock Radio",
+"slug": "sa-rock-radio",
+"renk": "#bb44a5",
+"ulke": "au"
+},
+{
+"ad": "0N 70s",
+"slug": "0-n-70s-on-radio",
+"renk": "#cdae32",
+"ulke": "de"
+},
+{
+"ad": "Sensual Lounge",
+"slug": "sensual-lounge",
+"renk": "#b82e5a",
+"ulke": "ca"
+},
+{
+"ad": "Funky Corner Radio",
+"slug": "funky-corner-radio-spain",
+"renk": "#a46537",
+"ulke": "it"
+},
+{
+"ad": "100% Covers Lounge",
+"slug": "100-covers-lounge",
+"renk": "#4981c1",
+"ulke": "ca"
+},
+{
+"ad": "GrooveWave Lounge",
+"slug": "groove-wave-lounge",
+"renk": "#a37843",
+"ulke": "br"
+},
+{
+"ad": "A Mississippi Blues",
+"slug": "a-mississippi-blues",
+"renk": "#b18243",
+"ulke": "ca"
+},
+{
+"ad": "Smooth Jazz Deluxe",
+"slug": "smooth-jazz-deluxe",
+"renk": "#9c8240",
+"ulke": "ca"
+},
+{
+"ad": "LOVE.radio Only Love Songs 70s80s90s",
+"slug": "love-radio-only-love-songs-70s80s90s",
+"renk": "#c83289",
+"ulke": "gb"
+},
+{
+"ad": "FUNKY RADIO - Only Funk Music (60's 70's)",
+"slug": "funky-radio-only-funk-music-60-s-70-s",
+"renk": "#c8a441",
+"ulke": "us"
+},
+{
+"ad": "Radio Armisa",
+"slug": "radio-armisa",
+"renk": "#3084ab",
+"ulke": "it"
+},
+{
+"ad": "Kıyı Caz",
+"slug": "kiyi-caz",
+"renk": "#3a6a8a",
+"ulke": "tr"
+},
+{
+"ad": "70 80 Hits HQ",
+"slug": "70-80-hits-hq",
+"renk": "#b94b68",
+"ulke": "it"
+},
+{
+"ad": "Mydonose",
+"slug": "radio-mydonose",
+"renk": "#e0338a",
+"ulke": "tr"
+},
+{
+"ad": "CLASSIC HITS RADIO Italia",
+"slug": "classic-hits-radio-italia",
+"renk": "#b9813c",
+"ulke": "it"
+},
+{
+"ad": "Max FM",
+"slug": "max-fm",
+"renk": "#e05a2b",
+"ulke": "tr"
+},
+{
+"ad": "NEW HITS RADIO Italia",
+"slug": "new-hits-radio-italia",
+"renk": "#cf3ab1",
+"ulke": "it"
+},
+{
+"ad": "Türkiyem FM",
+"slug": "turkiyem-fm",
+"renk": "#b5762c",
+"ulke": "tr"
+},
+{
+"ad": "Radio Planeta Costa del Sol",
+"slug": "radio-planeta-costa-del-sol",
+"renk": "#7655b9",
+"ulke": "es"
+},
+{
+"ad": "Intense Radio - We love Dance 256K",
+"slug": "intense-radio-we-love-dance-256k",
+"renk": "#78409c",
+"ulke": "nl"
+},
+{
+"ad": "Retro Türk",
+"slug": "retro-turk",
+"renk": "#c07a3c",
+"ulke": "tr"
+},
+{
+"ad": "JoyTürk Akustik",
+"slug": "joyturk-akustik",
+"renk": "#c65a8a",
+"ulke": "tr"
+},
+{
+"ad": "FM4",
+"slug": "fm4-orf",
+"renk": "#7d41af",
+"ulke": "at"
+},
+{
+"ad": "ORF Hitradio Ö3 | HQ",
+"slug": "orf-hitradio-o3-hq",
+"renk": "#c157ae",
+"ulke": "at"
+},
+{
+"ad": "SceneSat Radio",
+"slug": "scenesat-radio-mp3",
+"renk": "#cd4293",
+"ulke": "se"
+},
+{
+"ad": "World Music Radio (WMR)",
+"slug": "wmr-world-music-radio",
+"renk": "#a03b69",
+"ulke": "dk"
+},
+{
+"ad": "8radio",
+"slug": "8radio",
+"renk": "#bd5e32",
+"ulke": "ie"
+},
+{
+"ad": "PHEVER Radio",
+"slug": "phever-radio",
+"renk": "#c54482",
+"ulke": "ie"
+},
+{
+"ad": "Radio Paradise",
+"slug": "radio-paradise",
+"renk": "#b0413e",
+"ulke": "us"
+},
+{
+"ad": "J-POP Powerplay",
+"slug": "j-pop-powerplay",
+"renk": "#a93787",
+"ulke": "jp"
+},
+{
+"ad": "Radio Paradise Rock",
+"slug": "radio-paradise-rock",
+"renk": "#7d2e2e",
+"ulke": "us"
+},
+{
+"ad": "Roca Fm Clasicos Mexico",
+"slug": "roca-fm-clasicos-mexico",
+"renk": "#ca9544",
+"ulke": "mx"
+},
+{
+"ad": "Reggae Chill Cafe",
+"slug": "reggae-chill-cafe",
+"renk": "#4981c1",
+"ulke": "ca"
+},
+{
+"ad": "70 80 90 Vibrazioni Rock Radio",
+"slug": "70-80-90-vibrazioni-rock-radio",
+"renk": "#a66730",
+"ulke": "ca"
+},
+{
+"ad": "Nature Radio Rain",
+"slug": "nature-radio-rain",
+"renk": "#8a47cd",
+"ulke": "ca"
+},
+{
+"ad": "The Prog Rock Machine",
+"slug": "the-prog-rock-machine",
+"renk": "#cf6e44",
+"ulke": "au"
+},
+{
+"ad": "Free FM Rock Austral",
+"slug": "free-fm-rock-austral",
+"renk": "#c35e55",
+"ulke": "au"
+},
+{
+"ad": "UbuntuFM",
+"slug": "ubuntufm",
+"renk": "#be9f4b",
+"ulke": "za"
+},
+{
+"ad": "NBC Milano",
+"slug": "nbc-milano",
+"renk": "#c0563a",
+"ulke": "it"
+},
+{
+"ad": "Radio Paradise Mellow",
+"slug": "radio-paradise-mellow",
+"renk": "#7a9ab0",
+"ulke": "us"
+},
+{
+"ad": "0N Classic Rock",
+"slug": "0n-classic-rock",
+"renk": "#bb5c30",
+"ulke": "de"
+},
+{
+"ad": "0N Soft Rock",
+"slug": "0n-soft-rock",
+"renk": "#b0704a",
+"ulke": "de"
+},
+{
+"ad": "rm.fm Trance",
+"slug": "rmfm-trance",
+"renk": "#3759c8",
+"ulke": "de"
+},
+{
+"ad": "0nlineradio Soft Rock",
+"slug": "0nlineradio-soft-rock",
+"renk": "#c8644c",
+"ulke": "de"
+},
+{
+"ad": "BadRock Hard & Heavy",
+"slug": "badrock-hard-heavy",
+"renk": "#cd5332",
+"ulke": "bg"
+},
+{
+"ad": "BadRock National",
+"slug": "badrock-national",
+"renk": "#cd5332",
+"ulke": "bg"
+},
+{
+"ad": "BadRock Classic Rock",
+"slug": "badrock-classic-rock",
+"renk": "#cd5332",
+"ulke": "bg"
+},
+{
+"ad": "BadRock Golden Era",
+"slug": "badrock-golden-era",
+"renk": "#cd5332",
+"ulke": "bg"
+},
+{
+"ad": "Christmas FM",
+"slug": "christmas-fm-ie",
+"renk": "#c8323c",
+"ulke": "www"
+},
+{
+"ad": "Christmas FM Classics",
+"slug": "christmas-fm-classics-ie",
+"renk": "#2f7a4f",
+"ulke": "www"
+},
+{
+"ad": "Christmas FM Classical & Carols",
+"slug": "christmas-fm-classical-carols-ie",
+"renk": "#9a6fd9",
+"ulke": "ie"
+},
+{
+"ad": "Rewind (Christmas FM)",
+"slug": "christmas-fm-rewind-ie",
+"renk": "#d4a23a",
+"ulke": "www"
+},
+{
+"ad": "Free FM 80 Tokyo",
+"slug": "free-fm-80-tokyo-jp",
+"renk": "#d97b29",
+"ulke": "jp"
+},
+{
+"ad": "# 100 GREATEST HEAVY METAL",
+"slug": "100-greatest-heavy-metal-ca",
+"renk": "#9a6fd9",
+"ulke": "ca"
+},
+{
+"ad": "AIRPORT LOUNGE RADIO",
+"slug": "airport-lounge-radio-ca",
+"renk": "#3aa8a0",
+"ulke": "ca"
+},
+{
+"ad": "URBAN RADIO ENUGU",
+"slug": "urban-radio-enugu-ng",
+"renk": "#9a6fd9",
+"ulke": "ng"
+},
+{
+"ad": "Radio Britannia",
+"slug": "radio-britannia",
+"renk": "#4e9a6f",
+"ulke": "www"
+},
+{
+"ad": "Kıyı Müzik",
+"slug": "kiyi-muzik",
+"renk": "#3f7f8c",
+"ulke": "tr"
+},
+{
+"ad": "Kıyı Türkçe",
+"slug": "kiyi-turkce",
+"renk": "#5a8f4e",
+"ulke": "tr"
+},
+{
+"ad": "Kıyı Gece",
+"slug": "kiyi-gece",
+"renk": "#b5893a",
+"ulke": "tr"
+},
+{
+"ad": "Radio Città Fujiko",
+"slug": "radio-citta-fujiko",
+"renk": "#b8452f",
+"ulke": "it"
+}
+]

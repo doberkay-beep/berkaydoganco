@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { DESTEK_EMAIL, NOWBY_APP_STORE } from "@/lib/site";
+import { IzinliRadyolar } from "@/components/IzinliRadyolar";
 
 /* nowby. — by. atölyesinin ikinci işi. Türkiye'nin radyolarında şu an ne çalıyor?
    Canlı radyo sitesi nowby.co'da; bu sayfa uygulamaları (iPhone, iPad, Mac, Apple TV, Apple Watch; Windows ve Android yolda) tanıtır. */
@@ -235,6 +236,7 @@ export function NowbySayfa({ m }: { m: NowbyMetin }) {
           <a href={`mailto:${DESTEK_EMAIL}?subject=nowby.`} style={{ ...mono, color: TURUNCU, textDecoration: "none" }}>{m.radyoIzin} →</a>
           <a href="https://nowby.co/rozet" style={{ ...mono, color: TURUNCU, textDecoration: "none" }}>{m.radyoRozet} →</a>
         </p>
+        <IzinliRadyolar dil={m.dil} />
       </section>
 
       {/* DÖRT SORU */}
