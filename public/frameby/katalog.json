@@ -1,6 +1,6 @@
 {
  "surum": 1,
- "guncelleme": "2026-11-25T15:30",
+ "guncelleme": "2026-11-25T16:00",
  "gorselKoku": "/frameby/kareler/",
  "disarida": [],
  "katmanlar": [
@@ -589,7 +589,7 @@
   {
    "id": "iph-20210910-003",
    "dikey": false,
-   "semt": "",
+   "semt": "Kınık, Manisa",
    "saat": "18:32",
    "radyo": "kiyi-caz",
    "katman": "gun"
@@ -597,7 +597,7 @@
   {
    "id": "iph-20230415-011",
    "dikey": false,
-   "semt": "",
+   "semt": "Trakya",
    "saat": "19:10",
    "radyo": "radio-paradise-mellow",
    "katman": "gun"
@@ -621,7 +621,7 @@
   {
    "id": "iph-20231026-015",
    "dikey": true,
-   "semt": "",
+   "semt": "İstanbul",
    "saat": "15:39",
    "radyo": "smooth-jazz-deluxe",
    "katman": "gun"
@@ -629,7 +629,7 @@
   {
    "id": "iph-20231029-017",
    "dikey": true,
-   "semt": "",
+   "semt": "İstanbul",
    "saat": "14:43",
    "radyo": "kiyi-turkce",
    "katman": "gun"
@@ -637,7 +637,7 @@
   {
    "id": "iph-20231214-022",
    "dikey": true,
-   "semt": "",
+   "semt": "İstanbul",
    "saat": "17:58",
    "radyo": "groove-wave-lounge",
    "katman": "gun"
@@ -661,7 +661,7 @@
   {
    "id": "iph-20231221-026",
    "dikey": true,
-   "semt": "",
+   "semt": "İstanbul",
    "saat": "17:20",
    "radyo": "radio-paradise-mellow",
    "katman": "gun"
@@ -781,7 +781,7 @@
   {
    "id": "iph-20241113-078",
    "dikey": true,
-   "semt": "",
+   "semt": "İstanbul",
    "saat": "14:47",
    "radyo": "joyturk-akustik",
    "katman": "gun"
@@ -789,7 +789,7 @@
   {
    "id": "iph-20241113-079",
    "dikey": true,
-   "semt": "",
+   "semt": "İstanbul",
    "saat": "14:48",
    "radyo": "smooth-jazz-deluxe",
    "katman": "gun"
@@ -805,7 +805,7 @@
   {
    "id": "iph-20250629-099",
    "dikey": true,
-   "semt": "",
+   "semt": "Silivri",
    "saat": "11:32",
    "radyo": "kiyi-turkce",
    "katman": "gun"
@@ -813,7 +813,7 @@
   {
    "id": "iph-20250629-103",
    "dikey": true,
-   "semt": "",
+   "semt": "Silivri",
    "saat": "15:43",
    "radyo": "groove-wave-lounge",
    "katman": "gun"
@@ -821,7 +821,7 @@
   {
    "id": "iph-20250629-104",
    "dikey": false,
-   "semt": "",
+   "semt": "Silivri",
    "saat": "16:20",
    "radyo": "kiyi-caz",
    "katman": "gun"
@@ -829,7 +829,7 @@
   {
    "id": "iph-20250629-105",
    "dikey": false,
-   "semt": "",
+   "semt": "Silivri",
    "saat": "16:20",
    "radyo": "radio-paradise-mellow",
    "katman": "gun"
@@ -885,7 +885,7 @@
   {
    "id": "iph-20260407-154",
    "dikey": true,
-   "semt": "",
+   "semt": "Meriç, Edirne",
    "saat": "12:40",
    "radyo": "joyturk-akustik",
    "katman": "gun"
@@ -909,7 +909,7 @@
   {
    "id": "iph-20260423-161",
    "dikey": true,
-   "semt": "",
+   "semt": "Trakya",
    "saat": "15:41",
    "radyo": "smooth-jazz-deluxe",
    "katman": "gun"
