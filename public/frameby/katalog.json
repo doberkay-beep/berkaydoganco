@@ -1,6 +1,6 @@
 {
  "surum": 1,
- "guncelleme": "2026-11-25",
+ "guncelleme": "2026-11-25T11:45",
  "gorselKoku": "/frameby/kareler/",
  "disarida": [],
  "katmanlar": [
@@ -985,6 +985,70 @@
    "saat": "16:44",
    "radyo": "radio-paradise-mellow",
    "katman": "k1"
+  },
+  {
+   "id": "iph-20220327-201",
+   "dikey": false,
+   "semt": "Eminönü, Galata Köprüsü",
+   "saat": "22:56",
+   "radyo": "kiyi-gece",
+   "katman": "k2"
+  },
+  {
+   "id": "iph-20230807-202",
+   "dikey": true,
+   "semt": "Haydarpaşa",
+   "saat": "21:58",
+   "radyo": "dkfm-shoegaze-radio",
+   "katman": "k2"
+  },
+  {
+   "id": "iph-20230830-203",
+   "dikey": true,
+   "semt": "Salacak",
+   "saat": "20:07",
+   "radyo": "jazz-sakura",
+   "katman": "k2"
+  },
+  {
+   "id": "iph-20230830-204",
+   "dikey": true,
+   "semt": "Salacak, Kız Kulesi",
+   "saat": "20:09",
+   "radyo": "airport-lounge-radio-ca",
+   "katman": "k2"
+  },
+  {
+   "id": "iph-20250911-205",
+   "dikey": true,
+   "semt": "Kadıköy",
+   "saat": "21:27",
+   "radyo": "retro-turk",
+   "katman": "k1"
+  },
+  {
+   "id": "iph-20220122-206",
+   "dikey": true,
+   "semt": "Bakırköy",
+   "saat": "23:33",
+   "radyo": "kiyi-caz",
+   "katman": "gun"
+  },
+  {
+   "id": "iph-20250606-207",
+   "dikey": false,
+   "semt": "Boğaz, vapurdan",
+   "saat": "19:31",
+   "radyo": "borusan-klasik",
+   "katman": "gun"
+  },
+  {
+   "id": "iph-20240901-208",
+   "dikey": true,
+   "semt": "Bakırköy",
+   "saat": "21:54",
+   "radyo": "joyturk-akustik",
+   "katman": "gun"
   },
   {
    "id": "arsiv-babiali",
