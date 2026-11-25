@@ -9,8 +9,8 @@ export const metadata: Metadata = {
 
 export default function PrivacyPage() {
   return (
-    <NowbyYasal en baslik="Privacy policy" guncelleme="November 8, 2026">
-      <p>nowby. is developed by Berkay Doğan. This page explains what information the nowby. apps on iPhone, iPad, Mac, Apple TV, Apple Watch and Android use and why.</p>
+    <NowbyYasal en baslik="Privacy policy" guncelleme="November 25, 2026">
+      <p>nowby. is developed by Berkay Doğan. This page explains what information the nowby. apps on iPhone, iPad, Mac, Apple TV, Apple Watch and Android, and the nowby. Alexa skill, use and why.</p>
       <h2 style={h2}>No account</h2>
       <p>nowby. doesn't ask you to sign up. Your name, email, phone number or location is never collected.</p>
       <h2 style={h2}>Radio streams</h2>
@@ -22,6 +22,8 @@ export default function PrivacyPage() {
       <p>These records are only used as totals per station; only totals (e.g. "120 listens last month") may be shared with stations that have given permission. They are kept for at most 24 months.</p>
       <h2 style={h2}>Song information and search</h2>
       <p>The songs playing on the radio come from nowby.co. Searches you make in the app are sent to the server to fetch results and are not stored.</p>
+      <h2 style={h2}>Alexa</h2>
+      <p>When you use the nowby. Alexa skill ("Alexa, open now by"), your voice goes to Amazon and is handled under Amazon's own privacy terms; we never receive the recording. Amazon sends us only the text of your request (for example "play FM4" or "what's playing"), your language and the name of the station currently playing. We use this only to start the station you asked for and to tell you the song that is on, and we don't store it. The anonymous user and device identifiers Amazon includes with every request are not read or kept. Listening through Alexa is not counted. The skill asks for no account linking, location, contacts or other permissions.</p>
       <h2 style={h2}>Station notes</h2>
       <p>Short notes you leave under a station are public and stored anonymously; who wrote them is not recorded. Notes that break the rules are removed. Hearts you send are shown live to other listeners and are not stored.</p>
       <h2 style={h2}>"Listening with you" and Listen together</h2>

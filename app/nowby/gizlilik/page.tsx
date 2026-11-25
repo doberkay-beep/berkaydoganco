@@ -9,8 +9,8 @@ export const metadata: Metadata = {
 
 export default function GizlilikPage() {
   return (
-    <NowbyYasal baslik="Gizlilik politikası" guncelleme="8 Kasım 2026">
-      <p>nowby'ı Berkay Doğan geliştirir. Bu sayfa; iPhone, iPad, Mac, Apple TV, Apple Watch ve Android'deki nowby. uygulamalarının hangi bilgileri neden kullandığını açıklar.</p>
+    <NowbyYasal baslik="Gizlilik politikası" guncelleme="25 Kasım 2026">
+      <p>nowby'ı Berkay Doğan geliştirir. Bu sayfa; iPhone, iPad, Mac, Apple TV, Apple Watch ve Android'deki nowby. uygulamalarının ve Alexa becerisinin hangi bilgileri neden kullandığını açıklar.</p>
       <h2 style={h2}>Hesap yok</h2>
       <p>nowby. kayıt istemez. Adın, e-postan, telefon numaran ya da konumun alınmaz.</p>
       <h2 style={h2}>Radyo yayınları</h2>
@@ -22,6 +22,8 @@ export default function GizlilikPage() {
       <p>Bu kayıtlar yalnızca radyo başına toplam olarak kullanılır; izin veren radyolarla yalnızca toplam rakam (ör. "geçen ay 120 dinleme") paylaşılabilir.</p>
       <h2 style={h2}>Şarkı bilgileri ve arama</h2>
       <p>Radyolarda çalan şarkılar nowby.co'dan alınır. Uygulamada yaptığın aramalar sonuçları getirmek için sunucuya gönderilir, saklanmaz.</p>
+      <h2 style={h2}>Alexa</h2>
+      <p>nowby. Alexa becerisinde ("Alexa, open now by") sesin Amazon'a gider ve Amazon'un kendi gizlilik kurallarına göre işlenir; ses kaydı bize gelmez. Amazon bize yalnızca isteğin metne dönüşmüş hâlini (ör. "FM4'ü çal" ya da "ne çalıyor"), dili ve o an çalan radyonun adını iletir. Bu bilgiler yalnızca istenen radyoyu açmak ve çalan şarkıyı söylemek için kullanılır, saklanmaz. Amazon'un her istekle birlikte gönderdiği anonim kullanıcı ve cihaz kimlikleri okunmaz, kaydedilmez. Alexa üzerinden yapılan dinlemeler sayılmaz. Hesap bağlama, konum, kişi listesi ya da başka bir izin istenmez.</p>
       <h2 style={h2}>Radyo notları (Kalp defteri)</h2>
       <p>Bir radyonun altına bıraktığın kısa notlar herkese açıktır ve adsız olarak saklanır; kimin yazdığı kaydedilmez. Kurallara aykırı notlar kaldırılır. Bıraktığın kalpler anlık olarak dinleyenlere gösterilir, saklanmaz.</p>
       <h2 style={h2}>"Şu an seninle dinleyenler" ve Birlikte dinle</h2>
@@ -38,9 +40,9 @@ export default function GizlilikPage() {
       <p>Radyo notları, dinleme kayıtları, hafıza kodu yedekleri ve bildirimler Supabase altyapısıyla Japonya'da (Tokyo) bulunan sunucularda; nowby.co sitesi Vercel altyapısında saklanır.</p>
       <h2 style={h2}>KVKK kapsamında aydınlatma</h2>
       <p><strong>Veri sorumlusu:</strong> Berkay Doğan (iletişim: hello@berkaydogan.co).</p>
-      <p><strong>İşlenen veriler:</strong> radyo notlarının, önerilerin ve bildirimlerin metni ile tarihi; isteğe bağlı hafıza kodu yedeği (favoriler, Av Defteri, takip edilen sanatçılar); dinleme kayıtları (radyo, platform ve zaman; nowby.co'da ayrıca tarayıcıdaki rastgele sayı). Ad, e-posta, telefon numarası, konum gibi kimlik bilgileri işlenmez.</p>
+      <p><strong>İşlenen veriler:</strong> radyo notlarının, önerilerin ve bildirimlerin metni ile tarihi; isteğe bağlı hafıza kodu yedeği (favoriler, Av Defteri, takip edilen sanatçılar); dinleme kayıtları (radyo, platform ve zaman; nowby.co'da ayrıca tarayıcıdaki rastgele sayı). Ad, e-posta, telefon numarası, konum gibi kimlik bilgileri işlenmez. Alexa becerisinde isteğin metni ve çalan radyonun adı yalnızca isteği yanıtlamak için anlık olarak işlenir, saklanmaz.</p>
       <p><strong>Amaç ve hukuki sebep:</strong> veriler, nowby. hizmetinin sunulması (6698 sayılı Kanun m.5/2-c) ile kurallara aykırı içeriğin incelenmesi ve hizmetin kötüye kullanılmasının önlenmesi (m.5/2-f, meşru menfaat) amacıyla işlenir. Reklam, profilleme ya da pazarlama amacıyla işlenmez.</p>
-      <p><strong>Aktarım:</strong> veriler barındırma hizmeti için Japonya'daki (Supabase) ve Vercel'in sunucularında saklanır; bu nedenle yurt dışına aktarılmış olur. Başka hiçbir üçüncü kişiyle paylaşılmaz; yasal bir zorunluluk olursa yetkili mercilerle paylaşılabilir.</p>
+      <p><strong>Aktarım:</strong> veriler barındırma hizmeti için Japonya'daki (Supabase) ve Vercel'in sunucularında saklanır; bu nedenle yurt dışına aktarılmış olur. Başka hiçbir üçüncü kişiyle paylaşılmaz; yasal bir zorunluluk olursa yetkili mercilerle paylaşılabilir. Alexa isteklerinde ses ve kimlik bilgileri Amazon tarafında kalır.</p>
       <p><strong>Saklama süresi:</strong> radyo notları kaldırılana kadar, öneri ve bildirimler incelendikten sonra makul bir süre, hafıza kodu yedekleri sen silinmesini isteyene kadar, dinleme kayıtları en fazla 24 ay saklanır.</p>
       <p><strong>Hakların (m.11):</strong> verilerinin işlenip işlenmediğini öğrenme, bilgi isteme, işlenme amacını öğrenme, aktarıldığı kişileri bilme, eksik ya da yanlışsa düzeltilmesini, silinmesini isteme, itiraz etme ve zarara uğradıysan giderilmesini talep etme haklarına sahipsin. Başvurularını hello@berkaydogan.co adresine gönderebilirsin.</p>
     </NowbyYasal>
