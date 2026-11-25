@@ -517,5 +517,75 @@
 "slug": "radio-citta-fujiko",
 "renk": "#b8452f",
 "ulke": "it"
+},
+{
+"ad": "Show Akustik",
+"slug": "show-akustik",
+"renk": "#8a5a3c",
+"ulke": "tr",
+"logo": "https://nowby.co/logolar/show-akustik.png"
+},
+{
+"ad": "Show 90'lar",
+"slug": "show-90lar",
+"renk": "#7a3aa8",
+"ulke": "tr",
+"logo": "https://nowby.co/logolar/show-90lar.png"
+},
+{
+"ad": "Show Slow",
+"slug": "show-slow",
+"renk": "#b0743c",
+"ulke": "tr",
+"logo": "https://nowby.co/logolar/show-slow.png"
+},
+{
+"ad": "Show Eller Havaya",
+"slug": "show-eller-havaya",
+"renk": "#6a3ad0",
+"ulke": "tr",
+"logo": "https://nowby.co/logolar/show-eller-havaya.png"
+},
+{
+"ad": "Show Trend",
+"slug": "show-trend",
+"renk": "#d0303c",
+"ulke": "tr",
+"logo": "https://nowby.co/logolar/show-trend.png"
+},
+{
+"ad": "Viva Efkar",
+"slug": "viva-efkar",
+"renk": "#c0608a",
+"ulke": "tr",
+"logo": "https://nowby.co/logolar/viva-efkar.png"
+},
+{
+"ad": "Viva Turka",
+"slug": "viva-turka",
+"renk": "#d0402c",
+"ulke": "tr",
+"logo": "https://nowby.co/logolar/viva-turka.png"
+},
+{
+"ad": "Viva Türkü",
+"slug": "viva-turku",
+"renk": "#c03070",
+"ulke": "tr",
+"logo": "https://nowby.co/logolar/viva-turku.png"
+},
+{
+"ad": "Viva Club",
+"slug": "viva-club",
+"renk": "#c08a20",
+"ulke": "tr",
+"logo": "https://nowby.co/logolar/viva-club.png"
+},
+{
+"ad": "Viva Trend Pop",
+"slug": "viva-trend-pop",
+"renk": "#c89a30",
+"ulke": "tr",
+"logo": "https://nowby.co/logolar/viva-trend-pop.png"
 }
 ]
