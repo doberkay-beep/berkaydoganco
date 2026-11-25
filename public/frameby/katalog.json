@@ -1,6 +1,6 @@
 {
  "surum": 1,
- "guncelleme": "2026-11-25T21:30",
+ "guncelleme": "2026-11-25T22:30",
  "gorselKoku": "/frameby/kareler/",
  "ozelKoku": "/api/frameby/kare/",
  "anahtarAdresi": "/api/frameby/anahtar/",
@@ -34,7 +34,8 @@
    "semt": "Galata, Beyoğlu",
    "saat": "16:57",
    "radyo": "kiyi-caz",
-   "katman": "gun"
+   "katman": "gun",
+   "grup": "gun-20241124-galata-beyoglu"
   },
   {
    "id": "r50-0017",
@@ -58,7 +59,8 @@
    "semt": "Galata, Beyoğlu",
    "saat": "17:07",
    "radyo": "kiyi-caz",
-   "katman": "gun"
+   "katman": "gun",
+   "grup": "gun-20241124-galata-beyoglu"
   },
   {
    "id": "r50-0040-(1)",
@@ -74,7 +76,8 @@
    "semt": "Galata, Beyoğlu",
    "saat": "17:33",
    "radyo": "smooth-jazz-deluxe",
-   "katman": "gun"
+   "katman": "gun",
+   "grup": "gun-20241124-galata-beyoglu"
   },
   {
    "id": "r50-0135",
@@ -90,7 +93,8 @@
    "semt": "Galata, Beyoğlu",
    "saat": "21:28",
    "radyo": "radio-paradise-mellow",
-   "katman": "gun"
+   "katman": "gun",
+   "grup": "gun-20241124-galata-beyoglu"
   },
   {
    "id": "r50-0211",
@@ -98,7 +102,8 @@
    "semt": "İstiklal, Beyoğlu",
    "saat": "00:51",
    "radyo": "100-acid-jazz",
-   "katman": "k1"
+   "katman": "k1",
+   "grup": "k1-20241125-istiklal-beyoglu"
   },
   {
    "id": "r50-0214",
@@ -114,7 +119,8 @@
    "semt": "İstiklal, Beyoğlu",
    "saat": "00:53",
    "radyo": "airport-lounge-radio-ca",
-   "katman": "k1"
+   "katman": "k1",
+   "grup": "k1-20241125-istiklal-beyoglu"
   },
   {
    "id": "r50-0226",
@@ -122,7 +128,8 @@
    "semt": "İstiklal, Beyoğlu",
    "saat": "00:59",
    "radyo": "jazz-sakura",
-   "katman": "gun"
+   "katman": "gun",
+   "grup": "gun-20241125-istiklal-beyoglu"
   },
   {
    "id": "r50-0231",
@@ -138,7 +145,8 @@
    "semt": "İstiklal, Beyoğlu",
    "saat": "01:08",
    "radyo": "kiyi-gece",
-   "katman": "k1"
+   "katman": "k1",
+   "grup": "k1-20241125-istiklal-beyoglu"
   },
   {
    "id": "r50-0240",
@@ -146,7 +154,8 @@
    "semt": "İstiklal, Beyoğlu",
    "saat": "01:10",
    "radyo": "airport-lounge-radio-ca",
-   "katman": "gun"
+   "katman": "gun",
+   "grup": "gun-20241125-istiklal-beyoglu"
   },
   {
    "id": "r50-0043",
@@ -154,7 +163,8 @@
    "semt": "İstiklal, Beyoğlu",
    "saat": "11:49",
    "radyo": "jazz-sakura",
-   "katman": "gun"
+   "katman": "gun",
+   "grup": "gun-20241125-istiklal-beyoglu"
   },
   {
    "id": "r50-0256",
@@ -170,7 +180,8 @@
    "semt": "İstiklal, Beyoğlu",
    "saat": "13:25",
    "radyo": "kiyi-gece",
-   "katman": "gun"
+   "katman": "gun",
+   "grup": "gun-20241125-istiklal-beyoglu"
   },
   {
    "id": "r50-0261",
@@ -178,7 +189,8 @@
    "semt": "İstiklal, Beyoğlu",
    "saat": "13:26",
    "radyo": "airport-lounge-radio-ca",
-   "katman": "k1"
+   "katman": "k1",
+   "grup": "k1-20241125-istiklal-beyoglu"
   },
   {
    "id": "r50-0306",
@@ -266,7 +278,8 @@
    "semt": "Eminönü, Galata Köprüsü",
    "saat": "15:14",
    "radyo": "kiyi-turkce",
-   "katman": "k1"
+   "katman": "k1",
+   "grup": "k1-20250129-eminonu-galata-koprusu"
   },
   {
    "id": "r50-0554",
@@ -274,7 +287,8 @@
    "semt": "Eminönü, Galata Köprüsü",
    "saat": "15:16",
    "radyo": "joyturk-akustik",
-   "katman": "k1"
+   "katman": "k1",
+   "grup": "k1-20250129-eminonu-galata-koprusu"
   },
   {
    "id": "r50-0555-(1)",
@@ -282,7 +296,8 @@
    "semt": "Eminönü, Galata Köprüsü",
    "saat": "15:16",
    "radyo": "retro-turk",
-   "katman": "k1"
+   "katman": "k1",
+   "grup": "k1-20250129-eminonu-galata-koprusu"
   },
   {
    "id": "r50-0556",
@@ -298,7 +313,8 @@
    "semt": "Eminönü, Galata Köprüsü",
    "saat": "15:17",
    "radyo": "joyturk-akustik",
-   "katman": "k1"
+   "katman": "k1",
+   "grup": "k1-20250129-eminonu-galata-koprusu"
   },
   {
    "id": "r50-0564",
@@ -754,7 +770,8 @@
    "semt": "Bakırköy",
    "saat": "15:05",
    "radyo": "kiyi-turkce",
-   "katman": "gun"
+   "katman": "gun",
+   "grup": "gun-20240419-bakirkoy"
   },
   {
    "id": "iph-20240419-060",
@@ -762,7 +779,8 @@
    "semt": "Bakırköy",
    "saat": "15:16",
    "radyo": "groove-wave-lounge",
-   "katman": "gun"
+   "katman": "gun",
+   "grup": "gun-20240419-bakirkoy"
   },
   {
    "id": "iph-20240419-061",
@@ -770,7 +788,8 @@
    "semt": "Bakırköy",
    "saat": "15:16",
    "radyo": "kiyi-caz",
-   "katman": "gun"
+   "katman": "gun",
+   "grup": "gun-20240419-bakirkoy"
   },
   {
    "id": "iph-20240526-063",
