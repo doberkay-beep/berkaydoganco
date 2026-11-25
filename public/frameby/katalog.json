@@ -1,6 +1,6 @@
 {
  "surum": 1,
- "guncelleme": "2026-11-25T11:45",
+ "guncelleme": "2026-11-25T15:30",
  "gorselKoku": "/frameby/kareler/",
  "disarida": [],
  "katmanlar": [
@@ -1048,6 +1048,278 @@
    "semt": "Bakırköy",
    "saat": "21:54",
    "radyo": "joyturk-akustik",
+   "katman": "gun"
+  },
+  {
+   "id": "iph-20210715-209",
+   "dikey": false,
+   "semt": "Büyükada",
+   "saat": "16:59",
+   "radyo": "kiyi-caz",
+   "katman": "gun"
+  },
+  {
+   "id": "iph-20211008-210",
+   "dikey": true,
+   "semt": "Cihangir",
+   "saat": "17:13",
+   "radyo": "kiyi-turkce",
+   "katman": "k1"
+  },
+  {
+   "id": "iph-20220226-211",
+   "dikey": true,
+   "semt": "Galata",
+   "saat": "16:46",
+   "radyo": "retro-turk",
+   "katman": "k1"
+  },
+  {
+   "id": "iph-20220511-212",
+   "dikey": false,
+   "semt": "Kınalıada, vapurdan",
+   "saat": "11:15",
+   "radyo": "borusan-klasik",
+   "katman": "gun"
+  },
+  {
+   "id": "iph-20220511-213",
+   "dikey": true,
+   "semt": "Marmara, vapurdan",
+   "saat": "16:09",
+   "radyo": "joyturk-akustik",
+   "katman": "gun"
+  },
+  {
+   "id": "iph-20230113-214",
+   "dikey": false,
+   "semt": "Küçükçekmece Gölü",
+   "saat": "18:01",
+   "radyo": "radio-paradise-mellow",
+   "katman": "gun"
+  },
+  {
+   "id": "iph-20230429-215",
+   "dikey": true,
+   "semt": "Galata",
+   "saat": "18:05",
+   "radyo": "groove-wave-lounge",
+   "katman": "k1"
+  },
+  {
+   "id": "iph-20230710-216",
+   "dikey": false,
+   "semt": "Boğaz Köprüsü, vapurdan",
+   "saat": "15:36",
+   "radyo": "kiyi-caz",
+   "katman": "gun"
+  },
+  {
+   "id": "iph-20230710-217",
+   "dikey": false,
+   "semt": "Ortaköy, vapurdan",
+   "saat": "15:41",
+   "radyo": "borusan-klasik",
+   "katman": "gun"
+  },
+  {
+   "id": "iph-20240121-218",
+   "dikey": false,
+   "semt": "Salacak, Kız Kulesi",
+   "saat": "16:15",
+   "radyo": "kiyi-turkce",
+   "katman": "k1"
+  },
+  {
+   "id": "iph-20240226-220",
+   "dikey": true,
+   "semt": "Haydarpaşa, vapurdan",
+   "saat": "19:21",
+   "radyo": "kiyi-gece",
+   "katman": "k2"
+  },
+  {
+   "id": "iph-20240907-221",
+   "dikey": false,
+   "semt": "Feshane, Haliç",
+   "saat": "14:07",
+   "radyo": "groove-wave-lounge",
+   "katman": "k1"
+  },
+  {
+   "id": "iph-20241002-222",
+   "dikey": false,
+   "semt": "Üsküdar açıkları, vapurdan",
+   "saat": "18:00",
+   "radyo": "joyturk-akustik",
+   "katman": "gun"
+  },
+  {
+   "id": "iph-20241002-223",
+   "dikey": false,
+   "semt": "Boğaz, vapurdan",
+   "saat": "18:02",
+   "radyo": "radio-paradise-mellow",
+   "katman": "gun"
+  },
+  {
+   "id": "iph-20250818-224",
+   "dikey": true,
+   "semt": "Kemerburgaz",
+   "saat": "18:12",
+   "radyo": "kiyi-caz",
+   "katman": "gun"
+  },
+  {
+   "id": "iph-20250818-225",
+   "dikey": false,
+   "semt": "Mağlova Kemeri",
+   "saat": "19:24",
+   "radyo": "kiyi-turkce",
+   "katman": "k1"
+  },
+  {
+   "id": "iph-20250917-226",
+   "dikey": true,
+   "semt": "Moda açıkları",
+   "saat": "14:28",
+   "radyo": "borusan-klasik",
+   "katman": "gun"
+  },
+  {
+   "id": "iph-20250922-227",
+   "dikey": true,
+   "semt": "Moda",
+   "saat": "18:49",
+   "radyo": "joyturk-akustik",
+   "katman": "gun"
+  },
+  {
+   "id": "iph-20251013-228",
+   "dikey": true,
+   "semt": "Avcılar",
+   "saat": "18:23",
+   "radyo": "radio-paradise-mellow",
+   "katman": "gun"
+  },
+  {
+   "id": "iph-20251128-229",
+   "dikey": true,
+   "semt": "Kadıköy açıkları, vapurdan",
+   "saat": "14:00",
+   "radyo": "kiyi-caz",
+   "katman": "gun"
+  },
+  {
+   "id": "iph-20251128-230",
+   "dikey": true,
+   "semt": "Kız Kulesi, vapurdan",
+   "saat": "14:24",
+   "radyo": "borusan-klasik",
+   "katman": "gun"
+  },
+  {
+   "id": "iph-20260404-231",
+   "dikey": true,
+   "semt": "Etiler",
+   "saat": "19:41",
+   "radyo": "dkfm-shoegaze-radio",
+   "katman": "k2"
+  },
+  {
+   "id": "iph-20260418-232",
+   "dikey": true,
+   "semt": "Karaköy, Galataport",
+   "saat": "21:05",
+   "radyo": "jazz-sakura",
+   "katman": "k2"
+  },
+  {
+   "id": "iph-20260418-233",
+   "dikey": false,
+   "semt": "Tophane",
+   "saat": "23:10",
+   "radyo": "airport-lounge-radio-ca",
+   "katman": "k2"
+  },
+  {
+   "id": "iph-20260418-234",
+   "dikey": false,
+   "semt": "Kabataş iskelesi",
+   "saat": "23:22",
+   "radyo": "smooth-jazz-deluxe",
+   "katman": "k2"
+  },
+  {
+   "id": "iph-20260509-235",
+   "dikey": true,
+   "semt": "Büyükada",
+   "saat": "14:01",
+   "radyo": "joyturk-akustik",
+   "katman": "gun"
+  },
+  {
+   "id": "iph-20260525-236",
+   "dikey": false,
+   "semt": "Boğaz, vapurdan",
+   "saat": "14:26",
+   "radyo": "radio-paradise-mellow",
+   "katman": "gun"
+  },
+  {
+   "id": "iph-20260704-238",
+   "dikey": false,
+   "semt": "Kandilli",
+   "saat": "22:07",
+   "radyo": "kiyi-gece",
+   "katman": "k2"
+  },
+  {
+   "id": "iph-20260725-239",
+   "dikey": true,
+   "semt": "Ortaköy",
+   "saat": "09:34",
+   "radyo": "kiyi-caz",
+   "katman": "gun"
+  },
+  {
+   "id": "iph-20260915-240",
+   "dikey": true,
+   "semt": "Galata",
+   "saat": "21:02",
+   "radyo": "dkfm-shoegaze-radio",
+   "katman": "k2"
+  },
+  {
+   "id": "iph-20260915-241",
+   "dikey": false,
+   "semt": "Karaköy",
+   "saat": "21:23",
+   "radyo": "jazz-sakura",
+   "katman": "k2"
+  },
+  {
+   "id": "iph-20261012-242",
+   "dikey": true,
+   "semt": "Dolmabahçe",
+   "saat": "17:21",
+   "radyo": "groove-wave-lounge",
+   "katman": "k1"
+  },
+  {
+   "id": "iph-20261014-243",
+   "dikey": true,
+   "semt": "Esenyurt",
+   "saat": "22:48",
+   "radyo": "airport-lounge-radio-ca",
+   "katman": "k2"
+  },
+  {
+   "id": "iph-20261110-244",
+   "dikey": false,
+   "semt": "Haliç, vapurdan",
+   "saat": "16:43",
+   "radyo": "borusan-klasik",
    "katman": "gun"
   },
   {
