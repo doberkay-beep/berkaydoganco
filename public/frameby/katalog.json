@@ -1,7 +1,9 @@
 {
  "surum": 1,
- "guncelleme": "2026-11-25T16:00",
+ "guncelleme": "2026-11-25T17:00",
  "gorselKoku": "/frameby/kareler/",
+ "ozelKoku": "/api/frameby/kare/",
+ "anahtarAdresi": "/api/frameby/anahtar/",
  "disarida": [],
  "katmanlar": [
   {
