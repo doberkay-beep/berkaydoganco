@@ -1,18 +1,22 @@
 import yedek from "@/lib/nowby-radyolar.json";
 
 /* Yazılı izin veren radyolar — nowby. tanıtım sayfasında karo duvarı (25 Kas 2026).
-   Logo yerine uygulamadaki karolar: radyonun kendi rengi + baş harfi (logo hakkı sorunu yok).
+   Radyo kendi logosunu yazılı izinle gönderdiyse logo (nowby.co/logolar, stations.logo_url);
+   göndermediyse uygulamadaki karo: radyonun kendi rengi + baş harfi.
    Liste derleme anında nowby.co'dan (yalnız app_izinli radyolar) okunur; okunamazsa
    lib/nowby-radyolar.json'daki son anlık görüntü kullanılır. Radyo çıkarsa bir sonraki yayında kalkar. */
 
-type Radyo = { ad: string; slug: string; renk: string; ulke: string };
+type Radyo = { ad: string; slug: string; renk: string; ulke: string; logo?: string | null };
+
+// nowby.co önbelleği (10 dk) yenilenmeden derlenirse logo yedek listeden gelir.
+const yedekLogo = new Map((yedek as Radyo[]).filter((r) => r.logo).map((r) => [r.slug, r.logo as string]));
 
 async function radyolar(): Promise<Radyo[]> {
   try {
     const r = await fetch("https://nowby.co/api/now?uygulama=1", { cache: "force-cache", signal: AbortSignal.timeout(8000) });
     if (!r.ok) throw new Error(String(r.status));
-    const y = (await r.json()) as { stations?: { name: string; slug: string; accentColor: string | null; country?: string | null }[] };
-    const l = (y.stations ?? []).map((s) => ({ ad: s.name, slug: s.slug, renk: s.accentColor || "#c9241a", ulke: s.country || "www" }));
+    const y = (await r.json()) as { stations?: { name: string; slug: string; accentColor: string | null; country?: string | null; logoUrl?: string | null }[] };
+    const l = (y.stations ?? []).map((s) => ({ ad: s.name, slug: s.slug, renk: s.accentColor || "#c9241a", ulke: s.country || "www", logo: s.logoUrl ?? yedekLogo.get(s.slug) ?? null }));
     if (l.length > 10) return l;
   } catch {}
   return yedek as Radyo[];
@@ -48,12 +52,18 @@ export async function IzinliRadyolar({ dil }: { dil: "tr" | "en" }) {
       <ul className="nb-radyolar" style={{ listStyle: "none", padding: 0, margin: "0.9rem 0 0" }}>
         {liste.map((r) => (
           <li key={r.slug} title={r.ad} style={{ display: "flex", alignItems: "center", gap: "0.6rem", minWidth: 0 }}>
-            <span aria-hidden style={{
+            {r.logo ? (
+              // eslint-disable-next-line @next/next/no-img-element
+              <img src={r.logo} alt="" aria-hidden loading="lazy" width={34} height={34} style={{
+                flex: "0 0 auto", width: "2.1rem", height: "2.1rem", borderRadius: "0.6rem",
+                objectFit: "contain", background: "#fff", boxShadow: "inset 0 0 0 1px rgba(0,0,0,0.08)",
+              }} />
+            ) : <span aria-hidden style={{
               flex: "0 0 auto", width: "2.1rem", height: "2.1rem", borderRadius: "0.6rem",
               background: `linear-gradient(160deg, ${r.renk}, color-mix(in srgb, ${r.renk} 72%, black))`,
               color: "#fff", display: "grid", placeItems: "center",
               fontFamily: "ui-rounded, 'SF Pro Rounded', system-ui, sans-serif", fontWeight: 800, fontSize: "0.95rem",
-            }}>{basHarf(r.ad)}</span>
+            }}>{basHarf(r.ad)}</span>}
             <span style={{ fontSize: "0.88rem", lineHeight: 1.25, opacity: 0.85, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>{r.ad}</span>
           </li>
         ))}
@@ -72,8 +82,8 @@ export async function IzinliRadyolar({ dil }: { dil: "tr" | "en" }) {
       {grup(dil === "tr" ? "Dünyadan" : "Around the world", dunya)}
       <p style={{ marginTop: "1.4rem", fontSize: "0.85rem", opacity: 0.6, lineHeight: 1.5 }}>
         {dil === "tr"
-          ? "Karolar nowby. uygulamasındaki gibi: radyonun rengi ve baş harfi. Liste her yayında nowby.co'dan güncellenir."
-          : "Tiles as in the nowby. app: the station's colour and initial. The list is refreshed from nowby.co with every update."}
+          ? "Logolar radyoların kendi gönderdiği dosyalar, izinleriyle. Logosu gelmeyen radyolar nowby. uygulamasındaki gibi kendi rengi ve baş harfiyle görünür. Liste her yayında nowby.co'dan güncellenir."
+          : "Logos are the stations' own files, used with their permission. Stations without a logo appear as in the nowby. app, with their colour and initial. The list is refreshed from nowby.co with every update."}
       </p>
     </div>
   );

@@ -3,13 +3,15 @@
 "ad": "Show Radyo",
 "slug": "show-radyo",
 "renk": "#c65a8a",
-"ulke": "tr"
+"ulke": "tr",
+"logo": "https://nowby.co/logolar/show-radyo.png"
 },
 {
 "ad": "Radyo Viva",
 "slug": "radyo-viva",
 "renk": "#8a7ab0",
-"ulke": "tr"
+"ulke": "tr",
+"logo": "https://nowby.co/logolar/radyo-viva.png"
 },
 {
 "ad": "Joy Türk",
@@ -45,7 +47,8 @@
 "ad": "Türk Rock FM",
 "slug": "turk-rock-fm",
 "renk": "#9c3535",
-"ulke": "tr"
+"ulke": "tr",
+"logo": "https://nowby.co/logolar/turk-rock-fm.png"
 },
 {
 "ad": "Romantik Ses Isparta",
@@ -219,7 +222,8 @@
 "ad": "70 80 Hits HQ",
 "slug": "70-80-hits-hq",
 "renk": "#b94b68",
-"ulke": "it"
+"ulke": "it",
+"logo": "https://nowby.co/logolar/70-80-hits-hq.png"
 },
 {
 "ad": "Mydonose",
@@ -261,7 +265,8 @@
 "ad": "Intense Radio - We love Dance 256K",
 "slug": "intense-radio-we-love-dance-256k",
 "renk": "#78409c",
-"ulke": "nl"
+"ulke": "nl",
+"logo": "https://nowby.co/logolar/intense-radio.png"
 },
 {
 "ad": "Retro Türk",
@@ -330,7 +335,7 @@
 "ulke": "us"
 },
 {
-"ad": "Roca Fm Clasicos Mexico",
+"ad": "Free FM Classics Mexico",
 "slug": "roca-fm-clasicos-mexico",
 "renk": "#ca9544",
 "ulke": "mx"
@@ -375,7 +380,8 @@
 "ad": "NBC Milano",
 "slug": "nbc-milano",
 "renk": "#c0563a",
-"ulke": "it"
+"ulke": "it",
+"logo": "https://nowby.co/logolar/nbc-milano.png"
 },
 {
 "ad": "Radio Paradise Mellow",
