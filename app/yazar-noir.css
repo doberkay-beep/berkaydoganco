@@ -106,7 +106,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 .ed-dropcap::first-letter { float: none; font: inherit; padding: 0; color: inherit; }
 
 /* Fotoğraflar her yerde siyah-beyaz */
-main img:not([src$=".svg"]):not([src*="kapak"]):not([src*="poster"]):not([src*="/by/"]):not([src*="/hereby/"]):not([src*="/nowby/"]):not([src*="/writtenby/"]) {
+main img:not([src$=".svg"]):not([src*="kapak"]):not([src*="poster"]):not([src*="/by/"]):not([src*="/hereby/"]):not([src*="/nowby/"]):not([src*="/frameby/"]):not([src*="/writtenby/"]) {
   filter: grayscale(1) contrast(1.12);
 }
 

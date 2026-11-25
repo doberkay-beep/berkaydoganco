@@ -49,6 +49,14 @@
         "3010"
       ],
       "port": 3010
+    },
+    {
+      "name": "frameby-secim",
+      "runtimeExecutable": "node",
+      "runtimeArgs": [
+        "/Users/yazarberkay/Desktop/by-atolye/frameby/secim/sunucu.mjs"
+      ],
+      "port": 4321
     }
   ]
 }

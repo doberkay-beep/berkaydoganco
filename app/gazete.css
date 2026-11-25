@@ -72,7 +72,7 @@ h3 {
 .ed-folio-no { display: none !important; }
 
 /* Fotoğraflar gazete baskısı gibi: siyah-beyaz, yumuşak */
-main img:not([src$=".svg"]):not([src*="kapak"]):not([src*="poster"]):not([src*="/by/"]):not([src*="/hereby/"]):not([src*="/nowby/"]):not([src*="/writtenby/"]) {
+main img:not([src$=".svg"]):not([src*="kapak"]):not([src*="poster"]):not([src*="/by/"]):not([src*="/hereby/"]):not([src*="/nowby/"]):not([src*="/frameby/"]):not([src*="/writtenby/"]) {
   filter: grayscale(1) contrast(1.04);
 }
 

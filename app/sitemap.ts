@@ -39,6 +39,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "monthly" as const,
       priority: 0.6,
     },
+    // 25 Kas 2026: frameby. tanıtım sayfası (galeri uygulamada, sitede değil).
+    { url: `${SITE}/frameby/`, changeFrequency: "monthly" as const, priority: 0.5, alternates: { languages: { tr: `${SITE}/frameby/`, en: `${SITE}/en/frameby/` } } },
+    { url: `${SITE}/en/frameby/`, changeFrequency: "monthly" as const, priority: 0.3, alternates: { languages: { tr: `${SITE}/frameby/`, en: `${SITE}/en/frameby/` } } },
     {
       url: `${SITE}/gidis/`,
       changeFrequency: "monthly" as const,

@@ -1,0 +1,1170 @@
+{
+ "surum": 1,
+ "guncelleme": "2026-11-25",
+ "gorselKoku": "/frameby/kareler/",
+ "disarida": [],
+ "katmanlar": [
+  {
+   "id": "gun",
+   "ad": "Gün",
+   "ucretsiz": true
+  },
+  {
+   "id": "arsiv",
+   "ad": "Eski İstanbul",
+   "ucretsiz": true
+  },
+  {
+   "id": "k1",
+   "ad": "Berkay'ın İstanbul'u",
+   "ucretsiz": false
+  },
+  {
+   "id": "k2",
+   "ad": "Gece kıyısı",
+   "ucretsiz": false
+  }
+ ],
+ "kareler": [
+  {
+   "id": "r50-0013",
+   "dikey": true,
+   "semt": "Galata, Beyoğlu",
+   "saat": "16:57",
+   "radyo": "kiyi-caz",
+   "katman": "gun"
+  },
+  {
+   "id": "r50-0017",
+   "dikey": false,
+   "semt": "Galata, Beyoğlu",
+   "saat": "16:57",
+   "radyo": "radio-paradise-mellow",
+   "katman": "k1"
+  },
+  {
+   "id": "r50-0031",
+   "dikey": false,
+   "semt": "Galata, Beyoğlu",
+   "saat": "17:05",
+   "radyo": "smooth-jazz-deluxe",
+   "katman": "k1"
+  },
+  {
+   "id": "r50-0037",
+   "dikey": true,
+   "semt": "Galata, Beyoğlu",
+   "saat": "17:07",
+   "radyo": "kiyi-caz",
+   "katman": "gun"
+  },
+  {
+   "id": "r50-0040-(1)",
+   "dikey": false,
+   "semt": "Galata, Beyoğlu",
+   "saat": "17:08",
+   "radyo": "radio-paradise-mellow",
+   "katman": "k1"
+  },
+  {
+   "id": "r50-0078",
+   "dikey": true,
+   "semt": "Galata, Beyoğlu",
+   "saat": "17:33",
+   "radyo": "smooth-jazz-deluxe",
+   "katman": "gun"
+  },
+  {
+   "id": "r50-0135",
+   "dikey": false,
+   "semt": "Galata, Beyoğlu",
+   "saat": "20:27",
+   "radyo": "kiyi-caz",
+   "katman": "gun"
+  },
+  {
+   "id": "r50-0186",
+   "dikey": true,
+   "semt": "Galata, Beyoğlu",
+   "saat": "21:28",
+   "radyo": "radio-paradise-mellow",
+   "katman": "gun"
+  },
+  {
+   "id": "r50-0211",
+   "dikey": true,
+   "semt": "İstiklal, Beyoğlu",
+   "saat": "00:51",
+   "radyo": "100-acid-jazz",
+   "katman": "k1"
+  },
+  {
+   "id": "r50-0214",
+   "dikey": false,
+   "semt": "İstiklal, Beyoğlu",
+   "saat": "00:52",
+   "radyo": "kiyi-gece",
+   "katman": "gun"
+  },
+  {
+   "id": "r50-0219",
+   "dikey": true,
+   "semt": "İstiklal, Beyoğlu",
+   "saat": "00:53",
+   "radyo": "airport-lounge-radio-ca",
+   "katman": "k1"
+  },
+  {
+   "id": "r50-0226",
+   "dikey": true,
+   "semt": "İstiklal, Beyoğlu",
+   "saat": "00:59",
+   "radyo": "jazz-sakura",
+   "katman": "gun"
+  },
+  {
+   "id": "r50-0231",
+   "dikey": false,
+   "semt": "İstiklal, Beyoğlu",
+   "saat": "01:03",
+   "radyo": "100-acid-jazz",
+   "katman": "gun"
+  },
+  {
+   "id": "r50-0236",
+   "dikey": true,
+   "semt": "İstiklal, Beyoğlu",
+   "saat": "01:08",
+   "radyo": "kiyi-gece",
+   "katman": "k1"
+  },
+  {
+   "id": "r50-0240",
+   "dikey": true,
+   "semt": "İstiklal, Beyoğlu",
+   "saat": "01:10",
+   "radyo": "airport-lounge-radio-ca",
+   "katman": "gun"
+  },
+  {
+   "id": "r50-0043",
+   "dikey": true,
+   "semt": "İstiklal, Beyoğlu",
+   "saat": "11:49",
+   "radyo": "jazz-sakura",
+   "katman": "gun"
+  },
+  {
+   "id": "r50-0256",
+   "dikey": false,
+   "semt": "İstiklal, Beyoğlu",
+   "saat": "13:25",
+   "radyo": "100-acid-jazz",
+   "katman": "gun"
+  },
+  {
+   "id": "r50-0260",
+   "dikey": true,
+   "semt": "İstiklal, Beyoğlu",
+   "saat": "13:25",
+   "radyo": "kiyi-gece",
+   "katman": "gun"
+  },
+  {
+   "id": "r50-0261",
+   "dikey": true,
+   "semt": "İstiklal, Beyoğlu",
+   "saat": "13:26",
+   "radyo": "airport-lounge-radio-ca",
+   "katman": "k1"
+  },
+  {
+   "id": "r50-0306",
+   "dikey": true,
+   "semt": "Boğaz, vapurdan",
+   "saat": "17:20",
+   "radyo": "borusan-klasik",
+   "katman": "gun"
+  },
+  {
+   "id": "r50-0307",
+   "dikey": false,
+   "semt": "Boğaz, vapurdan",
+   "saat": "17:20",
+   "radyo": "radio-paradise-mellow",
+   "katman": "k1"
+  },
+  {
+   "id": "r50-0312",
+   "dikey": false,
+   "semt": "Boğaz, vapurdan",
+   "saat": "17:30",
+   "radyo": "dkfm-shoegaze-radio",
+   "katman": "gun"
+  },
+  {
+   "id": "r50-0319",
+   "dikey": false,
+   "semt": "Boğaz, vapurdan",
+   "saat": "17:31",
+   "radyo": "borusan-klasik",
+   "katman": "k1"
+  },
+  {
+   "id": "r50-0322",
+   "dikey": false,
+   "semt": "Boğaz, vapurdan",
+   "saat": "17:32",
+   "radyo": "radio-paradise-mellow",
+   "katman": "gun"
+  },
+  {
+   "id": "r50-0323",
+   "dikey": false,
+   "semt": "Boğaz, vapurdan",
+   "saat": "17:32",
+   "radyo": "dkfm-shoegaze-radio",
+   "katman": "gun"
+  },
+  {
+   "id": "r50-0329",
+   "dikey": false,
+   "semt": "Boğaz, vapurdan",
+   "saat": "17:35",
+   "radyo": "borusan-klasik",
+   "katman": "gun"
+  },
+  {
+   "id": "r50-0334",
+   "dikey": false,
+   "semt": "Boğaz, vapurdan",
+   "saat": "17:36",
+   "radyo": "radio-paradise-mellow",
+   "katman": "gun"
+  },
+  {
+   "id": "r50-0335",
+   "dikey": false,
+   "semt": "Boğaz, vapurdan",
+   "saat": "17:36",
+   "radyo": "dkfm-shoegaze-radio",
+   "katman": "gun"
+  },
+  {
+   "id": "r50-0493",
+   "dikey": true,
+   "semt": "",
+   "saat": "15:44",
+   "radyo": "kiyi-caz",
+   "katman": "gun"
+  },
+  {
+   "id": "r50-0551",
+   "dikey": true,
+   "semt": "Eminönü, Galata Köprüsü",
+   "saat": "15:14",
+   "radyo": "kiyi-turkce",
+   "katman": "k1"
+  },
+  {
+   "id": "r50-0554",
+   "dikey": true,
+   "semt": "Eminönü, Galata Köprüsü",
+   "saat": "15:16",
+   "radyo": "joyturk-akustik",
+   "katman": "k1"
+  },
+  {
+   "id": "r50-0555-(1)",
+   "dikey": true,
+   "semt": "Eminönü, Galata Köprüsü",
+   "saat": "15:16",
+   "radyo": "retro-turk",
+   "katman": "k1"
+  },
+  {
+   "id": "r50-0556",
+   "dikey": true,
+   "semt": "Eminönü, Galata Köprüsü",
+   "saat": "15:16",
+   "radyo": "kiyi-turkce",
+   "katman": "gun"
+  },
+  {
+   "id": "r50-0559",
+   "dikey": true,
+   "semt": "Eminönü, Galata Köprüsü",
+   "saat": "15:17",
+   "radyo": "joyturk-akustik",
+   "katman": "k1"
+  },
+  {
+   "id": "r50-0564",
+   "dikey": false,
+   "semt": "Eminönü, Galata Köprüsü",
+   "saat": "15:22",
+   "radyo": "retro-turk",
+   "katman": "k1"
+  },
+  {
+   "id": "r50-0567",
+   "dikey": false,
+   "semt": "Eminönü, Galata Köprüsü",
+   "saat": "15:23",
+   "radyo": "kiyi-turkce",
+   "katman": "gun"
+  },
+  {
+   "id": "r50-0574",
+   "dikey": false,
+   "semt": "Eminönü, Galata Köprüsü",
+   "saat": "15:26",
+   "radyo": "joyturk-akustik",
+   "katman": "gun"
+  },
+  {
+   "id": "r50-0598",
+   "dikey": true,
+   "semt": "",
+   "saat": "19:42",
+   "radyo": "groove-wave-lounge",
+   "katman": "gun"
+  },
+  {
+   "id": "r50-0602",
+   "dikey": true,
+   "semt": "",
+   "saat": "19:43",
+   "radyo": "kiyi-caz",
+   "katman": "gun"
+  },
+  {
+   "id": "r50-0656",
+   "dikey": false,
+   "semt": "Anadolu yakası, Adalara karşı",
+   "saat": "16:23",
+   "radyo": "groove-wave-lounge",
+   "katman": "gun"
+  },
+  {
+   "id": "r50-0700",
+   "dikey": false,
+   "semt": "Anadolu yakası, Adalara karşı",
+   "saat": "23:59",
+   "radyo": "kiyi-gece",
+   "katman": "k2"
+  },
+  {
+   "id": "r50-0704",
+   "dikey": false,
+   "semt": "Anadolu yakası, Adalara karşı",
+   "saat": "00:01",
+   "radyo": "airport-lounge-radio-ca",
+   "katman": "k2"
+  },
+  {
+   "id": "r50-0720",
+   "dikey": true,
+   "semt": "",
+   "saat": "16:32",
+   "radyo": "jazz-sakura",
+   "katman": "gun"
+  },
+  {
+   "id": "r50-0883",
+   "dikey": false,
+   "semt": "Anadolu yakası, Adalara karşı",
+   "saat": "02:48",
+   "radyo": "jazz-sakura",
+   "katman": "k2"
+  },
+  {
+   "id": "r50-0903",
+   "dikey": false,
+   "semt": "Anadolu yakası, Adalara karşı",
+   "saat": "10:44",
+   "radyo": "kiyi-gece",
+   "katman": "gun"
+  },
+  {
+   "id": "r50-0904-(1)",
+   "dikey": false,
+   "semt": "Anadolu yakası, Adalara karşı",
+   "saat": "10:44",
+   "radyo": "dkfm-shoegaze-radio",
+   "katman": "gun"
+  },
+  {
+   "id": "r50-0945",
+   "dikey": true,
+   "semt": "Karaköy, Galata Köprüsü",
+   "saat": "14:40",
+   "radyo": "kiyi-turkce",
+   "katman": "k1"
+  },
+  {
+   "id": "r50-0950",
+   "dikey": true,
+   "semt": "Karaköy, Galata Köprüsü",
+   "saat": "14:52",
+   "radyo": "smooth-jazz-deluxe",
+   "katman": "gun"
+  },
+  {
+   "id": "r50-0968",
+   "dikey": false,
+   "semt": "Karaköy, Galata Köprüsü",
+   "saat": "16:41",
+   "radyo": "radio-paradise-mellow",
+   "katman": "k1"
+  },
+  {
+   "id": "r50-0971",
+   "dikey": false,
+   "semt": "Karaköy, Galata Köprüsü",
+   "saat": "16:42",
+   "radyo": "kiyi-turkce",
+   "katman": "gun"
+  },
+  {
+   "id": "r50-0979",
+   "dikey": false,
+   "semt": "Karaköy, Galata Köprüsü",
+   "saat": "16:49",
+   "radyo": "smooth-jazz-deluxe",
+   "katman": "k1"
+  },
+  {
+   "id": "r50-0999",
+   "dikey": false,
+   "semt": "Karaköy, Galata Köprüsü",
+   "saat": "17:40",
+   "radyo": "radio-paradise-mellow",
+   "katman": "gun"
+  },
+  {
+   "id": "r50-1083",
+   "dikey": false,
+   "semt": "Boğaz, vapur iskelesi",
+   "saat": "23:40",
+   "radyo": "kiyi-gece",
+   "katman": "k2"
+  },
+  {
+   "id": "r50-1090",
+   "dikey": false,
+   "semt": "Boğaz, vapur iskelesi",
+   "saat": "23:40",
+   "radyo": "kiyi-gece",
+   "katman": "gun"
+  },
+  {
+   "id": "r50-1099",
+   "dikey": false,
+   "semt": "Boğaz, vapur iskelesi",
+   "saat": "23:41",
+   "radyo": "airport-lounge-radio-ca",
+   "katman": "k2"
+  },
+  {
+   "id": "r50-1113",
+   "dikey": false,
+   "semt": "Boğaz, vapur iskelesi",
+   "saat": "23:42",
+   "radyo": "airport-lounge-radio-ca",
+   "katman": "gun"
+  },
+  {
+   "id": "r50-1116",
+   "dikey": false,
+   "semt": "Boğaz, vapur iskelesi",
+   "saat": "23:43",
+   "radyo": "jazz-sakura",
+   "katman": "gun"
+  },
+  {
+   "id": "r50-1119",
+   "dikey": false,
+   "semt": "Boğaz, vapur iskelesi",
+   "saat": "23:43",
+   "radyo": "jazz-sakura",
+   "katman": "k2"
+  },
+  {
+   "id": "r50-1124",
+   "dikey": false,
+   "semt": "Boğaz, vapur iskelesi",
+   "saat": "23:43",
+   "radyo": "kiyi-gece",
+   "katman": "gun"
+  },
+  {
+   "id": "r50-1130",
+   "dikey": false,
+   "semt": "Boğaz, vapur iskelesi",
+   "saat": "23:43",
+   "radyo": "dkfm-shoegaze-radio",
+   "katman": "k2"
+  },
+  {
+   "id": "r50-1140",
+   "dikey": false,
+   "semt": "Büyükada",
+   "saat": "13:10",
+   "radyo": "joyturk-akustik",
+   "katman": "gun"
+  },
+  {
+   "id": "r50-1169",
+   "dikey": false,
+   "semt": "Büyükada",
+   "saat": "13:22",
+   "radyo": "radio-paradise-mellow",
+   "katman": "gun"
+  },
+  {
+   "id": "r50-1203",
+   "dikey": false,
+   "semt": "Büyükada",
+   "saat": "13:28",
+   "radyo": "wmr-world-music-radio",
+   "katman": "gun"
+  },
+  {
+   "id": "r50-1214",
+   "dikey": false,
+   "semt": "Büyükada",
+   "saat": "13:41",
+   "radyo": "joyturk-akustik",
+   "katman": "gun"
+  },
+  {
+   "id": "r50-1220",
+   "dikey": false,
+   "semt": "Büyükada",
+   "saat": "13:43",
+   "radyo": "radio-paradise-mellow",
+   "katman": "gun"
+  },
+  {
+   "id": "r50-1299",
+   "dikey": false,
+   "semt": "Büyükada",
+   "saat": "14:13",
+   "radyo": "wmr-world-music-radio",
+   "katman": "gun"
+  },
+  {
+   "id": "r50-1312",
+   "dikey": true,
+   "semt": "Büyükada",
+   "saat": "14:14",
+   "radyo": "joyturk-akustik",
+   "katman": "gun"
+  },
+  {
+   "id": "r50-1462",
+   "dikey": false,
+   "semt": "Büyükada",
+   "saat": "14:51",
+   "radyo": "radio-paradise-mellow",
+   "katman": "gun"
+  },
+  {
+   "id": "r50-1511",
+   "dikey": false,
+   "semt": "Büyükada",
+   "saat": "15:54",
+   "radyo": "wmr-world-music-radio",
+   "katman": "gun"
+  },
+  {
+   "id": "r50-1518",
+   "dikey": true,
+   "semt": "Büyükada",
+   "saat": "16:03",
+   "radyo": "joyturk-akustik",
+   "katman": "k1"
+  },
+  {
+   "id": "iph-20210910-003",
+   "dikey": false,
+   "semt": "",
+   "saat": "18:32",
+   "radyo": "kiyi-caz",
+   "katman": "gun"
+  },
+  {
+   "id": "iph-20230415-011",
+   "dikey": false,
+   "semt": "",
+   "saat": "19:10",
+   "radyo": "radio-paradise-mellow",
+   "katman": "gun"
+  },
+  {
+   "id": "iph-20230429-012",
+   "dikey": false,
+   "semt": "Karaköy",
+   "saat": "18:22",
+   "radyo": "joyturk-akustik",
+   "katman": "gun"
+  },
+  {
+   "id": "iph-20230807-013",
+   "dikey": false,
+   "semt": "Üsküdar, Kız Kulesi",
+   "saat": "20:39",
+   "radyo": "kiyi-gece",
+   "katman": "k2"
+  },
+  {
+   "id": "iph-20231026-015",
+   "dikey": true,
+   "semt": "",
+   "saat": "15:39",
+   "radyo": "smooth-jazz-deluxe",
+   "katman": "gun"
+  },
+  {
+   "id": "iph-20231029-017",
+   "dikey": true,
+   "semt": "",
+   "saat": "14:43",
+   "radyo": "kiyi-turkce",
+   "katman": "gun"
+  },
+  {
+   "id": "iph-20231214-022",
+   "dikey": true,
+   "semt": "",
+   "saat": "17:58",
+   "radyo": "groove-wave-lounge",
+   "katman": "gun"
+  },
+  {
+   "id": "iph-20231219-024",
+   "dikey": true,
+   "semt": "Arnavutköy",
+   "saat": "14:57",
+   "radyo": "kiyi-caz",
+   "katman": "gun"
+  },
+  {
+   "id": "iph-20231219-025",
+   "dikey": false,
+   "semt": "Ortaköy",
+   "saat": "16:28",
+   "radyo": "borusan-klasik",
+   "katman": "k1"
+  },
+  {
+   "id": "iph-20231221-026",
+   "dikey": true,
+   "semt": "",
+   "saat": "17:20",
+   "radyo": "radio-paradise-mellow",
+   "katman": "gun"
+  },
+  {
+   "id": "iph-20240121-030",
+   "dikey": false,
+   "semt": "Boğaz, vapurdan",
+   "saat": "18:10",
+   "radyo": "joyturk-akustik",
+   "katman": "gun"
+  },
+  {
+   "id": "iph-20240121-032",
+   "dikey": true,
+   "semt": "Boğaz, vapurdan",
+   "saat": "18:10",
+   "radyo": "kiyi-turkce",
+   "katman": "k1"
+  },
+  {
+   "id": "iph-20240327-037",
+   "dikey": false,
+   "semt": "Ortaköy",
+   "saat": "13:16",
+   "radyo": "smooth-jazz-deluxe",
+   "katman": "gun"
+  },
+  {
+   "id": "iph-20240327-038",
+   "dikey": false,
+   "semt": "Ortaköy",
+   "saat": "13:31",
+   "radyo": "kiyi-turkce",
+   "katman": "gun"
+  },
+  {
+   "id": "iph-20240418-048",
+   "dikey": true,
+   "semt": "Fatih",
+   "saat": "11:09",
+   "radyo": "groove-wave-lounge",
+   "katman": "gun"
+  },
+  {
+   "id": "iph-20240418-050",
+   "dikey": false,
+   "semt": "Arnavutköy",
+   "saat": "15:43",
+   "radyo": "kiyi-caz",
+   "katman": "gun"
+  },
+  {
+   "id": "iph-20240418-051",
+   "dikey": false,
+   "semt": "Arnavutköy",
+   "saat": "15:44",
+   "radyo": "radio-paradise-mellow",
+   "katman": "k1"
+  },
+  {
+   "id": "iph-20240418-053",
+   "dikey": false,
+   "semt": "Ortaköy",
+   "saat": "16:26",
+   "radyo": "radio-paradise-mellow",
+   "katman": "gun"
+  },
+  {
+   "id": "iph-20240418-054",
+   "dikey": false,
+   "semt": "Ortaköy",
+   "saat": "16:46",
+   "radyo": "joyturk-akustik",
+   "katman": "gun"
+  },
+  {
+   "id": "iph-20240419-056",
+   "dikey": false,
+   "semt": "Bakırköy",
+   "saat": "14:46",
+   "radyo": "smooth-jazz-deluxe",
+   "katman": "gun"
+  },
+  {
+   "id": "iph-20240419-058",
+   "dikey": true,
+   "semt": "Bakırköy",
+   "saat": "15:05",
+   "radyo": "kiyi-turkce",
+   "katman": "gun"
+  },
+  {
+   "id": "iph-20240419-060",
+   "dikey": true,
+   "semt": "Bakırköy",
+   "saat": "15:16",
+   "radyo": "groove-wave-lounge",
+   "katman": "gun"
+  },
+  {
+   "id": "iph-20240419-061",
+   "dikey": true,
+   "semt": "Bakırköy",
+   "saat": "15:16",
+   "radyo": "kiyi-caz",
+   "katman": "gun"
+  },
+  {
+   "id": "iph-20240526-063",
+   "dikey": true,
+   "semt": "Galata",
+   "saat": "16:25",
+   "radyo": "radio-paradise-mellow",
+   "katman": "gun"
+  },
+  {
+   "id": "iph-20241113-078",
+   "dikey": true,
+   "semt": "",
+   "saat": "14:47",
+   "radyo": "joyturk-akustik",
+   "katman": "gun"
+  },
+  {
+   "id": "iph-20241113-079",
+   "dikey": true,
+   "semt": "",
+   "saat": "14:48",
+   "radyo": "smooth-jazz-deluxe",
+   "katman": "gun"
+  },
+  {
+   "id": "iph-20250328-089",
+   "dikey": true,
+   "semt": "Arnavutköy",
+   "saat": "16:38",
+   "radyo": "borusan-klasik",
+   "katman": "k1"
+  },
+  {
+   "id": "iph-20250629-099",
+   "dikey": true,
+   "semt": "",
+   "saat": "11:32",
+   "radyo": "kiyi-turkce",
+   "katman": "gun"
+  },
+  {
+   "id": "iph-20250629-103",
+   "dikey": true,
+   "semt": "",
+   "saat": "15:43",
+   "radyo": "groove-wave-lounge",
+   "katman": "gun"
+  },
+  {
+   "id": "iph-20250629-104",
+   "dikey": false,
+   "semt": "",
+   "saat": "16:20",
+   "radyo": "kiyi-caz",
+   "katman": "gun"
+  },
+  {
+   "id": "iph-20250629-105",
+   "dikey": false,
+   "semt": "",
+   "saat": "16:20",
+   "radyo": "radio-paradise-mellow",
+   "katman": "gun"
+  },
+  {
+   "id": "iph-20250813-111",
+   "dikey": true,
+   "semt": "Nişantaşı",
+   "saat": "22:30",
+   "radyo": "joyturk-akustik",
+   "katman": "gun"
+  },
+  {
+   "id": "iph-20250818-114",
+   "dikey": true,
+   "semt": "Mağlova Kemeri",
+   "saat": "19:28",
+   "radyo": "smooth-jazz-deluxe",
+   "katman": "gun"
+  },
+  {
+   "id": "iph-20250818-115",
+   "dikey": false,
+   "semt": "Mağlova Kemeri",
+   "saat": "19:40",
+   "radyo": "kiyi-turkce",
+   "katman": "gun"
+  },
+  {
+   "id": "iph-20250922-120",
+   "dikey": true,
+   "semt": "Büyükada",
+   "saat": "17:07",
+   "radyo": "groove-wave-lounge",
+   "katman": "gun"
+  },
+  {
+   "id": "iph-20250930-124",
+   "dikey": false,
+   "semt": "Anadolu yakası, Adalara karşı",
+   "saat": "02:22",
+   "radyo": "airport-lounge-radio-ca",
+   "katman": "k2"
+  },
+  {
+   "id": "iph-20260109-141",
+   "dikey": false,
+   "semt": "Bebek",
+   "saat": "16:39",
+   "radyo": "kiyi-caz",
+   "katman": "gun"
+  },
+  {
+   "id": "iph-20260407-154",
+   "dikey": true,
+   "semt": "",
+   "saat": "12:40",
+   "radyo": "joyturk-akustik",
+   "katman": "gun"
+  },
+  {
+   "id": "iph-20260418-155",
+   "dikey": true,
+   "semt": "Cihangir",
+   "saat": "17:38",
+   "radyo": "kiyi-turkce",
+   "katman": "k1"
+  },
+  {
+   "id": "iph-20260418-156",
+   "dikey": true,
+   "semt": "Cihangir",
+   "saat": "21:05",
+   "radyo": "jazz-sakura",
+   "katman": "k2"
+  },
+  {
+   "id": "iph-20260423-161",
+   "dikey": true,
+   "semt": "",
+   "saat": "15:41",
+   "radyo": "smooth-jazz-deluxe",
+   "katman": "gun"
+  },
+  {
+   "id": "iph-20260612-171",
+   "dikey": false,
+   "semt": "Arnavutköy",
+   "saat": "14:46",
+   "radyo": "kiyi-turkce",
+   "katman": "gun"
+  },
+  {
+   "id": "iph-20260704-173",
+   "dikey": true,
+   "semt": "Bebek",
+   "saat": "17:51",
+   "radyo": "groove-wave-lounge",
+   "katman": "gun"
+  },
+  {
+   "id": "iph-20260704-179",
+   "dikey": false,
+   "semt": "Kavacık",
+   "saat": "22:07",
+   "radyo": "kiyi-gece",
+   "katman": "k2"
+  },
+  {
+   "id": "iph-20260717-180",
+   "dikey": true,
+   "semt": "Bebek",
+   "saat": "17:11",
+   "radyo": "kiyi-caz",
+   "katman": "gun"
+  },
+  {
+   "id": "iph-20260720-181",
+   "dikey": true,
+   "semt": "Beyoğlu",
+   "saat": "21:36",
+   "radyo": "radio-paradise-mellow",
+   "katman": "gun"
+  },
+  {
+   "id": "iph-20260725-183",
+   "dikey": true,
+   "semt": "Moda",
+   "saat": "11:18",
+   "radyo": "joyturk-akustik",
+   "katman": "gun"
+  },
+  {
+   "id": "iph-20260725-184",
+   "dikey": false,
+   "semt": "Moda",
+   "saat": "12:07",
+   "radyo": "smooth-jazz-deluxe",
+   "katman": "gun"
+  },
+  {
+   "id": "iph-20260725-189",
+   "dikey": true,
+   "semt": "Moda",
+   "saat": "20:51",
+   "radyo": "kiyi-turkce",
+   "katman": "gun"
+  },
+  {
+   "id": "iph-20261110-200",
+   "dikey": false,
+   "semt": "Eminönü",
+   "saat": "16:44",
+   "radyo": "radio-paradise-mellow",
+   "katman": "k1"
+  },
+  {
+   "id": "arsiv-babiali",
+   "dikey": false,
+   "semt": "Bâbıâli",
+   "saat": "1880",
+   "radyo": "borusan-klasik",
+   "katman": "arsiv",
+   "fotografci": "Abdullah Frères"
+  },
+  {
+   "id": "arsiv-bebek",
+   "dikey": false,
+   "semt": "Bebek",
+   "saat": "1870",
+   "radyo": "retro-turk",
+   "katman": "arsiv",
+   "fotografci": "Guillaume Berggren"
+  },
+  {
+   "id": "arsiv-dolmabahce",
+   "dikey": false,
+   "semt": "Dolmabahçe",
+   "saat": "1880'ler",
+   "radyo": "kiyi-caz",
+   "katman": "arsiv",
+   "fotografci": "Guillaume Berggren"
+  },
+  {
+   "id": "arsiv-eyup-halic",
+   "dikey": false,
+   "semt": "Eyüp'ten Haliç",
+   "saat": "1880",
+   "radyo": "a-mississippi-blues",
+   "katman": "arsiv",
+   "fotografci": "Abdullah Frères"
+  },
+  {
+   "id": "arsiv-galata-01",
+   "dikey": false,
+   "semt": "Galata'dan İstanbul, 1/10",
+   "saat": "1880'ler",
+   "radyo": "borusan-klasik",
+   "katman": "arsiv",
+   "fotografci": "Guillaume Berggren"
+  },
+  {
+   "id": "arsiv-galata-02",
+   "dikey": false,
+   "semt": "Galata'dan İstanbul, 2/10",
+   "saat": "1880'ler",
+   "radyo": "retro-turk",
+   "katman": "arsiv",
+   "fotografci": "Guillaume Berggren"
+  },
+  {
+   "id": "arsiv-galata-03",
+   "dikey": false,
+   "semt": "Galata'dan İstanbul, 3/10",
+   "saat": "1880'ler",
+   "radyo": "kiyi-caz",
+   "katman": "arsiv",
+   "fotografci": "Guillaume Berggren"
+  },
+  {
+   "id": "arsiv-galata-04",
+   "dikey": false,
+   "semt": "Galata'dan İstanbul, 4/10",
+   "saat": "1880'ler",
+   "radyo": "a-mississippi-blues",
+   "katman": "arsiv",
+   "fotografci": "Guillaume Berggren"
+  },
+  {
+   "id": "arsiv-galata-05",
+   "dikey": false,
+   "semt": "Galata'dan İstanbul, 5/10",
+   "saat": "1880'ler",
+   "radyo": "borusan-klasik",
+   "katman": "arsiv",
+   "fotografci": "Guillaume Berggren"
+  },
+  {
+   "id": "arsiv-galata-06",
+   "dikey": false,
+   "semt": "Galata'dan İstanbul, 6/10",
+   "saat": "1880'ler",
+   "radyo": "retro-turk",
+   "katman": "arsiv",
+   "fotografci": "Guillaume Berggren"
+  },
+  {
+   "id": "arsiv-galata-07",
+   "dikey": false,
+   "semt": "Galata'dan İstanbul, 7/10",
+   "saat": "1880'ler",
+   "radyo": "kiyi-caz",
+   "katman": "arsiv",
+   "fotografci": "Guillaume Berggren"
+  },
+  {
+   "id": "arsiv-galata-08",
+   "dikey": false,
+   "semt": "Galata'dan İstanbul, 8/10",
+   "saat": "1880'ler",
+   "radyo": "a-mississippi-blues",
+   "katman": "arsiv",
+   "fotografci": "Guillaume Berggren"
+  },
+  {
+   "id": "arsiv-galata-09",
+   "dikey": false,
+   "semt": "Galata'dan İstanbul, 9/10",
+   "saat": "1880'ler",
+   "radyo": "borusan-klasik",
+   "katman": "arsiv",
+   "fotografci": "Guillaume Berggren"
+  },
+  {
+   "id": "arsiv-galata-10",
+   "dikey": false,
+   "semt": "Galata'dan İstanbul, 10/10",
+   "saat": "1880'ler",
+   "radyo": "retro-turk",
+   "katman": "arsiv",
+   "fotografci": "Guillaume Berggren"
+  },
+  {
+   "id": "arsiv-kagithane",
+   "dikey": false,
+   "semt": "Kağıthane",
+   "saat": "19. yüzyıl",
+   "radyo": "kiyi-caz",
+   "katman": "arsiv",
+   "fotografci": "Abdullah Frères"
+  },
+  {
+   "id": "arsiv-kapalicarsi",
+   "dikey": false,
+   "semt": "Kapalıçarşı",
+   "saat": "1870",
+   "radyo": "a-mississippi-blues",
+   "katman": "arsiv",
+   "fotografci": "Guillaume Berggren"
+  },
+  {
+   "id": "arsiv-sarayburnu",
+   "dikey": false,
+   "semt": "Sarayburnu",
+   "saat": "1880",
+   "radyo": "borusan-klasik",
+   "katman": "arsiv",
+   "fotografci": "Abdullah Frères"
+  },
+  {
+   "id": "arsiv-sokak-kopekleri",
+   "dikey": false,
+   "semt": "İstanbul sokakları",
+   "saat": "1880",
+   "radyo": "retro-turk",
+   "katman": "arsiv",
+   "fotografci": "Abdullah Frères"
+  },
+  {
+   "id": "arsiv-sultanahmet-cesme",
+   "dikey": false,
+   "semt": "III. Ahmed Çeşmesi",
+   "saat": "1867",
+   "radyo": "kiyi-caz",
+   "katman": "arsiv",
+   "fotografci": "Pascal Sébah"
+  },
+  {
+   "id": "arsiv-tophane",
+   "dikey": false,
+   "semt": "Tophane, Boğazkesen",
+   "saat": "1880'ler",
+   "radyo": "a-mississippi-blues",
+   "katman": "arsiv",
+   "fotografci": "Guillaume Berggren"
+  }
+ ]
+}

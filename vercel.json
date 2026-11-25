@@ -96,7 +96,7 @@
       "permanent": true
     },
     {
-      "source": "/en/:yol((?!hereby|writtenby|nowby|studio|opengraph-image|twitter-image|by(?:/|$)).+)",
+      "source": "/en/:yol((?!hereby|writtenby|nowby|studio|frameby|opengraph-image|twitter-image|by(?:/|$)).+)",
       "destination": "/",
       "permanent": true
     },
