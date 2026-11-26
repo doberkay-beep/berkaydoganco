@@ -37,6 +37,57 @@ export function islemiDogrula(jws, simdi = Date.now(), kok = APPLE_KOK) {
   return yuk;
 }
 
+// Google Play (Android): uygulama Play'in abonelik kaydını (purchaseToken) gönderir; sunucu Google Play Developer API
+// (purchases.subscriptionsv2.get) ile sorar. Kimlik: Play Console'a bağlı bir Google Cloud hizmet hesabı, JSON anahtarı
+// FRAMEBY_PLAY_HESAP ortam değişkeninde (yalnız Vercel'de; depoya girmez). Hesaba Play Console'da
+// "Finansal verileri görüntüle / siparişleri ve abonelikleri yönet" izni verilir.
+const PLAY_KAPSAM = "https://www.googleapis.com/auth/androidpublisher";
+const PLAY_ETKIN = new Set(["SUBSCRIPTION_STATE_ACTIVE", "SUBSCRIPTION_STATE_IN_GRACE_PERIOD"]);
+let playErisim = null; // { belirtec, bitis }
+
+async function playErisimi(hesapJson, getir, simdi) {
+  if (playErisim && playErisim.bitis - 60_000 > simdi) return playErisim.belirtec;
+  if (!hesapJson) throw new Error("FRAMEBY_PLAY_HESAP yok");
+  const hesap = typeof hesapJson === "string" ? JSON.parse(hesapJson) : hesapJson;
+  const iat = Math.floor(simdi / 1000);
+  const govde = `${b64u(JSON.stringify({ alg: "RS256", typ: "JWT" }))}.${b64u(JSON.stringify({
+    iss: hesap.client_email, scope: PLAY_KAPSAM, aud: "https://oauth2.googleapis.com/token", iat, exp: iat + 3600,
+  }))}`;
+  const jwt = `${govde}.${b64u(crypto.sign("RSA-SHA256", Buffer.from(govde), hesap.private_key))}`;
+  const y = await getir("https://oauth2.googleapis.com/token", {
+    method: "POST",
+    headers: { "content-type": "application/x-www-form-urlencoded" },
+    body: new URLSearchParams({ grant_type: "urn:ietf:params:oauth:grant-type:jwt-bearer", assertion: jwt }).toString(),
+  });
+  if (!y.ok) throw new Error("play-kimlik");
+  const j = await y.json();
+  playErisim = { belirtec: j.access_token, bitis: simdi + (j.expires_in || 3600) * 1000 };
+  return playErisim.belirtec;
+}
+
+/** Play abonelik kaydını doğrular; etkinse aboneliğin bitişini (ms) döner, değilse hata fırlatır. */
+export async function playDogrula(kayit, { simdi = Date.now(), getir = fetch, hesap = process.env.FRAMEBY_PLAY_HESAP } = {}) {
+  const { paket, urun, token } = kayit || {};
+  if (paket !== PAKET || urun !== URUN) throw new Error("urun");
+  if (typeof token !== "string" || !/^[A-Za-z0-9._:-]{10,2048}$/.test(token)) throw new Error("bicim");
+  const erisim = await playErisimi(hesap, getir, simdi);
+  const adres = `https://androidpublisher.googleapis.com/androidpublisher/v3/applications/${PAKET}/purchases/subscriptionsv2/tokens/${encodeURIComponent(token)}`;
+  const y = await getir(adres, { headers: { authorization: `Bearer ${erisim}` } });
+  if (y.status === 404 || y.status === 410 || y.status === 400) throw new Error("kayit");
+  if (!y.ok) throw new Error("play");
+  const a = await y.json();
+  if (!PLAY_ETKIN.has(a.subscriptionState)) throw new Error("bitti");
+  const kalem = (a.lineItems || []).find((l) => l.productId === URUN);
+  const bitis = kalem ? Date.parse(kalem.expiryTime) : NaN;
+  if (!(bitis > simdi)) throw new Error("bitti");
+  return bitis;
+}
+
+/** Test için: önbellekteki Play erişim belirtecini unutur. */
+export function playErisiminiUnut() {
+  playErisim = null;
+}
+
 function imza(metin) {
   const sir = process.env.FRAMEBY_IMZA;
   if (!sir) throw new Error("FRAMEBY_IMZA yok");
