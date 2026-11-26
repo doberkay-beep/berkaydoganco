@@ -52,6 +52,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "weekly" as const,
       priority: 0.7,
     },
+    // 26 Kas 2026: üç katmanlı yürüyüş (hereby + nowby + frameby).
+    { url: `${SITE}/yuruyus/galata-taksim/`, changeFrequency: "monthly" as const, priority: 0.6, alternates: { languages: { tr: `${SITE}/yuruyus/galata-taksim/`, en: `${SITE}/en/walk/galata-taksim/` } } },
+    { url: `${SITE}/en/walk/galata-taksim/`, changeFrequency: "monthly" as const, priority: 0.4, alternates: { languages: { tr: `${SITE}/yuruyus/galata-taksim/`, en: `${SITE}/en/walk/galata-taksim/` } } },
     { url: `${SITE}/en/hereby/writers/`, changeFrequency: "monthly" as const, priority: 0.5 },
     {
       url: `${SITE}/writtenby/`,

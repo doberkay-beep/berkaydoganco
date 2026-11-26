@@ -10,6 +10,7 @@ const ESLER: [tr: string, en: string][] = [
   ["/writtenby/", "/en/writtenby/"],
   ["/gidis/", "/en/departures/"],
   ["/studio/", "/en/studio/"],
+  ["/yuruyus/galata-taksim/", "/en/walk/galata-taksim/"],
 ];
 export function digerDil(yol: string): string {
   const y = yol.endsWith("/") ? yol : `${yol}/`;
@@ -68,6 +69,7 @@ export function menuGruplari(lang: "tr" | "en"): Grup[] {
         [tr ? "/by/" : "/en/by/", tr ? "by. atölyesi" : "by. workshop"],
         [tr ? "/hereby/" : "/en/hereby/", "hereby."],
         [tr ? "/gidis/" : "/en/departures/", tr ? "Gidiş zinciri" : "Departure chain", true],
+        [tr ? "/yuruyus/galata-taksim/" : "/en/walk/galata-taksim/", tr ? "Galata'dan Taksim'e" : "Galata to Taksim", true],
         [tr ? "/nowby/" : "/en/nowby/", "nowby."],
         [tr ? "/writtenby/" : "/en/writtenby/", "writtenby."],
         [tr ? "/writtenby/sanatcilar/" : "/en/writtenby/artists/", tr ? "Sanatçılar" : "Artists", true],
