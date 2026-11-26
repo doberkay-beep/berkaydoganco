@@ -46,9 +46,9 @@ export const STUDIO_EN: StudioMetin = {
   ],
   isEtiket: "Selected work",
   isler: [
-    { ad: "nowby", renk: TURUNCU, m: "What is playing on the radio right now? A live tracker for 350+ stations, with charts built from real airplay counts, artist pages and a world radio atlas.", teknik: "Next.js · Supabase · realtime · SwiftUI iOS app · 30 languages", href: "https://nowby.co", link: "nowby.co", gorsel: "/by/nowby-4.5.jpg", alt: "nowby live station list" },
-    { ad: "hereby", renk: MOR, m: "A location-based iOS app: leave a line where you are, and only someone who comes to that place can read it. Poetry walks, time capsules, moderation tools.", teknik: "SwiftUI · MapKit · PostGIS · Supabase · 30 languages", href: "/en/hereby", link: "About hereby.", gorsel: "/by/hereby-9.jpg", alt: "hereby map with nearby traces" },
-    { ad: "writtenby", renk: MOR, m: "A book written by a city, built inside hereby.: one question a day, one line from where you stand, and a printed book at the end of the year.", teknik: "SwiftUI · Supabase · consent and moderation flows", href: "/en/writtenby", link: "About writtenby.", gorsel: "/by/writtenby-10.2.jpg", alt: "writtenby. writing screen" },
+    { ad: "nowby", renk: TURUNCU, m: "What is playing on the radio right now? A live tracker for 350+ stations, with charts built from real airplay counts, artist pages and a world radio atlas.", teknik: "Next.js · Supabase · realtime · SwiftUI iOS app · 30 languages", href: "https://nowby.co", link: "nowby.co", gorsel: "/by/nowby-en.jpg", alt: "nowby live station list" },
+    { ad: "hereby", renk: MOR, m: "A location-based iOS app: leave a line where you are, and only someone who comes to that place can read it. Poetry walks, time capsules, moderation tools.", teknik: "SwiftUI · MapKit · PostGIS · Supabase · 30 languages", href: "/en/hereby", link: "About hereby.", gorsel: "/by/hereby-en.jpg", alt: "hereby map with nearby traces" },
+    { ad: "writtenby", renk: MOR, m: "A book written by a city, built inside hereby.: one question a day, one line from where you stand, and a printed book at the end of the year.", teknik: "SwiftUI · Supabase · consent and moderation flows", href: "/en/writtenby", link: "About writtenby.", gorsel: "/by/writtenby-en.jpg", alt: "writtenby. writing screen" },
   ],
   surecEtiket: "How we work",
   surec: [

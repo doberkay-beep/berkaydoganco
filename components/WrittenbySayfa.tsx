@@ -128,7 +128,7 @@ export function WrittenbySayfa({ m }: { m: WrittenbyMetin }) {
             <p style={{ ...mono, color: MOR, marginTop: "1.6rem" }}>{m.deneme}</p>
           </div>
           <div className="wb-telefon" style={{ transform: "rotate(3deg)" }}>
-            <video src="/writtenby/ekran.mp4" poster="/writtenby/poster.jpg" autoPlay muted loop playsInline preload="metadata" aria-label={m.telefon}
+            <video src={m.dil === "en" ? "/writtenby/ekran-en.mp4" : "/writtenby/ekran.mp4"} poster={m.dil === "en" ? "/writtenby/poster-en.jpg" : "/writtenby/poster.jpg"} autoPlay muted loop playsInline preload="metadata" aria-label={m.telefon}
               style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} />
           </div>
         </div>

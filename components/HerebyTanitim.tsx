@@ -86,9 +86,9 @@ export const HEREBY_EN: Metin = {
   manifesto: ["People have forgotten how to think.", "Sometimes a thought passes through you, and you only remember it when you return to that place.", "Remembering what is precious matters.", "Let Hereby be a mirror."],
   adimEtiket: "How it works",
   adimlar: [
-    { b: "Leave.", m: "On a ferry pier, on a staircase, by the sea: write what is on your mind. 280 characters at most.", g: "/hereby/vitrin-1.jpg", alt: "Writing a new trace in Hereby" },
-    { b: "Walk.", m: "Traces stay locked on the map. No reading from afar: they open when you are about 300 metres away.", g: "/hereby/vitrin-3.jpg", alt: "The Hereby map with nearby traces" },
-    { b: "Read, and leave one beside it.", m: "The quiet conversation of people who lived on the same corner in different years: \"I was here too…\"", g: "/hereby/vitrin-5.jpg", alt: "A trace with replies left beside it" },
+    { b: "Leave.", m: "On a ferry pier, on a staircase, by the sea: write what is on your mind. 280 characters at most.", g: "/hereby/vitrin-en-1.jpg", alt: "The Hereby map with nearby traces" },
+    { b: "Walk.", m: "Traces stay locked on the map. No reading from afar: they open when you are about 300 metres away.", g: "/hereby/vitrin-en-2.jpg", alt: "Trace walks in Hereby" },
+    { b: "Read, and leave one beside it.", m: "The quiet conversation of people who lived on the same corner in different years: \"I was here too…\"", g: "/hereby/vitrin-en-3.jpg", alt: "An author's trace, with room to leave a line beside it" },
   ],
   ozellikEtiket: "What's inside", ozellikBaslik: "Small things with a soul.",
   ozellikler: [

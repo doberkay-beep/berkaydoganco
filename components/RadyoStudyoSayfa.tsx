@@ -185,8 +185,8 @@ export function RadyoStudyoSayfa({ m }: { m: RadyoMetin }) {
           ))}
         </div>
         <div className="rs-gorsel" style={{ marginTop: "1.6rem" }}>
-          <img src="/by/cihaz/tv.jpg" alt={m.gorselTv} width={1600} height={900} loading="lazy" decoding="async" />
-          <img src="/by/nowby-4.5.jpg" alt={m.gorselTel} width={620} height={1348} loading="lazy" decoding="async" style={{ maxHeight: "420px", width: "auto", justifySelf: "center" }} />
+          <img src={m.dil === "en" ? "/by/cihaz/tv-en.jpg" : "/by/cihaz/tv.jpg"} alt={m.gorselTv} width={1600} height={900} loading="lazy" decoding="async" />
+          <img src={m.dil === "en" ? "/by/nowby-en.jpg" : "/by/nowby-4.5.jpg"} alt={m.gorselTel} width={620} height={1348} loading="lazy" decoding="async" style={{ maxHeight: "420px", width: "auto", justifySelf: "center" }} />
         </div>
         <p style={{ ...mono, opacity: 0.5, marginTop: "1rem", letterSpacing: "0.08em" }}>
           {m.kanitNot} · <a href="https://nowby.co" target="_blank" rel="noopener" style={{ color: KIZIL, textDecoration: "none" }}>{m.nowbyLink}</a>

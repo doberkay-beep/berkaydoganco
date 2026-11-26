@@ -113,7 +113,7 @@ export const ATOLYE_EN: AtolyeMetin = {
         { c: "Android", d: "In testing" },
         { c: "Web", d: "Map of lights", href: "/en/hereby" },
       ],
-      video: "/by/hereby-koyu.mp4", poster: "/by/hereby-koyu.jpg", telefon: "The hereby. app screen",
+      video: "/by/hereby-koyu-en.mp4", poster: "/by/hereby-koyu-en.jpg", telefon: "The hereby. app screen",
       adimlar: [
         { b: "Leave.", s: "On a ferry pier, on a staircase, by the sea: write what is on your mind. 280 characters at most." },
         { b: "Walk.", s: "Traces stay locked on the map. No reading from afar: they open when you are about 300 metres away." },
@@ -148,7 +148,7 @@ export const ATOLYE_EN: AtolyeMetin = {
         { c: "Trial period", d: "The book begins on January 1" },
         { c: "Android", d: "Planned" },
       ],
-      video: "/by/writtenby-koyu.mp4", poster: "/by/writtenby-koyu.jpg", telefon: "The writtenby. screen: the question of the day, one line and print permission",
+      video: "/by/writtenby-koyu-en.mp4", poster: "/by/writtenby-koyu-en.jpg", telefon: "The writtenby. screen: the question of the day, one line and print permission",
       adimlar: [
         { b: "The question of the day.", s: "Every morning everyone gets the same question. You can also skip it and write a free line." },
         { b: "One line.", s: "From where you are, up to 140 characters. Only one line a day; it can't be changed once written." },

@@ -57,8 +57,10 @@ const CIHAZ_GORSEL: Record<Cihaz["tur"], [string, number, number]> = {
   saat: ["/by/cihaz/saat.jpg", 416, 496],
 };
 
-function CihazKarti({ d }: { d: Cihaz }) {
-  const [src, w, h] = CIHAZ_GORSEL[d.tur];
+function CihazKarti({ d, dil }: { d: Cihaz; dil: "tr" | "en" }) {
+  const [tr, w, h] = CIHAZ_GORSEL[d.tur];
+  // İngilizce sayfada ekranlar da İngilizce (aynı boyutta /by/cihaz/<cihaz>-en.jpg).
+  const src = dil === "en" ? tr.replace(".jpg", "-en.jpg") : tr;
   return (
     <figure className={`cz-kart cz-${d.tur}`}>
       <div className="cz-sahne">
@@ -216,7 +218,7 @@ export function AtolyeSayfa({ m }: { m: AtolyeMetin }) {
                 </div>
                 <p style={{ ...serif, fontSize: "clamp(1.5rem, 3.6vw, 2.2rem)", marginTop: "clamp(2.5rem, 6vh, 3.5rem)" }}>{i.cihazBaslik}</p>
                 <div className="cz-izgara">
-                  {i.cihazlar.map((d) => <CihazKarti key={d.tur} d={d} />)}
+                  {i.cihazlar.map((d) => <CihazKarti key={d.tur} d={d} dil={m.dil} />)}
                 </div>
               </>
             ) : (
