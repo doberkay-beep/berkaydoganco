@@ -90,7 +90,7 @@ export const NOWBY_EN: NowbyMetin = {
   yakinda: "Coming soon to Windows and Android",
   dinle: "Listen on the web: nowby.co",
   indir: "Download on the App Store",
-  cihazlarAlt: "nowby. on five devices at once: Apple TV, MacBook, iPad, iPhone and Apple Watch. The same station, the same song on all of them.",
+  cihazlarAlt: "nowby. on five devices: Apple TV, MacBook, iPad, iPhone and Apple Watch, each showing what a station is playing right now.",
   ekranEtiket: "On every screen",
   ekranBaslik: "The same frequency, on every screen.",
   ekranlar: [
@@ -178,7 +178,7 @@ export function NowbySayfa({ m }: { m: NowbyMetin }) {
       {/* LANSMAN SAHNESİ */}
       <section style={{ maxWidth: "1280px", margin: "0 auto", padding: "0 clamp(0.75rem, 3vw, 2rem)" }}>
         {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img src="/nowby/cihazlar.png" alt={m.cihazlarAlt} width={2400} height={1240} style={{ width: "100%", height: "auto", display: "block" }} />
+        <img src={m.dil === "en" ? "/nowby/cihazlar-en.png" : "/nowby/cihazlar.png"} alt={m.cihazlarAlt} width={2400} height={1240} style={{ width: "100%", height: "auto", display: "block" }} />
       </section>
 
       {/* HER EKRANDA */}

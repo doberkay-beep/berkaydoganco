@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   title: { absolute: "nowby. — What is playing on the radio right now?" },
   description: "nowby.: the songs playing on the radio right now, live. The same frequency on iPhone, iPad, Mac, Apple TV and Apple Watch. From Berkay Doğan's by. workshop.",
   alternates: { canonical: "/en/nowby", languages: { tr: "/nowby", en: "/en/nowby" } },
-  openGraph: { title: "nowby. — The same frequency, on every screen", description: "What is playing on the radio right now? iPhone, iPad, Mac, Apple TV and Apple Watch.", images: ["/nowby/og.jpg"] },
+  openGraph: { title: "nowby. — The same frequency, on every screen", description: "What is playing on the radio right now? iPhone, iPad, Mac, Apple TV and Apple Watch.", images: ["/nowby/og-en.jpg"] },
 };
 
 export default function Page() {
