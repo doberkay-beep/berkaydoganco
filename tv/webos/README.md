@@ -78,12 +78,15 @@ Konsolda `frameby.G` galeriyi, `frameby.Calar` çalıcıyı gösterir.
 ### 1. Kurulum (bir kez)
 
 ```bash
-npm install -g @webos-tools/cli
+npm install -g --prefix ~/.local @webos-tools/cli
 ```
 
 ```bash
 ares --version
 ```
+
+Bu Mac'te kurulu (27 Kas 2026, sürüm 3.2.6): `/usr/local` yönetici izni istediği için kullanıcı klasörüne
+(`~/.local/bin`, PATH'te) kuruldu; `sudo` gerekmez. Son paket: `~/Desktop/6-Uygulama-Paketleri/frameby/frameby-webos-1.0.0.ipk`.
 
 ### 2. TV'yi geliştirici moduna al (bir kez)
 
@@ -167,5 +170,5 @@ kontrol edilmeli. Hangisinin seçileceği Berkay'ın kararı.
 
 - 50 dil yok: yalnız Türkçe ve İngilizce (TV'nin diline göre).
 - Uyku zamanlayıcısı, sabah alarmı, saate göre katman, haritada yer seçimi, Cebim, Senin günün yok.
-- Gerçek bir LG TV'de denenmedi (bu oturumda TV ve ares CLI yoktu); yalnız tarayıcıda 1920×1080'de denendi.
+- Gerçek bir LG TV'de denenmedi; tarayıcıda 1920×1080'de denendi, `.ipk` ares-package 3.2.6 ile uyarısız üretildi.
 - Hedef webOS 3.0+ (2016) olarak ES5 ile yazıldı ama eski motorlarda (Chromium 38/53) denenmedi.
