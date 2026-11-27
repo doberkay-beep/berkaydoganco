@@ -232,7 +232,8 @@
 
   var Calar = {
     a: null, b: null, calan: null, adres: null,
-    sessiz: Q.sessiz === "1" || depoOku("frameby.sessiz") === "1",
+    // iOS'taki gibi sessizlik kalıcı değil: her açılışta ses açık başlar (deneme: ?sessiz=1).
+    sessiz: Q.sessiz === "1",
     hedef: 1, solma: null, bekci: null, deneme: 0, izinBekliyor: false,
     susunca: null, // (slug) → yedek radyo seçer
 
@@ -332,7 +333,7 @@
     /** Günün sonunda 0.3'e kısılır, sonra geri gelir. */
     duzeyAyarla: function (d) { this.hedef = d; this.a.volume = this.duzey(); },
     sessizYap: function (s) {
-      this.sessiz = s; depoYaz("frameby.sessiz", s ? "1" : "0");
+      this.sessiz = s;
       this.a.volume = this.duzey();
     },
 
@@ -349,7 +350,7 @@
   var G = {
     katman: "gun", gun: [], listeGunu: "", ozelBaslik: null,
     hal: "acilis", sira: 0, gosterilenId: null, koseKaresi: null, koseAcik: true,
-    akis: null, koseGorevi: null, sarkiGorevi: null, kusak: 0,
+    akis: null, istenen: null, koseGorevi: null, sarkiGorevi: null, kusak: 0,
     radyolar: {}, sarki: null, menuAcik: false, menuOdak: 0, onKatman: "A",
 
     gununListesi: function () {
@@ -403,6 +404,7 @@
 
     akisiBaslat: function (acilisla) {
       var self = this, k = this.yeniKusak();
+      this.istenen = null;
       if (acilisla !== false) {
         this.halYap("acilis");
         this.akis = setTimeout(function () { if (k === self.kusak) self.adim(k); }, AYAR.acilis);
@@ -453,6 +455,7 @@
     elleGit: function (i) {
       var self = this, k = this.yeniKusak();
       var j = Math.min(i, this.gun.length);
+      this.istenen = j;
       function dongu() {
         if (k !== self.kusak) return;
         if (j >= self.gun.length) {
@@ -472,8 +475,17 @@
       }
       dongu();
     },
-    ileri: function () { if (this.gun.length) this.elleGit(this.hal === "sonu" ? 0 : (this.hal === "acilis" ? this.sira : this.sira + 1)); },
-    geri: function () { if (this.gun.length) this.elleGit(Math.max(0, this.sira - (this.hal === "kare" ? 1 : 0))); },
+    /** Elle geçişte sıra, görsel inene kadar güncellenmez: art arda basışlar istenen sıradan sayılır. */
+    ileri: function () {
+      if (!this.gun.length) return;
+      if (this.hal === "sonu") return this.elleGit(0);
+      this.elleGit(this.istenen !== null ? this.istenen + 1 : (this.hal === "acilis" ? this.sira : this.sira + 1));
+    },
+    geri: function () {
+      if (!this.gun.length) return;
+      var t = this.istenen !== null ? this.istenen : this.sira;
+      this.elleGit(Math.max(0, t - (this.istenen !== null || this.hal === "kare" ? 1 : 0)));
+    },
 
     // ----- ekran
 
@@ -493,6 +505,7 @@
       var ilkKare = this.hal !== "kare" || !this.koseKaresi;
       this.gosterilenId = kare.id;
       this.sira = i;
+      if (this.istenen === i) this.istenen = null;
       clearTimeout(this.koseGorevi);
       $("kose").className = "sonuk";
       // Çapraz geçiş: arkadaki katmana yeni kareyi çiz, öne al.
@@ -637,13 +650,11 @@
       return istek(VERITABANI + "/stations?select=slug,name,stream_url&app_izinli=eq.true&is_active=eq.true", { apikey: ANAHTAR }, 15000)
         .then(function (liste) {
           var r = {};
-          // HLS (.m3u8) yayınlar webOS'ta yerleşik çalar; çalamayan motorda (masaüstü Chrome vb.) listeye hiç girmez,
-          // o karede çalan radyo sürer ya da başka bir radyo seçilir (iOS'ta listede olmayan radyodaki davranış).
-          var hls = !!$("sesA").canPlayType("application/vnd.apple.mpegurl");
+          // HLS (.m3u8) için canPlayType güvenilmez (masaüstü Chrome "maybe" deyip çalamadı, webOS 26 simülatörü ""
+          // dedi): eleme yapılmaz; çalınamayan biçim bekçide hata 4 olarak görülür ve hemen yedeğe geçilir.
           liste.forEach(function (x) {
             var u = x.stream_url || "";
             if (Katalog.disarida[x.slug] || !/^https:\/\//.test(u)) return;
-            if (!hls && /\.m3u8(\?|$)/i.test(u)) return;
             r[x.slug] = x;
           });
           self.radyolar = r;
@@ -809,8 +820,11 @@
     bildir(L("Geri: TV'de uygulamadan çıkar", "Back: exits the app on the TV"));
   }
 
+  var sonTuslar = [];
   function tus(e) {
     var k = e.keyCode;
+    // Hata ayıklama: son 20 tuş (konsolda frameby.tuslar).
+    sonTuslar.push(k); if (sonTuslar.length > 20) sonTuslar.shift();
     Calar.izinVerildi();
     if (G.menuAcik) {
       if (k === TUS.YUKARI) G.menuyuKaydir(-1);
@@ -878,7 +892,7 @@
     }).then(function () { G.akisiBaslat(false); });
 
     // Deneme ve hata ayıklama için (tarayıcı konsolu / webOS inspector).
-    window.frameby = { G: G, Calar: Calar, Katalog: Katalog, gununKareleri: gununKareleri };
+    window.frameby = { tuslar: sonTuslar, G: G, Calar: Calar, Katalog: Katalog, gununKareleri: gununKareleri };
   }
 
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", basla);

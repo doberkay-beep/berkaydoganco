@@ -73,6 +73,30 @@ Sonra `http://localhost:8790/` (pencere 1920×1080'e ölçeklenir). Deneme param
 `&katman=arsiv`, `&dil=en`. Chrome'da ses ilk tuş basışında başlar (otomatik oynatma kuralı; TV'de bu engel yok).
 Konsolda `frameby.G` galeriyi, `frameby.Calar` çalıcıyı gösterir.
 
+## LG simülatöründe deneme (TV gerekmez)
+
+LG'nin resmî **webOS TV 26 Simulator**'ı bu Mac'te kurulu: `~/Developer/webos-tv/webOS_TV_26_Simulator_1.5.0/`
+(Apple Silicon, notarize edilmiş; zip LG'nin [Simulator Installation](https://webostv.developer.lge.com/develop/tools/simulator-installation)
+sayfasından, SDK lisansı kabul edilerek indirildi). Paketlenecek klasörü doğrudan açar:
+
+```bash
+sh tv/webos/paketle.sh && ares-launch -s 26 -sp ~/Developer/webos-tv/webOS_TV_26_Simulator_1.5.0 tv/webos/build/app
+```
+
+Simülatörün yanında bir kumanda penceresi (RCU) açılır; oklar, OK, Geri ve medya tuşları gerçek kumandanın tuş
+kodlarını gönderir. RCU'daki **Inspect** geliştirici araçlarını açar (konsolda `frameby.G`, `frameby.Calar`,
+`frameby.tuslar` = son 20 tuş kodu).
+
+Simülatörde görülen ve düzeltilen iki şey:
+- webOS kendi stil dosyasıyla her öğeye `font-family: "LG Display-Regular"` veriyor; yalnız mirasla gelen yazı
+  tipi eziliyordu. `css/frameby.css` yazı tipini `#sahne *` ile her öğeye doğrudan verir.
+- HLS için `canPlayType` güvenilmez (simülatör "" diyor, masaüstü Chrome "maybe" deyip çalamıyor); eleme yapılmaz,
+  çalınamayan yayın bekçide hata 4 olarak görülüp yedeğe geçilir.
+
+Simülatör penceresi başka pencerelerin arkasında kalınca sayfa kendini gizli sayar ve uygulama radyoyu durdurur
+(TV'de arka plana alınma davranışı); sesi dinlemek için simülatör penceresi önde olmalı. LG'ye göre simülatörün
+ses/görüntü özellikleri gerçek TV'den farklıdır.
+
 ## Paketleme ve TV'ye yükleme (ares CLI)
 
 ### 1. Kurulum (bir kez)
@@ -170,5 +194,7 @@ kontrol edilmeli. Hangisinin seçileceği Berkay'ın kararı.
 
 - 50 dil yok: yalnız Türkçe ve İngilizce (TV'nin diline göre).
 - Uyku zamanlayıcısı, sabah alarmı, saate göre katman, haritada yer seçimi, Cebim, Senin günün yok.
-- Gerçek bir LG TV'de denenmedi; tarayıcıda 1920×1080'de denendi, `.ipk` ares-package 3.2.6 ile uyarısız üretildi.
-- Hedef webOS 3.0+ (2016) olarak ES5 ile yazıldı ama eski motorlarda (Chromium 38/53) denenmedi.
+- Gerçek bir LG TV'de denenmedi. Tarayıcıda 1920×1080'de ve webOS TV 26 Simulator'da (Chromium 132) denendi:
+  kareler, radyo ve şarkı adı, ◀ ▶ ▲ ▼ OK Geri tuş kodları, menü, Geri ile sistemin çıkış penceresi. `.ipk` ares-package 3.2.6 ile uyarısız.
+- Hedef webOS 3.0+ (2016) olarak ES5 ile yazıldı ama eski motorlarda (Chromium 38/53) denenmedi; LG'nin 22 ve
+  daha eski simülatörleri aynı sayfadan indirilip `-s 22` ile denenebilir.

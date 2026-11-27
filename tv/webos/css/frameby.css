@@ -11,7 +11,11 @@ p { margin: 0; }
   font-family: "Newsreader", Georgia, "Times New Roman", serif; font-size: 30px;
   -webkit-transform-origin: 0 0; transform-origin: 0 0;
 }
-.bodoni { font-family: "Bodoni Moda", "Bodoni 72", Didot, "Times New Roman", serif; font-weight: 400; line-height: 1.05; }
+/* webOS kendi stil dosyasıyla metin öğelerine LG'nin yazısını doğrudan veriyor; miras yetmez (simülatörde görüldü).
+   Yazı tipi her öğeye kimlik seçicisiyle doğrudan verilir. */
+#sahne * { font-family: "Newsreader", Georgia, "Times New Roman", serif; }
+#sahne .bodoni, #sahne .bodoni * { font-family: "Bodoni Moda", "Bodoni 72", Didot, "Times New Roman", serif; }
+.bodoni { font-weight: 400; line-height: 1.05; }
 .italik { font-style: italic; }
 .soluk { opacity: 0.72; }
 .kizil { color: #E5382C; }
