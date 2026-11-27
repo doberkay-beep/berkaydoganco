@@ -674,7 +674,8 @@
 
     radyoyuCal: function () {
       var k = this.gun[this.sira];
-      if (!k) return;
+      // Arka plandayken yayın başlamaz (6.0 simülatöründe görüldü); öne gelince akışla birlikte başlar.
+      if (!k || document.hidden) return;
       var r = this.radyolar[k.radyo] || (Calar.calan && this.radyolar[Calar.calan]) || this.herhangiRadyo();
       if (!r) return;
       Calar.cal(r.slug, r.stream_url);

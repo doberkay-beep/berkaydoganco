@@ -75,7 +75,7 @@ Konsolda `frameby.G` galeriyi, `frameby.Calar` çalıcıyı gösterir.
 
 ## LG simülatöründe deneme (TV gerekmez)
 
-LG'nin resmî simülatörlerinden ikisi bu Mac'te kurulu (`~/Developer/webos-tv/`; zipler LG'nin
+LG'nin resmî simülatörlerinden üçü bu Mac'te kurulu (`~/Developer/webos-tv/`; zipler LG'nin
 [Simulator Installation](https://webostv.developer.lge.com/develop/tools/simulator-installation) sayfasından, SDK
 lisansı kabul edilerek indirildi, ikisi de notarize):
 
@@ -83,6 +83,7 @@ lisansı kabul edilerek indirildi, ikisi de notarize):
 |---|---|---|
 | `webOS_TV_26_Simulator_1.5.0` | Chrome 132 | Apple Silicon |
 | `webOS_TV_22_Simulator_1.4.1` | Chrome 87 | Intel; Rosetta 2 ile çalışır (27 Kas 2026'da kuruldu) |
+| `webOS_TV_6.0_Simulator_1.4.1` | Chrome 79 | Intel (Rosetta); kumanda penceresi arkadayken boş görünür, menü: Tools › Inspector |
 
 Paketlenecek klasörü doğrudan açar; `-p "sessiz=1"` ilk açılışta sesi kapalı başlatır:
 
@@ -92,6 +93,10 @@ sh tv/webos/paketle.sh && ares-launch -s 26 -sp ~/Developer/webos-tv/webOS_TV_26
 
 ```bash
 ares-launch -s 22 -sp ~/Developer/webos-tv/webOS_TV_22_Simulator_1.4.1 tv/webos/build/app -p "sessiz=1"
+```
+
+```bash
+ares-launch -s 6.0 -sp ~/Developer/webos-tv/webOS_TV_6.0_Simulator_1.4.1 tv/webos/build/app -p "sessiz=1"
 ```
 
 Simülatörün yanında bir kumanda penceresi (RCU) açılır; oklar, OK, Geri ve medya tuşları gerçek kumandanın tuş
@@ -105,7 +110,8 @@ Simülatörde görülen ve düzeltilen iki şey:
   çalınamayan yayın bekçide hata 4 olarak görülüp yedeğe geçilir.
 
 Simülatör penceresi başka pencerelerin arkasında kalınca sayfa kendini gizli sayar ve uygulama radyoyu durdurur
-(TV'de arka plana alınma davranışı); sesi dinlemek için simülatör penceresi önde olmalı. LG'ye göre simülatörün
+(TV'de arka plana alınma davranışı); gizliyken bir tuşla kare değişse de yayın başlamaz, öne gelince başlar. Sesi
+dinlemek için simülatör penceresi önde olmalı. LG'ye göre simülatörün
 ses/görüntü özellikleri gerçek TV'den farklıdır.
 
 ## Paketleme ve TV'ye yükleme (ares CLI)
@@ -205,8 +211,8 @@ kontrol edilmeli. Hangisinin seçileceği Berkay'ın kararı.
 
 - 50 dil yok: yalnız Türkçe ve İngilizce (TV'nin diline göre).
 - Uyku zamanlayıcısı, sabah alarmı, saate göre katman, haritada yer seçimi, Cebim, Senin günün yok.
-- Gerçek bir LG TV'de denenmedi. Tarayıcıda 1920×1080'de, webOS TV 26 (Chrome 132) ve 22 (Chrome 87)
-  simülatörlerinde denendi: kareler, üçlü dikey kare, yazı tipleri, radyo ve şarkı adı, ◀ ▶ ▲ ▼ OK Geri tuş kodları,
+- Gerçek bir LG TV'de denenmedi. Tarayıcıda 1920×1080'de, webOS TV 26 (Chrome 132), 22 (Chrome 87) ve 6.0
+  (Chrome 79) simülatörlerinde denendi: kareler, üçlü dikey kare, yazı tipleri, radyo ve şarkı adı, ◀ ▶ ▲ ▼ OK Geri tuş kodları,
   menü, Geri ile sistemin çıkış penceresi, kalıcı sessizlik. `.ipk` ares-package 3.2.6 ile uyarısız.
-- Hedef webOS 3.0+ (2016) olarak ES5 ile yazıldı; 22'den (2022) eski motorlarda (Chromium 38/53/68/79) denenmedi.
-  LG'nin sayfasındaki en eski simülatör webOS 6.0 (2021).
+- Hedef webOS 3.0+ (2016) olarak ES5 ile yazıldı; 6.0'dan (2021) eski motorlarda (Chromium 38/53/68, webOS 3–5)
+  denenmedi: LG'nin simülatörleri 6.0'dan başlıyor, daha eskisi için gerçek TV gerekir.
