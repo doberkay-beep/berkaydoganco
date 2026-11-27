@@ -27,7 +27,7 @@ Uygulamadaki galeri motorunun (`frameby-app/frameby/Galeri.swift`, `Calar.swift`
 | Kare görselleri | `https://www.berkaydogan.co/frameby/kareler/<id>.jpg` |
 | Radyo listesi ve şarkı | nowby Supabase `stations` (herkese açık okuma anahtarı; `app_izinli = true`, `is_active = true`, katalogdaki `disarida` hariç, yalnız `https://` yayınlar) |
 | Hava | `api.open-meteo.com` (yarım saatte bir) |
-| Yazı tipleri | Google Fonts: Bodoni Moda + Newsreader (aşağıda "Yazı tipleri") |
+| Yazı tipleri | Pakette: `fonts/` (Bodoni Moda + Newsreader; aşağıda "Yazı tipleri") |
 
 ### Kumanda
 
@@ -144,10 +144,13 @@ adresi (berkaydogan.co/frameby/gizlilik) ile gönderim. Bu adımların hiçbiri 
 
 ## Yazı tipleri
 
-Şimdilik Google Fonts'tan yüklenir (Bodoni Moda + Newsreader, ikisi de SIL OFL). Mağazadan önce pakete gömmek
-daha iyi: TV her açılışta Google'a gitmez, internet yavaşken de doğru yazıyla açılır. Yapılacak: iki ailenin
-woff2 dosyalarını `tv/webos/fonts/` klasörüne koy, `index.html`'deki Google satırını kaldırıp `css/frameby.css`'e
-`@font-face` tanımları ekle (`paketle.sh` `fonts/` klasörünü varsa pakete kopyalar).
+Pakete gömülü, TV yazı tipi için internete çıkmaz: `fonts/` klasöründe Bodoni Moda (yer adları, logo) ve
+Newsreader (düz ve italik; saat, menü, hap). İkisi de SIL Open Font License 1.1; lisans metinleri
+`fonts/OFL-BodoniModa.txt` ve `fonts/OFL-Newsreader.txt`, pakete onlar da girer. Yalnız `latin` ve `latin-ext`
+alt kümeleri var (Türkçe harfler latin-ext'te; toplam ~250 KB), `css/fontlar.css` bunları `unicode-range` ile
+tanımlar, gerekmeyen alt küme hiç yüklenmez. Dosyalar Google Fonts css2 API'sinden (27 Kas 2026) alındı.
+50 dile geçilirse (Kiril, Yunan, Vietnam…) o alt kümeler de aynı yoldan eklenmeli; Arapça, Çince gibi yazılar
+bu iki ailede yok, onlarda TV'nin kendi yazısı kullanılır.
 
 ## frameby+ (bu sürümün dışında)
 
