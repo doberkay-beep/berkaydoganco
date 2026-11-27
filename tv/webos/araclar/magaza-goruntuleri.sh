@@ -24,6 +24,8 @@ for dil in tr en; do
   cek "$dil" 03-bogaz-koprusu 25000 "kare=iph-20230710-216"
   cek "$dil" 04-eski-istanbul-bebek 25000 "kare=arsiv-bebek&katman=arsiv"
   cek "$dil" 05-menu 25000 "kare=iph-20261110-244&menu=1"
-  cek "$dil" 06-ayarlar 25000 "menu=2"
+  cek "$dil" 06-ayarlar 25000 "kare=iph-20261110-244&menu=2"
   cek "$dil" 07-acilis 1500 ""
+  cek "$dil" 08-senin-gunun 25000 "kare=iph-20261110-244&menu=3"
+  cek "$dil" 09-uyku 25000 "uyku=sabah"
 done

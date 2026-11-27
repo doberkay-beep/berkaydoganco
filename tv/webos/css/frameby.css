@@ -33,7 +33,7 @@ p { margin: 0; }
 #kose { position: absolute; left: 0; top: 0; width: 1920px; height: 1080px; opacity: 1; -webkit-transition: opacity 0.6s ease-out, -webkit-transform 2s ease-in-out; transition: opacity 0.6s ease-out, transform 2s ease-in-out; }
 #kose.sonuk { opacity: 0; -webkit-transition-duration: 0.5s; transition-duration: 0.5s; }
 .karartma { position: absolute; left: 0; right: 0; bottom: 0; height: 400px; background: -webkit-linear-gradient(top, rgba(14,13,12,0), rgba(14,13,12,0.55)); background: linear-gradient(to bottom, rgba(14,13,12,0), rgba(14,13,12,0.55)); }
-#koseMetin { position: absolute; left: 96px; bottom: 86px; max-width: 1100px; text-shadow: 0 2px 22px rgba(0,0,0,0.4); }
+#koseMetin { position: absolute; left: 104px; bottom: 86px; max-width: 1100px; text-shadow: 0 2px 22px rgba(0,0,0,0.4); }
 #koseMetin.yanda { max-width: 560px; }
 #kSemt { font-size: 66px; }
 #kSarki, #kNot { font-size: 28px; margin-top: 18px; }
@@ -48,9 +48,14 @@ p { margin: 0; }
 .hap { display: -webkit-inline-flex; display: inline-flex; -webkit-align-items: center; align-items: center; font-size: 26px; padding: 12px 24px; border-radius: 999px; background: rgba(242,238,230,0.14); border: 1px solid rgba(242,238,230,0.22); text-shadow: none; max-width: 900px; white-space: nowrap; overflow: hidden; }
 .hap > * { margin-right: 14px; }
 .hap > *:last-child { margin-right: 0; }
+/* Uzun radyo ve şarkı adları kesilmez, "…" ile biter (LG kontrol listesi 1.3). */
+#kRadyo, #kSarkiHap { display: inline-block; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; vertical-align: bottom; }
+#kRadyo { max-width: 340px; }
+#kSarkiHap { max-width: 480px; }
 .nokta { display: inline-block; width: 11px; height: 11px; border-radius: 50%; background: #E5382C; }
 .ayrac { display: inline-block; width: 1px; height: 26px; background: rgba(242,238,230,0.3); }
-#imza { position: absolute; right: 56px; bottom: 60px; padding: 21px 26px; font-size: 34px; color: rgba(242,238,230,0.5); cursor: pointer; border-radius: 999px; -webkit-transition: background 0.15s ease, color 0.15s ease; transition: background 0.15s ease, color 0.15s ease; }
+/* Taşma payı (%5): yazı kenardan en az 96 px içeride (78 + 26 iç boşluk, OLED kayması en çok 7 px). */
+#imza { position: absolute; right: 78px; bottom: 60px; padding: 21px 26px; font-size: 34px; color: rgba(242,238,230,0.5); cursor: pointer; border-radius: 999px; -webkit-transition: background 0.15s ease, color 0.15s ease; transition: background 0.15s ease, color 0.15s ease; }
 /* LG kontrol listesi: imleçle seçilen her öğe görünür bir seçim efekti gösterir. */
 #imza:hover { background: rgba(242,238,230,0.92); color: #0E0D0C; }
 #imza:hover .kizil { color: #E5382C; }
@@ -75,13 +80,13 @@ p { margin: 0; }
 /* Sağdan sola diller: düzen aynı kalır, metin kendi yönünde akar (marka yazısı soldan sağa) */
 .sagdan #koseMetin p, .sagdan #kSatir span, .sagdan .satir .ad, .sagdan .menuMetin, .sagdan .acilisAlt, .sagdan .sonuBaslik, .sagdan .sonuAlt, .sagdan .uykuAlt, .sagdan .ipucu, .sagdan .menuAlt { unicode-bidi: plaintext; }
 /* iOS'taki gibi aynalanır: köşe yazısı sağ altta, imza sol altta, menü solda */
-.sagdan #koseMetin { left: auto; right: 96px; text-align: right; }
+.sagdan #koseMetin { left: auto; right: 104px; text-align: right; }
 .sagdan #kSatir { -webkit-flex-direction: row-reverse; flex-direction: row-reverse; }
 .sagdan #kSatir > span { margin-right: 0; margin-left: 16px; }
 .sagdan .hap { -webkit-flex-direction: row-reverse; flex-direction: row-reverse; }
 .sagdan .hap > * { margin-right: 0; margin-left: 14px; }
 .sagdan .hap > *:last-child { margin-left: 0; }
-.sagdan #imza { right: auto; left: 56px; }
+.sagdan #imza { right: auto; left: 78px; }
 .sagdan #menuPanel { right: auto; left: 64px; -webkit-transform: translateX(-40px); transform: translateX(-40px); }
 .sagdan .satir { -webkit-flex-direction: row-reverse; flex-direction: row-reverse; }
 .sagdan .satir .secim { margin-right: 0; margin-left: 16px; }

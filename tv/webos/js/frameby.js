@@ -405,6 +405,8 @@
     // Ayarlar (menünün Ayarlar sayfası; iOS'taki gibi cihazda saklanır)
     gercekSaat: depoOku("frameby.gercekSaat") === "1",
     tekKare: depoOku("frameby.tekKare") === "1",
+    /** Yalnız mağaza görüntüleri için (?kare=): ayarlara yansımadan tek kare. */
+    sabitKare: false,
     geceYumusatma: depoOku("frameby.geceYumusatma") !== "0",
     seninGunun: depoOku("frameby.seninGunun") || null,
     /** Cebim: kişiye ait küçük defter; sayılmaz, hiçbir yere gitmez. */
@@ -552,11 +554,11 @@
       if (bugunIstanbul() !== this.listeGunu) this.gun = this.gununListesi();
       if (!this.gun.length) { this.akis = setTimeout(function () { self.adim(k); }, 60000); return; }
       // Tek kare: bütün gün tek kare, tek radyo. Gerçek saat: o saatte çekilmiş kare.
-      if (this.tekKare || (this.gercekSaat && this.ozelBaslik === L("gerçek saat", "real time"))) {
-        var hedef = this.tekKare ? 0 : this.saatinKaresi();
+      if (this.tekKare || this.sabitKare || (this.gercekSaat && this.ozelBaslik === L("gerçek saat", "real time"))) {
+        var hedef = this.tekKare || this.sabitKare ? 0 : this.saatinKaresi();
         this.gerekirseGec(hedef, k).then(function (gecti) {
           if (!gecti || k !== self.kusak) return;
-          self.akis = setTimeout(function () { self.adim(k); }, self.tekKare ? 60000 : 30000);
+          self.akis = setTimeout(function () { self.adim(k); }, self.tekKare || self.sabitKare ? 60000 : 30000);
         });
         return;
       }
@@ -1203,6 +1205,9 @@
     olcekle();
     window.addEventListener("resize", olcekle);
     document.addEventListener("keydown", tus);
+    // TV'nin dili değişince (LG kontrol listesi 1.6) uygulama yeni dille yeniden açılır.
+    window.addEventListener("languagechange", function () { location.reload(); });
+    document.addEventListener("webOSLocaleChange", function () { location.reload(); });
     document.addEventListener("click", function () { Calar.izinVerildi(); });
     $("imza").addEventListener("click", function () { G.menuyuAc(); });
     $("menuPerde").addEventListener("click", function () { G.menuyuKapat(); });
@@ -1237,8 +1242,14 @@
       var ilk = G.akisKonumu().sira;
       if (ilk !== null && G.gun[ilk]) Gorsel.hazirla(G.gun[ilk]);
       // Mağaza görüntüleri için (yalnız deneme): ?kare=<id> o kareyi tek kare olarak gösterir, ?menu=1|2 menüyü açar.
-      if (Q.kare && bul(Q.kare)) { G.tekKare = true; G.gun = [bul(Q.kare)]; G.gununListesi = function () { return [bul(Q.kare)]; }; }
-      if (Q.menu) setTimeout(function () { G.menuyuAc(); if (Q.menu === "2") G.sayfayaGit(1, "sira"); }, AYAR.acilis + 3000);
+      if (Q.kare && bul(Q.kare)) { G.sabitKare = true; G.gun = [bul(Q.kare)]; G.gununListesi = function () { return [bul(Q.kare)]; }; }
+      if (Q.menu) setTimeout(function () {
+        G.menuyuAc();
+        if (Q.menu === "2") G.sayfayaGit(1, "sira");
+        if (Q.menu === "3") { G.secAy = 4; G.secGun = 18; G.sayfayaGit(2, "ay"); }
+      }, AYAR.acilis + 3000);
+      // ?uyku=1 uyku ekranını gösterir; ?uyku=sabah "Sabah 07:00" ile.
+      if (Q.uyku) setTimeout(function () { if (Q.uyku === "sabah") G.sabah = 420; G.uyu(); }, AYAR.acilis + 3000);
       return acilisBitti;
     }).then(function () { G.akisiBaslat(false); });
 
