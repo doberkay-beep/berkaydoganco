@@ -29,6 +29,12 @@
       var kv = p[i].split("=");
       s[decodeURIComponent(kv[0])] = decodeURIComponent(kv.slice(1).join("=") || "1");
     }
+    // webOS açılış parametreleri de aynı yoldan: ares-launch ... -p "sessiz=1"
+    try {
+      var lp = window.PalmSystem && window.PalmSystem.launchParams;
+      lp = typeof lp === "string" ? (lp ? JSON.parse(lp) : {}) : (lp || {});
+      for (var k in lp) s[k] = String(lp[k]);
+    } catch (e) {}
     return s;
   })();
 
@@ -232,8 +238,8 @@
 
   var Calar = {
     a: null, b: null, calan: null, adres: null,
-    // iOS'taki gibi sessizlik kalıcı değil: her açılışta ses açık başlar (deneme: ?sessiz=1).
-    sessiz: Q.sessiz === "1",
+    // Sessizlik TV'de hatırlanır: kapatılan ses sonraki açılışta da kapalı kalır (Berkay, 27 Kas). Deneme: ?sessiz=1.
+    sessiz: Q.sessiz === "1" || depoOku("frameby.sessiz") === "1",
     hedef: 1, solma: null, bekci: null, deneme: 0, izinBekliyor: false,
     susunca: null, // (slug) → yedek radyo seçer
 
@@ -333,7 +339,7 @@
     /** Günün sonunda 0.3'e kısılır, sonra geri gelir. */
     duzeyAyarla: function (d) { this.hedef = d; this.a.volume = this.duzey(); },
     sessizYap: function (s) {
-      this.sessiz = s;
+      this.sessiz = s; depoYaz("frameby.sessiz", s ? "1" : "0");
       this.a.volume = this.duzey();
     },
 
@@ -892,7 +898,15 @@
     }).then(function () { G.akisiBaslat(false); });
 
     // Deneme ve hata ayıklama için (tarayıcı konsolu / webOS inspector).
-    window.frameby = { tuslar: sonTuslar, G: G, Calar: Calar, Katalog: Katalog, gununKareleri: gununKareleri };
+    window.frameby = {
+      /** Konsolda tek satırda durum (webOS inceleyicisinde uzun ifade yazmak zor). */
+      durum: function () {
+        var a = Calar.a, m = navigator.userAgent.match(/Chrome\/[\d.]+/);
+        return JSON.stringify({ motor: m && m[0], tuslar: sonTuslar, hal: G.hal, sira: G.sira, menu: G.menuAcik, katman: G.katman,
+          sessiz: Calar.sessiz, ses: a.volume, radyo: Calar.calan, caliyor: !a.paused && a.currentTime > 0, an: Math.round(a.currentTime),
+          gizli: document.hidden, yazi: getComputedStyle($("kSaat")).fontFamily.split(",")[0] });
+      },
+      tuslar: sonTuslar, G: G, Calar: Calar, Katalog: Katalog, gununKareleri: gununKareleri };
   }
 
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", basla);

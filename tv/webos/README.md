@@ -36,7 +36,7 @@ Uygulamadaki galeri motorunun (`frameby-app/frameby/Galeri.swift`, `Calar.swift`
 | ◀ ▶ | önceki / sonraki kare (akış o kareden sürer) | — (◀ menüyü kapatır) |
 | ▼ | katman menüsünü açar | aşağı |
 | ▲ / OK | yer ve saat yazısını gizler/gösterir | yukarı / seç |
-| Oynat, Duraklat, Durdur | sesi kapatır/açar | — |
+| Oynat, Duraklat, Durdur | sesi kapatır/açar (sessizlik sonraki açılışta da sürer) | — |
 | Geri | uygulamadan çıkar (`PalmSystem.platformBack()`, LG'nin önerdiği sistem davranışı) | menüyü kapatır |
 
 Magic Remote imleciyle de çalışır: sağ alttaki "frameby." menüyü açar, satırlara tıklanır, karartılmış alana
@@ -75,17 +75,28 @@ Konsolda `frameby.G` galeriyi, `frameby.Calar` çalıcıyı gösterir.
 
 ## LG simülatöründe deneme (TV gerekmez)
 
-LG'nin resmî **webOS TV 26 Simulator**'ı bu Mac'te kurulu: `~/Developer/webos-tv/webOS_TV_26_Simulator_1.5.0/`
-(Apple Silicon, notarize edilmiş; zip LG'nin [Simulator Installation](https://webostv.developer.lge.com/develop/tools/simulator-installation)
-sayfasından, SDK lisansı kabul edilerek indirildi). Paketlenecek klasörü doğrudan açar:
+LG'nin resmî simülatörlerinden ikisi bu Mac'te kurulu (`~/Developer/webos-tv/`; zipler LG'nin
+[Simulator Installation](https://webostv.developer.lge.com/develop/tools/simulator-installation) sayfasından, SDK
+lisansı kabul edilerek indirildi, ikisi de notarize):
+
+| Simülatör | Motor | Not |
+|---|---|---|
+| `webOS_TV_26_Simulator_1.5.0` | Chrome 132 | Apple Silicon |
+| `webOS_TV_22_Simulator_1.4.1` | Chrome 87 | Intel; Rosetta 2 ile çalışır (27 Kas 2026'da kuruldu) |
+
+Paketlenecek klasörü doğrudan açar; `-p "sessiz=1"` ilk açılışta sesi kapalı başlatır:
 
 ```bash
-sh tv/webos/paketle.sh && ares-launch -s 26 -sp ~/Developer/webos-tv/webOS_TV_26_Simulator_1.5.0 tv/webos/build/app
+sh tv/webos/paketle.sh && ares-launch -s 26 -sp ~/Developer/webos-tv/webOS_TV_26_Simulator_1.5.0 tv/webos/build/app -p "sessiz=1"
+```
+
+```bash
+ares-launch -s 22 -sp ~/Developer/webos-tv/webOS_TV_22_Simulator_1.4.1 tv/webos/build/app -p "sessiz=1"
 ```
 
 Simülatörün yanında bir kumanda penceresi (RCU) açılır; oklar, OK, Geri ve medya tuşları gerçek kumandanın tuş
 kodlarını gönderir. RCU'daki **Inspect** geliştirici araçlarını açar (konsolda `frameby.G`, `frameby.Calar`,
-`frameby.tuslar` = son 20 tuş kodu).
+`frameby.tuslar` = son 20 tuş kodu, `frameby.durum()` = tek satırda motor, kare, menü, ses ve radyo durumu).
 
 Simülatörde görülen ve düzeltilen iki şey:
 - webOS kendi stil dosyasıyla her öğeye `font-family: "LG Display-Regular"` veriyor; yalnız mirasla gelen yazı
@@ -194,7 +205,8 @@ kontrol edilmeli. Hangisinin seçileceği Berkay'ın kararı.
 
 - 50 dil yok: yalnız Türkçe ve İngilizce (TV'nin diline göre).
 - Uyku zamanlayıcısı, sabah alarmı, saate göre katman, haritada yer seçimi, Cebim, Senin günün yok.
-- Gerçek bir LG TV'de denenmedi. Tarayıcıda 1920×1080'de ve webOS TV 26 Simulator'da (Chromium 132) denendi:
-  kareler, radyo ve şarkı adı, ◀ ▶ ▲ ▼ OK Geri tuş kodları, menü, Geri ile sistemin çıkış penceresi. `.ipk` ares-package 3.2.6 ile uyarısız.
-- Hedef webOS 3.0+ (2016) olarak ES5 ile yazıldı ama eski motorlarda (Chromium 38/53) denenmedi; LG'nin 22 ve
-  daha eski simülatörleri aynı sayfadan indirilip `-s 22` ile denenebilir.
+- Gerçek bir LG TV'de denenmedi. Tarayıcıda 1920×1080'de, webOS TV 26 (Chrome 132) ve 22 (Chrome 87)
+  simülatörlerinde denendi: kareler, üçlü dikey kare, yazı tipleri, radyo ve şarkı adı, ◀ ▶ ▲ ▼ OK Geri tuş kodları,
+  menü, Geri ile sistemin çıkış penceresi, kalıcı sessizlik. `.ipk` ares-package 3.2.6 ile uyarısız.
+- Hedef webOS 3.0+ (2016) olarak ES5 ile yazıldı; 22'den (2022) eski motorlarda (Chromium 38/53/68/79) denenmedi.
+  LG'nin sayfasındaki en eski simülatör webOS 6.0 (2021).
