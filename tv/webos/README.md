@@ -190,6 +190,18 @@ ares-inspect --device tv --app co.berkaydogan.frameby --open
 Kaldırmak için `ares-install --device tv --remove co.berkaydogan.frameby`. Sürüm yükseltirken `appinfo.json`'daki
 `version`'ı artır.
 
+### Mağaza görüntüleri
+
+Yerel sunucu açıkken başsız Chrome ile 1920×1080, TR ve EN, yalnız ücretsiz katman kareleri:
+
+```bash
+sh tv/webos/araclar/magaza-goruntuleri.sh ~/Desktop/by-atolye/frameby/magaza/lg
+```
+
+Betik yalnız denemede kullanılan iki parametreye dayanır: `?kare=<id>` o kareyi tek kare olarak gösterir, `?menu=1|2`
+menüyü (2: Ayarlar) açar; `?ipucu=0` ipucu satırını gizler. Mağaza metinleri ve UX senaryosu taslağı
+`~/Desktop/by-atolye/frameby/magaza/lg/` klasöründe.
+
 ### Mağaza (Berkay'ın onayıyla)
 
 LG Seller Lounge'da bireysel satıcı ("Individual Seller") hesabı, sonra `.ipk` + mağaza görselleri + gizlilik

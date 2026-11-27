@@ -1147,6 +1147,7 @@
   }
 
   function ipucu() {
+    if (Q.ipucu === "0") return;
     var n = +(depoOku("frameby.acilis") || 0);
     depoYaz("frameby.acilis", n + 1);
     if (n >= 3) return;
@@ -1235,6 +1236,9 @@
       G.radyolariAl();
       var ilk = G.akisKonumu().sira;
       if (ilk !== null && G.gun[ilk]) Gorsel.hazirla(G.gun[ilk]);
+      // Mağaza görüntüleri için (yalnız deneme): ?kare=<id> o kareyi tek kare olarak gösterir, ?menu=1|2 menüyü açar.
+      if (Q.kare && bul(Q.kare)) { G.tekKare = true; G.gun = [bul(Q.kare)]; G.gununListesi = function () { return [bul(Q.kare)]; }; }
+      if (Q.menu) setTimeout(function () { G.menuyuAc(); if (Q.menu === "2") G.sayfayaGit(1, "sira"); }, AYAR.acilis + 3000);
       return acilisBitti;
     }).then(function () { G.akisiBaslat(false); });
 
