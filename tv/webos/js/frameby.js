@@ -49,14 +49,51 @@
 
   // ---------------------------------------------------------------- Dil
 
-  var TR = String(navigator.language || "tr").toLowerCase().indexOf("tr") === 0;
-  if (Q.dil) TR = Q.dil === "tr";
-  function L(tr, en) { return TR ? tr : en; }
-  var AYLAR = TR
-    ? ["Ocak", "Şubat", "Mart", "Nisan", "Mayıs", "Haziran", "Temmuz", "Ağustos", "Eylül", "Ekim", "Kasım", "Aralık"]
-    : ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+  /* Metinler iOS uygulamasının String Catalog'undan (49 dil + Türkçe): js/diller.js, araclar/diller-uret.py
+     ile üretilir. Anahtar Türkçe metin; katalogda yoksa İngilizcesi gösterilir. Yer adları her dilde Türkçe. */
+  var DILLER = window.FRAMEBY_DILLER || {};
+  var DIL = (function () {
+    var adaylar = [].concat(Q.dil ? [Q.dil] : [], navigator.languages || [], navigator.language || []);
+    for (var i = 0; i < adaylar.length; i++) {
+      var d = String(adaylar[i]).replace("_", "-"), k = d.toLowerCase();
+      if (k.indexOf("tr") === 0) return "tr";
+      if (k.indexOf("zh") === 0) return /hant|tw|hk|mo/.test(k) ? "zh-Hant" : "zh-Hans";
+      if (k.indexOf("pt") === 0) return /pt-pt/.test(k) ? "pt-PT" : "pt-BR";
+      if (k === "no" || k.indexOf("nn") === 0 || k.indexOf("no-") === 0) return "nb";
+      var kok = k.split("-")[0];
+      if (kok === "en" || DILLER[kok]) return kok;
+    }
+    return "en";
+  })();
+  var TR = DIL === "tr";
+  var SAGDAN = /^(ar|fa|he|ur)$/.test(DIL);
+  function L(tr, en) {
+    if (TR) return tr;
+    var t = DILLER[DIL];
+    return (t && t[tr]) || en;
+  }
+  /** Değişkenli metin: "%@ kare" ya da "%1$@ · %2$@" biçiminde; değerler sırayla yerleşir. */
+  function LF(tr, en) {
+    var degerler = [].slice.call(arguments, 2), sira = 0;
+    return L(tr, en).replace(/%(\d)\$@|%@/g, function (m, n) { return String(degerler[n ? n - 1 : sira++]); });
+  }
+  var AYLAR_TR = ["Ocak", "Şubat", "Mart", "Nisan", "Mayıs", "Haziran", "Temmuz", "Ağustos", "Eylül", "Ekim", "Kasım", "Aralık"];
+  var AYLAR_EN = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+  /** Tarih, uygulamanın dilinde: { ay: true } yalnız ay adı, yoksa "27 Kasım" gibi gün + ay. */
+  function tarihYazisi(ay, gun, yalnizAy) {
+    var yerel = DIL === "en" ? "en-GB" : DIL;
+    try {
+      var f = new Intl.DateTimeFormat(yerel, yalnizAy ? { month: "long", timeZone: "UTC" } : { day: "numeric", month: "long", timeZone: "UTC" });
+      return f.format(new Date(Date.UTC(2024, ay - 1, gun || 1)));
+    } catch (e) {
+      var adlar = TR ? AYLAR_TR : AYLAR_EN;
+      return yalnizAy ? adlar[ay - 1] : gun + " " + adlar[ay - 1];
+    }
+  }
   var KATMAN_EN = { gun: "Day", arsiv: "Old Istanbul", k1: "Berkay's Istanbul", k2: "Night Shore" };
-  document.documentElement.lang = TR ? "tr" : "en";
+  var KATMAN_TR = { gun: "Gün", arsiv: "Eski İstanbul", k1: "Berkay'ın İstanbul'u", k2: "Gece kıyısı" };
+  document.documentElement.lang = DIL;
+  if (SAGDAN) document.documentElement.className += " sagdan";
 
   // ---------------------------------------------------------------- Yardımcılar
 
@@ -71,7 +108,7 @@
     return d.getUTCFullYear() + "-" + iki(d.getUTCMonth() + 1) + "-" + iki(d.getUTCDate());
   }
   function istanbulSaat() { var d = istanbul(); return iki(d.getUTCHours()) + ":" + iki(d.getUTCMinutes()); }
-  function gunMetni() { var d = istanbul(); return d.getUTCDate() + " " + AYLAR[d.getUTCMonth()]; }
+  function gunMetni() { var d = istanbul(); return tarihYazisi(d.getUTCMonth() + 1, d.getUTCDate()); }
   function yilinGunu() {
     var d = istanbul();
     return Math.floor((Date.UTC(d.getUTCFullYear(), d.getUTCMonth(), d.getUTCDate()) - Date.UTC(d.getUTCFullYear(), 0, 1)) / 86400000) + 1;
@@ -159,6 +196,9 @@
     return [uyeler[i], uyeler[(i + 1) % uyeler.length], uyeler[(i + 2) % uyeler.length]];
   }
 
+  /** "Galata, Beyoğlu" → "Galata". */
+  function kisaSemt(k) { return String(k.semt || "").split(",")[0].replace(/^\s+|\s+$/g, ""); }
+
   function cekimGunu(k) {
     var p = k.id.split("-");
     if (p.length < 2 || p[0] !== "iph" || !/^\d{8}$/.test(p[1])) return null;
@@ -240,7 +280,7 @@
     a: null, b: null, calan: null, adres: null,
     // Sessizlik TV'de hatırlanır: kapatılan ses sonraki açılışta da kapalı kalır (Berkay, 27 Kas). Deneme: ?sessiz=1.
     sessiz: Q.sessiz === "1" || depoOku("frameby.sessiz") === "1",
-    hedef: 1, solma: null, bekci: null, deneme: 0, izinBekliyor: false,
+    hedef: 1, kisma: 1, solma: null, bekci: null, deneme: 0, izinBekliyor: false,
     susunca: null, // (slug) → yedek radyo seçer
 
     kur: function () {
@@ -250,7 +290,8 @@
       // İnternet geri gelince düşen yayını hemen yeniden bağla.
       window.addEventListener("online", function () { if (self.calan && self.bozuk()) self.yenidenBaglan(); });
     },
-    duzey: function () { return this.sessiz ? 0 : this.hedef; },
+    /** Ses düzeyi: sessiz değilse günün sonu kısması (hedef) × uyku/sabah kısması. */
+    duzey: function () { return this.sessiz ? 0 : this.hedef * this.kisma; },
 
     cal: function (slug, adres) {
       if (slug === this.calan && !this.bozuk()) return;
@@ -338,6 +379,8 @@
 
     /** Günün sonunda 0.3'e kısılır, sonra geri gelir. */
     duzeyAyarla: function (d) { this.hedef = d; this.a.volume = this.duzey(); },
+    /** Uyku zamanlayıcısı 1'den 0'a, sabah 0'dan 1'e yavaşça götürür. */
+    kismaAyarla: function (k) { this.kisma = k; this.a.volume = this.duzey(); },
     sessizYap: function (s) {
       this.sessiz = s; depoYaz("frameby.sessiz", s ? "1" : "0");
       this.a.volume = this.duzey();
@@ -357,13 +400,56 @@
     katman: "gun", gun: [], listeGunu: "", ozelBaslik: null,
     hal: "acilis", sira: 0, gosterilenId: null, koseKaresi: null, koseAcik: true,
     akis: null, istenen: null, koseGorevi: null, sarkiGorevi: null, kusak: 0,
-    radyolar: {}, sarki: null, menuAcik: false, menuOdak: 0, onKatman: "A",
+    radyolar: {}, sarki: null, menuAcik: false, menuOdak: 0, menuSayfa: 0, onKatman: "A",
+
+    // Ayarlar (menünün Ayarlar sayfası; iOS'taki gibi cihazda saklanır)
+    gercekSaat: depoOku("frameby.gercekSaat") === "1",
+    tekKare: depoOku("frameby.tekKare") === "1",
+    geceYumusatma: depoOku("frameby.geceYumusatma") !== "0",
+    seninGunun: depoOku("frameby.seninGunun") || null,
+    /** Cebim: kişiye ait küçük defter; sayılmaz, hiçbir yere gitmez. */
+    cebim: (function () { try { return JSON.parse(depoOku("frameby.cebim") || "[]"); } catch (e) { return []; } })(),
+    cebimAcik: false,
+    /** Menüden seçilen yer (kısa semt); null: hepsi. Katman değişince sıfırlanır. */
+    yer: null,
+
+    /** Bu sürümde açık katman mı (yalnız ücretsizler). */
+    kilitli: function (katman) {
+      return !Katalog.acikKatmanlar().some(function (k) { return k.id === katman; });
+    },
 
     gununListesi: function () {
-      var bugun = bugunIstanbul(), hepsi = Katalog.hepsi, self = this, i;
+      var bugun = bugunIstanbul(), hepsi = Katalog.hepsi, self = this, i, l;
       this.listeGunu = bugun;
       this.ozelBaslik = null;
-      if (this.katman === "gun") {
+      // Cebim: yalnız cepteki kareler, açık katmanlardan, konduğu sırayla.
+      if (this.cebimAcik) {
+        l = this.cebim.map(bul).filter(function (k) { return k && !self.kilitli(k.katman); });
+        if (l.length) { this.ozelBaslik = L("cebindekiler", "in your pocket"); return l; }
+      }
+      // Senin günün: o tarihte (her yıl) çekilmiş kareler önce, sonra aynı aydan.
+      if (this.seninGunun && this.seninGunun === bugun.slice(5)) {
+        var sg = this.seninGunun;
+        var acik = hepsi.filter(function (k) { return !self.kilitli(k.katman) && k.katman !== "arsiv"; });
+        var gunun = acik.filter(function (k) { var c = cekimGunu(k); return c && c.slice(5) === sg; });
+        var ayin = acik.filter(function (k) { var c = cekimGunu(k); return c && c.slice(5, 7) === sg.slice(0, 2) && c.slice(5) !== sg; });
+        l = gunun.concat(ayin).slice(0, AYAR.gunlukKare);
+        if (l.length) { this.ozelBaslik = L("senin günün", "your day"); return l; }
+      }
+      // Gerçek saat: katmanın saatli bütün kareleri, saat sırasıyla (dikey kare yalnız üçlüsüyle).
+      if (this.gercekSaat) {
+        var gorulen = {};
+        l = hepsi.filter(function (k) {
+          if (k.katman !== self.katman || !/^\d\d:\d\d$/.test(k.saat)) return false;
+          if (k.dikey) {
+            if (!k.grup || ucluUyeleri(k, hepsi).length !== 3 || gorulen[k.grup]) return false;
+            gorulen[k.grup] = true;
+          }
+          return true;
+        }).sort(function (a, b) { return a.saat < b.saat ? -1 : a.saat > b.saat ? 1 : 0; });
+        if (l.length) { this.ozelBaslik = L("gerçek saat", "real time"); return l; }
+      }
+      if (this.katman === "gun" && !this.yer) {
         // Şehrin takvimi: o gün Gün katmanı yalnız özel günün karelerini gösterir.
         for (i = 0; i < Katalog.ozelGunler.length; i++) {
           var o = Katalog.ozelGunler[i];
@@ -387,7 +473,50 @@
           return l;
         }
       }
+      if (this.yer) {
+        l = this.yerinKareleri(this.yer);
+        if (l.length) return l;
+        this.yer = null; // bu ekranda o yerin gösterilecek karesi yok
+      }
       return gununKareleri(hepsi, self.katman, bugun, Hava.simdiki);
+    },
+
+    /** Bu katmanda seçilebilecek yerler: en az 6 karesi olanlar, çoktan aza. */
+    yerler: function () {
+      var say = {}, self = this;
+      Katalog.hepsi.forEach(function (k) {
+        var y = kisaSemt(k);
+        if (k.katman === self.katman && y && y !== "İstanbul") say[y] = (say[y] || 0) + 1;
+      });
+      return Object.keys(say).filter(function (y) { return say[y] >= 6; })
+        .sort(function (a, b) { return say[b] - say[a] || (a < b ? -1 : a > b ? 1 : 0); });
+    },
+    yerinKareleri: function (y) {
+      var self = this;
+      var kaynak = Katalog.hepsi.filter(function (k) { return k.katman !== self.katman || kisaSemt(k) === y; });
+      return gununKareleri(kaynak, this.katman, bugunIstanbul(), Hava.simdiki);
+    },
+    /** Menüdeki "Yer" satırı: Hepsi → en kalabalık yer → … → Hepsi. */
+    yeriDegistir: function () {
+      var liste = this.yerler();
+      if (!liste.length) return;
+      var i = this.yer ? liste.indexOf(this.yer) : -1;
+      this.yer = i < 0 ? liste[0] : (i + 1 < liste.length ? liste[i + 1] : null);
+      this.bastan();
+    },
+
+    /** Liste değişti: açılıştan yeniden (menü açık kalır, ayarlar art arda değiştirilebilsin). */
+    bastan: function () {
+      this.gun = this.gununListesi();
+      this.sira = 0;
+      this.akisiBaslat();
+    },
+
+    /** Gerçek saatte şu anki kare: saati şimdiden önceki son kare (gece yarısından önce dünün sonuncusu). */
+    saatinKaresi: function () {
+      var s = istanbulSaat(), i = -1;
+      for (var n = 0; n < this.gun.length; n++) if (this.gun[n].saat <= s) i = n;
+      return i >= 0 ? i : Math.max(0, this.gun.length - 1);
     },
 
     /** Akış İstanbul saatine hizalı: tur = 12 kare × 4 dk + günün sonu 3 dk, gece yarısından sayılır. */
@@ -422,6 +551,15 @@
       if (k !== this.kusak) return;
       if (bugunIstanbul() !== this.listeGunu) this.gun = this.gununListesi();
       if (!this.gun.length) { this.akis = setTimeout(function () { self.adim(k); }, 60000); return; }
+      // Tek kare: bütün gün tek kare, tek radyo. Gerçek saat: o saatte çekilmiş kare.
+      if (this.tekKare || (this.gercekSaat && this.ozelBaslik === L("gerçek saat", "real time"))) {
+        var hedef = this.tekKare ? 0 : this.saatinKaresi();
+        this.gerekirseGec(hedef, k).then(function (gecti) {
+          if (!gecti || k !== self.kusak) return;
+          self.akis = setTimeout(function () { self.adim(k); }, self.tekKare ? 60000 : 30000);
+        });
+        return;
+      }
       var konum = this.akisKonumu();
       if (konum.sira !== null) {
         this.gerekirseGec(konum.sira, k).then(function (gecti) {
@@ -462,6 +600,16 @@
       var self = this, k = this.yeniKusak();
       var j = Math.min(i, this.gun.length);
       this.istenen = j;
+      // Tek kare ve gerçek saatte: seçilen kare bir süre kalır, sonra akış kendi düzenine döner.
+      if ((this.tekKare || this.gercekSaat) && this.gun.length) {
+        j = ((i % this.gun.length) + this.gun.length) % this.gun.length;
+        this.istenen = j;
+        this.gerekirseGec(j, k).then(function (gecti) {
+          if (!gecti || k !== self.kusak) return;
+          self.akis = setTimeout(function () { if (k === self.kusak) self.akisiBaslat(false); }, AYAR.kareSuresi);
+        });
+        return;
+      }
       function dongu() {
         if (k !== self.kusak) return;
         if (j >= self.gun.length) {
@@ -500,8 +648,8 @@
       $("acilis").className = "ekran" + (h === "acilis" ? " acik" : "");
       $("sonu").className = "ekran" + (h === "sonu" ? " acik" : "");
       if (h === "acilis") {
-        var ad = this.katmanAdi(this.katman);
-        $("acilisAlt").textContent = gunMetni() + " · " + (this.ozelBaslik || (this.katman === "gun" ? L("bugünün kareleri", "today's frames") : ad));
+        $("acilisAlt").textContent = gunMetni() + " · " + (this.ozelBaslik || this.yer ||
+          (this.katman === "gun" ? L("bugünün kareleri", "today's frames") : this.katmanAdi(this.katman)));
       }
       if (h !== "kare") { this.gosterilenId = null; $("kose").className = "sonuk"; }
     },
@@ -534,15 +682,12 @@
       var k = this.koseKaresi;
       if (!k) return;
       $("kSemt").textContent = k.semt || k.saat;
-      $("kSarki").textContent = k.sarki ? L("o sırada çalan: ", "playing then: ") + k.sarki : "";
+      $("kSarki").textContent = k.sarki ? LF("o sırada çalan: %@", "playing then: %@", k.sarki) : "";
       $("kNot").textContent = k.not || "";
       $("kSaat").textContent = k.semt ? (k.fotografci ? k.saat + " · " + k.fotografci : k.saat) : "";
       $("kHava").textContent = oGunYazisi(k);
-      $("kYil").textContent = (function () {
-        var n = yilDonumu(k, bugunIstanbul());
-        if (n === null) return "";
-        return n === 1 ? L("bir yıl önce bugün", "a year ago today") : (TR ? n + " yıl önce bugün" : n + " years ago today");
-      })();
+      var n = yilDonumu(k, bugunIstanbul());
+      $("kYil").textContent = n === null ? "" : n === 1 ? L("bir yıl önce bugün", "a year ago today") : LF("%@ yıl önce bugün", "%@ years ago today", n);
       this.istanbulSaatiniYaz();
       this.hapiYaz();
       // Dikey kare (üçlüsü yoksa) ortada durur; yazı yandaki boşluğa sığsın.
@@ -557,7 +702,7 @@
     istanbulSaatiniYaz: function () {
       // Cihaz İstanbul saatinde değilse köşede "İstanbul'da şimdi 21:04".
       var farkli = new Date().getTimezoneOffset() !== -180;
-      $("kIstanbul").textContent = farkli ? L("İstanbul'da şimdi ", "now ") + istanbulSaat() + (TR ? "" : " in Istanbul") : "";
+      $("kIstanbul").textContent = farkli ? LF("İstanbul'da şimdi %@", "now %@ in Istanbul", istanbulSaat()) : "";
     },
 
     hapiYaz: function () {
@@ -572,38 +717,224 @@
 
     koseAcKapat: function () {
       this.koseAcik = !this.koseAcik;
-      if (this.hal === "kare") $("kose").className = this.koseAcik ? "" : "sonuk";
+      if (this.hal === "kare" && !this.menuAcik) $("kose").className = this.koseAcik ? "" : "sonuk";
     },
 
-    // ----- katman menüsü
+    // ----- Cebim
+
+    cepteMi: function (k) { return !!k && this.cebim.indexOf(k.id) >= 0; },
+    cebeKoyCikar: function () {
+      var k = this.hal === "kare" ? this.gun[this.sira] : null;
+      if (!k) return;
+      var i = this.cebim.indexOf(k.id);
+      if (i >= 0) this.cebim.splice(i, 1); else this.cebim.push(k.id);
+      depoYaz("frameby.cebim", JSON.stringify(this.cebim));
+    },
+    /** Cebim açıkken galeri yalnız cepteki kareleri gösterir. */
+    cebimiAcKapat: function () {
+      this.cebimAcik = !this.cebimAcik;
+      this.menuyuKapat();
+      this.bastan();
+    },
+
+    // ----- Uyku zamanlayıcısı ve sabah
+
+    uykuBitis: null, uyudu: false, uykuZ: null, uykuSolma: null,
+    sabah: (function () { var v = depoOku("frameby.sabah"); return v ? +v : null; })(),
+    sabahBekliyor: false, sabahZ: null, sabahYukselme: null,
+
+    /** Menüdeki satır: Kapalı → 30 dk → 1 sa → 2 sa → Kapalı. */
+    uykuyuDegistir: function () {
+      var secenekler = [0, 30, 60, 120], simdiki = 0;
+      if (this.uykuBitis) {
+        var kalan = (this.uykuBitis - simdi()) / 1000;
+        for (var i = 1; i < secenekler.length; i++) if (secenekler[i] * 60 >= kalan - 30) { simdiki = secenekler[i]; break; }
+      }
+      this.uykuKur(secenekler[(secenekler.indexOf(simdiki) + 1) % secenekler.length] * 60);
+    },
+    uykuKur: function (saniye) {
+      var self = this;
+      clearTimeout(this.uykuZ); clearInterval(this.uykuSolma); clearInterval(this.sabahYukselme);
+      Calar.kismaAyarla(1);
+      if (!saniye) { this.uykuBitis = null; return; }
+      var bitis = simdi() + saniye * 1000, solma = Math.min(60, saniye / 2) * 1000;
+      this.uykuBitis = bitis;
+      // Son bir dakikada ses yavaşça kısılır, sonra ekran kararır.
+      this.uykuZ = setTimeout(function () {
+        var adim = 0;
+        self.uykuSolma = setInterval(function () {
+          adim++;
+          Calar.kismaAyarla((60 - adim) / 60);
+          if (adim >= 60) { clearInterval(self.uykuSolma); self.uyu(); }
+        }, solma / 60);
+      }, Math.max(0, bitis - simdi() - solma));
+    },
+    uykuYazisi: function () {
+      if (!this.uykuBitis) return L("Kapalı", "Off");
+      var dk = Math.max(1, Math.ceil((this.uykuBitis - simdi()) / 60000)), sa = L("sa", "h"), d = L("dk", "min");
+      return dk >= 60 && dk % 60 === 0 ? (dk / 60) + " " + sa : dk > 60 ? Math.floor(dk / 60) + " " + sa + " " + (dk % 60) + " " + d : dk + " " + d;
+    },
+    /** Süre doldu: yayın kapanır, ekran neredeyse siyah; bir tuşla uyanır. */
+    uyu: function () {
+      this.yeniKusak();
+      clearInterval(this.sarkiGorevi); this._izlenen = null;
+      Calar.durdur();
+      this.uykuBitis = null;
+      this.menuyuKapat();
+      this.uyudu = true;
+      this.uykuYaz();
+      $("uyku").className = "ekran acik";
+      if (this.sabah !== null) this.sabahiBekle(this.sabah);
+    },
+    uykuYaz: function () {
+      $("uykuAlt").textContent = this.sabahBekliyor ? LF("İyi geceler. Sabah %@.", "Good night. Morning at %@.", this.sabahYazisi()) : L("İyi geceler.", "Good night.");
+    },
+    /** Uyumuş ekranda bir tuş: galeri açılıştan yeniden başlar. Uyanmadıysa false. */
+    uyan: function () {
+      if (!this.uyudu) return false;
+      this.uykudanCik();
+      this.gun = this.gununListesi();
+      this.akisiBaslat();
+      return true;
+    },
+    uykudanCik: function () {
+      clearTimeout(this.sabahZ);
+      this.sabahBekliyor = false;
+      Calar.kismaAyarla(1);
+      this.uyudu = false;
+      $("uyku").className = "ekran";
+    },
+    /** Sabah: Kapalı → 07:00 → 07:30 → 08:00 → 08:30 → 09:00 → Kapalı (cihazın saatiyle). */
+    sabahiDegistir: function () {
+      var secenekler = [null, 420, 450, 480, 510, 540];
+      var i = secenekler.indexOf(this.sabah);
+      this.sabah = secenekler[(i + 1) % secenekler.length];
+      depoYaz("frameby.sabah", this.sabah === null ? "" : String(this.sabah));
+      clearTimeout(this.sabahZ);
+      if (this.sabah !== null && this.uyudu) this.sabahiBekle(this.sabah); else this.sabahBekliyor = false;
+    },
+    sabahYazisi: function () {
+      return this.sabah === null ? L("Kapalı", "Off") : iki(Math.floor(this.sabah / 60)) + ":" + iki(this.sabah % 60);
+    },
+    /** Uyku zamanlayıcısıyla birlikte: ekran kararır, uygulama açık kalır; sabah saatinde galeri ses yavaşça
+     *  yükselerek açılır. (TV'nin kendi "4 saat sonra kapan" ayarı açıksa TV o arada kapanabilir.) */
+    sabahiBekle: function (dakika) {
+      var self = this, an = new Date(), hedef = new Date(an.getFullYear(), an.getMonth(), an.getDate(), Math.floor(dakika / 60), dakika % 60, 0);
+      if (hedef <= an) hedef = new Date(hedef.getTime() + 86400000);
+      this.sabahBekliyor = true;
+      this.uykuYaz();
+      clearTimeout(this.sabahZ);
+      this.sabahZ = setTimeout(function () { if (self.uyudu) self.gunaydin(); }, hedef - an);
+    },
+    /** Sabah: Gün katmanı, ses sıfırdan iki dakikada yükselir. */
+    gunaydin: function () {
+      var self = this;
+      if (this.katman !== "gun" && !this.kilitli("gun")) { this.katman = "gun"; this.yer = null; }
+      this.uyan();
+      Calar.kismaAyarla(0);
+      var adim = 0;
+      clearInterval(this.sabahYukselme);
+      this.sabahYukselme = setInterval(function () {
+        adim++;
+        Calar.kismaAyarla(adim / 120);
+        if (adim >= 120) clearInterval(self.sabahYukselme);
+      }, 1000);
+    },
+
+    // ----- Menü (iOS'taki KatmanMenusu: ana sayfa, Ayarlar, Senin günün)
 
     katmanAdi: function (id) {
-      if (!TR && KATMAN_EN[id]) return KATMAN_EN[id];
+      if (KATMAN_TR[id]) return L(KATMAN_TR[id], KATMAN_EN[id]);
       for (var i = 0; i < Katalog.katmanlar.length; i++) if (Katalog.katmanlar[i].id === id) return Katalog.katmanlar[i].ad;
       return id;
     },
+    acikKapali: function (b) { return b ? L("Açık", "On") : L("Kapalı", "Off"); },
 
+    /** Menünün o anki sayfası: satırlar ({id, ad, sag, secili, eylem}), null = ayraç, {metin} = açıklama. */
     menuSatirlari: function () {
-      var self = this, satirlar = [];
-      Katalog.acikKatmanlar().forEach(function (k) {
-        var say = Katalog.hepsi.filter(function (x) { return x.katman === k.id; }).length;
-        satirlar.push({ ad: self.katmanAdi(k.id), sag: say + (TR ? " kare" : " frames"), secili: k.id === self.katman, eylem: function () { self.katmanSec(k.id); } });
-      });
-      satirlar.push(null);
-      satirlar.push({ ad: L("Ses", "Sound"), sag: Calar.sessiz ? L("Kapalı", "Off") : L("Açık", "On"), eylem: function () { Calar.sessizYap(!Calar.sessiz); self.menuyuCiz(); } });
-      satirlar.push({ ad: L("Yer ve saat", "Place and time"), sag: self.koseAcik ? L("Açık", "On") : L("Kapalı", "Off"), eylem: function () { self.koseAcKapat(); self.menuyuCiz(); } });
-      return satirlar;
+      var self = this, s = [];
+      function satir(id, ad, sag, eylem, secili) { s.push({ id: id, ad: ad, sag: sag || "", eylem: eylem, secili: !!secili }); }
+      if (this.menuSayfa === 1) {
+        satir("geri", L("‹ Geri", "‹ Back"), "", function () { self.sayfayaGit(0, "ayarlar"); });
+        s.push(null);
+        satir("sira", L("Sıra", "Order"), this.gercekSaat ? L("Gerçek saat", "Real time") : L("Karışık", "Shuffled"), function () {
+          self.gercekSaat = !self.gercekSaat; depoYaz("frameby.gercekSaat", self.gercekSaat ? "1" : "0"); self.bastan(); self.menuyuCiz("sira");
+        });
+        satir("tek", L("Tek kare", "Single frame"), this.acikKapali(this.tekKare), function () {
+          self.tekKare = !self.tekKare; depoYaz("frameby.tekKare", self.tekKare ? "1" : "0"); self.bastan(); self.menuyuCiz("tek");
+        });
+        if (this.yerler().length) satir("yer", L("Yer", "Place"), this.yer || L("Hepsi", "All"), function () { self.yeriDegistir(); self.menuyuCiz("yer"); });
+        satir("sabah", L("Sabah", "Morning"), this.sabahYazisi(), function () { self.sabahiDegistir(); self.menuyuCiz("sabah"); });
+        satir("uyku", L("Uyku zamanlayıcı", "Sleep timer"), this.uykuYazisi(), function () { self.uykuyuDegistir(); self.menuyuCiz("uyku"); });
+        satir("yumusak", L("Gece yumuşatma", "Night dimming"), this.acikKapali(this.geceYumusatma), function () {
+          self.geceYumusatma = !self.geceYumusatma; depoYaz("frameby.geceYumusatma", self.geceYumusatma ? "1" : "0"); geceyiDenetle(); self.menuyuCiz("yumusak");
+        });
+        satir("senin", L("Senin günün", "Your day"), this.seninGununYazisi(), function () {
+          var g = self.seninGunun;
+          self.secAy = g ? +g.slice(0, 2) : 1; self.secGun = g ? +g.slice(3) : 1;
+          self.sayfayaGit(2, "ay");
+        });
+      } else if (this.menuSayfa === 2) {
+        var GUNLER = [31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+        satir("geri2", L("‹ Geri", "‹ Back"), "", function () { self.sayfayaGit(1, "senin"); });
+        s.push(null);
+        s.push({ metin: L("Seçtiğin gün geldiğinde galeri o tarihte çekilmiş karelerle açılır. Tarih yalnız bu cihazda kalır.",
+          "When your day comes, the gallery opens with frames taken on that date. The date stays on this device.") });
+        satir("ay", L("Ay", "Month"), tarihYazisi(this.secAy, 1, true), function () {
+          self.secAy = self.secAy % 12 + 1; self.secGun = Math.min(self.secGun, GUNLER[self.secAy - 1]); self.menuyuCiz("ay");
+        });
+        satir("gun", L("Gün", "Day"), String(this.secGun), function () {
+          self.secGun = self.secGun % GUNLER[self.secAy - 1] + 1; self.menuyuCiz("gun");
+        });
+        satir("kaydet", L("Kaydet", "Save"), "", function () {
+          self.seninGunun = iki(self.secAy) + "-" + iki(self.secGun); depoYaz("frameby.seninGunun", self.seninGunun);
+          self.bastan(); self.sayfayaGit(1, "senin");
+        });
+        if (this.seninGunun) satir("sil", L("Kapat", "Turn off"), "", function () {
+          self.seninGunun = null; depoYaz("frameby.seninGunun", ""); self.bastan(); self.sayfayaGit(1, "senin");
+        });
+      } else {
+        s.push({ etiket: L("KATMAN", "LAYER") });
+        Katalog.acikKatmanlar().forEach(function (k) {
+          var say = Katalog.hepsi.filter(function (x) { return x.katman === k.id; }).length;
+          satir(k.id, self.katmanAdi(k.id), LF("%@ kare", "%@ frames", say), function () { self.katmanSec(k.id); }, k.id === self.katman && !self.cebimAcik);
+        });
+        if (this.cebim.length) satir("cebim", L("Cebim", "My pocket"), LF("%@ kare", "%@ frames", this.cebim.length), function () { self.cebimiAcKapat(); }, this.cebimAcik);
+        s.push(null);
+        satir("ses", L("Ses", "Sound"), this.acikKapali(!Calar.sessiz), function () { Calar.sessizYap(!Calar.sessiz); self.menuyuCiz("ses"); });
+        if (this.hal === "kare" && this.gun[this.sira]) {
+          satir("cep", this.cepteMi(this.gun[this.sira]) ? L("Cepten çıkar", "Take out of pocket") : L("Cebime koy", "Put in my pocket"), "", function () {
+            self.cebeKoyCikar(); self.menuyuCiz("cep");
+          });
+        }
+        satir("ayarlar", L("Ayarlar", "Settings"), "›", function () { self.sayfayaGit(1, "sira"); });
+      }
+      return s;
+    },
+    seninGununYazisi: function () {
+      var g = this.seninGunun;
+      return g ? tarihYazisi(+g.slice(0, 2), +g.slice(3)) : L("Kapalı", "Off");
     },
 
-    menuyuCiz: function () {
+    sayfayaGit: function (sayfa, odakla) { this.menuSayfa = sayfa; this.menuyuCiz(odakla); },
+
+    /** Satırları çizer; odakla verilirse odak o satıra gelir, yoksa sıra korunur. */
+    menuyuCiz: function (odakla) {
       var kap = $("menuSatirlar"), self = this, n = 0;
       kap.innerHTML = "";
       this._satirlar = [];
       this.menuSatirlari().forEach(function (s) {
         if (!s) { var a = document.createElement("div"); a.className = "ayracCizgi"; kap.appendChild(a); return; }
+        if (s.etiket || s.metin) {
+          var t = document.createElement("p");
+          t.className = s.etiket ? "etiket" : "menuMetin";
+          t.textContent = s.etiket || s.metin;
+          kap.appendChild(t);
+          return;
+        }
         var d = document.createElement("div");
         var sira = n++;
-        d.className = "satir" + (s.secili ? " secili" : "") + (sira === self.menuOdak ? " odak" : "");
+        if (odakla && s.id === odakla) self.menuOdak = sira;
         d.innerHTML = '<i class="secim"></i><span class="ad"></span><span class="sag"></span>';
         d.querySelector(".ad").textContent = s.ad;
         d.querySelector(".sag").textContent = s.sag;
@@ -612,16 +943,17 @@
         kap.appendChild(d);
         self._satirlar.push({ el: d, s: s });
       });
+      this.menuOdak = Math.max(0, Math.min(this._satirlar.length - 1, this.menuOdak));
+      this.odakCiz();
     },
     odakCiz: function () {
       var self = this;
       this._satirlar.forEach(function (x, i) { x.el.className = "satir" + (x.s.secili ? " secili" : "") + (i === self.menuOdak ? " odak" : ""); });
     },
     menuyuAc: function () {
-      var acik = Katalog.acikKatmanlar(), self = this;
+      this.menuSayfa = 0;
       this.menuOdak = 0;
-      for (var i = 0; i < acik.length; i++) if (acik[i].id === self.katman) this.menuOdak = i;
-      this.menuyuCiz();
+      this.menuyuCiz(this.cebimAcik ? "cebim" : this.katman);
       this.menuAcik = true;
       $("menu").className = "acik"; $("menu").setAttribute("aria-hidden", "false");
       $("kose").className = "sonuk";
@@ -630,6 +962,12 @@
       this.menuAcik = false;
       $("menu").className = ""; $("menu").setAttribute("aria-hidden", "true");
       if (this.hal === "kare" && this.koseAcik) $("kose").className = "";
+    },
+    /** Geri: alt sayfadan bir üste, ana sayfadan menüyü kapat. */
+    menuGeri: function () {
+      if (this.menuSayfa === 2) this.sayfayaGit(1, "senin");
+      else if (this.menuSayfa === 1) this.sayfayaGit(0, "ayarlar");
+      else this.menuyuKapat();
     },
     menuyuKaydir: function (d) {
       var n = this._satirlar.length;
@@ -640,12 +978,12 @@
     /** Katman seçilince galeri o katmanın bugünkü kareleriyle açılıştan yeniden başlar. */
     katmanSec: function (id) {
       this.menuyuKapat();
-      if (id === this.katman) return;
+      if (id === this.katman && !this.cebimAcik) return;
       this.katman = id;
+      this.cebimAcik = false;
+      this.yer = null;
       depoYaz("frameby.katman", id);
-      this.gun = this.gununListesi();
-      this.sira = 0;
-      this.akisiBaslat();
+      this.bastan();
       if (this.gun[0]) Gorsel.hazirla(this.gun[0]);
     },
 
@@ -795,7 +1133,8 @@
   }
 
   function geceyiDenetle() {
-    var gece = new Date().getHours() < 6;
+    // Gece yarısından sabah altıya (cihazın saati) ekran biraz kararır; menüdeki "Gece yumuşatma" ile kapanır.
+    var gece = G.geceYumusatma && new Date().getHours() < 6;
     $("gece").className = gece ? "acik" : "";
   }
 
@@ -833,11 +1172,13 @@
     // Hata ayıklama: son 20 tuş (konsolda frameby.tuslar).
     sonTuslar.push(k); if (sonTuslar.length > 20) sonTuslar.shift();
     Calar.izinVerildi();
+    // Uyku zamanlayıcısı dolmuşsa: Geri dışındaki her tuş galeriyi uyandırır.
+    if (G.uyudu && k !== TUS.GERI && k !== TUS.BACKSPACE && k !== TUS.ESC) { G.uyan(); e.preventDefault(); return; }
     if (G.menuAcik) {
       if (k === TUS.YUKARI) G.menuyuKaydir(-1);
       else if (k === TUS.ASAGI) G.menuyuKaydir(1);
       else if (k === TUS.TAMAM || k === TUS.BOSLUK) { var s = G._satirlar[G.menuOdak]; if (s) s.s.eylem(); }
-      else if (k === TUS.GERI || k === TUS.BACKSPACE || k === TUS.ESC || k === TUS.SOL) G.menuyuKapat();
+      else if (k === TUS.GERI || k === TUS.BACKSPACE || k === TUS.ESC || k === TUS.SOL) G.menuGeri();
       else return;
       e.preventDefault();
       return;
@@ -848,7 +1189,7 @@
     else if (k === TUS.YUKARI || k === TUS.TAMAM) G.koseAcKapat();
     else if (k === TUS.OYNAT || k === TUS.DURAKLAT || k === TUS.OYNAT_DURAKLAT || k === TUS.DURDUR || k === TUS.BOSLUK) {
       Calar.sessizYap(!Calar.sessiz);
-      bildir(Calar.sessiz ? L("Ses kapalı", "Sound off") : L("Ses açık", "Sound on"));
+      bildir(Calar.sessiz ? L("Sessiz", "Silent") : L("Ses", "Sound") + " · " + L("Açık", "On"));
     }
     else if (k === TUS.GERI || k === TUS.BACKSPACE || k === TUS.ESC) cik();
     else return;
@@ -866,7 +1207,6 @@
     $("menuPerde").addEventListener("click", function () { G.menuyuKapat(); });
     $("sonuBaslik").textContent = L("Bugünlük bu kadar.\nYarın yeni kareler.", "That's all for today.\nNew frames tomorrow.");
     $("sonuAlt").textContent = L("Baştan başlıyor.", "Starting over.");
-    $("menuEtiket").textContent = L("KATMANLAR", "LAYERS");
     $("menuAlt").textContent = L("Ses her zaman o radyonun canlı yayını.\nby. atölyesi · Berkay Doğan", "Sound is always the station's live broadcast.\nby. workshop · Berkay Doğan");
     $("acilisAlt").textContent = gunMetni();
 
@@ -881,7 +1221,7 @@
     // Arka plana alınınca (webOS'ta Ana ekran tuşu) radyo durur; dönünce akış saate yeniden hizalanır.
     document.addEventListener("visibilitychange", function () {
       if (document.hidden) { G.yeniKusak(); Calar.durdur(); G._izlenen = null; clearInterval(G.sarkiGorevi); }
-      else { uyanikTut(); G.hal = "acilis"; G.akisiBaslat(false); }
+      else if (!G.uyudu) { uyanikTut(); G.hal = "acilis"; G.akisiBaslat(false); }
     });
 
     var acilisBitti = bekle(AYAR.acilis);
@@ -903,7 +1243,7 @@
       /** Konsolda tek satırda durum (webOS inceleyicisinde uzun ifade yazmak zor). */
       durum: function () {
         var a = Calar.a, m = navigator.userAgent.match(/Chrome\/[\d.]+/);
-        return JSON.stringify({ motor: m && m[0], tuslar: sonTuslar, hal: G.hal, sira: G.sira, menu: G.menuAcik, katman: G.katman,
+        return JSON.stringify({ motor: m && m[0], dil: DIL, uyudu: G.uyudu, tuslar: sonTuslar, hal: G.hal, sira: G.sira, menu: G.menuAcik, katman: G.katman,
           sessiz: Calar.sessiz, ses: a.volume, radyo: Calar.calan, caliyor: !a.paused && a.currentTime > 0, an: Math.round(a.currentTime),
           gizli: document.hidden, yazi: getComputedStyle($("kSaat")).fontFamily.split(",")[0] });
       },

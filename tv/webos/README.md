@@ -18,6 +18,14 @@ Uygulamadaki galeri motorunun (`frameby-app/frameby/Galeri.swift`, `Calar.swift`
 - **Ses her zaman o karenin radyosunun canlı yayını**, iki `<audio>` arasında 4 sn çapraz geçiş; hiçbir şey kaydedilmez.
 - **Katmanlar:** yalnız ücretsizler — katalogda `ucretsiz: true` olanlar (şu an Gün ve Eski İstanbul). frameby+
   katmanları (Berkay'ın İstanbul'u, Gece kıyısı) bu sürümde menüde hiç görünmez.
+- **Menü (iOS'taki gibi):** ana sayfada katmanlar, Cebim, Ses, Cebime koy / Cepten çıkar, Ayarlar ›. Ayarlar'da
+  Sıra (Karışık / Gerçek saat), Tek kare, Yer (en az 6 karesi olan semtler), Sabah (07:00–09:00), Uyku zamanlayıcı
+  (30 dk / 1 sa / 2 sa), Gece yumuşatma, Senin günün ›. Ayarlar, Cebim ve sessizlik TV'de saklanır (localStorage).
+- **Uyku ve sabah:** süre dolunca son dakikada ses kısılır, yayın kapanır, ekran neredeyse siyah ("İyi geceler.");
+  bir tuş galeriyi uyandırır. Sabah seçiliyse o saatte Gün katmanı açılır, ses iki dakikada sıfırdan yükselir.
+  TV'nin kendi "4 saat sonra kapan" ayarı açıksa TV gece kendini kapatabilir; o durumda sabah çalmaz.
+- **50 dil:** metinler iOS uygulamasının String Catalog'undan (`js/diller.js`, aşağıda "Diller"); TV'nin diline
+  göre seçilir. Yer adları her dilde Türkçe. Arapça, Farsça, İbranice ve Urduca'da ekran iOS'taki gibi aynalanır.
 
 ### Kaynaklar
 
@@ -33,11 +41,12 @@ Uygulamadaki galeri motorunun (`frameby-app/frameby/Galeri.swift`, `Calar.swift`
 
 | Tuş | Galeride | Menüde |
 |---|---|---|
-| ◀ ▶ | önceki / sonraki kare (akış o kareden sürer) | — (◀ menüyü kapatır) |
+| ◀ ▶ | önceki / sonraki kare (akış o kareden sürer) | ◀ bir üst sayfa / menüyü kapatır |
 | ▼ | katman menüsünü açar | aşağı |
 | ▲ / OK | yer ve saat yazısını gizler/gösterir | yukarı / seç |
 | Oynat, Duraklat, Durdur | sesi kapatır/açar (sessizlik sonraki açılışta da sürer) | — |
-| Geri | uygulamadan çıkar (`PalmSystem.platformBack()`, LG'nin önerdiği sistem davranışı) | menüyü kapatır |
+| Geri | uygulamadan çıkar (`PalmSystem.platformBack()`, LG'nin önerdiği sistem davranışı) | bir üst sayfa / menüyü kapatır |
+| Herhangi bir tuş | uyku zamanlayıcısı dolmuşsa galeriyi uyandırır (Geri hariç) | — |
 
 Magic Remote imleciyle de çalışır: sağ alttaki "frameby." menüyü açar, satırlara tıklanır, karartılmış alana
 tıklamak menüyü kapatır. `appinfo.json`'daki `disableBackHistoryAPI: true` sayesinde Geri tuşu (461) uygulamaya gelir.
@@ -196,6 +205,18 @@ tanımlar, gerekmeyen alt küme hiç yüklenmez. Dosyalar Google Fonts css2 API'
 50 dile geçilirse (Kiril, Yunan, Vietnam…) o alt kümeler de aynı yoldan eklenmeli; Arapça, Çince gibi yazılar
 bu iki ailede yok, onlarda TV'nin kendi yazısı kullanılır.
 
+## Diller
+
+`js/diller.js` elle yazılmaz; iOS uygulamasının `Localizable.xcstrings` dosyasından üretilir. Üreteç `js/frameby.js`'teki
+`L("…")` / `LF("…")` anahtarlarını kendisi toplar; metin eklenince ya da iOS'ta çeviri değişince yeniden çalıştır:
+
+```bash
+python3 tv/webos/araclar/diller-uret.py
+```
+
+Katalogda olmayan anahtar (şu an yalnız tarayıcıya özgü iki uyarı) İngilizce gösterilir. Bodoni Moda ve Newsreader'ın
+pakette yalnız Latin alt kümeleri var; Kiril, Yunan, Arap, Hint ve Doğu Asya yazılarında TV'nin kendi yazısı kullanılır.
+
 ## frameby+ (bu sürümün dışında)
 
 LG'nin uygulama içi ödeme hizmeti artık olmadığı için frameby+ webOS'ta TV içinden satılamaz. En sade yol,
@@ -209,8 +230,9 @@ kontrol edilmeli. Hangisinin seçileceği Berkay'ın kararı.
 
 ## Henüz olmayanlar
 
-- 50 dil yok: yalnız Türkçe ve İngilizce (TV'nin diline göre).
-- Uyku zamanlayıcısı, sabah alarmı, saate göre katman, haritada yer seçimi, Cebim, Senin günün yok.
+- Harita yok (kumandayla haritada gezinmek ayrı bir tasarım ister); yer seçimi Ayarlar › Yer satırından.
+- "Saate göre" yok: iOS'ta gece Gece kıyısı'na (frameby+) geçiyor; TV'de frameby+ olmadığı için şimdilik anlamsız.
+- Kartpostal yok (iOS'ta paylaşım sayfasıyla gönderiliyor; TV'de paylaşım yok).
 - Gerçek bir LG TV'de denenmedi. Tarayıcıda 1920×1080'de, webOS TV 26 (Chrome 132), 22 (Chrome 87) ve 6.0
   (Chrome 79) simülatörlerinde denendi: kareler, üçlü dikey kare, yazı tipleri, radyo ve şarkı adı, ◀ ▶ ▲ ▼ OK Geri tuş kodları,
   menü, Geri ile sistemin çıkış penceresi, kalıcı sessizlik. `.ipk` ares-package 3.2.6 ile uyarısız.
