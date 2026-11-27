@@ -72,7 +72,8 @@
 "ad": "Baba Radyo",
 "slug": "baba-radyo",
 "renk": "#8a2b2b",
-"ulke": "tr"
+"ulke": "tr",
+"logo": "https://nowby.co/logolar/baba-radyo.png"
 },
 {
 "ad": "Radio 70 80 90",
@@ -102,7 +103,8 @@
 "ad": "DKFM Shoegaze Radio",
 "slug": "dkfm-shoegaze-radio",
 "renk": "#b94163",
-"ulke": "ca"
+"ulke": "ca",
+"logo": "https://nowby.co/logolar/dkfm-shoegaze-radio.png"
 },
 {
 "ad": "Italian Radio",
@@ -138,7 +140,8 @@
 "ad": "Bodrum FM",
 "slug": "bodrum-fm",
 "renk": "#1f8fb8",
-"ulke": "tr"
+"ulke": "tr",
+"logo": "https://nowby.co/logolar/bodrum-fm.png"
 },
 {
 "ad": "J-Rock Powerplay",
