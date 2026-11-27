@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=1920, height=1080, user-scalable=no">
+<title>frameby.</title>
+<!-- Bodoni Moda + Newsreader (SIL OFL). Mağazadan önce pakete gömülebilir: README › Yazı tipleri. -->
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz@6..96&family=Newsreader:ital,opsz@0,6..72;1,6..72&display=swap">
+<link rel="stylesheet" href="css/frameby.css">
+</head>
+<body>
+<div id="sahne">
+  <!-- Kareler: iki katman arasında 4 sn çapraz geçiş -->
+  <div class="kare" id="kareA"></div>
+  <div class="kare" id="kareB"></div>
+
+  <!-- Köşe yazısı (galeri dili C): yer, saat, o günün havası, canlı radyo hapı -->
+  <div id="kose" class="gizli">
+    <div class="karartma"></div>
+    <div id="koseMetin">
+      <p id="kSemt" class="bodoni"></p>
+      <p id="kSarki" class="italik soluk"></p>
+      <p id="kNot" class="italik"></p>
+      <div id="kSatir">
+        <span id="kSaat"></span>
+        <span id="kHava" class="soluk"></span>
+        <span id="kIstanbul" class="italik soluk"></span>
+        <span id="kYil" class="italik"></span>
+        <span id="kHap" class="hap gizli"><i class="nokta"></i><span id="kRadyo"></span><span id="kAyrac" class="ayrac gizli"></span><span id="kSarkiHap" class="soluk"></span></span>
+      </div>
+    </div>
+    <p id="imza" class="bodoni" role="button" aria-label="frameby menüsü">frameby<span class="kizil">.</span></p>
+  </div>
+
+  <!-- Açılış: krem zemin, büyük logo, bugünün tarihi -->
+  <div id="acilis" class="ekran acik">
+    <p class="bodoni logo">frameby<span class="kizil">.</span></p>
+    <p id="acilisAlt" class="acilisAlt"></p>
+  </div>
+
+  <!-- Günün sonu -->
+  <div id="sonu" class="ekran">
+    <p id="sonuBaslik" class="bodoni sonuBaslik"></p>
+    <p id="sonuAlt" class="italik sonuAlt"></p>
+  </div>
+
+  <div id="gece"></div>
+  <p id="ipucu" class="ipucu"></p>
+  <p id="bildirim" class="ipucu bildirim"></p>
+
+  <!-- Katman menüsü (↓ açar, Geri kapatır) -->
+  <div id="menu" aria-hidden="true">
+    <div id="menuPerde"></div>
+    <div id="menuPanel">
+      <p class="bodoni menuLogo">frameby<span class="kizil">.</span></p>
+      <p id="menuEtiket" class="etiket"></p>
+      <div id="menuSatirlar"></div>
+      <div class="bosluk"></div>
+      <p id="menuAlt" class="menuAlt"></p>
+    </div>
+  </div>
+
+  <audio id="sesA" preload="none"></audio>
+  <audio id="sesB" preload="none"></audio>
+</div>
+<script src="js/frameby.js"></script>
+</body>
+</html>

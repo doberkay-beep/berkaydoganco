@@ -1,0 +1,18 @@
+{
+  "id": "co.berkaydogan.frameby",
+  "version": "1.0.0",
+  "vendor": "by. atölyesi · Berkay Doğan",
+  "type": "web",
+  "main": "index.html",
+  "title": "frameby.",
+  "icon": "img/icon.png",
+  "largeIcon": "img/largeIcon.png",
+  "iconColor": "#0E0D0C",
+  "bgColor": "#0E0D0C",
+  "resolution": "1920x1080",
+  "disableBackHistoryAPI": true,
+  "useGalleryMode": true,
+  "screenSaverProperties": {
+    "preferredType": 3
+  }
+}

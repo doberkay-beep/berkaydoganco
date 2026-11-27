@@ -57,6 +57,20 @@
         "/Users/yazarberkay/Desktop/by-atolye/frameby/secim/sunucu.mjs"
       ],
       "port": 4321
+    },
+    {
+      "name": "frameby-webos",
+      "runtimeExecutable": "npx",
+      "runtimeArgs": [
+        "--yes",
+        "http-server@14.1.1",
+        "tv/webos",
+        "-p",
+        "8790",
+        "-c-1",
+        "--silent"
+      ],
+      "port": 8790
     }
   ]
 }
