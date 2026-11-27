@@ -170,8 +170,14 @@ sh tv/webos/paketle.sh
 ```
 
 Betik uygulama dosyalarını ve sitedeki güncel `public/frameby/katalog.json`'ı `tv/webos/build/app`'e kopyalar
-ve `tv/webos/build/co.berkaydogan.frameby_1.0.0_all.ipk` üretir (`build/` git'e girmez). Elle:
-`ares-package tv/webos/build/app -o tv/webos/build`.
+ve iki paket üretir (`build/` git'e girmez):
+
+- `tv/webos/build/co.berkaydogan.frameby_1.0.0_all.ipk`: `resolution` 1920x1080, UHD (4K) TV'ler.
+- `tv/webos/build/720/co.berkaydogan.frameby_1.0.0_all.ipk`: `resolution` 1280x720, FHD TV'ler.
+
+Kod ikisinde aynı: sahne 1920×1080 çizilir, `olcekle()` pencereye sığdırır (1280×720'de 0,667). LG Seller
+Lounge yalnız 1920x1080 dosyası olan uygulamayı FHD TV'lerde listelemez; bu yüzden File Upload'a ikisi de
+yüklenir. Elle: `ares-package tv/webos/build/app -o tv/webos/build`.
 
 ### 5. Yükle, aç, incele
 
