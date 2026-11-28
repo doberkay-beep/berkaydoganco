@@ -110,7 +110,8 @@
 "ad": "Italian Radio",
 "slug": "italian-radio-only-romantic-italian-musi",
 "renk": "#ca445d",
-"ulke": "it"
+"ulke": "it",
+"logo": "https://nowby.co/logolar/italian-radio-only-romantic-italian-musi.png"
 },
 {
 "ad": "Real Hardstyle Radio",
@@ -202,13 +203,15 @@
 "ad": "LOVE.radio Only Love Songs 70s80s90s",
 "slug": "love-radio-only-love-songs-70s80s90s",
 "renk": "#c83289",
-"ulke": "gb"
+"ulke": "gb",
+"logo": "https://nowby.co/logolar/love-radio-only-love-songs-70s80s90s.png"
 },
 {
 "ad": "FUNKY RADIO - Only Funk Music (60's 70's)",
 "slug": "funky-radio-only-funk-music-60-s-70-s",
 "renk": "#c8a441",
-"ulke": "us"
+"ulke": "us",
+"logo": "https://nowby.co/logolar/funky-radio-only-funk-music-60-s-70-s.png"
 },
 {
 "ad": "Radio Armisa",
@@ -240,7 +243,8 @@
 "ad": "CLASSIC HITS RADIO Italia",
 "slug": "classic-hits-radio-italia",
 "renk": "#b9813c",
-"ulke": "it"
+"ulke": "it",
+"logo": "https://nowby.co/logolar/classic-hits-radio-italia.png"
 },
 {
 "ad": "Max FM",
@@ -252,7 +256,8 @@
 "ad": "NEW HITS RADIO Italia",
 "slug": "new-hits-radio-italia",
 "renk": "#cf3ab1",
-"ulke": "it"
+"ulke": "it",
+"logo": "https://nowby.co/logolar/new-hits-radio-italia.png"
 },
 {
 "ad": "Türkiyem FM",
