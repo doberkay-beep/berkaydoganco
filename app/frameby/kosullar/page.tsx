@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 
 export default function Sayfa() {
   return (
-    <FramebyYasalSayfa baslik="Kullanım koşulları" guncelleme="25 Kasım 2026">
+    <FramebyYasalSayfa baslik="Kullanım koşulları" guncelleme="29 Kasım 2026">
       <p>frameby, evdeki ekranı gerçek bir yerin gerçek bir anına açan küçük bir galeridir. Uygulamayı kullanarak aşağıdaki koşulları kabul etmiş olursun. Bunlara ek olarak Apple’ın standart son kullanıcı lisans sözleşmesi (apple.com/legal/internet-services/itunes/dev/stdeula) geçerlidir.</p>
       <h2 style={h2}>Ücretsiz olanlar</h2>
       <p>Uygulama, radyolar, Gün katmanı ve Eski İstanbul katmanı ücretsizdir. Radyolar hiçbir zaman aboneliğe bağlanmaz.</p>
@@ -18,7 +18,7 @@ export default function Sayfa() {
       <p>Ödeme, satın almayı onayladığında Apple hesabından alınır. Abonelik, dönem bitmeden en az 24 saat önce iptal edilmedikçe her yıl kendiliğinden yenilenir ve yenileme bedeli dönem bitmeden önceki 24 saat içinde alınır. Aboneliğini Apple hesabının ayarlarından yönetebilir ve iptal edebilirsin. Ücretsiz deneme süresi içinde abone olursan denemenin kalan kısmı geçersiz olur. İadeler Apple’ın kurallarına tabidir.</p>
       <p>İlk abonelerin fiyatı, abonelikleri sürdükçe artırılmaz.</p>
       <h2 style={h2}>Kişisel kullanım</h2>
-      <p>frameby evde ve kişisel kullanım içindir. Kafe, otel, mağaza gibi halka açık yerlerde ekranda oynatmak, radyo yayınları için ayrıca lisans gerektirebilir; bu kullanım frameby’ın kapsamında değildir.</p>
+      <p>frameby evde ve kişisel, ticari olmayan kullanım içindir. Kafe, otel, mağaza ya da bekleme salonu gibi halka açık bir yerde ekranda oynatmak; radyo yayınları ve şarkılar için meslek birliklerinden (Türkiye’de MSF ve MÜZFED) ve gerekirse radyonun kendisinden, fotoğraflar için de fotoğrafçılarından ayrıca izin gerektirir. frameby bu izinleri vermez; böyle bir kullanımın sorumluluğu işletmeye aittir. frameby’ı bir işletmede kullanacaksan sesi kapalı tutmanı öneririz.</p>
       <h2 style={h2}>Fotoğraflar ve radyolar</h2>
       <p>Galerideki fotoğrafların hakları Berkay Doğan’a aittir; Eski İstanbul katmanındaki fotoğraflar kamu malıdır ve fotoğrafçılarının adıyla gösterilir. Fotoğrafları uygulama dışında çoğaltamaz, satamaz ya da yayımlayamazsın. Radyo yayınları ve şarkılar kendi sahiplerine aittir; frameby onları yalnızca kendi resmî adreslerinden, canlı olarak çalar ve kaydetmez.</p>
       <h2 style={h2}>Değişiklikler</h2>
