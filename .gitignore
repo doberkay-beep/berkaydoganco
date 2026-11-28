@@ -44,3 +44,6 @@ next-env.d.ts
 # iCloud senkron kopyaları
 * 2.*
 .basin-kiti-tmp/
+
+# frameby webOS paketi
+/tv/webos/build/
