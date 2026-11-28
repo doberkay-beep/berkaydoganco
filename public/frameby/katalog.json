@@ -1,6 +1,6 @@
 {
  "surum": 1,
- "guncelleme": "2026-11-25T23:30",
+ "guncelleme": "2026-11-29T11:00",
  "gorselKoku": "/frameby/kareler/",
  "ozelKoku": "/api/frameby/kare/",
  "anahtarAdresi": "/api/frameby/anahtar/",
@@ -1446,7 +1446,9 @@
    "saat": "1880",
    "radyo": "borusan-klasik",
    "katman": "arsiv",
-   "fotografci": "Abdullah Frères"
+   "fotografci": "Abdullah Frères",
+   "lisans": "Kamu malı",
+   "kaynak": "https://commons.wikimedia.org/wiki/File:La_Sublime_Porte_-_Abdullah_Fr%C3%A8res._LCCN2003677071.jpg"
   },
   {
    "id": "arsiv-bebek",
@@ -1455,16 +1457,9 @@
    "saat": "1870",
    "radyo": "retro-turk",
    "katman": "arsiv",
-   "fotografci": "Guillaume Berggren"
-  },
-  {
-   "id": "arsiv-dolmabahce",
-   "dikey": false,
-   "semt": "Dolmabahçe",
-   "saat": "1880'ler",
-   "radyo": "kiyi-caz",
-   "katman": "arsiv",
-   "fotografci": "Guillaume Berggren"
+   "fotografci": "Guillaume Berggren",
+   "lisans": "Kamu malı",
+   "kaynak": "https://commons.wikimedia.org/wiki/File:Vue_de_Bebek_(Bosphore)_-_G._Berggren._LCCN2003677067.jpg"
   },
   {
    "id": "arsiv-eyup-halic",
@@ -1473,7 +1468,9 @@
    "saat": "1880",
    "radyo": "a-mississippi-blues",
    "katman": "arsiv",
-   "fotografci": "Abdullah Frères"
+   "fotografci": "Abdullah Frères",
+   "lisans": "Kamu malı",
+   "kaynak": "https://commons.wikimedia.org/wiki/File:Vue_de_la_Corne_d'Or_prise_d'Eyoub_-_Abdullah_Fr%C3%A8res._LCCN2003677077.jpg"
   },
   {
    "id": "arsiv-galata-01",
@@ -1482,7 +1479,9 @@
    "saat": "1880'ler",
    "radyo": "borusan-klasik",
    "katman": "arsiv",
-   "fotografci": "Guillaume Berggren"
+   "fotografci": "Guillaume Berggren",
+   "lisans": "Kamu malı",
+   "kaynak": "https://commons.wikimedia.org/wiki/File:Guillaume_Berggren_-_Panorama_of_Constantinople_(1880s)_(fold_1).jpg"
   },
   {
    "id": "arsiv-galata-02",
@@ -1491,7 +1490,9 @@
    "saat": "1880'ler",
    "radyo": "retro-turk",
    "katman": "arsiv",
-   "fotografci": "Guillaume Berggren"
+   "fotografci": "Guillaume Berggren",
+   "lisans": "Kamu malı",
+   "kaynak": "https://commons.wikimedia.org/wiki/File:Guillaume_Berggren_-_Panorama_of_Constantinople_(1880s)_(fold_2).jpg"
   },
   {
    "id": "arsiv-galata-03",
@@ -1500,7 +1501,9 @@
    "saat": "1880'ler",
    "radyo": "kiyi-caz",
    "katman": "arsiv",
-   "fotografci": "Guillaume Berggren"
+   "fotografci": "Guillaume Berggren",
+   "lisans": "Kamu malı",
+   "kaynak": "https://commons.wikimedia.org/wiki/File:Guillaume_Berggren_-_Panorama_of_Constantinople_(1880s)_(fold_3).jpg"
   },
   {
    "id": "arsiv-galata-04",
@@ -1509,7 +1512,9 @@
    "saat": "1880'ler",
    "radyo": "a-mississippi-blues",
    "katman": "arsiv",
-   "fotografci": "Guillaume Berggren"
+   "fotografci": "Guillaume Berggren",
+   "lisans": "Kamu malı",
+   "kaynak": "https://commons.wikimedia.org/wiki/File:Guillaume_Berggren_-_Panorama_of_Constantinople_(1880s)_(fold_4).jpg"
   },
   {
    "id": "arsiv-galata-05",
@@ -1518,7 +1523,9 @@
    "saat": "1880'ler",
    "radyo": "borusan-klasik",
    "katman": "arsiv",
-   "fotografci": "Guillaume Berggren"
+   "fotografci": "Guillaume Berggren",
+   "lisans": "Kamu malı",
+   "kaynak": "https://commons.wikimedia.org/wiki/File:Guillaume_Berggren_-_Panorama_of_Constantinople_(1880s)_(fold_5).jpg"
   },
   {
    "id": "arsiv-galata-06",
@@ -1527,7 +1534,9 @@
    "saat": "1880'ler",
    "radyo": "retro-turk",
    "katman": "arsiv",
-   "fotografci": "Guillaume Berggren"
+   "fotografci": "Guillaume Berggren",
+   "lisans": "Kamu malı",
+   "kaynak": "https://commons.wikimedia.org/wiki/File:Guillaume_Berggren_-_Panorama_of_Constantinople_(1880s)_(fold_6).jpg"
   },
   {
    "id": "arsiv-galata-07",
@@ -1536,7 +1545,9 @@
    "saat": "1880'ler",
    "radyo": "kiyi-caz",
    "katman": "arsiv",
-   "fotografci": "Guillaume Berggren"
+   "fotografci": "Guillaume Berggren",
+   "lisans": "Kamu malı",
+   "kaynak": "https://commons.wikimedia.org/wiki/File:Guillaume_Berggren_-_Panorama_of_Constantinople_(1880s)_(fold_7).jpg"
   },
   {
    "id": "arsiv-galata-08",
@@ -1545,7 +1556,9 @@
    "saat": "1880'ler",
    "radyo": "a-mississippi-blues",
    "katman": "arsiv",
-   "fotografci": "Guillaume Berggren"
+   "fotografci": "Guillaume Berggren",
+   "lisans": "Kamu malı",
+   "kaynak": "https://commons.wikimedia.org/wiki/File:Guillaume_Berggren_-_Panorama_of_Constantinople_(1880s)_(fold_8).jpg"
   },
   {
    "id": "arsiv-galata-09",
@@ -1554,7 +1567,9 @@
    "saat": "1880'ler",
    "radyo": "borusan-klasik",
    "katman": "arsiv",
-   "fotografci": "Guillaume Berggren"
+   "fotografci": "Guillaume Berggren",
+   "lisans": "Kamu malı",
+   "kaynak": "https://commons.wikimedia.org/wiki/File:Guillaume_Berggren_-_Panorama_of_Constantinople_(1880s)_(fold_9).jpg"
   },
   {
    "id": "arsiv-galata-10",
@@ -1563,16 +1578,9 @@
    "saat": "1880'ler",
    "radyo": "retro-turk",
    "katman": "arsiv",
-   "fotografci": "Guillaume Berggren"
-  },
-  {
-   "id": "arsiv-kagithane",
-   "dikey": false,
-   "semt": "Kağıthane",
-   "saat": "19. yüzyıl",
-   "radyo": "kiyi-caz",
-   "katman": "arsiv",
-   "fotografci": "Abdullah Frères"
+   "fotografci": "Guillaume Berggren",
+   "lisans": "Kamu malı",
+   "kaynak": "https://commons.wikimedia.org/wiki/File:Guillaume_Berggren_-_Panorama_of_Constantinople_(1880s)_(fold_10).jpg"
   },
   {
    "id": "arsiv-kapalicarsi",
@@ -1581,7 +1589,9 @@
    "saat": "1870",
    "radyo": "a-mississippi-blues",
    "katman": "arsiv",
-   "fotografci": "Guillaume Berggren"
+   "fotografci": "Guillaume Berggren",
+   "lisans": "Kamu malı",
+   "kaynak": "https://commons.wikimedia.org/wiki/File:Bazar_de_Stamboul._Maison_Sadullah_%26_Cie_-_G._Berggren._LCCN2003677068.jpg"
   },
   {
    "id": "arsiv-sarayburnu",
@@ -1590,7 +1600,9 @@
    "saat": "1880",
    "radyo": "borusan-klasik",
    "katman": "arsiv",
-   "fotografci": "Abdullah Frères"
+   "fotografci": "Abdullah Frères",
+   "lisans": "Kamu malı",
+   "kaynak": "https://commons.wikimedia.org/wiki/File:Vue_prise_du_Vieux-S%C3%A9ra%C4%B1%CC%88l_-_Abdullah_Fr%C3%A8res._LCCN2003677094.jpg"
   },
   {
    "id": "arsiv-sokak-kopekleri",
@@ -1599,7 +1611,9 @@
    "saat": "1880",
    "radyo": "retro-turk",
    "katman": "arsiv",
-   "fotografci": "Abdullah Frères"
+   "fotografci": "Abdullah Frères",
+   "lisans": "Kamu malı",
+   "kaynak": "https://commons.wikimedia.org/wiki/File:Les_chiens_des_rues_-_Abdullah_Fr%C3%A8res._LCCN2003677082.jpg"
   },
   {
    "id": "arsiv-sultanahmet-cesme",
@@ -1608,16 +1622,9 @@
    "saat": "1867",
    "radyo": "kiyi-caz",
    "katman": "arsiv",
-   "fotografci": "Pascal Sébah"
-  },
-  {
-   "id": "arsiv-tophane",
-   "dikey": false,
-   "semt": "Tophane, Boğazkesen",
-   "saat": "1880'ler",
-   "radyo": "a-mississippi-blues",
-   "katman": "arsiv",
-   "fotografci": "Guillaume Berggren"
+   "fotografci": "Pascal Sébah",
+   "lisans": "Kamu malı",
+   "kaynak": "https://commons.wikimedia.org/wiki/File:Ahmed_III_Fountain,_Pascal_Sebah,_1867.jpg"
   },
   {
    "id": "arsiv-kuleli-bogaz",
@@ -1626,7 +1633,9 @@
    "saat": "1890'lar",
    "radyo": "kiyi-caz",
    "katman": "arsiv",
-   "fotografci": "Photoglob Co., Zürich"
+   "fotografci": "Photoglob Co., Zürich",
+   "lisans": "Kamu malı",
+   "kaynak": "https://commons.wikimedia.org/wiki/File:Bosphorus_(i.e.,_Bosporus),_view_from_Kuleli,_Constantinople,_Turkey-LCCN2001699444.jpg"
   },
   {
    "id": "arsiv-hisarlar",
@@ -1635,7 +1644,9 @@
    "saat": "1890'lar",
    "radyo": "borusan-klasik",
    "katman": "arsiv",
-   "fotografci": "Photoglob Co., Zürich"
+   "fotografci": "Photoglob Co., Zürich",
+   "lisans": "Kamu malı",
+   "kaynak": "https://commons.wikimedia.org/wiki/File:Bosphorus_(i.e.,_Bosporus),_Rumeli_and_Anadali-Hissar,_(i.e.,_Anadolu_Hisar%C4%B1)_Constantinople,_Turkey-LCCN2001699445.jpg"
   },
   {
    "id": "arsiv-halic-renkli",
@@ -1644,7 +1655,9 @@
    "saat": "1890'lar",
    "radyo": "a-mississippi-blues",
    "katman": "arsiv",
-   "fotografci": "Photoglob Co., Zürich"
+   "fotografci": "Photoglob Co., Zürich",
+   "lisans": "Kamu malı",
+   "kaynak": "https://commons.wikimedia.org/wiki/File:The_Golden_Horn,_Constantinople,_Turkey-LCCN2001699446.jpg"
   },
   {
    "id": "arsiv-galata-koprusu-renkli",
@@ -1653,7 +1666,9 @@
    "saat": "1890'lar",
    "radyo": "retro-turk",
    "katman": "arsiv",
-   "fotografci": "Photoglob Co., Zürich"
+   "fotografci": "Photoglob Co., Zürich",
+   "lisans": "Kamu malı",
+   "kaynak": "https://commons.wikimedia.org/wiki/File:Kara-Keui_(Galata)_bridge,_Constantinople,_Turkey-LCCN2001699426.jpg"
   },
   {
    "id": "arsiv-fenerbahce",
@@ -1662,7 +1677,9 @@
    "saat": "1890'lar",
    "radyo": "kiyi-caz",
    "katman": "arsiv",
-   "fotografci": "Photoglob Co., Zürich"
+   "fotografci": "Photoglob Co., Zürich",
+   "lisans": "Kamu malı",
+   "kaynak": "https://commons.wikimedia.org/wiki/File:Feuerbagd'sche_(i.e.,_Fenerbah%C3%A7e)_on_Sea_of_Marmora_(i.e.,_Marmara),_Constantinople,_Turkey-LCCN2001699443.jpg"
   },
   {
    "id": "arsiv-yedikule-surlar",
@@ -1671,7 +1688,9 @@
    "saat": "1890'lar",
    "radyo": "borusan-klasik",
    "katman": "arsiv",
-   "fotografci": "Photoglob Co., Zürich"
+   "fotografci": "Photoglob Co., Zürich",
+   "lisans": "Kamu malı",
+   "kaynak": "https://commons.wikimedia.org/wiki/File:Byzantine_wall_near_Irdikale,_Constantinople,_Turkey-LCCN2001699442.jpg"
   },
   {
    "id": "arsiv-galata-koprusu",
@@ -1680,7 +1699,9 @@
    "saat": "1880'ler",
    "radyo": "a-mississippi-blues",
    "katman": "arsiv",
-   "fotografci": "Guillaume Berggren"
+   "fotografci": "Guillaume Berggren",
+   "lisans": "Kamu malı",
+   "kaynak": "https://commons.wikimedia.org/wiki/File:Constantinople._Pont_de_Galata_-_(Ka.II.a.3_%3B_176).jpg"
   },
   {
    "id": "arsiv-bogaz-genel",
@@ -1689,7 +1710,9 @@
    "saat": "1880'ler",
    "radyo": "retro-turk",
    "katman": "arsiv",
-   "fotografci": "Guillaume Berggren"
+   "fotografci": "Guillaume Berggren",
+   "lisans": "Kamu malı",
+   "kaynak": "https://commons.wikimedia.org/wiki/File:Constantinople._Vue_d'ensemble_avec_le_Bosphore_-_(Ka.II.a.2).jpg"
   },
   {
    "id": "arsiv-silivrikapi",
@@ -1698,7 +1721,9 @@
    "saat": "1880'ler",
    "radyo": "kiyi-caz",
    "katman": "arsiv",
-   "fotografci": "Guillaume Berggren"
+   "fotografci": "Guillaume Berggren",
+   "lisans": "Kamu malı",
+   "kaynak": "https://commons.wikimedia.org/wiki/File:Constantinople._Porte_Silivri_-_(Ka.II.a.4_%3B_170).jpg"
   },
   {
    "id": "arsiv-bozdogan",
@@ -1707,7 +1732,9 @@
    "saat": "1880'ler",
    "radyo": "borusan-klasik",
    "katman": "arsiv",
-   "fotografci": "Guillaume Berggren"
+   "fotografci": "Guillaume Berggren",
+   "lisans": "Kamu malı",
+   "kaynak": "https://commons.wikimedia.org/wiki/File:Constantinople._Vue_g%C3%A9n%C3%A9rale_de_l'Aqueduc_de_Valens_-_(Ka.II.a.15_%3B_149).jpg"
   },
   {
    "id": "arsiv-yedikule-kiyi",
@@ -1716,7 +1743,9 @@
    "saat": "1880'ler",
    "radyo": "a-mississippi-blues",
    "katman": "arsiv",
-   "fotografci": "Guillaume Berggren"
+   "fotografci": "Guillaume Berggren",
+   "lisans": "Kamu malı",
+   "kaynak": "https://commons.wikimedia.org/wiki/File:Environs_de_Constantinople._Vue_de_Y%C3%A9di-Koul%C3%A9_-_(Ka.II.c.1_%3B_24).jpg"
   },
   {
    "id": "arsiv-anadolu-kavagi",
@@ -1725,7 +1754,9 @@
    "saat": "1880'ler",
    "radyo": "borusan-klasik",
    "katman": "arsiv",
-   "fotografci": "Guillaume Berggren"
+   "fotografci": "Guillaume Berggren",
+   "lisans": "Kamu malı",
+   "kaynak": "https://commons.wikimedia.org/wiki/File:Environs_de_Constantinople._Vue_d'Anatol_Kavak_Haut_Bosphore_-_(Ka.II.c.2_%3B_70).jpg"
   },
   {
    "id": "arsiv-rumelihisari",
@@ -1734,7 +1765,9 @@
    "saat": "1880'ler",
    "radyo": "a-mississippi-blues",
    "katman": "arsiv",
-   "fotografci": "Guillaume Berggren"
+   "fotografci": "Guillaume Berggren",
+   "lisans": "Kamu malı",
+   "kaynak": "https://commons.wikimedia.org/wiki/File:Environs_de_Constantinople._Vue_du_Roum%C3%A9lie_Hissar,_%C3%A9lev%C3%A9_par_Mahomet_II_un_an_avant_la_prise_de_Constantinople_-_(Ka.II.c.3_%3B_44).jpg"
   },
   {
    "id": "arsiv-ahirkapi",
@@ -1743,7 +1776,9 @@
    "saat": "1870'ler",
    "radyo": "kiyi-caz",
    "katman": "arsiv",
-   "fotografci": "Pascal Sébah"
+   "fotografci": "Pascal Sébah",
+   "lisans": "Kamu malı",
+   "kaynak": "https://commons.wikimedia.org/wiki/File:Environs_de_Constantinople._Phare_d'Ahir_Capou_et_Cadi_Kevy_-_(Ka.II.c.4_%3B_137).jpg"
   }
  ]
 }
