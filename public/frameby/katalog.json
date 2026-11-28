@@ -1,6 +1,6 @@
 {
  "surum": 1,
- "guncelleme": "2026-11-29T11:00",
+ "guncelleme": "2026-11-29T12:00",
  "gorselKoku": "/frameby/kareler/",
  "ozelKoku": "/api/frameby/kare/",
  "anahtarAdresi": "/api/frameby/anahtar/",
@@ -1779,6 +1779,39 @@
    "fotografci": "Pascal Sébah",
    "lisans": "Kamu malı",
    "kaynak": "https://commons.wikimedia.org/wiki/File:Environs_de_Constantinople._Phare_d'Ahir_Capou_et_Cadi_Kevy_-_(Ka.II.c.4_%3B_137).jpg"
+  },
+  {
+   "id": "arsiv-dolmabahce-renkli",
+   "dikey": false,
+   "semt": "Dolmabahçe",
+   "saat": "1890'lar",
+   "radyo": "kiyi-caz",
+   "katman": "arsiv",
+   "fotografci": "Photoglob Co., Zürich",
+   "lisans": "Kamu malı",
+   "kaynak": "https://commons.wikimedia.org/wiki/File:Dolmabah%C3%A7e_Palace,_Constantinople,_Turkey_LCCN2003653121.tif"
+  },
+  {
+   "id": "arsiv-tophane-cesme",
+   "dikey": false,
+   "semt": "Tophane Çeşmesi",
+   "saat": "1890'lar",
+   "radyo": "retro-turk",
+   "katman": "arsiv",
+   "fotografci": "Photoglob Co., Zürich",
+   "lisans": "Kamu malı",
+   "kaynak": "https://commons.wikimedia.org/wiki/File:Tophane_Fountain,_Constantinople,_Turkey_LCCN2003653115.tif"
+  },
+  {
+   "id": "arsiv-kagithane-kasri",
+   "dikey": false,
+   "semt": "Kağıthane Kasrı",
+   "saat": "1880'ler",
+   "radyo": "borusan-klasik",
+   "katman": "arsiv",
+   "fotografci": "Abdullah Frères",
+   "lisans": "Kamu malı",
+   "kaynak": "https://www.loc.gov/item/2003662038/"
   }
  ]
 }
