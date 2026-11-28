@@ -12,7 +12,7 @@ import type { Lang } from "@/lib/site";
 function tarihYaz(iso: string, lang: Lang): string {
   try {
     return new Date(iso).toLocaleDateString(lang === "tr" ? "tr-TR" : "en-GB", {
-      day: "numeric", month: "long", year: "numeric",
+      day: "numeric", month: "long", year: "numeric", timeZone: "Europe/Istanbul",
     });
   } catch { return ""; }
 }

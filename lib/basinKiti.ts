@@ -30,14 +30,14 @@ export const RAKAMLAR: { deger: string; aciklama: string }[] = [
   { deger: "#1", aciklama: "Trendyol şiir — en çok ziyaret edilen: Mürekkep ve Köz" },
   { deger: "10/10", aciklama: "1000Kitap okur puanı" },
   { deger: "12", aciklama: "basın çıkışı: dergi, gazete, haber sitesi ve TV (2026)" },
-  { deger: "79", aciklama: "radyonun yazılı izni, 19 ülkeden (nowby.)" },
+  { deger: "20", aciklama: "ülkeden radyoların yazılı izni (nowby.)" },
   { deger: "2 + 1 + 2", aciklama: "kitap, kısa film ve uygulama — on ay içinde" },
   { deger: "8 yıl", aciklama: "ilk dizeden ilk kitaba (2017–2025)" },
 ];
 
 export const KONULAR: string[] = [
   "Havalimanında gece vardiyası: sekiz yıl sessizlikten sonra on ayda iki kitap, bir film ve iki uygulama",
-  "Radyolara tek tek mektup yazan şair: nowby. için 19 ülkeden 79 radyonun yazılı izni",
+  "Radyolara tek tek mektup yazan şair: nowby. için 20 ülkeden radyoların yazılı izni",
   "Satırlar yalnızca yerinde açılıyor: hereby. ve şehre bırakılan edebiyat izleri (Orhan Veli, Sait Faik)",
   "Yazarını sanık koltuğuna oturtan kitap: Tasfiye'nin mahkeme konsepti",
   "Kitaptan filme: metni kitaptan, sesi yazardan olan TASFİYE: Film",

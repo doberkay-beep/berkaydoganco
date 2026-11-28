@@ -28,7 +28,7 @@ export default function Sayfa() {
       ))}
       <section className={`${s.dizin} ${s.sahneUst}`} aria-labelledby="sahne-baslik">
         <div className={s.dizinBas}>
-          <span className={s.etiket}>[00] Etkinlikler</span>
+          <span className={s.etiket}>Etkinlikler</span>
           <h1 id="sahne-baslik" className={s.sahneBaslik}>Sahne</h1>
           <p className={s.sahneGiris}>İmza günleri, okumalar, söyleşiler.</p>
         </div>

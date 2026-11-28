@@ -94,6 +94,7 @@ export default function EnglishPage() {
 
       {/* Dize çevrilmez: Türkçe aslı, altında Berkay'ın onayladığı birebir anlam notu (lib/en).
           Fotoğraf, aynı dizeyle eşleşmiş kendi karesi (lib/goruntu); onaylı notu olan dize az olduğu için sabit. */}
+      <h1 className="sr-only">Berkay Doğan, poet and writer</h1>
       <section className={s.acilis} aria-label="A photograph and a line from the books">
         <div className={`${s.kare} ${kare.h > kare.w ? s.dikey : s.yatay}`}>
           <figure className={s.kareFoto}>
@@ -201,7 +202,7 @@ export default function EnglishPage() {
             <div id="hereby">
               <h2 className={s.etiket}>The apps · <Link href="/en/by/">by. workshop</Link></h2>
               <p><Link href="/en/hereby/">hereby.</Link> Leave a thought in a place. Leave the line on your mind in the place you pass; only someone who comes there can read it. No likes, no followers. Free on the App Store.</p>
-              <p><Link href="/en/nowby/">nowby.</Link> What&apos;s on the radio right now. Hundreds of frequencies on one screen, live, on iPhone, iPad, Mac, Apple TV and Apple Watch.</p>
+              <p><Link href="/en/nowby/">nowby.</Link> Shows, on one screen, the songs playing right now on stations that have given permission for their broadcasts to be shared. On iPhone, iPad, Mac, Apple TV and Apple Watch.</p>
               <p className={s.baglar}><Link href="/en/studio/">Work with the studio</Link></p>
             </div>
           </div>

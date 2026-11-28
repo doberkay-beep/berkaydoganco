@@ -90,6 +90,7 @@ export default function Page() {
           </p>
         )}
 
+        <h1 className="sr-only">Berkay Doğan, şair ve yazar</h1>
         <section className={s.acilis} aria-label="Günün fotoğrafı ve dizesi">
           <GununKaresi
             kareler={KARELER_GUN}
