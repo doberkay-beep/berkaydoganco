@@ -20,7 +20,7 @@ import s from "@/components/anasayfa/ilkSayfa.module.css";
    gösterilen satırlar Türkçe aslıyla, lang="tr". Metinler lib/en + lib/basinKiti'den. */
 
 const DESC =
-  "Berkay Doğan is an Istanbul-based Turkish poet and writer: author of Mürekkep ve Köz (poetry, 2025) and Tasfiye (essays, 2026); he builds the apps hereby. and nowby. Biography, books, press kit and contact in English.";
+  "Berkay Doğan is an Istanbul-based Turkish poet and writer: author of Mürekkep ve Köz (poetry, 2025) and Tasfiye (essays, 2026); he builds the apps hereby., nowby. and frameby. Biography, books, press kit and contact in English.";
 
 export const metadata: Metadata = {
   title: { absolute: "Berkay Doğan — Turkish Poet & Writer (in English)" },

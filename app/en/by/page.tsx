@@ -4,9 +4,9 @@ import { ATOLYE_EN } from "@/components/AtolyeMetinleri";
 
 export const metadata: Metadata = {
   title: { absolute: "by. — Berkay Doğan's workshop" },
-  description: "by. is the app workshop of writer Berkay Doğan. No likes, no followers, no endless feed: apps that take you off your phone and into a place, a moment, a person — hereby. and nowby.",
+  description: "by. is the app workshop of writer Berkay Doğan. No likes, no followers, no endless feed: apps that take you off your phone and into a place, a moment, a person — hereby., nowby. and frameby.",
   alternates: { canonical: "/en/by", languages: { tr: "/by", en: "/en/by" } },
-  openGraph: { title: "by. — Berkay Doğan's workshop", description: "A writer's app workshop: hereby. and nowby.", images: ["/by/by-ikon.png"] },
+  openGraph: { title: "by. — Berkay Doğan's workshop", description: "A writer's app workshop: hereby., nowby. and frameby.", images: ["/by/by-ikon.png"] },
 };
 
 export default function Page() {

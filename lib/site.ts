@@ -120,13 +120,13 @@ export const site: Record<Lang, Copy> = {
       role: "Poet & Writer — Istanbul",
       line: "Yazmak, varoluşun en sessiz itirafıdır.",
       lineNote: "literally: “Writing is the quietest confession of existence.”",
-      sub: "He began writing at seventeen. For eight years he wrote in silence; then, in ten months, came two books, a short film and two apps.",
+      sub: "He began writing at seventeen. For eight years he wrote in silence; then, within a year, came two books, a short film and three apps.",
       ctaBooks: "The books", ctaAbout: "About", scroll: "Scroll",
     },
     about: {
       label: "About", heading: "Poet and writer",
       paras: [
-        "He began writing at seventeen. For eight years he wrote in silence; then, in ten months, came two books, a short film and two apps.",
+        "He began writing at seventeen. For eight years he wrote in silence; then, within a year, came two books, a short film and three apps.",
         "Berkay Doğan is a poet and writer based in Istanbul. For him, writing is not a choice but a necessity. Every day he does not write is a day he betrays himself.",
         "He began writing in 2017, at seventeen. For most, that age is still a threshold of innocence; for him it was the moment he started to see the true face of society. Since then, what feeds him is life itself more than literature: a pair of eyes, a building riddled with holes, walking again, as a changed man, through streets he once knew.",
         "His first book, Mürekkep ve Köz: Bir Şairin Hesabı (“Ink and Ember: A Poet’s Reckoning”, 2025), was wrenched out of a suffocating solitude, national chaos and existential crisis. His second, Tasfiye (Turkish for “purge” or “cleansing”), is a critique of the existing order — a call to revive the dose of philosophy we have lost. Between the two runs a reckoning that stretches from poetry to essay. He keeps publishing poems, essays and night notes on this site and on Substack.",
@@ -185,13 +185,13 @@ export const site: Record<Lang, Copy> = {
     hero: {
       role: "Şair & Yazar — İstanbul",
       line: "Yazmak, varoluşun en sessiz itirafıdır.",
-      sub: "17 yaşında yazmaya başladı. Sekiz yıl sessizce yazdı; sonra on ayda iki kitap, bir kısa film ve iki uygulama.",
+      sub: "17 yaşında yazmaya başladı. Sekiz yıl sessizce yazdı; sonra bir yılda iki kitap, bir kısa film ve üç uygulama.",
       ctaBooks: "Kitaplar", ctaAbout: "Hakkımda", scroll: "Kaydır",
     },
     about: {
       label: "Hakkımda", heading: "Şair ve yazar",
       paras: [
-        "17 yaşında yazmaya başladı. Sekiz yıl sessizce yazdı; sonra on ayda iki kitap, bir kısa film ve iki uygulama.",
+        "17 yaşında yazmaya başladı. Sekiz yıl sessizce yazdı; sonra bir yılda iki kitap, bir kısa film ve üç uygulama.",
         "Berkay Doğan, İstanbul'da yaşayan şair ve yazardır. Onun için yazmak bir tercih değil, bir zorunluluktur: yazmak, varoluşun en sessiz itirafıdır. Yazmadığı her gün, kendine ihanet ettiği bir gündür.",
         "Yazıya 2017'de, on yedi yaşında başladı. O yaş çoğu için masumiyetin sürdüğü bir eşikti; onun içinse toplumun gerçek yüzünü görmeye başladığı an oldu. O günden bu yana onu besleyen şey, edebiyatın kendisinden çok hayatın kendisidir: bir çift göz, delik deşik mimari bir yapı, eskiden geçtiği sokakları değişmiş bir adam olarak yeniden geçmek.",
         "İlk kitabı Mürekkep ve Köz: Bir Şairin Hesabı (2025) boğucu bir yalnızlığın, ulusal kaosun ve varoluşsal krizin içinden sökülerek yazıldı. İkinci kitabı Tasfiye ise mevcut düzene bir eleştiri, kaybettiğimiz felsefi dozun yeniden hayata çağrılmasıdır. İkisi arasında, şiirden denemeye uzanan bir hesaplaşma vardır. Şiirlerini, yazılarını ve gece notlarını bu sitede ve Substack'te yayımlamayı sürdürüyor.",

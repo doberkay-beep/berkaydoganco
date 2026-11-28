@@ -4,9 +4,9 @@ import { ATOLYE_TR } from "@/components/AtolyeMetinleri";
 
 export const metadata: Metadata = {
   title: { absolute: "by. — Berkay Doğan'ın atölyesi" },
-  description: "by., yazar Berkay Doğan'ın uygulama atölyesi. Beğenisiz, takipçisiz, sonsuz akışsız; seni telefondan alıp bir yere, bir âna, bir insana götüren uygulamalar: hereby. ve nowby.",
+  description: "by., yazar Berkay Doğan'ın uygulama atölyesi. Beğenisiz, takipçisiz, sonsuz akışsız; seni telefondan alıp bir yere, bir âna, bir insana götüren uygulamalar: hereby., nowby. ve frameby.",
   alternates: { canonical: "/by", languages: { tr: "/by", en: "/en/by" } },
-  openGraph: { title: "by. — Berkay Doğan'ın atölyesi", description: "Bir yazarın uygulama atölyesi: hereby. ve nowby.", images: ["/by/by-ikon.png"] },
+  openGraph: { title: "by. — Berkay Doğan'ın atölyesi", description: "Bir yazarın uygulama atölyesi: hereby., nowby. ve frameby.", images: ["/by/by-ikon.png"] },
 };
 
 export default function Sayfa() {

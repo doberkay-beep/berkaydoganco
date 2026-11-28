@@ -54,7 +54,7 @@ export const EN_BOOKS: EnBook[] = [
 
 export const EN_FACTS: { k: string; v: string }[] = [
   { k: "Name", v: "Berkay Doğan" },
-  { k: "Role", v: "Poet and writer · developer of hereby. and nowby." },
+  { k: "Role", v: "Poet and writer · developer of hereby., nowby. and frameby." },
   { k: "Based in", v: "Istanbul, Turkey" },
   { k: "Writes in", v: "Turkish" },
   { k: "Publisher", v: "İskenderiye Yayınları (Istanbul)" },
@@ -72,7 +72,7 @@ export const EN_RECOGNITION: { value: string; label: string }[] = [
 ];
 
 export const EN_TOPICS: string[] = [
-  "Eight silent years, then two books, a film and a radio platform in ten months: a writer’s accelerating year",
+  "Eight silent years, then two books, a film and three apps within a year: a writer’s accelerating year",
   "A poet who started counting Turkey’s radio stations: nowby and its monthly radio index",
   "The book that puts its own author in the dock: Tasfiye’s courtroom concept",
   "From page to screen: TASFİYE: Film, with text from the book and the author’s own voice",
