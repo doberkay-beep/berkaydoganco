@@ -44,8 +44,8 @@ export async function IzinliRadyolar({ dil }: { dil: "tr" | "en" }) {
   const tr = l.filter((r) => r.ulke === "tr");
   const dunya = l.filter((r) => r.ulke !== "tr").sort(sira);
   const etiket = dil === "tr"
-    ? `Yazılı izin veren radyolar · ${l.length} radyo, ${ulke} ülke`
-    : `Stations that gave written permission · ${l.length} stations, ${ulke} countries`;
+    ? `Yazılı izin veren radyolar · ${ulke} ülkeden`
+    : `Stations that gave written permission · from ${ulke} countries`;
   const grup = (baslik: string, liste: Radyo[]) => (
     <div style={{ marginTop: "1.6rem" }}>
       <p style={{ ...mono, opacity: 0.55, fontSize: "0.64rem" }}>{baslik}</p>

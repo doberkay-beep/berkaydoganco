@@ -8,11 +8,10 @@ const serif: React.CSSProperties = { fontFamily: "var(--font-serif, Georgia), Ge
 const METIN = {
   tr: {
     etiket: "Bir radyo nowby.'da nasıl yer alır",
-    giris: "nowby.'da bir radyoyu açtığında o an çalan şarkıyı seçen bir algoritma değil, orada oturan bir insan. Liste büyürken bunun kaybolmaması için yedi kurala bağlı kalıyorum.",
+    giris: "nowby.'da bir radyoyu açtığında o an çalan şarkıyı seçen bir algoritma değil, orada oturan bir insan. Liste büyürken bunun kaybolmaması için altı kurala bağlı kalıyorum.",
     ilkeler: [
       ["Yazılı izin.", "Uygulamada yalnız kendi sözüyle \"evet\" diyen radyolar var. Vazgeçen radyo aynı gün çıkar."],
       ["Bir insan, bir şehir.", "Her radyonun arkasında adını bildiğim biri ve yayın yaptığı bir yer olsun isterim."],
-      ["Az kanal.", "Bir yayıncıdan ana kanalı ve en çok üç yan kanalını alırım. Liste tek bir evin odalarıyla dolmasın."],
       ["Yeni bir yer, yeni bir ses.", "Listede olmayan bir şehri, bir dili ya da bir türü getiren radyo önce gelir."],
       ["Radyonun kendi yüzü.", "Logo yalnız radyonun gönderdiği dosyadır. Göndermeyen radyo kendi rengi ve baş harfiyle görünür."],
       ["Açık kayıt.", "Yayının sesi kaydedilmez. Çalan şarkının adı ve kimliksiz dinleme sayısı tutulur; dinleyenin kim olduğu tutulmaz."],
@@ -21,11 +20,10 @@ const METIN = {
   },
   en: {
     etiket: "How a station comes to be on nowby.",
-    giris: "When you open a station on nowby., the song playing right now was chosen by a person sitting there, not by an algorithm. To keep that true as the list grows, I hold to seven rules.",
+    giris: "When you open a station on nowby., the song playing right now was chosen by a person sitting there, not by an algorithm. To keep that true as the list grows, I hold to six rules.",
     ilkeler: [
       ["Written permission.", "The app carries only stations that said yes in their own words. A station that changes its mind is removed the same day."],
       ["A person, a city.", "Behind each station I want someone whose name I know, and a place it broadcasts from."],
-      ["Few channels.", "From one broadcaster I take the main channel and at most three side channels, so the list does not fill up with the rooms of a single house."],
       ["A new place, a new sound.", "A station that brings a city, a language or a genre the list does not have yet comes first."],
       ["The station's own face.", "A logo is only the file the station sent. A station that has not sent one appears with its colour and initial."],
       ["Open records.", "The sound of the broadcast is not recorded. The title of the song playing and an anonymous listen count are kept; who is listening is not."],
