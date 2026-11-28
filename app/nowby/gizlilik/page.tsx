@@ -17,8 +17,8 @@ export default function GizlilikPage() {
       <p>Bir radyoyu dinlediğinde yayın doğrudan o radyonun kendi sunucusundan çalınır; radyo, her internet bağlantısında olduğu gibi IP adresini görür. Bazı radyolarda nowby.co seni yalnızca radyonun resmî yayın adresine yönlendirir; yayın sunucumuzdan geçmez. Yayının kendisi hiçbir yerde kaydedilmez; dinlemelerin nasıl sayıldığı aşağıdaki "Dinleme sayımı" bölümünde.</p>
       <h2 style={h2}>Dinleme sayımı</h2>
       <p>nowby., radyolara "nowby üzerinden ne sıklıkta dinleniyorsunuz" sorusunun cevabını verebilmek için dinlemeleri sayar.</p>
-      <p>iPhone, iPad, Mac, Apple TV ve Apple Watch uygulamalarında bir radyo çalmaya başladığında sunucuya yalnızca hangi radyonun, hangi platformda dinlenmeye başladığı gider. Cihaz kimliği, rastgele bir sayı ya da seni tanımlayabilecek hiçbir bilgi gönderilmez.</p>
-      <p>nowby.co'da ve nowby.co'yu açan Android uygulamasında "Dinle"ye bastığında, aynı tarayıcıdan gelen tekrarları elemek için tarayıcında rastgele bir sayı tutulur; bu sayı radyo ve zamanla birlikte saklanır. Adınla, e-postanla ya da başka bir bilgiyle ilişkilendirilmez.</p>
+      <p>iPhone, iPad, Mac, Apple TV, Apple Watch ve Android uygulamalarında bir radyo çalmaya başladığında sunucuya yalnızca hangi radyonun, hangi platformda dinlenmeye başladığı gider. Cihaz kimliği, rastgele bir sayı ya da seni tanımlayabilecek hiçbir bilgi gönderilmez.</p>
+      <p>nowby.co'da "Dinle"ye bastığında, aynı tarayıcıdan gelen tekrarları elemek için tarayıcında rastgele bir sayı tutulur; bu sayı radyo ve zamanla birlikte saklanır. Adınla, e-postanla ya da başka bir bilgiyle ilişkilendirilmez.</p>
       <p>Bu kayıtlar yalnızca radyo başına toplam olarak kullanılır; izin veren radyolarla yalnızca toplam rakam (ör. "geçen ay 120 dinleme") paylaşılabilir.</p>
       <h2 style={h2}>Şarkı bilgileri ve arama</h2>
       <p>Radyolarda çalan şarkılar nowby.co'dan alınır. Uygulamada yaptığın aramalar sonuçları getirmek için sunucuya gönderilir, saklanmaz.</p>

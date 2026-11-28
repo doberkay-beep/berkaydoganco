@@ -17,8 +17,8 @@ export default function PrivacyPage() {
       <p>When you listen to a station, the stream is played directly from that station's own server; like any internet connection, the station sees your IP address. For some stations, nowby.co only redirects you to the station's official stream address; the stream never passes through our servers. The stream itself is never recorded anywhere; how listens are counted is explained under "Listening counts" below.</p>
       <h2 style={h2}>Listening counts</h2>
       <p>nowby. counts listens so it can tell stations how often they are listened to through nowby.</p>
-      <p>In the iPhone, iPad, Mac, Apple TV and Apple Watch apps, when a station starts playing, only which station started playing, on which platform, is sent to the server. No device identifier, random number or anything that could identify you is sent.</p>
-      <p>On nowby.co and in the Android app (which opens nowby.co), when you press Listen, a random number is kept in your browser to filter out repeats from the same browser; it is stored with the station and the time, and is not linked to your name, email or anything else.</p>
+      <p>In the iPhone, iPad, Mac, Apple TV, Apple Watch and Android apps, when a station starts playing, only which station started playing, on which platform, is sent to the server. No device identifier, random number or anything that could identify you is sent.</p>
+      <p>On nowby.co, when you press Listen, a random number is kept in your browser to filter out repeats from the same browser; it is stored with the station and the time, and is not linked to your name, email or anything else.</p>
       <p>These records are only used as totals per station; only totals (e.g. "120 listens last month") may be shared with stations that have given permission. They are kept for at most 24 months.</p>
       <h2 style={h2}>Song information and search</h2>
       <p>The songs playing on the radio come from nowby.co. Searches you make in the app are sent to the server to fetch results and are not stored.</p>
