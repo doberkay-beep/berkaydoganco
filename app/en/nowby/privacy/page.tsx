@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 export default function PrivacyPage() {
   return (
     <NowbyYasal en baslik="Privacy policy" guncelleme="November 25, 2026">
-      <p>nowby. is developed by Berkay Doğan. This page explains what information the nowby. apps on iPhone, iPad, Mac, Apple TV, Apple Watch and Android, and the nowby. Alexa skill, use and why.</p>
+      <p>nowby. is developed by Berkay Doğan. This page explains what information the nowby. apps on iPhone, iPad, Mac, Apple TV, Apple Watch, Android and Windows, and the nowby. Alexa skill, use and why.</p>
       <h2 style={h2}>No account</h2>
       <p>nowby. doesn't ask you to sign up. Your name, email, phone number or location is never collected.</p>
       <h2 style={h2}>Radio streams</h2>
@@ -18,7 +18,7 @@ export default function PrivacyPage() {
       <h2 style={h2}>Listening counts</h2>
       <p>nowby. counts listens so it can tell stations how often they are listened to through nowby.</p>
       <p>In the iPhone, iPad, Mac, Apple TV, Apple Watch and Android apps, when a station starts playing, only which station started playing, on which platform, is sent to the server. No device identifier, random number or anything that could identify you is sent.</p>
-      <p>On nowby.co, when you press Listen, a random number is kept in your browser to filter out repeats from the same browser; it is stored with the station and the time, and is not linked to your name, email or anything else.</p>
+      <p>On nowby.co and in the Windows app (which opens nowby.co), when you play a station, a random number is kept in your browser to filter out repeats from the same browser; it is stored with the station and the time, and is not linked to your name, email or anything else.</p>
       <p>These records are only used as totals per station; only totals (e.g. "120 listens last month") may be shared with stations that have given permission. They are kept for at most 24 months.</p>
       <h2 style={h2}>Song information and search</h2>
       <p>The songs playing on the radio come from nowby.co. Searches you make in the app are sent to the server to fetch results and are not stored.</p>

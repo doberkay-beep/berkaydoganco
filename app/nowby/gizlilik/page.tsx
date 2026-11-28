@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 export default function GizlilikPage() {
   return (
     <NowbyYasal baslik="Gizlilik politikası" guncelleme="25 Kasım 2026">
-      <p>nowby'ı Berkay Doğan geliştirir. Bu sayfa; iPhone, iPad, Mac, Apple TV, Apple Watch ve Android'deki nowby. uygulamalarının ve Alexa becerisinin hangi bilgileri neden kullandığını açıklar.</p>
+      <p>nowby'ı Berkay Doğan geliştirir. Bu sayfa; iPhone, iPad, Mac, Apple TV, Apple Watch, Android ve Windows'taki nowby. uygulamalarının ve Alexa becerisinin hangi bilgileri neden kullandığını açıklar.</p>
       <h2 style={h2}>Hesap yok</h2>
       <p>nowby. kayıt istemez. Adın, e-postan, telefon numaran ya da konumun alınmaz.</p>
       <h2 style={h2}>Radyo yayınları</h2>
@@ -18,7 +18,7 @@ export default function GizlilikPage() {
       <h2 style={h2}>Dinleme sayımı</h2>
       <p>nowby., radyolara "nowby üzerinden ne sıklıkta dinleniyorsunuz" sorusunun cevabını verebilmek için dinlemeleri sayar.</p>
       <p>iPhone, iPad, Mac, Apple TV, Apple Watch ve Android uygulamalarında bir radyo çalmaya başladığında sunucuya yalnızca hangi radyonun, hangi platformda dinlenmeye başladığı gider. Cihaz kimliği, rastgele bir sayı ya da seni tanımlayabilecek hiçbir bilgi gönderilmez.</p>
-      <p>nowby.co'da "Dinle"ye bastığında, aynı tarayıcıdan gelen tekrarları elemek için tarayıcında rastgele bir sayı tutulur; bu sayı radyo ve zamanla birlikte saklanır. Adınla, e-postanla ya da başka bir bilgiyle ilişkilendirilmez.</p>
+      <p>nowby.co'da ve nowby.co'yu açan Windows uygulamasında bir radyoyu çaldığında, aynı tarayıcıdan gelen tekrarları elemek için tarayıcında rastgele bir sayı tutulur; bu sayı radyo ve zamanla birlikte saklanır. Adınla, e-postanla ya da başka bir bilgiyle ilişkilendirilmez.</p>
       <p>Bu kayıtlar yalnızca radyo başına toplam olarak kullanılır; izin veren radyolarla yalnızca toplam rakam (ör. "geçen ay 120 dinleme") paylaşılabilir.</p>
       <h2 style={h2}>Şarkı bilgileri ve arama</h2>
       <p>Radyolarda çalan şarkılar nowby.co'dan alınır. Uygulamada yaptığın aramalar sonuçları getirmek için sunucuya gönderilir, saklanmaz.</p>
