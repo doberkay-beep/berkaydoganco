@@ -16,7 +16,7 @@ type Madde = { b: string; s: string };
 type Vitrin = { id: string; yer: string; saat: string; radyo: string };
 export type FramebyMetin = {
   dil: "tr" | "en";
-  alt: string; giris: string; durum: string; haber: string; haberKonu: string;
+  alt: string; giris: string; durum: string; magaza: string;
   sahne: Vitrin & { alt: string };
   nasilEtiket: string; nasil: Madde[];
   katmanEtiket: string; katmanBaslik: string; katmanlar: (Vitrin & { ad: string; d: string; s: string })[]; plusNot: string;
@@ -32,9 +32,8 @@ export const FRAMEBY_TR: FramebyMetin = {
   dil: "tr",
   alt: "Bir şehrin karesi, o anın radyosu.",
   giris: "Ekranında yavaşça akan zaman kareleri: İstanbul'dan gerçek yerler, gerçek saatler. Her kare dört dakika kalır; arkada bir radyo canlı çalar. Günde on iki kare, sonra gün baştan.",
-  durum: "Yakında: Apple TV, iPad, iPhone ve Mac",
-  haber: "Çıkınca haber ver",
-  haberKonu: "frameby. çıkınca haber ver",
+  durum: "App Store'da: iPhone, iPad ve Mac. Apple TV yakında.",
+  magaza: "frameby. · App Store",
   sahne: { id: "iph-20240418-051", yer: "Arnavutköy", saat: "15:44", radyo: "Radio Paradise Mellow", alt: "frameby. Apple TV'de: Arnavutköy'de kızıl bir tekne, köşede yer, saat ve canlı çalan radyo" },
   nasilEtiket: "Nasıl çalışır",
   nasil: [
@@ -78,9 +77,8 @@ export const FRAMEBY_EN: FramebyMetin = {
   dil: "en",
   alt: "A frame of a city, the radio of that moment.",
   giris: "Time frames that drift slowly across your screen: real places in Istanbul, real hours. Each frame stays four minutes while a radio station plays live behind it. Twelve frames a day, then the day begins again.",
-  durum: "Coming soon: Apple TV, iPad, iPhone and Mac",
-  haber: "Tell me when it's out",
-  haberKonu: "Tell me when frameby. is out",
+  durum: "On the App Store: iPhone, iPad and Mac. Apple TV coming soon.",
+  magaza: "frameby. on the App Store",
   sahne: { id: "iph-20240418-051", yer: "Arnavutköy", saat: "15:44", radyo: "Radio Paradise Mellow", alt: "frameby. on Apple TV: a red boat in Arnavutköy, with the place, the time and the live station in the corner" },
   nasilEtiket: "How it works",
   nasil: [
@@ -168,7 +166,7 @@ export function FramebySayfa({ m }: { m: FramebyMetin }) {
         <p style={{ ...serif, fontSize: "clamp(1.1rem, 2.4vw, 1.4rem)", lineHeight: 1.55, margin: "1.3rem auto 0", maxWidth: "660px", opacity: 0.85 }}>{m.giris}</p>
         <p style={{ ...mono, color: KIZIL, marginTop: "1.6rem" }}>{m.durum}</p>
         <p style={{ marginTop: "1.4rem" }}>
-          <a href={`mailto:${DESTEK_EMAIL}?subject=${encodeURIComponent(m.haberKonu)}`} style={{ display: "inline-block", padding: "0.8rem 1.4rem", borderRadius: "999px", border: `1px solid ${KIZIL}`, color: KIZIL, fontWeight: 700, textDecoration: "none" }}>{m.haber}</a>
+          <a href="https://apps.apple.com/app/frameby/id6839284183" target="_blank" rel="noopener noreferrer" style={{ display: "inline-block", padding: "0.8rem 1.4rem", borderRadius: "999px", border: `1px solid ${KIZIL}`, color: KIZIL, fontWeight: 700, textDecoration: "none" }}>{m.magaza}</a>
         </p>
       </section>
 
